@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sparkle7/public_html/test.sparklesapartments.ng
+    - /bin/cp -R frontend/dist/* $DEPLOYPATH/
+    - /bin/cp frontend/dist/.htaccess $DEPLOYPATH/ || true

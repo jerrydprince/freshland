@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Sparkles Apartments | Premium Luxury Shortlets</title>
+  <script>
+    (function () {
+      // Dynamically apply selected theme class
+      const theme = localStorage.getItem('system_theme') || 'theme-luxe-gold';
+      let themeClass = 'theme-luxe-gold';
+      if (theme.startsWith('theme-')) {
+        themeClass = theme;
+      } else {
+        themeClass = 'theme-' + theme.replace('_', '-');
+      }
+      document.documentElement.classList.add(themeClass);
+
+      // Keep system in light mode except upon selecting dark mode (Slate Dark)
+      if (themeClass === 'theme-slate-dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      // Dynamically apply custom logo as favicon
+      try {
+        const customLogo = localStorage.getItem('contact_logo');
+        if (customLogo) {
+          let link = document.querySelector("link[rel~='icon']");
+          if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.getElementsByTagName('head')[0].appendChild(link);
+          }
+          link.href = customLogo;
+        }
+      } catch (e) {
+        console.warn("Dynamic favicon load error: ", e);
+      }
+    })();
+  </script>
+  <meta name="description"
+    content="Experience unparalleled luxury and comfort at Sparkles Apartments. Book premium shortlets, corporate suites, and vacation rentals with top-tier amenities." />
+  <meta name="keywords"
+    content="luxury apartments, shortlets, premium suites, vacation rental, corporate housing, Sparkles Apartments" />
+  <meta name="author" content="Sparkles Apartments" />
+  <meta property="og:title" content="Sparkles Apartments | Premium Luxury Shortlets" />
+  <meta property="og:description"
+    content="Book premium shortlets and luxury suites with top-tier amenities at Sparkles Apartments." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

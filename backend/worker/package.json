@@ -1,0 +1,15 @@
+{
+  "name": "luxe-pms-worker",
+  "version": "1.0.0",
+  "description": "Background worker for Luxe PMS",
+  "main": "email_worker.js",
+  "type": "module",
+  "scripts": {
+    "start": "node email_worker.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.4.5",
+    "resend": "^3.2.0"
+  }
+}
