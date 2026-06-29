@@ -162,23 +162,23 @@ const Home = () => {
             <h4 className="text-brand-500 font-sans tracking-[0.2em] uppercase text-xs font-bold mb-6 flex items-center gap-4">
               <span className="w-12 h-[2px] bg-brand-500"></span> Welcome to Freshland
             </h4>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#ffffff] leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
               {heroSlides[currentSlide].title.split(' ').map((word, i) => (
                 <span key={i} className={i % 2 !== 0 ? "text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600 italic" : ""}>{word} </span>
               ))}
             </h1>
-            <p className="text-lg text-gray-200 mb-12 max-w-md leading-relaxed font-light">
+            <p className="text-lg text-[#ffffff]/90 mb-12 max-w-md leading-relaxed font-light drop-shadow-md">
               {heroSlides[currentSlide].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link to="/booking" className="bg-brand-500 text-white px-8 py-4 rounded-full font-medium hover:bg-brand-600 transition-all flex justify-center items-center gap-2 group shadow-[0_0_20px_rgba(104,180,56,0.3)] hover:shadow-[0_0_30px_rgba(104,180,56,0.5)]">
+              <Link to="/booking" className="bg-brand-500 text-[#ffffff] px-8 py-4 rounded-full font-medium hover:bg-brand-600 transition-all flex justify-center items-center gap-2 group shadow-[0_0_20px_rgba(104,180,56,0.3)] hover:shadow-[0_0_30px_rgba(104,180,56,0.5)]">
                 Reserve Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <div className="flex items-center justify-center gap-4 px-4">
-                <button onClick={prevSlide} className="p-4 rounded-full border border-dark-700 text-gray-200 hover:text-brand-500 hover:border-brand-500 transition-all bg-dark-800/50">
+                <button onClick={prevSlide} className="p-4 rounded-full border border-[#ffffff]/20 text-[#ffffff]/90 hover:text-brand-500 hover:border-brand-500 transition-all bg-black/50">
                   <ChevronLeft size={20} />
                 </button>
-                <button onClick={nextSlide} className="p-4 rounded-full border border-dark-700 text-gray-200 hover:text-brand-500 hover:border-brand-500 transition-all bg-dark-800/50">
+                <button onClick={nextSlide} className="p-4 rounded-full border border-[#ffffff]/20 text-[#ffffff]/90 hover:text-brand-500 hover:border-brand-500 transition-all bg-black/50">
                   <ChevronRight size={20} />
                 </button>
               </div>

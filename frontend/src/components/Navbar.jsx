@@ -50,12 +50,12 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${showSolid ? 'bg-white/90 dark:bg-dark-900/90 backdrop-blur-lg py-4 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-gray-200/50 dark:border-dark-700/50' : 'bg-transparent py-6'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${showSolid ? 'bg-dark-800 py-4 shadow-xl border-b border-dark-700' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 mr-auto hover:opacity-80 transition-opacity">
           <img src="/Images/logo.svg" alt="Freshland Logo" className="h-10 object-contain drop-shadow-md" />
           <div className="flex flex-col justify-center ml-2">
-            <span className={`text-[22px] font-sans font-extrabold leading-none tracking-wide transition-colors duration-300 ${showSolid ? 'text-gray-900 dark:text-white' : 'text-[#ffffff] drop-shadow-md'}`}>Freshland</span>
+            <span className={`text-[22px] font-sans font-extrabold leading-none tracking-wide transition-colors duration-300 ${showSolid ? 'text-gray-200' : 'text-[#ffffff] drop-shadow-md'}`}>Freshland</span>
             <span className={`text-[11px] font-sans leading-tight tracking-[0.25em] mt-1 transition-colors duration-300 ${showSolid ? 'text-brand-500 font-semibold' : 'text-[#ffffff]/90 font-medium drop-shadow-md'}`}>HOTELS</span>
           </div>
         </Link>
@@ -68,34 +68,34 @@ const Navbar = () => {
               to={link.path}
               className={`text-sm tracking-widest uppercase transition-all duration-300 ${
                 showSolid 
-                  ? (location.pathname === link.path ? 'text-brand-500 font-bold' : 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400') 
-                  : (location.pathname === link.path ? 'text-white font-bold drop-shadow-md' : 'text-white/90 hover:text-white drop-shadow-sm')
+                  ? (location.pathname === link.path ? 'text-brand-500 font-bold' : 'text-gray-200 hover:text-brand-400') 
+                  : (location.pathname === link.path ? 'text-[#ffffff] font-bold drop-shadow-md' : 'text-[#ffffff]/90 hover:text-[#ffffff] drop-shadow-sm')
               }`}
             >
               {link.name}
             </Link>
           ))}
           {user ? (
-            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-300/30">
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-600">
               <Link 
                 to={user.role === 'guest' ? '/guest' : getDefaultAdminRoute(user.role, hasAccess)} 
-                className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400' : 'text-white/90 hover:text-white'}`}
+                className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-gray-200 hover:text-brand-400' : 'text-[#ffffff]/90 hover:text-[#ffffff]'}`}
               >
                 Portal
               </Link>
-              <button onClick={logout} className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-red-500 hover:text-red-600' : 'text-red-400 hover:text-red-300'}`}>
+              <button onClick={logout} className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-red-400 hover:text-red-300' : 'text-red-400 hover:text-red-300'}`}>
                 Logout
               </button>
             </div>
           ) : (
             <Link 
               to="/login" 
-              className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ml-4 pl-4 border-l border-gray-300/30 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400' : 'text-white/90 hover:text-white'}`}
+              className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ml-4 pl-4 border-l border-gray-600 ${showSolid ? 'text-gray-200 hover:text-brand-400' : 'text-[#ffffff]/90 hover:text-[#ffffff]'}`}
             >
               Login
             </Link>
           )}
-          <Link to="/booking" className="btn-primary ml-6 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50">
+          <Link to="/booking" className={`btn-primary ml-6 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 ${showSolid ? 'text-[#ffffff]' : 'text-[#ffffff]'}`}>
             Book Now
           </Link>
         </nav>
