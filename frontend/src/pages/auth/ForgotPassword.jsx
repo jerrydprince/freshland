@@ -57,11 +57,11 @@ const ForgotPassword = () => {
         </div>
       ) : (
         <form onSubmit={handleResetRequest} className="space-y-4">
-          <p className="text-gray-400 text-sm mb-4 leading-relaxed text-center">
+          <p className="text-gray-200 text-sm mb-4 leading-relaxed text-center">
             Enter your email address below, and we will send you a secure link to reset your account password.
           </p>
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+            <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
             <input 
               type="email" 
               value={email}
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
           </button>
           
           <div className="mt-8 pt-6 border-t border-dark-700 text-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-200 text-sm">
               Remembered your password? <Link to="/login" className="text-gold-500 hover:underline">Sign in here</Link>
             </p>
           </div>

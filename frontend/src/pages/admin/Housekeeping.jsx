@@ -256,8 +256,8 @@ const AdminHousekeeping = () => {
       case 'reported': return 'bg-red-500/20 text-red-400 border border-red-500/30';
       case 'in_progress': return 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
       case 'resolved': return 'bg-green-500/20 text-green-400 border border-green-500/30';
-      case 'closed': return 'bg-dark-700 text-gray-400 border border-dark-600';
-      default: return 'bg-dark-700 text-gray-400';
+      case 'closed': return 'bg-dark-700 text-gray-200 border border-dark-600';
+      default: return 'bg-dark-700 text-gray-200';
     }
   };
 
@@ -268,7 +268,7 @@ const AdminHousekeeping = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Sparkles className="text-brand-500"/> Housekeeping & Maintenance
           </h1>
-          <p className="text-gray-400 mt-1">Manage cleaning schedules, assign staff, and track maintenance issues.</p>
+          <p className="text-gray-200 mt-1">Manage cleaning schedules, assign staff, and track maintenance issues.</p>
         </div>
         <div className="flex gap-3 mt-4 md:mt-0">
           {hasAccess('Store Keeping - Log Requisitions') && (
@@ -277,10 +277,10 @@ const AdminHousekeeping = () => {
             </button>
           )}
           <div className="flex bg-dark-700 rounded p-1 mr-2">
-            <button onClick={() => setViewMode('card')} className={`p-1.5 rounded ${viewMode === 'card' ? 'bg-dark-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setViewMode('card')} className={`p-1.5 rounded ${viewMode === 'card' ? 'bg-dark-600 text-white' : 'text-gray-200 hover:text-white'}`}>
               <LayoutGrid size={18} />
             </button>
-            <button onClick={() => setViewMode('list')} className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-dark-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setViewMode('list')} className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-dark-600 text-white' : 'text-gray-200 hover:text-white'}`}>
               <List size={18} />
             </button>
           </div>
@@ -306,13 +306,13 @@ const AdminHousekeeping = () => {
       <div className="flex gap-4 border-b border-dark-700">
         <button 
           onClick={() => setActiveTab('housekeeping')} 
-          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'housekeeping' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'housekeeping' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Sparkles size={18} /> Cleaning Schedules
         </button>
         <button 
           onClick={() => setActiveTab('maintenance')} 
-          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'maintenance' ? 'border-red-500 text-red-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'maintenance' ? 'border-red-500 text-red-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Wrench size={18} /> Maintenance Board
         </button>
@@ -320,7 +320,7 @@ const AdminHousekeeping = () => {
 
       <div className="bg-dark-900 border border-dark-700 shadow-sm rounded-lg min-h-[500px]">
         {loading ? (
-          <div className="p-12 text-center text-gray-500 flex flex-col items-center">
+          <div className="p-12 text-center text-gray-300 flex flex-col items-center">
             <div className="w-8 h-8 border-4 border-brand-500 border-t-transparent rounded-full animate-spin mb-4"></div>
             Loading schedules...
           </div>
@@ -331,19 +331,19 @@ const AdminHousekeeping = () => {
                   <table className="w-full text-left border-collapse whitespace-nowrap">
                     <thead>
                       <tr className="bg-dark-800 border-b border-dark-700">
-                        <th className="p-4 text-gray-400 font-medium">Room</th>
-                        <th className="p-4 text-gray-400 font-medium">Task Type</th>
-                        <th className="p-4 text-gray-400 font-medium">Assigned To</th>
-                        <th className="p-4 text-gray-400 font-medium">Date</th>
-                        <th className="p-4 text-gray-400 font-medium">Status</th>
-                        <th className="p-4 text-gray-400 font-medium text-right">Action</th>
+                        <th className="p-4 text-gray-200 font-medium">Room</th>
+                        <th className="p-4 text-gray-200 font-medium">Task Type</th>
+                        <th className="p-4 text-gray-200 font-medium">Assigned To</th>
+                        <th className="p-4 text-gray-200 font-medium">Date</th>
+                        <th className="p-4 text-gray-200 font-medium">Status</th>
+                        <th className="p-4 text-gray-200 font-medium text-right">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {tasks.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-500">No cleaning tasks scheduled.</td></tr>}
+                      {tasks.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-300">No cleaning tasks scheduled.</td></tr>}
                       {tasks.map(task => (
                         <tr key={task.id} className="border-b border-dark-700 hover:bg-dark-800/50 transition-colors">
-                          <td className="p-4 font-bold text-white">Room {task.rooms?.room_number} <span className="text-gray-500 font-normal ml-1">- {task.rooms?.name}</span></td>
+                          <td className="p-4 font-bold text-white">Room {task.rooms?.room_number} <span className="text-gray-300 font-normal ml-1">- {task.rooms?.name}</span></td>
                           <td className="p-4 text-sm text-gray-300 capitalize">{task.task_type.replace('_', ' ')}</td>
                           <td className="p-4 text-sm">
                             {task.profiles ? `${task.profiles.first_name} ${task.profiles.last_name}` : <span className="text-yellow-500/70 italic">Unassigned</span>}
@@ -351,7 +351,7 @@ const AdminHousekeeping = () => {
                               <button onClick={() => { setActiveAssignTask(task); setIsAssignModalOpen(true); }} className="ml-3 text-xs text-brand-500 hover:text-brand-400 font-medium">Change</button>
                             )}
                           </td>
-                          <td className="p-4 text-sm text-gray-400">{task.assigned_date}</td>
+                          <td className="p-4 text-sm text-gray-200">{task.assigned_date}</td>
                           <td className="p-4">
                             <span className={`px-2 py-1 text-xs rounded uppercase font-bold tracking-wider ${getStatusColor(task.status)}`}>{task.status}</span>
                             {task.status === 'failed' && <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold animate-pulse">NOT APPROVED</span>}
@@ -367,7 +367,7 @@ const AdminHousekeeping = () => {
                                   updateTaskStatus(task.id, 'cleaning');
                                 }} 
                                 disabled={!task.housekeeper_id}
-                                className={`font-medium ${!task.housekeeper_id ? 'text-gray-500 cursor-not-allowed opacity-50' : 'text-brand-500 hover:text-brand-400'}`}
+                                className={`font-medium ${!task.housekeeper_id ? 'text-gray-300 cursor-not-allowed opacity-50' : 'text-brand-500 hover:text-brand-400'}`}
                                 title={!task.housekeeper_id ? "Assign staff first" : ""}
                               >
                                 {task.status === 'failed' ? 'Restart' : 'Start'}
@@ -385,22 +385,22 @@ const AdminHousekeeping = () => {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {tasks.length === 0 && <div className="col-span-3 text-center text-gray-500 py-12">No cleaning tasks scheduled.</div>}
+                  {tasks.length === 0 && <div className="col-span-3 text-center text-gray-300 py-12">No cleaning tasks scheduled.</div>}
                   {tasks.map(task => (
                     <div key={task.id} className="bg-dark-800 border border-dark-700 rounded-lg p-5 flex flex-col justify-between hover:border-gray-600 transition-colors">
                       <div>
                         <div className="flex justify-between items-start mb-3">
                           <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                            Room {task.rooms?.room_number} <span className="text-sm text-gray-400 font-normal truncate max-w-[120px]">- {task.rooms?.name}</span>
+                            Room {task.rooms?.room_number} <span className="text-sm text-gray-200 font-normal truncate max-w-[120px]">- {task.rooms?.name}</span>
                           </h3>
                           <span className={`px-2 py-1 text-xs rounded uppercase font-bold tracking-wider ${getStatusColor(task.status)}`}>
                             {task.status}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-400 mb-2 capitalize bg-dark-900 inline-block px-2 py-1 rounded border border-dark-700">
+                        <p className="text-sm text-gray-200 mb-2 capitalize bg-dark-900 inline-block px-2 py-1 rounded border border-dark-700">
                           {task.task_type.replace('_', ' ')}
                         </p>
-                        <div className="space-y-1 mt-4 text-sm text-gray-400">
+                        <div className="space-y-1 mt-4 text-sm text-gray-200">
                           <p className="flex items-center gap-2"><CalendarIcon size={14}/> {task.assigned_date}</p>
                           <p className="flex items-center justify-between gap-2">
                             <span className="flex items-center gap-2"><User size={14}/> {task.profiles ? `${task.profiles.first_name} ${task.profiles.last_name}` : <span className="text-yellow-500/70 italic">Unassigned</span>}</span>
@@ -432,7 +432,7 @@ const AdminHousekeeping = () => {
                             disabled={!task.housekeeper_id}
                             className={`w-full py-2 text-sm rounded transition-all ${
                               !task.housekeeper_id 
-                                ? 'bg-dark-750 text-gray-500 cursor-not-allowed opacity-50 border border-dark-700' 
+                                ? 'bg-dark-750 text-gray-300 cursor-not-allowed opacity-50 border border-dark-700' 
                                 : 'btn-primary'
                             }`}
                             title={!task.housekeeper_id ? "Assign staff first" : ""}
@@ -442,8 +442,8 @@ const AdminHousekeeping = () => {
                         )}
                         {task.status === 'cleaning' && <button onClick={() => updateTaskStatus(task.id, 'cleaned')} className="w-full btn-primary py-2 text-sm mt-2">Mark as Cleaned</button>}
                         {task.status === 'cleaned' && isManager && <button onClick={() => setActiveInspection(task.id)} className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 rounded text-sm transition-colors flex items-center justify-center gap-2"><ListChecks size={16}/> Perform Inspection</button>}
-                        {task.status === 'cleaned' && !isManager && <p className="text-center text-gray-500 text-sm font-medium flex items-center justify-center gap-2"><Clock size={16} className="text-purple-400"/> Awaiting Manager Inspection</p>}
-                        {task.status === 'inspected' && <p className="text-center text-gray-500 text-sm font-medium flex items-center justify-center gap-2"><CheckCircle size={16} className="text-green-500"/> Completed & Ready</p>}
+                        {task.status === 'cleaned' && !isManager && <p className="text-center text-gray-300 text-sm font-medium flex items-center justify-center gap-2"><Clock size={16} className="text-purple-400"/> Awaiting Manager Inspection</p>}
+                        {task.status === 'inspected' && <p className="text-center text-gray-300 text-sm font-medium flex items-center justify-center gap-2"><CheckCircle size={16} className="text-green-500"/> Completed & Ready</p>}
                       </div>
                     </div>
                   ))}
@@ -457,19 +457,19 @@ const AdminHousekeeping = () => {
                 <table className="w-full text-left border-collapse whitespace-nowrap">
                   <thead>
                     <tr className="bg-dark-800 border-b border-dark-700">
-                      <th className="p-4 text-gray-400 font-medium">Room</th>
-                      <th className="p-4 text-gray-400 font-medium">Priority</th>
-                      <th className="p-4 text-gray-400 font-medium">Category / Issue</th>
-                      <th className="p-4 text-gray-400 font-medium">Reported</th>
-                      <th className="p-4 text-gray-400 font-medium">Status</th>
-                      <th className="p-4 text-gray-400 font-medium text-right">Action</th>
+                      <th className="p-4 text-gray-200 font-medium">Room</th>
+                      <th className="p-4 text-gray-200 font-medium">Priority</th>
+                      <th className="p-4 text-gray-200 font-medium">Category / Issue</th>
+                      <th className="p-4 text-gray-200 font-medium">Reported</th>
+                      <th className="p-4 text-gray-200 font-medium">Status</th>
+                      <th className="p-4 text-gray-200 font-medium text-right">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {tickets.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-500">All systems green. No open tickets.</td></tr>}
+                    {tickets.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-300">All systems green. No open tickets.</td></tr>}
                     {tickets.map(ticket => (
                       <tr key={ticket.id} className="border-b border-dark-700 hover:bg-dark-800/50 transition-colors">
-                        <td className="p-4 font-bold text-white">RM {ticket.rooms?.room_number} <span className="text-gray-500 font-normal ml-1">- {ticket.rooms?.name}</span></td>
+                        <td className="p-4 font-bold text-white">RM {ticket.rooms?.room_number} <span className="text-gray-300 font-normal ml-1">- {ticket.rooms?.name}</span></td>
                         <td className="p-4">
                           <span className={`flex w-fit items-center gap-1 text-xs font-bold uppercase px-2 py-1 rounded ${ticket.priority === 'critical' ? 'bg-red-500/20 text-red-500' : ticket.priority === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-yellow-500/20 text-yellow-500'}`}>
                             <AlertTriangle size={12} /> {ticket.priority}
@@ -477,9 +477,9 @@ const AdminHousekeeping = () => {
                         </td>
                         <td className="p-4">
                           <p className="text-gray-300 font-medium mb-1">{ticket.issue_category}</p>
-                          <p className="text-xs text-gray-500 truncate max-w-[200px]">{ticket.description}</p>
+                          <p className="text-xs text-gray-300 truncate max-w-[200px]">{ticket.description}</p>
                         </td>
-                        <td className="p-4 text-sm text-gray-400">
+                        <td className="p-4 text-sm text-gray-200">
                           {new Date(ticket.created_at).toLocaleString()}
                           {getSLAWarning(ticket.created_at, ticket.status)}
                         </td>
@@ -493,7 +493,7 @@ const AdminHousekeeping = () => {
                               {ticket.status === 'in_progress' && <button onClick={() => setActiveResolution(ticket.id)} className="text-green-500 hover:text-green-400 font-medium text-sm">Mark Resolved</button>}
                             </>
                           ) : (
-                            <span className="text-xs text-gray-500 italic">Awaiting Tech Dispatch</span>
+                            <span className="text-xs text-gray-300 italic">Awaiting Tech Dispatch</span>
                           )}
                         </td>
                       </tr>
@@ -503,13 +503,13 @@ const AdminHousekeeping = () => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {tickets.length === 0 && <div className="col-span-2 text-center text-gray-500 py-12">All systems green. No open tickets.</div>}
+                {tickets.length === 0 && <div className="col-span-2 text-center text-gray-300 py-12">All systems green. No open tickets.</div>}
                 {tickets.map(ticket => (
                   <div key={ticket.id} className="bg-dark-800 border border-dark-700 rounded-lg p-5 flex flex-col justify-between hover:border-gray-600 transition-colors">
                     <div>
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="bg-dark-900 border border-dark-700 text-white px-2 py-1 rounded text-sm font-bold">RM {ticket.rooms?.room_number} <span className="text-gray-400 font-normal ml-1">- {ticket.rooms?.name}</span></span>
+                          <span className="bg-dark-900 border border-dark-700 text-white px-2 py-1 rounded text-sm font-bold">RM {ticket.rooms?.room_number} <span className="text-gray-200 font-normal ml-1">- {ticket.rooms?.name}</span></span>
                           <span className={`flex items-center gap-1 text-xs font-bold uppercase px-2 py-1 rounded ${ticket.priority === 'critical' ? 'bg-red-500/20 text-red-500' : ticket.priority === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-yellow-500/20 text-yellow-500'}`}>
                             <AlertTriangle size={14} /> {ticket.priority}
                           </span>
@@ -522,9 +522,9 @@ const AdminHousekeeping = () => {
                         {ticket.issue_category} 
                         {getSLAWarning(ticket.created_at, ticket.status)}
                       </p>
-                      <p className="text-sm text-gray-500">{ticket.description}</p>
+                      <p className="text-sm text-gray-300">{ticket.description}</p>
                       
-                      <div className="text-xs text-gray-500 mt-4 flex items-center gap-1">
+                      <div className="text-xs text-gray-300 mt-4 flex items-center gap-1">
                         <Clock size={12}/> Reported: {new Date(ticket.created_at).toLocaleString()}
                       </div>
 
@@ -543,7 +543,7 @@ const AdminHousekeeping = () => {
                           {ticket.status === 'in_progress' && <button onClick={() => setActiveResolution(ticket.id)} className="bg-green-500 hover:bg-green-600 text-white py-1.5 px-4 rounded text-sm font-medium transition-colors">Mark Resolved</button>}
                         </>
                       ) : (
-                        <span className="text-xs text-gray-500 font-semibold italic flex items-center gap-1">
+                        <span className="text-xs text-gray-300 font-semibold italic flex items-center gap-1">
                           <Clock size={12} /> Awaiting Technical Repair
                         </span>
                       )}
@@ -560,9 +560,9 @@ const AdminHousekeeping = () => {
       {activeInspection && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-md shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setActiveInspection(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setActiveInspection(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2"><ListChecks className="text-brand-500"/> Manager Inspection</h2>
-            <p className="text-sm text-gray-400 mb-6">Verify the room meets all cleanliness standards before making it available.</p>
+            <p className="text-sm text-gray-200 mb-6">Verify the room meets all cleanliness standards before making it available.</p>
             
             <div className="space-y-3 mb-8">
               {Object.keys(checklist).map(key => (
@@ -591,15 +591,15 @@ const AdminHousekeeping = () => {
       {activeResolution && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-md shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setActiveResolution(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setActiveResolution(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Wrench className="text-green-500"/> Resolve Ticket</h2>
             
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Resolution Notes</label>
+                <label className="block text-sm font-medium text-gray-200 mb-2">Resolution Notes</label>
                 <textarea required rows="4" value={resolutionNotes} onChange={e => setResolutionNotes(e.target.value)} className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-brand-500 transition-colors" placeholder="What was fixed? (e.g., Replaced AC filter and recharged freon)"></textarea>
               </div>
-              <button onClick={handleResolveTicket} disabled={!resolutionNotes} className={`w-full py-3 rounded font-bold transition-colors ${resolutionNotes ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-dark-700 text-gray-500 cursor-not-allowed'}`}>
+              <button onClick={handleResolveTicket} disabled={!resolutionNotes} className={`w-full py-3 rounded font-bold transition-colors ${resolutionNotes ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-dark-700 text-gray-300 cursor-not-allowed'}`}>
                 Mark as Resolved
               </button>
             </div>
@@ -612,18 +612,18 @@ const AdminHousekeeping = () => {
       {isTaskModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsTaskModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setIsTaskModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Sparkles className="text-brand-500"/> {newTask.task_type === 'deep_cleaning' ? 'Schedule Deep Clean' : 'Assign Task'}</h2>
             <form onSubmit={handleSaveTask} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Room</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Room</label>
                 <select required value={newTask.room_id} onChange={e => setNewTask({...newTask, room_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="">Select Room</option>
                   {rooms.map(r => <option key={r.id} value={r.id}>{r.room_number} - {r.name}</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Task Type</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Task Type</label>
                 <select value={newTask.task_type} onChange={e => setNewTask({...newTask, task_type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="checkout_cleaning">Checkout Cleaning</option>
                   <option value="daily_refresh">Daily Refresh</option>
@@ -631,7 +631,7 @@ const AdminHousekeeping = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Assign To (Optional)</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Assign To (Optional)</label>
                 <select value={newTask.housekeeper_id} onChange={e => setNewTask({...newTask, housekeeper_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="">Unassigned</option>
                   {(() => {
@@ -665,11 +665,11 @@ const AdminHousekeeping = () => {
       {isAssignModalOpen && activeAssignTask && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => {setIsAssignModalOpen(false); setActiveAssignTask(null);}} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => {setIsAssignModalOpen(false); setActiveAssignTask(null);}} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><User className="text-brand-500"/> Assign Staff</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Select Housekeeper</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Select Housekeeper</label>
                 <select 
                   defaultValue={activeAssignTask.housekeeper_id || ''}
                   onChange={e => handleAssignTask(activeAssignTask.id, e.target.value)} 
@@ -706,18 +706,18 @@ const AdminHousekeeping = () => {
       {isTicketModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsTicketModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setIsTicketModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Wrench className="text-red-500"/> Report Issue</h2>
             <form onSubmit={handleSaveTicket} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Room</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Room</label>
                 <select required value={newTicket.room_id} onChange={e => setNewTicket({...newTicket, room_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="">Select Room</option>
                   {rooms.map(r => <option key={r.id} value={r.id}>{r.room_number}</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Issue Category</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Issue Category</label>
                 <select value={newTicket.issue_category} onChange={e => setNewTicket({...newTicket, issue_category: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="Plumbing">Plumbing</option>
                   <option value="Electrical">Electrical</option>
@@ -727,7 +727,7 @@ const AdminHousekeeping = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Priority</label>
                 <select value={newTicket.priority} onChange={e => setNewTicket({...newTicket, priority: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
@@ -736,7 +736,7 @@ const AdminHousekeeping = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Description</label>
                 <textarea required rows="3" value={newTicket.description} onChange={e => setNewTicket({...newTicket, description: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" placeholder="Describe the issue..."></textarea>
               </div>
               <button type="submit" className="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-3 rounded mt-6 transition-colors">Submit Ticket</button>

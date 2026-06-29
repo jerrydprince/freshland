@@ -88,7 +88,7 @@ const RoomDetails = () => {
     }
   };
 
-  if (loading) return <div className="min-h-screen pt-32 text-center text-gray-500">Loading details...</div>;
+  if (loading) return <div className="min-h-screen pt-32 text-center text-gray-300">Loading details...</div>;
   if (!room) return <div className="min-h-screen pt-32 text-center text-red-500">Room not found.</div>;
 
   const images = extended.images && extended.images.length > 0 ? extended.images : [room.image_url];
@@ -102,7 +102,7 @@ const RoomDetails = () => {
   return (
     <div className="pt-24 min-h-screen bg-dark-900 pb-24">
       <div className="container mx-auto px-6">
-        <Link to="/" className="inline-flex items-center text-gray-500 hover:text-brand-500 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-gray-300 hover:text-brand-500 mb-8 transition-colors">
           <ArrowLeft size={18} className="mr-2" /> Back to Residences
         </Link>
 
@@ -164,15 +164,15 @@ const RoomDetails = () => {
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{room.name}</h1>
               
-              <div className="flex flex-wrap gap-6 mb-8 text-sm text-gray-400 border-b border-dark-700 pb-8">
-                <div className="flex items-center gap-2"><Users size={18} className="text-gray-400" /> Up to {room.capacity} Guests</div>
-                <div className="flex items-center gap-2"><Maximize size={18} className="text-gray-400" /> {room.size_sqm} Square Meters</div>
-                <div className="flex items-center gap-2"><Info size={18} className="text-gray-400" /> Room {room.room_number}</div>
+              <div className="flex flex-wrap gap-6 mb-8 text-sm text-gray-200 border-b border-dark-700 pb-8">
+                <div className="flex items-center gap-2"><Users size={18} className="text-gray-200" /> Up to {room.capacity} Guests</div>
+                <div className="flex items-center gap-2"><Maximize size={18} className="text-gray-200" /> {room.size_sqm} Square Meters</div>
+                <div className="flex items-center gap-2"><Info size={18} className="text-gray-200" /> Room {room.room_number}</div>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-xl font-semibold mb-4">About this residence</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   {extended.text || "Experience unparalleled comfort in this meticulously designed space. Every detail has been crafted to ensure a seamless blend of luxury and functionality for your perfect stay."}
                 </p>
               </div>
@@ -185,7 +185,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <BedDouble className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Bedding</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Bedding</span>
                       <span className="text-sm font-semibold text-white">
                         {extended.bed_configuration || room.bed_type || '1 King Bed'}
                       </span>
@@ -196,7 +196,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <Layers className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Floor Level</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Floor Level</span>
                       <span className="text-sm font-semibold text-white">
                         {room.floor ? `Floor ${room.floor}` : 'Ground Floor'}
                       </span>
@@ -207,7 +207,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <Calendar className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Stay Duration</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Stay Duration</span>
                       <span className="text-sm font-semibold text-white">
                         {room.min_stay_days || 1} { (room.min_stay_days || 1) === 1 ? 'Night' : 'Nights' } Min
                       </span>
@@ -218,7 +218,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <Users className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Max Guests</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Max Guests</span>
                       <span className="text-sm font-semibold text-white">
                         {room.max_occupancy || room.capacity || 2} Guests
                       </span>
@@ -229,7 +229,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <Clock className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Pricing Model</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Pricing Model</span>
                       <span className="text-sm font-semibold text-white capitalize">
                         {room.pricing_model ? room.pricing_model.replace('_', ' ') : 'Per Night'}
                       </span>
@@ -240,7 +240,7 @@ const RoomDetails = () => {
                   <div className="bg-dark-900 p-4 border border-dark-700 rounded flex items-start gap-3">
                     <ShieldCheck className="text-brand-500 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider">Instant Booking</span>
+                      <span className="block text-xs text-gray-300 uppercase tracking-wider">Instant Booking</span>
                       <span className="text-sm font-semibold text-white">
                         Available
                       </span>
@@ -251,7 +251,7 @@ const RoomDetails = () => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">Premium Residence Amenities</h3>
-                <p className="text-sm text-gray-400 mb-6">
+                <p className="text-sm text-gray-200 mb-6">
                   This residence comes equipped with a selection of premium, hand-picked amenities and features designed to elevate your stay.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -272,7 +272,7 @@ const RoomDetails = () => {
                       </motion.div>
                     ))
                   ) : (
-                    <div className="col-span-full text-sm text-gray-500 italic">
+                    <div className="col-span-full text-sm text-gray-300 italic">
                       Standard premium residence services and utilities included.
                     </div>
                   )}
@@ -286,7 +286,7 @@ const RoomDetails = () => {
                 <h3 className="text-lg font-semibold text-white mb-6 border-b border-dark-700 pb-4">Reservation Summary</h3>
                 
                 <div className="space-y-4 mb-6">
-                  <div className="flex justify-between text-gray-400">
+                  <div className="flex justify-between text-gray-200">
                     <span>Base Rate / Night</span>
                     <span>₦{basePrice.toLocaleString()}</span>
                   </div>
@@ -298,7 +298,7 @@ const RoomDetails = () => {
                     </div>
                   )}
                   
-                  <div className="flex justify-between text-gray-400">
+                  <div className="flex justify-between text-gray-200">
                     <span>Taxes & Fees ({tax}%)</span>
                     <span>+ ₦{(discountedPrice * (tax/100)).toLocaleString()}</span>
                   </div>
@@ -315,7 +315,7 @@ const RoomDetails = () => {
                   Proceed to Booking
                 </Link>
                 
-                <p className="text-center text-xs text-gray-500 mt-4">
+                <p className="text-center text-xs text-gray-300 mt-4">
                   You won't be charged yet. You can add extra services on the next page.
                 </p>
               </div>

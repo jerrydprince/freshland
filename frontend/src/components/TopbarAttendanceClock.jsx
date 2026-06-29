@@ -236,7 +236,7 @@ const TopbarAttendanceClock = () => {
               <div className="flex justify-between items-center border-b border-dark-700/50 pb-3">
                 <div>
                   <h4 className="font-bold text-white text-base">Shift Attendance</h4>
-                  <p className="text-xs text-gray-400 font-mono mt-0.5">
+                  <p className="text-xs text-gray-200 font-mono mt-0.5">
                     {format(currentTime, 'eee, MMM dd, yyyy')}
                   </p>
                 </div>
@@ -244,7 +244,7 @@ const TopbarAttendanceClock = () => {
                   <p className="text-lg font-mono font-bold text-brand-500 leading-none">
                     {format(currentTime, 'HH:mm:ss')}
                   </p>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold mt-1">Local Time</p>
+                  <p className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold mt-1">Local Time</p>
                 </div>
               </div>
 
@@ -263,7 +263,7 @@ const TopbarAttendanceClock = () => {
                     <Clock size={20} />
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400 block leading-none mb-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-gray-200 block leading-none mb-1">
                       Current Shift Status
                     </span>
                     <span className="font-extrabold text-sm leading-none block">
@@ -275,11 +275,11 @@ const TopbarAttendanceClock = () => {
                 {activeShift && (
                   <div className="mt-3 pt-3 border-t border-emerald-500/10 grid grid-cols-2 gap-2 text-xs text-gray-300">
                     <div>
-                      <span className="text-[10px] text-gray-500 block">Clocked In At</span>
+                      <span className="text-[10px] text-gray-300 block">Clocked In At</span>
                       <span className="font-bold text-white font-mono">{format(new Date(activeShift.clock_in), 'hh:mm a')}</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-gray-500 block">Elapsed Time</span>
+                      <span className="text-[10px] text-gray-300 block">Elapsed Time</span>
                       <span className="font-bold text-emerald-400 font-mono flex items-center gap-1">
                         <Timer size={12} /> {elapsed || '00:00:00'}
                       </span>
@@ -290,7 +290,7 @@ const TopbarAttendanceClock = () => {
 
               {/* Note / Memo Input */}
               <div className="space-y-1.5">
-                <label className="text-xs text-gray-400 flex items-center gap-1.5">
+                <label className="text-xs text-gray-200 flex items-center gap-1.5">
                   <FileText size={12} className="text-brand-500" />
                   <span>Shift Notes / Memo (Optional)</span>
                 </label>

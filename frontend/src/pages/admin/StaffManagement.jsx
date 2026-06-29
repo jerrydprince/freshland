@@ -526,7 +526,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-200">
             Showing <span className="font-semibold text-white">{((currentPage - 1) * pageSize) + 1}</span> to{' '}
             <span className="font-semibold text-white">
               {Math.min(currentPage * pageSize, totalItems)}
@@ -540,7 +540,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === 1}
               onClick={() => onPageChange(currentPage - 1)}
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Previous</span>
               &larr;
@@ -563,7 +563,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === totalPages}
               onClick={() => onPageChange(currentPage + 1)}
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Next</span>
               &rarr;
@@ -1955,7 +1955,7 @@ const AdminStaffManagement = () => {
       const publicKeyOptions = {
         challenge: challenge,
         rp: {
-          name: "Jemmyland Hotels PMS",
+          name: "Freshland PMS",
           id: window.location.hostname || "localhost"
         },
         user: {
@@ -2523,7 +2523,7 @@ const AdminStaffManagement = () => {
 
   const getRoleBadge = (roleId) => {
     const role = allRoles.find(r => r.id === roleId);
-    if (!role) return <span className="bg-gray-500/10 text-gray-500 px-2 py-1 rounded text-xs font-bold uppercase">{roleId.replace('_', ' ')}</span>;
+    if (!role) return <span className="bg-gray-500/10 text-gray-300 px-2 py-1 rounded text-xs font-bold uppercase">{roleId.replace('_', ' ')}</span>;
     return <span className={`${role.color} px-2 py-1 rounded text-xs font-bold uppercase tracking-wider`}>{role.label}</span>;
   };
 
@@ -2534,35 +2534,35 @@ const AdminStaffManagement = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Shield className="text-brand-500"/> Staff & Role Management
           </h1>
-          <p className="text-gray-400 mt-1">Manage personnel, track attendance, and enforce dynamic access controls.</p>
+          <p className="text-gray-200 mt-1">Manage personnel, track attendance, and enforce dynamic access controls.</p>
         </div>
       </div>
 
       <div className="flex gap-4 border-b border-dark-700 mb-6 overflow-x-auto">
         {hasAccess('Staff & Roles') && (
           <>
-            <button onClick={() => setActiveTab('directory')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'directory' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setActiveTab('directory')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'directory' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
               <Users size={18} /> Staff Directory
             </button>
-            <button onClick={() => setActiveTab('attendance')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'attendance' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setActiveTab('attendance')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'attendance' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
               <Clock size={18} /> Attendance
             </button>
-            <button onClick={() => { setActiveTab('shift_audits'); setSelectedShiftAudit(null); }} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'shift_audits' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+            <button onClick={() => { setActiveTab('shift_audits'); setSelectedShiftAudit(null); }} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'shift_audits' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
               <Fingerprint size={18} /> Shift Audits
             </button>
           </>
         )}
         {(hasAccess('Staff & Roles') || hasAccess('Leave & Absences - Request Leave of Absence') || hasAccess('Leave & Absences - Review Leave Applications')) && (
-          <button onClick={() => setActiveTab('leave')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'leave' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('leave')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'leave' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <CalendarClock size={18} /> Leave & Absences
           </button>
         )}
         {hasAccess('Staff & Roles') && (
           <>
-            <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
               <Activity size={18} /> Activity Logs
             </button>
-            <button onClick={() => setActiveTab('matrix')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'matrix' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+            <button onClick={() => setActiveTab('matrix')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'matrix' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
               <Shield size={18} /> Permission Matrix
             </button>
           </>
@@ -2570,7 +2570,7 @@ const AdminStaffManagement = () => {
       </div>
 
       {loading ? (
-        <div className="py-20 text-center text-gray-500">Loading module data...</div>
+        <div className="py-20 text-center text-gray-300">Loading module data...</div>
       ) : (
         <>
           {activeTab === 'shift_audits' && hasAccess('Staff & Roles') && (
@@ -2581,7 +2581,7 @@ const AdminStaffManagement = () => {
                 <div className="p-4 border-b border-dark-700 bg-dark-900 flex justify-between items-center">
                   <h3 className="font-bold text-white text-base">Historical Shift Logs</h3>
                   <div className="relative w-44">
-                    <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
+                    <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-200" size={14} />
                     <input 
                       type="text" 
                       placeholder="Search employee..." 
@@ -2620,28 +2620,28 @@ const AdminStaffManagement = () => {
                               <h4 className="font-bold text-white text-sm">
                                 {a.profiles?.first_name} {a.profiles?.last_name}
                               </h4>
-                              <p className="text-[10px] bg-dark-950 border border-dark-800 text-gray-400 px-2 py-0.5 mt-1 rounded capitalize w-fit font-bold font-mono">
+                              <p className="text-[10px] bg-dark-950 border border-dark-800 text-gray-200 px-2 py-0.5 mt-1 rounded capitalize w-fit font-bold font-mono">
                                 {a.profiles?.role?.replace(/_/g, ' ')}
                               </p>
                             </div>
                             
                             <div className="text-right flex flex-col items-end gap-1 select-none">
                               {a.clock_out ? (
-                                <span className="bg-dark-950 border border-dark-800 text-[9px] font-black text-gray-400 px-2 py-0.5 rounded-md">COMPLETED</span>
+                                <span className="bg-dark-950 border border-dark-800 text-[9px] font-black text-gray-200 px-2 py-0.5 rounded-md">COMPLETED</span>
                               ) : (
                                 <span className="bg-green-500/10 border border-green-500/20 text-[9px] font-black text-green-400 px-2 py-0.5 rounded-md animate-pulse">ON-SHIFT</span>
                               )}
-                              <span className="text-[10px] text-gray-500 font-mono mt-0.5">{durationStr}</span>
+                              <span className="text-[10px] text-gray-300 font-mono mt-0.5">{durationStr}</span>
                             </div>
                           </div>
                           
-                          <div className="grid grid-cols-2 gap-4 mt-3 border-t border-dark-800/60 pt-2.5 text-[10px] text-gray-400 font-mono">
+                          <div className="grid grid-cols-2 gap-4 mt-3 border-t border-dark-800/60 pt-2.5 text-[10px] text-gray-200 font-mono">
                             <div>
-                              <span className="block text-gray-500 uppercase font-sans font-bold">In:</span>
+                              <span className="block text-gray-300 uppercase font-sans font-bold">In:</span>
                               <span className="text-gray-300 font-semibold">{format(new Date(a.clock_in), 'MMM dd, HH:mm')}</span>
                             </div>
                             <div className="text-right">
-                              <span className="block text-gray-500 uppercase font-sans font-bold">Out:</span>
+                              <span className="block text-gray-300 uppercase font-sans font-bold">Out:</span>
                               <span className="text-gray-300 font-semibold">{a.clock_out ? format(new Date(a.clock_out), 'MMM dd, HH:mm') : 'Active Session'}</span>
                             </div>
                           </div>
@@ -2662,7 +2662,7 @@ const AdminStaffManagement = () => {
                     <div className="p-4 border-b border-dark-700 bg-dark-900 flex justify-between items-center select-none print:hidden">
                       <div>
                         <h3 className="font-bold text-white text-base">Shift Handover Audit Report</h3>
-                        <p className="text-xs text-gray-400 mt-0.5">Compiled activities, system logs, and processed payments.</p>
+                        <p className="text-xs text-gray-200 mt-0.5">Compiled activities, system logs, and processed payments.</p>
                       </div>
                       <button 
                         type="button" 
@@ -2679,13 +2679,13 @@ const AdminStaffManagement = () => {
                       {/* Telemetry row */}
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-dark-900 border border-dark-700 p-4 rounded-xl">
-                          <span className="text-[10px] text-gray-500 font-black uppercase tracking-wider block">Cashier Shift Revenue</span>
+                          <span className="text-[10px] text-gray-300 font-black uppercase tracking-wider block">Cashier Shift Revenue</span>
                           <span className="text-2xl font-black text-green-400 font-mono mt-1.5 block">
                             ₦{auditShiftPayments.reduce((sum, p) => sum + Number(p.amount || 0), 0).toLocaleString()}
                           </span>
                         </div>
                         <div className="bg-dark-900 border border-dark-700 p-4 rounded-xl">
-                          <span className="text-[10px] text-gray-500 font-black uppercase tracking-wider block">Operational Shift Log Actions</span>
+                          <span className="text-[10px] text-gray-300 font-black uppercase tracking-wider block">Operational Shift Log Actions</span>
                           <span className="text-2xl font-black text-brand-400 font-mono mt-1.5 block">
                             {auditShiftLogs.length} Actions
                           </span>
@@ -2696,16 +2696,16 @@ const AdminStaffManagement = () => {
                       <div className="space-y-3">
                         <h4 className="font-bold text-white text-sm border-b border-dark-750 pb-2">Shift Inflows (Revenues Collected)</h4>
                         {loadingShiftAuditData ? (
-                          <div className="py-6 text-center text-xs text-gray-500">Retrieving shift payment records...</div>
+                          <div className="py-6 text-center text-xs text-gray-300">Retrieving shift payment records...</div>
                         ) : auditShiftPayments.length === 0 ? (
-                          <p className="text-gray-500 text-xs italic bg-dark-900 p-4 rounded-xl border border-dark-700">No payment transaction inflows completed by receptionist/POS cashiers during this shift.</p>
+                          <p className="text-gray-300 text-xs italic bg-dark-900 p-4 rounded-xl border border-dark-700">No payment transaction inflows completed by receptionist/POS cashiers during this shift.</p>
                         ) : (
                           <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar">
                             {auditShiftPayments.map(p => (
                               <div key={p.id} className="flex justify-between items-center p-3 bg-dark-900/60 border border-dark-700/60 rounded-xl text-xs">
                                 <div>
                                   <p className="font-bold text-white">{p.bookings ? p.bookings.guest_name : 'Direct Ledger Inflow'}</p>
-                                  <p className="text-[10px] text-gray-500 font-mono mt-1">Ref: {p.bookings ? p.bookings.booking_reference : 'LEDGER'} | Method: {p.method?.toUpperCase()}</p>
+                                  <p className="text-[10px] text-gray-300 font-mono mt-1">Ref: {p.bookings ? p.bookings.booking_reference : 'LEDGER'} | Method: {p.method?.toUpperCase()}</p>
                                 </div>
                                 <div className="text-right">
                                   <p className="font-mono font-bold text-white">₦{Number(p.amount).toLocaleString()}</p>
@@ -2721,14 +2721,14 @@ const AdminStaffManagement = () => {
                       <div className="space-y-3">
                         <h4 className="font-bold text-white text-sm border-b border-dark-750 pb-2">Shift Log Actions (Audited Logs)</h4>
                         {loadingShiftAuditData ? (
-                          <div className="py-6 text-center text-xs text-gray-500">Retrieving shift activity history...</div>
+                          <div className="py-6 text-center text-xs text-gray-300">Retrieving shift activity history...</div>
                         ) : auditShiftLogs.length === 0 ? (
-                          <p className="text-gray-500 text-xs italic bg-dark-900 p-4 rounded-xl border border-dark-700">No administrative or guest check-in activities logged during this shift.</p>
+                          <p className="text-gray-300 text-xs italic bg-dark-900 p-4 rounded-xl border border-dark-700">No administrative or guest check-in activities logged during this shift.</p>
                         ) : (
                           <div className="space-y-2 max-h-56 overflow-y-auto custom-scrollbar">
                             {auditShiftLogs.map(l => (
                               <div key={l.id} className="p-3 bg-dark-900/60 border border-dark-700/60 rounded-xl text-xs flex gap-3">
-                                <span className="text-gray-500 font-mono text-[10px] shrink-0 mt-0.5">{format(new Date(l.created_at), 'HH:mm')}</span>
+                                <span className="text-gray-300 font-mono text-[10px] shrink-0 mt-0.5">{format(new Date(l.created_at), 'HH:mm')}</span>
                                 <div>
                                   <p className="text-gray-300 font-medium leading-normal">{l.action}</p>
                                   <span className="text-[9px] bg-dark-950 border border-dark-800 text-brand-400 px-2 py-0.5 mt-1.5 rounded-md inline-block uppercase tracking-wider font-bold">{l.type}</span>
@@ -2749,20 +2749,20 @@ const AdminStaffManagement = () => {
                           <p className="text-xs text-gray-600">Shift ID: {selectedShiftAudit.id}</p>
                         </div>
                         <div className="text-right">
-                          <h2 className="text-base font-black tracking-widest text-black">Jemmyland Hotels</h2>
+                          <h2 className="text-base font-black tracking-widest text-black">Freshland</h2>
                           <p className="text-xs text-gray-600">Unified Auditing System</p>
                         </div>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-xs mb-8">
                         <div>
-                          <p className="text-gray-500 font-bold uppercase text-[9px] mb-1">Employee Profile:</p>
+                          <p className="text-gray-300 font-bold uppercase text-[9px] mb-1">Employee Profile:</p>
                           <p className="font-bold text-black text-sm">{selectedShiftAudit.profiles?.first_name} {selectedShiftAudit.profiles?.last_name}</p>
                           <p className="text-gray-600">Role: <span className="capitalize">{selectedShiftAudit.profiles?.role?.replace(/_/g, ' ')}</span></p>
                           <p className="text-gray-600">Email: {selectedShiftAudit.profiles?.email}</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 font-bold uppercase text-[9px] mb-1">Shift Duration:</p>
+                          <p className="text-gray-300 font-bold uppercase text-[9px] mb-1">Shift Duration:</p>
                           <p className="font-bold text-black text-sm">
                             {format(new Date(selectedShiftAudit.clock_in), 'MMM dd, yyyy, HH:mm')} to{' '}
                             {selectedShiftAudit.clock_out ? format(new Date(selectedShiftAudit.clock_out), 'MMM dd, yyyy, HH:mm') : 'Active Now'}
@@ -2773,11 +2773,11 @@ const AdminStaffManagement = () => {
 
                       <div className="grid grid-cols-2 gap-4 mb-8">
                         <div className="border p-4 rounded bg-gray-50">
-                          <span className="text-[9px] text-gray-500 font-bold uppercase">Processed Shift Revenues</span>
+                          <span className="text-[9px] text-gray-300 font-bold uppercase">Processed Shift Revenues</span>
                           <h3 className="text-xl font-bold text-black mt-1">₦{auditShiftPayments.reduce((sum, p) => sum + Number(p.amount || 0), 0).toLocaleString()}</h3>
                         </div>
                         <div className="border p-4 rounded bg-gray-50">
-                          <span className="text-[9px] text-gray-500 font-bold uppercase">Audited Operations Actions</span>
+                          <span className="text-[9px] text-gray-300 font-bold uppercase">Audited Operations Actions</span>
                           <h3 className="text-xl font-bold text-black mt-1">{auditShiftLogs.length} Completed Actions</h3>
                         </div>
                       </div>
@@ -2803,7 +2803,7 @@ const AdminStaffManagement = () => {
                           ))}
                           {auditShiftPayments.length === 0 && (
                             <tr>
-                              <td colSpan="4" className="py-4 text-center text-gray-500 italic">No payments processed during shift.</td>
+                              <td colSpan="4" className="py-4 text-center text-gray-300 italic">No payments processed during shift.</td>
                             </tr>
                           )}
                         </tbody>
@@ -2828,7 +2828,7 @@ const AdminStaffManagement = () => {
                           ))}
                           {auditShiftLogs.length === 0 && (
                             <tr>
-                              <td colSpan="3" className="py-4 text-center text-gray-500 italic">No operational logs during shift.</td>
+                              <td colSpan="3" className="py-4 text-center text-gray-300 italic">No operational logs during shift.</td>
                             </tr>
                           )}
                         </tbody>
@@ -2838,17 +2838,17 @@ const AdminStaffManagement = () => {
                       <div className="flex justify-between items-end pt-12 border-t border-dashed border-gray-300 mt-12 text-left">
                         <div className="text-center w-48">
                           <div className="border-b border-gray-300 h-8"></div>
-                          <span className="text-[10px] text-gray-500 font-semibold block mt-1.5 uppercase">Prepared By</span>
+                          <span className="text-[10px] text-gray-300 font-semibold block mt-1.5 uppercase">Prepared By</span>
                         </div>
                         <div className="text-center w-48">
                           <div className="border-b border-gray-300 h-8"></div>
-                          <span className="text-[10px] text-gray-500 font-semibold block mt-1.5 uppercase">Audited By (Hotel Manager)</span>
+                          <span className="text-[10px] text-gray-300 font-semibold block mt-1.5 uppercase">Audited By (Hotel Manager)</span>
                         </div>
                       </div>
                     </div>
                   </>
                 ) : (
-                  <div className="flex-1 flex flex-col items-center justify-center text-gray-500 py-32 space-y-4">
+                  <div className="flex-1 flex flex-col items-center justify-center text-gray-300 py-32 space-y-4">
                     <CalendarClock size={40} className="text-gray-600 animate-bounce" />
                     <p className="text-sm font-semibold select-none">Select a shift log from the left to compile handover audit report</p>
                   </div>
@@ -2887,11 +2887,11 @@ const AdminStaffManagement = () => {
                       <tr key={s.id} className="hover:bg-dark-700/30 transition-colors">
                         <td className="p-4">
                           <div className="font-semibold text-white text-sm sm:text-base">{s.first_name} {s.last_name}</div>
-                          <div className="text-xs sm:text-[13px] text-gray-400 mt-0.5">@{s.username || 'N/A'}</div>
+                          <div className="text-xs sm:text-[13px] text-gray-200 mt-0.5">@{s.username || 'N/A'}</div>
                         </td>
                         <td className="p-4 text-gray-300">
                           <div className="text-sm font-medium">{s.email || 'No email'}</div>
-                          <div className="text-xs sm:text-[13px] text-gray-400 mt-0.5">{s.phone || 'No phone'}</div>
+                          <div className="text-xs sm:text-[13px] text-gray-200 mt-0.5">{s.phone || 'No phone'}</div>
                           {s.bank_name ? (
                             <div className="text-[11px] text-brand-400 font-mono mt-1 font-semibold">
                               🏦 {s.bank_name} - {s.account_number}
@@ -2907,7 +2907,7 @@ const AdminStaffManagement = () => {
                             {getRoleBadge(s.role)}
                             {s.status === 'suspended' && <span className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Suspended</span>}
                             {s.status === 'sacked' && <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Sacked</span>}
-                            {s.is_active === false && s.status !== 'suspended' && s.status !== 'sacked' && <span className="bg-gray-500/10 text-gray-500 border border-gray-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Deactivated</span>}
+                            {s.is_active === false && s.status !== 'suspended' && s.status !== 'sacked' && <span className="bg-gray-500/10 text-gray-300 border border-gray-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Deactivated</span>}
                           </div>
                         </td>
                         <td className="p-4 text-gray-300">
@@ -2935,7 +2935,7 @@ const AdminStaffManagement = () => {
                                 {isCustom ? (
                                   <span className="bg-brand-500/10 text-brand-400 border border-brand-500/20 px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider mt-1 inline-block">Custom</span>
                                 ) : (
-                                  <span className="bg-dark-750 text-gray-400 px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider mt-1 inline-block">Role Default</span>
+                                  <span className="bg-dark-750 text-gray-200 px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider mt-1 inline-block">Role Default</span>
                                 )}
                                 
                                 {/* Hover Breakdown Tooltip */}
@@ -2986,7 +2986,7 @@ const AdminStaffManagement = () => {
                               attendance_deduction_type: s.attendance_deduction_type || 'daily_rate',
                               attendance_deduction_rate: s.attendance_deduction_rate !== undefined && s.attendance_deduction_rate !== null ? s.attendance_deduction_rate : 0
                             }); 
-                          }} className="text-gray-400 hover:text-brand-500 transition-colors">
+                          }} className="text-gray-200 hover:text-brand-500 transition-colors">
                             <Edit2 size={16}/>
                           </button>
                         </td>
@@ -3013,7 +3013,7 @@ const AdminStaffManagement = () => {
                 <div className="glass-panel p-4 rounded-2xl border border-dark-700/50 bg-dark-900/20 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden group hover:border-brand-500/25 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-transparent to-transparent opacity-60 pointer-events-none" />
                   <div>
-                    <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block font-sans">Active On Duty</span>
+                    <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block font-sans">Active On Duty</span>
                     <span className="text-xl font-black text-white font-mono mt-1 block">
                       {staff.filter(s => s.is_on_shift).length} Staff Members
                     </span>
@@ -3027,7 +3027,7 @@ const AdminStaffManagement = () => {
                 <div className="glass-panel p-4 rounded-2xl border border-dark-700/50 bg-dark-900/20 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden group hover:border-brand-500/25 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 via-transparent to-transparent opacity-60 pointer-events-none" />
                   <div>
-                    <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block font-sans">Shifts Logged Today</span>
+                    <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block font-sans">Shifts Logged Today</span>
                     <span className="text-xl font-black text-white font-mono mt-1 block">
                       {attendance.filter(a => {
                         try {
@@ -3045,7 +3045,7 @@ const AdminStaffManagement = () => {
                 <div className="glass-panel p-4 rounded-2xl border border-dark-700/50 bg-dark-900/20 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden group hover:border-brand-500/25 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 via-transparent to-transparent opacity-60 pointer-events-none" />
                   <div>
-                    <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block font-sans">ADMS Gateway Sync</span>
+                    <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block font-sans">ADMS Gateway Sync</span>
                     <span className="text-xl font-black text-green-400 font-mono mt-1 block flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full bg-green-500 animate-ping shrink-0" />
                       LISTENING
@@ -3060,7 +3060,7 @@ const AdminStaffManagement = () => {
                 <div className="glass-panel p-4 rounded-2xl border border-dark-700/50 bg-dark-900/20 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden group hover:border-brand-500/25 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-transparent opacity-60 pointer-events-none" />
                   <div>
-                    <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block font-sans">TCP/IP Latency</span>
+                    <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block font-sans">TCP/IP Latency</span>
                     <span className="text-xl font-black text-white font-mono mt-1 block">
                       {hardwareModes.usbReader === 'connected' ? '8 ms' : '15 ms (Sim)'}
                     </span>
@@ -3084,7 +3084,7 @@ const AdminStaffManagement = () => {
                     <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all duration-500 ${
                       activeShift 
                         ? 'bg-green-500/10 text-green-400 border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.15)] animate-pulse' 
-                        : 'bg-dark-950/70 text-gray-500 border-dark-800'
+                        : 'bg-dark-950/70 text-gray-300 border-dark-800'
                     }`}>
                       <span className={`h-1.5 w-1.5 rounded-full ${activeShift ? 'bg-green-500 animate-ping' : 'bg-gray-600'}`} />
                       {activeShift ? 'On Shift' : 'Off Shift'}
@@ -3096,13 +3096,13 @@ const AdminStaffManagement = () => {
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border transition-all duration-500 ${
                         activeShift 
                           ? 'bg-gradient-to-br from-green-500/20 to-emerald-500/5 text-green-400 border-green-500/30 shadow-[0_0_20px_rgba(34,197,94,0.15)]' 
-                          : 'bg-gradient-to-br from-dark-850 to-dark-900 text-gray-500 border-dark-750'
+                          : 'bg-gradient-to-br from-dark-850 to-dark-900 text-gray-300 border-dark-750'
                       }`}>
-                        <Clock size={26} className={activeShift ? 'animate-pulse text-green-400' : 'text-gray-500'} />
+                        <Clock size={26} className={activeShift ? 'animate-pulse text-green-400' : 'text-gray-300'} />
                       </div>
                       <div>
                         <h3 className="text-lg font-extrabold text-white tracking-tight font-serif">Shift Attendance Portal</h3>
-                        <p className="text-gray-400 text-xs mt-0.5 font-medium leading-relaxed">
+                        <p className="text-gray-200 text-xs mt-0.5 font-medium leading-relaxed">
                           {activeShift 
                             ? `Session started at ${format(new Date(activeShift.clock_in), 'HH:mm')} (${format(new Date(activeShift.clock_in), 'MMM dd, yyyy')})` 
                             : 'Welcome! You are currently off the clock.'}
@@ -3114,7 +3114,7 @@ const AdminStaffManagement = () => {
                       <div className="bg-black/90 border border-dark-800/80 rounded-2xl p-5 flex items-center justify-between shadow-[inset_0_4px_12px_rgba(0,0,0,0.8)] relative overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-emerald-500/5 pointer-events-none" />
                         <div>
-                          <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block font-sans">Active Session Time</span>
+                          <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block font-sans">Active Session Time</span>
                           <span className="text-3xl font-black bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent font-mono tracking-widest mt-1.5 block shadow-teal-500/10 drop-shadow-[0_0_8px_rgba(34,211,238,0.3)]">
                             {getShiftDurationStr(activeShift.clock_in)}
                           </span>
@@ -3123,7 +3123,7 @@ const AdminStaffManagement = () => {
                           <span className="text-[8px] text-teal-400 font-extrabold uppercase bg-teal-500/10 px-2 py-0.5 rounded-full border border-teal-500/20 shadow animate-pulse">
                             ● Ticking Live
                           </span>
-                          <span className="text-[8px] text-gray-500 font-mono tracking-tight mt-0.5">
+                          <span className="text-[8px] text-gray-300 font-mono tracking-tight mt-0.5">
                             GATEWAY: ADMS_PUSH
                           </span>
                         </div>
@@ -3131,8 +3131,8 @@ const AdminStaffManagement = () => {
                     ) : (
                       <div className="bg-dark-950/40 border border-dark-800/60 rounded-2xl p-5 flex flex-col justify-center items-center py-6 text-center shadow-inner select-none">
                         <Clock size={28} className="text-gray-650" />
-                        <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest mt-2 block">System Standby</span>
-                        <p className="text-gray-400 text-xs mt-1 leading-normal max-w-xs">Once you clock in, your active timesheet session will accumulate here in real-time.</p>
+                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest mt-2 block">System Standby</span>
+                        <p className="text-gray-200 text-xs mt-1 leading-normal max-w-xs">Once you clock in, your active timesheet session will accumulate here in real-time.</p>
                       </div>
                     )}
                   </div>
@@ -3182,7 +3182,7 @@ const AdminStaffManagement = () => {
                         className={`py-2 px-1 text-[10px] font-black uppercase rounded-xl transition-all duration-300 ${
                           biometricHardwareMode === 'simulator' 
                             ? 'bg-brand-500/15 text-brand-400 border border-brand-500/25 shadow-[0_2px_8px_rgba(180,150,90,0.1)]' 
-                            : 'text-gray-500 hover:text-gray-305'
+                            : 'text-gray-300 hover:text-gray-305'
                         }`}
                       >
                         Simulator
@@ -3199,7 +3199,7 @@ const AdminStaffManagement = () => {
                         className={`py-2 px-1 text-[10px] font-black uppercase rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 ${
                           biometricHardwareMode === 'webauthn' 
                             ? 'bg-green-500/15 text-green-400 border border-green-500/25 shadow-[0_2px_8px_rgba(34,197,94,0.1)]' 
-                            : 'text-gray-500 hover:text-gray-305'
+                            : 'text-gray-300 hover:text-gray-305'
                         }`}
                       >
                         <span className={`h-1.5 w-1.5 rounded-full ${hardwareModes.webauthn === 'available' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
@@ -3211,7 +3211,7 @@ const AdminStaffManagement = () => {
                         className={`py-2 px-1 text-[10px] font-black uppercase rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 ${
                           biometricHardwareMode === 'usb_sdk' 
                             ? 'bg-blue-500/15 text-blue-400 border border-blue-500/25 shadow-[0_2px_8px_rgba(59,130,246,0.1)]' 
-                            : 'text-gray-500 hover:text-gray-305'
+                            : 'text-gray-300 hover:text-gray-305'
                         }`}
                       >
                         <span className={`h-1.5 w-1.5 rounded-full ${hardwareModes.usbReader === 'connected' ? 'bg-blue-400 animate-pulse' : 'bg-gray-650'}`} />
@@ -3226,7 +3226,7 @@ const AdminStaffManagement = () => {
                           <p className="font-bold text-white flex items-center gap-1">
                             Platform Biometrics (Windows Hello / Touch ID)
                           </p>
-                          <p className="text-gray-400 text-[10px] leading-relaxed">
+                          <p className="text-gray-200 text-[10px] leading-relaxed">
                             Integrates directly with local secure elements (fingerprint sensors, FaceID, or hardware security keys) using native platform credentials.
                           </p>
                         </div>
@@ -3243,7 +3243,7 @@ const AdminStaffManagement = () => {
                               Setup Guide
                             </button>
                           </div>
-                          <p className="text-gray-400 text-[10px] leading-relaxed">
+                          <p className="text-gray-200 text-[10px] leading-relaxed">
                             Queries ZKTeco, SecuGen, or DigitalPersona local biometric agent service running on your workstation.
                           </p>
                           <div className="flex items-center gap-2 mt-1">
@@ -3254,7 +3254,7 @@ const AdminStaffManagement = () => {
                               onChange={e => setUsbPort(e.target.value)}
                               className="w-12 bg-dark-950 border border-dark-750 rounded px-1.5 py-0.5 text-[10px] text-white text-center font-mono outline-none focus:border-brand-500"
                             />
-                            <span className={`text-[9px] font-bold ${hardwareModes.usbReader === 'connected' ? 'text-green-500' : 'text-gray-500'}`}>
+                            <span className={`text-[9px] font-bold ${hardwareModes.usbReader === 'connected' ? 'text-green-500' : 'text-gray-300'}`}>
                               {hardwareModes.usbReader === 'connected' ? '● Connected' : '○ Offline (Simulator Fallback Active)'}
                             </span>
                           </div>
@@ -3263,7 +3263,7 @@ const AdminStaffManagement = () => {
                       {biometricHardwareMode === 'simulator' && (
                         <div className="space-y-1">
                           <p className="font-bold text-white">Software Cap Scan Simulator</p>
-                          <p className="text-gray-400 text-[10px] leading-relaxed">
+                          <p className="text-gray-200 text-[10px] leading-relaxed">
                             Uses fully stylized capacitive animation sweeps. Best for sandbox setups, walkthrough demonstrations, and software-only reviews.
                           </p>
                         </div>
@@ -3337,7 +3337,7 @@ const AdminStaffManagement = () => {
                         ? 'text-green-400 font-mono' 
                         : biometricTargetStaff 
                           ? 'text-brand-450 font-sans' 
-                          : 'text-gray-500 font-sans'
+                          : 'text-gray-300 font-sans'
                     }`}>
                       {isScanning 
                         ? 'SCANNING FINGERPRINT...' 
@@ -3357,7 +3357,7 @@ const AdminStaffManagement = () => {
                       <Server className="text-brand-500" size={18} />
                       Entrance Standalone Biometric Terminal Sync Hub
                     </h3>
-                    <p className="text-xs text-gray-400 mt-0.5">Manage networked TCP/IP wall-mounted fingerprint machines (ZKTeco ADMS/Push standard) installed at entrance portals.</p>
+                    <p className="text-xs text-gray-200 mt-0.5">Manage networked TCP/IP wall-mounted fingerprint machines (ZKTeco ADMS/Push standard) installed at entrance portals.</p>
                   </div>
                   <div className="shrink-0 flex items-center gap-2 bg-dark-950 px-3.5 py-1.5 rounded-xl border border-dark-850">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -3386,12 +3386,12 @@ const AdminStaffManagement = () => {
                             </div>
                             <div className="min-w-0">
                               <span className="text-xs font-black text-white block truncate group-hover:text-brand-400 transition-colors">Main Reception Terminal (ZK-IN01)</span>
-                              <span className="text-[10px] text-gray-500 block mt-0.5 font-mono">IP: 192.168.1.150 | Port: 4370</span>
+                              <span className="text-[10px] text-gray-300 block mt-0.5 font-mono">IP: 192.168.1.150 | Port: 4370</span>
                             </div>
                           </div>
                           <div className="text-right shrink-0 flex flex-col items-end justify-center select-none">
                             <span className="text-[9px] font-black uppercase bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20 shadow-[0_0_10px_rgba(34,197,94,0.1)]">ONLINE</span>
-                            <span className="text-[8px] text-gray-500 font-mono block mt-1">Ping: 12ms</span>
+                            <span className="text-[8px] text-gray-300 font-mono block mt-1">Ping: 12ms</span>
                           </div>
                         </div>
 
@@ -3402,7 +3402,7 @@ const AdminStaffManagement = () => {
                               <div className="w-5 h-1 bg-dark-900 rounded-sm" />
                             </div>
                             <div className="min-w-0">
-                              <span className="text-xs font-black text-gray-400 block truncate">Back Office Portal (ZK-K40)</span>
+                              <span className="text-xs font-black text-gray-200 block truncate">Back Office Portal (ZK-K40)</span>
                               <span className="text-[10px] text-gray-650 block mt-0.5 font-mono">IP: 192.168.1.151 | Port: 4370</span>
                             </div>
                           </div>
@@ -3416,10 +3416,10 @@ const AdminStaffManagement = () => {
 
                     <div className="bg-dark-950 p-4 rounded-2xl border border-dark-850 space-y-3 shadow-inner select-none">
                       <h5 className="text-[9px] font-black text-white uppercase tracking-widest font-mono">Sync Server Endpoint Settings</h5>
-                      <p className="text-[10px] text-gray-500 leading-normal">Configure your physical ZKTeco machine’s ADMS or Push parameters to point to this PMS server URL for instantaneous transaction reporting:</p>
+                      <p className="text-[10px] text-gray-300 leading-normal">Configure your physical ZKTeco machine’s ADMS or Push parameters to point to this PMS server URL for instantaneous transaction reporting:</p>
                       <div className="bg-dark-900/60 p-2.5 rounded-xl border border-dark-800 flex items-center justify-between font-mono text-[9px] text-brand-400 select-all">
                         <span className="truncate mr-2">http://{window.location.hostname || 'localhost'}:5000/api/attendance/terminal-push</span>
-                        <span className="text-[8px] font-black uppercase bg-dark-950 px-2 py-0.5 rounded text-gray-500 border border-dark-800 cursor-pointer hover:text-white">COPY</span>
+                        <span className="text-[8px] font-black uppercase bg-dark-950 px-2 py-0.5 rounded text-gray-300 border border-dark-800 cursor-pointer hover:text-white">COPY</span>
                       </div>
                     </div>
                   </div>
@@ -3438,7 +3438,7 @@ const AdminStaffManagement = () => {
 
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-gray-400 font-extrabold text-[9px] uppercase mb-1.5 tracking-wider select-none">Terminal PIN / Staff</label>
+                          <label className="block text-gray-200 font-extrabold text-[9px] uppercase mb-1.5 tracking-wider select-none">Terminal PIN / Staff</label>
                           <select
                             value={terminalUserPin}
                             onChange={e => setTerminalUserPin(e.target.value)}
@@ -3457,7 +3457,7 @@ const AdminStaffManagement = () => {
                         </div>
 
                         <div>
-                          <label className="block text-gray-400 font-extrabold text-[9px] uppercase mb-1.5 tracking-wider select-none">Action Type</label>
+                          <label className="block text-gray-200 font-extrabold text-[9px] uppercase mb-1.5 tracking-wider select-none">Action Type</label>
                           <select
                             value={terminalVerifyStatus}
                             onChange={e => setTerminalVerifyStatus(e.target.value)}
@@ -3475,7 +3475,7 @@ const AdminStaffManagement = () => {
                         type="button"
                         onClick={handleSimulateTerminalPush}
                         disabled={isSimulatingTerminal || !terminalUserPin}
-                        className="w-full bg-gradient-to-r from-blue-650 to-indigo-650 hover:from-blue-600 hover:to-indigo-600 disabled:from-dark-800 disabled:to-dark-850 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-extrabold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_4px_25px_rgba(37,99,235,0.4)] flex items-center justify-center gap-1.5 cursor-pointer"
+                        className="w-full bg-gradient-to-r from-blue-650 to-indigo-650 hover:from-blue-600 hover:to-indigo-600 disabled:from-dark-800 disabled:to-dark-850 disabled:text-gray-300 disabled:cursor-not-allowed text-white font-extrabold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_4px_25px_rgba(37,99,235,0.4)] flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         {isSimulatingTerminal ? 'Transmitting ADMS Packet...' : 'Simulate Terminal Fingerprint Tap'}
                       </button>
@@ -3493,7 +3493,7 @@ const AdminStaffManagement = () => {
                         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(34,197,94,0.03),_transparent)] pointer-events-none select-none" />
                         
                         <div className="flex items-center justify-between border-b border-dark-850 pb-2 select-none">
-                          <span className="text-[9px] font-black uppercase text-gray-500 tracking-widest font-mono">ADMS Sync Terminal Stream</span>
+                          <span className="text-[9px] font-black uppercase text-gray-300 tracking-widest font-mono">ADMS Sync Terminal Stream</span>
                           <span className="flex items-center gap-1.5">
                             <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-ping shrink-0" />
                             <span className="text-[8px] font-bold text-green-400/90 font-mono uppercase">Live Link</span>
@@ -3531,13 +3531,13 @@ const AdminStaffManagement = () => {
                     <Clock className="text-brand-500" size={18} />
                     Historical Shift Attendance Log
                   </h3>
-                  <span className="text-[10px] font-black bg-dark-800 text-gray-400 px-3 py-1 rounded-xl border border-dark-700">
+                  <span className="text-[10px] font-black bg-dark-800 text-gray-200 px-3 py-1 rounded-xl border border-dark-700">
                     Latest {attendance.length} Shifts
                   </span>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs whitespace-nowrap">
-                    <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-400 uppercase tracking-widest text-[9px] font-black select-none">
+                    <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-200 uppercase tracking-widest text-[9px] font-black select-none">
                       <tr>
                         <th className="p-4 font-bold">Staff Member</th>
                         <th className="p-4 font-bold">Date</th>
@@ -3550,7 +3550,7 @@ const AdminStaffManagement = () => {
                     <tbody className="divide-y divide-dark-750/30">
                       {attendance.length === 0 ? (
                         <tr>
-                          <td colSpan="6" className="p-12 text-center text-gray-500 font-medium select-none">
+                          <td colSpan="6" className="p-12 text-center text-gray-300 font-medium select-none">
                             No attendance records registered.
                           </td>
                         </tr>
@@ -3562,7 +3562,7 @@ const AdminStaffManagement = () => {
                             <tr key={a.id} className="hover:bg-dark-750/30 transition-colors">
                               <td className="p-4">
                                 <div className="font-bold text-white text-sm">{a.profiles?.first_name} {a.profiles?.last_name}</div>
-                                <div className="text-[10px] text-gray-500 font-mono mt-0.5 uppercase tracking-wider font-extrabold">
+                                <div className="text-[10px] text-gray-300 font-mono mt-0.5 uppercase tracking-wider font-extrabold">
                                   {a.profiles?.role?.replace('_', ' ')}
                                 </div>
                               </td>
@@ -3613,7 +3613,7 @@ const AdminStaffManagement = () => {
                 <div className="bg-dark-800 border border-dark-700/80 p-5 rounded-2xl relative overflow-hidden bg-gradient-to-br from-dark-900/50 to-dark-800/30 shadow shadow-inner">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">Active Leave Today</span>
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block">Active Leave Today</span>
                       <span className="text-2xl font-black text-white font-mono block mt-1">
                         {leaveApplications.filter(l => l.status === 'approved' && new Date(l.start_date) <= new Date() && new Date(l.end_date) >= new Date()).length}
                       </span>
@@ -3627,7 +3627,7 @@ const AdminStaffManagement = () => {
                 <div className="bg-dark-800 border border-dark-700/80 p-5 rounded-2xl relative overflow-hidden bg-gradient-to-br from-dark-900/50 to-dark-800/30 shadow shadow-inner">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">Pending Reviews</span>
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block">Pending Reviews</span>
                       <span className="text-2xl font-black text-brand-400 font-mono block mt-1">
                         {leaveApplications.filter(l => l.status === 'pending').length}
                       </span>
@@ -3641,7 +3641,7 @@ const AdminStaffManagement = () => {
                 <div className="bg-dark-800 border border-dark-700/80 p-5 rounded-2xl relative overflow-hidden bg-gradient-to-br from-dark-900/50 to-dark-800/30 shadow shadow-inner">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">Approved Stays / Requests</span>
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block">Approved Stays / Requests</span>
                       <span className="text-2xl font-black text-blue-400 font-mono block mt-1">
                         {leaveApplications.filter(l => l.status === 'approved').length}
                       </span>
@@ -3655,8 +3655,8 @@ const AdminStaffManagement = () => {
                 <div className="bg-dark-800 border border-dark-700/80 p-5 rounded-2xl relative overflow-hidden bg-gradient-to-br from-dark-900/50 to-dark-800/30 shadow shadow-inner">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block">Absenteeism Penalties</span>
-                      <span className="text-xs font-bold text-gray-400 block mt-2">Attendance Deductions Linked</span>
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest block">Absenteeism Penalties</span>
+                      <span className="text-xs font-bold text-gray-200 block mt-2">Attendance Deductions Linked</span>
                     </div>
                     <div className="p-2.5 bg-indigo-500/10 rounded-xl text-indigo-400 border border-indigo-500/10">
                       <Server size={18} />
@@ -3671,12 +3671,12 @@ const AdminStaffManagement = () => {
                 <div className="bg-dark-800 border border-dark-700 rounded-3xl p-5 shadow-2xl space-y-4">
                   <div className="border-b border-dark-750 pb-3">
                     <h3 className="font-serif font-black text-white text-base">Request Leave of Absence</h3>
-                    <p className="text-[11px] text-gray-400 mt-0.5">Submit a formal request for paid or unpaid time off.</p>
+                    <p className="text-[11px] text-gray-200 mt-0.5">Submit a formal request for paid or unpaid time off.</p>
                   </div>
 
                   <form onSubmit={handleApplyLeave} className="space-y-4">
                     <div>
-                      <label className="block text-[10px] font-black text-gray-400 mb-1.5 uppercase tracking-widest">Leave Type</label>
+                      <label className="block text-[10px] font-black text-gray-200 mb-1.5 uppercase tracking-widest">Leave Type</label>
                       <select 
                         value={newLeaveForm.leave_type} 
                         onChange={e => setNewLeaveForm({...newLeaveForm, leave_type: e.target.value})} 
@@ -3692,7 +3692,7 @@ const AdminStaffManagement = () => {
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[10px] font-black text-gray-400 mb-1.5 uppercase tracking-widest">Start Date</label>
+                        <label className="block text-[10px] font-black text-gray-200 mb-1.5 uppercase tracking-widest">Start Date</label>
                         <input 
                           type="date" 
                           required 
@@ -3702,7 +3702,7 @@ const AdminStaffManagement = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-black text-gray-400 mb-1.5 uppercase tracking-widest">End Date</label>
+                        <label className="block text-[10px] font-black text-gray-200 mb-1.5 uppercase tracking-widest">End Date</label>
                         <input 
                           type="date" 
                           required 
@@ -3714,7 +3714,7 @@ const AdminStaffManagement = () => {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-black text-gray-400 mb-1.5 uppercase tracking-widest">Reason / Description</label>
+                      <label className="block text-[10px] font-black text-gray-200 mb-1.5 uppercase tracking-widest">Reason / Description</label>
                       <textarea 
                         required 
                         rows={3} 
@@ -3728,7 +3728,7 @@ const AdminStaffManagement = () => {
                     <button 
                       type="submit" 
                       disabled={!hasAccess('Leave & Absences - Request Leave of Absence')}
-                      className="w-full bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-450 hover:to-indigo-500 disabled:from-dark-800 disabled:to-dark-850 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-extrabold py-3.5 rounded-xl text-xs tracking-wider transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                      className="w-full bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-450 hover:to-indigo-500 disabled:from-dark-800 disabled:to-dark-850 disabled:text-gray-300 disabled:cursor-not-allowed text-white font-extrabold py-3.5 rounded-xl text-xs tracking-wider transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                       title={!hasAccess('Leave & Absences - Request Leave of Absence') ? "You do not have permission to request a leave of absence." : ""}
                     >
                       Submit Leave Request
@@ -3741,11 +3741,11 @@ const AdminStaffManagement = () => {
                   <div className="p-4 border-b border-dark-700 bg-dark-900 flex justify-between items-center">
                     <div>
                       <h3 className="font-serif font-black text-white text-base">Leave Applications Queue</h3>
-                      <p className="text-[11px] text-gray-400 mt-0.5">Approve, deny, and track absences in real time.</p>
+                      <p className="text-[11px] text-gray-200 mt-0.5">Approve, deny, and track absences in real time.</p>
                     </div>
                     <button 
                       onClick={fetchLeaveApplications}
-                      className="bg-dark-750 hover:bg-dark-700 border border-dark-700 p-2 rounded-xl text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      className="bg-dark-750 hover:bg-dark-700 border border-dark-700 p-2 rounded-xl text-gray-200 hover:text-white transition-colors cursor-pointer"
                       title="Sync Leave Board"
                     >
                       <Activity size={14} className={loadingLeave ? 'animate-spin' : ''} />
@@ -3754,12 +3754,12 @@ const AdminStaffManagement = () => {
 
                   <div className="flex-1 overflow-x-auto">
                     {loadingLeave ? (
-                      <div className="py-20 text-center text-gray-500 text-xs italic">Synchronizing leave data...</div>
+                      <div className="py-20 text-center text-gray-300 text-xs italic">Synchronizing leave data...</div>
                     ) : leaveApplications.length === 0 ? (
-                      <div className="py-20 text-center text-gray-500 text-xs italic">No leave applications registered.</div>
+                      <div className="py-20 text-center text-gray-300 text-xs italic">No leave applications registered.</div>
                     ) : (
                       <table className="w-full text-left text-xs select-text">
-                        <thead className="bg-dark-900 border-b border-dark-750 text-gray-400 uppercase tracking-widest font-black text-[10px]">
+                        <thead className="bg-dark-900 border-b border-dark-750 text-gray-200 uppercase tracking-widest font-black text-[10px]">
                           <tr>
                             <th className="p-4">Personnel</th>
                             <th className="p-4">Leave Type</th>
@@ -3784,7 +3784,7 @@ const AdminStaffManagement = () => {
                               <tr key={l.id} className="hover:bg-dark-900/30 transition-colors">
                                 <td className="p-4">
                                   <div className="font-bold text-white">{applicantName}</div>
-                                  <span className="text-[10px] text-gray-500 uppercase tracking-wider block mt-0.5">{applicantRole}</span>
+                                  <span className="text-[10px] text-gray-300 uppercase tracking-wider block mt-0.5">{applicantRole}</span>
                                 </td>
                                 <td className="p-4">
                                   <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase border ${
@@ -3793,17 +3793,17 @@ const AdminStaffManagement = () => {
                                     l.leave_type === 'casual' ? 'bg-amber-500/10 text-amber-400 border-amber-500/10' :
                                     l.leave_type === 'maternity' ? 'bg-purple-500/10 text-purple-400 border-purple-500/10' :
                                     (l.leave_type === 'unpaid' || l.leave_type === 'leave_without_pay') ? 'bg-orange-500/10 text-orange-400 border-orange-500/10' :
-                                    'bg-gray-700 text-gray-400 border-transparent'
+                                    'bg-gray-700 text-gray-200 border-transparent'
                                   }`}>
                                     {(l.leave_type === 'unpaid' || l.leave_type === 'leave_without_pay') ? 'leave without pay' : l.leave_type}
                                   </span>
-                                  <span className="text-[10px] text-gray-400 block mt-1.5 font-medium max-w-[200px] truncate select-all" title={l.reason}>
+                                  <span className="text-[10px] text-gray-200 block mt-1.5 font-medium max-w-[200px] truncate select-all" title={l.reason}>
                                     "{l.reason || 'No description'}"
                                   </span>
                                 </td>
                                 <td className="p-4">
                                   <div className="font-bold text-white font-mono">{startDateStr} - {endDateStr}</div>
-                                  <span className="text-[10px] text-gray-500 block mt-0.5">{diffDays} {diffDays === 1 ? 'day' : 'days'} requested</span>
+                                  <span className="text-[10px] text-gray-300 block mt-0.5">{diffDays} {diffDays === 1 ? 'day' : 'days'} requested</span>
                                 </td>
                                 <td className="p-4">
                                   <span className={`px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${
@@ -3849,7 +3849,7 @@ const AdminStaffManagement = () => {
                                             <button 
                                               type="button" 
                                               onClick={() => setRejectingLeaveId(null)}
-                                              className="text-gray-400 hover:text-white text-[9px] font-bold"
+                                              className="text-gray-200 hover:text-white text-[9px] font-bold"
                                             >
                                               Cancel
                                             </button>
@@ -3889,7 +3889,7 @@ const AdminStaffManagement = () => {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+                  <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
                     <tr>
                       <th className="p-4 font-semibold">Timestamp</th>
                       <th className="p-4 font-semibold">User</th>
@@ -3900,12 +3900,12 @@ const AdminStaffManagement = () => {
                   <tbody className="divide-y divide-dark-700">
                     {logs.map(log => (
                       <tr key={log.id} className="hover:bg-dark-700/30 transition-colors">
-                        <td className="p-4 text-gray-400 font-mono text-xs">{format(new Date(log.created_at), 'MMM dd, HH:mm:ss')}</td>
+                        <td className="p-4 text-gray-200 font-mono text-xs">{format(new Date(log.created_at), 'MMM dd, HH:mm:ss')}</td>
                         <td className="p-4">
                           <div className="font-medium text-white">{log.profiles ? `${log.profiles.first_name} ${log.profiles.last_name}` : 'System'}</div>
                           {log.profiles && getRoleBadge(log.profiles.role)}
                         </td>
-                        <td className="p-4 text-gray-400">{log.entity_table || log.module || 'System'}</td>
+                        <td className="p-4 text-gray-200">{log.entity_table || log.module || 'System'}</td>
                         <td className="p-4 text-white">{log.action}</td>
                       </tr>
                     ))}
@@ -3921,14 +3921,14 @@ const AdminStaffManagement = () => {
               <div className="lg:col-span-4 flex flex-col space-y-4 max-h-[85vh] overflow-y-auto pr-2 custom-scrollbar select-none">
                 <div className="bg-dark-800 border border-dark-700/60 p-4 rounded-2xl shadow-lg">
                   <h3 className="text-base font-black text-white uppercase tracking-wider mb-1">Roles Explorer</h3>
-                  <p className="text-gray-400 text-xs">Select any of the 26 system roles to inspect or custom-configure their granular capabilities.</p>
+                  <p className="text-gray-200 text-xs">Select any of the 26 system roles to inspect or custom-configure their granular capabilities.</p>
                 </div>
                 
                 {ROLE_CATEGORIES.map(category => (
                   <div key={category.title} className="space-y-1.5">
                     <h4 className="text-[11px] font-black text-brand-400 uppercase tracking-widest px-2.5 pt-1.5 flex items-center justify-between">
                       <span>{category.title}</span>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-dark-900 text-gray-400 font-mono">
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-dark-900 text-gray-200 font-mono">
                         {category.roles.length} Roles
                       </span>
                     </h4>
@@ -3958,12 +3958,12 @@ const AdminStaffManagement = () => {
                                 roleId.includes('lead') || roleId.includes('head') ? 'bg-blue-400 ring-blue-400/10' :
                                 'bg-gray-400 ring-gray-400/10'
                               }`} />
-                              <span className={`text-sm font-bold truncate ${isSelected ? 'text-white font-serif' : 'text-gray-400'}`}>
+                              <span className={`text-sm font-bold truncate ${isSelected ? 'text-white font-serif' : 'text-gray-200'}`}>
                                 {roleObj.label}
                               </span>
                             </div>
                             <span className={`text-[11px] px-1.5 py-0.5 rounded-md font-mono ${
-                              isSelected ? 'bg-brand-500/10 text-brand-400' : 'bg-dark-900/60 text-gray-500'
+                              isSelected ? 'bg-brand-500/10 text-brand-400' : 'bg-dark-900/60 text-gray-300'
                             }`}>
                               {roleObj.id}
                             </span>
@@ -4026,7 +4026,7 @@ const AdminStaffManagement = () => {
                                     <div key={permissionName} className="py-3.5 flex items-center justify-between gap-4">
                                       <div className="min-w-0">
                                         <p className="text-[13px] sm:text-sm font-extrabold text-white truncate">{permissionName}</p>
-                                        <p className="text-xs text-gray-400 mt-0.5 capitalize truncate">
+                                        <p className="text-xs text-gray-200 mt-0.5 capitalize truncate">
                                           {permissionName.includes(' - ') 
                                             ? `Capability level override within ${permissionName.split(' - ')[0]}`
                                             : `System module landing access level for ${permissionName}`}
@@ -4058,7 +4058,7 @@ const AdminStaffManagement = () => {
                           <PlusCircle className="text-brand-500" size={14} />
                           Register Custom Access Level / Module
                         </h4>
-                        <p className="text-gray-500 text-[10px] leading-relaxed">
+                        <p className="text-gray-300 text-[10px] leading-relaxed">
                           Define a new global PMS module (e.g. "Laundry", "Spa", "Gym") to add it dynamically to the dynamic matrix configuration block.
                         </p>
                         <form onSubmit={handleAddAccessLevel} className="flex gap-3">
@@ -4073,7 +4073,7 @@ const AdminStaffManagement = () => {
                           <button
                             type="submit"
                             disabled={addingModule || !newModuleName.trim()}
-                            className="bg-brand-500 hover:bg-brand-600 disabled:bg-dark-700 disabled:text-gray-500 text-dark-950 font-bold px-5 py-2.5 rounded-xl text-xs transition-all flex items-center gap-1.5 shadow"
+                            className="bg-brand-500 hover:bg-brand-600 disabled:bg-dark-700 disabled:text-gray-300 text-dark-950 font-bold px-5 py-2.5 rounded-xl text-xs transition-all flex items-center gap-1.5 shadow"
                           >
                             {addingModule ? 'Registering...' : 'Add Access Level'}
                           </button>
@@ -4086,13 +4086,13 @@ const AdminStaffManagement = () => {
                           <UserPlus className="text-brand-500" size={14} />
                           Register Custom Staff Role & Grant Permissions
                         </h4>
-                        <p className="text-gray-500 text-[10px] leading-relaxed">
+                        <p className="text-gray-300 text-[10px] leading-relaxed">
                           Create a brand new system access role. Once registered, it will appear dynamically inside your left Roles Explorer selector sidebar and Staff Onboarding directories where you can assign custom permissions.
                         </p>
                         <form onSubmit={handleCreateCustomRole} className="space-y-4">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                             <div>
-                              <label className="block text-[10px] font-extrabold text-gray-400 uppercase mb-1 tracking-wider">Role ID (Unique Key)</label>
+                              <label className="block text-[10px] font-extrabold text-gray-200 uppercase mb-1 tracking-wider">Role ID (Unique Key)</label>
                               <input
                                 type="text"
                                 required
@@ -4103,7 +4103,7 @@ const AdminStaffManagement = () => {
                               />
                             </div>
                             <div>
-                              <label className="block text-[10px] font-extrabold text-gray-400 uppercase mb-1 tracking-wider">Role Display Name (Label)</label>
+                              <label className="block text-[10px] font-extrabold text-gray-200 uppercase mb-1 tracking-wider">Role Display Name (Label)</label>
                               <input
                                 type="text"
                                 required
@@ -4117,7 +4117,7 @@ const AdminStaffManagement = () => {
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                             <div>
-                              <label className="block text-[10px] font-extrabold text-gray-400 uppercase mb-1 tracking-wider">Sidebar Folder (Category)</label>
+                              <label className="block text-[10px] font-extrabold text-gray-200 uppercase mb-1 tracking-wider">Sidebar Folder (Category)</label>
                               <select
                                 value={newRole.category}
                                 onChange={e => setNewRole({ ...newRole, category: e.target.value })}
@@ -4135,7 +4135,7 @@ const AdminStaffManagement = () => {
                               </select>
                             </div>
                             <div>
-                              <label className="block text-[10px] font-extrabold text-gray-400 uppercase mb-1 tracking-wider">Badge Color Accent</label>
+                              <label className="block text-[10px] font-extrabold text-gray-200 uppercase mb-1 tracking-wider">Badge Color Accent</label>
                               <select
                                 value={newRole.color}
                                 onChange={e => setNewRole({ ...newRole, color: e.target.value })}
@@ -4156,7 +4156,7 @@ const AdminStaffManagement = () => {
                           <button
                             type="submit"
                             disabled={creatingRole || !newRole.id || !newRole.label}
-                            className="w-full bg-brand-500 hover:bg-brand-600 disabled:bg-dark-700 disabled:text-gray-500 text-dark-950 font-bold py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 shadow"
+                            className="w-full bg-brand-500 hover:bg-brand-600 disabled:bg-dark-700 disabled:text-gray-300 text-dark-950 font-bold py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 shadow"
                           >
                             <UserPlus size={14} />
                             {creatingRole ? 'Registering Custom Role...' : 'Register Custom Staff Role'}
@@ -4183,7 +4183,7 @@ const AdminStaffManagement = () => {
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent tracking-tight font-serif">Register New Staff Member</h2>
-                <p className="text-xs sm:text-sm text-gray-400 mt-0.5 font-medium">Create a dynamic login account and operational profile.</p>
+                <p className="text-xs sm:text-sm text-gray-200 mt-0.5 font-medium">Create a dynamic login account and operational profile.</p>
               </div>
             </div>
             <form onSubmit={handleAddStaff} className="p-6 overflow-y-auto space-y-6 bg-dark-900/20">
@@ -4195,11 +4195,11 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Email Address</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Email Address</label>
                     <input required type="email" value={newStaffForm.email} onChange={e => setNewStaffForm({...newStaffForm, email: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" placeholder="staff@example.com" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Temporary Password</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Temporary Password</label>
                     <div className="relative">
                       <input 
                         required 
@@ -4222,11 +4222,11 @@ const AdminStaffManagement = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Unique Username</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Unique Username</label>
                     <input required type="text" value={newStaffForm.username} onChange={e => setNewStaffForm({...newStaffForm, username: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" placeholder="@johndoe" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Biometric Fingerprint Key (Optional)</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Biometric Fingerprint Key (Optional)</label>
                     <div className="flex gap-2">
                       <input type="text" value={newStaffForm.biometric_key || ''} onChange={e => setNewStaffForm({...newStaffForm, biometric_key: e.target.value})} className="flex-1 bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-650 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 font-mono text-xs" placeholder="BIO-FPR-XXXX" />
                       <button
@@ -4248,20 +4248,20 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">First Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">First Name</label>
                     <input required type="text" value={newStaffForm.first_name} onChange={e => setNewStaffForm({...newStaffForm, first_name: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Last Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Last Name</label>
                     <input required type="text" value={newStaffForm.last_name} onChange={e => setNewStaffForm({...newStaffForm, last_name: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Phone Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Phone Number</label>
                   <input required type="text" value={newStaffForm.phone} onChange={e => setNewStaffForm({...newStaffForm, phone: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Residential Address</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Residential Address</label>
                   <textarea required rows={2} value={newStaffForm.residential_address} onChange={e => setNewStaffForm({...newStaffForm, residential_address: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white placeholder-gray-600 outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" placeholder="Full home address"></textarea>
                 </div>
               </div>
@@ -4273,7 +4273,7 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Bank Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Bank Name</label>
                     <select
                       value={newStaffForm.bank_name || ''}
                       onChange={e => setNewStaffForm({...newStaffForm, bank_name: e.target.value})}
@@ -4286,7 +4286,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Account Number</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Account Number</label>
                     <input
                       type="text"
                       maxLength={10}
@@ -4297,7 +4297,7 @@ const AdminStaffManagement = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Account Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Account Name</label>
                     <input
                       type="text"
                       value={newStaffForm.account_name || ''}
@@ -4311,7 +4311,7 @@ const AdminStaffManagement = () => {
 
               {/* Role Assignment */}
               <div className="bg-dark-950/40 border border-dark-800/80 p-5 rounded-2xl shadow-[inset_0_1px_2px_rgba(0,0,0,0.2)] hover:border-dark-700/50 transition-colors">
-                <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">System Access Role</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">System Access Role</label>
                 <select value={newStaffForm.role} onChange={e => setNewStaffForm({...newStaffForm, role: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base cursor-pointer">
                   {allRoles.map(r => (
                     <option key={r.id} value={r.id}>{r.label}</option>
@@ -4326,15 +4326,15 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-dark-950/60 border border-dark-750/50 p-4 rounded-xl flex flex-col justify-center select-all">
-                    <span className="text-[10px] font-black uppercase text-gray-500 tracking-wider">Base Salary</span>
+                    <span className="text-[10px] font-black uppercase text-gray-300 tracking-wider">Base Salary</span>
                     <span className="text-base font-extrabold text-white font-mono mt-1">₦{parseFloat(newStaffForm.base_salary || 0).toLocaleString()}</span>
                   </div>
                   <div className="bg-dark-950/60 border border-dark-750/50 p-4 rounded-xl flex flex-col justify-center select-all">
-                    <span className="text-[10px] font-black uppercase text-gray-500 tracking-wider">Allowances (Summed)</span>
+                    <span className="text-[10px] font-black uppercase text-gray-300 tracking-wider">Allowances (Summed)</span>
                     <span className="text-base font-extrabold text-emerald-450 font-mono mt-1">₦{parseFloat(newStaffForm.allowances || 0).toLocaleString()}</span>
                   </div>
                   <div className="bg-dark-950/60 border border-dark-750/50 p-4 rounded-xl flex flex-col justify-center select-all">
-                    <span className="text-[10px] font-black uppercase text-gray-500 tracking-wider">Deductions (Total: ₦{calculateTotalDeductions(newStaffForm.base_salary, newStaffForm.deductions_list).toLocaleString()})</span>
+                    <span className="text-[10px] font-black uppercase text-gray-300 tracking-wider">Deductions (Total: ₦{calculateTotalDeductions(newStaffForm.base_salary, newStaffForm.deductions_list).toLocaleString()})</span>
                     <div className="flex flex-wrap gap-1 mt-1.5">
                       {(() => {
                         let list = newStaffForm.deductions_list || [];
@@ -4343,7 +4343,7 @@ const AdminStaffManagement = () => {
                         }
                         if (!Array.isArray(list)) list = [];
                         if (list.length === 0) {
-                          return <span className="text-xs text-gray-400 font-bold font-mono">₦0.00</span>;
+                          return <span className="text-xs text-gray-200 font-bold font-mono">₦0.00</span>;
                         }
                         return list.map((ded, idx) => (
                           <span key={idx} className="text-[9px] text-rose-450 font-bold bg-rose-500/10 border border-rose-500/20 px-1.5 py-0.5 rounded">
@@ -4356,9 +4356,9 @@ const AdminStaffManagement = () => {
                 </div>
 
                 <div className="bg-dark-950/60 border border-dark-750/50 p-4 rounded-xl space-y-2.5">
-                  <span className="text-[10px] font-black uppercase text-gray-400 tracking-wider block">Entitled Allowances</span>
+                  <span className="text-[10px] font-black uppercase text-gray-200 tracking-wider block">Entitled Allowances</span>
                   {globalAllowances.length === 0 ? (
-                    <span className="text-xs text-gray-500 italic block">No standard allowances configured. Configure them in Salary Structures.</span>
+                    <span className="text-xs text-gray-300 italic block">No standard allowances configured. Configure them in Salary Structures.</span>
                   ) : (
                     <div className="flex flex-wrap gap-3">
                       {globalAllowances.map((allow, idx) => {
@@ -4381,8 +4381,8 @@ const AdminStaffManagement = () => {
                     </div>
                   )}
                 </div>
-                <p className="text-[10px] text-gray-500 leading-normal">
-                  Note: These standard payroll rates are automatically loaded from the global salary structure for the <span className="font-bold text-gray-400">{allRoles.find(r => r.id === newStaffForm.role)?.label || newStaffForm.role}</span> access level and cannot be modified here. Adjust these defaults in the Standard Salary Structure explorer modal if needed.
+                <p className="text-[10px] text-gray-300 leading-normal">
+                  Note: These standard payroll rates are automatically loaded from the global salary structure for the <span className="font-bold text-gray-200">{allRoles.find(r => r.id === newStaffForm.role)?.label || newStaffForm.role}</span> access level and cannot be modified here. Adjust these defaults in the Standard Salary Structure explorer modal if needed.
                 </p>
               </div>
 
@@ -4427,7 +4427,7 @@ const AdminStaffManagement = () => {
                 {/* Shift Preset and Timing */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Shift Name / Template</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Shift Name / Template</label>
                     <select 
                       value={newStaffForm.shift_name || 'Morning Shift'}
                       onChange={e => handleShiftPresetChange(e.target.value, false)}
@@ -4441,7 +4441,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Start Time</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Start Time</label>
                     <input 
                       type="text" 
                       value={newStaffForm.shift_start_time || '08:00'}
@@ -4451,7 +4451,7 @@ const AdminStaffManagement = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">End Time</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">End Time</label>
                     <input 
                       type="text" 
                       value={newStaffForm.shift_end_time || '17:00'}
@@ -4464,14 +4464,14 @@ const AdminStaffManagement = () => {
 
                 {/* Expected Workdays Checkboxes */}
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">
                     Expected Work Days ({newStaffForm.expected_work_days_count || 0} days expected)
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
                     {WEEKDAYS.map(day => {
                       const isChecked = (newStaffForm.expected_work_days || []).includes(day.value);
                       return (
-                        <label key={day.value} className={`flex items-center gap-2.5 bg-dark-900 border p-2.5 rounded-xl cursor-pointer select-none transition-all duration-200 ${isChecked ? 'border-brand-500/50 bg-brand-500/5 text-white' : 'border-dark-750 text-gray-400'}`}>
+                        <label key={day.value} className={`flex items-center gap-2.5 bg-dark-900 border p-2.5 rounded-xl cursor-pointer select-none transition-all duration-200 ${isChecked ? 'border-brand-500/50 bg-brand-500/5 text-white' : 'border-dark-750 text-gray-200'}`}>
                           <input
                             type="checkbox"
                             checked={isChecked}
@@ -4488,7 +4488,7 @@ const AdminStaffManagement = () => {
                 {/* Attendance Deduction Config */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-dark-750 pt-3">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Attendance Deduction Type</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Attendance Deduction Type</label>
                     <select 
                       value={newStaffForm.attendance_deduction_type || 'daily_rate'}
                       onChange={e => setNewStaffForm({ ...newStaffForm, attendance_deduction_type: e.target.value })}
@@ -4500,7 +4500,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">
                       {newStaffForm.attendance_deduction_type === 'percentage' ? 'Penalty Percentage (%)' : 'Penalty Amount (₦)'}
                     </label>
                     <input 
@@ -4538,7 +4538,7 @@ const AdminStaffManagement = () => {
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent tracking-tight font-serif">Edit Staff Profile</h2>
-                <p className="text-xs sm:text-sm text-gray-400 mt-0.5 font-medium">Modifying details for <strong>{editingStaffForm.first_name} {editingStaffForm.last_name}</strong>.</p>
+                <p className="text-xs sm:text-sm text-gray-200 mt-0.5 font-medium">Modifying details for <strong>{editingStaffForm.first_name} {editingStaffForm.last_name}</strong>.</p>
               </div>
             </div>
             
@@ -4551,11 +4551,11 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Email Address</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Email Address</label>
                     <input type="email" required value={editingStaffForm.email} onChange={e => setEditingStaffForm({...editingStaffForm, email: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">New Password (or Leave Blank)</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">New Password (or Leave Blank)</label>
                     <div className="relative">
                       <input 
                         type={showEditPassword ? 'text' : 'password'} 
@@ -4577,14 +4577,14 @@ const AdminStaffManagement = () => {
                       <span className="text-[9px] text-green-450 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded font-black font-sans uppercase">
                         ✓ Secured in Auth Vault
                       </span>
-                      <span className="text-[9px] text-gray-500 font-medium">
+                      <span className="text-[9px] text-gray-300 font-medium">
                         Leave blank to retain current
                       </span>
                     </div>
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-1.5">
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Biometric Fingerprint Key</label>
+                      <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">Biometric Fingerprint Key</label>
                       {editingStaffForm.biometric_key ? (
                         <span className="text-[9px] font-black uppercase text-green-400 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-md flex items-center gap-1 animate-pulse">
                           <Fingerprint size={10} /> Registered
@@ -4610,7 +4610,7 @@ const AdminStaffManagement = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <div className="flex-1">
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">System Access Role</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">System Access Role</label>
                     <select 
                       value={editingStaffForm.role} 
                       onChange={e => {
@@ -4643,7 +4643,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div className="flex-1">
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Account Status</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Account Status</label>
                     <select
                       value={editingStaffForm.status || (editingStaffForm.is_active ? 'active' : 'inactive')}
                       onChange={e => {
@@ -4706,7 +4706,7 @@ const AdminStaffManagement = () => {
                 {/* Shift Preset and Timing */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Shift Name / Template</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Shift Name / Template</label>
                     <select 
                       value={editingStaffForm.shift_name || 'Morning Shift'}
                       onChange={e => handleShiftPresetChange(e.target.value, true)}
@@ -4720,7 +4720,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Start Time</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Start Time</label>
                     <input 
                       type="text" 
                       value={editingStaffForm.shift_start_time || '08:00'}
@@ -4730,7 +4730,7 @@ const AdminStaffManagement = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">End Time</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">End Time</label>
                     <input 
                       type="text" 
                       value={editingStaffForm.shift_end_time || '17:00'}
@@ -4743,14 +4743,14 @@ const AdminStaffManagement = () => {
 
                 {/* Expected Workdays Checkboxes */}
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">
                     Expected Work Days ({editingStaffForm.expected_work_days_count || 0} days expected)
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
                     {WEEKDAYS.map(day => {
                       const isChecked = (editingStaffForm.expected_work_days || []).includes(day.value);
                       return (
-                        <label key={day.value} className={`flex items-center gap-2.5 bg-dark-900 border p-2.5 rounded-xl cursor-pointer select-none transition-all duration-200 ${isChecked ? 'border-brand-500/50 bg-brand-500/5 text-white' : 'border-dark-750 text-gray-400'}`}>
+                        <label key={day.value} className={`flex items-center gap-2.5 bg-dark-900 border p-2.5 rounded-xl cursor-pointer select-none transition-all duration-200 ${isChecked ? 'border-brand-500/50 bg-brand-500/5 text-white' : 'border-dark-750 text-gray-200'}`}>
                           <input
                             type="checkbox"
                             checked={isChecked}
@@ -4767,7 +4767,7 @@ const AdminStaffManagement = () => {
                 {/* Attendance Deduction Config */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-dark-750 pt-3">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Attendance Deduction Type</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Attendance Deduction Type</label>
                     <select 
                       value={editingStaffForm.attendance_deduction_type || 'daily_rate'}
                       onChange={e => setEditingStaffForm({ ...editingStaffForm, attendance_deduction_type: e.target.value })}
@@ -4779,7 +4779,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">
                       {editingStaffForm.attendance_deduction_type === 'percentage' ? 'Penalty Percentage (%)' : 'Penalty Amount (₦)'}
                     </label>
                     <input 
@@ -4803,20 +4803,20 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">First Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">First Name</label>
                     <input required type="text" value={editingStaffForm.first_name} onChange={e => setEditingStaffForm({...editingStaffForm, first_name: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Last Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Last Name</label>
                     <input required type="text" value={editingStaffForm.last_name} onChange={e => setEditingStaffForm({...editingStaffForm, last_name: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Phone Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Phone Number</label>
                   <input required type="text" value={editingStaffForm.phone} onChange={e => setEditingStaffForm({...editingStaffForm, phone: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Residential Address</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Residential Address</label>
                   <textarea required rows={2} value={editingStaffForm.residential_address} onChange={e => setEditingStaffForm({...editingStaffForm, residential_address: e.target.value})} className="w-full bg-dark-950/60 border border-dark-750 p-3 rounded-xl text-white outline-none focus:border-brand-500/80 focus:ring-1 focus:ring-brand-500/30 transition-all duration-300 text-sm sm:text-base"></textarea>
                 </div>
               </div>
@@ -4828,7 +4828,7 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Bank Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Bank Name</label>
                     <select
                       value={editingStaffForm.bank_name || ''}
                       onChange={e => setEditingStaffForm({...editingStaffForm, bank_name: e.target.value})}
@@ -4841,7 +4841,7 @@ const AdminStaffManagement = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Account Number</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Account Number</label>
                     <input
                       type="text"
                       maxLength={10}
@@ -4852,7 +4852,7 @@ const AdminStaffManagement = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Account Name</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Account Name</label>
                     <input
                       type="text"
                       value={editingStaffForm.account_name || ''}
@@ -4871,7 +4871,7 @@ const AdminStaffManagement = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Base Salary</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Base Salary</label>
                     {(() => {
                       const matchingStructure = roleStructures.find(struct => struct.role === editingStaffForm.role);
                       const defaultBase = matchingStructure ? matchingStructure.base_salary : (
@@ -4896,7 +4896,7 @@ const AdminStaffManagement = () => {
                     })()}
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Allowances (Summed)</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Allowances (Summed)</label>
                     {(() => {
                       const matchingStructure = roleStructures.find(struct => struct.role === editingStaffForm.role);
                       const defaultAllow = matchingStructure ? matchingStructure.allowances : 0;
@@ -4917,9 +4917,9 @@ const AdminStaffManagement = () => {
                 </div>
 
                 <div className="bg-dark-950/60 border border-dark-750/50 p-4 rounded-xl space-y-2.5">
-                  <span className="text-[10px] font-black uppercase text-gray-400 tracking-wider block">Entitled Allowances</span>
+                  <span className="text-[10px] font-black uppercase text-gray-200 tracking-wider block">Entitled Allowances</span>
                   {globalAllowances.length === 0 ? (
-                    <span className="text-xs text-gray-500 italic block">No standard allowances configured. Configure them in Salary Structures.</span>
+                    <span className="text-xs text-gray-300 italic block">No standard allowances configured. Configure them in Salary Structures.</span>
                   ) : (
                     <div className="flex flex-wrap gap-3">
                       {globalAllowances.map((allow, idx) => {
@@ -4944,7 +4944,7 @@ const AdminStaffManagement = () => {
                 </div>
 
                 <div className="border-t border-dark-750 pt-4 mt-2">
-                  <label className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-gray-200 mb-2 uppercase tracking-wider">
                     {(() => {
                       const matchingStructure = roleStructures.find(struct => struct.role === editingStaffForm.role);
                       let listToRender = (editingStaffForm.deductions_list && editingStaffForm.deductions_list.length > 0) 
@@ -4976,7 +4976,7 @@ const AdminStaffManagement = () => {
                         }
 
                         if (listToRender.length === 0) {
-                          return <span className="text-xs text-gray-400">No deductions configured for this profile.</span>;
+                          return <span className="text-xs text-gray-200">No deductions configured for this profile.</span>;
                         }
                         return listToRender.map((ded, idx) => (
                           <span key={idx} className="text-[10px] text-rose-450 font-bold bg-rose-500/10 border border-rose-500/25 px-2 py-0.5 rounded flex items-center gap-1">
@@ -4987,7 +4987,7 @@ const AdminStaffManagement = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-[10px] text-gray-500 leading-normal font-medium">Note: Base salary baseline rates are configured globally per access level inside the salary structure registry.</p>
+                <p className="text-[10px] text-gray-300 leading-normal font-medium">Note: Base salary baseline rates are configured globally per access level inside the salary structure registry.</p>
               </div>
 
               <div className="flex gap-4 pt-4 border-t border-dark-750 shrink-0">
@@ -5010,11 +5010,11 @@ const AdminStaffManagement = () => {
                 <Fingerprint className="text-brand-500" />
                 Enroll Biometric Credential
               </h2>
-              <p className="text-xs text-gray-400 mt-1">Register a hardware scan signature for <strong>{showBiometricEnrollment.staffName}</strong>.</p>
+              <p className="text-xs text-gray-200 mt-1">Register a hardware scan signature for <strong>{showBiometricEnrollment.staffName}</strong>.</p>
             </div>
             
             <div className="p-6 space-y-4">
-              <p className="text-xs text-gray-500 leading-relaxed font-semibold">
+              <p className="text-xs text-gray-300 leading-relaxed font-semibold">
                 Select your preferred biometric hardware input method to bind this staff account to their unique physical signature:
               </p>
 
@@ -5054,7 +5054,7 @@ const AdminStaffManagement = () => {
                     <span className="text-xs font-extrabold text-white block">🔌 USB Fingerprint Reader (Local WebSDK)</span>
                     <span className="text-[10px] text-gray-450 block mt-0.5 leading-normal">Enroll from external USB hardware devices (e.g. ZKTeco / SecuGen Hamster).</span>
                   </div>
-                  <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded shrink-0 ${hardwareModes.usbReader === 'connected' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-gray-700 text-gray-500'}`}>
+                  <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded shrink-0 ${hardwareModes.usbReader === 'connected' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-gray-700 text-gray-300'}`}>
                     {hardwareModes.usbReader === 'connected' ? 'Connected' : 'Offline'}
                   </span>
                 </button>
@@ -5100,11 +5100,11 @@ const AdminStaffManagement = () => {
                   <Server className="text-brand-500" />
                   Salary & Payroll Structures
                 </h2>
-                <p className="text-xs text-gray-400 mt-1">Configure baseline monthly structures and manage special personnel exceptions.</p>
+                <p className="text-xs text-gray-200 mt-1">Configure baseline monthly structures and manage special personnel exceptions.</p>
               </div>
               <button 
                 onClick={() => setShowSalaryConfig(false)}
-                className="p-1 bg-dark-900 hover:bg-red-500/20 text-gray-500 hover:text-red-400 rounded-xl transition-all cursor-pointer"
+                className="p-1 bg-dark-900 hover:bg-red-500/20 text-gray-300 hover:text-red-400 rounded-xl transition-all cursor-pointer"
               >
                 <X size={20} />
               </button>
@@ -5118,7 +5118,7 @@ const AdminStaffManagement = () => {
                   className={`pb-3 px-1 text-xs font-black uppercase tracking-wider border-b-2 transition-all ${
                     salaryStructuresTab === 'roles' 
                       ? 'border-brand-500 text-brand-400' 
-                      : 'border-transparent text-gray-400 hover:text-white'
+                      : 'border-transparent text-gray-200 hover:text-white'
                   }`}
                 >
                   🏢 Role Standard Baselines
@@ -5128,7 +5128,7 @@ const AdminStaffManagement = () => {
                   className={`pb-3 px-1 text-xs font-black uppercase tracking-wider border-b-2 transition-all ${
                     salaryStructuresTab === 'staff_exceptions' 
                       ? 'border-brand-500 text-brand-400' 
-                      : 'border-transparent text-gray-400 hover:text-white'
+                      : 'border-transparent text-gray-200 hover:text-white'
                   }`}
                 >
                   👤 Staff Overrides & Exceptions
@@ -5138,7 +5138,7 @@ const AdminStaffManagement = () => {
                   className={`pb-3 px-1 text-xs font-black uppercase tracking-wider border-b-2 transition-all ${
                     salaryStructuresTab === 'allowances' 
                       ? 'border-brand-500 text-brand-400' 
-                      : 'border-transparent text-gray-400 hover:text-white'
+                      : 'border-transparent text-gray-200 hover:text-white'
                   }`}
                 >
                   💰 Standard Allowances
@@ -5151,17 +5151,17 @@ const AdminStaffManagement = () => {
               {/* TAB 1: ROLE STANDARD STRUCTURES */}
               {salaryStructuresTab === 'roles' && (
                 <form onSubmit={handleSaveRoleStructures} className="space-y-6">
-                  <p className="text-xs text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-200 leading-relaxed">
                     Set the baseline monthly payouts by role. Personnel who do not have custom overrides enabled on their profiles will automatically fall back to these default rates.
                   </p>
                   
                   {loadingStructures ? (
-                    <div className="text-center py-10 text-gray-500 text-sm">Loading baseline parameters...</div>
+                    <div className="text-center py-10 text-gray-300 text-sm">Loading baseline parameters...</div>
                   ) : (
                     <>
                       <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner">
                       <table className="w-full text-left text-xs">
-                        <thead className="bg-dark-900 border-b border-dark-750 text-gray-400 uppercase tracking-widest font-black text-[10px]">
+                        <thead className="bg-dark-900 border-b border-dark-750 text-gray-200 uppercase tracking-widest font-black text-[10px]">
                           <tr>
                             <th className="p-4">Role Title</th>
                             <th className="p-4">Base Salary (NGN)</th>
@@ -5214,7 +5214,7 @@ const AdminStaffManagement = () => {
                                       }
                                       if (!Array.isArray(list)) list = [];
                                       if (list.length === 0) {
-                                        return <span className="text-[10px] text-gray-500 font-bold bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">None</span>;
+                                        return <span className="text-[10px] text-gray-300 font-bold bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">None</span>;
                                       }
                                       return list.map((ded, idx) => (
                                         <span key={idx} className="text-[10px] text-rose-450 font-bold bg-rose-500/10 border border-rose-500/25 px-2 py-0.5 rounded flex items-center gap-1">
@@ -5242,7 +5242,7 @@ const AdminStaffManagement = () => {
 
                                   {activeRoleDeductions === rs.role && (
                                     <div className="bg-dark-900 p-3 rounded-xl border border-dark-750 space-y-2 mt-1 w-[260px] animate-fade-in z-50">
-                                      <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">New Named Deduction</div>
+                                      <div className="text-[9px] font-bold text-gray-200 uppercase tracking-widest">New Named Deduction</div>
                                       <input 
                                         type="text" 
                                         placeholder="e.g. Health Tax"
@@ -5348,7 +5348,7 @@ const AdminStaffManagement = () => {
 
                             <div className="flex items-center gap-4">
                               {/* Override Checkbox */}
-                              <label className="flex items-center gap-2 cursor-pointer select-none text-xs font-bold text-gray-400">
+                              <label className="flex items-center gap-2 cursor-pointer select-none text-xs font-bold text-gray-200">
                                 <input 
                                   type="checkbox"
                                   checked={!!s.has_salary_exception}
@@ -5364,7 +5364,7 @@ const AdminStaffManagement = () => {
                               </label>
 
                               {/* Attendance Exemption Checkbox */}
-                              <label className="flex items-center gap-2 cursor-pointer select-none text-xs font-bold text-gray-400">
+                              <label className="flex items-center gap-2 cursor-pointer select-none text-xs font-bold text-gray-200">
                                 <input 
                                   type="checkbox"
                                   checked={!!s.exempt_from_attendance_deduction}
@@ -5386,7 +5386,7 @@ const AdminStaffManagement = () => {
                             <div className="space-y-4">
                               <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                                 <div>
-                                  <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5">Base Salary</label>
+                                  <label className="block text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1.5">Base Salary</label>
                                   <input 
                                     type="number"
                                     min="0"
@@ -5400,7 +5400,7 @@ const AdminStaffManagement = () => {
                                   />
                                 </div>
                                 <div>
-                                  <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5">Allowances</label>
+                                  <label className="block text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1.5">Allowances</label>
                                   <input 
                                     type="number"
                                     min="0"
@@ -5414,7 +5414,7 @@ const AdminStaffManagement = () => {
                                   />
                                 </div>
                                 <div className="sm:col-span-2">
-                                  <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5">
+                                  <label className="block text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1.5">
                                     Deductions Breakdown (Total: ₦{calculateTotalDeductions(s.base_salary, s.deductions_list).toLocaleString()})
                                   </label>
                                   <div className="flex flex-col gap-2 bg-dark-900 p-3 rounded-xl border border-dark-750">
@@ -5426,7 +5426,7 @@ const AdminStaffManagement = () => {
                                         }
                                         if (!Array.isArray(list)) list = [];
                                         if (list.length === 0) {
-                                          return <span className="text-[10px] text-gray-500 font-bold">No custom deductions configured.</span>;
+                                          return <span className="text-[10px] text-gray-300 font-bold">No custom deductions configured.</span>;
                                         }
                                         return list.map((ded, idx) => (
                                           <span key={idx} className="text-[10px] text-rose-450 font-bold bg-rose-500/10 border border-rose-500/25 px-2.5 py-1 rounded-xl flex items-center gap-1.5">
@@ -5485,7 +5485,7 @@ const AdminStaffManagement = () => {
                               </div>
 
                               <div>
-                                <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5">Exception / Privilege Justification</label>
+                                <label className="block text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1.5">Exception / Privilege Justification</label>
                                 <textarea
                                   rows={1.5}
                                   placeholder="e.g. Senior staff member board agreement rate - exempt from base attendance penalty calculations."
@@ -5519,14 +5519,14 @@ const AdminStaffManagement = () => {
               {/* TAB 3: STANDARD ALLOWANCES MANAGEMENT */}
               {salaryStructuresTab === 'allowances' && (
                 <div className="space-y-6 animate-fade-in text-gray-300">
-                  <p className="text-xs text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-200 leading-relaxed">
                     Define standard hotel allowances (e.g., Housing, Transport, Utility). Once configured here, these allowances can be assigned to individual staff members during registration or profile editing.
                   </p>
 
                   {/* Table of active allowances */}
                   <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner">
                     <table className="w-full text-left text-xs">
-                      <thead className="bg-dark-900 border-b border-dark-750 text-gray-400 uppercase tracking-widest font-black text-[10px]">
+                      <thead className="bg-dark-900 border-b border-dark-750 text-gray-200 uppercase tracking-widest font-black text-[10px]">
                         <tr>
                           <th className="p-4">Allowance Name / Title</th>
                           <th className="p-4">Default Monthly Amount (NGN)</th>
@@ -5554,7 +5554,7 @@ const AdminStaffManagement = () => {
                         ))}
                         {(globalAllowances || []).length === 0 && (
                           <tr>
-                            <td colSpan="3" className="p-8 text-center text-gray-500 italic">No standard allowances configured. Add one below!</td>
+                            <td colSpan="3" className="p-8 text-center text-gray-300 italic">No standard allowances configured. Add one below!</td>
                           </tr>
                         )}
                       </tbody>
@@ -5568,7 +5568,7 @@ const AdminStaffManagement = () => {
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-[10px] text-gray-400 uppercase font-black tracking-widest block mb-1">Allowance Title</label>
+                        <label className="text-[10px] text-gray-200 uppercase font-black tracking-widest block mb-1">Allowance Title</label>
                         <input
                           type="text"
                           placeholder="e.g. Utility Allowance"
@@ -5577,7 +5577,7 @@ const AdminStaffManagement = () => {
                         />
                       </div>
                       <div>
-                        <label className="text-[10px] text-gray-400 uppercase font-black tracking-widest block mb-1">Monthly Amount (NGN)</label>
+                        <label className="text-[10px] text-gray-200 uppercase font-black tracking-widest block mb-1">Monthly Amount (NGN)</label>
                         <input
                           type="number"
                           min="0"
@@ -5658,11 +5658,11 @@ const AdminStaffManagement = () => {
                 <Shield className="text-brand-500" />
                 USB Hardware Integration Guide
               </h2>
-              <p className="text-xs text-gray-400 mt-1">Instructions to connect external ZKTeco, SecuGen, or DigitalPersona scanners.</p>
+              <p className="text-xs text-gray-200 mt-1">Instructions to connect external ZKTeco, SecuGen, or DigitalPersona scanners.</p>
             </div>
 
             <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar text-xs leading-relaxed text-gray-300">
-              <p className="font-semibold text-gray-400">
+              <p className="font-semibold text-gray-200">
                 Sparkles Property Management System supports direct integration with professional-grade desktop fingerprint hardware devices. To link your local USB scanners, please complete the following steps:
               </p>
 
@@ -5671,7 +5671,7 @@ const AdminStaffManagement = () => {
                   <span className="h-6 w-6 rounded-full bg-brand-500/10 text-brand-400 font-extrabold flex items-center justify-center shrink-0">1</span>
                   <div>
                     <span className="font-extrabold text-white block">Install Driver Packages</span>
-                    <span className="text-gray-400 block mt-0.5 leading-relaxed">Plug in your USB fingerprint hardware (e.g., DigitalPersona 4500, ZK9500, or SecuGen Hamster) and ensure official manufacturer hardware drivers are successfully loaded on the workstation.</span>
+                    <span className="text-gray-200 block mt-0.5 leading-relaxed">Plug in your USB fingerprint hardware (e.g., DigitalPersona 4500, ZK9500, or SecuGen Hamster) and ensure official manufacturer hardware drivers are successfully loaded on the workstation.</span>
                   </div>
                 </div>
 
@@ -5679,7 +5679,7 @@ const AdminStaffManagement = () => {
                   <span className="h-6 w-6 rounded-full bg-brand-500/10 text-brand-400 font-extrabold flex items-center justify-center shrink-0">2</span>
                   <div>
                     <span className="font-extrabold text-white block">Run Local Biometric Agent Service</span>
-                    <span className="text-gray-400 block mt-0.5 leading-relaxed">Launch the Sparkles local biometric desktop application. This runs a secure loopback endpoint service on your workstation listening at <code className="bg-dark-950 px-1.5 py-0.5 rounded text-brand-400 font-mono text-[10px]">http://localhost:8000</code>.</span>
+                    <span className="text-gray-200 block mt-0.5 leading-relaxed">Launch the Sparkles local biometric desktop application. This runs a secure loopback endpoint service on your workstation listening at <code className="bg-dark-950 px-1.5 py-0.5 rounded text-brand-400 font-mono text-[10px]">http://localhost:8000</code>.</span>
                   </div>
                 </div>
 
@@ -5687,7 +5687,7 @@ const AdminStaffManagement = () => {
                   <span className="h-6 w-6 rounded-full bg-brand-500/10 text-brand-400 font-extrabold flex items-center justify-center shrink-0">3</span>
                   <div>
                     <span className="font-extrabold text-white block">Auto-detecting and Syncing</span>
-                    <span className="text-gray-400 block mt-0.5 leading-relaxed">Once the local agent is running, this page will automatically toggle its status light from offline to <code className="text-green-400 font-bold">Connected</code>. You will now be able to scan and enroll fingerprints physically.</span>
+                    <span className="text-gray-200 block mt-0.5 leading-relaxed">Once the local agent is running, this page will automatically toggle its status light from offline to <code className="text-green-400 font-bold">Connected</code>. You will now be able to scan and enroll fingerprints physically.</span>
                   </div>
                 </div>
               </div>

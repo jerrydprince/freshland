@@ -48,7 +48,7 @@ const Login = () => {
       <h2 className="text-2xl font-medium mb-6 text-center">Sign In</h2>
       <form onSubmit={handleLogin} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+          <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
           <input 
             type="email" 
             value={email}
@@ -59,7 +59,7 @@ const Login = () => {
         </div>
         <div>
           <div className="flex justify-between items-center mb-2">
-            <label className="block text-sm font-medium text-gray-400">Password</label>
+            <label className="block text-sm font-medium text-gray-200">Password</label>
             <Link to="/forgot-password" className="text-sm text-gold-500 hover:underline">Forgot password?</Link>
           </div>
           <div className="relative">
@@ -73,7 +73,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>

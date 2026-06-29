@@ -14,7 +14,7 @@ const MyBookings = () => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
 
@@ -89,7 +89,7 @@ const MyBookings = () => {
       case 'checked_in':
         return <span className="bg-purple-500/10 text-purple-500 border border-purple-500/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Checked In</span>;
       case 'checked_out':
-        return <span className="bg-gray-500/10 text-gray-400 border border-gray-500/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Completed</span>;
+        return <span className="bg-gray-500/10 text-gray-200 border border-gray-500/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Completed</span>;
       case 'cancelled':
         return <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Cancelled</span>;
       default:
@@ -106,7 +106,7 @@ const MyBookings = () => {
   };
 
   if (loading) {
-    return <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading booking history...</div>;
+    return <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading booking history...</div>;
   }
 
   return (
@@ -114,7 +114,7 @@ const MyBookings = () => {
       <div className="flex justify-between items-center print:hidden">
         <div>
           <h2 className="text-2xl font-semibold text-white">Your Reservation History</h2>
-          <p className="text-gray-400 mt-1">Review your upcoming bookings, dynamic invoices, and past luxury stays.</p>
+          <p className="text-gray-200 mt-1">Review your upcoming bookings, dynamic invoices, and past luxury stays.</p>
         </div>
         <a href="/booking" className="btn-primary py-2.5 px-6 text-sm rounded font-bold uppercase tracking-wider shadow-md">
           Book a Room
@@ -123,7 +123,7 @@ const MyBookings = () => {
 
       {bookings.length === 0 ? (
         <div className="bg-dark-800 border border-dark-700 rounded-lg p-10 text-center max-w-lg mx-auto shadow-md">
-          <p className="text-gray-400 mb-6">You don't have any bookings yet. Start your next luxury reservation with us today!</p>
+          <p className="text-gray-200 mb-6">You don't have any bookings yet. Start your next luxury reservation with us today!</p>
           <a href="/booking" className="btn-primary py-3 px-8 text-sm inline-block rounded font-bold uppercase tracking-wider shadow-md">
             Book a Room
           </a>
@@ -147,19 +147,19 @@ const MyBookings = () => {
                     {getStatusBadge(booking.status)}
                   </div>
                   
-                  <p className="text-xs text-gray-500 mb-4 font-mono">Reference: {booking.booking_reference}</p>
+                  <p className="text-xs text-gray-300 mb-4 font-mono">Reference: {booking.booking_reference}</p>
                   
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs bg-dark-900/50 p-3 rounded border border-dark-700/50">
                     <div>
-                      <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold mb-1">Check In</p>
+                      <p className="text-gray-300 uppercase tracking-widest text-[9px] font-bold mb-1">Check In</p>
                       <p className="font-semibold text-white">{format(new Date(booking.check_in_date), 'MMM dd, yyyy')}</p>
                     </div>
                     <div>
-                      <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold mb-1">Check Out</p>
+                      <p className="text-gray-300 uppercase tracking-widest text-[9px] font-bold mb-1">Check Out</p>
                       <p className="font-semibold text-white">{format(new Date(booking.check_out_date), 'MMM dd, yyyy')}</p>
                     </div>
                     <div className="col-span-2 md:col-span-1">
-                      <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold mb-1">Duration</p>
+                      <p className="text-gray-300 uppercase tracking-widest text-[9px] font-bold mb-1">Duration</p>
                       <p className="font-semibold text-white">{nights} Nights</p>
                     </div>
                   </div>
@@ -167,9 +167,9 @@ const MyBookings = () => {
                 
                 <div className="w-full md:w-64 border-t md:border-t-0 md:border-l border-dark-700/50 pt-6 md:pt-0 md:pl-6 text-center md:text-right flex flex-col items-center md:items-end self-stretch justify-between">
                   <div className="mb-4">
-                    <p className="text-gray-500 text-[10px] uppercase font-bold tracking-wider mb-1">Total Paid Amount</p>
+                    <p className="text-gray-300 text-[10px] uppercase font-bold tracking-wider mb-1">Total Paid Amount</p>
                     <p className="text-2xl font-black text-gold-500">₦{Number(booking.total_amount_ngn).toLocaleString()}</p>
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-gray-500 block mt-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-gray-300 block mt-1">
                       Payment: <span className={booking.payment_status === 'paid' ? 'text-green-500 font-extrabold' : 'text-yellow-500 font-extrabold'}>{booking.payment_status.toUpperCase()}</span>
                     </span>
                   </div>
@@ -194,7 +194,7 @@ const MyBookings = () => {
                     {booking.payment_status === 'unpaid' ? (
                       <button 
                         disabled
-                        className="flex-1 md:flex-none border border-dark-700 bg-dark-900/40 text-gray-500 font-medium px-4 py-2 rounded text-xs cursor-not-allowed flex items-center justify-center gap-1.5"
+                        className="flex-1 md:flex-none border border-dark-700 bg-dark-900/40 text-gray-300 font-medium px-4 py-2 rounded text-xs cursor-not-allowed flex items-center justify-center gap-1.5"
                         title="Receipt becomes active upon payment confirmation"
                       >
                         <Printer size={14} /> Receipt (Awaiting Payment)
@@ -226,9 +226,9 @@ const MyBookings = () => {
             </div>
             <div className="text-right">
               {contactInfo.logo && (
-                <img src={contactInfo.logo} alt="Jemmyland Hotels Logo" className="max-h-12 object-contain ml-auto mb-2" />
+                <img src={contactInfo.logo} alt="Freshland Logo" className="max-h-12 object-contain ml-auto mb-2" />
               )}
-              <h2 className="text-lg font-black tracking-widest text-black">Jemmyland Hotels</h2>
+              <h2 className="text-lg font-black tracking-widest text-black">Freshland</h2>
               <p className="text-xs text-gray-600">{contactInfo.address}</p>
               <p className="text-xs text-gray-600">{contactInfo.phone}</p>
               <p className="text-xs text-gray-600">{contactInfo.email}</p>
@@ -238,22 +238,22 @@ const MyBookings = () => {
           {/* Guest and Stays details */}
           <div className="flex justify-between mb-8 text-sm">
             <div>
-              <p className="text-gray-500 font-bold uppercase text-[10px] mb-1">Guest Details:</p>
+              <p className="text-gray-300 font-bold uppercase text-[10px] mb-1">Guest Details:</p>
               <p className="font-bold text-black text-base">{activeReceiptBooking.guest_name}</p>
               <p className="text-gray-600">{activeReceiptBooking.guest_email}</p>
               <p className="text-gray-600">{activeReceiptBooking.guest_phone}</p>
             </div>
             <div className="text-right">
               <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-left">
-                <span className="text-gray-500 font-bold">Check-In:</span>
+                <span className="text-gray-300 font-bold">Check-In:</span>
                 <span className="font-medium text-black">{format(new Date(activeReceiptBooking.check_in_date), 'MMM dd, yyyy')}</span>
-                <span className="text-gray-500 font-bold">Check-Out:</span>
+                <span className="text-gray-300 font-bold">Check-Out:</span>
                 <span className="font-medium text-black">{format(new Date(activeReceiptBooking.check_out_date), 'MMM dd, yyyy')}</span>
-                <span className="text-gray-500 font-bold">Transaction Date:</span>
+                <span className="text-gray-300 font-bold">Transaction Date:</span>
                 <span className="font-medium text-black">{activeReceiptBooking.created_at ? format(new Date(activeReceiptBooking.created_at), 'MMM dd, yyyy, HH:mm') : 'N/A'}</span>
-                <span className="text-gray-500 font-bold">Nights Count:</span>
+                <span className="text-gray-300 font-bold">Nights Count:</span>
                 <span className="font-medium text-black">{Math.max(1, differenceInDays(new Date(activeReceiptBooking.check_out_date), new Date(activeReceiptBooking.check_in_date)))} nights</span>
-                <span className="text-gray-500 font-bold">Payment Status:</span>
+                <span className="text-gray-300 font-bold">Payment Status:</span>
                 <span className="font-bold uppercase text-green-600">{activeReceiptBooking.payment_status === 'paid' ? 'PAID / CONFIRMED' : activeReceiptBooking.payment_status === 'partial' ? 'PARTIALLY PAID' : 'UNPAID / PENDING'}</span>
               </div>
             </div>
@@ -350,8 +350,8 @@ const MyBookings = () => {
                     <tr>
                       <td className="py-3 px-4">
                         <p className="font-bold text-black">{booking.rooms?.name || 'Luxury Room Stay'} (Room {booking.rooms?.room_number})</p>
-                        <p className="text-gray-500 text-[10px] mt-0.5">Accommodation Charges (Rent + Tax)</p>
-                          <p className="text-[9px] text-gray-400">
+                        <p className="text-gray-300 text-[10px] mt-0.5">Accommodation Charges (Rent + Tax)</p>
+                          <p className="text-[9px] text-gray-200">
                             Rate: ₦{roomPrice.toLocaleString()} {discount > 0 && `| Discount: -₦${discount.toLocaleString()}`} | Taxable Base: ₦{roomBase.toLocaleString()} | VAT (7.5%): ₦{roomTax.toLocaleString()}
                           </p>
                       </td>
@@ -367,10 +367,10 @@ const MyBookings = () => {
                         <tr key={extra.id}>
                           <td className="py-3 px-4">
                             <p className="font-bold text-black">{extra.services?.name || 'Guest Service'}</p>
-                            <p className="text-gray-500 text-[10px] mt-0.5">
+                            <p className="text-gray-300 text-[10px] mt-0.5">
                               Unit Price: ₦{extra.uPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} | Quantity: {extra.quantity}
                             </p>
-                            <p className="text-[9px] text-gray-400">
+                            <p className="text-[9px] text-gray-200">
                               Base: ₦{extra.sBasePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {extra.isTaxable ? `| VAT (7.5%): ₦${extra.sTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '(VAT Exempt)'}
                             </p>
                           </td>
@@ -426,8 +426,8 @@ const MyBookings = () => {
             );
           })()}
 
-          <div className="mt-16 text-center text-[10px] text-gray-400 border-t pt-4">
-            <p>Thank you for staying at Jemmyland Hotels. Have a wonderful experience!</p>
+          <div className="mt-16 text-center text-[10px] text-gray-200 border-t pt-4">
+            <p>Thank you for staying at Freshland. Have a wonderful experience!</p>
           </div>
         </div>
       )}

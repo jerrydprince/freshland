@@ -5,11 +5,14 @@
 @layer base {
   :root {
     --bg-black: #FFFFFF;
+    --bg-dark-950: #FFFFFF;
     --bg-dark-900: #FFFFFF;
     --bg-dark-800: #F9FAFB;
     --bg-dark-700: #E5E7EB;
     --bg-dark-600: #D1D5DB;
     --text-white: #111827;
+    --text-gray-100: #1F2937;
+    --text-gray-200: #111827;
     --text-gray-300: #374151;
     --text-gray-400: #4B5563;
     --text-gray-500: #6B7280;
@@ -22,11 +25,14 @@
 
   .dark {
     --bg-black: #000000;
+    --bg-dark-950: #05080A;
     --bg-dark-900: #0A0F14;
     --bg-dark-800: #111827;
     --bg-dark-700: #1F2937;
     --bg-dark-600: #374151;
     --text-white: #FFFFFF;
+    --text-gray-100: #F9FAFB;
+    --text-gray-200: #E5E7EB;
     --text-gray-300: #F3F4F6;
     --text-gray-400: #D1D5DB;
     --text-gray-500: #9CA3AF;
@@ -271,5 +277,11 @@ main h4:not(.text-green-400):not(.text-rose-500):not(.text-red-500):not(.text-am
 .glass-panel h4:not(.text-green-400):not(.text-rose-500):not(.text-red-500):not(.text-amber-400):not(.text-amber-500),
 nav h2, nav h3, nav h4 {
   color: var(--brand-500) !important;
+}
+
+/* Replace dark borders from PMS Admin Layout with a light translucent gray */
+.admin-pms-layout [class*="border-dark-"],
+.admin-pms-layout [class*="border-gray-"] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 

@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/Images/logo.png.png.png.png" />
+  <link rel="icon" type="image/svg+xml" href="/Images/logo.svg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jemmyland Hotels | Premium Luxury Hotel</title>
+  <title>Freshland | Premium Luxury Hotel</title>
   <script>
     (function () {
       // Dynamically apply selected theme class
@@ -25,31 +25,17 @@
         document.documentElement.classList.remove('dark');
       }
 
-      // Dynamically apply custom logo as favicon
-      try {
-        const customLogo = localStorage.getItem('contact_logo');
-        if (customLogo) {
-          let link = document.querySelector("link[rel~='icon']");
-          if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.getElementsByTagName('head')[0].appendChild(link);
-          }
-          link.href = customLogo;
-        }
-      } catch (e) {
-        console.warn("Dynamic favicon load error: ", e);
-      }
+
     })();
   </script>
   <meta name="description"
-    content="Experience unparalleled luxury and comfort at Jemmyland Hotels. Book premium hotel, corporate suites, and vacation rentals with top-tier amenities." />
+    content="Experience unparalleled luxury and comfort at Freshland. Book premium hotel, corporate suites, and vacation rentals with top-tier amenities." />
   <meta name="keywords"
-    content="luxury apartments, hotel, premium suites, vacation rental, corporate housing, Jemmyland Hotels" />
-  <meta name="author" content="Jemmyland Hotels" />
-  <meta property="og:title" content="Jemmyland Hotels | Premium Luxury Hotel" />
+    content="luxury apartments, hotel, premium suites, vacation rental, corporate housing, Freshland" />
+  <meta name="author" content="Freshland" />
+  <meta property="og:title" content="Freshland | Premium Luxury Hotel" />
   <meta property="og:description"
-    content="Book premium hotel and luxury suites with top-tier amenities at Jemmyland Hotels." />
+    content="Book premium hotel and luxury suites with top-tier amenities at Freshland." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">

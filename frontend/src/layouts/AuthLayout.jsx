@@ -42,7 +42,7 @@ const AuthLayout = () => {
       {/* Background styling */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          src="/Images/Reception.jfif" 
           alt="Luxury background" 
           className="w-full h-full object-cover opacity-20"
         />
@@ -53,14 +53,14 @@ const AuthLayout = () => {
         <div className="flex flex-col items-center mb-10">
             <Link to="/" className="flex flex-col items-center gap-3">
               <>
-                <img src="/Images/logo.png.png" alt="Jemmyland Hotels Logo" className="h-16 object-contain mb-2" />
+                <img src="/Images/logo.svg" alt="Freshland Logo" className="h-16 object-contain mb-2" />
                 <div className="flex flex-col justify-center ml-2 text-left">
-                  <span className="text-[22px] font-sans font-extrabold leading-none tracking-wide text-[#ffffff]">JEMMYLAND</span>
+                  <span className="text-[22px] font-sans font-extrabold leading-none tracking-wide text-[#ffffff]">Freshland</span>
                   <span className="text-[11px] font-sans leading-tight tracking-[0.25em] mt-1 text-brand-400">HOTELS</span>
                 </div>
               </>
             </Link>
-          <p className="text-gray-400 mt-4 tracking-widest uppercase text-xs">Guest & Admin Portal</p>
+          <p className="text-gray-200 mt-4 tracking-widest uppercase text-xs">Guest & Admin Portal</p>
         </div>
         
         <div className="bg-dark-800/80 backdrop-blur-md p-8 shadow-2xl border border-dark-700">

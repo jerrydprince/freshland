@@ -367,12 +367,12 @@ const AdminCalendar = () => {
       `}</style>
       <div>
         <h1 className="text-2xl font-bold text-white">Visual Calendar</h1>
-        <p className="text-gray-400 mt-1">Drag and drop bookings to change dates or assign rooms.</p>
+        <p className="text-gray-200 mt-1">Drag and drop bookings to change dates or assign rooms.</p>
       </div>
 
       <div className="bg-dark-800 border border-dark-700 shadow-sm p-4 rounded-lg flex-1 min-h-[700px]">
         {loading ? (
-          <div className="h-full flex items-center justify-center text-gray-500">Loading calendar data...</div>
+          <div className="h-full flex items-center justify-center text-gray-300">Loading calendar data...</div>
         ) : (
           <DragAndDropCalendar
             localizer={localizer}
@@ -407,7 +407,7 @@ const AdminCalendar = () => {
                   setSelectedEvent(null);
                   setShowRebookForm(false);
                 }}
-                className="text-gray-400 hover:text-white"
+                className="text-gray-200 hover:text-white"
               >
                 ✕
               </button>
@@ -415,7 +415,7 @@ const AdminCalendar = () => {
 
             <div className="space-y-3 mb-6">
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Guest Name:</span>
+                <span className="text-gray-200">Guest Name:</span>
                 <span className="font-semibold text-white">
                   {selectedEvent.booking.profiles 
                     ? `${selectedEvent.booking.profiles.first_name} ${selectedEvent.booking.profiles.last_name}` 
@@ -423,23 +423,23 @@ const AdminCalendar = () => {
                 </span>
               </div>
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Reference:</span>
+                <span className="text-gray-200">Reference:</span>
                 <span className="font-mono text-gold-500 font-semibold">{selectedEvent.booking.booking_reference}</span>
               </div>
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Room:</span>
+                <span className="text-gray-200">Room:</span>
                 <span className="font-semibold text-white">
                   Room {selectedEvent.booking.rooms?.room_number} ({selectedEvent.booking.rooms?.name})
                 </span>
               </div>
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Dates:</span>
+                <span className="text-gray-200">Dates:</span>
                 <span className="font-semibold text-white">
                   {selectedEvent.booking.check_in_date} to {selectedEvent.booking.check_out_date}
                 </span>
               </div>
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Status:</span>
+                <span className="text-gray-200">Status:</span>
                 <span className={`px-2 py-0.5 rounded text-xs font-semibold uppercase ${
                   selectedEvent.status === 'confirmed' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
                   selectedEvent.status === 'checked_in' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
@@ -451,13 +451,13 @@ const AdminCalendar = () => {
                 </span>
               </div>
               <div className="flex justify-between py-1 border-b border-dark-700/50">
-                <span className="text-gray-400">Amount Paid:</span>
+                <span className="text-gray-200">Amount Paid:</span>
                 <span className="font-semibold text-green-400 font-mono">
                   ₦{Number(selectedEvent.booking.amount_paid_ngn || 0).toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between py-1">
-                <span className="text-gray-400">Total Bill:</span>
+                <span className="text-gray-200">Total Bill:</span>
                 <span className="font-semibold text-white font-mono">
                   ₦{Number(selectedEvent.booking.total_amount_ngn || 0).toLocaleString()}
                 </span>
@@ -493,7 +493,7 @@ const AdminCalendar = () => {
                     
                     <div className="grid grid-cols-2 gap-3">
                       <div className="flex flex-col space-y-1">
-                        <label className="text-xs text-gray-400 font-semibold">New Check-In</label>
+                        <label className="text-xs text-gray-200 font-semibold">New Check-In</label>
                         <input 
                           type="date"
                           required
@@ -503,7 +503,7 @@ const AdminCalendar = () => {
                         />
                       </div>
                       <div className="flex flex-col space-y-1">
-                        <label className="text-xs text-gray-400 font-semibold">New Check-Out</label>
+                        <label className="text-xs text-gray-200 font-semibold">New Check-Out</label>
                         <input 
                           type="date"
                           required
@@ -515,7 +515,7 @@ const AdminCalendar = () => {
                     </div>
 
                     <div className="flex flex-col space-y-1">
-                      <label className="text-xs text-gray-400 font-semibold">Select Room</label>
+                      <label className="text-xs text-gray-200 font-semibold">Select Room</label>
                       <select
                         required
                         value={rebookRoomId}
@@ -530,7 +530,7 @@ const AdminCalendar = () => {
                           </option>
                         ))}
                       </select>
-                      {loadingRebookRooms && <span className="text-xs text-gray-400 animate-pulse">Checking available inventory...</span>}
+                      {loadingRebookRooms && <span className="text-xs text-gray-200 animate-pulse">Checking available inventory...</span>}
                       {!loadingRebookRooms && rebookRoomsList.length === 0 && rebookCheckIn && rebookCheckOut && (
                         <span className="text-xs text-red-400">No rooms available for the selected dates.</span>
                       )}
@@ -551,15 +551,15 @@ const AdminCalendar = () => {
                       return (
                         <div className="bg-dark-900/50 border border-dark-700/50 p-4 rounded-lg space-y-2 text-sm font-sans">
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Nights:</span>
+                            <span className="text-gray-200">Nights:</span>
                             <span>{nights} night(s)</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">New Total Cost:</span>
+                            <span className="text-gray-200">New Total Cost:</span>
                             <span className="font-semibold text-white font-mono">₦{newTotal.toLocaleString()}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Carried Balance Paid:</span>
+                            <span className="text-gray-200">Carried Balance Paid:</span>
                             <span className="font-semibold text-green-400 font-mono">₦{originalPaid.toLocaleString()}</span>
                           </div>
                           <div className="flex justify-between border-t border-dark-700/50 pt-2 font-bold">
@@ -568,7 +568,7 @@ const AdminCalendar = () => {
                               ₦{Math.abs(balance).toLocaleString()}
                             </span>
                           </div>
-                          <p className="text-[10px] text-gray-500 leading-normal">
+                          <p className="text-[10px] text-gray-300 leading-normal">
                             * Confirming this rebooking updates the booking dates and assigns the selected room. A payment ledger entry of ₦0 with description 'rebook' is recorded.
                           </p>
                         </div>

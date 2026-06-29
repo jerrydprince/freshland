@@ -34,7 +34,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-200">
             Showing <span className="font-semibold text-white">{((currentPage - 1) * pageSize) + 1}</span> to{' '}
             <span className="font-semibold text-white">
               {Math.min(currentPage * pageSize, totalItems)}
@@ -48,7 +48,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === 1}
               onClick={() => onPageChange(currentPage - 1)}
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Previous</span>
               &larr;
@@ -71,7 +71,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === totalPages}
               onClick={() => onPageChange(currentPage + 1)}
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Next</span>
               &rarr;
@@ -130,7 +130,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
 
@@ -574,7 +574,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </head>
               <body>
                 <div class="header">
-                  <h1>Jemmyland Hotels</h1>
+                  <h1>Freshland</h1>
                   <p>Premium Luxury Hotel</p>
                 </div>
                 <p class="title">Hall Booking Receipt</p>
@@ -591,7 +591,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 </table>
                 <div class="amount">₦${amountToPay.toLocaleString(undefined, { minimumFractionDigits: 2 })}</div>
                 <div class="footer">
-                  <p>Authorized and confirmed by Jemmyland Hotels Finance Department.</p>
+                  <p>Authorized and confirmed by Freshland Finance Department.</p>
                 </div>
               </body>
             </html>
@@ -761,7 +761,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </head>
               <body>
                 <div class="header">
-                  <h1>Jemmyland Hotels</h1>
+                  <h1>Freshland</h1>
                   <p>Premium Luxury Hotel</p>
                 </div>
                 <p class="title">Payment Receipt</p>
@@ -775,7 +775,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 </table>
                 <div class="amount">₦${Number(reminder.amount_ngn || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}</div>
                 <div class="footer">
-                  <p>Authorized and confirmed by Jemmyland Hotels Finance Department.</p>
+                  <p>Authorized and confirmed by Freshland Finance Department.</p>
                   ${reminder.recurrence !== 'none' ? '<p style="color: #f59e0b; font-weight: bold;">Next recurrence reminder has been automatically scheduled.</p>' : ''}
                 </div>
               </body>
@@ -851,8 +851,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           const receiptHtml = `
             <div style="font-family: 'Outfit', sans-serif; padding: 40px; color: #1f2937; max-width: 600px; margin: auto; border: 1px solid #e5e7eb; border-top: 8px solid #DF6853; border-radius: 16px; background-color: #ffffff;">
               <div style="text-align: center; border-bottom: 1px solid #f3f4f6; padding-bottom: 25px; margin-bottom: 25px;">
-                ${contactInfo.logo ? `<img src="${contactInfo.logo}" alt="Jemmyland Hotels" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
-                <h2 style="color: #000000; margin: 0; font-size: 26px; font-weight: 800; letter-spacing: 0.05em;">Jemmyland Hotels</h2>
+                ${contactInfo.logo ? `<img src="${contactInfo.logo}" alt="Freshland" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
+                <h2 style="color: #000000; margin: 0; font-size: 26px; font-weight: 800; letter-spacing: 0.05em;">Freshland</h2>
                 <span style="font-size: 11px; color: #DF6853; text-transform: uppercase; letter-spacing: 0.15em; font-weight: bold;">Premium Luxury Hotel</span>
               </div>
               
@@ -862,7 +862,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                   Dear <strong>${payout.professional?.name || 'Partner'}</strong>,
                 </p>
                 <p style="font-size: 14px; line-height: 1.6; color: #4b5563; margin-top: 10px; margin-bottom: 0;">
-                  This is to confirm that a payout of <strong>₦${Number(payout.amount_ngn).toLocaleString(undefined, {minimumFractionDigits: 2})}</strong> has been successfully processed for the maintenance services carried out at Jemmyland Hotels.
+                  This is to confirm that a payout of <strong>₦${Number(payout.amount_ngn).toLocaleString(undefined, {minimumFractionDigits: 2})}</strong> has been successfully processed for the maintenance services carried out at Freshland.
                 </p>
               </div>
 
@@ -918,7 +918,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               ` : ''}
 
               <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 12px; color: #9ca3af;">
-                <p style="margin: 0 0 5px 0;">This is an official automated disbursement confirmation from Jemmyland Hotels.</p>
+                <p style="margin: 0 0 5px 0;">This is an official automated disbursement confirmation from Freshland.</p>
                 <p style="margin: 0;">${contactInfo.address}</p>
                 <p style="margin: 5px 0 0 0;">Phones: ${contactInfo.phone} | Email: ${contactInfo.email}</p>
               </div>
@@ -927,8 +927,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
 
           const emailRes = await sendResendEmail({
             to: specialistEmail,
-            subject: `Payment Receipt: ₦${Number(payout.amount_ngn).toLocaleString()} - Jemmyland Hotels`,
-            from: 'booking@jemmylandhotels.com',
+            subject: `Payment Receipt: ₦${Number(payout.amount_ngn).toLocaleString()} - Freshland`,
+            from: 'booking@Freshlandhotels.com',
             html: receiptHtml
           });
           
@@ -993,8 +993,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
         try {
           const emailRes = await sendResendEmail({
             to: specialistEmail,
-            subject: `Payment Receipt: ₦${Number(payout.amount_ngn).toLocaleString()} - Jemmyland Hotels`,
-            from: 'booking@jemmylandhotels.com',
+            subject: `Payment Receipt: ₦${Number(payout.amount_ngn).toLocaleString()} - Freshland`,
+            from: 'booking@Freshlandhotels.com',
             html: `<p>Payment of ₦${Number(payout.amount_ngn).toLocaleString()} received successfully for maintenance!</p>`
           });
           if (emailRes?.success) emailSent = true;
@@ -1620,7 +1620,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
 
       setManagerPhoneDisplay(managerPhone);
 
-      const smsMessage = `Jemmyland Hotels: Security OTP code for Refund Auth is ${code}. Invoice Ref: ${activeRefundModal.invoice_number}, Amount: ₦${Number(paymentAmount).toLocaleString()}. Valid for 5 minutes.`;
+      const smsMessage = `Freshland: Security OTP code for Refund Auth is ${code}. Invoice Ref: ${activeRefundModal.invoice_number}, Amount: ₦${Number(paymentAmount).toLocaleString()}. Valid for 5 minutes.`;
       
       const res = await sendSMSNotification({
         to: managerPhone,
@@ -1699,7 +1699,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
     printWindow.document.write(`
       <html>
         <head>
-          <title>Refund Settlements Bank Report - Jemmyland Hotels</title>
+          <title>Refund Settlements Bank Report - Freshland</title>
           <style>
             @page { size: landscape; margin: 20mm; }
             body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; color: #111827; }
@@ -1720,7 +1720,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           
           <div class="meta">
             <div>
-              <strong>Jemmyland Hotels Premium Luxury Hotel</strong><br />
+              <strong>Freshland Premium Luxury Hotel</strong><br />
               Compiled Date: ${new Date().toLocaleString()}<br />
               Total Records: ${filtered.length}
             </div>
@@ -1917,7 +1917,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       case 'paid': return 'bg-green-500/20 text-green-400 border border-green-500/30';
       case 'partial': return 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30';
       case 'overdue': return 'bg-red-500/20 text-red-400 border border-red-500/30';
-      case 'cancelled': return 'bg-dark-600 text-gray-500 border border-dark-500';
+      case 'cancelled': return 'bg-dark-600 text-gray-300 border border-dark-500';
       default: return 'bg-blue-500/20 text-blue-400 border border-blue-500/30'; // draft/sent
     }
   };
@@ -2015,27 +2015,27 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             <CreditCard className="text-brand-500" />
             Financial Folios & Billing Ledger
           </h1>
-          <p className="text-gray-400 mt-1">Manage invoices, process multi-gateway payments, and issue refunds.</p>
+          <p className="text-gray-200 mt-1">Manage invoices, process multi-gateway payments, and issue refunds.</p>
         </div>
       </div>
 
       {/* Tabs */}
       <div className="flex gap-4 border-b border-dark-700 overflow-x-auto">
-        <button onClick={() => setActiveTab('invoices')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'invoices' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('invoices')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'invoices' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <FileText size={18} /> Invoices & Billings
         </button>
         {hasAccess('Accounting') && (
-          <button onClick={() => setActiveTab('payouts')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'payouts' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('payouts')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'payouts' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <ArrowRightLeft size={18} /> Specialist Payouts
           </button>
         )}
         {hasAccess('Accounting') && (
-          <button onClick={() => setActiveTab('settlements')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'settlements' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('settlements')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'settlements' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <RefreshCcw size={18} /> Refund Settlements
           </button>
         )}
         {hasAccess('Accounting') && (
-          <button onClick={() => setActiveTab('accounting')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'accounting' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('accounting')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'accounting' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <Wallet size={18} /> Accounting & Ledgers
           </button>
         )}
@@ -2046,15 +2046,15 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           {/* KPI Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-green-500">
-          <p className="text-sm text-gray-400 font-medium">Total Collected Revenue</p>
+          <p className="text-sm text-gray-200 font-medium">Total Collected Revenue</p>
           <h3 className="text-3xl font-bold text-white mt-1">₦{stats.totalRevenue.toLocaleString()}</h3>
         </div>
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-yellow-500">
-          <p className="text-sm text-gray-400 font-medium">Pending Receivables</p>
+          <p className="text-sm text-gray-200 font-medium">Pending Receivables</p>
           <h3 className="text-3xl font-bold text-white mt-1">₦{stats.pendingReceivables.toLocaleString()}</h3>
         </div>
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-brand-500">
-          <p className="text-sm text-gray-400 font-medium">VAT/Tax Collected (Estimated)</p>
+          <p className="text-sm text-gray-200 font-medium">VAT/Tax Collected (Estimated)</p>
           <h3 className="text-3xl font-bold text-white mt-1">₦{stats.taxCollected.toLocaleString(undefined, {maximumFractionDigits: 0})}</h3>
         </div>
       </div>
@@ -2065,13 +2065,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           <h2 className="text-lg font-bold text-amber-500 flex items-center gap-2">
             ⚠️ Service Payments Awaiting Finance Confirmation ({pendingServicePayments.length})
           </h2>
-          <p className="text-gray-400 text-xs">
+          <p className="text-gray-200 text-xs">
             Guests have requested these stay enhancements. Confirm their cash, POS, or bank transfer payments to credit their account and allow front desk approval.
           </p>
           <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
             <table className="w-full text-left border-collapse text-sm">
               <thead>
-                <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                   <th className="py-3 px-4">Guest / Room</th>
                   <th className="py-3 px-4">Service Details</th>
                   <th className="py-3 px-4">Total Cost</th>
@@ -2086,16 +2086,16 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                     <tr key={req.id} className="hover:bg-dark-700/30 transition-colors">
                       <td className="py-3.5 px-4">
                         <p className="font-bold text-white">{guestName}</p>
-                        <span className="text-[10px] text-gray-500 font-mono">Ref: {req.bookings?.booking_reference}</span>
+                        <span className="text-[10px] text-gray-300 font-mono">Ref: {req.bookings?.booking_reference}</span>
                       </td>
                       <td className="py-3.5 px-4">
                         <p className="font-semibold text-white">{req.services?.name}</p>
-                        <span className="text-xs text-gray-400">Qty: {req.quantity}</span>
+                        <span className="text-xs text-gray-200">Qty: {req.quantity}</span>
                       </td>
                       <td className="py-3.5 px-4 font-bold text-gold-500 font-mono">
                         ₦{Number(req.total_price_ngn).toLocaleString()}
                       </td>
-                      <td className="py-3.5 px-4 text-xs text-gray-400">
+                      <td className="py-3.5 px-4 text-xs text-gray-200">
                         {req.notes || 'N/A'}
                       </td>
                       <td className="py-3.5 px-4 text-right flex justify-end gap-2 items-center">
@@ -2149,13 +2149,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           <h2 className="text-lg font-bold text-amber-500 flex items-center gap-2">
             ⚠️ Checkout Payments Awaiting Finance Confirmation ({pendingCheckoutPayments.length})
           </h2>
-          <p className="text-gray-400 text-xs">
+          <p className="text-gray-200 text-xs">
             Guests are attempting to check out at Front Office and have logged these payments. Confirm their cash, POS, or bank transfer payments to allow Front Office to finalize their checkout.
           </p>
           <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
             <table className="w-full text-left border-collapse text-sm">
               <thead>
-                <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                   <th className="py-3 px-4">Guest / Room</th>
                   <th className="py-3 px-4">Booking Reference</th>
                   <th className="py-3 px-4">Amount</th>
@@ -2172,7 +2172,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                     <tr key={p.id} className="hover:bg-dark-700/30 transition-colors">
                       <td className="py-3.5 px-4">
                         <p className="font-bold text-white">{guestName}</p>
-                        <span className="text-xs text-gray-400">Room: {roomNumber}</span>
+                        <span className="text-xs text-gray-200">Room: {roomNumber}</span>
                       </td>
                       <td className="py-3.5 px-4 font-mono text-xs text-gray-300">
                         {p.bookings?.booking_reference || 'N/A'}
@@ -2185,9 +2185,9 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                           {p.method === 'bank_transfer' ? 'Bank Transfer' : p.method}
                         </span>
                       </td>
-                      <td className="py-3.5 px-4 text-xs text-gray-400">
+                      <td className="py-3.5 px-4 text-xs text-gray-200">
                         <p className="truncate max-w-[250px]" title={p.notes}>{p.notes || 'N/A'}</p>
-                        <span className="text-[10px] text-gray-500 font-mono">Ref: {p.transaction_ref}</span>
+                        <span className="text-[10px] text-gray-300 font-mono">Ref: {p.transaction_ref}</span>
                       </td>
                       <td className="py-3.5 px-4 text-right flex justify-end gap-2 items-center">
                         <button 
@@ -2223,7 +2223,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       <div className="bg-dark-800 border border-dark-700 shadow-sm rounded-lg overflow-hidden">
         <div className="p-4 border-b border-dark-700 bg-dark-900 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="relative w-full sm:w-80">
-            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" />
             <input 
               type="text" 
               placeholder="Search by Invoice #, Booking Ref, or Guest..." 
@@ -2234,7 +2234,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
           </div>
           
           <div className="flex items-center gap-3 w-full sm:w-auto">
-            <span className="text-xs text-gray-400 font-medium whitespace-nowrap">Sort By:</span>
+            <span className="text-xs text-gray-200 font-medium whitespace-nowrap">Sort By:</span>
             <select
               value={sortBy}
               onChange={e => setSortBy(e.target.value)}
@@ -2252,7 +2252,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className="bg-dark-900 border-b border-dark-700 text-xs uppercase tracking-wider text-gray-500">
+            <thead className="bg-dark-900 border-b border-dark-700 text-xs uppercase tracking-wider text-gray-300">
               <tr>
                 <th className="p-4">Invoice #</th>
                 <th className="p-4">Booking Ref</th>
@@ -2265,8 +2265,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </tr>
             </thead>
             <tbody className="divide-y divide-dark-700 text-sm">
-              {loading && <tr><td colSpan="8" className="p-8 text-center text-gray-500">Loading invoices...</td></tr>}
-              {!loading && sortedInvoices.length === 0 && <tr><td colSpan="8" className="p-8 text-center text-gray-500">No invoices found.</td></tr>}
+              {loading && <tr><td colSpan="8" className="p-8 text-center text-gray-300">Loading invoices...</td></tr>}
+              {!loading && sortedInvoices.length === 0 && <tr><td colSpan="8" className="p-8 text-center text-gray-300">No invoices found.</td></tr>}
               
               {paginatedInvoices.map(inv => {
                 const guestName = inv.bookings?.profiles 
@@ -2278,8 +2278,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 return (
                   <tr key={inv.id} className="hover:bg-dark-700 transition-colors group">
                     <td className="p-4">
-                      <p className="font-bold text-white flex items-center gap-2"><FileText size={14} className="text-gray-500"/> {inv.invoice_number}</p>
-                      <p className="text-xs text-gray-500">Due: {format(new Date(inv.due_date), 'MMM dd, yyyy')}</p>
+                      <p className="font-bold text-white flex items-center gap-2"><FileText size={14} className="text-gray-300"/> {inv.invoice_number}</p>
+                      <p className="text-xs text-gray-300">Due: {format(new Date(inv.due_date), 'MMM dd, yyyy')}</p>
                     </td>
                     <td className="p-4 font-medium text-brand-500">{inv.bookings?.booking_reference || inv.hall_bookings?.booking_reference || 'N/A'}</td>
                     <td className="p-4 font-medium text-gray-300">{guestName}</td>
@@ -2288,7 +2288,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                       {discount > 0 ? (
                         <span className="text-yellow-500 font-semibold">-₦{discount.toLocaleString()}</span>
                       ) : (
-                        <span className="text-gray-500">-</span>
+                        <span className="text-gray-300">-</span>
                       )}
                     </td>
                     <td className="p-4">
@@ -2415,27 +2415,27 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <button
                   type="button"
                   onClick={() => setSpecialistPayoutTab('pending')}
-                  className={`px-3 py-1.5 text-xs font-bold rounded transition-colors ${specialistPayoutTab === 'pending' ? 'bg-dark-700 text-white shadow' : 'text-gray-400 hover:text-white'}`}
+                  className={`px-3 py-1.5 text-xs font-bold rounded transition-colors ${specialistPayoutTab === 'pending' ? 'bg-dark-700 text-white shadow' : 'text-gray-200 hover:text-white'}`}
                 >
                   Pending Confirmation
                 </button>
                 <button
                   type="button"
                   onClick={() => setSpecialistPayoutTab('history')}
-                  className={`px-3 py-1.5 text-xs font-bold rounded transition-colors ${specialistPayoutTab === 'history' ? 'bg-dark-700 text-white shadow' : 'text-gray-400 hover:text-white'}`}
+                  className={`px-3 py-1.5 text-xs font-bold rounded transition-colors ${specialistPayoutTab === 'history' ? 'bg-dark-700 text-white shadow' : 'text-gray-200 hover:text-white'}`}
                 >
                   Payout History
                 </button>
               </div>
             </h2>
-            <p className="text-gray-400 text-xs">
+            <p className="text-gray-200 text-xs">
               {specialistPayoutTab === 'pending' ? 'These disbursements were approved from the Maintenance module. Confirm payout here to mark as paid.' : 'History of all completed specialist disbursements and receipts.'}
             </p>
             
             <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
               <table className="w-full text-left border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                     <th className="py-3 px-4">Specialist / Trade</th>
                     <th className="py-3 px-4">Disbursement Target Bank Details</th>
                     <th className="py-3 px-4">Amount</th>
@@ -2446,7 +2446,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <tbody className="divide-y divide-dark-700/50">
                   {paginatedPayouts.filter(p => specialistPayoutTab === 'pending' ? p.payment_status === 'approved' : p.payment_status === 'paid').length === 0 ? (
                     <tr>
-                      <td colSpan="5" className="py-8 px-4 text-center text-gray-500 italic text-xs">
+                      <td colSpan="5" className="py-8 px-4 text-center text-gray-300 italic text-xs">
                         {specialistPayoutTab === 'pending' ? 'No approved disbursements awaiting confirmation.' : 'No payout history found.'}
                       </td>
                     </tr>
@@ -2468,15 +2468,15 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                           </td>
                           <td className="py-3.5 px-4 font-sans text-xs">
                             <div className="bg-dark-900/70 p-2.5 rounded-lg border border-dark-750 max-w-xs space-y-1">
-                              <div className="flex justify-between text-gray-400">
+                              <div className="flex justify-between text-gray-200">
                                 <span>Bank:</span>
                                 <strong className="text-white">{bankName}</strong>
                               </div>
-                              <div className="flex justify-between text-gray-400">
+                              <div className="flex justify-between text-gray-200">
                                 <span>Acct #:</span>
                                 <strong className="text-brand-500 font-mono font-bold select-all">{acctNum}</strong>
                               </div>
-                              <div className="text-[10px] text-gray-500 mt-0.5 truncate italic" title={acctName}>
+                              <div className="text-[10px] text-gray-300 mt-0.5 truncate italic" title={acctName}>
                                 {acctName}
                               </div>
                             </div>
@@ -2484,7 +2484,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                           <td className="py-3.5 px-4 font-mono font-bold text-white text-base">
                             ₦{Number(pay.amount_ngn).toLocaleString()}
                           </td>
-                          <td className="py-3.5 px-4 text-xs text-gray-400 max-w-sm">
+                          <td className="py-3.5 px-4 text-xs text-gray-200 max-w-sm">
                             <p className="line-clamp-2" title={pay.notes}>
                               {pay.notes || 'Disbursement requested for maintenance ticket.'}
                             </p>
@@ -2530,14 +2530,14 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             <h2 className="text-lg font-bold text-orange-400 flex items-center gap-2">
               <CalendarClock className="text-orange-400" /> Subscriptions & Utility Schedule Payouts ({reminderPayouts.length})
             </h2>
-            <p className="text-gray-400 text-xs">
+            <p className="text-gray-200 text-xs">
               These are subscription and utility payments approved by scheduling. Confirm payment to finalize the expense ledger, print a receipt, and auto-schedule the next recurrence.
             </p>
 
             <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
               <table className="w-full text-left border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                     <th className="py-3 px-4">Schedule / Description</th>
                     <th className="py-3 px-4">Category</th>
                     <th className="py-3 px-4">Amount</th>
@@ -2549,7 +2549,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <tbody className="divide-y divide-dark-700/50">
                   {reminderPayouts.length === 0 ? (
                     <tr>
-                      <td colSpan="6" className="py-8 px-4 text-center text-gray-500 italic text-xs">
+                      <td colSpan="6" className="py-8 px-4 text-center text-gray-300 italic text-xs">
                         No pending subscription/utility payment approvals at this time.
                       </td>
                     </tr>
@@ -2559,7 +2559,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                         <td className="py-3.5 px-4">
                           <p className="font-bold text-white">{rem.title}</p>
                           {rem.description && (
-                            <p className="text-[10px] text-gray-500 mt-0.5 line-clamp-1">{rem.description}</p>
+                            <p className="text-[10px] text-gray-300 mt-0.5 line-clamp-1">{rem.description}</p>
                           )}
                         </td>
                         <td className="py-3.5 px-4">
@@ -2568,8 +2568,8 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                         <td className="py-3.5 px-4 font-mono font-bold text-white text-base">
                           ₦{Number(rem.amount_ngn || 0).toLocaleString()}
                         </td>
-                        <td className="py-3.5 px-4 text-xs text-gray-400 font-mono">{rem.due_date}</td>
-                        <td className="py-3.5 px-4 text-xs text-gray-400 capitalize">{rem.recurrence}</td>
+                        <td className="py-3.5 px-4 text-xs text-gray-200 font-mono">{rem.due_date}</td>
+                        <td className="py-3.5 px-4 text-xs text-gray-200 capitalize">{rem.recurrence}</td>
                         <td className="py-3.5 px-4 text-right">
                           <button
                             disabled={isFrontOfficeClosed}
@@ -2592,14 +2592,14 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             <h2 className="text-lg font-bold text-emerald-450 flex items-center gap-2">
               <Landmark className="text-emerald-450" /> Hall & Catering Booking Payouts ({hallPayouts.length})
             </h2>
-            <p className="text-gray-400 text-xs">
+            <p className="text-gray-200 text-xs">
               These are event hall and catering bookings awaiting payment confirmation. Confirm payment here to mark the booking as confirmed, record payment inflow, and print the receipt.
             </p>
 
             <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
               <table className="w-full text-left border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                     <th className="py-3 px-4">Booking Ref / Guest</th>
                     <th className="py-3 px-4">Event Hall</th>
                     <th className="py-3 px-4">Event Date / Type</th>
@@ -2610,7 +2610,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <tbody className="divide-y divide-dark-700/50">
                   {hallPayouts.length === 0 ? (
                     <tr>
-                      <td colSpan="5" className="py-8 px-4 text-center text-gray-500 italic text-xs">
+                      <td colSpan="5" className="py-8 px-4 text-center text-gray-300 italic text-xs">
                         No pending hall booking payment confirmations at this time.
                       </td>
                     </tr>
@@ -2619,14 +2619,14 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                       <tr key={hb.id} className="hover:bg-dark-700/30 transition-colors">
                         <td className="py-3.5 px-4">
                           <p className="font-bold text-white">{hb.booking_reference}</p>
-                          <p className="text-[10px] text-gray-500 mt-0.5">{hb.guest_name}</p>
+                          <p className="text-[10px] text-gray-300 mt-0.5">{hb.guest_name}</p>
                         </td>
                         <td className="py-3.5 px-4">
                           <span className="font-semibold text-white">{hb.halls?.name || 'Event Space'}</span>
                         </td>
-                        <td className="py-3.5 px-4 text-xs text-gray-400">
+                        <td className="py-3.5 px-4 text-xs text-gray-200">
                           <p className="font-medium">{hb.booking_date}</p>
-                          <span className="text-[10px] text-gray-500 mt-0.5 capitalize">{hb.booking_type}</span>
+                          <span className="text-[10px] text-gray-300 mt-0.5 capitalize">{hb.booking_type}</span>
                         </td>
                         <td className="py-3.5 px-4 font-mono font-bold text-white text-base">
                           ₦{Number(hb.total_amount_ngn || 0).toLocaleString()}
@@ -2664,7 +2664,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <h2 className="text-lg font-bold text-brand-500 flex items-center gap-2">
                   <RefreshCcw className="text-brand-500" /> Guest Refund Settlements & Bank Outwards ({getFilteredSettlements().length})
                 </h2>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-200 text-xs">
                   Generate daily, weekly, or monthly reports for outward bank settlements, print reports, and mark refunds as paid.
                 </p>
               </div>
@@ -2679,7 +2679,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             </div>
 
             <div className="flex items-center gap-3 p-3 bg-dark-900 border border-dark-700 rounded-lg">
-              <span className="text-xs text-gray-400 font-medium">Batch Filter:</span>
+              <span className="text-xs text-gray-200 font-medium">Batch Filter:</span>
               <div className="flex gap-2">
                 {['all', 'daily', 'weekly', 'monthly'].map((filter) => (
                   <button
@@ -2688,7 +2688,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all uppercase ${
                       settlementFilter === filter
                         ? 'bg-brand-500 text-dark-950'
-                        : 'bg-dark-850 text-gray-400 hover:text-white hover:bg-dark-750'
+                        : 'bg-dark-850 text-gray-200 hover:text-white hover:bg-dark-750'
                     }`}
                   >
                     {filter}
@@ -2700,7 +2700,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             <div className="overflow-x-auto border border-dark-700 rounded bg-dark-900/50">
               <table className="w-full text-left border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-dark-700 bg-dark-900 text-gray-300 text-xs uppercase tracking-wider">
                     <th className="py-3 px-4">Guest Info</th>
                     <th className="py-3 px-4">Refund Amount</th>
                     <th className="py-3 px-4">Settlement Bank Details</th>
@@ -2711,13 +2711,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <tbody className="divide-y divide-dark-700/50">
                   {settlementsLoading ? (
                     <tr>
-                      <td colSpan="5" className="py-8 px-4 text-center text-gray-500">
+                      <td colSpan="5" className="py-8 px-4 text-center text-gray-300">
                         Loading settlements...
                       </td>
                     </tr>
                   ) : paginatedSettlements.length === 0 ? (
                     <tr>
-                      <td colSpan="5" className="py-8 px-4 text-center text-gray-500 italic text-xs">
+                      <td colSpan="5" className="py-8 px-4 text-center text-gray-300 italic text-xs">
                         No settlements found for this filter batch.
                       </td>
                     </tr>
@@ -2727,22 +2727,22 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                         <tr key={setl.id} className="hover:bg-dark-700/30 transition-colors">
                           <td className="py-3.5 px-4">
                             <p className="font-bold text-white">{setl.guest_name}</p>
-                            <span className="text-xs text-gray-400 font-mono">{setl.guest_email}</span>
+                            <span className="text-xs text-gray-200 font-mono">{setl.guest_email}</span>
                           </td>
                           <td className="py-3.5 px-4 font-mono font-bold text-red-400 text-base">
                             ₦{Number(setl.refund_amount).toLocaleString()}
                           </td>
                           <td className="py-3.5 px-4 font-sans text-xs">
                             <div className="bg-dark-900/70 p-2.5 rounded-lg border border-dark-750 max-w-xs space-y-1">
-                              <div className="flex justify-between text-gray-400">
+                              <div className="flex justify-between text-gray-200">
                                 <span>Bank:</span>
                                 <strong className="text-white">{setl.bank_name}</strong>
                               </div>
-                              <div className="flex justify-between text-gray-400">
+                              <div className="flex justify-between text-gray-200">
                                 <span>Acct #:</span>
                                 <strong className="text-brand-500 font-mono font-bold select-all">{setl.account_number}</strong>
                               </div>
-                              <div className="text-[10px] text-gray-500 mt-0.5 truncate italic" title={setl.account_name}>
+                              <div className="text-[10px] text-gray-300 mt-0.5 truncate italic" title={setl.account_name}>
                                 {setl.account_name}
                               </div>
                             </div>
@@ -2758,7 +2758,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                               {setl.status}
                             </span>
                             {setl.settled_at && (
-                              <p className="text-[10px] text-gray-500 font-mono mt-1">
+                              <p className="text-[10px] text-gray-300 font-mono mt-1">
                                 Settled: {new Date(setl.settled_at).toLocaleDateString()}
                               </p>
                             )}
@@ -2796,13 +2796,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       {activePaymentModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-md shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => !isProcessing && setActivePaymentModal(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => !isProcessing && setActivePaymentModal(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2"><CreditCard className="text-brand-500"/> Process Payment</h2>
-            <p className="text-sm text-gray-400 mb-6">Invoice: {activePaymentModal.invoice_number}</p>
+            <p className="text-sm text-gray-200 mb-6">Invoice: {activePaymentModal.invoice_number}</p>
             
             <form onSubmit={handleProcessPayment} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Payment Method Gateway</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Payment Method Gateway</label>
                 <select disabled={isProcessing} value={paymentMethod} onChange={e => setPaymentMethod(e.target.value)} className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="paystack">Paystack</option>
                   <option value="flutterwave">Flutterwave</option>
@@ -2816,7 +2816,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Amount to Charge (₦)</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Amount to Charge (₦)</label>
                 <input 
                   disabled={isProcessing}
                   required 
@@ -2827,13 +2827,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                   onChange={e => setPaymentAmount(e.target.value)} 
                   className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-brand-500 transition-colors" 
                 />
-                <p className="text-xs text-gray-500 mt-1 flex justify-between">
+                <p className="text-xs text-gray-300 mt-1 flex justify-between">
                   <span>Balance Due: ₦{(activePaymentModal.total_amount - activePaymentModal.amount_paid).toLocaleString()}</span>
                   <span className="text-brand-500 cursor-pointer hover:underline" onClick={() => setPaymentAmount((activePaymentModal.total_amount - activePaymentModal.amount_paid).toString())}>Pay Full</span>
                 </p>
               </div>
 
-              <button type="submit" disabled={isProcessing || !paymentAmount} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessing || !paymentAmount ? 'bg-dark-700 text-gray-500 cursor-not-allowed' : 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]'}`}>
+              <button type="submit" disabled={isProcessing || !paymentAmount} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessing || !paymentAmount ? 'bg-dark-700 text-gray-300 cursor-not-allowed' : 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]'}`}>
                 {isProcessing ? <><RefreshCcw size={18} className="animate-spin" /> Processing via {paymentMethod.toUpperCase()}...</> : `Charge ₦${Number(paymentAmount).toLocaleString()}`}
               </button>
             </form>
@@ -2845,13 +2845,13 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       {activeRefundModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-md shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => !isProcessing && setActiveRefundModal(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => !isProcessing && setActiveRefundModal(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2"><ArrowRightLeft className="text-red-500"/> Issue Refund</h2>
-            <p className="text-sm text-gray-400 mb-6">Invoice: {activeRefundModal.invoice_number}</p>
+            <p className="text-sm text-gray-200 mb-6">Invoice: {activeRefundModal.invoice_number}</p>
             
             <form onSubmit={handleIssueRefund} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Refund Method</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Refund Method</label>
                 <select disabled={isProcessing} value={paymentMethod} onChange={e => setPaymentMethod(e.target.value)} className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-red-500 transition-colors">
                   <option value="ar">Accounts Receivable (AR)</option>
                   <option value="bank_transfer">Bank Transfer (Manual Outward)</option>
@@ -2862,7 +2862,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Amount to Refund (₦)</label>
+                <label className="block text-sm font-medium text-gray-200 mb-1">Amount to Refund (₦)</label>
                 <input 
                   disabled={isProcessing}
                   required 
@@ -2873,7 +2873,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                   onChange={e => setPaymentAmount(e.target.value)} 
                   className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-red-500 transition-colors" 
                 />
-                <p className="text-xs text-gray-500 mt-1 flex justify-between">
+                <p className="text-xs text-gray-300 mt-1 flex justify-between">
                   <span>Max Refundable: ₦{Number(activeRefundModal.amount_paid - activeRefundModal.total_amount).toLocaleString()}</span>
                   <span className="text-red-500 cursor-pointer hover:underline" onClick={() => setPaymentAmount((Number(activeRefundModal.amount_paid) - Number(activeRefundModal.total_amount)).toString())}>Refund Full Amount</span>
                 </p>
@@ -2884,7 +2884,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <div className="bg-dark-900/60 p-4 border border-dark-700/60 rounded-xl space-y-3">
                   <span className="text-xs uppercase font-bold text-red-400 tracking-wider">Guest Settlement Bank Details</span>
                   <div>
-                    <label className="block text-xs text-gray-400 mb-1">Bank Name *</label>
+                    <label className="block text-xs text-gray-200 mb-1">Bank Name *</label>
                     <select
                       required={paymentMethod === 'bank_transfer'}
                       disabled={isProcessing}
@@ -2915,7 +2915,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1">Account Number *</label>
+                      <label className="block text-xs text-gray-200 mb-1">Account Number *</label>
                       <input
                         required={paymentMethod === 'bank_transfer'}
                         disabled={isProcessing}
@@ -2928,7 +2928,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1">Account Name *</label>
+                      <label className="block text-xs text-gray-200 mb-1">Account Name *</label>
                       <input
                         required={paymentMethod === 'bank_transfer'}
                         disabled={isProcessing}
@@ -2959,7 +2959,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
 
                 ) : (
                   <div className="space-y-2">
-                    <p className="text-[10px] text-gray-400">
+                    <p className="text-[10px] text-gray-200">
                       Enter the 6-digit OTP code sent to Manager's phone number ({managerPhoneDisplay.slice(0, 4)}***{managerPhoneDisplay.slice(-4)}):
                     </p>
                     <div className="flex gap-2">
@@ -2988,7 +2988,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 Warning: Once a refund is recorded, it will deduct from the total amount paid on this invoice and the booking.
               </div>
 
-              <button type="submit" disabled={isProcessing || !paymentAmount || !otpSent || otpInput.length < 6} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessing || !paymentAmount || !otpSent || otpInput.length < 6 ? 'bg-dark-700 text-gray-500 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white shadow-[0_0_15px_rgba(239,68,68,0.3)]'}`}>
+              <button type="submit" disabled={isProcessing || !paymentAmount || !otpSent || otpInput.length < 6} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessing || !paymentAmount || !otpSent || otpInput.length < 6 ? 'bg-dark-700 text-gray-300 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white shadow-[0_0_15px_rgba(239,68,68,0.3)]'}`}>
                 {isProcessing ? <><RefreshCcw size={18} className="animate-spin" /> Processing Refund...</> : `Authorize & Confirm Refund (₦${Number(paymentAmount).toLocaleString()})`}
               </button>
             </form>
@@ -3026,12 +3026,12 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                 <h1 className="text-4xl font-black tracking-tight mb-1 text-white print:text-black">
                   {activeInvoiceModal.status === 'paid' ? 'OFFICIAL RECEIPT' : 'INVOICE'}
                 </h1>
-                <p className="text-gray-400 print:text-gray-500 font-medium">#{activeInvoiceModal.invoice_number}</p>
+                <p className="text-gray-200 print:text-gray-300 font-medium">#{activeInvoiceModal.invoice_number}</p>
               </div>
               <div className="text-right">
                 <div className="flex flex-col justify-center items-end">
                   {contactInfo.logo ? (
-                    <img src={contactInfo.logo} alt="Jemmyland Hotels Logo" className="max-h-12 object-contain print:max-h-16 mb-2" />
+                    <img src={contactInfo.logo} alt="Freshland Logo" className="max-h-12 object-contain print:max-h-16 mb-2" />
                   ) : (
                     <>
                       <span className="text-[20px] font-sans font-extrabold text-white print:text-black leading-none tracking-wide">SPARKLES</span>
@@ -3039,36 +3039,36 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                     </>
                   )}
                 </div>
-                <p className="text-sm text-gray-400 print:text-gray-500 mt-2">{contactInfo.address}</p>
-                <p className="text-sm text-gray-400 print:text-gray-500">{contactInfo.email}</p>
-                <p className="text-sm text-gray-400 print:text-gray-500">{contactInfo.phone.split(',')[0]}</p>
+                <p className="text-sm text-gray-200 print:text-gray-300 mt-2">{contactInfo.address}</p>
+                <p className="text-sm text-gray-200 print:text-gray-300">{contactInfo.email}</p>
+                <p className="text-sm text-gray-200 print:text-gray-300">{contactInfo.phone.split(',')[0]}</p>
               </div>
             </div>
 
             {/* Invoice Info */}
             <div className="flex justify-between mb-8">
               <div>
-                <p className="text-sm text-gray-500 font-bold uppercase mb-1">Billed To:</p>
+                <p className="text-sm text-gray-300 font-bold uppercase mb-1">Billed To:</p>
                 <p className="font-bold text-lg text-white print:text-black">
                   {activeInvoiceModal.bookings 
                     ? (activeInvoiceModal.bookings.profiles ? `${activeInvoiceModal.bookings.profiles.first_name} ${activeInvoiceModal.bookings.profiles.last_name}` : activeInvoiceModal.bookings.guest_name) 
                     : (activeInvoiceModal.hall_bookings?.guest_name || 'Walk-in Guest')}
                 </p>
                 {(activeInvoiceModal.bookings?.profiles?.phone || activeInvoiceModal.hall_bookings?.guest_phone) && (
-                  <p className="text-sm text-gray-400 print:text-gray-650 font-medium">
+                  <p className="text-sm text-gray-200 print:text-gray-650 font-medium">
                     {activeInvoiceModal.bookings?.profiles?.phone || activeInvoiceModal.hall_bookings?.guest_phone}
                   </p>
                 )}
               </div>
               <div className="text-right">
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-left">
-                  <span className="text-gray-400 print:text-gray-500 font-bold">Issue Timestamp:</span>
+                  <span className="text-gray-200 print:text-gray-300 font-bold">Issue Timestamp:</span>
                   <span className="font-medium text-white print:text-black">{activeInvoiceModal.created_at ? format(new Date(activeInvoiceModal.created_at), 'MMM dd, yyyy, HH:mm') : format(new Date(activeInvoiceModal.issue_date), 'MMM dd, yyyy')}</span>
-                  <span className="text-gray-400 print:text-gray-500 font-bold">Due Date:</span>
+                  <span className="text-gray-200 print:text-gray-300 font-bold">Due Date:</span>
                   <span className="font-medium text-white print:text-black">{format(new Date(activeInvoiceModal.due_date), 'MMM dd, yyyy')}</span>
-                  <span className="text-gray-400 print:text-gray-500 font-bold">Booking Ref:</span>
+                  <span className="text-gray-200 print:text-gray-300 font-bold">Booking Ref:</span>
                   <span className="font-medium text-white print:text-black">{activeInvoiceModal.bookings?.booking_reference || activeInvoiceModal.hall_bookings?.booking_reference || 'N/A'}</span>
-                  <span className="text-gray-400 print:text-gray-500 font-bold">Status:</span>
+                  <span className="text-gray-200 print:text-gray-300 font-bold">Status:</span>
                   <span className={`font-bold uppercase ${activeInvoiceModal.status === 'paid' ? 'text-green-400 print:text-green-600' : activeInvoiceModal.status === 'partial' ? 'text-yellow-400 print:text-yellow-600' : 'text-red-400 print:text-red-655'}`}>
                     {activeInvoiceModal.status === 'paid' ? 'paid' : 
                      activeInvoiceModal.status === 'partial' ? 'partial' : 
@@ -3080,7 +3080,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
 
             {/* Line Items */}
             <table className="w-full mb-8 text-sm border-collapse text-left">
-              <thead className="bg-dark-900/50 border-y border-dark-700 text-gray-400 print:bg-gray-100 print:border-gray-200 print:text-gray-600">
+              <thead className="bg-dark-900/50 border-y border-dark-700 text-gray-200 print:bg-gray-100 print:border-gray-200 print:text-gray-600">
                 <tr>
                   <th className="py-3 px-4 text-left font-bold">Description</th>
                   <th className="py-3 px-4 text-center font-bold">Payment Status</th>
@@ -3122,10 +3122,10 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                             <p className="font-bold text-white print:text-black">
                               Hall Space Rental: {hb.halls?.name || 'Event Space'}
                             </p>
-                            <p className="text-gray-400 print:text-gray-500 text-xs mt-0.5">
+                            <p className="text-gray-200 print:text-gray-300 text-xs mt-0.5">
                               Booking Date: {hb.booking_date} | Type: {hb.booking_type === 'daily' ? 'Daily Rental' : 'Hourly Rental'}
                             </p>
-                            <p className="text-[10px] text-gray-500 mt-1">
+                            <p className="text-[10px] text-gray-300 mt-1">
                               Duration: {hb.booking_type === 'daily' ? `${hb.num_days} Day(s)` : `${hb.num_hours} Hour(s)`} | Capacity: {hb.halls?.capacity || 'N/A'} Guests
                             </p>
                           </td>
@@ -3142,10 +3142,10 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                               <p className="font-bold text-white print:text-black">
                                 Catering: {meal.hall_meal_options?.name || meal.course_type}
                               </p>
-                              <p className="text-gray-400 print:text-gray-500 text-xs mt-0.5">
+                              <p className="text-gray-200 print:text-gray-300 text-xs mt-0.5">
                                 Serving Date: {meal.serving_date} | Course: {meal.course_type}
                               </p>
-                              <p className="text-[10px] text-gray-500 mt-1">
+                              <p className="text-[10px] text-gray-300 mt-1">
                                 Rate: ₦{Number(meal.price_per_participant_ngn || 0).toLocaleString()} per pax | Participants: {meal.number_of_participants}
                               </p>
                             </td>
@@ -3219,10 +3219,10 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                           <p className="font-bold text-white print:text-black">
                             Accommodation Charges (Rent + Tax) {booking.rooms ? `(${booking.rooms.name} - Room ${booking.rooms.room_number})` : ''}
                           </p>
-                          <p className="text-gray-400 print:text-gray-500 text-xs mt-0.5">
+                          <p className="text-gray-200 print:text-gray-300 text-xs mt-0.5">
                             Check-in: {booking.check_in_date || 'N/A'} | Check-out: {booking.check_out_date || 'N/A'}
                           </p>
-                          <p className="text-[10px] text-gray-500 mt-1">
+                          <p className="text-[10px] text-gray-300 mt-1">
                             Rate: ₦{roomPrice.toLocaleString()} {discount > 0 && `| Discount: -₦${discount.toLocaleString()}`} | Taxable Base: ₦{roomBase.toLocaleString()} | VAT (7.5%): ₦{roomTax.toLocaleString()}
                           </p>
                         </td>
@@ -3240,10 +3240,10 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
                               <p className="font-bold text-white print:text-black">
                                 {extra.services?.name || 'Guest Service'}
                               </p>
-                              <p className="text-gray-400 print:text-gray-500 text-xs mt-0.5">
+                              <p className="text-gray-200 print:text-gray-300 text-xs mt-0.5">
                                 Unit Price: ₦{extra.uPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} | Quantity: {extra.quantity}
                               </p>
-                              <p className="text-[10px] text-gray-500 mt-1">
+                              <p className="text-[10px] text-gray-300 mt-1">
                                 Base: ₦{extra.sBasePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {extra.isTaxable ? `| VAT (7.5%): ₦${extra.sTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '(VAT Exempt)'}
                               </p>
                             </td>
@@ -3272,7 +3272,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               return (
                 <div className="flex justify-end">
                   <div className="w-64 space-y-3 text-sm">
-                    <div className="flex justify-between text-gray-400 print:text-gray-600">
+                    <div className="flex justify-between text-gray-200 print:text-gray-600">
                       <span>Subtotal</span>
                       <span className="text-white print:text-black font-medium">
                         ₦{(totalAmount + discount).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -3311,16 +3311,16 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
             <div className="flex justify-between items-end pt-12 border-t border-dashed border-dark-700 print:border-gray-200 mt-12 text-left">
               <div className="text-center w-48">
                 <div className="border-b border-dark-700 print:border-gray-300 h-8"></div>
-                <span className="text-[10px] text-gray-450 print:text-gray-500 font-semibold block mt-1.5 uppercase">Prepared By</span>
+                <span className="text-[10px] text-gray-450 print:text-gray-300 font-semibold block mt-1.5 uppercase">Prepared By</span>
               </div>
               <div className="text-center w-48">
                 <div className="border-b border-dark-700 print:border-gray-300 h-8"></div>
-                <span className="text-[10px] text-gray-450 print:text-gray-500 font-semibold block mt-1.5 uppercase">Audited By (Hotel Manager)</span>
+                <span className="text-[10px] text-gray-450 print:text-gray-300 font-semibold block mt-1.5 uppercase">Audited By (Hotel Manager)</span>
               </div>
             </div>
 
-            <div className="mt-16 text-center text-xs text-gray-400 print:text-gray-500 border-t border-dark-700 print:border-gray-200 pt-4">
-              <p>Thank you for choosing Jemmyland Hotels.</p>
+            <div className="mt-16 text-center text-xs text-gray-200 print:text-gray-300 border-t border-dark-700 print:border-gray-200 pt-4">
+              <p>Thank you for choosing Freshland.</p>
               <p>Payment is due by the specified due date. Late payments may incur additional fees.</p>
             </div>
           </div>
@@ -3330,7 +3330,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       {activeHallPayoutModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-8 w-full max-w-lg shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => { setActiveHallPayoutModal(null); setPaymentAmount(''); }} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+            <button onClick={() => { setActiveHallPayoutModal(null); setPaymentAmount(''); }} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors">
               <X size={24} />
             </button>
             <div className="flex items-center gap-3 mb-6">
@@ -3339,32 +3339,32 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white">Confirm Hall Payment</h2>
-                <p className="text-sm text-gray-400">Ref: {activeHallPayoutModal.booking_reference}</p>
+                <p className="text-sm text-gray-200">Ref: {activeHallPayoutModal.booking_reference}</p>
               </div>
             </div>
 
             <form onSubmit={handleConfirmHallPayoutSubmit} className="space-y-6">
               <div className="bg-dark-900/50 p-4 rounded-lg border border-dark-700 space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Guest Name</span>
+                  <span className="text-gray-200">Guest Name</span>
                   <span className="text-white font-medium">{activeHallPayoutModal.guest_name}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Total Amount</span>
+                  <span className="text-gray-200">Total Amount</span>
                   <span className="text-white font-bold">₦{Number(activeHallPayoutModal.total_amount_ngn || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Already Paid</span>
+                  <span className="text-gray-200">Already Paid</span>
                   <span className="text-green-400 font-bold">₦{Number(activeHallPayoutModal.amount_paid_ngn || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between border-t border-dark-700 pt-3">
-                  <span className="text-gray-400">Outstanding Balance</span>
+                  <span className="text-gray-200">Outstanding Balance</span>
                   <span className="text-red-400 font-black text-lg">₦{Math.max(0, Number(activeHallPayoutModal.total_amount_ngn || 0) - Number(activeHallPayoutModal.amount_paid_ngn || 0)).toLocaleString()}</span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Payment Amount (₦)</label>
+                <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Payment Amount (₦)</label>
                 <input
                   type="number"
                   min="1"
@@ -3378,7 +3378,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Payment Method</label>
+                <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Payment Method</label>
                 <select
                   value={paymentMethod}
                   onChange={e => setPaymentMethod(e.target.value)}
@@ -3407,7 +3407,7 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
       {isPayoutReceiptModalOpen && activePayoutReceipt && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-8 w-full max-w-lg shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsPayoutReceiptModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+            <button onClick={() => setIsPayoutReceiptModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors">
               <X size={24} />
             </button>
             <div className="flex items-center gap-3 mb-6">
@@ -3416,32 +3416,32 @@ const AdminBilling = ({ isFrontOfficeClosed }) => {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white">Payout Receipt</h2>
-                <p className="text-sm text-gray-400">Ref: {activePayoutReceipt.transaction_reference || 'N/A'}</p>
+                <p className="text-sm text-gray-200">Ref: {activePayoutReceipt.transaction_reference || 'N/A'}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="bg-dark-900/50 p-4 rounded-lg border border-dark-700 space-y-3">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-400">Date Paid</span>
+                  <span className="text-gray-200">Date Paid</span>
                   <span className="text-white font-medium">{activePayoutReceipt.paid_at ? format(new Date(activePayoutReceipt.paid_at), 'MMM dd, yyyy HH:mm') : 'N/A'}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-400">Specialist</span>
+                  <span className="text-gray-200">Specialist</span>
                   <span className="text-white font-bold">{activePayoutReceipt.professional?.name || 'Unknown'}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-400">Bank Details</span>
+                  <span className="text-gray-200">Bank Details</span>
                   <span className="text-white text-right">
                     {activePayoutReceipt.professional?.bank_name} - <span className="font-mono">{activePayoutReceipt.professional?.account_number}</span>
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-400">Amount</span>
+                  <span className="text-gray-200">Amount</span>
                   <span className="text-brand-400 font-bold font-mono text-lg">₦{Number(activePayoutReceipt.amount_ngn).toLocaleString()}</span>
                 </div>
                 <div className="pt-3 mt-3 border-t border-dark-700">
-                  <span className="text-gray-400 text-xs block mb-1">Notes / Description</span>
+                  <span className="text-gray-200 text-xs block mb-1">Notes / Description</span>
                   <p className="text-gray-300 text-sm italic">{activePayoutReceipt.notes || 'None'}</p>
                 </div>
               </div>

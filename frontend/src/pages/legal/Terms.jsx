@@ -7,11 +7,11 @@ const Terms = () => {
         <h1 className="text-4xl md:text-5xl font-serif text-white mb-8 text-center">Terms and Conditions</h1>
         
         <div className="bg-dark-800 border border-dark-700 p-8 md:p-12 text-gray-300 space-y-8 leading-relaxed">
-          <p className="text-lg text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-lg text-gray-200">Last updated: {new Date().toLocaleDateString()}</p>
           
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
-            <p>Welcome to Jemmyland Hotels. By booking an accommodation with us, you agree to be bound by these Terms and Conditions. Please read them carefully before proceeding with your reservation.</p>
+            <p>Welcome to Freshland. By booking an accommodation with us, you agree to be bound by these Terms and Conditions. Please read them carefully before proceeding with your reservation.</p>
           </section>
 
           <section>
@@ -41,7 +41,7 @@ const Terms = () => {
 
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">6. Liability</h2>
-            <p>Jemmyland Hotels is not liable for any loss, damage, or injury sustained by guests or their property during their stay. We strongly recommend comprehensive travel insurance.</p>
+            <p>Freshland is not liable for any loss, damage, or injury sustained by guests or their property during their stay. We strongly recommend comprehensive travel insurance.</p>
           </section>
 
           <section>

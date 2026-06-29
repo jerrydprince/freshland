@@ -226,7 +226,7 @@ const BookingEngine = () => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
 
@@ -1167,9 +1167,9 @@ const BookingEngine = () => {
           </div>
           <div className="text-right">
             {contactInfo.logo && (
-              <img src={contactInfo.logo} alt="Jemmyland Hotels Logo" className="max-h-12 object-contain ml-auto mb-2" />
+              <img src={contactInfo.logo} alt="Freshland Logo" className="max-h-12 object-contain ml-auto mb-2" />
             )}
-            <h2 className="text-lg font-black tracking-widest text-black">Jemmyland Hotels</h2>
+            <h2 className="text-lg font-black tracking-widest text-black">Freshland</h2>
             <p className="text-xs text-gray-600">{contactInfo.address}</p>
             <p className="text-xs text-gray-600">{contactInfo.phone}</p>
             <p className="text-xs text-gray-600">{contactInfo.email}</p>
@@ -1179,22 +1179,22 @@ const BookingEngine = () => {
         {/* Guest Details */}
         <div className="flex justify-between mb-8 text-sm text-left">
           <div>
-            <p className="text-gray-500 font-bold uppercase text-[10px] mb-1">Guest Details:</p>
+            <p className="text-gray-300 font-bold uppercase text-[10px] mb-1">Guest Details:</p>
             <p className="font-bold text-black text-base">{guestForm.firstName} {guestForm.lastName}</p>
             <p className="text-gray-600">{guestForm.email}</p>
             <p className="text-gray-600">{guestForm.phone}</p>
           </div>
           <div className="text-right">
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-left">
-              <span className="text-gray-500 font-bold">Check-In:</span>
+              <span className="text-gray-300 font-bold">Check-In:</span>
               <span className="font-medium text-black">{format(dateRange[0].startDate, 'MMM dd, yyyy')}</span>
-              <span className="text-gray-500 font-bold">Check-Out:</span>
+              <span className="text-gray-300 font-bold">Check-Out:</span>
               <span className="font-medium text-black">{format(dateRange[0].endDate, 'MMM dd, yyyy')}</span>
-              <span className="text-gray-500 font-bold">Transaction Date:</span>
+              <span className="text-gray-300 font-bold">Transaction Date:</span>
               <span className="font-medium text-black">{format(new Date(), 'MMM dd, yyyy, HH:mm')}</span>
-              <span className="text-gray-500 font-bold">Purpose:</span>
+              <span className="text-gray-300 font-bold">Purpose:</span>
               <span className="font-medium text-black">{guestForm.purpose || 'Leisure'}</span>
-              <span className="text-gray-500 font-bold">Status:</span>
+              <span className="text-gray-300 font-bold">Status:</span>
               <span className="font-bold uppercase text-green-600">{paymentMethod === 'pay_online' ? 'PAID / CONFIRMED' : 'CONFIRMED (ARRIVAL PAYMENT)'}</span>
             </div>
           </div>
@@ -1306,8 +1306,8 @@ const BookingEngine = () => {
                   <tr>
                     <td className="py-3 px-4">
                       <p className="font-bold text-black">{selectedRoom.name} ({selectedRoom.type})</p>
-                      <p className="text-gray-500 text-[10px] mt-0.5">Accommodation Charges (Rent + Tax)</p>
-                      <p className="text-[9px] text-gray-400">
+                      <p className="text-gray-300 text-[10px] mt-0.5">Accommodation Charges (Rent + Tax)</p>
+                      <p className="text-[9px] text-gray-200">
                             Rate: ₦{roomPrice.toLocaleString()} {discountVal > 0 && `| Discount: -₦${discountVal.toLocaleString()}`} | Taxable Base: ₦{roomBase.toLocaleString()} | VAT (7.5%): ₦{roomTax.toLocaleString()}
                           </p>
                     </td>
@@ -1323,10 +1323,10 @@ const BookingEngine = () => {
                       <tr key={sData.service_id}>
                         <td className="py-3 px-4">
                           <p className="font-bold text-black">{service.name}</p>
-                          <p className="text-gray-500 text-[10px] mt-0.5">
+                          <p className="text-gray-300 text-[10px] mt-0.5">
                             Unit Price: ₦{uPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} | Quantity: {sData.quantity}
                           </p>
-                          <p className="text-[9px] text-gray-400">
+                          <p className="text-[9px] text-gray-200">
                             Base: ₦{sBasePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isTaxable ? `| VAT (7.5%): ₦${sTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '(VAT Exempt)'}
                           </p>
                         </td>
@@ -1392,8 +1392,8 @@ const BookingEngine = () => {
           );
         })()}
 
-        <div className="mt-16 text-center text-[10px] text-gray-400 border-t pt-4">
-          <p>Thank you for choosing Jemmyland Hotels. Have a wonderful stay!</p>
+        <div className="mt-16 text-center text-[10px] text-gray-200 border-t pt-4">
+          <p>Thank you for choosing Freshland. Have a wonderful stay!</p>
         </div>
       </div>
     );
@@ -1781,10 +1781,10 @@ const BookingEngine = () => {
         <div className="absolute top-1/2 left-0 w-full h-0.5 bg-dark-700 -z-10 -translate-y-1/2"></div>
         {labels.map((label, idx) => (
           <div key={idx} className="flex flex-col items-center">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${step > idx + 1 ? 'bg-gold-500 text-dark-900' : step === idx + 1 ? 'bg-dark-900 border-2 border-gold-500 text-gold-500' : 'bg-dark-800 text-gray-500 border border-dark-700'}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${step > idx + 1 ? 'bg-gold-500 text-dark-900' : step === idx + 1 ? 'bg-dark-900 border-2 border-gold-500 text-gold-500' : 'bg-dark-800 text-gray-300 border border-dark-700'}`}>
               {step > idx + 1 ? <CheckCircle size={20} /> : idx + 1}
             </div>
-            <span className={`text-sm ${step === idx + 1 ? 'text-gold-500 font-medium' : 'text-gray-500'}`}>{label}</span>
+            <span className={`text-sm ${step === idx + 1 ? 'text-gold-500 font-medium' : 'text-gray-300'}`}>{label}</span>
           </div>
         ))}
       </div>
@@ -1796,10 +1796,10 @@ const BookingEngine = () => {
       <div className="absolute top-1/2 left-0 w-full h-0.5 bg-dark-700 -z-10 -translate-y-1/2"></div>
       {['Search Room', 'Choose Room', 'Guest Details', 'Additional Services'].map((label, idx) => (
         <div key={idx} className="flex flex-col items-center">
-          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${step > idx + 1 ? 'bg-gold-500 text-dark-900' : step === idx + 1 ? 'bg-dark-900 border-2 border-gold-500 text-gold-500' : 'bg-dark-800 text-gray-500 border border-dark-700'}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${step > idx + 1 ? 'bg-gold-500 text-dark-900' : step === idx + 1 ? 'bg-dark-900 border-2 border-gold-500 text-gold-500' : 'bg-dark-800 text-gray-300 border border-dark-700'}`}>
             {step > idx + 1 ? <CheckCircle size={20} /> : idx + 1}
           </div>
-          <span className={`text-sm ${step === idx + 1 ? 'text-gold-500 font-medium' : 'text-gray-500'}`}>{label}</span>
+          <span className={`text-sm ${step === idx + 1 ? 'text-gold-500 font-medium' : 'text-gray-300'}`}>{label}</span>
         </div>
       ))}
     </div>
@@ -1809,7 +1809,7 @@ const BookingEngine = () => {
     return (
       <div className="min-h-screen bg-dark-900 flex flex-col items-center justify-center p-4">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold-500 mb-4"></div>
-        <p className="text-gray-400 text-sm">Verifying transaction and confirming your booking...</p>
+        <p className="text-gray-200 text-sm">Verifying transaction and confirming your booking...</p>
       </div>
     );
   }
@@ -1834,14 +1834,14 @@ const BookingEngine = () => {
                     <button 
                       type="button"
                       onClick={() => setBookingMode('room')}
-                      className={`flex-1 py-3 text-center text-xs font-bold rounded-xl transition-all ${bookingMode === 'room' ? 'bg-gradient-to-tr from-gold-600 to-amber-500 text-dark-950 font-black shadow-md' : 'text-gray-400 hover:text-white'}`}
+                      className={`flex-1 py-3 text-center text-xs font-bold rounded-xl transition-all ${bookingMode === 'room' ? 'bg-gradient-to-tr from-gold-600 to-amber-500 text-dark-950 font-black shadow-md' : 'text-gray-200 hover:text-white'}`}
                     >
                       Luxury Apartments & Suites
                     </button>
                     <button 
                       type="button"
                       onClick={() => setBookingMode('hall')}
-                      className={`flex-1 py-3 text-center text-xs font-bold rounded-xl transition-all ${bookingMode === 'hall' ? 'bg-gradient-to-tr from-gold-600 to-amber-500 text-dark-950 font-black shadow-md' : 'text-gray-400 hover:text-white'}`}
+                      className={`flex-1 py-3 text-center text-xs font-bold rounded-xl transition-all ${bookingMode === 'hall' ? 'bg-gradient-to-tr from-gold-600 to-amber-500 text-dark-950 font-black shadow-md' : 'text-gray-200 hover:text-white'}`}
                     >
                       Event Halls & Catering
                     </button>
@@ -1867,13 +1867,13 @@ const BookingEngine = () => {
                   {bookingMode === 'room' ? (
                     <div className="grid grid-cols-2 gap-6 mb-8">
                       <div>
-                        <label className="block text-sm text-gray-400 mb-2">Adults</label>
+                        <label className="block text-sm text-gray-200 mb-2">Adults</label>
                         <select value={guests.adults} onChange={(e) => setGuests({...guests, adults: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 text-white p-3">
                           {[1,2,3,4,5,6].map(n => <option key={n} value={n}>{n}</option>)}
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm text-gray-400 mb-2">Children</label>
+                        <label className="block text-sm text-gray-200 mb-2">Children</label>
                         <select value={guests.children} onChange={(e) => setGuests({...guests, children: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 text-white p-3">
                           {[0,1,2,3,4].map(n => <option key={n} value={n}>{n}</option>)}
                         </select>
@@ -1883,7 +1883,7 @@ const BookingEngine = () => {
                     <div className="space-y-4 mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm text-gray-400 mb-2">Rental Pricing Scheme</label>
+                          <label className="block text-sm text-gray-200 mb-2">Rental Pricing Scheme</label>
                           <select 
                             value={hallBookingType} 
                             onChange={(e) => setHallBookingType(e.target.value)} 
@@ -1894,7 +1894,7 @@ const BookingEngine = () => {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-sm text-gray-400 mb-2">Expected Participants (Pax)</label>
+                          <label className="block text-sm text-gray-200 mb-2">Expected Participants (Pax)</label>
                           <input 
                             type="number" 
                             min="1"
@@ -1908,7 +1908,7 @@ const BookingEngine = () => {
                       {hallBookingType === 'hourly' && (
                         <div className="grid grid-cols-2 gap-6 pt-2">
                           <div>
-                            <label className="block text-xs text-gray-400 mb-1">Start Time</label>
+                            <label className="block text-xs text-gray-200 mb-1">Start Time</label>
                             <input 
                               type="time" 
                               value={hallStartTime} 
@@ -1917,7 +1917,7 @@ const BookingEngine = () => {
                             />
                           </div>
                           <div>
-                            <label className="block text-xs text-gray-400 mb-1">End Time</label>
+                            <label className="block text-xs text-gray-200 mb-1">End Time</label>
                             <input 
                               type="time" 
                               value={hallEndTime} 
@@ -1947,7 +1947,7 @@ const BookingEngine = () => {
                     <>
                       <h3 className="text-2xl font-medium mb-6">Available Suites for Your Dates</h3>
                       {availableRooms.length === 0 ? (
-                        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-400">
+                        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-200">
                           No rooms available for the selected dates and capacity. Please adjust your search.
                         </div>
                       ) : (
@@ -1958,9 +1958,9 @@ const BookingEngine = () => {
                               <div>
                                 <div className="flex justify-between items-start mb-2">
                                   <h4 className="text-xl font-medium text-white">{room.name}</h4>
-                                  <span className="text-brand-500 font-bold text-lg">₦{(calculateRoomPriceDetails(room).totalRoomPrice / totalNights).toLocaleString()}<span className="text-sm font-normal text-gray-400">/avg night</span></span>
+                                  <span className="text-brand-500 font-bold text-lg">₦{(calculateRoomPriceDetails(room).totalRoomPrice / totalNights).toLocaleString()}<span className="text-sm font-normal text-gray-200">/avg night</span></span>
                                 </div>
-                                <div className="flex space-x-4 text-sm text-gray-400 mb-4">
+                                <div className="flex space-x-4 text-sm text-gray-200 mb-4">
                                   <span className="flex items-center"><Users size={16} className="mr-1"/> Up to {room.capacity}</span>
                                   <span>{room.size_sqm} sqm</span>
                                 </div>
@@ -1971,7 +1971,7 @@ const BookingEngine = () => {
                                 </div>
                               </div>
                               {room.isBooked ? (
-                                <button disabled className="w-full py-3 font-medium transition-colors bg-dark-700 text-gray-500 border border-dark-600 cursor-not-allowed">
+                                <button disabled className="w-full py-3 font-medium transition-colors bg-dark-700 text-gray-300 border border-dark-600 cursor-not-allowed">
                                   {!room.isClean ? 'Awaiting Housekeeping Inspection' : 'Unavailable for Selected Dates'}
                                 </button>
                               ) : (
@@ -1988,7 +1988,7 @@ const BookingEngine = () => {
                     <>
                       <h3 className="text-2xl font-medium mb-6">Available Event Halls for Your Dates</h3>
                       {availableHalls.length === 0 ? (
-                        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-400">
+                        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-200">
                           No event halls available for the selected dates, time, and participant capacity.
                         </div>
                       ) : (
@@ -2005,8 +2005,8 @@ const BookingEngine = () => {
                                     }
                                   </span>
                                 </div>
-                                <p className="text-gray-400 text-sm mt-1 mb-4 leading-relaxed">{hall.description || 'Spacious event hall for all occasions.'}</p>
-                                <div className="flex space-x-6 text-sm text-gray-400 mb-4">
+                                <p className="text-gray-200 text-sm mt-1 mb-4 leading-relaxed">{hall.description || 'Spacious event hall for all occasions.'}</p>
+                                <div className="flex space-x-6 text-sm text-gray-200 mb-4">
                                   <span className="flex items-center"><Users size={16} className="mr-1.5 text-gold-500"/> Capacity: Up to {hall.capacity} guests</span>
                                   <span>Size: {hall.size_sqm} sqm</span>
                                 </div>
@@ -2025,7 +2025,7 @@ const BookingEngine = () => {
                       )}
                     </>
                   )}
-                  <button onClick={() => setStep(1)} className="text-gray-400 hover:text-white text-sm mt-4 block">← Back to Search</button>
+                  <button onClick={() => setStep(1)} className="text-gray-200 hover:text-white text-sm mt-4 block">← Back to Search</button>
                 </div>
               )}
 
@@ -2093,19 +2093,19 @@ const BookingEngine = () => {
                             <h4 className="text-xs font-bold text-gold-500 uppercase tracking-widest">Booking Guest Profile</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Name</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Name</span>
                                 <span className="font-bold text-white text-base">{user.first_name} {user.last_name}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Role / Access</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Role / Access</span>
                                 <span className="font-bold text-gold-500 text-base capitalize">{user.role?.replace(/_/g, ' ') || 'Guest'}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Email Address</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Email Address</span>
                                 <span className="font-mono text-white text-base">{user.email}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Phone Number</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Phone Number</span>
                                 <span className="font-mono text-white text-base">{user.phone || 'Not Provided'}</span>
                               </div>
                             </div>
@@ -2114,31 +2114,31 @@ const BookingEngine = () => {
                           <>
                             <div className="grid grid-cols-2 gap-6">
                               <div>
-                                <label className="block text-sm text-gray-400 mb-2">First Name *</label>
+                                <label className="block text-sm text-gray-200 mb-2">First Name *</label>
                                 <input type="text" value={guestForm.firstName} onChange={e => setGuestForm({...guestForm, firstName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                               </div>
                               <div>
-                                <label className="block text-sm text-gray-400 mb-2">Last Name *</label>
+                                <label className="block text-sm text-gray-200 mb-2">Last Name *</label>
                                 <input type="text" value={guestForm.lastName} onChange={e => setGuestForm({...guestForm, lastName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                               </div>
                             </div>
                             <div>
-                              <label className="block text-sm text-gray-400 mb-2">Email Address *</label>
+                              <label className="block text-sm text-gray-200 mb-2">Email Address *</label>
                               <input type="email" value={guestForm.email} onChange={e => setGuestForm({...guestForm, email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                             </div>
                             <div>
-                              <label className="block text-sm text-gray-400 mb-2">Phone Number *</label>
+                              <label className="block text-sm text-gray-200 mb-2">Phone Number *</label>
                               <input type="tel" value={guestForm.phone} onChange={e => setGuestForm({...guestForm, phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                             </div>
                           </>
                         )}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <label className="block text-sm text-gray-400 mb-2">Special Requests (Optional)</label>
+                            <label className="block text-sm text-gray-200 mb-2">Special Requests (Optional)</label>
                             <textarea rows="3" value={guestForm.specialRequests} onChange={e => setGuestForm({...guestForm, specialRequests: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none"></textarea>
                           </div>
                           <div>
-                            <label className="block text-sm text-gray-400 mb-2">Purpose of Stay *</label>
+                            <label className="block text-sm text-gray-200 mb-2">Purpose of Stay *</label>
                             <select value={guestForm.purpose || 'Leisure'} onChange={e => setGuestForm({...guestForm, purpose: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3.5 focus:border-gold-500 outline-none cursor-pointer">
                               {Object.keys(purposeAdjustments).map(purpose => {
                                 const valObj = purposeAdjustments[purpose];
@@ -2162,14 +2162,14 @@ const BookingEngine = () => {
                                 );
                               })}
                             </select>
-                            <p className="text-xs text-gray-400 mt-2">
+                            <p className="text-xs text-gray-200 mt-2">
                               💡 Note: Purpose of stay dynamically recalculates room pricing details.
                             </p>
                           </div>
                         </div>
                       </form>
                       <div className="flex justify-between items-center mt-8 pt-6 border-t border-dark-700">
-                        <button onClick={() => setStep(2)} className="text-gray-400 hover:text-white">← Back to Rooms</button>
+                        <button onClick={() => setStep(2)} className="text-gray-200 hover:text-white">← Back to Rooms</button>
                         <button onClick={() => {
                           if (!guestForm.firstName || !guestForm.lastName || !guestForm.email || !guestForm.phone) {
                             return toast.error("Please fill all required guest fields before continuing.");
@@ -2181,7 +2181,7 @@ const BookingEngine = () => {
                   ) : (
                     <>
                       <h3 className="text-2xl font-medium mb-2">Meals & Catering Packages</h3>
-                      <p className="text-gray-400 mb-8">Select separate culinary combinations to be served daily for the event participants.</p>
+                      <p className="text-gray-200 mb-8">Select separate culinary combinations to be served daily for the event participants.</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {hallMealOptions.map(option => {
@@ -2213,7 +2213,7 @@ const BookingEngine = () => {
                                 ))}
                               </div>
                               <div className="font-bold text-base text-white">
-                                ₦{Number(option.price_per_participant_ngn).toLocaleString()} <span className="text-xs text-gray-400 font-normal">per participant / day</span>
+                                ₦{Number(option.price_per_participant_ngn).toLocaleString()} <span className="text-xs text-gray-200 font-normal">per participant / day</span>
                               </div>
                             </div>
                           );
@@ -2221,7 +2221,7 @@ const BookingEngine = () => {
                       </div>
 
                       <div className="flex justify-between items-center mt-8 pt-6 border-t border-dark-700">
-                        <button onClick={() => setStep(2)} className="text-gray-400 hover:text-white">← Back to Halls</button>
+                        <button onClick={() => setStep(2)} className="text-gray-200 hover:text-white">← Back to Halls</button>
                         <button onClick={() => setStep(4)} className="btn-primary px-8 py-3">Continue to Details</button>
                       </div>
                     </>
@@ -2285,19 +2285,19 @@ const BookingEngine = () => {
                             <h4 className="text-xs font-bold text-gold-500 uppercase tracking-widest">Booking Guest Profile</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Name</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Name</span>
                                 <span className="font-bold text-white text-base">{user.first_name} {user.last_name}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Role / Access</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Role / Access</span>
                                 <span className="font-bold text-gold-500 text-base capitalize">{user.role?.replace(/_/g, ' ') || 'Guest'}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Email Address</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Email Address</span>
                                 <span className="font-mono text-white text-base">{user.email}</span>
                               </div>
                               <div>
-                                <span className="block text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-0.5">Phone Number</span>
+                                <span className="block text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-0.5">Phone Number</span>
                                 <span className="font-mono text-white text-base">{user.phone || 'Not Provided'}</span>
                               </div>
                             </div>
@@ -2306,31 +2306,31 @@ const BookingEngine = () => {
                           <>
                             <div className="grid grid-cols-2 gap-6">
                               <div>
-                                <label className="block text-sm text-gray-400 mb-2">First Name *</label>
+                                <label className="block text-sm text-gray-200 mb-2">First Name *</label>
                                 <input type="text" value={guestForm.firstName} onChange={e => setGuestForm({...guestForm, firstName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                               </div>
                               <div>
-                                <label className="block text-sm text-gray-400 mb-2">Last Name *</label>
+                                <label className="block text-sm text-gray-200 mb-2">Last Name *</label>
                                 <input type="text" value={guestForm.lastName} onChange={e => setGuestForm({...guestForm, lastName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                               </div>
                             </div>
                             <div>
-                              <label className="block text-sm text-gray-400 mb-2">Email Address *</label>
+                              <label className="block text-sm text-gray-200 mb-2">Email Address *</label>
                               <input type="email" value={guestForm.email} onChange={e => setGuestForm({...guestForm, email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                             </div>
                             <div>
-                              <label className="block text-sm text-gray-400 mb-2">Phone Number *</label>
+                              <label className="block text-sm text-gray-200 mb-2">Phone Number *</label>
                               <input type="tel" value={guestForm.phone} onChange={e => setGuestForm({...guestForm, phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" required/>
                             </div>
                           </>
                         )}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <label className="block text-sm text-gray-400 mb-2">Organization / Company Name (Optional)</label>
+                            <label className="block text-sm text-gray-200 mb-2">Organization / Company Name (Optional)</label>
                             <input type="text" value={guestForm.organizationName} onChange={e => setGuestForm({...guestForm, organizationName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" placeholder="e.g. Acme Corp" />
                           </div>
                           <div>
-                            <label className="block text-sm text-gray-400 mb-2">Special Event Requirements (Optional)</label>
+                            <label className="block text-sm text-gray-200 mb-2">Special Event Requirements (Optional)</label>
                             <textarea rows="2" value={guestForm.specialRequests} onChange={e => setGuestForm({...guestForm, specialRequests: e.target.value})} className="w-full bg-dark-900 border border-dark-700 text-white p-3 focus:border-gold-500 outline-none" placeholder="e.g. Stage setup, extra mic..."></textarea>
                           </div>
                         </div>
@@ -2341,7 +2341,7 @@ const BookingEngine = () => {
                   {bookingMode === 'room' && (
                     <div className="bg-dark-800 p-8 border border-dark-700">
                       <h3 className="text-2xl font-medium mb-2">Enhance Your Stay</h3>
-                      <p className="text-gray-400 mb-8">Select optional services to make your stay unforgettable.</p>
+                      <p className="text-gray-200 mb-8">Select optional services to make your stay unforgettable.</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {services.map(service => {
@@ -2368,14 +2368,14 @@ const BookingEngine = () => {
                                   {isSelected && <CheckCircle size={14}/>}
                                 </div>
                               </div>
-                              <p className="text-sm text-gray-400 mb-4 line-clamp-2">{service.description}</p>
+                              <p className="text-sm text-gray-200 mb-4 line-clamp-2">{service.description}</p>
                               <div className="font-bold text-lg text-white mb-4">₦{Number(service.base_price_ngn).toLocaleString()}</div>
 
                               {isSelected && (
                                 <div className="space-y-3 pt-4 border-t border-dark-700" onClick={e => e.stopPropagation()}>
                                   {service.quantity_selector && (
                                     <div className="flex items-center justify-between bg-dark-900 p-3 rounded-lg border border-dark-700">
-                                      <span className="text-sm text-gray-400">Quantity</span>
+                                      <span className="text-sm text-gray-200">Quantity</span>
                                       <div className="flex items-center gap-4">
                                         <button type="button" onClick={() => updateServiceProp(service.id, 'quantity', Math.max(1, sData.quantity - 1))} className="p-1 hover:text-brand-500 transition-colors"><Minus size={16}/></button>
                                         <span className="font-medium w-4 text-center">{sData.quantity}</span>
@@ -2386,11 +2386,11 @@ const BookingEngine = () => {
                                   {service.scheduling_required && (
                                     <div className="grid grid-cols-2 gap-3">
                                       <div className="flex flex-col">
-                                        <label className="text-xs text-gray-500 mb-1">Date</label>
+                                        <label className="text-xs text-gray-300 mb-1">Date</label>
                                         <input type="date" value={sData.date} min={format(dateRange[0].startDate, 'yyyy-MM-dd')} max={format(dateRange[0].endDate, 'yyyy-MM-dd')} onChange={(e) => updateServiceProp(service.id, 'date', e.target.value)} className="bg-dark-900 border border-dark-700 rounded p-2 text-sm text-white focus:border-brand-500 outline-none" />
                                       </div>
                                       <div className="flex flex-col">
-                                        <label className="text-xs text-gray-500 mb-1">Time</label>
+                                        <label className="text-xs text-gray-300 mb-1">Time</label>
                                         <input type="time" value={sData.time} onChange={(e) => updateServiceProp(service.id, 'time', e.target.value)} className="bg-dark-900 border border-dark-700 rounded p-2 text-sm text-white focus:border-brand-500 outline-none" />
                                       </div>
                                     </div>
@@ -2417,7 +2417,7 @@ const BookingEngine = () => {
                               {isMealsDrinksOpen ? 'Hide Menu' : 'Show Menu'}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-400 mb-4">Choose from our curated culinary options, including standard breakfast, hot main courses, fresh desserts, and premium bar drinks.</p>
+                          <p className="text-sm text-gray-200 mb-4">Choose from our curated culinary options, including standard breakfast, hot main courses, fresh desserts, and premium bar drinks.</p>
                           
                           {isMealsDrinksOpen && (
                             <div className="mt-6 pt-6 border-t border-dark-700 space-y-6">
@@ -2430,7 +2430,7 @@ const BookingEngine = () => {
                                       key={tab}
                                       type="button"
                                       onClick={() => setActiveSubmenu(tab)}
-                                      className={`px-4 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${activeSubmenu === tab ? 'bg-gold-500 text-dark-900' : 'bg-dark-900 text-gray-400 hover:text-white'}`}
+                                      className={`px-4 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${activeSubmenu === tab ? 'bg-gold-500 text-dark-900' : 'bg-dark-900 text-gray-200 hover:text-white'}`}
                                     >
                                       {tab} ({count})
                                     </button>
@@ -2441,7 +2441,7 @@ const BookingEngine = () => {
                               {/* Submenu Items Grid */}
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in duration-350">
                                 {getItemsForSubmenu(activeSubmenu, foodServices).length === 0 ? (
-                                  <p className="text-sm text-gray-500 italic col-span-2">No items available in this category</p>
+                                  <p className="text-sm text-gray-300 italic col-span-2">No items available in this category</p>
                                 ) : (
                                   getItemsForSubmenu(activeSubmenu, foodServices).map(item => {
                                     const isSelected = selectedServices.some(s => s.service_id === item.id);
@@ -2463,7 +2463,7 @@ const BookingEngine = () => {
                                             <span className="text-sm font-bold text-white">₦{Number(item.base_price_ngn).toLocaleString()}</span>
                                           </div>
                                           {item.description && (
-                                            <p className="text-xs text-gray-400 mb-3 ml-7 line-clamp-2">
+                                            <p className="text-xs text-gray-200 mb-3 ml-7 line-clamp-2">
                                               {item.description.includes(' | ') ? item.description.split(' | ').slice(1).join(' | ') : item.description}
                                             </p>
                                           )}
@@ -2471,7 +2471,7 @@ const BookingEngine = () => {
                                         
                                         {isSelected && (
                                           <div className="flex items-center justify-between bg-dark-900 p-2.5 rounded-lg border border-dark-800 ml-7" onClick={e => e.stopPropagation()}>
-                                            <span className="text-xs text-gray-400 font-medium">Quantity</span>
+                                            <span className="text-xs text-gray-200 font-medium">Quantity</span>
                                             <div className="flex items-center gap-3">
                                               <button type="button" onClick={() => updateServiceProp(item.id, 'quantity', Math.max(1, sData.quantity - 1))} className="p-1 hover:text-brand-500 transition-colors"><Minus size={14}/></button>
                                               <span className="text-xs font-semibold w-4 text-center">{sData.quantity}</span>
@@ -2519,7 +2519,7 @@ const BookingEngine = () => {
                                 ? `Pay Confirmation Deposit (${bookingRules.deposit_percentage}%) via Paystack` 
                                 : 'Pay Online Now (Paystack)'}
                             </p>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-gray-200">
                               {bookingMode === 'room' && bookingRules.payment_rule === 'partial_deposit'
                                 ? `Pay ₦${payOnlineAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })} confirmation deposit via Paystack`
                                 : 'Secure card payment via Paystack'}
@@ -2532,7 +2532,7 @@ const BookingEngine = () => {
                             <input type="radio" name="paymentMethod" value="pay_on_arrival" checked={paymentMethod === 'pay_on_arrival'} onChange={() => setPaymentMethod('pay_on_arrival')} className="accent-gold-500 w-4 h-4"/>
                             <div>
                               <p className="font-bold text-white">Pay on Arrival</p>
-                              <p className="text-xs text-gray-400">Pay at the front office on check-in</p>
+                              <p className="text-xs text-gray-200">Pay at the front office on check-in</p>
                             </div>
                           </label>
                         )}
@@ -2563,7 +2563,7 @@ const BookingEngine = () => {
                                       />
                                       <div>
                                         <p className="font-bold text-white">Pay 30% Deposit from AR Wallet</p>
-                                        <p className="text-xs text-gray-400">
+                                        <p className="text-xs text-gray-200">
                                           Deduct ₦{payOnlineAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })} from wallet (Bal: ₦{Number(arAccount.balance).toLocaleString(undefined, { maximumFractionDigits: 0 })})
                                         </p>
                                         {!hasSufficient && <span className="text-[10px] text-red-500 font-bold block mt-1">⚠️ Insufficient Wallet Balance</span>}
@@ -2596,7 +2596,7 @@ const BookingEngine = () => {
                                   />
                                   <div>
                                     <p className="font-bold text-white">Pay in Full from AR Wallet</p>
-                                    <p className="text-xs text-gray-400">
+                                    <p className="text-xs text-gray-200">
                                       Deduct ₦{calculateTotal().toLocaleString(undefined, { maximumFractionDigits: 0 })} from wallet (Bal: ₦{Number(arAccount.balance).toLocaleString(undefined, { maximumFractionDigits: 0 })})
                                     </p>
                                     {!hasSufficient && <span className="text-[10px] text-red-500 font-bold block mt-1">⚠️ Insufficient Wallet Balance</span>}
@@ -2610,7 +2610,7 @@ const BookingEngine = () => {
                     </div>
 
                     <div className="flex justify-between items-center mt-8 pt-6 border-t border-dark-700">
-                      <button onClick={() => setStep(3)} className="text-gray-400 hover:text-white">← Back to {bookingMode === 'room' ? 'Details' : 'Catering'}</button>
+                      <button onClick={() => setStep(3)} className="text-gray-200 hover:text-white">← Back to {bookingMode === 'room' ? 'Details' : 'Catering'}</button>
                       <button onClick={bookingMode === 'hall' ? handleHallCheckout : handleCheckout} disabled={isProcessing} className="btn-primary py-4 px-12 text-lg disabled:opacity-50">
                         {isProcessing ? 'Processing...' : paymentMethod === 'pay_online' ? 'Pay Securely' : ['pay_ar_deposit', 'pay_ar_full'].includes(paymentMethod) ? 'Pay from AR Wallet' : 'Complete Booking'}
                       </button>
@@ -2627,46 +2627,46 @@ const BookingEngine = () => {
                     <CheckCircle className="text-gold-500 w-12 h-12" />
                   </div>
                   <h2 className="text-3xl font-bold text-white mb-2">Booking Confirmed!</h2>
-                  <p className="text-gray-400 text-lg mb-8">Thank you, {guestForm.firstName}. Your reservation is complete.</p>
+                  <p className="text-gray-200 text-lg mb-8">Thank you, {guestForm.firstName}. Your reservation is complete.</p>
                   
                   {autoCreatedPassword && (
                     <div className="bg-gold-500/5 border border-gold-500/20 rounded-lg p-6 max-w-md mx-auto mb-8 text-left animate-in slide-in-from-bottom-2">
                       <h4 className="font-bold text-gold-500 mb-2 flex items-center gap-2">🔑 Guest Account Created Automatically!</h4>
-                      <p className="text-xs text-gray-400 mb-4">We have registered a guest login using your booking details. Use these credentials to sign in to your Guest Dashboard:</p>
+                      <p className="text-xs text-gray-200 mb-4">We have registered a guest login using your booking details. Use these credentials to sign in to your Guest Dashboard:</p>
                       <div className="space-y-2 font-mono text-sm">
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Username/Email:</span>
+                          <span className="text-gray-300">Username/Email:</span>
                           <span className="text-white font-bold">{guestForm.email}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Temporary Password:</span>
+                          <span className="text-gray-300">Temporary Password:</span>
                           <span className="text-white font-bold">{autoCreatedPassword}</span>
                         </div>
                       </div>
-                      <p className="text-[10px] text-gray-500 mt-4 italic">💡 Note: For security, you can change your password anytime inside your profile settings.</p>
+                      <p className="text-[10px] text-gray-300 mt-4 italic">💡 Note: For security, you can change your password anytime inside your profile settings.</p>
                     </div>
                   )}
                   
                   <div className="bg-dark-900 border border-dark-700 rounded-lg p-6 max-w-md mx-auto mb-8 text-left">
                     <div className="flex justify-between items-center mb-4 pb-4 border-b border-dark-700">
-                      <span className="text-gray-400">Booking Reference</span>
+                      <span className="text-gray-200">Booking Reference</span>
                       <span className="font-bold text-white text-lg tracking-wider">{confirmedBookingRef}</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-400">Check-in</span>
+                      <span className="text-gray-200">Check-in</span>
                       <span className="font-medium text-white">{format(dateRange[0].startDate, 'MMM dd, yyyy')}</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-400">Check-out</span>
+                      <span className="text-gray-200">Check-out</span>
                       <span className="font-medium text-white">{format(dateRange[0].endDate, 'MMM dd, yyyy')}</span>
                     </div>
                     <div className="flex justify-between items-center mt-4 pt-4 border-t border-dark-700">
-                      <span className="text-gray-400">Total Paid</span>
+                      <span className="text-gray-200">Total Paid</span>
                       <span className="font-bold text-gold-500">₦{calculateTotal().toLocaleString()}</span>
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-500 mb-8 max-w-lg mx-auto">
+                  <p className="text-sm text-gray-300 mb-8 max-w-lg mx-auto">
                     We've sent a confirmation email with your booking details. If you have any questions, please contact our support team.
                   </p>
 
@@ -2704,16 +2704,16 @@ const BookingEngine = () => {
                 <h3 className="text-xl font-medium mb-6 border-b border-dark-700 pb-4">Reservation Summary</h3>
                 
                 <div className="mb-6">
-                  <p className="text-sm text-gray-400 mb-1">Check-in</p>
+                  <p className="text-sm text-gray-200 mb-1">Check-in</p>
                   <p className="font-medium">{format(dateRange[0].startDate, 'MMM dd, yyyy')}</p>
                 </div>
                 <div className="mb-6">
-                  <p className="text-sm text-gray-400 mb-1">Check-out</p>
+                  <p className="text-sm text-gray-200 mb-1">Check-out</p>
                   <p className="font-medium">{format(dateRange[0].endDate, 'MMM dd, yyyy')}</p>
                 </div>
                 <div className="mb-6 flex justify-between border-b border-dark-700 pb-6">
                   <div>
-                    <p className="text-sm text-gray-400 mb-1">Duration</p>
+                    <p className="text-sm text-gray-200 mb-1">Duration</p>
                     <p className="font-medium">
                       {bookingMode === 'hall'
                         ? hallBookingType === 'daily'
@@ -2724,7 +2724,7 @@ const BookingEngine = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 mb-1">{bookingMode === 'hall' ? 'Participants' : 'Guests'}</p>
+                    <p className="text-sm text-gray-200 mb-1">{bookingMode === 'hall' ? 'Participants' : 'Guests'}</p>
                     <p className="font-medium">
                       {bookingMode === 'hall'
                         ? `${hallParticipants} Guests`
@@ -2737,7 +2737,7 @@ const BookingEngine = () => {
                 {bookingMode === 'room' && selectedRoom && (
                   <div className="mb-4">
                     <p className="text-brand-500 font-medium mb-2">{selectedRoom.name}</p>
-                    <div className="flex justify-between text-sm text-gray-400 mb-1">
+                    <div className="flex justify-between text-sm text-gray-200 mb-1">
                       <span>Base Pricing ({selectedRoom.pricing_model ? selectedRoom.pricing_model.replace('_', ' ') : 'Per Night'})</span>
                     </div>
                     <div className="flex justify-between font-medium text-white mb-2">
@@ -2766,7 +2766,7 @@ const BookingEngine = () => {
                 {bookingMode === 'hall' && selectedHall && (
                   <div className="mb-4">
                     <p className="text-gold-500 font-bold mb-2">{selectedHall.name}</p>
-                    <div className="flex justify-between text-sm text-gray-400 mb-1">
+                    <div className="flex justify-between text-sm text-gray-200 mb-1">
                       <span>Hall Rental ({hallBookingType === 'daily' ? 'Daily' : 'Hourly'})</span>
                     </div>
                     <div className="flex justify-between font-medium text-white mb-2">
@@ -2783,7 +2783,7 @@ const BookingEngine = () => {
                             if (!option) return null;
                             const optionCost = Number(option.price_per_participant_ngn) * Number(hallParticipants) * bookingSummary.days;
                             return (
-                              <div key={mealId} className="flex justify-between text-xs text-gray-400">
+                              <div key={mealId} className="flex justify-between text-xs text-gray-200">
                                 <span>{option.name} (₦{Number(option.price_per_participant_ngn).toLocaleString()} x {hallParticipants} pax)</span>
                                 <span>₦{optionCost.toLocaleString()}</span>
                               </div>
@@ -2806,7 +2806,7 @@ const BookingEngine = () => {
                           if (!service) return null;
                           const cost = getServicePrice(service, sData.quantity);
                           return (
-                            <div key={sData.service_id} className="flex justify-between text-sm text-gray-400 items-start">
+                            <div key={sData.service_id} className="flex justify-between text-sm text-gray-200 items-start">
                               <div>
                                 <span className="block text-gray-300">{service.name} {sData.quantity > 1 ? `(x${sData.quantity})` : ''}</span>
                                 {sData.date && <span className="block text-xs text-brand-500">{sData.date} {sData.time}</span>}
@@ -2829,7 +2829,7 @@ const BookingEngine = () => {
 
                 <div className="border-t border-dark-700 pt-4 mt-6">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-400">Taxes & Fees</span>
+                    <span className="text-gray-200">Taxes & Fees</span>
                     <span className="text-gray-300">Included</span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -2845,7 +2845,7 @@ const BookingEngine = () => {
                           ₦{(calculateTotal() * (bookingRules.deposit_percentage / 100)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                       </div>
-                      <div className="flex justify-between items-center text-xs text-gray-400 font-medium">
+                      <div className="flex justify-between items-center text-xs text-gray-200 font-medium">
                         <span>Balance Due on Arrival</span>
                         <span className="font-mono">
                           ₦{(calculateTotal() * (1 - bookingRules.deposit_percentage / 100)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -2855,7 +2855,7 @@ const BookingEngine = () => {
                   )}
                 </div>
 
-                <div className="mt-6 bg-dark-900/60 p-4 border border-dark-700/50 rounded-2xl text-xs space-y-2 text-gray-400 animate-in fade-in duration-300">
+                <div className="mt-6 bg-dark-900/60 p-4 border border-dark-700/50 rounded-2xl text-xs space-y-2 text-gray-200 animate-in fade-in duration-300">
                   <strong className="text-white block font-semibold uppercase tracking-wider text-[10px]">Cancellation & Guarantee Policy</strong>
                   {bookingRules.cancellation_policy === 'Flexible' && (
                     <p>✓ **Flexible cancellation policy**: You can cancel free of charge until 24 hours prior to your scheduled check-in date. Cancellations within 24 hours are non-refundable.</p>
@@ -2869,7 +2869,7 @@ const BookingEngine = () => {
                   {bookingRules.cancellation_policy === 'Non-Refundable' && (
                     <p>⚠ **Non-Refundable reservation**: Booking cannot be modified, cancelled, or refunded under any circumstances once processed.</p>
                   )}
-                  <span className="block text-[10px] text-gray-500 font-semibold border-t border-dark-800 pt-2 mt-2">
+                  <span className="block text-[10px] text-gray-300 font-semibold border-t border-dark-800 pt-2 mt-2">
                     Secured by Luxe Guarantee and automated 256-bit bank encryption.
                   </span>
                 </div>

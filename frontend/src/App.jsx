@@ -164,7 +164,7 @@ function App() {
                   <div className="glass-panel text-center p-8 rounded-2xl max-w-md w-full border border-dark-700 shadow-2xl">
                     <h1 className="text-6xl font-black text-brand-500 mb-4">404</h1>
                     <h2 className="text-2xl font-bold text-white mb-2">Page Not Found</h2>
-                    <p className="text-gray-400 mb-8">The page you are looking for doesn't exist or has been moved.</p>
+                    <p className="text-gray-200 mb-8">The page you are looking for doesn't exist or has been moved.</p>
                     <a href="/" className="btn-primary w-full py-3 inline-block">Return Home</a>
                   </div>
                 </div>

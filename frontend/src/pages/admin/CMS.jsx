@@ -316,7 +316,7 @@ const AdminCMS = () => {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">Website CMS & Portal</h1>
-          <p className="text-gray-400 mt-1">Manage pages, uploads, SEO, and booking widgets.</p>
+          <p className="text-gray-200 mt-1">Manage pages, uploads, SEO, and booking widgets.</p>
         </div>
         {activeTab === 'pages' && (
           <button onClick={openAddPageModal} className="btn-primary py-2 px-4 text-sm flex items-center gap-2">
@@ -331,7 +331,7 @@ const AdminCMS = () => {
           <button 
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-6 py-4 font-bold transition-colors whitespace-nowrap ${activeTab === tab.id ? 'text-brand-500 border-b-2 border-brand-500' : 'text-gray-400 hover:text-white'}`}
+            className={`flex items-center gap-2 px-6 py-4 font-bold transition-colors whitespace-nowrap ${activeTab === tab.id ? 'text-brand-500 border-b-2 border-brand-500' : 'text-gray-200 hover:text-white'}`}
           >
             {tab.icon} {tab.name}
           </button>
@@ -344,7 +344,7 @@ const AdminCMS = () => {
         {activeTab === 'pages' && (
           <div className="p-6">
             <table className="w-full text-left text-sm">
-              <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+              <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
                 <tr>
                   <th className="p-4 font-semibold">Page Title</th>
                   <th className="p-4 font-semibold">URL Slug</th>
@@ -355,19 +355,19 @@ const AdminCMS = () => {
               </thead>
               <tbody className="divide-y divide-dark-700">
                 {pages.length === 0 ? (
-                  <tr><td colSpan="5" className="p-8 text-center text-gray-500">No pages built yet.</td></tr>
+                  <tr><td colSpan="5" className="p-8 text-center text-gray-300">No pages built yet.</td></tr>
                 ) : pages.map(page => (
                   <tr key={page.id} className="hover:bg-dark-700/30 transition-colors">
                     <td className="p-4 font-bold text-white">{page.title}</td>
-                    <td className="p-4 text-gray-400">/{page.slug}</td>
-                    <td className="p-4 text-gray-400 uppercase text-xs tracking-wider">{page.page_type.replace('_', ' ')}</td>
+                    <td className="p-4 text-gray-200">/{page.slug}</td>
+                    <td className="p-4 text-gray-200 uppercase text-xs tracking-wider">{page.page_type.replace('_', ' ')}</td>
                     <td className="p-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${page.is_published ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}`}>
                         {page.is_published ? 'Published' : 'Draft'}
                       </span>
                     </td>
                     <td className="p-4 text-right flex justify-end gap-3">
-                      <button onClick={() => togglePageStatus(page.id, page.is_published)} className="text-gray-400 hover:text-white transition-colors" title="Toggle Publish">
+                      <button onClick={() => togglePageStatus(page.id, page.is_published)} className="text-gray-200 hover:text-white transition-colors" title="Toggle Publish">
                         {page.is_published ? <XCircle size={16}/> : <CheckCircle size={16}/>}
                       </button>
                       <button onClick={() => openEditPageModal(page)} className="text-brand-500 hover:text-brand-400 transition-colors" title="Edit Page Builder">
@@ -407,7 +407,7 @@ const AdminCMS = () => {
                 </div>
               ))}
               {gallery.length === 0 && !isUploading && (
-                <div className="col-span-full py-12 text-center text-gray-500 border-2 border-dashed border-dark-700 rounded">
+                <div className="col-span-full py-12 text-center text-gray-300 border-2 border-dashed border-dark-700 rounded">
                   No images in the gallery yet. Click 'Upload Image' to add some!
                 </div>
               )}
@@ -420,24 +420,24 @@ const AdminCMS = () => {
           <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Embeddable Booking Engine</h3>
-              <p className="text-gray-400 mb-8 text-sm">Configure the look and feel of your external booking widget, then copy the generated code into your WordPress, Wix, or custom website.</p>
+              <p className="text-gray-200 mb-8 text-sm">Configure the look and feel of your external booking widget, then copy the generated code into your WordPress, Wix, or custom website.</p>
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-bold">Widget Theme</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-bold">Widget Theme</label>
                   <div className="flex gap-4">
-                    <label className={`flex-1 p-4 border rounded cursor-pointer text-center font-bold ${widgetTheme === 'dark' ? 'border-brand-500 bg-dark-900 text-white' : 'border-dark-700 text-gray-500 hover:border-gray-500'}`}>
+                    <label className={`flex-1 p-4 border rounded cursor-pointer text-center font-bold ${widgetTheme === 'dark' ? 'border-brand-500 bg-dark-900 text-white' : 'border-dark-700 text-gray-300 hover:border-gray-500'}`}>
                       <input type="radio" name="theme" className="hidden" checked={widgetTheme === 'dark'} onChange={() => setWidgetTheme('dark')}/>
                       Dark Mode
                     </label>
-                    <label className={`flex-1 p-4 border rounded cursor-pointer text-center font-bold ${widgetTheme === 'light' ? 'border-brand-500 bg-dark-900 text-white' : 'border-dark-700 text-gray-500 hover:border-gray-500'}`}>
+                    <label className={`flex-1 p-4 border rounded cursor-pointer text-center font-bold ${widgetTheme === 'light' ? 'border-brand-500 bg-dark-900 text-white' : 'border-dark-700 text-gray-300 hover:border-gray-500'}`}>
                       <input type="radio" name="theme" className="hidden" checked={widgetTheme === 'light'} onChange={() => setWidgetTheme('light')}/>
                       Light Mode
                     </label>
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-bold">Brand Hex Color</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-bold">Brand Hex Color</label>
                   <div className="flex gap-4 items-center">
                     <input type="color" value={widgetColor} onChange={e => setWidgetColor(e.target.value)} className="w-12 h-12 rounded cursor-pointer bg-dark-900 border border-dark-700 p-1"/>
                     <input type="text" value={widgetColor} onChange={e => setWidgetColor(e.target.value)} className="bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 flex-1 font-mono"/>
@@ -456,7 +456,7 @@ const AdminCMS = () => {
               </pre>
               <div className="mt-6 p-4 border border-brand-500/30 bg-brand-500/10 rounded-lg">
                 <h5 className="font-bold text-brand-500 text-sm mb-1">Integration Instructions</h5>
-                <p className="text-xs text-gray-400">Place this HTML snippet wherever you want the booking search bar to appear on your external website. The widget script will automatically render the UI and connect to your PMS database securely.</p>
+                <p className="text-xs text-gray-200">Place this HTML snippet wherever you want the booking search bar to appear on your external website. The widget script will automatically render the UI and connect to your PMS database securely.</p>
               </div>
             </div>
           </div>
@@ -464,7 +464,7 @@ const AdminCMS = () => {
 
         {/* OTHER TABS (Testimonials/FAQ placeholders) */}
         {(activeTab === 'testimonials' || activeTab === 'faq') && (
-           <div className="p-12 text-center text-gray-500">
+           <div className="p-12 text-center text-gray-300">
              <MessageSquare size={48} className="mx-auto mb-4 opacity-20"/>
              This section relies on basic text storage and is managed similarly. Use the Page Builder for rich content.
            </div>
@@ -474,7 +474,7 @@ const AdminCMS = () => {
         {activeTab === 'frontend' && (
           <div className="p-6">
             <h3 className="text-xl font-bold text-white mb-2">Global Website Content</h3>
-            <p className="text-gray-400 mb-8 text-sm">Update text and images across the public facing website without touching code.</p>
+            <p className="text-gray-200 mb-8 text-sm">Update text and images across the public facing website without touching code.</p>
             
             <form onSubmit={handleSaveFrontendContent} className="space-y-8 max-w-4xl">
               
@@ -486,17 +486,17 @@ const AdminCMS = () => {
                 
                 {/* Slide 1 */}
                 <div className="space-y-4 mb-8 pb-6 border-b border-dark-800">
-                  <h5 className="font-bold text-gray-400 text-sm">Slide 1 (Main)</h5>
+                  <h5 className="font-bold text-gray-200 text-sm">Slide 1 (Main)</h5>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Headline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Headline</label>
                     <input type="text" value={frontendContent.cms_home_hero_title} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_title: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Subheadline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Subheadline</label>
                     <textarea rows="2" value={frontendContent.cms_home_hero_subtitle} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_subtitle: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Background Image URL (Slide 1)</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Background Image URL (Slide 1)</label>
                     <div className="flex gap-2">
                       <input type="text" value={frontendContent.cms_home_hero_bg_1} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_bg_1: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-sm border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       <label className="bg-dark-700 hover:bg-brand-500 text-white px-4 flex items-center justify-center rounded cursor-pointer transition-colors font-bold whitespace-nowrap">
@@ -509,17 +509,17 @@ const AdminCMS = () => {
 
                 {/* Slide 2 */}
                 <div className="space-y-4 mb-8 pb-6 border-b border-dark-800">
-                  <h5 className="font-bold text-gray-400 text-sm">Slide 2</h5>
+                  <h5 className="font-bold text-gray-200 text-sm">Slide 2</h5>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Headline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Headline</label>
                     <input type="text" value={frontendContent.cms_home_hero_title_2} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_title_2: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Subheadline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Subheadline</label>
                     <textarea rows="2" value={frontendContent.cms_home_hero_subtitle_2} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_subtitle_2: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Background Image URL (Slide 2)</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Background Image URL (Slide 2)</label>
                     <div className="flex gap-2">
                       <input type="text" value={frontendContent.cms_home_hero_bg_2} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_bg_2: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-sm border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       <label className="bg-dark-700 hover:bg-brand-500 text-white px-4 flex items-center justify-center rounded cursor-pointer transition-colors font-bold whitespace-nowrap">
@@ -532,17 +532,17 @@ const AdminCMS = () => {
 
                 {/* Slide 3 */}
                 <div className="space-y-4">
-                  <h5 className="font-bold text-gray-400 text-sm">Slide 3</h5>
+                  <h5 className="font-bold text-gray-200 text-sm">Slide 3</h5>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Headline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Headline</label>
                     <input type="text" value={frontendContent.cms_home_hero_title_3} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_title_3: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Subheadline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Subheadline</label>
                     <textarea rows="2" value={frontendContent.cms_home_hero_subtitle_3} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_subtitle_3: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Background Image URL (Slide 3)</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Background Image URL (Slide 3)</label>
                     <div className="flex gap-2">
                       <input type="text" value={frontendContent.cms_home_hero_bg_3} onChange={e => setFrontendContent({...frontendContent, cms_home_hero_bg_3: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-sm border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       <label className="bg-dark-700 hover:bg-brand-500 text-white px-4 flex items-center justify-center rounded cursor-pointer transition-colors font-bold whitespace-nowrap">
@@ -558,20 +558,20 @@ const AdminCMS = () => {
                 <h4 className="font-bold text-white mb-4 border-b border-dark-700 pb-2">Home Page: About Luxe</h4>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Title</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Title</label>
                     <input type="text" value={frontendContent.cms_home_about_title} onChange={e => setFrontendContent({...frontendContent, cms_home_about_title: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Paragraph 1</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Paragraph 1</label>
                     <textarea rows="3" value={frontendContent.cms_home_about_text_1} onChange={e => setFrontendContent({...frontendContent, cms_home_about_text_1: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Paragraph 2</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Paragraph 2</label>
                     <textarea rows="3" value={frontendContent.cms_home_about_text_2} onChange={e => setFrontendContent({...frontendContent, cms_home_about_text_2: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Image 1 URL</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Image 1 URL</label>
                       <div className="flex gap-2">
                         <input type="text" value={frontendContent.cms_home_about_img_1} onChange={e => setFrontendContent({...frontendContent, cms_home_about_img_1: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-xs border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                         <label className="bg-dark-700 hover:bg-brand-500 text-white px-3 flex items-center justify-center rounded cursor-pointer transition-colors font-bold">
@@ -581,7 +581,7 @@ const AdminCMS = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Image 2 URL</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Image 2 URL</label>
                       <div className="flex gap-2">
                         <input type="text" value={frontendContent.cms_home_about_img_2} onChange={e => setFrontendContent({...frontendContent, cms_home_about_img_2: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-xs border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                         <label className="bg-dark-700 hover:bg-brand-500 text-white px-3 flex items-center justify-center rounded cursor-pointer transition-colors font-bold">
@@ -598,15 +598,15 @@ const AdminCMS = () => {
                 <h4 className="font-bold text-white mb-4 border-b border-dark-700 pb-2">Home Page: Call To Action (Bottom)</h4>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">CTA Headline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">CTA Headline</label>
                     <input type="text" value={frontendContent.cms_home_cta_title} onChange={e => setFrontendContent({...frontendContent, cms_home_cta_title: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">CTA Subheadline</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">CTA Subheadline</label>
                     <input type="text" value={frontendContent.cms_home_cta_subtitle} onChange={e => setFrontendContent({...frontendContent, cms_home_cta_subtitle: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Background Image URL</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Background Image URL</label>
                     <div className="flex gap-2">
                       <input type="text" value={frontendContent.cms_home_cta_bg} onChange={e => setFrontendContent({...frontendContent, cms_home_cta_bg: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-sm border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       <label className="bg-dark-700 hover:bg-brand-500 text-white px-4 flex items-center justify-center rounded cursor-pointer transition-colors font-bold whitespace-nowrap">
@@ -622,7 +622,7 @@ const AdminCMS = () => {
                 <h4 className="font-bold text-white mb-4 border-b border-dark-700 pb-2">About Us Page</h4>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Hero Background Image</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Hero Background Image</label>
                     <div className="flex gap-2">
                       <input type="text" value={frontendContent.cms_about_hero_bg} onChange={e => setFrontendContent({...frontendContent, cms_about_hero_bg: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-sm border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       <label className="bg-dark-700 hover:bg-brand-500 text-white px-4 flex items-center justify-center rounded cursor-pointer transition-colors font-bold whitespace-nowrap">
@@ -632,36 +632,36 @@ const AdminCMS = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Hero Title</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Hero Title</label>
                     <input type="text" value={frontendContent.cms_about_title} onChange={e => setFrontendContent({...frontendContent, cms_about_title: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Hero Subtitle</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Hero Subtitle</label>
                     <textarea rows="2" value={frontendContent.cms_about_subtitle} onChange={e => setFrontendContent({...frontendContent, cms_about_subtitle: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                   </div>
                   
                   <div className="pt-4 border-t border-dark-800">
-                    <h5 className="font-bold text-gray-400 text-sm mb-4">The Vision Section</h5>
+                    <h5 className="font-bold text-gray-200 text-sm mb-4">The Vision Section</h5>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Vision Title</label>
+                        <label className="block text-sm font-medium text-gray-200 mb-1">Vision Title</label>
                         <input type="text" value={frontendContent.cms_about_vision_title} onChange={e => setFrontendContent({...frontendContent, cms_about_vision_title: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Paragraph 1</label>
+                        <label className="block text-sm font-medium text-gray-200 mb-1">Paragraph 1</label>
                         <textarea rows="3" value={frontendContent.cms_about_vision_text_1} onChange={e => setFrontendContent({...frontendContent, cms_about_vision_text_1: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Paragraph 2</label>
+                        <label className="block text-sm font-medium text-gray-200 mb-1">Paragraph 2</label>
                         <textarea rows="3" value={frontendContent.cms_about_vision_text_2} onChange={e => setFrontendContent({...frontendContent, cms_about_vision_text_2: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Paragraph 3</label>
+                        <label className="block text-sm font-medium text-gray-200 mb-1">Paragraph 3</label>
                         <textarea rows="3" value={frontendContent.cms_about_vision_text_3} onChange={e => setFrontendContent({...frontendContent, cms_about_vision_text_3: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none"></textarea>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-400 mb-1">Vision Image 1 URL</label>
+                          <label className="block text-sm font-medium text-gray-200 mb-1">Vision Image 1 URL</label>
                           <div className="flex gap-2">
                             <input type="text" value={frontendContent.cms_about_img_1} onChange={e => setFrontendContent({...frontendContent, cms_about_img_1: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-xs border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                             <label className="bg-dark-700 hover:bg-brand-500 text-white px-3 flex items-center justify-center rounded cursor-pointer transition-colors font-bold">
@@ -671,7 +671,7 @@ const AdminCMS = () => {
                           </div>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-400 mb-1">Vision Image 2 URL</label>
+                          <label className="block text-sm font-medium text-gray-200 mb-1">Vision Image 2 URL</label>
                           <div className="flex gap-2">
                             <input type="text" value={frontendContent.cms_about_img_2} onChange={e => setFrontendContent({...frontendContent, cms_about_img_2: e.target.value})} className="flex-1 bg-dark-800 text-blue-400 font-mono text-xs border border-dark-700 rounded p-3 focus:border-brand-500 outline-none" />
                             <label className="bg-dark-700 hover:bg-brand-500 text-white px-3 flex items-center justify-center rounded cursor-pointer transition-colors font-bold">
@@ -682,7 +682,7 @@ const AdminCMS = () => {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Years of Excellence (Badge)</label>
+                        <label className="block text-sm font-medium text-gray-200 mb-1">Years of Excellence (Badge)</label>
                         <input type="text" value={frontendContent.cms_about_years} onChange={e => setFrontendContent({...frontendContent, cms_about_years: e.target.value})} className="w-full bg-dark-800 text-white border border-dark-700 rounded p-3 focus:border-brand-500 outline-none max-w-xs" />
                       </div>
                     </div>
@@ -693,7 +693,7 @@ const AdminCMS = () => {
               <div className="bg-dark-900 border border-dark-700 rounded-lg p-6">
                 <h4 className="font-bold text-white mb-4 border-b border-dark-700 pb-2">Amenities Page (Global Facilities)</h4>
                 <div className="space-y-4">
-                  <p className="text-sm text-gray-400 mb-4">Manage the premium amenities listed on the public Amenities page. Icons are pre-selected based on keywords.</p>
+                  <p className="text-sm text-gray-200 mb-4">Manage the premium amenities listed on the public Amenities page. Icons are pre-selected based on keywords.</p>
                   
                   {(() => {
                     let parsedAmenities = [];
@@ -752,13 +752,13 @@ const AdminCMS = () => {
             </div>
             
             <div className="flex bg-dark-900 rounded-lg p-1 border border-dark-700">
-              <button onClick={() => setActiveSectionTab('content')} className={`px-6 py-1.5 rounded text-sm font-bold transition-colors ${activeSectionTab === 'content' ? 'bg-dark-700 text-white shadow' : 'text-gray-500 hover:text-gray-300'}`}>Content Blocks</button>
-              <button onClick={() => setActiveSectionTab('seo')} className={`px-6 py-1.5 rounded text-sm font-bold transition-colors ${activeSectionTab === 'seo' ? 'bg-dark-700 text-white shadow' : 'text-gray-500 hover:text-gray-300'}`}>SEO Settings</button>
+              <button onClick={() => setActiveSectionTab('content')} className={`px-6 py-1.5 rounded text-sm font-bold transition-colors ${activeSectionTab === 'content' ? 'bg-dark-700 text-white shadow' : 'text-gray-300 hover:text-gray-300'}`}>Content Blocks</button>
+              <button onClick={() => setActiveSectionTab('seo')} className={`px-6 py-1.5 rounded text-sm font-bold transition-colors ${activeSectionTab === 'seo' ? 'bg-dark-700 text-white shadow' : 'text-gray-300 hover:text-gray-300'}`}>SEO Settings</button>
             </div>
 
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
-                <span className="text-sm font-bold text-gray-400">Published</span>
+                <span className="text-sm font-bold text-gray-200">Published</span>
                 <input type="checkbox" checked={pageForm.is_published} onChange={e => setPageForm({...pageForm, is_published: e.target.checked})} className="w-5 h-5 accent-brand-500 rounded"/>
               </label>
               <button onClick={handleSavePage} className="btn-primary py-2 px-8 font-bold rounded shadow-[0_0_15px_rgba(223,104,83,0.3)]">Save Page</button>
@@ -773,12 +773,12 @@ const AdminCMS = () => {
               {activeSectionTab === 'content' && (
                 <div className="p-6 space-y-6">
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Page Details</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">Page Details</label>
                     <input type="text" required value={pageForm.title} onChange={e => setPageForm({...pageForm, title: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm mb-3" placeholder="Page Title" />
                     <input type="text" required value={pageForm.slug} onChange={e => setPageForm({...pageForm, slug: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm font-mono" placeholder="URL Slug (e.g. about-us)" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Page Type</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">Page Type</label>
                     <select value={pageForm.page_type} onChange={e => setPageForm({...pageForm, page_type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm">
                       <option value="landing_page">Standard Landing Page</option>
                       <option value="property_page">Property Description Page</option>
@@ -787,15 +787,15 @@ const AdminCMS = () => {
                   </div>
                   
                   <div className="pt-6 border-t border-dark-700">
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Add Content Blocks</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">Add Content Blocks</label>
                     <div className="grid grid-cols-2 gap-3">
-                      <button onClick={() => addBlock('hero')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-400 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
+                      <button onClick={() => addBlock('hero')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-200 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
                         <LayoutTemplate size={20}/> Hero Section
                       </button>
-                      <button onClick={() => addBlock('text')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-400 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
+                      <button onClick={() => addBlock('text')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-200 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
                         <FileText size={20}/> Rich Text
                       </button>
-                      <button onClick={() => addBlock('rooms')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-400 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
+                      <button onClick={() => addBlock('rooms')} className="p-3 bg-dark-900 border border-dark-700 rounded hover:border-brand-500 text-gray-200 hover:text-white transition-colors flex flex-col items-center gap-2 text-xs font-bold">
                         <CheckCircle size={20}/> Featured Rooms
                       </button>
                     </div>
@@ -806,21 +806,21 @@ const AdminCMS = () => {
               {activeSectionTab === 'seo' && (
                 <div className="p-6 space-y-6">
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">SEO Meta Title</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">SEO Meta Title</label>
                     <input type="text" value={pageForm.meta_title} onChange={e => setPageForm({...pageForm, meta_title: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="Max 60 chars" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">SEO Description</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">SEO Description</label>
                     <textarea rows={4} value={pageForm.meta_description} onChange={e => setPageForm({...pageForm, meta_description: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="Max 160 chars..."></textarea>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Keywords</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">Keywords</label>
                     <input type="text" value={pageForm.seo_keywords} onChange={e => setPageForm({...pageForm, seo_keywords: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="luxury, hotel, booking" />
                   </div>
                   
                   {/* Google Preview */}
                   <div className="mt-8 pt-6 border-t border-dark-700">
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Google Search Preview</label>
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">Google Search Preview</label>
                     <div className="bg-white p-4 rounded text-left">
                       <div className="text-sm text-[#1a0dab] truncate whitespace-nowrap">{pageForm.title || 'Page Title'} - Luxe PMS</div>
                       <div className="text-xs text-[#006621] truncate whitespace-nowrap">https://yourdomain.com/{pageForm.slug || 'slug'}</div>
@@ -841,7 +841,7 @@ const AdminCMS = () => {
                   <div className="py-32 text-center border-2 border-dashed border-dark-700 rounded-xl">
                     <LayoutTemplate size={48} className="mx-auto text-dark-600 mb-4"/>
                     <h3 className="text-xl font-bold text-white mb-2">Canvas is Empty</h3>
-                    <p className="text-gray-500">Select a content block from the left menu to start building.</p>
+                    <p className="text-gray-300">Select a content block from the left menu to start building.</p>
                   </div>
                 ) : (
                   pageForm.blocks.map((block, index) => (
@@ -849,9 +849,9 @@ const AdminCMS = () => {
                       
                       {/* Block Controls Toolbar */}
                       <div className="absolute top-4 right-4 flex bg-dark-900 border border-dark-700 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                        <button onClick={() => moveBlock(index, 'up')} className="p-2 hover:bg-dark-700 text-gray-400 hover:text-white border-r border-dark-700" title="Move Up"><MoveUp size={14}/></button>
-                        <button onClick={() => moveBlock(index, 'down')} className="p-2 hover:bg-dark-700 text-gray-400 hover:text-white border-r border-dark-700" title="Move Down"><MoveDown size={14}/></button>
-                        <button onClick={() => removeBlock(block.id)} className="p-2 hover:bg-red-500 hover:text-white text-gray-400" title="Delete Block"><Trash2 size={14}/></button>
+                        <button onClick={() => moveBlock(index, 'up')} className="p-2 hover:bg-dark-700 text-gray-200 hover:text-white border-r border-dark-700" title="Move Up"><MoveUp size={14}/></button>
+                        <button onClick={() => moveBlock(index, 'down')} className="p-2 hover:bg-dark-700 text-gray-200 hover:text-white border-r border-dark-700" title="Move Down"><MoveDown size={14}/></button>
+                        <button onClick={() => removeBlock(block.id)} className="p-2 hover:bg-red-500 hover:text-white text-gray-200" title="Delete Block"><Trash2 size={14}/></button>
                       </div>
 
                       {/* Block Header */}
@@ -865,15 +865,15 @@ const AdminCMS = () => {
                         {block.type === 'hero' && (
                           <div className="space-y-4">
                             <div>
-                              <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Headline</label>
+                              <label className="block text-xs font-bold text-gray-300 uppercase mb-1">Headline</label>
                               <input type="text" value={block.data.headline} onChange={e => updateBlock(block.id, { headline: e.target.value })} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white text-xl font-bold outline-none focus:border-brand-500" />
                             </div>
                             <div>
-                              <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Subheadline</label>
+                              <label className="block text-xs font-bold text-gray-300 uppercase mb-1">Subheadline</label>
                               <input type="text" value={block.data.subheadline} onChange={e => updateBlock(block.id, { subheadline: e.target.value })} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-gray-300 outline-none focus:border-brand-500" />
                             </div>
                             <div>
-                              <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Background Image URL (from Gallery)</label>
+                              <label className="block text-xs font-bold text-gray-300 uppercase mb-1">Background Image URL (from Gallery)</label>
                               <input type="text" value={block.data.bg_image} onChange={e => updateBlock(block.id, { bg_image: e.target.value })} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-blue-400 font-mono text-sm outline-none focus:border-brand-500" placeholder="https://..." />
                             </div>
                           </div>
@@ -888,11 +888,11 @@ const AdminCMS = () => {
                         {block.type === 'rooms' && (
                           <div className="flex gap-4">
                             <div className="flex-1">
-                              <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Section Title</label>
+                              <label className="block text-xs font-bold text-gray-300 uppercase mb-1">Section Title</label>
                               <input type="text" value={block.data.title} onChange={e => updateBlock(block.id, { title: e.target.value })} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500" />
                             </div>
                             <div className="w-32">
-                              <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Limit</label>
+                              <label className="block text-xs font-bold text-gray-300 uppercase mb-1">Limit</label>
                               <input type="number" value={block.data.limit} onChange={e => updateBlock(block.id, { limit: parseInt(e.target.value) })} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 text-center" min={1} max={10} />
                             </div>
                           </div>

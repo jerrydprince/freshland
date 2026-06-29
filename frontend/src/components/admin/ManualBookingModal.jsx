@@ -683,7 +683,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-4xl shadow-2xl relative rounded-xl animate-in fade-in zoom-in-95 max-h-[90vh] overflow-y-auto custom-scrollbar">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
         <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Plus className="text-brand-500"/> Create Manual Booking</h2>
         
         <form onSubmit={handleManualBooking} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -692,15 +692,15 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
               <h3 className="font-semibold text-white">Stay Details</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Check-in</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Check-in</label>
                   <input required type="date" value={newBooking.checkIn} onChange={e => setNewBooking({...newBooking, checkIn: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Check-out</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Check-out</label>
                   <input required type="date" value={newBooking.checkOut} onChange={e => setNewBooking({...newBooking, checkOut: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" />
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Select Room</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Select Room</label>
                   <select required value={newBooking.roomId} onChange={e => setNewBooking({...newBooking, roomId: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="">-- Choose available room --</option>
                     {availableRooms.map(r => <option key={r.id} value={r.id}>{r.room_number} - {r.name} (₦{Number(r.base_price_ngn).toLocaleString()}/night)</option>)}
@@ -721,7 +721,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 border-b border-dark-700/50 pb-3">
                   <div className="flex items-center justify-between mb-1.5">
-                    <label className="block text-xs font-semibold text-gray-400">Rebook CRM Guest (Optional)</label>
+                    <label className="block text-xs font-semibold text-gray-200">Rebook CRM Guest (Optional)</label>
                     {selectedCrmGuest && (
                       <button 
                         type="button" 
@@ -746,7 +746,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                       <button 
                         type="button"
                         onClick={() => setCrmSearchQuery('')}
-                        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs font-bold transition-colors"
+                        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white text-xs font-bold transition-colors"
                       >
                         ✕
                       </button>
@@ -771,23 +771,23 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">First Name</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">First Name</label>
                   <input required type="text" value={newBooking.firstName} onChange={e => setNewBooking({...newBooking, firstName: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" placeholder="John" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Last Name</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Last Name</label>
                   <input required type="text" value={newBooking.lastName} onChange={e => setNewBooking({...newBooking, lastName: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" placeholder="Doe" />
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Email Address</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Email Address</label>
                   <input required type="email" value={newBooking.email} onChange={e => setNewBooking({...newBooking, email: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" placeholder="john@example.com" />
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Phone Number</label>
                   <input required type="tel" value={newBooking.phone} onChange={e => setNewBooking({...newBooking, phone: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors" placeholder="+234..." />
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Purpose of Stay</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Purpose of Stay</label>
                   <select required value={newBooking.purpose || 'Leisure'} onChange={e => setNewBooking({...newBooking, purpose: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors cursor-pointer">
                     {Object.keys(purposeAdjustments).map(purpose => {
                       const valObj = purposeAdjustments[purpose];
@@ -813,7 +813,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                   </select>
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Special Requests (Optional)</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Special Requests (Optional)</label>
                   <textarea rows="2" value={newBooking.specialRequests || ''} onChange={e => setNewBooking({...newBooking, specialRequests: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors resize-none" placeholder="e.g. late check-in, dietary requirements..." />
                 </div>
               </div>
@@ -823,7 +823,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
           <div className="space-y-6">
             <div className="bg-dark-900 border border-dark-700 p-4 rounded-lg space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar">
               <h3 className="font-semibold text-white flex items-center gap-2"><Package size={16}/> Add-on Services</h3>
-              {services.length === 0 && foodServices.length === 0 ? <p className="text-sm text-gray-500">No services available</p> : (
+              {services.length === 0 && foodServices.length === 0 ? <p className="text-sm text-gray-300">No services available</p> : (
                 <div className="space-y-3">
                   {services.map(service => {
                     const isSelected = selectedServices.some(s => s.service_id === service.id);
@@ -833,16 +833,16 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                       <div key={service.id} onClick={() => toggleService(service.id)} className={`flex flex-col p-3 border rounded-lg cursor-pointer transition-colors ${isSelected ? 'border-brand-500 bg-brand-500/10' : 'border-dark-700 hover:border-gray-500'}`}>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            {isSelected ? <CheckSquare size={18} className="text-brand-500"/> : <Square size={18} className="text-gray-500"/>}
+                            {isSelected ? <CheckSquare size={18} className="text-brand-500"/> : <Square size={18} className="text-gray-300"/>}
                             <div>
                               <p className="font-medium text-white text-sm">{service.name}</p>
-                              <p className="text-xs text-gray-400">{service.pricing_type.replace(/_/g, ' ')}</p>
+                              <p className="text-xs text-gray-200">{service.pricing_type.replace(/_/g, ' ')}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
                               {isSelected && (service.pricing_type === 'quantity_based' || service.pricing_type === 'time_based' || service.pricing_type === 'per_person') && (
                                 <div className="flex items-center gap-2" onClick={e => e.stopPropagation()}>
-                                  <label className="text-xs text-gray-400">
+                                  <label className="text-xs text-gray-200">
                                     {service.pricing_type === 'per_person' ? 'Persons:' : 'Qty:'}
                                   </label>
                                   <input 
@@ -861,7 +861,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                         {isSelected && needsScheduling && (
                           <div className="mt-3 pt-3 border-t border-dark-700/50 flex flex-wrap items-center gap-4" onClick={e => e.stopPropagation()}>
                             <div className="flex items-center gap-2">
-                              <label className="text-xs text-gray-400">Date:</label>
+                              <label className="text-xs text-gray-200">Date:</label>
                               <input 
                                 type="date" 
                                 value={sData?.date || newBooking.checkIn}
@@ -870,7 +870,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                               />
                             </div>
                             <div className="flex items-center gap-2">
-                              <label className="text-xs text-gray-400">Time:</label>
+                              <label className="text-xs text-gray-200">Time:</label>
                               <input 
                                 type="time" 
                                 value={sData?.time || '12:00'}
@@ -894,7 +894,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                         <Coffee size={18} className="text-brand-500" />
                         <div>
                           <p className="font-medium text-white text-sm">Meals / Drinks</p>
-                          <p className="text-xs text-gray-400 font-normal">Select meals, dessert, or drinks</p>
+                          <p className="text-xs text-gray-200 font-normal">Select meals, dessert, or drinks</p>
                         </div>
                       </div>
                       <span className="text-xs font-bold bg-brand-500/10 text-brand-400 px-2.5 py-1 rounded">
@@ -913,7 +913,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                                 key={tab}
                                 type="button"
                                 onClick={() => setActiveSubmenu(tab)}
-                                className={`px-3 py-1.5 text-xs font-bold rounded transition-colors whitespace-nowrap ${activeSubmenu === tab ? 'bg-brand-500 text-dark-900' : 'bg-dark-900 text-gray-400 hover:text-white'}`}
+                                className={`px-3 py-1.5 text-xs font-bold rounded transition-colors whitespace-nowrap ${activeSubmenu === tab ? 'bg-brand-500 text-dark-900' : 'bg-dark-900 text-gray-200 hover:text-white'}`}
                               >
                                 {tab} ({count})
                               </button>
@@ -924,7 +924,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                         {/* Submenu Items */}
                         <div className="space-y-3 pt-1">
                           {getItemsForSubmenu(activeSubmenu, foodServices).length === 0 ? (
-                            <p className="text-xs text-gray-500 italic">No items available in this category</p>
+                            <p className="text-xs text-gray-300 italic">No items available in this category</p>
                           ) : (
                             getItemsForSubmenu(activeSubmenu, foodServices).map(item => {
                               const isSelected = selectedServices.some(s => s.service_id === item.id);
@@ -937,11 +937,11 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                                 >
                                   <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-2.5">
-                                      {isSelected ? <CheckSquare size={16} className="text-brand-500"/> : <Square size={16} className="text-gray-500"/>}
+                                      {isSelected ? <CheckSquare size={16} className="text-brand-500"/> : <Square size={16} className="text-gray-300"/>}
                                       <div>
                                         <p className="font-medium text-white text-xs">{item.name}</p>
                                         {item.description && (
-                                          <p className="text-[10px] text-gray-400 line-clamp-1">
+                                          <p className="text-[10px] text-gray-200 line-clamp-1">
                                             {item.description.includes(' | ') ? item.description.split(' | ').slice(1).join(' | ') : item.description}
                                           </p>
                                         )}
@@ -950,7 +950,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                                     <div className="flex items-center gap-3" onClick={e => e.stopPropagation()}>
                                       {isSelected && (
                                         <div className="flex items-center gap-1.5">
-                                          <label className="text-[10px] text-gray-400">Qty:</label>
+                                          <label className="text-[10px] text-gray-200">Qty:</label>
                                           <input 
                                             type="number" 
                                             min="1" 
@@ -1009,7 +1009,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
 
                   {billToGroup && !isAddingGroup && (
                     <div className="mt-3 space-y-2 animate-in fade-in duration-200">
-                      <label className="block text-xs font-semibold text-gray-400">Select Corporate/Group Account *</label>
+                      <label className="block text-xs font-semibold text-gray-200">Select Corporate/Group Account *</label>
                       <select 
                         required={billToGroup}
                         value={selectedGroupId} 
@@ -1124,7 +1124,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Booking Source</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1">Booking Source</label>
                   <select required value={newBooking.bookingSource} onChange={e => setNewBooking({...newBooking, bookingSource: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="walk_in">Walk-in</option>
                     <option value="phone">Phone Booking</option>
@@ -1134,7 +1134,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                 {!billToGroup ? (
                   <>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Payment Status</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Payment Status</label>
                       <select required value={newBooking.paymentStatus} onChange={e => setNewBooking({...newBooking, paymentStatus: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors cursor-pointer">
                         <option value="unpaid">Unpaid</option>
                         <option value="partial">Partially Paid</option>
@@ -1144,7 +1144,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                     {newBooking.paymentStatus !== 'unpaid' && (
                       <>
                         <div className="col-span-1 animate-in fade-in duration-300">
-                          <label className="block text-sm font-medium text-gray-400 mb-1">Payment Method / Type</label>
+                          <label className="block text-sm font-medium text-gray-200 mb-1">Payment Method / Type</label>
                           <select required value={newBooking.paymentMethod} onChange={e => setNewBooking({...newBooking, paymentMethod: e.target.value})} className="w-full bg-dark-800 border border-dark-700 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors cursor-pointer">
                             <option value="cash">Cash</option>
                             <option value="bank_transfer">Transfer (Bank)</option>
@@ -1162,7 +1162,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                           </select>
                         </div>
                         <div className="col-span-1 animate-in fade-in duration-300">
-                          <label className="block text-sm font-medium text-gray-400 mb-1">Amount Paid (₦)</label>
+                          <label className="block text-sm font-medium text-gray-200 mb-1">Amount Paid (₦)</label>
                           <input
                             required
                             type="number"
@@ -1208,20 +1208,20 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                   </div>
                 )}
                 <div className="col-span-2 border-t border-dark-700/50 pt-3">
-                  <label className="block text-sm font-medium text-gray-400 mb-1.5">Apply Manual Discount</label>
+                  <label className="block text-sm font-medium text-gray-200 mb-1.5">Apply Manual Discount</label>
                   <div className="flex gap-2">
                     <div className="flex border border-dark-700 rounded overflow-hidden">
                       <button 
                         type="button" 
                         onClick={() => setDiscountType('amount')} 
-                        className={`px-3 py-1.5 text-xs font-bold transition-colors ${discountType === 'amount' ? 'bg-brand-500 text-dark-900' : 'bg-dark-800 text-gray-400 hover:text-white'}`}
+                        className={`px-3 py-1.5 text-xs font-bold transition-colors ${discountType === 'amount' ? 'bg-brand-500 text-dark-900' : 'bg-dark-800 text-gray-200 hover:text-white'}`}
                       >
                         ₦
                       </button>
                       <button 
                         type="button" 
                         onClick={() => setDiscountType('percentage')} 
-                        className={`px-3 py-1.5 text-xs font-bold transition-colors ${discountType === 'percentage' ? 'bg-brand-500 text-dark-900' : 'bg-dark-800 text-gray-400 hover:text-white'}`}
+                        className={`px-3 py-1.5 text-xs font-bold transition-colors ${discountType === 'percentage' ? 'bg-brand-500 text-dark-900' : 'bg-dark-800 text-gray-200 hover:text-white'}`}
                       >
                         %
                       </button>
@@ -1239,7 +1239,7 @@ const ManualBookingModal = ({ isOpen, onClose, onSuccess, preselectedRoomId }) =
                 <div className="col-span-2 border-t border-dark-700/50 pt-3">
                   <label className="block text-sm font-medium text-brand-400 mb-1">Final Amount (₦)</label>
                   <input required type="number" step="any" min="0" value={newBooking.totalAmount} onChange={e => setNewBooking({...newBooking, totalAmount: parseFloat(e.target.value) || 0})} className="w-full bg-dark-800 border border-brand-500 rounded p-2.5 text-white outline-none focus:border-brand-500 transition-colors font-bold text-lg" />
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-300 mt-1">
                     Calculated as Room Cost (₦{roomCostWithVat.toLocaleString()} including 7.5% VAT)
                     {selectedServices.length > 0 && ` + Services (₦${servicesCostWithVat.toLocaleString()} including 7.5% VAT)`}
                     {discountValue > 0 && ` [Discount of ${discountType === 'amount' ? `₦${discountValue.toLocaleString()}` : `${discountValue}%`} applied to room rate]`}

@@ -225,7 +225,7 @@ const MonthlyReports = () => {
   }, [reports, explorerFilter]);
 
   if (!hasAccess('Monthly Reports')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to view Monthly Business Performance Reviews.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to view Monthly Business Performance Reviews.</div>;
   }
 
   return (
@@ -239,7 +239,7 @@ const MonthlyReports = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Monthly Performance Review</h1>
-            <p className="text-gray-400 mt-1">Audit guest satisfaction reviews, staff productivity indicators, general ledger earnings, and departmental monthly updates.</p>
+            <p className="text-gray-200 mt-1">Audit guest satisfaction reviews, staff productivity indicators, general ledger earnings, and departmental monthly updates.</p>
           </div>
         </div>
         <div className="mt-4 md:mt-0 flex gap-3">
@@ -264,7 +264,7 @@ const MonthlyReports = () => {
         {/* LEFT COLUMN: Business performance reviews (7/12 width) */}
         <div className="md:col-span-7 bg-dark-800 border border-dark-700 rounded-xl p-6 shadow-lg flex flex-col justify-between space-y-6">
           <div className="space-y-4">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 border-b border-dark-700 pb-3">
+            <h2 className="text-sm font-bold text-gray-200 uppercase tracking-widest flex items-center gap-2 border-b border-dark-700 pb-3">
               <BarChart2 size={16} className="text-brand-500" /> Monthly Business performance indicators
             </h2>
 
@@ -275,7 +275,7 @@ const MonthlyReports = () => {
                   {stats.satisfactionIndex}%
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Guest satisfaction</h4>
+                  <h4 className="text-[10px] font-black text-gray-300 uppercase tracking-wider">Guest satisfaction</h4>
                   <span className="text-xs text-gray-300 font-semibold mt-1 block flex items-center gap-1"><Smile size={12} className="text-blue-400" /> Excellent Index</span>
                 </div>
               </div>
@@ -285,7 +285,7 @@ const MonthlyReports = () => {
                   {stats.productivityIndex}%
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Staff efficiency</h4>
+                  <h4 className="text-[10px] font-black text-gray-300 uppercase tracking-wider">Staff efficiency</h4>
                   <span className="text-xs text-gray-300 font-semibold mt-1 block flex items-center gap-1"><UserCheck size={12} className="text-emerald-400" /> High Punctuality</span>
                 </div>
               </div>
@@ -295,7 +295,7 @@ const MonthlyReports = () => {
                   {stats.cleanlinessRating}%
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Cleanliness index</h4>
+                  <h4 className="text-[10px] font-black text-gray-300 uppercase tracking-wider">Cleanliness index</h4>
                   <span className="text-xs text-gray-300 font-semibold mt-1 block flex items-center gap-1"><Sparkles size={12} className="text-orange-400" /> Verified Suite clean</span>
                 </div>
               </div>
@@ -303,7 +303,7 @@ const MonthlyReports = () => {
 
             {/* Dynamic Revenue Inflows summary */}
             <div className="bg-dark-900 border border-dark-750 p-5 rounded-xl space-y-4">
-              <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1"><Wallet size={14} className="text-brand-500" /> Category Earnings ledger Breakdown</h3>
+              <h3 className="text-xs font-bold text-gray-200 uppercase tracking-widest flex items-center gap-1"><Wallet size={14} className="text-brand-500" /> Category Earnings ledger Breakdown</h3>
               
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-dark-800/40 p-3 rounded border border-dark-700/60 text-xs">
@@ -322,14 +322,14 @@ const MonthlyReports = () => {
                 </div>
 
                 <div className="border-t border-dark-700 pt-3 flex justify-between items-center font-black text-sm">
-                  <span className="text-gray-400">TOTAL BUSINESS REVENUE compiling</span>
+                  <span className="text-gray-200">TOTAL BUSINESS REVENUE compiling</span>
                   <span className="text-emerald-400 text-base">₦{(stats.roomRevenue + stats.posRevenue + stats.laundryRevenue).toLocaleString()}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-brand-500/5 border border-brand-500/10 p-4 rounded-xl flex items-start gap-2.5 text-[11px] text-gray-400 leading-relaxed">
+          <div className="bg-brand-500/5 border border-brand-500/10 p-4 rounded-xl flex items-start gap-2.5 text-[11px] text-gray-200 leading-relaxed">
             <Sparkles className="text-brand-400 w-5 h-5 flex-shrink-0" />
             <p>💡 Performance indices are dynamically computed from active transaction ledgers, attendance cards, and published guest reviews to guarantee unbiased operational tracking.</p>
           </div>
@@ -338,14 +338,14 @@ const MonthlyReports = () => {
         {/* RIGHT COLUMN: Departmental Reports Explorer (5/12 width) */}
         <div className="md:col-span-5 bg-dark-800 border border-dark-700 rounded-xl p-6 shadow-lg flex flex-col justify-between space-y-4">
           <div className="space-y-4">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 border-b border-dark-700 pb-3">
+            <h2 className="text-sm font-bold text-gray-200 uppercase tracking-widest flex items-center gap-2 border-b border-dark-700 pb-3">
               <ClipboardList size={16} className="text-brand-500" /> Departmental reports Explorer
             </h2>
 
             {/* Selector Filters */}
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] font-semibold text-gray-500 mb-1 uppercase">Select Month</label>
+                <label className="block text-[10px] font-semibold text-gray-300 mb-1 uppercase">Select Month</label>
                 <input 
                   type="month"
                   value={explorerFilter.month.slice(0, 7)}
@@ -355,7 +355,7 @@ const MonthlyReports = () => {
               </div>
 
               <div>
-                <label className="block text-[10px] font-semibold text-gray-500 mb-1 uppercase">Choose Department</label>
+                <label className="block text-[10px] font-semibold text-gray-300 mb-1 uppercase">Choose Department</label>
                 <select
                   value={explorerFilter.department}
                   onChange={e => setExplorerFilter({ ...explorerFilter, department: e.target.value })}
@@ -385,36 +385,36 @@ const MonthlyReports = () => {
 
                 <div className="space-y-3 text-xs leading-normal">
                   <div className="space-y-1">
-                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider block">1. Operational Status Update</span>
+                    <span className="text-[10px] text-gray-300 font-bold uppercase tracking-wider block">1. Operational Status Update</span>
                     <p className="bg-dark-800 p-2.5 rounded border border-dark-750/50 text-gray-300 text-[11px] leading-relaxed whitespace-pre-wrap">{selectedExplorerReport.status_update}</p>
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider block">2. Supplies Needed / Requested</span>
+                    <span className="text-[10px] text-gray-300 font-bold uppercase tracking-wider block">2. Supplies Needed / Requested</span>
                     <p className={`p-2.5 rounded border text-[11px] leading-relaxed whitespace-pre-wrap ${
                       selectedExplorerReport.supplies_needed?.trim() 
                         ? 'bg-orange-500/5 border-orange-500/10 text-orange-300' 
-                        : 'bg-dark-800 border-dark-750/50 text-gray-500 italic'
+                        : 'bg-dark-800 border-dark-750/50 text-gray-300 italic'
                     }`}>
                       {selectedExplorerReport.supplies_needed || 'No supplies or restocks requested.'}
                     </p>
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider block">3. Suggestions / Proposals</span>
+                    <span className="text-[10px] text-gray-300 font-bold uppercase tracking-wider block">3. Suggestions / Proposals</span>
                     <p className="bg-dark-800 p-2.5 rounded border border-dark-750/50 text-gray-300 text-[11px] leading-relaxed whitespace-pre-wrap">{selectedExplorerReport.suggestions || 'No structural suggestions noted.'}</p>
                   </div>
                 </div>
               </div>
             ) : (
-              <div className="text-center py-20 text-gray-500 flex flex-col items-center justify-center gap-3 bg-dark-900/40 rounded-xl border border-dashed border-dark-700 h-[280px]">
+              <div className="text-center py-20 text-gray-300 flex flex-col items-center justify-center gap-3 bg-dark-900/40 rounded-xl border border-dashed border-dark-700 h-[280px]">
                 <FileText size={40} className="text-gray-600 animate-pulse" />
                 <p className="text-xs max-w-[200px] leading-relaxed">No monthly report registered for this department in the selected month.</p>
               </div>
             )}
           </div>
 
-          <div className="bg-dark-900 border border-dark-750 p-3 rounded-lg flex items-center justify-between text-[11px] font-semibold text-gray-400">
+          <div className="bg-dark-900 border border-dark-750 p-3 rounded-lg flex items-center justify-between text-[11px] font-semibold text-gray-200">
             <span>Department Checklist log</span>
             <ChevronRight size={14} className="text-brand-500" />
           </div>
@@ -432,7 +432,7 @@ const MonthlyReports = () => {
               </h2>
               <button 
                 onClick={() => setShowAddForm(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -444,7 +444,7 @@ const MonthlyReports = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {/* Department */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Your Department *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Your Department *</label>
                     <select
                       value={formData.department}
                       onChange={e => setFormData({ ...formData, department: e.target.value })}
@@ -458,7 +458,7 @@ const MonthlyReports = () => {
 
                   {/* Report Month */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Report Month *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Report Month *</label>
                     <input 
                       type="month"
                       required
@@ -471,7 +471,7 @@ const MonthlyReports = () => {
 
                 {/* Status Update */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">1. Operational Status Update *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">1. Operational Status Update *</label>
                   <textarea 
                     required
                     value={formData.status_update}
@@ -483,7 +483,7 @@ const MonthlyReports = () => {
 
                 {/* Supplies Needed */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">2. Supplies & Tools Needed (Requests)</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">2. Supplies & Tools Needed (Requests)</label>
                   <textarea 
                     value={formData.supplies_needed}
                     onChange={e => setFormData({ ...formData, supplies_needed: e.target.value })}
@@ -494,7 +494,7 @@ const MonthlyReports = () => {
 
                 {/* Suggestions */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">3. Structural Suggestions / Remarks</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">3. Structural Suggestions / Remarks</label>
                   <textarea 
                     value={formData.suggestions}
                     onChange={e => setFormData({ ...formData, suggestions: e.target.value })}
@@ -509,7 +509,7 @@ const MonthlyReports = () => {
                 <button 
                   type="button"
                   onClick={() => setShowAddForm(false)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>

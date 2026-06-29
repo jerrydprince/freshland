@@ -42,7 +42,7 @@ export const sendResendEmail = async ({ to, subject, html, from }) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Jemmyland Hotels <onboarding@resend.dev>',
+          from: 'Freshland <onboarding@resend.dev>',
           to: [to],
           subject: subject,
           html: html
@@ -126,7 +126,7 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
     }
     const contactAddress = settingsMap.contact_address || 'Plot 572 Iduwa Ogenyi Street Mabushi, Off Ahmadu Bello Way, Abuja';
     const contactPhone = settingsMap.contact_phone || '08033214684, 08062332639, 08171278657';
-    const contactEmail = settingsMap.contact_email || 'info@jemmylandhotels.com';
+    const contactEmail = settingsMap.contact_email || 'info@Freshlandhotels.com';
 
     // 2. Query automation rules for trigger event
     const { data: rules, error: rulesErr } = await supabase
@@ -209,7 +209,7 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
           .replace(/{{invoice_number}}/g, invoiceNum);
       };
 
-      const parsedSubject = formatString(template.subject || 'Jemmyland Hotels Update');
+      const parsedSubject = formatString(template.subject || 'Freshland Update');
       const parsedBody = formatString(template.body || '');
 
       let sentStatus = 'failed';
@@ -220,8 +220,8 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
         const emailHtml = `
           <div style="font-family: 'Outfit', sans-serif; padding: 30px; color: #1f2937; max-width: 600px; margin: auto; border: 1px solid #e5e7eb; border-top: 6px solid ${accentColor}; border-radius: 16px; background-color: #ffffff;">
             <div style="text-align: center; border-bottom: 1px solid #f3f4f6; padding-bottom: 20px; margin-bottom: 20px;">
-              ${contactLogo ? `<img src="${contactLogo}" alt="Jemmyland Hotels" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
-              <h2 style="color: #000000; margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.05em;">Jemmyland Hotels</h2>
+              ${contactLogo ? `<img src="${contactLogo}" alt="Freshland" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
+              <h2 style="color: #000000; margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.05em;">Freshland</h2>
               <span style="font-size: 11px; color: ${accentColor}; text-transform: uppercase; letter-spacing: 0.1em; font-weight: bold;">Premium Luxury Hotel</span>
             </div>
             <div style="font-size: 15px; line-height: 1.6; color: #4b5563;">
@@ -236,9 +236,9 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
         `;
 
         // Fire admin copy in background FIRST so it doesn't get cancelled by slow guest email delivery
-        if (recipient !== 'booking@jemmylandhotels.com') {
+        if (recipient !== 'booking@Freshlandhotels.com') {
           try {
-            console.log(`[Automation Engine] Forwarding admin copy of booking update to booking@jemmylandhotels.com...`);
+            console.log(`[Automation Engine] Forwarding admin copy of booking update to booking@Freshlandhotels.com...`);
             const adminHtml = `
               <div style="background-color: #f3f4f6; padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 20px; font-family: sans-serif; font-size: 13px; color: #4b5563; line-height: 1.5;">
                 <strong>[PMS Admin Notification]</strong><br/>
@@ -248,9 +248,9 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
               ${emailHtml}
             `;
             sendResendEmail({
-              to: 'booking@jemmylandhotels.com',
+              to: 'booking@Freshlandhotels.com',
               subject: `[ADMIN] ${parsedSubject}`,
-              from: 'booking@jemmylandhotels.com',
+              from: 'booking@Freshlandhotels.com',
               html: adminHtml
             }).catch(e => console.error(e));
           } catch (adminCopyErr) {
@@ -261,7 +261,7 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
         const result = await sendResendEmail({
           to: recipient,
           subject: parsedSubject,
-          from: 'booking@jemmylandhotels.com',
+          from: 'booking@Freshlandhotels.com',
           html: emailHtml
         });
 
@@ -352,23 +352,23 @@ export const sendSMSNotification = async ({ to, message }) => {
 export const sendWelcomeEmail = async ({ email, firstName, lastName, password = null }) => {
   const loginUrl = `${window.location.origin}/login`;
   const subject = password 
-    ? 'Your Jemmyland Hotels Credentials & Account Details' 
-    : 'Welcome to Jemmyland Hotels - Premium Luxury Hotel';
+    ? 'Your Freshland Credentials & Account Details' 
+    : 'Welcome to Freshland - Premium Luxury Hotel';
 
   const htmlContent = `
     <div style="font-family: 'Outfit', sans-serif; padding: 40px; color: #1f2937; max-width: 600px; margin: auto; border: 1px solid #e5e7eb; border-top: 8px solid #DF6853; border-radius: 16px; background-color: #ffffff;">
       <div style="text-align: center; border-bottom: 1px solid #f3f4f6; padding-bottom: 25px; margin-bottom: 25px;">
-        <h2 style="color: #000000; margin: 0; font-size: 26px; font-weight: 800; letter-spacing: 0.05em;">Jemmyland Hotels</h2>
+        <h2 style="color: #000000; margin: 0; font-size: 26px; font-weight: 800; letter-spacing: 0.05em;">Freshland</h2>
         <span style="font-size: 11px; color: #DF6853; text-transform: uppercase; letter-spacing: 0.15em; font-weight: bold;">Premium Luxury Hotel</span>
       </div>
       
       <div style="margin-bottom: 30px;">
-        <h3 style="color: #111827; font-size: 18px; font-weight: 700; margin-top: 0; margin-bottom: 15px; border-left: 4px solid #DF6853; padding-left: 10px;">Welcome to Jemmyland Hotels!</h3>
+        <h3 style="color: #111827; font-size: 18px; font-weight: 700; margin-top: 0; margin-bottom: 15px; border-left: 4px solid #DF6853; padding-left: 10px;">Welcome to Freshland!</h3>
         <p style="font-size: 14px; line-height: 1.6; color: #4b5563; margin: 0;">
           Dear <strong>${firstName} ${lastName}</strong>,
         </p>
         <p style="font-size: 14px; line-height: 1.6; color: #4b5563; margin-top: 10px;">
-          Thank you for registering with Jemmyland Hotels. Your account has been successfully created. You can now log in to the Guest Portal to view and manage your bookings, request room upgrades, make laundry and dining orders, and view your prepayment wallet.
+          Thank you for registering with Freshland. Your account has been successfully created. You can now log in to the Guest Portal to view and manage your bookings, request room upgrades, make laundry and dining orders, and view your prepayment wallet.
         </p>
       </div>
 
@@ -407,7 +407,7 @@ export const sendWelcomeEmail = async ({ email, firstName, lastName, password = 
       </div>
 
       <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 12px; color: #9ca3af;">
-        <p style="margin: 0 0 5px 0;">This is an official automated onboarding notification from Jemmyland Hotels.</p>
+        <p style="margin: 0 0 5px 0;">This is an official automated onboarding notification from Freshland.</p>
         <p style="margin: 0;">Plot 572 Iduwa Ogenyi Street Mabushi, Off Ahmadu Bello Way, Abuja</p>
       </div>
     </div>

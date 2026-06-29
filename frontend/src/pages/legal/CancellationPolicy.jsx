@@ -7,7 +7,7 @@ const CancellationPolicy = () => {
         <h1 className="text-4xl md:text-5xl font-serif text-white mb-8 text-center">Cancellation Policy</h1>
         
         <div className="bg-dark-800 border border-dark-700 p-8 md:p-12 text-gray-300 space-y-8 leading-relaxed">
-          <p className="text-lg text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-lg text-gray-200">Last updated: {new Date().toLocaleDateString()}</p>
           
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">1. General Cancellation Rules</h2>
@@ -41,7 +41,7 @@ const CancellationPolicy = () => {
 
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">5. Extenuating Circumstances</h2>
-            <p>In the event of severe, documented extenuating circumstances (such as medical emergencies or official government travel bans), please contact our support team. Exceptions to this policy are made solely at the discretion of Jemmyland Hotels management.</p>
+            <p>In the event of severe, documented extenuating circumstances (such as medical emergencies or official government travel bans), please contact our support team. Exceptions to this policy are made solely at the discretion of Freshland management.</p>
           </section>
           
           <div className="pt-8 border-t border-dark-700 mt-12">

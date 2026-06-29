@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component {
             
             <div>
               <h1 className="text-2xl font-serif font-bold text-white mb-2">Something went wrong</h1>
-              <p className="text-gray-400">
+              <p className="text-gray-200">
                 A critical error occurred while rendering this page. Our engineers have been notified.
               </p>
             </div>

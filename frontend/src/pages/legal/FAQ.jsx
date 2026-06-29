@@ -14,12 +14,12 @@ const FAQItem = ({ question, answer }) => {
         {isOpen ? (
           <ChevronUp className="text-gold-500 flex-shrink-0" size={24} />
         ) : (
-          <ChevronDown className="text-gray-400 flex-shrink-0" size={24} />
+          <ChevronDown className="text-gray-200 flex-shrink-0" size={24} />
         )}
       </button>
       
       {isOpen && (
-        <div className="p-6 pt-0 text-gray-400 leading-relaxed border-t border-dark-700/50 mt-2 bg-dark-800">
+        <div className="p-6 pt-0 text-gray-200 leading-relaxed border-t border-dark-700/50 mt-2 bg-dark-800">
           {answer}
         </div>
       )}
@@ -60,7 +60,7 @@ const FAQ = () => {
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">Frequently Asked Questions</h1>
-          <p className="text-xl text-gray-400">Everything you need to know about your stay at Jemmyland Hotels.</p>
+          <p className="text-xl text-gray-200">Everything you need to know about your stay at Freshland.</p>
         </div>
         
         <div className="space-y-4">
@@ -71,7 +71,7 @@ const FAQ = () => {
         
         <div className="mt-16 text-center bg-dark-800 border border-dark-700 p-8 rounded-lg">
           <h3 className="text-2xl font-serif text-white mb-4">Still have questions?</h3>
-          <p className="text-gray-400 mb-6">Can't find the answer you're looking for? Please chat to our friendly team.</p>
+          <p className="text-gray-200 mb-6">Can't find the answer you're looking for? Please chat to our friendly team.</p>
           <a href="/contact" className="btn-primary inline-flex">Get in Touch</a>
         </div>
       </div>

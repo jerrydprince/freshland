@@ -327,14 +327,14 @@ const RequestServices = () => {
   };
 
   if (loading) {
-    return <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading services and active stays...</div>;
+    return <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading services and active stays...</div>;
   }
 
   return (
     <div className="space-y-8 text-white">
       <div>
         <h2 className="text-2xl font-semibold text-white">Request Stay Services</h2>
-        <p className="text-gray-400 mt-1">Enhance your luxury stay with our curated amenities and personalized add-ons.</p>
+        <p className="text-gray-200 mt-1">Enhance your luxury stay with our curated amenities and personalized add-ons.</p>
       </div>
 
       {isChargeSealingActive && (
@@ -342,7 +342,7 @@ const RequestServices = () => {
           <span className="text-lg">⚠️</span>
           <div>
             <strong>Room Charge Sealing Active</strong>
-            <p className="text-xs text-gray-400 mt-0.5">Checkout commencement has begun today. Please finalize any outstanding stay requests immediately.</p>
+            <p className="text-xs text-gray-200 mt-0.5">Checkout commencement has begun today. Please finalize any outstanding stay requests immediately.</p>
           </div>
         </div>
       )}
@@ -352,13 +352,13 @@ const RequestServices = () => {
           <span className="text-lg">🛑</span>
           <div>
             <strong>Service Requests Locked</strong>
-            <p className="text-xs text-gray-400 mt-0.5">Your checkout time (12:00 PM) has elapsed. Submission of additional room enhancements or laundry requests is now locked.</p>
+            <p className="text-xs text-gray-200 mt-0.5">Your checkout time (12:00 PM) has elapsed. Submission of additional room enhancements or laundry requests is now locked.</p>
           </div>
         </div>
       )}
 
       {bookings.length === 0 ? (
-        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-400 rounded-lg">
+        <div className="bg-dark-800 border border-dark-700 p-8 text-center text-gray-200 rounded-lg">
           <p className="mb-4">You do not have any active or upcoming reservations to request services for.</p>
           <a href="/booking" className="btn-primary py-2 px-6 inline-block text-sm">Book a Room</a>
         </div>
@@ -369,7 +369,7 @@ const RequestServices = () => {
             {/* Booking Selector Card */}
             <div className="bg-dark-800 border border-dark-700 p-6 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex-1">
-                <label className="block text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Select stay reservation</label>
+                <label className="block text-sm font-semibold text-gray-200 uppercase tracking-wider mb-2">Select stay reservation</label>
                 <select 
                   value={selectedBookingId} 
                   onChange={e => { setSelectedBookingId(e.target.value); setSelectedServices([]); }}
@@ -388,14 +388,14 @@ const RequestServices = () => {
                 <button
                   type="button"
                   onClick={() => { setActiveTab('stay'); }}
-                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${activeTab === 'stay' ? 'bg-gold-500 text-dark-900' : 'text-gray-400 hover:text-white'}`}
+                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${activeTab === 'stay' ? 'bg-gold-500 text-dark-900' : 'text-gray-200 hover:text-white'}`}
                 >
                   Stay Services
                 </button>
                 <button
                   type="button"
                   onClick={() => { setActiveTab('meal'); }}
-                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${activeTab === 'meal' ? 'bg-gold-500 text-dark-900' : 'text-gray-400 hover:text-white'}`}
+                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${activeTab === 'meal' ? 'bg-gold-500 text-dark-900' : 'text-gray-200 hover:text-white'}`}
                 >
                   Order Meal
                 </button>
@@ -418,12 +418,12 @@ const RequestServices = () => {
                       className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-lg transition-all ${
                         activeMealSegment === seg 
                           ? 'bg-gold-500 text-dark-900 shadow-sm' 
-                          : 'text-gray-400 hover:text-white'
+                          : 'text-gray-200 hover:text-white'
                       }`}
                     >
                       <span>{seg}</span>
                       <span className={`px-1.5 py-0.2 text-[9px] rounded-md font-mono ${
-                        activeMealSegment === seg ? 'bg-dark-900/10 text-dark-950 font-black' : 'bg-dark-900 border border-dark-700 text-gray-500'
+                        activeMealSegment === seg ? 'bg-dark-900/10 text-dark-950 font-black' : 'bg-dark-900 border border-dark-700 text-gray-300'
                       }`}>
                         {count}
                       </span>
@@ -484,7 +484,7 @@ const RequestServices = () => {
                           {isSelected && <CheckCircle size={14} className="stroke-[3]"/>}
                         </div>
                       </div>
-                      <p className="text-xs text-gray-400 mb-4 line-clamp-2">{isMeal ? text : service.description}</p>
+                      <p className="text-xs text-gray-200 mb-4 line-clamp-2">{isMeal ? text : service.description}</p>
                     </div>
 
                     <div>
@@ -503,7 +503,7 @@ const RequestServices = () => {
                           {/* Quantity inputs */}
                           {(service.pricing_type === 'quantity_based' || service.pricing_type === 'time_based' || service.pricing_type === 'per_person' || isMeal) && (
                             <div className="flex justify-between items-center bg-dark-900 border border-dark-700 p-2 rounded">
-                              <span className="text-xs text-gray-400 font-medium">
+                              <span className="text-xs text-gray-200 font-medium">
                                 {isMeal ? 'Quantity / Portions:' : 'Estimated Bags / Items:'}
                               </span>
                               <div className="flex items-center gap-3">
@@ -517,7 +517,7 @@ const RequestServices = () => {
                           {/* Notes/Instructions input for Laundry/Deferred services */}
                           {Number(service.base_price_ngn) === 0 && (
                             <div className="bg-dark-900 border border-dark-700 p-2 rounded">
-                              <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Laundry Items / Instructions *</label>
+                              <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1">Laundry Items / Instructions *</label>
                               <textarea 
                                 required
                                 disabled={isCheckoutElapsed}
@@ -532,7 +532,7 @@ const RequestServices = () => {
                           {/* Notes/Instructions for Meal service */}
                           {isMeal && (
                             <div className="bg-dark-900 border border-dark-700 p-2 rounded">
-                              <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Special Instructions</label>
+                              <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1">Special Instructions</label>
                               <textarea 
                                 disabled={isCheckoutElapsed}
                                 value={sData?.notes || ''} 
@@ -547,7 +547,7 @@ const RequestServices = () => {
                           {needsScheduling && (
                             <div className="grid grid-cols-2 gap-2 bg-dark-900 border border-dark-700 p-2 rounded">
                               <div>
-                                <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Date</label>
+                                <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1">Date</label>
                                 <input 
                                   type="date" 
                                   required
@@ -558,7 +558,7 @@ const RequestServices = () => {
                                 />
                               </div>
                               <div>
-                                <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Time</label>
+                                <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1">Time</label>
                                 <input 
                                   type="time" 
                                   required
@@ -585,7 +585,7 @@ const RequestServices = () => {
               <h3 className="text-lg font-bold border-b border-dark-700 pb-4 text-white">Request Summary</h3>
 
               {selectedServices.length === 0 ? (
-                <p className="text-sm text-gray-500 text-center py-6">Select services from the list to preview your request totals.</p>
+                <p className="text-sm text-gray-300 text-center py-6">Select services from the list to preview your request totals.</p>
               ) : (
                 <div className="space-y-4">
                   <div className="space-y-3">
@@ -595,11 +595,11 @@ const RequestServices = () => {
                       const price = getServicePrice(service, sData);
                       const isDeferred = Number(service.base_price_ngn) === 0;
                       return (
-                        <div key={sData.service_id} className="flex justify-between items-start text-xs text-gray-400">
+                        <div key={sData.service_id} className="flex justify-between items-start text-xs text-gray-200">
                           <div>
                             <span className="block font-medium text-gray-200">{service.name} {sData.quantity > 1 ? `(x${sData.quantity})` : ''}</span>
                             {sData.date && <span className="block text-[10px] text-gold-500 font-bold">{sData.date} @ {sData.time}</span>}
-                            {isDeferred && sData.notes && <span className="block text-[9px] text-gray-500 italic mt-0.5 max-w-[150px] truncate">Items: {sData.notes}</span>}
+                            {isDeferred && sData.notes && <span className="block text-[9px] text-gray-300 italic mt-0.5 max-w-[150px] truncate">Items: {sData.notes}</span>}
                           </div>
                           <span className={`font-bold ${isDeferred ? 'text-gold-500' : 'text-white'}`}>
                             {isDeferred ? 'TBD' : `₦${price.toLocaleString()}`}
@@ -620,7 +620,7 @@ const RequestServices = () => {
                     </span>
                   </div>
 
-                  <div className="bg-dark-900 border border-dark-700 p-4 rounded text-xs text-gray-400 flex items-start gap-2.5">
+                  <div className="bg-dark-900 border border-dark-700 p-4 rounded text-xs text-gray-200 flex items-start gap-2.5">
                     <ShieldCheck className="text-gold-500 w-5 h-5 flex-shrink-0" />
                     <p>💡 Submitting this form requests hotel staff to schedule and prepare these services. Applicable charges will be added to your final stay invoice.</p>
                   </div>
@@ -647,12 +647,12 @@ const RequestServices = () => {
           </h3>
 
           {existingRequests.length === 0 ? (
-            <p className="text-sm text-gray-500 text-center py-8">No service requests submitted yet for this stay.</p>
+            <p className="text-sm text-gray-300 text-center py-8">No service requests submitted yet for this stay.</p>
           ) : (
             <div className="overflow-x-auto mt-4">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-dark-700 text-xs text-gray-400 font-bold uppercase">
+                  <tr className="border-b border-dark-700 text-xs text-gray-200 font-bold uppercase">
                     <th className="pb-3 pr-4">Service</th>
                     <th className="pb-3 px-4">Schedule</th>
                     <th className="pb-3 px-4">Qty</th>
@@ -673,7 +673,7 @@ const RequestServices = () => {
                         <td className="py-4 pr-4">
                           <span className="font-semibold text-white block">{req.services?.name || 'Custom Service'}</span>
                           {req.notes && (
-                            <span className="text-xs text-gray-500 block max-w-[250px] truncate mt-0.5" title={req.notes}>
+                            <span className="text-xs text-gray-300 block max-w-[250px] truncate mt-0.5" title={req.notes}>
                               {req.notes.replace(/^(restaurant_order|laundry_request):\s*/, '')}
                             </span>
                           )}
@@ -696,7 +696,7 @@ const RequestServices = () => {
                             req.status === 'scheduled' ? 'bg-blue-500/10 border-blue-500/25 text-blue-400' :
                             req.status === 'in_progress' ? 'bg-teal-500/10 border-teal-500/25 text-teal-400' :
                             req.status === 'completed' ? 'bg-green-500/10 border-green-500/25 text-green-400' :
-                            'bg-gray-500/10 border-gray-500/25 text-gray-400'
+                            'bg-gray-500/10 border-gray-500/25 text-gray-200'
                           }`}>
                             {req.status.replace('_', ' ').toUpperCase()}
                           </span>
@@ -711,9 +711,9 @@ const RequestServices = () => {
                               Confirm Service
                             </button>
                           ) : isPending && !isCheckedIn ? (
-                            <span className="text-[10px] text-gray-500 italic">Awaiting Check-in</span>
+                            <span className="text-[10px] text-gray-300 italic">Awaiting Check-in</span>
                           ) : (
-                            <span className="text-xs text-gray-500">—</span>
+                            <span className="text-xs text-gray-300">—</span>
                           )}
                         </td>
                       </tr>

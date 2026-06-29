@@ -354,7 +354,7 @@ const InternalMessages = () => {
   };
 
   if (!hasAccess('Internal Messaging') && !hasAccess('Internal Messaging - Send Direct Messages') && !hasAccess('Internal Messaging - Broadcast Announcements')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to view Internal Communications.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to view Internal Communications.</div>;
   }
 
   return (
@@ -368,7 +368,7 @@ const InternalMessages = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white tracking-tight">Operations Chat Terminal</h1>
-            <p className="text-gray-400 text-xs mt-0.5">Real-time collaborative group channels and secure peer-to-peer staff direct messaging.</p>
+            <p className="text-gray-200 text-xs mt-0.5">Real-time collaborative group channels and secure peer-to-peer staff direct messaging.</p>
           </div>
         </div>
         <button 
@@ -390,7 +390,7 @@ const InternalMessages = () => {
           <div className="space-y-4 flex flex-col flex-1 overflow-hidden">
             {/* Unified Terminal Search */}
             <div className="relative">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
               <input 
                 type="text"
                 placeholder="Search channels, employees..."
@@ -399,7 +399,7 @@ const InternalMessages = () => {
                 className="w-full bg-dark-900 border border-dark-750/70 pl-10 pr-4 py-2.5 rounded-2xl text-xs font-semibold text-white outline-none focus:border-brand-500 transition-all font-sans"
               />
               {filterQuery && (
-                <button onClick={() => setFilterQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
+                <button onClick={() => setFilterQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white">
                   <X size={14} />
                 </button>
               )}
@@ -412,7 +412,7 @@ const InternalMessages = () => {
                 className={`py-2 px-3 rounded-xl font-black text-xs transition-all uppercase tracking-wider flex items-center justify-center gap-1.5 ${
                   sidebarTab === 'channels' 
                     ? 'bg-gradient-to-r from-brand-900/30 to-brand-850/10 text-brand-400 font-extrabold border border-brand-500/20' 
-                    : 'text-gray-500 hover:text-white'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 <Users size={13} /> Channels
@@ -422,7 +422,7 @@ const InternalMessages = () => {
                 className={`py-2 px-3 rounded-xl font-black text-xs transition-all uppercase tracking-wider flex items-center justify-center gap-1.5 ${
                   sidebarTab === 'users' 
                     ? 'bg-gradient-to-r from-brand-900/30 to-brand-850/10 text-brand-400 font-extrabold border border-brand-500/20' 
-                    : 'text-gray-500 hover:text-white'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 <Clock size={13} /> Direct (DMs)
@@ -450,10 +450,10 @@ const InternalMessages = () => {
                         }`}
                       >
                         <div className="min-w-0 pr-2">
-                          <span className={`text-xs font-black block font-serif ${isActive ? 'text-white' : 'text-gray-400'}`}>
+                          <span className={`text-xs font-black block font-serif ${isActive ? 'text-white' : 'text-gray-200'}`}>
                             {ch.label}
                           </span>
-                          <span className="text-[10px] text-gray-500 block truncate mt-0.5">{ch.description}</span>
+                          <span className="text-[10px] text-gray-300 block truncate mt-0.5">{ch.description}</span>
                         </div>
                         {unreadPriority > 0 && (
                           <span className="bg-amber-500 text-dark-950 text-[8px] font-black uppercase px-2 py-0.5 rounded-full flex-shrink-0">
@@ -496,7 +496,7 @@ const InternalMessages = () => {
                           </div>
 
                           <div className="min-w-0">
-                            <span className={`text-xs font-black block font-serif ${isActive ? 'text-white' : 'text-gray-400'}`}>
+                            <span className={`text-xs font-black block font-serif ${isActive ? 'text-white' : 'text-gray-200'}`}>
                               {st.first_name} {st.last_name}
                             </span>
                             <span className="text-[9px] text-brand-500 font-bold uppercase tracking-wider block mt-0.5">
@@ -542,7 +542,7 @@ const InternalMessages = () => {
                     <span className={`h-2 w-2 rounded-full ${activeTarget.is_online ? 'bg-green-500 animate-pulse' : 'bg-gray-600'}`} />
                   )}
                 </h3>
-                <span className="text-[10px] text-gray-400 block font-medium mt-0.5">
+                <span className="text-[10px] text-gray-200 block font-medium mt-0.5">
                   {activeTarget.type === 'channel' 
                     ? activeTarget.description 
                     : `Active Direct Message | Role: ${activeTarget.role.replace(/_/g, ' ').toUpperCase()} (${activeTarget.is_online ? 'Online' : 'Offline'})`}
@@ -558,7 +558,7 @@ const InternalMessages = () => {
           {/* Messages Feed View */}
           <div className="flex-1 overflow-y-auto p-5 custom-scrollbar space-y-4 bg-dark-900/35">
             {filteredMessages.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center text-gray-500 italic text-xs gap-3">
+              <div className="h-full flex flex-col items-center justify-center text-gray-300 italic text-xs gap-3">
                 <div className="w-12 h-12 bg-dark-900 border border-dark-750 rounded-xl flex items-center justify-center text-gray-600 shadow-inner">
                   <MessageSquare size={20} />
                 </div>
@@ -578,7 +578,7 @@ const InternalMessages = () => {
                   >
                     {/* Sender Tag (Received messages or broad channels only) */}
                     {!isSentByMe && (
-                      <span className="text-[9px] text-gray-500 font-extrabold uppercase tracking-wide mb-1 ml-1 flex items-center gap-1 select-all">
+                      <span className="text-[9px] text-gray-300 font-extrabold uppercase tracking-wide mb-1 ml-1 flex items-center gap-1 select-all">
                         {senderName} 
                         <span className="text-brand-500 text-[8px] font-bold">
                           ({msg.sender?.role.replace(/_/g, ' ') || 'PMS'})
@@ -641,7 +641,7 @@ const InternalMessages = () => {
                                 <FileText size={15} className="text-brand-400 shrink-0" />
                                 <span className="font-extrabold truncate select-all">{msg.attachment_name || 'PMS-File'}</span>
                               </div>
-                              <Download size={14} className="text-gray-400 shrink-0" />
+                              <Download size={14} className="text-gray-200 shrink-0" />
                             </a>
                           )}
                         </div>
@@ -649,7 +649,7 @@ const InternalMessages = () => {
 
                       {/* Time and Delete Action Row */}
                       <div className="flex items-center justify-between gap-6 self-end pt-1">
-                        <span className={`text-[8px] font-mono leading-none ${isSentByMe ? 'text-white/60' : 'text-gray-500'}`}>
+                        <span className={`text-[8px] font-mono leading-none ${isSentByMe ? 'text-white/60' : 'text-gray-300'}`}>
                           {format(new Date(msg.created_at), 'HH:mm')}
                         </span>
                         {isSentByMe && (
@@ -684,7 +684,7 @@ const InternalMessages = () => {
                 </div>
                 <button 
                   onClick={() => setAttachment(null)}
-                  className="p-1 bg-dark-900 hover:bg-red-500/20 text-gray-500 hover:text-red-400 rounded transition-all"
+                  className="p-1 bg-dark-900 hover:bg-red-500/20 text-gray-300 hover:text-red-400 rounded transition-all"
                   title="Remove attachment"
                 >
                   <X size={12} />
@@ -707,7 +707,7 @@ const InternalMessages = () => {
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   disabled={isChatDisabled}
-                  className="p-3 bg-dark-900 hover:bg-dark-750 border border-dark-750/70 text-gray-400 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed rounded-2xl transition-all shadow-inner"
+                  className="p-3 bg-dark-900 hover:bg-dark-750 border border-dark-750/70 text-gray-200 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed rounded-2xl transition-all shadow-inner"
                   title="Attach file / report"
                 >
                   <Paperclip size={16} />
@@ -719,7 +719,7 @@ const InternalMessages = () => {
                   onChange={e => setChatPriority(e.target.value)}
                   disabled={isChatDisabled}
                   className={`px-3 py-3 bg-dark-900 hover:bg-dark-750 border border-dark-750/70 text-xs font-bold rounded-2xl outline-none focus:border-brand-500 transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
-                    chatPriority === 'urgent' ? 'text-red-400' : chatPriority === 'high' ? 'text-amber-400' : 'text-gray-400'
+                    chatPriority === 'urgent' ? 'text-red-400' : chatPriority === 'high' ? 'text-amber-400' : 'text-gray-200'
                   }`}
                   title="Select message significance priority"
                 >
@@ -768,7 +768,7 @@ const InternalMessages = () => {
         <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 animate-fade-in">
           <button 
             onClick={() => setLightboxImage(null)}
-            className="absolute top-6 right-6 p-2 bg-dark-900 border border-dark-700 text-gray-400 hover:text-white rounded-full hover:scale-105 transition-all shadow-xl"
+            className="absolute top-6 right-6 p-2 bg-dark-900 border border-dark-700 text-gray-200 hover:text-white rounded-full hover:scale-105 transition-all shadow-xl"
             title="Close Lightbox"
           >
             <X size={24} />
@@ -784,7 +784,7 @@ const InternalMessages = () => {
 
           <div className="mt-6 flex gap-4 bg-dark-900 border border-dark-700/80 px-6 py-3.5 rounded-2xl shadow-lg items-center">
             <div className="min-w-0 pr-2">
-              <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider block">Attachment details</span>
+              <span className="text-[10px] text-gray-300 font-bold uppercase tracking-wider block">Attachment details</span>
               <span className="text-xs font-extrabold text-white block select-all">{lightboxImage.name || 'PMS-Image-attachment'}</span>
             </div>
             <a 

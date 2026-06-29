@@ -89,9 +89,9 @@ const AdminSettings = () => {
     quickbooks_client_id: '',
     quickbooks_client_secret: '',
     resend_enabled: false,
-    smtp_host: 'mail.jemmylandhotels.com',
+    smtp_host: 'mail.Freshlandhotels.com',
     smtp_port: '465',
-    smtp_username: 'booking@jemmylandhotels.com',
+    smtp_username: 'booking@Freshlandhotels.com',
     smtp_password: '',
     smtp_secure: 'ssl',
     smtp_enabled: true,
@@ -647,7 +647,7 @@ const AdminSettings = () => {
     <div className="space-y-6 pb-20 text-white">
       <div>
         <h1 className="text-2xl font-bold text-white">System Configuration Center</h1>
-        <p className="text-gray-400 mt-1">Manage global architecture, multi-property branches, and integrations.</p>
+        <p className="text-gray-200 mt-1">Manage global architecture, multi-property branches, and integrations.</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
@@ -658,7 +658,7 @@ const AdminSettings = () => {
               <button 
                 key={item.id}
                 onClick={() => setActiveTab(item.id)} 
-                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-md transition-colors ${activeTab === item.id ? 'bg-gold-500/10 text-gold-500 border border-gold-500/20' : 'text-gray-400 hover:text-white hover:bg-dark-700'}`}
+                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-md transition-colors ${activeTab === item.id ? 'bg-gold-500/10 text-gold-500 border border-gold-500/20' : 'text-gray-200 hover:text-white hover:bg-dark-700'}`}
               >
                 {item.icon} {item.label}
               </button>
@@ -669,7 +669,7 @@ const AdminSettings = () => {
         {/* Content Area */}
         <div className="flex-1 bg-dark-800 border border-dark-700 shadow-sm p-6 md:p-8 rounded-lg min-h-[600px]">
           {loading ? (
-            <div className="py-12 text-center text-gray-500">Loading modules...</div>
+            <div className="py-12 text-center text-gray-300">Loading modules...</div>
           ) : (
             <>
               {/* 1. GENERAL PROPERTY (White-label, Country/State/City) */}
@@ -680,7 +680,7 @@ const AdminSettings = () => {
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-1">Company / Property Name</label>
                       <input type="text" value={property.name} onChange={e => setProperty({...property, name: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded p-3 focus:border-gold-500 outline-none" required />
-                      <p className="text-xs text-gray-500 mt-1">This name appears on the public website and invoices.</p>
+                      <p className="text-xs text-gray-300 mt-1">This name appears on the public website and invoices.</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="col-span-2">
@@ -714,7 +714,7 @@ const AdminSettings = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-dark-900/40 p-6 rounded-2xl border border-dark-750">
                       {/* Base64 Logo Uploader */}
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Brand Logo (Base64)</label>
+                        <label className="block text-xs font-bold text-gray-200 mb-2 uppercase tracking-wider">Brand Logo (Base64)</label>
                         <div className="flex flex-col items-center justify-center border-2 border-dashed border-dark-700 hover:border-brand-500/50 rounded-xl p-4 transition-colors bg-dark-950/40 relative min-h-[110px] group">
                           {settings.contact_logo ? (
                             <div className="flex flex-col items-center space-y-2">
@@ -729,7 +729,7 @@ const AdminSettings = () => {
                             </div>
                           ) : (
                             <div className="text-center py-1">
-                              <Globe className="mx-auto text-gray-500 mb-1.5 animate-pulse" size={20} />
+                              <Globe className="mx-auto text-gray-300 mb-1.5 animate-pulse" size={20} />
                               <span className="text-xs text-gray-450 block font-bold">Upload Brand Logo</span>
                               <span className="text-[9px] text-gray-550 block mt-0.5">PNG, JPG up to 150KB</span>
                               <input
@@ -761,7 +761,7 @@ const AdminSettings = () => {
 
                       {/* Theme Selector */}
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Property Color Theme</label>
+                        <label className="block text-xs font-bold text-gray-200 mb-2 uppercase tracking-wider">Property Color Theme</label>
                         <div className="grid grid-cols-2 gap-2">
                           {[
                             { name: 'Slate Dark', value: 'theme-slate-dark', color: 'bg-slate-500' },
@@ -800,7 +800,7 @@ const AdminSettings = () => {
                                 className={`p-2.5 rounded-xl border text-left flex items-center gap-2 transition-all ${
                                   isSelected
                                     ? 'bg-brand-500/10 border-brand-500 text-brand-450 shadow-md font-bold'
-                                    : 'bg-dark-950/40 border-dark-750 text-gray-400 hover:text-white hover:border-dark-600'
+                                    : 'bg-dark-950/40 border-dark-750 text-gray-200 hover:text-white hover:border-dark-600'
                                 }`}
                               >
                                 <span className={`w-3 h-3 rounded-full shrink-0 ${themeOpt.color}`} />
@@ -812,7 +812,7 @@ const AdminSettings = () => {
 
                         {settings.system_theme === 'theme-custom' && (
                           <div className="mt-4 bg-dark-900/60 p-4 border border-dark-750 rounded-xl space-y-2 animate-in slide-in-from-top-3 duration-200">
-                            <div className="flex justify-between items-center text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
+                            <div className="flex justify-between items-center text-xs font-bold text-gray-200 uppercase tracking-wider mb-1">
                               <span>Custom Theme Hue</span>
                               <span className="text-brand-450 font-mono font-black">{hue}°</span>
                             </div>
@@ -843,18 +843,18 @@ const AdminSettings = () => {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-1">Public Phone Number(s)</label>
                         <input type="text" value={settings.contact_phone || ''} onChange={e => setSettings({...settings, contact_phone: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded p-3 focus:border-gold-500 outline-none" placeholder="+234 800..., +234 900..." required />
-                        <p className="text-xs text-gray-500 mt-1">Separate multiple numbers with commas.</p>
+                        <p className="text-xs text-gray-300 mt-1">Separate multiple numbers with commas.</p>
                       </div>
                     </div>
                     <div className="mt-4">
                       <label className="block text-sm font-medium text-gray-300 mb-1">WhatsApp Business Number</label>
                       <input type="text" value={settings.contact_whatsapp || ''} onChange={e => setSettings({...settings, contact_whatsapp: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded p-3 focus:border-gold-500 outline-none" placeholder="2348000000000" />
-                      <p className="text-xs text-gray-500 mt-1">Include country code without '+' or spaces. This powers the live WhatsApp floating widget.</p>
+                      <p className="text-xs text-gray-300 mt-1">Include country code without '+' or spaces. This powers the live WhatsApp floating widget.</p>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-1">Public Display Address</label>
                       <input type="text" value={settings.contact_address || ''} onChange={e => setSettings({...settings, contact_address: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded p-3 focus:border-gold-500 outline-none" required />
-                      <p className="text-xs text-gray-500 mt-1">This address will be displayed in the website footer.</p>
+                      <p className="text-xs text-gray-300 mt-1">This address will be displayed in the website footer.</p>
                     </div>
                     <button type="submit" className="btn-primary flex items-center gap-2 py-3 px-6"><Save size={18} /> Save Settings & Branding</button>
                   </form>
@@ -875,29 +875,29 @@ const AdminSettings = () => {
                         <h4 className="text-xl font-bold text-white mb-4 tracking-tight">{editingBranch.id ? 'Edit Branch' : 'Add New Branch'}</h4>
                         <form onSubmit={handleSaveBranch} className="space-y-4">
                           <div>
-                            <label className="block text-sm text-gray-400 mb-1">Branch Name</label>
+                            <label className="block text-sm text-gray-200 mb-1">Branch Name</label>
                             <input type="text" required value={editingBranch.name} onChange={e => setEditingBranch({...editingBranch, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-xl p-2.5 text-white outline-none focus:border-gold-500 text-sm" placeholder="Luxe Victoria Island" />
                           </div>
                           <div className="grid grid-cols-2 gap-4">
                             <div>
-                              <label className="block text-sm text-gray-400 mb-1">City</label>
+                              <label className="block text-sm text-gray-200 mb-1">City</label>
                               <input type="text" value={editingBranch.city || ''} onChange={e => setEditingBranch({...editingBranch, city: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-xl p-2.5 text-white outline-none focus:border-gold-500 text-sm" placeholder="Lagos" />
                             </div>
                             <div>
-                              <label className="block text-sm text-gray-400 mb-1">Country</label>
+                              <label className="block text-sm text-gray-200 mb-1">Country</label>
                               <input type="text" value={editingBranch.country || ''} onChange={e => setEditingBranch({...editingBranch, country: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-xl p-2.5 text-white outline-none focus:border-gold-500 text-sm" placeholder="Nigeria" />
                             </div>
                           </div>
                           <div>
-                            <label className="block text-sm text-gray-400 mb-1">Contact Email</label>
+                            <label className="block text-sm text-gray-200 mb-1">Contact Email</label>
                             <input type="email" value={editingBranch.contact_email || ''} onChange={e => setEditingBranch({...editingBranch, contact_email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-xl p-2.5 text-white outline-none focus:border-gold-500 text-sm" placeholder="branch@luxeapartments.com" />
                           </div>
                           <div>
-                            <label className="block text-sm text-gray-400 mb-1">Contact Phone</label>
+                            <label className="block text-sm text-gray-200 mb-1">Contact Phone</label>
                             <input type="text" value={editingBranch.contact_phone || ''} onChange={e => setEditingBranch({...editingBranch, contact_phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-xl p-2.5 text-white outline-none focus:border-gold-500 text-sm" placeholder="+234 812 345 6789" />
                           </div>
                           <div>
-                            <label className="block text-sm text-gray-400 mb-1">Branch Manager</label>
+                            <label className="block text-sm text-gray-200 mb-1">Branch Manager</label>
                             <select 
                               value={editingBranch.manager_id || ''} 
                               onChange={e => setEditingBranch({...editingBranch, manager_id: e.target.value})} 
@@ -927,12 +927,12 @@ const AdminSettings = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {branches.length === 0 ? (
-                      <p className="text-gray-400 col-span-2 text-center py-8">No branches found. Create one to get started.</p>
+                      <p className="text-gray-200 col-span-2 text-center py-8">No branches found. Create one to get started.</p>
                     ) : branches.map((b, idx) => {
                       const isActive = b.is_active !== false;
                       const manager = b.manager_profile 
                         ? `${b.manager_profile.first_name} ${b.manager_profile.last_name}` 
-                        : (b.name === 'Jemmyland Hotels' ? 'Adebayo Johnson' : 
+                        : (b.name === 'Freshland' ? 'Adebayo Johnson' : 
                            b.name === 'Luxe Headquarters' ? 'Amina Yusuf' : 
                            b.name === 'Luxe Victoria Island' ? 'Eze Lawrence' : 'Sarah Connor (Supervisor)');
                       
@@ -963,7 +963,7 @@ const AdminSettings = () => {
                                   </span>
                                 )}
                               </div>
-                              <p className="text-sm text-gray-400 flex items-center gap-1.5">
+                              <p className="text-sm text-gray-200 flex items-center gap-1.5">
                                 <MapPin size={14} className="text-gold-500" />
                                 {b.city || 'Unknown'}, {b.country || 'Unknown'}
                               </p>
@@ -984,14 +984,14 @@ const AdminSettings = () => {
                           {/* Branch Details Telemetry Grid */}
                           <div className="grid grid-cols-1 gap-2.5 mt-4 bg-dark-950/40 p-4 rounded-xl border border-dark-800/60 text-xs">
                             <div className="flex items-center justify-between text-gray-300">
-                              <span className="flex items-center gap-2 text-gray-400">
+                              <span className="flex items-center gap-2 text-gray-200">
                                 <User size={13} className="text-gold-500" /> Manager:
                               </span>
                               <span className="font-medium text-white">{manager}</span>
                             </div>
                             {branchEmail && (
                               <div className="flex items-center justify-between text-gray-300">
-                                <span className="flex items-center gap-2 text-gray-400">
+                                <span className="flex items-center gap-2 text-gray-200">
                                   <Mail size={13} className="text-gold-500" /> Email:
                                 </span>
                                 <a href={`mailto:${branchEmail}`} className="hover:text-gold-400 transition-colors font-mono">{branchEmail}</a>
@@ -999,14 +999,14 @@ const AdminSettings = () => {
                             )}
                             {branchPhone && (
                               <div className="flex items-center justify-between text-gray-300">
-                                <span className="flex items-center gap-2 text-gray-400">
+                                <span className="flex items-center gap-2 text-gray-200">
                                   <Phone size={13} className="text-gold-500" /> Contact:
                                 </span>
                                 <span className="font-mono text-white">{branchPhone}</span>
                               </div>
                             )}
                             <div className="flex items-center justify-between text-gray-300 border-t border-dark-800/40 pt-2.5 mt-1">
-                              <span className="flex items-center gap-2 text-gray-400 font-bold">
+                              <span className="flex items-center gap-2 text-gray-200 font-bold">
                                 <Home size={13} className="text-gold-500" /> Active Inventory:
                               </span>
                               <span className="bg-gold-500/10 text-gold-400 font-black px-2.5 py-0.5 rounded-md border border-gold-500/20 font-mono">
@@ -1024,7 +1024,7 @@ const AdminSettings = () => {
                             </button>
                             <button 
                               onClick={() => { setEditingBranch(b); setShowBranchModal(true); }} 
-                              className="text-xs text-gray-400 hover:text-white font-medium border border-dark-700/60 hover:border-dark-600 bg-dark-900/40 px-3 py-1.5 rounded-lg transition-all"
+                              className="text-xs text-gray-200 hover:text-white font-medium border border-dark-700/60 hover:border-dark-600 bg-dark-900/40 px-3 py-1.5 rounded-lg transition-all"
                             >
                               Edit Details
                             </button>
@@ -1059,7 +1059,7 @@ const AdminSettings = () => {
                         <form onSubmit={handleSaveSettings} className="space-y-6">
                           <div className="grid grid-cols-2 gap-4 bg-dark-900/40 p-4 border border-dark-700/60 rounded-2xl">
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Timezone Management</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Timezone Management</label>
                               <select value={settings.timezone} onChange={e => setSettings({...settings, timezone: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded-xl p-3 focus:border-gold-500 outline-none text-sm font-semibold">
                                 <option value="Africa/Lagos">Africa/Lagos (WAT)</option>
                                 <option value="Europe/London">Europe/London (GMT)</option>
@@ -1067,7 +1067,7 @@ const AdminSettings = () => {
                               </select>
                             </div>
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Primary Language</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Primary Language</label>
                               <select value={settings.language} onChange={e => setSettings({...settings, language: e.target.value})} className="w-full bg-dark-900 text-white border border-dark-700 rounded-xl p-3 focus:border-gold-500 outline-none text-sm font-semibold">
                                 <option value="English">English (EN)</option>
                                 <option value="French">French (FR)</option>
@@ -1096,11 +1096,11 @@ const AdminSettings = () => {
                           
                           <div className="grid grid-cols-2 gap-4 bg-dark-900/40 p-4 border border-dark-700/60 rounded-2xl">
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Base Currency Code</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Base Currency Code</label>
                               <input type="text" value={property.base_currency} onChange={e => setProperty({...property, base_currency: e.target.value.toUpperCase()})} className="w-full bg-dark-900 text-white border border-dark-700 rounded-xl p-3 focus:border-gold-500 outline-none font-mono text-sm font-bold" placeholder="e.g. NGN, USD" />
                             </div>
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Global Tax Management (%)</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Global Tax Management (%)</label>
                               <input type="number" step="0.1" value={property.tax_rate_percent} onChange={e => setProperty({...property, tax_rate_percent: parseFloat(e.target.value)})} className="w-full bg-dark-900 text-white border border-dark-700 rounded-xl p-3 focus:border-gold-500 outline-none text-sm font-semibold" />
                             </div>
                           </div>
@@ -1157,7 +1157,7 @@ const AdminSettings = () => {
                                         <span className="text-base font-black text-white block tracking-tight font-mono">
                                           {rate.toLocaleString(undefined, { maximumFractionDigits: 6 })}
                                         </span>
-                                        <span className="text-[10px] text-gray-500 font-semibold block mt-0.5">{displayStr}</span>
+                                        <span className="text-[10px] text-gray-300 font-semibold block mt-0.5">{displayStr}</span>
                                       </div>
                                     ) : (
                                       <div className="mt-2.5">
@@ -1172,7 +1172,7 @@ const AdminSettings = () => {
                                           }}
                                           className="w-full bg-dark-950 border border-dark-800 rounded-lg p-1.5 text-white font-mono font-bold text-sm outline-none focus:border-gold-500"
                                         />
-                                        <span className="text-[10px] text-gray-500 font-semibold block mt-1">{displayStr}</span>
+                                        <span className="text-[10px] text-gray-300 font-semibold block mt-1">{displayStr}</span>
                                       </div>
                                     )}
                                   </div>
@@ -1193,7 +1193,7 @@ const AdminSettings = () => {
                           
                           <div className="space-y-4">
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Foreign Currency</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Foreign Currency</label>
                               <select 
                                 value={calcSource} 
                                 onChange={e => setCalcSource(e.target.value)} 
@@ -1210,7 +1210,7 @@ const AdminSettings = () => {
                             </div>
 
                             <div>
-                              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Input Amount</label>
+                              <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-2">Input Amount</label>
                               <input 
                                 type="number" 
                                 value={calcVal} 
@@ -1224,27 +1224,27 @@ const AdminSettings = () => {
                             <div className="space-y-3 pt-3 border-t border-dark-800">
                               {/* Option A: Foreign to Base */}
                               <div className="bg-dark-950 p-4 rounded-xl border border-dark-800 text-center">
-                                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider block mb-1">
+                                <span className="text-[10px] text-gray-200 font-bold uppercase tracking-wider block mb-1">
                                   Converting to Base ({property.base_currency || 'NGN'})
                                 </span>
                                 <span className="text-lg font-black text-gold-500 font-mono block">
                                   {property.base_currency === 'NGN' ? '₦' : ''}
                                   {(calcVal / rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                 </span>
-                                <span className="text-[10px] text-gray-500 block mt-0.5">
+                                <span className="text-[10px] text-gray-300 block mt-0.5">
                                   {calcVal.toLocaleString()} {calcSource} in {property.base_currency}
                                 </span>
                               </div>
 
                               {/* Option B: Base to Foreign */}
                               <div className="bg-dark-950 p-4 rounded-xl border border-dark-800 text-center">
-                                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider block mb-1">
+                                <span className="text-[10px] text-gray-200 font-bold uppercase tracking-wider block mb-1">
                                   Converting from Base ({property.base_currency || 'NGN'})
                                 </span>
                                 <span className="text-lg font-black text-white font-mono block">
                                   {(calcVal * rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {calcSource}
                                 </span>
-                                <span className="text-[10px] text-gray-500 block mt-0.5">
+                                <span className="text-[10px] text-gray-300 block mt-0.5">
                                   {calcVal.toLocaleString()} {property.base_currency} in {calcSource}
                                 </span>
                               </div>
@@ -1299,7 +1299,7 @@ const AdminSettings = () => {
                           <input type="checkbox" id="autoConf" checked={settings.auto_confirmation} onChange={e => setSettings({...settings, auto_confirmation: e.target.checked})} className="w-5 h-5 accent-gold-500 rounded" />
                           <div>
                             <label htmlFor="autoConf" className="text-sm font-medium text-white block">Auto-Confirmation Settings</label>
-                            <span className="text-xs text-gray-400">Automatically confirm bookings when payment conditions are met.</span>
+                            <span className="text-xs text-gray-200">Automatically confirm bookings when payment conditions are met.</span>
                           </div>
                         </div>
                         {!settings.auto_confirmation && (
@@ -1343,13 +1343,13 @@ const AdminSettings = () => {
                       <h4 className="font-bold text-white text-sm flex items-center gap-2">
                         🏦 Hotel Bank Details (Guest Portal)
                       </h4>
-                      <p className="text-xs text-gray-500 leading-normal">
+                      <p className="text-xs text-gray-300 leading-normal">
                         Configure the bank account details shown to guests in the guest portal for manual Bank Transfer prepayment wallet deposits.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Bank Name</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Bank Name</label>
                           <select 
                             value={settings.hotel_bank_name || ''} 
                             onChange={e => setSettings({...settings, hotel_bank_name: e.target.value})} 
@@ -1366,7 +1366,7 @@ const AdminSettings = () => {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Account Number</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Account Number</label>
                           <input 
                             type="text" 
                             value={settings.hotel_account_number || ''} 
@@ -1376,7 +1376,7 @@ const AdminSettings = () => {
                           />
                         </div>
                         <div className="col-span-2">
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Account Name</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Account Name</label>
                           <input 
                             type="text" 
                             value={settings.hotel_account_name || ''} 
@@ -1398,7 +1398,7 @@ const AdminSettings = () => {
                 <div className="animate-in fade-in zoom-in-95 duration-200 space-y-8">
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">API Integration Layer</h3>
-                    <p className="text-sm text-gray-400">Secure and power third-party CRM, Payment Gateway, SMTP, and accounting synchronizations.</p>
+                    <p className="text-sm text-gray-200">Secure and power third-party CRM, Payment Gateway, SMTP, and accounting synchronizations.</p>
                   </div>
 
                   <form onSubmit={handleSaveSettings} className="space-y-8 max-w-3xl">
@@ -1408,13 +1408,13 @@ const AdminSettings = () => {
                       <h4 className="font-bold text-white text-base mb-4 flex items-center gap-2">
                         <CreditCard size={18} className="text-gold-500"/> Payment Gateways
                       </h4>
-                      <p className="text-xs text-gray-400 mb-6">Manage API credential keys for secure guest checkouts and stays reservation handling.</p>
+                      <p className="text-xs text-gray-200 mb-6">Manage API credential keys for secure guest checkouts and stays reservation handling.</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-1.5">
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Paystack Public Key</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Paystack Public Key</label>
                           <div className="relative">
-                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                               <Key size={14} />
                             </span>
                             <input 
@@ -1428,9 +1428,9 @@ const AdminSettings = () => {
                         </div>
                         
                         <div className="space-y-1.5">
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Paystack Secret Key</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Paystack Secret Key</label>
                           <div className="relative">
-                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                               <Key size={14} />
                             </span>
                             <input 
@@ -1444,9 +1444,9 @@ const AdminSettings = () => {
                         </div>
                         
                         <div className="space-y-1.5 md:col-span-2">
-                          <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Stripe Public Key</label>
+                          <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Stripe Public Key</label>
                           <div className="relative">
-                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                               <Key size={14} />
                             </span>
                             <input 
@@ -1470,7 +1470,7 @@ const AdminSettings = () => {
                           <h4 className="font-bold text-white text-base flex items-center gap-2">
                             <Mail size={18} className="text-amber-500"/> SMTP Webmail Email Dispatcher
                           </h4>
-                          <p className="text-xs text-gray-400 mt-1">Configure your cPanel SMTP server to dispatch booking alerts, receipts, and contact responses.</p>
+                          <p className="text-xs text-gray-200 mt-1">Configure your cPanel SMTP server to dispatch booking alerts, receipts, and contact responses.</p>
                         </div>
                         
                         {/* Enabled Switch */}
@@ -1491,18 +1491,18 @@ const AdminSettings = () => {
                       <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">SMTP Host</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">SMTP Host</label>
                             <input 
                               type="text" 
                               value={settings.smtp_host || ''} 
                               onChange={e => setSettings({...settings, smtp_host: e.target.value})} 
                               className="w-full bg-dark-950 border border-dark-800 text-white rounded-xl py-3 px-4 focus:border-gold-500 outline-none text-sm font-mono" 
-                              placeholder="mail.jemmylandhotels.com" 
+                              placeholder="mail.Freshlandhotels.com" 
                             />
                           </div>
                           
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">SMTP Port</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">SMTP Port</label>
                             <input 
                               type="text" 
                               value={settings.smtp_port || ''} 
@@ -1513,18 +1513,18 @@ const AdminSettings = () => {
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">SMTP Username (Email)</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">SMTP Username (Email)</label>
                             <input 
                               type="text" 
                               value={settings.smtp_username || ''} 
                               onChange={e => setSettings({...settings, smtp_username: e.target.value})} 
                               className="w-full bg-dark-950 border border-dark-800 text-white rounded-xl py-3 px-4 focus:border-gold-500 outline-none text-sm font-mono" 
-                              placeholder="booking@jemmylandhotels.com" 
+                              placeholder="booking@Freshlandhotels.com" 
                             />
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">SMTP Password</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">SMTP Password</label>
                             <input 
                               type="password" 
                               value={settings.smtp_password || ''} 
@@ -1535,7 +1535,7 @@ const AdminSettings = () => {
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Encryption / Security</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Encryption / Security</label>
                             <select 
                               value={settings.smtp_secure || 'ssl'} 
                               onChange={e => setSettings({...settings, smtp_secure: e.target.value})} 
@@ -1560,7 +1560,7 @@ const AdminSettings = () => {
                                 value={testEmail} 
                                 onChange={e => setTestEmail(e.target.value)} 
                                 className="flex-1 bg-dark-900 border border-dark-800 text-white rounded-lg px-3 py-2 text-xs outline-none focus:border-gold-500" 
-                                placeholder="Enter recipient email (e.g. booking@jemmylandhotels.com)" 
+                                placeholder="Enter recipient email (e.g. booking@Freshlandhotels.com)" 
                               />
                               <button 
                                 type="button" 
@@ -1593,7 +1593,7 @@ const AdminSettings = () => {
                           <h4 className="font-bold text-white text-base flex items-center gap-2">
                             <Puzzle size={18} className="text-blue-500"/> Mailchimp CRM Integration
                           </h4>
-                          <p className="text-xs text-gray-400 mt-1">Sync guest data and leads details with your Mailchimp lists for marketing automations.</p>
+                          <p className="text-xs text-gray-200 mt-1">Sync guest data and leads details with your Mailchimp lists for marketing automations.</p>
                         </div>
                         
                         {/* Enabled Switch */}
@@ -1614,9 +1614,9 @@ const AdminSettings = () => {
                       <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Mailchimp API Key</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Mailchimp API Key</label>
                             <div className="relative">
-                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                                 <Key size={14} />
                               </span>
                               <input 
@@ -1630,9 +1630,9 @@ const AdminSettings = () => {
                           </div>
                           
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Mailchimp List ID (Audience)</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Mailchimp List ID (Audience)</label>
                             <div className="relative">
-                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                                 <Database size={14} />
                               </span>
                               <input 
@@ -1690,7 +1690,7 @@ const AdminSettings = () => {
                           <h4 className="font-bold text-white text-base flex items-center gap-2">
                             <Activity size={18} className="text-green-500"/> QuickBooks Ledger Synchronization
                           </h4>
-                          <p className="text-xs text-gray-400 mt-1">Consolidate bookkeeping transactions, payments, and invoices with your chart of accounts.</p>
+                          <p className="text-xs text-gray-200 mt-1">Consolidate bookkeeping transactions, payments, and invoices with your chart of accounts.</p>
                         </div>
                         
                         {/* Enabled Switch */}
@@ -1711,9 +1711,9 @@ const AdminSettings = () => {
                       <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">QuickBooks Client ID</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">QuickBooks Client ID</label>
                             <div className="relative">
-                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                                 <Database size={14} />
                               </span>
                               <input 
@@ -1727,9 +1727,9 @@ const AdminSettings = () => {
                           </div>
                           
                           <div className="space-y-1.5">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">QuickBooks Client Secret</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">QuickBooks Client Secret</label>
                             <div className="relative">
-                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
+                              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-300">
                                 <Key size={14} />
                               </span>
                               <input 
@@ -1784,12 +1784,12 @@ const AdminSettings = () => {
                       <h4 className="font-bold text-white text-base mb-4 flex items-center gap-2">
                         <MessageSquare size={18} className="text-amber-500"/> SMS Notification Gateway
                       </h4>
-                      <p className="text-xs text-gray-400 mb-6 font-medium">Configure credentials for automated guest SMS alerts, check-in updates, and checkout reminders.</p>
+                      <p className="text-xs text-gray-200 mb-6 font-medium">Configure credentials for automated guest SMS alerts, check-in updates, and checkout reminders.</p>
                       
                       <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5 md:col-span-2">
-                            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">SMS Gateway Provider</label>
+                            <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">SMS Gateway Provider</label>
                             <select 
                               value={settings.sms_gateway || 'mock'} 
                               onChange={e => setSettings({...settings, sms_gateway: e.target.value})} 
@@ -1804,7 +1804,7 @@ const AdminSettings = () => {
                           {settings.sms_gateway === 'termii' && (
                             <>
                               <div className="space-y-1.5">
-                                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Termii API Key</label>
+                                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Termii API Key</label>
                                 <input 
                                   type="password" 
                                   value={settings.sms_termii_api_key || ''} 
@@ -1814,7 +1814,7 @@ const AdminSettings = () => {
                                 />
                               </div>
                               <div className="space-y-1.5">
-                                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Termii Sender ID</label>
+                                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Termii Sender ID</label>
                                 <input 
                                   type="text" 
                                   value={settings.sms_termii_sender_id || ''} 
@@ -1829,7 +1829,7 @@ const AdminSettings = () => {
                           {settings.sms_gateway === 'twilio' && (
                             <>
                               <div className="space-y-1.5">
-                                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Twilio Account SID</label>
+                                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Twilio Account SID</label>
                                 <input 
                                   type="text" 
                                   value={settings.sms_twilio_account_sid || ''} 
@@ -1839,7 +1839,7 @@ const AdminSettings = () => {
                                 />
                               </div>
                               <div className="space-y-1.5">
-                                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Twilio Auth Token</label>
+                                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Twilio Auth Token</label>
                                 <input 
                                   type="password" 
                                   value={settings.sms_twilio_auth_token || ''} 
@@ -1849,7 +1849,7 @@ const AdminSettings = () => {
                                 />
                               </div>
                               <div className="space-y-1.5 md:col-span-2">
-                                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">Twilio From Number (Virtual Phone Number)</label>
+                                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider">Twilio From Number (Virtual Phone Number)</label>
                                 <input 
                                   type="text" 
                                   value={settings.sms_twilio_from_number || ''} 
@@ -1873,7 +1873,7 @@ const AdminSettings = () => {
                           <h4 className="font-bold text-white text-base flex items-center gap-2">
                             <Puzzle size={18} className="text-amber-500"/> Custom API Plugins
                           </h4>
-                          <p className="text-xs text-gray-400 mt-1">Connect, register, and toggle third-party custom API integrations dynamically.</p>
+                          <p className="text-xs text-gray-200 mt-1">Connect, register, and toggle third-party custom API integrations dynamically.</p>
                         </div>
                         
                         <button 
@@ -1891,7 +1891,7 @@ const AdminSettings = () => {
                       {/* Custom API Plugins Grid */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {customAPIs.length === 0 ? (
-                          <p className="text-gray-500 text-xs italic col-span-2 py-4 text-center">No custom API plugins registered yet. Click "Add Custom API" to connect a service.</p>
+                          <p className="text-gray-300 text-xs italic col-span-2 py-4 text-center">No custom API plugins registered yet. Click "Add Custom API" to connect a service.</p>
                         ) : customAPIs.map(api => (
                           <div key={api.id} className="bg-dark-950/60 p-4 border border-dark-800 rounded-xl relative overflow-hidden flex flex-col justify-between">
                             <div>
@@ -1905,17 +1905,17 @@ const AdminSettings = () => {
                                     onChange={e => handleToggleCustomAPI(api.id, e.target.checked)} 
                                     className="w-3.5 h-3.5 accent-amber-500 cursor-pointer" 
                                   />
-                                  <label htmlFor={`api_${api.id}`} className="text-[10px] font-bold text-gray-400 uppercase cursor-pointer">
+                                  <label htmlFor={`api_${api.id}`} className="text-[10px] font-bold text-gray-200 uppercase cursor-pointer">
                                     {api.is_active ? 'Active' : 'Muted'}
                                   </label>
                                 </div>
                               </div>
-                              <p className="text-[11px] text-gray-400 font-mono mb-2 truncate" title={api.base_url}>{api.base_url}</p>
-                              {api.description && <p className="text-xs text-gray-500 mb-4 line-clamp-2">{api.description}</p>}
+                              <p className="text-[11px] text-gray-200 font-mono mb-2 truncate" title={api.base_url}>{api.base_url}</p>
+                              {api.description && <p className="text-xs text-gray-300 mb-4 line-clamp-2">{api.description}</p>}
                             </div>
                             
                             <div className="flex justify-between items-center pt-3 border-t border-dark-800 mt-2">
-                              <span className="text-[9px] bg-dark-900 border border-dark-800 text-gray-500 px-2 py-0.5 rounded font-mono font-bold">{api.id}</span>
+                              <span className="text-[9px] bg-dark-900 border border-dark-800 text-gray-300 px-2 py-0.5 rounded font-mono font-bold">{api.id}</span>
                               <div className="flex gap-2">
                                 <button 
                                   type="button" 
@@ -1941,7 +1941,7 @@ const AdminSettings = () => {
 
                     {/* Master Action Trigger */}
                     <div className="pt-4 flex items-center justify-between border-t border-dark-700/60 mt-6">
-                      <p className="text-xs text-gray-500">Note: Saving credential edits takes effect immediately on all transactions and routes.</p>
+                      <p className="text-xs text-gray-300">Note: Saving credential edits takes effect immediately on all transactions and routes.</p>
                       <button type="submit" className="btn-primary flex items-center gap-2 py-3.5 px-8 text-sm font-bold rounded-xl shadow-lg shadow-gold-500/10 transition-all"><Save size={18} /> Save Settings & Credentials</button>
                     </div>
                   </form>
@@ -1967,7 +1967,7 @@ const AdminSettings = () => {
                                 const list = (settings.nigerian_banks || []).filter((_, i) => i !== index);
                                 setSettings({ ...settings, nigerian_banks: list });
                               }}
-                              className="text-gray-400 hover:text-rose-500 rounded-full transition-colors ml-1"
+                              className="text-gray-200 hover:text-rose-500 rounded-full transition-colors ml-1"
                               title="Delete bank"
                             >
                               <X size={12} />
@@ -1975,7 +1975,7 @@ const AdminSettings = () => {
                           </div>
                         ))}
                         {(settings.nigerian_banks || []).length === 0 && (
-                          <span className="text-xs text-gray-500 p-2 italic">No banks configured yet. Auto-seed will initialize defaults.</span>
+                          <span className="text-xs text-gray-300 p-2 italic">No banks configured yet. Auto-seed will initialize defaults.</span>
                         )}
                       </div>
 
@@ -2018,7 +2018,7 @@ const AdminSettings = () => {
                       
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Hotel Bank Name</label>
+                          <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Hotel Bank Name</label>
                           <select 
                             value={settings.hotel_bank_name || ''} 
                             onChange={e => setSettings({...settings, hotel_bank_name: e.target.value})} 
@@ -2035,7 +2035,7 @@ const AdminSettings = () => {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Hotel Account Name</label>
+                          <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Hotel Account Name</label>
                           <input 
                             type="text" 
                             value={settings.hotel_account_name || ''} 
@@ -2045,7 +2045,7 @@ const AdminSettings = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold text-gray-400 mb-1.5 uppercase tracking-wider">Hotel Account Number</label>
+                          <label className="block text-xs font-bold text-gray-200 mb-1.5 uppercase tracking-wider">Hotel Account Number</label>
                           <input 
                             type="text" 
                             maxLength={10}
@@ -2059,7 +2059,7 @@ const AdminSettings = () => {
                     </div>
 
                     <div className="pt-4 flex items-center justify-between border-t border-dark-700/60 mt-6">
-                      <p className="text-xs text-gray-500">Note: Saving bank changes updates the bank dropdown configurations immediately.</p>
+                      <p className="text-xs text-gray-300">Note: Saving bank changes updates the bank dropdown configurations immediately.</p>
                       <button type="submit" className="btn-primary flex items-center gap-2 py-3.5 px-8 text-sm font-bold rounded-xl shadow-lg shadow-gold-500/10 transition-all"><Save size={18} /> Save Bank & Payroll Settings</button>
                     </div>
                   </form>
@@ -2090,7 +2090,7 @@ const AdminSettings = () => {
             <button 
               type="button" 
               onClick={() => setShowCustomAPIModal(false)} 
-              className="absolute top-4 right-4 text-gray-500 hover:text-white"
+              className="absolute top-4 right-4 text-gray-300 hover:text-white"
             >
               <X size={24} />
             </button>
@@ -2100,7 +2100,7 @@ const AdminSettings = () => {
             
             <form onSubmit={handleSaveCustomAPI} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Service / API Name *</label>
+                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Service / API Name *</label>
                 <input 
                   type="text" 
                   required 
@@ -2112,7 +2112,7 @@ const AdminSettings = () => {
               </div>
               
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Base Endpoint URL *</label>
+                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Base Endpoint URL *</label>
                 <input 
                   type="url" 
                   required 
@@ -2125,7 +2125,7 @@ const AdminSettings = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">API Key / Client ID</label>
+                  <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">API Key / Client ID</label>
                   <input 
                     type="password" 
                     value={newCustomAPI.api_key || ''} 
@@ -2135,7 +2135,7 @@ const AdminSettings = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">API Secret / Token</label>
+                  <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">API Secret / Token</label>
                   <input 
                     type="password" 
                     value={newCustomAPI.api_secret || ''} 
@@ -2147,7 +2147,7 @@ const AdminSettings = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Description</label>
+                <label className="block text-xs font-semibold text-gray-200 uppercase tracking-wider mb-1">Description</label>
                 <textarea 
                   value={newCustomAPI.description || ''} 
                   onChange={e => setNewCustomAPI({...newCustomAPI, description: e.target.value})} 

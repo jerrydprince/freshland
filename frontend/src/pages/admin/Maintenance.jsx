@@ -65,7 +65,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-200">
             Showing <span className="font-semibold text-white">{((currentPage - 1) * pageSize) + 1}</span> to{' '}
             <span className="font-semibold text-white">
               {Math.min(currentPage * pageSize, totalItems)}
@@ -1089,7 +1089,7 @@ const Maintenance = () => {
       case 'resolved': return 'bg-green-500/15 text-green-400 border border-green-500/30';
       case 'in_progress': return 'bg-purple-500/15 text-purple-400 border border-purple-500/30 animate-pulse';
       case 'reported': return 'bg-amber-500/15 text-amber-400 border border-amber-500/30';
-      default: return 'bg-dark-750 text-gray-400 border border-dark-700';
+      default: return 'bg-dark-750 text-gray-200 border border-dark-700';
     }
   };
 
@@ -1108,7 +1108,7 @@ const Maintenance = () => {
           </div>
           <div>
             <h1 className="text-2xl font-black text-white tracking-tight">Maintenance Department</h1>
-            <p className="text-gray-400 text-sm mt-1 flex items-center gap-1">
+            <p className="text-gray-200 text-sm mt-1 flex items-center gap-1">
               <Activity size={14} className="text-brand-500" />
               Technical repairs, specialist CRM directory, and ledger cost integrations.
             </p>
@@ -1150,7 +1150,7 @@ const Maintenance = () => {
               className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 text-sm transition-all whitespace-nowrap ${
                 activeTab === tab.id 
                   ? 'border-brand-500 text-brand-500 font-black' 
-                  : 'border-transparent text-gray-400 hover:text-white'
+                  : 'border-transparent text-gray-200 hover:text-white'
               }`}
             >
               <Icon size={16} />
@@ -1169,27 +1169,27 @@ const Maintenance = () => {
           {/* Quick Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-dark-800/60 border border-dark-700/60 p-5 rounded-xl border-l-4 border-l-brand-500 shadow-md">
-              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Active Room Tickets</p>
+              <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Active Room Tickets</p>
               <h3 className="text-3xl font-black text-white mt-2">{analytics.unresolved}</h3>
-              <p className="text-[10px] text-gray-500 mt-1">Pending engineering attention</p>
+              <p className="text-[10px] text-gray-300 mt-1">Pending engineering attention</p>
             </div>
             
             <div className="bg-dark-800/60 border border-dark-700/60 p-5 rounded-xl border-l-4 border-l-blue-500 shadow-md">
-              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Specialists Directory</p>
+              <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Specialists Directory</p>
               <h3 className="text-3xl font-black text-white mt-2">{analytics.activeProfs}</h3>
-              <p className="text-[10px] text-gray-500 mt-1">Plumbers, Electricians & Technicians</p>
+              <p className="text-[10px] text-gray-300 mt-1">Plumbers, Electricians & Technicians</p>
             </div>
             
             <div className="bg-dark-800/60 border border-dark-700/60 p-5 rounded-xl border-l-4 border-l-amber-500 shadow-md">
-              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Procurement Approvals</p>
+              <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Procurement Approvals</p>
               <h3 className="text-3xl font-black text-white mt-2">{analytics.pendingPurchases}</h3>
-              <p className="text-[10px] text-gray-500 mt-1">Purchase orders awaiting confirmation</p>
+              <p className="text-[10px] text-gray-300 mt-1">Purchase orders awaiting confirmation</p>
             </div>
             
             <div className="bg-dark-800/60 border border-dark-700/60 p-5 rounded-xl border-l-4 border-l-green-500 shadow-md">
-              <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Maintenance Outflow</p>
+              <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Maintenance Outflow</p>
               <h3 className="text-3xl font-black text-green-400 mt-2">₦{analytics.totalSpent.toLocaleString()}</h3>
-              <p className="text-[10px] text-gray-500 mt-1">Total disbursed this month</p>
+              <p className="text-[10px] text-gray-300 mt-1">Total disbursed this month</p>
             </div>
           </div>
 
@@ -1207,7 +1207,7 @@ const Maintenance = () => {
               
               <div className="divide-y divide-dark-750 max-h-[350px] overflow-y-auto custom-scrollbar">
                 {tickets.filter(t => (t.priority === 'critical' || t.priority === 'high') && t.status !== 'resolved').length === 0 ? (
-                  <div className="p-12 text-center text-gray-500 text-xs italic">
+                  <div className="p-12 text-center text-gray-300 text-xs italic">
                     All clear! No urgent or critical technical failures.
                   </div>
                 ) : (
@@ -1218,7 +1218,7 @@ const Maintenance = () => {
                           <span className="bg-dark-900 px-2 py-0.5 rounded text-[11px] font-black text-white">RM {ticket.rooms?.room_number}</span>
                           <span className="text-xs font-bold text-gray-300">{ticket.issue_category}</span>
                         </div>
-                        <p className="text-xs text-gray-400 line-clamp-1 mt-1.5">{ticket.description}</p>
+                        <p className="text-xs text-gray-200 line-clamp-1 mt-1.5">{ticket.description}</p>
                       </div>
                       {canManageRepairs && (
                         <button 
@@ -1245,7 +1245,7 @@ const Maintenance = () => {
               
               <div className="divide-y divide-dark-750 max-h-[350px] overflow-y-auto custom-scrollbar">
                 {purchases.filter(p => p.status === 'pending_approval').length === 0 ? (
-                  <div className="p-12 text-center text-gray-500 text-xs italic">
+                  <div className="p-12 text-center text-gray-300 text-xs italic">
                     No procurement approvals pending.
                   </div>
                 ) : (
@@ -1253,14 +1253,14 @@ const Maintenance = () => {
                     <div key={req.id} className="p-4 hover:bg-dark-750 transition-colors flex justify-between items-center gap-4">
                       <div>
                         <p className="font-bold text-white text-xs">{req.item_name}</p>
-                        <p className="text-[10px] text-gray-400 mt-0.5">Quantity: {req.quantity} • Estimated Cost: <strong className="text-amber-400 font-mono">₦{Number(req.cost_ngn).toLocaleString()}</strong></p>
+                        <p className="text-[10px] text-gray-200 mt-0.5">Quantity: {req.quantity} • Estimated Cost: <strong className="text-amber-400 font-mono">₦{Number(req.cost_ngn).toLocaleString()}</strong></p>
                       </div>
                       
                       {canManageFinances ? (
                         <div className="flex gap-1.5">
                           <button 
                             onClick={() => handleDeclinePurchase(req)} 
-                            className="bg-dark-700 hover:bg-red-500/10 text-gray-400 hover:text-red-400 border border-dark-600 text-[10px] font-bold px-2 py-1 rounded"
+                            className="bg-dark-700 hover:bg-red-500/10 text-gray-200 hover:text-red-400 border border-dark-600 text-[10px] font-bold px-2 py-1 rounded"
                           >
                             Decline
                           </button>
@@ -1272,7 +1272,7 @@ const Maintenance = () => {
                           </button>
                         </div>
                       ) : (
-                        <span className="text-[10px] text-gray-500 italic">Pending Manager</span>
+                        <span className="text-[10px] text-gray-300 italic">Pending Manager</span>
                       )}
                     </div>
                   ))
@@ -1303,7 +1303,7 @@ const Maintenance = () => {
                   className={`px-4 py-2 text-xs font-bold rounded-lg border transition-all ${
                     ticketFilter === opt.id 
                       ? 'bg-brand-500/10 border-brand-500 text-brand-400' 
-                      : 'bg-dark-900 border-dark-700 text-gray-400 hover:text-white'
+                      : 'bg-dark-900 border-dark-700 text-gray-200 hover:text-white'
                   }`}
                 >
                   {opt.label}
@@ -1318,7 +1318,7 @@ const Maintenance = () => {
                   type="button"
                   onClick={() => setTicketViewMode('list')}
                   className={`p-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
-                    ticketViewMode === 'list' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-400 hover:text-white'
+                    ticketViewMode === 'list' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-200 hover:text-white'
                   }`}
                   title="List View"
                 >
@@ -1328,7 +1328,7 @@ const Maintenance = () => {
                   type="button"
                   onClick={() => setTicketViewMode('grid')}
                   className={`p-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
-                    ticketViewMode === 'grid' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-400 hover:text-white'
+                    ticketViewMode === 'grid' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-200 hover:text-white'
                   }`}
                   title="Grid View"
                 >
@@ -1337,8 +1337,8 @@ const Maintenance = () => {
               </div>
 
               {/* Search ticket input */}
-              <div className="relative bg-dark-900 border border-dark-700 rounded-lg flex items-center px-3.5 py-1.5 text-xs text-gray-400 w-64">
-                <Search size={14} className="mr-2 text-gray-500" />
+              <div className="relative bg-dark-900 border border-dark-700 rounded-lg flex items-center px-3.5 py-1.5 text-xs text-gray-200 w-64">
+                <Search size={14} className="mr-2 text-gray-300" />
                 <input 
                   type="text" 
                   placeholder="Search room, issue category..."
@@ -1351,7 +1351,7 @@ const Maintenance = () => {
               <select
                 value={ticketPriority}
                 onChange={e => setTicketPriority(e.target.value)}
-                className="bg-dark-900 border border-dark-700 text-gray-400 text-xs px-3.5 py-2 rounded-lg outline-none cursor-pointer font-semibold"
+                className="bg-dark-900 border border-dark-700 text-gray-200 text-xs px-3.5 py-2 rounded-lg outline-none cursor-pointer font-semibold"
               >
                 <option value="all">All Priorities</option>
                 <option value="low">Low</option>
@@ -1368,7 +1368,7 @@ const Maintenance = () => {
               <div className="overflow-x-auto custom-scrollbar">
                 <table className="w-full text-left border-collapse whitespace-nowrap text-xs">
                   <thead>
-                    <tr className="bg-dark-900 border-b border-dark-700 text-[10px] font-black uppercase text-gray-400 tracking-wider">
+                    <tr className="bg-dark-900 border-b border-dark-700 text-[10px] font-black uppercase text-gray-200 tracking-wider">
                       <th className="p-4">Room / Suite</th>
                       <th className="p-4">Category</th>
                       <th className="p-4">Description / Notes</th>
@@ -1391,7 +1391,7 @@ const Maintenance = () => {
                           <tr key={ticket.id} className="hover:bg-dark-750/35 transition-colors">
                             <td className="p-4 font-black text-white">RM {ticket.rooms?.room_number || ticket.room_id}</td>
                             <td className="p-4 font-semibold text-gray-250">{ticket.issue_category}</td>
-                            <td className="p-4 max-w-md font-medium text-gray-400" title={ticket.description}>
+                            <td className="p-4 max-w-md font-medium text-gray-200" title={ticket.description}>
                               <div className="truncate max-w-xs">{ticket.description}</div>
                               {ticket.resolution_notes && (
                                 <p className="text-[10px] text-green-400 font-normal mt-0.5">Resolution: {ticket.resolution_notes}</p>
@@ -1415,7 +1415,7 @@ const Maintenance = () => {
                                   <select
                                     onChange={e => handleCommenceRepair(ticket.id, e.target.value)}
                                     defaultValue=""
-                                    className="bg-dark-900 border border-dark-700 text-gray-400 text-[10px] px-2 py-1.5 rounded outline-none cursor-pointer w-40 font-semibold"
+                                    className="bg-dark-900 border border-dark-700 text-gray-200 text-[10px] px-2 py-1.5 rounded outline-none cursor-pointer w-40 font-semibold"
                                   >
                                     <option value="" disabled>Dispatch Specialist...</option>
                                     {professionals.filter(p => p.status === 'active').map(p => (
@@ -1439,7 +1439,7 @@ const Maintenance = () => {
                                 </button>
                               )}
                               {ticket.status === 'resolved' && (
-                                <span className="text-gray-500 text-[10px] italic flex items-center justify-end gap-1">
+                                <span className="text-gray-300 text-[10px] italic flex items-center justify-end gap-1">
                                   <CheckCircle size={12} className="text-green-500" /> Completed
                                 </span>
                               )}
@@ -1455,7 +1455,7 @@ const Maintenance = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {paginatedTickets.length === 0 ? (
-                <div className="col-span-2 text-center text-gray-500 py-16 bg-dark-800/40 rounded-xl border border-dark-700/60 italic text-xs">
+                <div className="col-span-2 text-center text-gray-300 py-16 bg-dark-800/40 rounded-xl border border-dark-700/60 italic text-xs">
                   No tickets matching criteria.
                 </div>
               ) : (
@@ -1478,9 +1478,9 @@ const Maintenance = () => {
                         </div>
                         
                         <h4 className="text-white font-extrabold text-sm mt-3">{ticket.issue_category}</h4>
-                        <p className="text-gray-400 text-xs mt-1 leading-relaxed">{ticket.description}</p>
+                        <p className="text-gray-200 text-xs mt-1 leading-relaxed">{ticket.description}</p>
                         
-                        <div className="mt-4 pt-3.5 border-t border-dark-750 grid grid-cols-2 gap-3 text-[11px] text-gray-500">
+                        <div className="mt-4 pt-3.5 border-t border-dark-750 grid grid-cols-2 gap-3 text-[11px] text-gray-300">
                           <div>
                             <span>Reported:</span>
                             <p className="font-bold text-gray-300 mt-0.5">{format(new Date(ticket.created_at), 'MMM dd, yyyy HH:mm')}</p>
@@ -1508,7 +1508,7 @@ const Maintenance = () => {
                             <select
                               onChange={e => handleCommenceRepair(ticket.id, e.target.value)}
                               defaultValue=""
-                              className="bg-dark-900 border border-dark-700 text-gray-400 text-xs px-3.5 py-1.5 rounded-lg outline-none cursor-pointer flex-1"
+                              className="bg-dark-900 border border-dark-700 text-gray-200 text-xs px-3.5 py-1.5 rounded-lg outline-none cursor-pointer flex-1"
                             >
                               <option value="" disabled>Dispatch Specialist...</option>
                               {professionals.filter(p => p.status === 'active').map(p => (
@@ -1558,7 +1558,7 @@ const Maintenance = () => {
               <select
                 value={specialtyFilter}
                 onChange={e => setSpecialtyFilter(e.target.value)}
-                className="bg-dark-900 border border-dark-700 text-gray-400 text-xs px-3.5 py-2 rounded-lg outline-none cursor-pointer font-semibold"
+                className="bg-dark-900 border border-dark-700 text-gray-200 text-xs px-3.5 py-2 rounded-lg outline-none cursor-pointer font-semibold"
               >
                 <option value="all">All Specialties</option>
                 {SPECIALTIES.map(s => <option key={s} value={s}>{s}</option>)}
@@ -1572,7 +1572,7 @@ const Maintenance = () => {
                   type="button"
                   onClick={() => setSpecialistViewMode('list')}
                   className={`p-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
-                    specialistViewMode === 'list' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-400 hover:text-white'
+                    specialistViewMode === 'list' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-200 hover:text-white'
                   }`}
                   title="List View"
                 >
@@ -1582,7 +1582,7 @@ const Maintenance = () => {
                   type="button"
                   onClick={() => setSpecialistViewMode('grid')}
                   className={`p-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
-                    specialistViewMode === 'grid' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-400 hover:text-white'
+                    specialistViewMode === 'grid' ? 'bg-brand-500 text-dark-950 shadow-md font-black' : 'text-gray-200 hover:text-white'
                   }`}
                   title="Grid View"
                 >
@@ -1590,8 +1590,8 @@ const Maintenance = () => {
                 </button>
               </div>
 
-              <div className="relative bg-dark-900 border border-dark-700 rounded-lg flex items-center px-3.5 py-1.5 text-xs text-gray-400 w-64">
-                <Search size={14} className="mr-2 text-gray-500" />
+              <div className="relative bg-dark-900 border border-dark-700 rounded-lg flex items-center px-3.5 py-1.5 text-xs text-gray-200 w-64">
+                <Search size={14} className="mr-2 text-gray-300" />
                 <input 
                   type="text" 
                   placeholder="Search specialist name, specialty..."
@@ -1618,7 +1618,7 @@ const Maintenance = () => {
               <div className="overflow-x-auto custom-scrollbar">
                 <table className="w-full text-left border-collapse whitespace-nowrap text-xs">
                   <thead>
-                    <tr className="bg-dark-900 border-b border-dark-700 text-[10px] font-black uppercase text-gray-400 tracking-wider">
+                    <tr className="bg-dark-900 border-b border-dark-700 text-[10px] font-black uppercase text-gray-200 tracking-wider">
                       <th className="p-4">Name</th>
                       <th className="p-4">Specialty</th>
                       <th className="p-4">Type</th>
@@ -1657,7 +1657,7 @@ const Maintenance = () => {
                             {(prof.bank_name || prof.account_number) ? (
                               <div className="font-sans text-[11px]">
                                 <span className="font-bold text-gray-300">{prof.bank_name || 'N/A'}</span>
-                                <span className="mx-2 text-gray-500">•</span>
+                                <span className="mx-2 text-gray-300">•</span>
                                 <span className="font-mono text-white bg-dark-950 px-1.5 py-0.5 rounded border border-dark-700 select-all font-bold">{prof.account_number || 'N/A'}</span>
                                 {prof.account_name && (
                                   <span className="block text-[10px] text-gray-405 italic truncate max-w-xs mt-0.5">{prof.account_name}</span>
@@ -1676,14 +1676,14 @@ const Maintenance = () => {
                               <div className="flex gap-2 justify-end">
                                 <button 
                                   onClick={() => handleOpenEditProfModal(prof)}
-                                  className="p-1.5 text-gray-400 hover:text-brand-500 transition-colors cursor-pointer"
+                                  className="p-1.5 text-gray-200 hover:text-brand-500 transition-colors cursor-pointer"
                                   title="Edit specialist contact"
                                 >
                                   <Edit size={15} />
                                 </button>
                                 <button 
                                   onClick={() => handleDeleteProfessional(prof.id)}
-                                  className="p-1.5 text-gray-400 hover:text-red-400 transition-colors cursor-pointer"
+                                  className="p-1.5 text-gray-200 hover:text-red-400 transition-colors cursor-pointer"
                                   title="Delete specialist contact"
                                 >
                                   <Trash2 size={15} />
@@ -1725,7 +1725,7 @@ const Maintenance = () => {
                         </span>
                       </div>
 
-                      <div className="space-y-2 mt-5 text-xs text-gray-400 border-t border-dark-750 pt-3">
+                      <div className="space-y-2 mt-5 text-xs text-gray-200 border-t border-dark-750 pt-3">
                         {prof.phone && (
                           <div className="flex items-center gap-2">
                             <Phone size={13} className="text-brand-500" />
@@ -1740,21 +1740,21 @@ const Maintenance = () => {
                         )}
                         {(prof.bank_name || prof.account_number) && (
                           <div className="bg-dark-900/60 p-2 border border-dark-750/50 rounded-lg space-y-1 mt-2 text-[11px] font-sans">
-                            <p className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Settlement Bank</p>
+                            <p className="text-gray-300 text-[10px] uppercase font-bold tracking-wider">Settlement Bank</p>
                             <div className="flex justify-between items-center text-gray-300 mt-1">
                               <span>{prof.bank_name || 'N/A'}</span>
                               <span className="font-mono font-bold select-all text-white bg-dark-950 px-1.5 py-0.5 rounded border border-dark-700">{prof.account_number || 'N/A'}</span>
                             </div>
                             {prof.account_name && (
-                              <p className="text-gray-400 mt-0.5 italic truncate" title={prof.account_name}>{prof.account_name}</p>
+                              <p className="text-gray-200 mt-0.5 italic truncate" title={prof.account_name}>{prof.account_name}</p>
                             )}
                           </div>
                         )}
-                        <div className="flex items-center justify-between text-[11px] text-gray-500 pt-2 border-t border-dark-750/30">
+                        <div className="flex items-center justify-between text-[11px] text-gray-300 pt-2 border-t border-dark-750/30">
                           <span>Cost Rate:</span>
                           <strong className="text-white font-mono">{Number(prof.hourly_rate) > 0 ? `₦${Number(prof.hourly_rate).toLocaleString()}/hr` : 'Salary (Staff)'}</strong>
                         </div>
-                        <div className="flex items-center justify-between text-[11px] text-gray-500">
+                        <div className="flex items-center justify-between text-[11px] text-gray-300">
                           <span>Specialist Rating:</span>
                           <strong className="text-yellow-500">⭐ {Number(prof.rating).toFixed(1)} / 5.0</strong>
                         </div>
@@ -1765,14 +1765,14 @@ const Maintenance = () => {
                       <div className="mt-5 pt-3 border-t border-dark-750 flex justify-end gap-2">
                         <button 
                           onClick={() => handleOpenEditProfModal(prof)}
-                          className="p-1.5 text-gray-500 hover:text-brand-500 transition-colors cursor-pointer"
+                          className="p-1.5 text-gray-300 hover:text-brand-500 transition-colors cursor-pointer"
                           title="Edit specialist contact"
                         >
                           <Edit size={15} />
                         </button>
                         <button 
                           onClick={() => handleDeleteProfessional(prof.id)}
-                          className="p-1.5 text-gray-500 hover:text-red-400 transition-colors cursor-pointer"
+                          className="p-1.5 text-gray-300 hover:text-red-400 transition-colors cursor-pointer"
                           title="Delete specialist contact"
                         >
                           <Trash2 size={15} />
@@ -1826,7 +1826,7 @@ const Maintenance = () => {
             <div className="overflow-x-auto custom-scrollbar">
               <table className="w-full text-left border-collapse whitespace-nowrap">
                 <thead>
-                  <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-400 uppercase">
+                  <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-200 uppercase">
                     <th className="p-4">Requisition Item / Details</th>
                     <th className="p-4 text-center">Total Qty</th>
                     <th className="p-4">Estimated Budget</th>
@@ -1852,9 +1852,9 @@ const Maintenance = () => {
                             {/* Itemized Sub-List breakdown */}
                             <div className="mt-1.5 space-y-1 pl-2.5 border-l border-dark-700/80">
                               {reqItems.map((item, itemIdx) => (
-                                <div key={itemIdx} className="text-[11px] text-gray-400 font-medium">
+                                <div key={itemIdx} className="text-[11px] text-gray-200 font-medium">
                                   • <span className="text-gray-300 font-bold">{item.name}</span> (Qty: {item.quantity} @ <span className="font-mono text-brand-400">₦{Number(item.unit_price || 0).toLocaleString()}</span>)
-                                  {item.merchant_name && <span className="text-gray-500 font-normal"> via {item.merchant_name}</span>}
+                                  {item.merchant_name && <span className="text-gray-300 font-normal"> via {item.merchant_name}</span>}
                                 </div>
                               ))}
                             </div>
@@ -1880,7 +1880,7 @@ const Maintenance = () => {
                               <div className="flex gap-1.5 justify-end">
                                 <button 
                                   onClick={() => handleDeclinePurchase(req)} 
-                                  className="bg-dark-700 hover:bg-red-500/10 text-gray-400 hover:text-red-400 border border-dark-600 text-[10px] font-bold px-2.5 py-1 rounded cursor-pointer"
+                                  className="bg-dark-700 hover:bg-red-500/10 text-gray-200 hover:text-red-400 border border-dark-600 text-[10px] font-bold px-2.5 py-1 rounded cursor-pointer"
                                 >
                                   Decline
                                 </button>
@@ -1893,7 +1893,7 @@ const Maintenance = () => {
                               </div>
                             )}
                             {req.status === 'approved' && (
-                              <span className="text-gray-500 text-[10px] italic flex items-center gap-1 justify-end">
+                              <span className="text-gray-300 text-[10px] italic flex items-center gap-1 justify-end">
                                 <CheckCircle size={12} className="text-green-500" /> Approved
                               </span>
                             )}
@@ -1945,7 +1945,7 @@ const Maintenance = () => {
             <div className="overflow-x-auto custom-scrollbar">
               <table className="w-full text-left border-collapse whitespace-nowrap">
                 <thead>
-                  <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-400 uppercase">
+                  <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-200 uppercase">
                     <th className="p-4">Payment Description / Notes</th>
                     <th className="p-4">Paid To (Target)</th>
                     <th className="p-4">Amount</th>
@@ -1959,7 +1959,7 @@ const Maintenance = () => {
                 <tbody className="divide-y divide-dark-750 text-xs">
                   {payments.length === 0 ? (
                     <tr>
-                      <td colSpan="8" className="p-8 text-center text-gray-500 italic">No disbursement records registered.</td>
+                      <td colSpan="8" className="p-8 text-center text-gray-300 italic">No disbursement records registered.</td>
                     </tr>
                   ) : (
                     payments.map(pay => {
@@ -1974,13 +1974,13 @@ const Maintenance = () => {
                         <tr key={pay.id} className="hover:bg-dark-750/35 transition-colors">
                           <td className="p-4 font-bold text-white">
                             <p>{pay.notes || 'Maintenance Cost Disbursement'}</p>
-                            {pur && <p className="text-[10px] text-gray-500 font-normal mt-0.5">Linked Requisition: {pur.item_name}</p>}
+                            {pur && <p className="text-[10px] text-gray-300 font-normal mt-0.5">Linked Requisition: {pur.item_name}</p>}
                           </td>
                           <td className="p-4 text-gray-300 font-semibold">{paidTo}</td>
                           <td className="p-4 font-mono font-bold text-white text-sm">₦{Number(pay.amount_ngn).toLocaleString()}</td>
                           <td className="p-4 text-gray-300 capitalize">{pay.payment_method?.replace('_', ' ')}</td>
-                          <td className="p-4 font-mono text-gray-400 font-bold select-all">{pay.transaction_reference || 'Pending'}</td>
-                          <td className="p-4 text-gray-400">{pay.paid_at ? format(new Date(pay.paid_at), 'yyyy-MM-dd HH:mm') : 'Unpaid'}</td>
+                          <td className="p-4 font-mono text-gray-200 font-bold select-all">{pay.transaction_reference || 'Pending'}</td>
+                          <td className="p-4 text-gray-200">{pay.paid_at ? format(new Date(pay.paid_at), 'yyyy-MM-dd HH:mm') : 'Unpaid'}</td>
                           <td className="p-4">
                             <span className={`px-2 py-0.5 rounded text-[10px] font-black uppercase ${
                               pay.payment_status === 'paid' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
@@ -2007,7 +2007,7 @@ const Maintenance = () => {
                                 <Check size={12} className="text-green-500" /> Synced to Expenses
                               </span>
                             ) : (
-                              <span className="text-gray-500 italic text-[10px]">Awaiting Payment</span>
+                              <span className="text-gray-300 italic text-[10px]">Awaiting Payment</span>
                             )}
                           </td>
                         </tr>
@@ -2025,11 +2025,11 @@ const Maintenance = () => {
       {isTicketModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsTicketModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setIsTicketModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Wrench className="text-brand-500"/> Report breakdown</h2>
             <form onSubmit={handleCreateTicketSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Target Room / Suite *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Target Room / Suite *</label>
                 <select required value={newTicket.room_id} onChange={e => setNewTicket({...newTicket, room_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="">Select Room</option>
                   {rooms.map(r => <option key={r.id} value={r.id}>Suite {r.room_number} - {r.name}</option>)}
@@ -2038,13 +2038,13 @@ const Maintenance = () => {
               
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Trade Specialty *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Trade Specialty *</label>
                   <select value={newTicket.issue_category} onChange={e => setNewTicket({...newTicket, issue_category: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     {SPECIALTIES.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Urgency Priority *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Urgency Priority *</label>
                   <select value={newTicket.priority} onChange={e => setNewTicket({...newTicket, priority: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="low">Low Priority</option>
                     <option value="medium">Medium Urgency</option>
@@ -2055,7 +2055,7 @@ const Maintenance = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Detailed Description *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Detailed Description *</label>
                 <textarea required rows="4" value={newTicket.description} onChange={e => setNewTicket({...newTicket, description: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="AC cooling compressor failed..."></textarea>
               </div>
 
@@ -2075,21 +2075,21 @@ const Maintenance = () => {
       {isProfModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsProfModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setIsProfModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Plus className="text-brand-500"/> Add Specialist contact</h2>
             <form onSubmit={handleCreateProfSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Contractor / Technician Name *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Contractor / Technician Name *</label>
                 <input required type="text" value={newProfessional.name} onChange={e => setNewProfessional({...newProfessional, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Ibrahim Plumbing Services" />
               </div>
               
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Phone Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Phone Number</label>
                   <input type="text" value={newProfessional.phone} onChange={e => setNewProfessional({...newProfessional, phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="080..." />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Trade specialty *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Trade specialty *</label>
                   <select value={newProfessional.trade_specialty} onChange={e => setNewProfessional({...newProfessional, trade_specialty: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     {SPECIALTIES.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
@@ -2098,20 +2098,20 @@ const Maintenance = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Employment Type *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Employment Type *</label>
                   <select value={newProfessional.type} onChange={e => setNewProfessional({...newProfessional, type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="external">External Contractor</option>
                     <option value="internal">Internal Technician</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Contract / Hourly Rate (₦)</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Contract / Hourly Rate (₦)</label>
                   <input type="number" value={newProfessional.hourly_rate} onChange={e => setNewProfessional({...newProfessional, hourly_rate: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Rate per hour" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Email Address</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Email Address</label>
                 <input type="email" value={newProfessional.email} onChange={e => setNewProfessional({...newProfessional, email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="specialist@merchant.com" />
               </div>
 
@@ -2120,7 +2120,7 @@ const Maintenance = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Bank Name</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Bank Name</label>
                   <select 
                     value={newProfessional.bank_name || ''} 
                     onChange={e => setNewProfessional({...newProfessional, bank_name: e.target.value})} 
@@ -2137,12 +2137,12 @@ const Maintenance = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Account Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Account Number</label>
                   <input type="text" value={newProfessional.account_number || ''} onChange={e => setNewProfessional({...newProfessional, account_number: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="0123456789" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Account Name</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Account Name</label>
                 <input type="text" value={newProfessional.account_name || ''} onChange={e => setNewProfessional({...newProfessional, account_name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Ibrahim Plumbing Services" />
               </div>
 
@@ -2162,21 +2162,21 @@ const Maintenance = () => {
       {isEditProfModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsEditProfModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setIsEditProfModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><Edit className="text-brand-500"/> Edit Specialist contact</h2>
             <form onSubmit={handleUpdateProfSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Contractor / Technician Name *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Contractor / Technician Name *</label>
                 <input required type="text" value={editingProfessional.name} onChange={e => setEditingProfessional({...editingProfessional, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Ibrahim Plumbing Services" />
               </div>
               
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Phone Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Phone Number</label>
                   <input type="text" value={editingProfessional.phone} onChange={e => setEditingProfessional({...editingProfessional, phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="080..." />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Trade specialty *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Trade specialty *</label>
                   <select value={editingProfessional.trade_specialty} onChange={e => setEditingProfessional({...editingProfessional, trade_specialty: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     {SPECIALTIES.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
@@ -2185,20 +2185,20 @@ const Maintenance = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Employment Type *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Employment Type *</label>
                   <select value={editingProfessional.type} onChange={e => setEditingProfessional({...editingProfessional, type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="external">External Contractor</option>
                     <option value="internal">Internal Technician</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Contract / Hourly Rate (₦)</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Contract / Hourly Rate (₦)</label>
                   <input type="number" value={editingProfessional.hourly_rate} onChange={e => setEditingProfessional({...editingProfessional, hourly_rate: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Rate per hour" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Email Address</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Email Address</label>
                 <input type="email" value={editingProfessional.email} onChange={e => setEditingProfessional({...editingProfessional, email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="specialist@merchant.com" />
               </div>
 
@@ -2207,7 +2207,7 @@ const Maintenance = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Bank Name</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Bank Name</label>
                   <select 
                     value={editingProfessional.bank_name || ''} 
                     onChange={e => setEditingProfessional({...editingProfessional, bank_name: e.target.value})} 
@@ -2224,12 +2224,12 @@ const Maintenance = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Account Number</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Account Number</label>
                   <input type="text" value={editingProfessional.account_number || ''} onChange={e => setEditingProfessional({...editingProfessional, account_number: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="0123456789" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Account Name</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Account Name</label>
                 <input type="text" value={editingProfessional.account_name || ''} onChange={e => setEditingProfessional({...editingProfessional, account_name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Ibrahim Plumbing Services" />
               </div>
 
@@ -2249,10 +2249,10 @@ const Maintenance = () => {
       {isPurchaseModalOpen && (
         <div className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-4 select-none animate-fade-in">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-3xl shadow-2xl relative rounded-2xl animate-in zoom-in-95 flex flex-col max-h-[90vh]">
-            <button onClick={() => setIsPurchaseModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors cursor-pointer"><X size={20} /></button>
+            <button onClick={() => setIsPurchaseModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors cursor-pointer"><X size={20} /></button>
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2"><DollarSign className="text-amber-500"/> Request Material Procurement Requisition</h2>
             
-            <p className="text-xs text-gray-400 mb-4">
+            <p className="text-xs text-gray-200 mb-4">
               Add one or more procurement items with their respective quantity, unit price, and supplier. The requisition will be submitted as a single consolidated ticket for authorization.
             </p>
 
@@ -2260,7 +2260,7 @@ const Maintenance = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-dark-900/50 border border-dark-700/50 rounded-2xl p-4 shrink-0">
                 <div>
-                  <label className="block text-[10px] font-extrabold text-gray-400 uppercase tracking-wider mb-1">Associated Repair Ticket</label>
+                  <label className="block text-[10px] font-extrabold text-gray-200 uppercase tracking-wider mb-1">Associated Repair Ticket</label>
                   <select 
                     value={newPurchase.ticket_id} 
                     onChange={e => setNewPurchase({...newPurchase, ticket_id: e.target.value})} 
@@ -2273,7 +2273,7 @@ const Maintenance = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[10px] font-extrabold text-gray-400 uppercase tracking-wider mb-1">Requisition Notes / Justification</label>
+                  <label className="block text-[10px] font-extrabold text-gray-200 uppercase tracking-wider mb-1">Requisition Notes / Justification</label>
                   <input 
                     type="text"
                     value={newPurchase.notes || ''} 
@@ -2305,7 +2305,7 @@ const Maintenance = () => {
                   >
                     {/* Item Name */}
                     <div className="flex-1 w-full">
-                      <label className="block text-[9px] font-extrabold text-gray-500 uppercase tracking-wider mb-1">Item Description *</label>
+                      <label className="block text-[9px] font-extrabold text-gray-300 uppercase tracking-wider mb-1">Item Description *</label>
                       <input 
                         required 
                         type="text" 
@@ -2318,7 +2318,7 @@ const Maintenance = () => {
 
                     {/* Unit Price */}
                     <div className="w-full md:w-32">
-                      <label className="block text-[9px] font-extrabold text-gray-500 uppercase tracking-wider mb-1">Unit Price (₦) *</label>
+                      <label className="block text-[9px] font-extrabold text-gray-300 uppercase tracking-wider mb-1">Unit Price (₦) *</label>
                       <input 
                         required 
                         type="number" 
@@ -2332,7 +2332,7 @@ const Maintenance = () => {
 
                     {/* Quantity */}
                     <div className="w-full md:w-24">
-                      <label className="block text-[9px] font-extrabold text-gray-500 uppercase tracking-wider mb-1">Quantity *</label>
+                      <label className="block text-[9px] font-extrabold text-gray-300 uppercase tracking-wider mb-1">Quantity *</label>
                       <input 
                         required 
                         type="number" 
@@ -2346,7 +2346,7 @@ const Maintenance = () => {
 
                     {/* Row Total */}
                     <div className="w-full md:w-28 text-center">
-                      <span className="block text-[9px] font-extrabold text-gray-500 uppercase tracking-wider mb-1">Row Total</span>
+                      <span className="block text-[9px] font-extrabold text-gray-300 uppercase tracking-wider mb-1">Row Total</span>
                       <span className="font-mono font-bold text-brand-500 text-xs py-2 block">
                         ₦{(Number(row.unit_price || 0) * Number(row.quantity || 0)).toLocaleString()}
                       </span>
@@ -2354,7 +2354,7 @@ const Maintenance = () => {
 
                     {/* Supplier / Merchant */}
                     <div className="w-full md:w-44">
-                      <label className="block text-[9px] font-extrabold text-gray-500 uppercase tracking-wider mb-1">Supplier / Merchant</label>
+                      <label className="block text-[9px] font-extrabold text-gray-300 uppercase tracking-wider mb-1">Supplier / Merchant</label>
                       <input 
                         type="text" 
                         placeholder="e.g. AC Spareparts store" 
@@ -2369,7 +2369,7 @@ const Maintenance = () => {
                       <button
                         type="button"
                         onClick={() => handleRemoveProcurementItemRow(index)}
-                        className="p-2.5 bg-dark-850 hover:bg-red-500/10 text-gray-500 hover:text-red-400 rounded-xl border border-dark-700 hover:border-red-500/20 transition-all self-end md:self-center mt-3 md:mt-4 cursor-pointer"
+                        className="p-2.5 bg-dark-850 hover:bg-red-500/10 text-gray-300 hover:text-red-400 rounded-xl border border-dark-700 hover:border-red-500/20 transition-all self-end md:self-center mt-3 md:mt-4 cursor-pointer"
                         title="Remove item"
                       >
                         <Trash2 size={14} />
@@ -2381,7 +2381,7 @@ const Maintenance = () => {
 
               {/* Total Summary Row */}
               <div className="shrink-0 flex items-center justify-between border-t border-dark-700/60 pt-4 bg-dark-900/10 p-3 rounded-xl border border-dark-750">
-                <span className="text-gray-400 font-bold uppercase text-[10px] tracking-widest">Total Estimated Budget</span>
+                <span className="text-gray-200 font-bold uppercase text-[10px] tracking-widest">Total Estimated Budget</span>
                 <span className="text-brand-400 font-mono font-black text-base">
                   ₦{newPurchase.items.reduce((sum, item) => sum + (Number(item.unit_price || 0) * Number(item.quantity || 0)), 0).toLocaleString()}
                 </span>
@@ -2413,12 +2413,12 @@ const Maintenance = () => {
       {isPaymentModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => { setIsPaymentModalOpen(false); setActiveBookingForPayment(null); setChargeToFolioPayment(false); }} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => { setIsPaymentModalOpen(false); setActiveBookingForPayment(null); setChargeToFolioPayment(false); }} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><DollarSign className="text-green-500"/> Log Payout / Disbursement</h2>
             <form onSubmit={handleCreatePaymentSubmit} className="space-y-4">
               {/* Select Repair Ticket (Optional) */}
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Select Repair Ticket (Optional)</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Select Repair Ticket (Optional)</label>
                 <select 
                   value={newPayment.ticket_id || ''} 
                   onChange={async (e) => {
@@ -2458,13 +2458,13 @@ const Maintenance = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Disbursement Type / Destination *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Disbursement Type / Destination *</label>
                 <div className="grid grid-cols-2 gap-2 mb-2">
                   <button 
                     type="button" 
                     onClick={() => setNewPayment({...newPayment, purchase_id: '', professional_id: 'prof-1'})}
                     className={`py-2 text-xs font-bold border rounded-lg transition-all ${
-                      newPayment.professional_id ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-dark-900 border-dark-700 text-gray-400'
+                      newPayment.professional_id ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-dark-900 border-dark-700 text-gray-200'
                     }`}
                   >
                     Pay Specialist
@@ -2473,7 +2473,7 @@ const Maintenance = () => {
                     type="button" 
                     onClick={() => setNewPayment({...newPayment, professional_id: '', purchase_id: 'pur-1'})}
                     className={`py-2 text-xs font-bold border rounded-lg transition-all ${
-                      newPayment.purchase_id ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-dark-900 border-dark-700 text-gray-400'
+                      newPayment.purchase_id ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-dark-900 border-dark-700 text-gray-200'
                     }`}
                   >
                     Pay Procurement
@@ -2483,7 +2483,7 @@ const Maintenance = () => {
 
               {newPayment.professional_id !== '' && (
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Select Specialist *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Select Specialist *</label>
                   <select required value={newPayment.professional_id} onChange={e => setNewPayment({...newPayment, professional_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="">Select Specialist</option>
                     {professionals.map(p => <option key={p.id} value={p.id}>{p.name} ({p.trade_specialty})</option>)}
@@ -2493,7 +2493,7 @@ const Maintenance = () => {
 
               {newPayment.purchase_id !== '' && (
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Select Approved Procurement *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Select Approved Procurement *</label>
                   <select required value={newPayment.purchase_id} onChange={e => setNewPayment({...newPayment, purchase_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="">Select Requisition</option>
                     {purchases.filter(p => p.status === 'approved').map(p => (
@@ -2505,11 +2505,11 @@ const Maintenance = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Disbursement Amount (₦) *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Disbursement Amount (₦) *</label>
                   <input required type="number" value={newPayment.amount_ngn} onChange={e => setNewPayment({...newPayment, amount_ngn: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="35000" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Disbursement Method *</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Disbursement Method *</label>
                   <select value={newPayment.payment_method} onChange={e => setNewPayment({...newPayment, payment_method: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                     <option value="bank_transfer">Bank Transfer</option>
                     <option value="cash">Dispense Cash</option>
@@ -2519,7 +2519,7 @@ const Maintenance = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Disbursement Payout Notes</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Disbursement Payout Notes</label>
                 <textarea rows="2" value={newPayment.notes} onChange={e => setNewPayment({...newPayment, notes: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="AC Specialist contractor invoice settlement..."></textarea>
               </div>
 
@@ -2537,7 +2537,7 @@ const Maintenance = () => {
                   />
                   <div className="flex flex-col font-sans">
                     <span className="text-xs font-bold text-white leading-none">Charge to Guest Folio</span>
-                    <span className="text-[10px] text-gray-400 mt-1 font-medium">Post disbursement to guest: {activeBookingForPayment.guest_name}</span>
+                    <span className="text-[10px] text-gray-200 mt-1 font-medium">Post disbursement to guest: {activeBookingForPayment.guest_name}</span>
                   </div>
                 </div>
               )}
@@ -2558,11 +2558,11 @@ const Maintenance = () => {
       {activeResolution && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-sm shadow-2xl relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setActiveResolution(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+            <button onClick={() => setActiveResolution(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2"><CheckCircle className="text-green-500"/> Resolve Defect Ticket</h2>
             <form onSubmit={handleResolveTicketSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Specialist Contractor Assignee</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Specialist Contractor Assignee</label>
                 <select value={resolutionForm.assigned_professional_id} onChange={e => setResolutionForm({...resolutionForm, assigned_professional_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors">
                   <option value="">None / Internal staff</option>
                   {professionals.filter(p => p.status === 'active').map(p => (
@@ -2573,17 +2573,17 @@ const Maintenance = () => {
               
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Estimated Cost (₦)</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Estimated Cost (₦)</label>
                   <input type="number" value={resolutionForm.estimated_cost} onChange={e => setResolutionForm({...resolutionForm, estimated_cost: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Budget estimated" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1">Actual Final Cost (₦)</label>
+                  <label className="block text-xs font-bold text-gray-200 mb-1">Actual Final Cost (₦)</label>
                   <input type="number" value={resolutionForm.actual_cost} onChange={e => setResolutionForm({...resolutionForm, actual_cost: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="Actual spent" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-400 mb-1">Resolution Technical Notes *</label>
+                <label className="block text-xs font-bold text-gray-200 mb-1">Resolution Technical Notes *</label>
                 <textarea required rows="4" value={resolutionForm.resolution_notes} onChange={e => setResolutionForm({...resolutionForm, resolution_notes: e.target.value})} className="w-full bg-dark-900 border border-dark-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-brand-500 transition-colors" placeholder="compressor replaced completely and checked lines for leakage..."></textarea>
               </div>
 
@@ -2601,7 +2601,7 @@ const Maintenance = () => {
                   />
                   <div className="flex flex-col font-sans">
                     <span className="text-xs font-bold text-white leading-none">Charge to Guest Folio</span>
-                    <span className="text-[10px] text-gray-400 mt-1 font-medium">Post actual cost to guest: {activeBookingForRoom.guest_name}</span>
+                    <span className="text-[10px] text-gray-200 mt-1 font-medium">Post actual cost to guest: {activeBookingForRoom.guest_name}</span>
                   </div>
                 </div>
               )}
@@ -2609,7 +2609,7 @@ const Maintenance = () => {
               <button 
                 type="submit" 
                 disabled={isProcessing}
-                className="w-full bg-green-500 hover:bg-green-650 disabled:bg-dark-700 disabled:text-gray-500 text-white py-3 rounded-lg text-sm font-bold mt-4 shadow transition-all"
+                className="w-full bg-green-500 hover:bg-green-650 disabled:bg-dark-700 disabled:text-gray-300 text-white py-3 rounded-lg text-sm font-bold mt-4 shadow transition-all"
               >
                 {isProcessing ? 'Resolving Defect...' : 'Resolve Ticket & Release Suite'}
               </button>

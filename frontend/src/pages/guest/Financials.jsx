@@ -25,14 +25,14 @@ const GuestFinancials = () => {
 
   const [bankDetails, setBankDetails] = useState({
     bankName: 'Access Bank Plc',
-    accountName: 'Jemmyland Hotels Ltd',
+    accountName: 'Freshland Ltd',
     accountNumber: '0098172635'
   });
 
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
 
@@ -72,7 +72,7 @@ const GuestFinancials = () => {
         }, {});
         setBankDetails({
           bankName: settingsMap.hotel_bank_name || 'Access Bank Plc',
-          accountName: settingsMap.hotel_account_name || 'Jemmyland Hotels Ltd',
+          accountName: settingsMap.hotel_account_name || 'Freshland Ltd',
           accountNumber: settingsMap.hotel_account_number || '0098172635'
         });
       }
@@ -612,7 +612,7 @@ const GuestFinancials = () => {
           </table>
           
           <div class="footer">
-            Thank you for choosing Jemmyland Hotels.<br />
+            Thank you for choosing Freshland.<br />
             For support or billing inquiries, please contact ${contactInfo.email}.
           </div>
         </body>
@@ -624,7 +624,7 @@ const GuestFinancials = () => {
   };
 
   if (loading) {
-    return <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading financial details...</div>;
+    return <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading financial details...</div>;
   }
 
   const isWalletActive = guestRecord && guestRecord.wallet_balance !== null && guestRecord.wallet_balance !== undefined;
@@ -633,19 +633,19 @@ const GuestFinancials = () => {
     <div className="space-y-8 text-white relative">
       <div>
         <h2 className="text-2xl font-semibold text-white">Prepayment & Wallet Financials</h2>
-        <p className="text-gray-400 mt-1">Monitor cash deposits, track chronological room charge checkout deductions, and manage your digital luxury wallet.</p>
+        <p className="text-gray-200 mt-1">Monitor cash deposits, track chronological room charge checkout deductions, and manage your digital luxury wallet.</p>
       </div>
 
       {!isWalletActive ? (
         <div className="bg-dark-800 border border-dark-700 rounded-xl p-10 text-center max-w-lg mx-auto shadow-xl space-y-4 animate-in zoom-in-95">
           <div className="w-16 h-16 bg-dark-900 rounded-full border border-dark-750 flex items-center justify-center mx-auto shadow">
-            <Wallet size={32} className="text-gray-500" />
+            <Wallet size={32} className="text-gray-300" />
           </div>
           <h3 className="text-lg font-bold text-white">Prepayment Wallet Inactive</h3>
-          <p className="text-sm text-gray-400 max-w-xs mx-auto leading-normal">
+          <p className="text-sm text-gray-200 max-w-xs mx-auto leading-normal">
             Your guest prepayment account receivable profile has not been activated yet. 
           </p>
-          <p className="text-xs text-gray-500 max-w-xs mx-auto leading-relaxed">
+          <p className="text-xs text-gray-300 max-w-xs mx-auto leading-relaxed">
             Please contact the front desk or finance manager to activate your digital wallet to enable prepayment cash deposits, rapid checkouts, and charge routing.
           </p>
         </div>
@@ -663,13 +663,13 @@ const GuestFinancials = () => {
               <div className="flex justify-between items-start z-10">
                 <div>
                   <p className="text-[10px] font-black uppercase text-amber-500/80 tracking-widest">Luxe Prepayment Account</p>
-                  <p className="text-sm font-semibold text-gray-400 mt-0.5">AR-GUEST-{guestRecord.id.substring(0, 8).toUpperCase()}</p>
+                  <p className="text-sm font-semibold text-gray-200 mt-0.5">AR-GUEST-{guestRecord.id.substring(0, 8).toUpperCase()}</p>
                 </div>
                 <Wallet size={24} className="text-amber-500" />
               </div>
               
               <div className="z-10 mt-2">
-                <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Available Prepayment Balance</p>
+                <p className="text-xs text-gray-300 uppercase tracking-widest font-bold">Available Prepayment Balance</p>
                 <div className="flex justify-between items-center mt-1.5">
                   <p className="text-3xl font-black text-amber-400 font-mono">₦{Number(guestRecord.wallet_balance).toLocaleString()}</p>
                   <button 
@@ -687,7 +687,7 @@ const GuestFinancials = () => {
               </div>
 
               <div className="flex justify-between items-end z-10 text-xs border-t border-amber-500/15 pt-2">
-                <span className="text-gray-400 font-medium capitalize">{guestRecord.first_name} {guestRecord.last_name}</span>
+                <span className="text-gray-200 font-medium capitalize">{guestRecord.first_name} {guestRecord.last_name}</span>
                 <span className="text-amber-500 font-extrabold uppercase tracking-widest text-[9px] bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Active Wallet</span>
               </div>
             </div>
@@ -696,9 +696,9 @@ const GuestFinancials = () => {
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-dark-800 border border-dark-700 p-6 rounded-xl flex flex-col justify-between shadow-md">
                 <div>
-                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Stay & Extras Prepayments</p>
+                  <p className="text-[10px] text-gray-300 font-bold uppercase tracking-wider">Stay & Extras Prepayments</p>
                   <h4 className="text-lg font-bold text-white mt-1.5 leading-snug">Rapid Checkout Ledger Enabled</h4>
-                  <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-gray-200 mt-2 leading-relaxed">
                     With prepayments active, room rent and service charges are automatically reconciled, keeping your front desk wait times down to zero.
                   </p>
                 </div>
@@ -709,16 +709,16 @@ const GuestFinancials = () => {
 
               <div className="bg-dark-800 border border-dark-700 p-6 rounded-xl flex flex-col justify-between shadow-md">
                 <div>
-                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Loyalty Tier & Rank</p>
+                  <p className="text-[10px] text-gray-300 font-bold uppercase tracking-wider">Loyalty Tier & Rank</p>
                   <h4 className="text-lg font-bold text-gold-500 mt-1.5 flex items-center gap-1.5">
                     🌟 Frequent Guest Program
                   </h4>
-                  <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-gray-200 mt-2 leading-relaxed">
                     Earn rewards and dynamic point pools for each night stayed. Prepayment bookings receive double multiplier points.
                   </p>
                 </div>
                 <div className="text-xs font-mono font-bold text-white flex justify-between items-center bg-dark-900 p-2 rounded border border-dark-750 mt-4">
-                  <span className="text-gray-500 uppercase tracking-widest text-[9px]">Loyalty Balance</span>
+                  <span className="text-gray-300 uppercase tracking-widest text-[9px]">Loyalty Balance</span>
                   <span className="text-gold-500 font-black">{guestRecord.loyalty_points || 0} Points</span>
                 </div>
               </div>
@@ -732,7 +732,7 @@ const GuestFinancials = () => {
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <Clock className="text-amber-500" size={20} /> Transaction Ledger Statement
                 </h3>
-                <p className="text-xs text-gray-400 mt-1">Detailed list of prepayment cash deposits, bank transfers, and room folio check-out checkout deductions.</p>
+                <p className="text-xs text-gray-200 mt-1">Detailed list of prepayment cash deposits, bank transfers, and room folio check-out checkout deductions.</p>
               </div>
               <button 
                 onClick={handlePrintStatement}
@@ -743,15 +743,15 @@ const GuestFinancials = () => {
             </div>
 
             {loadingStatement ? (
-              <div className="text-center p-12 text-gray-500 text-xs">Compiling transaction history...</div>
+              <div className="text-center p-12 text-gray-300 text-xs">Compiling transaction history...</div>
             ) : arStatement.length === 0 ? (
-              <div className="text-center p-12 text-gray-500 text-xs bg-dark-900 rounded border border-dark-700/50">
+              <div className="text-center p-12 text-gray-300 text-xs bg-dark-900 rounded border border-dark-700/50">
                 No ledger deposits or folio wallet deductions registered on your account yet.
               </div>
             ) : (
               <div className="overflow-x-auto rounded border border-dark-700/50 bg-dark-900/40">
                 <table className="w-full text-left text-xs border-collapse">
-                  <thead className="bg-dark-950 text-gray-400 border-b border-dark-700">
+                  <thead className="bg-dark-950 text-gray-200 border-b border-dark-700">
                     <tr>
                       <th className="p-4 font-semibold uppercase tracking-wider">Date / Time</th>
                       <th className="p-4 font-semibold uppercase tracking-wider">Transaction Details</th>
@@ -764,14 +764,14 @@ const GuestFinancials = () => {
                   <tbody className="divide-y divide-dark-750">
                     {arStatement.map(rec => (
                       <tr key={rec.id} className="hover:bg-dark-800/25">
-                        <td className="p-4 text-gray-400 font-mono text-[10px]">
+                        <td className="p-4 text-gray-200 font-mono text-[10px]">
                           {new Date(rec.date).toLocaleDateString()} {new Date(rec.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </td>
                         <td className="p-4">
                           <span className="font-bold text-white block">{rec.description}</span>
-                          {rec.notes && <span className="text-[10px] text-gray-500 font-mono block mt-1">{rec.notes}</span>}
+                          {rec.notes && <span className="text-[10px] text-gray-300 font-mono block mt-1">{rec.notes}</span>}
                         </td>
-                        <td className="p-4 text-gray-400 uppercase font-mono text-[10px]">
+                        <td className="p-4 text-gray-200 uppercase font-mono text-[10px]">
                           {rec.method?.replace('_', ' ')}
                         </td>
                         <td className="p-4">
@@ -810,13 +810,13 @@ const GuestFinancials = () => {
               <Wallet className="text-brand-500" />
               <span>Add Prepayment Funds</span>
             </h2>
-            <p className="text-xs text-gray-400 mb-6 uppercase tracking-wider font-bold">
+            <p className="text-xs text-gray-200 mb-6 uppercase tracking-wider font-bold">
               Secure Online Prepayment Gateway
             </p>
             
             <form onSubmit={handleAddFunds} className="space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Payment Amount (₦) *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Payment Amount (₦) *</label>
                 <input 
                   required
                   type="number" 
@@ -829,7 +829,7 @@ const GuestFinancials = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Deposit Method *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Deposit Method *</label>
                 <select 
                   required
                   value={addFundsMethod}
@@ -845,12 +845,12 @@ const GuestFinancials = () => {
                 <div className="bg-dark-900/80 p-4 border border-dark-700/60 rounded-xl space-y-2 animate-in slide-in-from-top duration-300">
                   <span className="text-[10px] uppercase font-bold text-amber-500 tracking-wider">Hotel Bank Details:</span>
                   <div className="text-xs text-gray-300 space-y-1 font-mono">
-                    <p><span className="text-gray-500 font-sans">Bank:</span> {bankDetails.bankName}</p>
-                    <p><span className="text-gray-500 font-sans">Account Name:</span> {bankDetails.accountName}</p>
-                    <p><span className="text-gray-500 font-sans">Account No:</span> {bankDetails.accountNumber}</p>
+                    <p><span className="text-gray-300 font-sans">Bank:</span> {bankDetails.bankName}</p>
+                    <p><span className="text-gray-300 font-sans">Account Name:</span> {bankDetails.accountName}</p>
+                    <p><span className="text-gray-300 font-sans">Account No:</span> {bankDetails.accountNumber}</p>
                   </div>
                   <div className="pt-2">
-                    <label className="block text-xs text-gray-400 mb-1.5 font-medium">Bank Transfer Reference Number *</label>
+                    <label className="block text-xs text-gray-200 mb-1.5 font-medium">Bank Transfer Reference Number *</label>
                     <input 
                       required
                       type="text" 
@@ -859,7 +859,7 @@ const GuestFinancials = () => {
                       placeholder="e.g. TXN-ACCESS-0981726"
                       className="w-full bg-dark-800 border border-dark-750 p-2.5 rounded-lg text-white text-xs outline-none focus:border-brand-500"
                     />
-                    <span className="text-[9px] text-gray-500 mt-1 block">Specify the bank transaction receipt reference for audit confirmation.</span>
+                    <span className="text-[9px] text-gray-300 mt-1 block">Specify the bank transaction receipt reference for audit confirmation.</span>
                   </div>
                 </div>
               ) : (

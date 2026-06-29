@@ -37,7 +37,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, limit }) => {
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 bg-dark-900/60 p-3 rounded-2xl border border-dark-700 shadow-md">
-      <div className="text-xs text-gray-400 font-medium">
+      <div className="text-xs text-gray-200 font-medium">
         Showing Page <span className="text-white font-bold">{currentPage}</span> of <span className="text-white font-bold">{totalPages}</span>
         {limit ? ` (· ${limit} items per page)` : ''}
       </div>
@@ -57,7 +57,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, limit }) => {
           {getPageNumbers().map((page, index) => (
             <React.Fragment key={index}>
               {page === '...' ? (
-                <span className="px-2 text-gray-500 flex items-center justify-center">
+                <span className="px-2 text-gray-300 flex items-center justify-center">
                   <MoreHorizontal size={14} />
                 </span>
               ) : (
@@ -66,7 +66,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, limit }) => {
                   className={`min-w-[32px] h-8 flex items-center justify-center rounded-lg text-[13px] font-bold transition-all border ${
                     currentPage === page
                       ? 'bg-brand-500 text-white border-brand-500 shadow-[0_0_10px_rgba(223,104,83,0.3)]'
-                      : 'bg-dark-800/50 text-gray-400 border-dark-700 hover:border-brand-500/50 hover:text-brand-400 hover:bg-dark-800'
+                      : 'bg-dark-800/50 text-gray-200 border-dark-700 hover:border-brand-500/50 hover:text-brand-400 hover:bg-dark-800'
                   }`}
                 >
                   {page}

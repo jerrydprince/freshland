@@ -35,7 +35,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-200">
             Showing <span className="font-semibold text-white">{((currentPage - 1) * pageSize) + 1}</span> to{' '}
             <span className="font-semibold text-white">
               {Math.min(currentPage * pageSize, totalItems)}
@@ -49,7 +49,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === 1}
               onClick={() => onPageChange(currentPage - 1)}
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Previous</span>
               &larr;
@@ -72,7 +72,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === totalPages}
               onClick={() => onPageChange(currentPage + 1)}
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Next</span>
               &rarr;
@@ -670,7 +670,7 @@ const AdminLaundry = () => {
   }, [walkinPayments, inhouseHistory]);
 
   if (!hasAccess('Laundry')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to access the Laundry Department.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to access the Laundry Department.</div>;
   }
 
   const todayStr = format(new Date(), 'yyyy-MM-dd');
@@ -698,7 +698,7 @@ const AdminLaundry = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-2">Laundry Service Department</h1>
-            <p className="text-gray-400 mt-1">Manage guest clothes processing, calculate drycleaning charges, and post stay folio logs.</p>
+            <p className="text-gray-200 mt-1">Manage guest clothes processing, calculate drycleaning charges, and post stay folio logs.</p>
           </div>
         </div>
         <div className="mt-4 md:mt-0 flex gap-3">
@@ -747,7 +747,7 @@ const AdminLaundry = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-yellow-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Pending Pickup</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Pending Pickup</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {inhouseRequests.filter(r => r.status === 'pending').length} Order(s)
               </h3>
@@ -759,7 +759,7 @@ const AdminLaundry = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-blue-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Active washing</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Active washing</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {inhouseRequests.filter(r => r.status === 'scheduled' || r.status === 'in_progress').length} load(s)
               </h3>
@@ -771,7 +771,7 @@ const AdminLaundry = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-green-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Completed Today</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Completed Today</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {inhouseHistory.length + walkinPayments.filter(s => s.status === 'completed').length} ticket(s)
               </h3>
@@ -783,7 +783,7 @@ const AdminLaundry = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-emerald-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Department Revenue</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Department Revenue</p>
               <h3 className="text-2xl font-black text-emerald-400 mt-1">₦{totalEarnings.toLocaleString()}</h3>
             </div>
             <div className="p-2 bg-emerald-500/10 text-emerald-500 rounded"><DollarSign size={20} /></div>
@@ -795,19 +795,19 @@ const AdminLaundry = () => {
       <div className="flex gap-4 border-b border-dark-700 overflow-x-auto select-none">
         <button 
           onClick={() => setActiveTab('inhouse')} 
-          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'inhouse' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'inhouse' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Users size={16} /> Suite Guests Processing ({inhouseRequests.length})
         </button>
         <button 
           onClick={() => setActiveTab('walkin')} 
-          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'walkin' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'walkin' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <ClipboardList size={16} /> Walk-In Sales Ledger ({walkinPayments.length})
         </button>
         <button 
           onClick={() => setActiveTab('history')} 
-          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'history' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap text-sm ${activeTab === 'history' ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <CheckCircle size={16} /> Folio Charging History
         </button>
@@ -815,7 +815,7 @@ const AdminLaundry = () => {
 
       {/* Tab Panels */}
       {loading ? (
-        <div className="text-center py-20 text-gray-500 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl">
+        <div className="text-center py-20 text-gray-300 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl">
           <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           <p>Syncing laundry department databases...</p>
         </div>
@@ -825,7 +825,7 @@ const AdminLaundry = () => {
           {activeTab === 'inhouse' && (
             <div className="space-y-4 animate-in fade-in duration-300">
               <div className="bg-dark-800 border border-dark-700 p-4 rounded-xl flex items-center gap-3">
-                <Search size={18} className="text-gray-500 ml-2" />
+                <Search size={18} className="text-gray-300 ml-2" />
                 <input 
                   type="text"
                   placeholder="Search orders by Guest Name, Suite # or stay reservation ref..."
@@ -839,7 +839,7 @@ const AdminLaundry = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm border-collapse">
                     <thead>
-                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                         <th className="p-4">Suite #</th>
                         <th className="p-4">Guest stays details</th>
                         <th className="p-4">Estimated Items</th>
@@ -851,7 +851,7 @@ const AdminLaundry = () => {
                     <tbody className="divide-y divide-dark-700/60">
                       {filteredInhouse.length === 0 ? (
                         <tr>
-                          <td colSpan="6" className="p-12 text-center text-gray-500 italic">No active laundry requests found matching query.</td>
+                          <td colSpan="6" className="p-12 text-center text-gray-300 italic">No active laundry requests found matching query.</td>
                         </tr>
                       ) : (
                         paginatedInhouse.map(order => {
@@ -866,7 +866,7 @@ const AdminLaundry = () => {
                               <td className="p-4 font-black text-blue-400 text-base">{roomNo}</td>
                               <td className="p-4">
                                 <p className="font-bold text-white">{guestName}</p>
-                                <span className="text-[10px] text-gray-500 font-mono block mt-0.5 select-all">Ref: {order.bookings?.booking_reference}</span>
+                                <span className="text-[10px] text-gray-300 font-mono block mt-0.5 select-all">Ref: {order.bookings?.booking_reference}</span>
                               </td>
                               <td className="p-4 font-mono font-bold text-white text-center w-[120px]">
                                 <span className="bg-dark-900 border border-dark-700 px-3 py-1 rounded text-xs inline-block">{order.quantity} item(s)</span>
@@ -918,7 +918,7 @@ const AdminLaundry = () => {
                                       handleUpdateStatus(order.id, 'cancelled');
                                     }}
                                     disabled={isLaundryClosed}
-                                    className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-400 disabled:opacity-40 disabled:cursor-not-allowed"
+                                    className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
                                   >
                                     Decline
                                   </button>
@@ -945,7 +945,7 @@ const AdminLaundry = () => {
           {activeTab === 'walkin' && (
             <div className="space-y-4 animate-in fade-in duration-300">
               <div className="bg-dark-800 border border-dark-700 p-4 rounded-xl flex items-center gap-3">
-                <Search size={18} className="text-gray-500 ml-2" />
+                <Search size={18} className="text-gray-300 ml-2" />
                 <input 
                   type="text"
                   placeholder="Search walk-in customers by name, phone or laundry description..."
@@ -959,7 +959,7 @@ const AdminLaundry = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm border-collapse">
                     <thead>
-                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                         <th className="p-4">Invoice Reference</th>
                         <th className="p-4">Customer Details</th>
                         <th className="p-4">Laundering Description notes</th>
@@ -971,7 +971,7 @@ const AdminLaundry = () => {
                     <tbody className="divide-y divide-dark-700/60">
                       {filteredWalkins.length === 0 ? (
                         <tr>
-                          <td colSpan="6" className="p-12 text-center text-gray-500 italic">No walk-in laundry tickets recorded.</td>
+                          <td colSpan="6" className="p-12 text-center text-gray-300 italic">No walk-in laundry tickets recorded.</td>
                         </tr>
                       ) : (
                         paginatedWalkins.map(sale => {
@@ -986,17 +986,17 @@ const AdminLaundry = () => {
 
                           return (
                             <tr key={sale.id} className="hover:bg-dark-700/35 transition-colors">
-                              <td className="p-4 font-mono font-bold text-gray-400 text-xs select-all">{sale.transaction_ref}</td>
+                              <td className="p-4 font-mono font-bold text-gray-200 text-xs select-all">{sale.transaction_ref}</td>
                               <td className="p-4">
                                 <p className="font-bold text-white">{cName}</p>
-                                <span className="text-[10px] text-gray-500 font-mono block mt-0.5 select-all">{cPhone}</span>
+                                <span className="text-[10px] text-gray-300 font-mono block mt-0.5 select-all">{cPhone}</span>
                               </td>
                               <td className="p-4">
                                 <div className="bg-dark-900/50 border border-dark-700/55 p-2 rounded text-xs text-gray-300 max-w-[300px] whitespace-pre-wrap leading-relaxed select-text font-medium">
                                   {itemsText}
                                 </div>
                               </td>
-                              <td className="p-4 uppercase font-bold text-xs text-gray-400">{sale.method}</td>
+                              <td className="p-4 uppercase font-bold text-xs text-gray-200">{sale.method}</td>
                               <td className="p-4 font-black text-emerald-400 text-base">₦{Number(sale.amount).toLocaleString()}</td>
                               <td className="p-4 text-right">
                                 {sale.status === 'completed' ? (
@@ -1016,7 +1016,7 @@ const AdminLaundry = () => {
                                       <CheckCircle size={12} /> Settle & Settle clothes
                                     </button>
                                   ) : (
-                                    <span className="text-[10px] text-gray-500 italic block mt-1">Read-Only Ticket</span>
+                                    <span className="text-[10px] text-gray-300 italic block mt-1">Read-Only Ticket</span>
                                   )
                                 )}
                               </td>
@@ -1044,7 +1044,7 @@ const AdminLaundry = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm border-collapse">
                     <thead>
-                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+                      <tr className="bg-dark-900 border-b border-dark-700 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                         <th className="p-4">Suite #</th>
                         <th className="p-4">Guest Details</th>
                         <th className="p-4">Order Reference</th>
@@ -1056,7 +1056,7 @@ const AdminLaundry = () => {
                     <tbody className="divide-y divide-dark-700/60">
                       {inhouseHistory.length === 0 ? (
                         <tr>
-                          <td colSpan="6" className="p-12 text-center text-gray-500 italic">No completed inhouse laundry logs.</td>
+                          <td colSpan="6" className="p-12 text-center text-gray-300 italic">No completed inhouse laundry logs.</td>
                         </tr>
                       ) : (
                         paginatedHistory.map(order => {
@@ -1070,13 +1070,13 @@ const AdminLaundry = () => {
                             <tr key={order.id} className="hover:bg-dark-700/35 transition-colors">
                               <td className="p-4 font-black text-blue-400 text-base">{roomNo}</td>
                               <td className="p-4 font-bold text-white">{guestName}</td>
-                              <td className="p-4 font-mono text-gray-500 text-xs select-all">{order.bookings?.booking_reference}</td>
+                              <td className="p-4 font-mono text-gray-300 text-xs select-all">{order.bookings?.booking_reference}</td>
                               <td className="p-4">
                                 <div className="bg-dark-900/50 border border-dark-700/55 p-2 rounded text-xs text-gray-300 max-w-[300px] whitespace-pre-wrap select-text leading-relaxed font-semibold">
                                   {laundryNote}
                                 </div>
                               </td>
-                              <td className="p-4 text-gray-400 text-xs">{format(new Date(order.updated_at), 'yyyy-MM-dd HH:mm')}</td>
+                              <td className="p-4 text-gray-200 text-xs">{format(new Date(order.updated_at), 'yyyy-MM-dd HH:mm')}</td>
                               <td className="p-4 text-right font-black text-emerald-400 text-base">₦{Number(order.total_price_ngn).toLocaleString()}</td>
                             </tr>
                           );
@@ -1107,7 +1107,7 @@ const AdminLaundry = () => {
               </h2>
               <button 
                 onClick={() => setActiveProcessingOrder(null)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -1119,25 +1119,25 @@ const AdminLaundry = () => {
                 {/* Stay Info Card */}
                 <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-bold uppercase">Suite Number:</span>
+                    <span className="text-gray-300 font-bold uppercase">Suite Number:</span>
                     <span className="text-blue-400 font-black text-sm">Room {activeProcessingOrder.bookings?.rooms?.room_number}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-bold uppercase">In-House Guest:</span>
+                    <span className="text-gray-300 font-bold uppercase">In-House Guest:</span>
                     <span className="text-white font-bold">{activeProcessingOrder.bookings?.guest_name || 'Confirmed Guest'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-bold uppercase">Quantity requested:</span>
+                    <span className="text-gray-300 font-bold uppercase">Quantity requested:</span>
                     <span className="text-white font-bold">{activeProcessingOrder.quantity} item(s)</span>
                   </div>
                 </div>
 
                 {activeProcessingOrder.bookings?.group_account_id && (
                   <div className="bg-dark-900 border border-dark-750 p-4 rounded-xl space-y-2 animate-in fade-in duration-300">
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                       💼 Group Corporate Billing
                     </label>
-                    <p className="text-[10px] text-gray-400 leading-normal">
+                    <p className="text-[10px] text-gray-200 leading-normal">
                       This stay is linked to corporate group <strong>{activeProcessingOrder.bookings.group_accounts?.name || 'Company'}</strong>. Choose drycleaning billing target:
                     </p>
                     <div className="grid grid-cols-2 gap-2 bg-dark-800 p-1 rounded-lg border border-dark-700/50">
@@ -1161,7 +1161,7 @@ const AdminLaundry = () => {
 
                 {/* Processing details */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Processed Clothes Details / Laundering Notes</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Processed Clothes Details / Laundering Notes</label>
                   <textarea 
                     value={launderingNotes}
                     onChange={e => setLaunderingNotes(e.target.value)}
@@ -1172,9 +1172,9 @@ const AdminLaundry = () => {
 
                 {/* Pricing Fee */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Total Laundry Charge Fee (₦) *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Total Laundry Charge Fee (₦) *</label>
                   <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 font-bold">₦</span>
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300 font-bold">₦</span>
                     <input 
                       type="number"
                       required
@@ -1187,7 +1187,7 @@ const AdminLaundry = () => {
                   </div>
                 </div>
 
-                <div className="bg-blue-500/5 border border-blue-500/10 p-4 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-400 leading-relaxed">
+                <div className="bg-blue-500/5 border border-blue-500/10 p-4 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-200 leading-relaxed">
                   <ShieldCheck className="text-blue-400 w-5 h-5 flex-shrink-0" />
                   <p>💡 Clicking complete will update the stay enhancements invoice folio with this custom Laundering Fee. The guest will settle this charge upon checking out of the hotel.</p>
                 </div>
@@ -1197,7 +1197,7 @@ const AdminLaundry = () => {
                 <button 
                   type="button"
                   onClick={() => setActiveProcessingOrder(null)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -1224,7 +1224,7 @@ const AdminLaundry = () => {
               </h2>
               <button 
                 onClick={() => setShowWalkinForm(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -1237,9 +1237,9 @@ const AdminLaundry = () => {
                 <h3 className="text-[10px] font-bold uppercase tracking-wider text-blue-400">1. Customer Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Customer Full Name *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Customer Full Name *</label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={14} />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
                       <input 
                         type="text" required
                         placeholder="e.g. Chief Emeka"
@@ -1250,9 +1250,9 @@ const AdminLaundry = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Phone Number *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Phone Number *</label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={14} />
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
                       <input 
                         type="tel" required
                         placeholder="e.g. +234803..."
@@ -1263,9 +1263,9 @@ const AdminLaundry = () => {
                     </div>
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Email Address (Optional)</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Email Address (Optional)</label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={14} />
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
                       <input 
                         type="email"
                         placeholder="e.g. customer@laundry.com"
@@ -1282,7 +1282,7 @@ const AdminLaundry = () => {
                 <h3 className="text-[10px] font-bold uppercase tracking-wider text-blue-400">2. Laundry details</h3>
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Clothes Description list *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Clothes Description list *</label>
                     <textarea 
                       required
                       placeholder="e.g. 2 Native wears drycleaning, 3 Premium Cotton Suits."
@@ -1294,7 +1294,7 @@ const AdminLaundry = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-400 mb-1">Total Quantity</label>
+                      <label className="block text-xs font-semibold text-gray-200 mb-1">Total Quantity</label>
                       <input 
                         type="number" min="1" required
                         value={walkinForm.quantity}
@@ -1303,7 +1303,7 @@ const AdminLaundry = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-400 mb-1">Custom laundering Charge (₦) *</label>
+                      <label className="block text-xs font-semibold text-gray-200 mb-1">Custom laundering Charge (₦) *</label>
                       <input 
                         type="number" min="1" required
                         placeholder="e.g. 15000"
@@ -1344,7 +1344,7 @@ const AdminLaundry = () => {
 
                   {walkinForm.isPaid && (
                     <div>
-                      <label className="block text-xs font-semibold text-gray-400 mb-1">Payment Method</label>
+                      <label className="block text-xs font-semibold text-gray-200 mb-1">Payment Method</label>
                       <select 
                         value={walkinForm.paymentMethod}
                         onChange={e => setWalkinForm({...walkinForm, paymentMethod: e.target.value})}
@@ -1356,7 +1356,7 @@ const AdminLaundry = () => {
                   )}
                 </div>
 
-                <div className="bg-emerald-500/5 border border-emerald-500/10 p-3.5 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-400 leading-relaxed mt-2">
+                <div className="bg-emerald-500/5 border border-emerald-500/10 p-3.5 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-200 leading-relaxed mt-2">
                   <ShieldCheck className="text-emerald-400 w-5 h-5 flex-shrink-0" />
                   <p>💡 Submitting this walk-in registry registers the transaction directly as a cash/POS receipt in the general ledger. It will instantly update accounting inflows under the "Laundry Revenue" category.</p>
                 </div>
@@ -1366,7 +1366,7 @@ const AdminLaundry = () => {
                 <button 
                   type="button"
                   onClick={() => setShowWalkinForm(false)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -1394,7 +1394,7 @@ const AdminLaundry = () => {
               </h2>
               <button 
                 onClick={() => setIsCloseOfDayModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -1403,19 +1403,19 @@ const AdminLaundry = () => {
             <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Consolidated Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Consolidated Revenue</span>
                   <span className="text-2xl font-black text-white">₦{closeOfDayReport.total_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.total_count} total transactions</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.total_count} total transactions</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Walk-in Sales Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Walk-in Sales Revenue</span>
                   <span className="text-2xl font-black text-blue-400">₦{closeOfDayReport.total_walkin_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.walkin_txns.length} walk-in receipts</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.walkin_txns.length} walk-in receipts</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">In-house Guest Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">In-house Guest Revenue</span>
                   <span className="text-2xl font-black text-brand-500">₦{closeOfDayReport.total_inhouse_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.inhouse_txns.length} stay folio charges</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.inhouse_txns.length} stay folio charges</span>
                 </div>
               </div>
 
@@ -1426,12 +1426,12 @@ const AdminLaundry = () => {
                   Walk-In Direct Sales Receipts
                 </h3>
                 {closeOfDayReport.walkin_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No walk-in sales recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No walk-in sales recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Reference / Customer</th>
                           <th className="py-2 px-3">Description</th>
@@ -1442,7 +1442,7 @@ const AdminLaundry = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.walkin_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -1466,12 +1466,12 @@ const AdminLaundry = () => {
                   In-House Suite Stay Folio Charges
                 </h3>
                 {closeOfDayReport.inhouse_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No in-house guest laundry charges recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No in-house guest laundry charges recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Booking Ref</th>
                           <th className="py-2 px-3">Description</th>
@@ -1482,7 +1482,7 @@ const AdminLaundry = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.inhouse_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -1504,7 +1504,7 @@ const AdminLaundry = () => {
               <button 
                 type="button"
                 onClick={() => setIsCloseOfDayModalOpen(false)}
-                className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
               >
                 Cancel
               </button>

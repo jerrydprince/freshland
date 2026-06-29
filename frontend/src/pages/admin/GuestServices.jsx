@@ -168,7 +168,7 @@ const GuestServices = () => {
   });
 
   if (!hasAccess('Guest Services')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to access Guest Services.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to access Guest Services.</div>;
   }
 
   return (
@@ -179,7 +179,7 @@ const GuestServices = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Package className="text-brand-500"/> Guest Services & Add-ons
           </h1>
-          <p className="text-gray-400 mt-1">Create and manage optional paid services for guests during booking or stay.</p>
+          <p className="text-gray-200 mt-1">Create and manage optional paid services for guests during booking or stay.</p>
         </div>
         <button onClick={() => handleOpenModal()} className="btn-primary flex items-center gap-2 mt-4 md:mt-0 py-2.5 px-5 text-sm">
           <Plus size={18} /> New Service
@@ -189,7 +189,7 @@ const GuestServices = () => {
       {/* Filters */}
       <div className="flex flex-col md:flex-row gap-4 mb-6">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18}/>
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={18}/>
           <input 
             type="text" 
             placeholder="Search services by name or code..." 
@@ -199,7 +199,7 @@ const GuestServices = () => {
           />
         </div>
         <div className="relative w-full md:w-64">
-          <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18}/>
+          <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={18}/>
           <select 
             value={filterCategory}
             onChange={e => setFilterCategory(e.target.value)}
@@ -218,7 +218,7 @@ const GuestServices = () => {
         <div className="bg-dark-800 border border-dark-700 rounded-lg p-12 text-center">
           <Package className="mx-auto h-12 w-12 text-gray-600 mb-4" />
           <h3 className="text-lg font-medium text-white mb-2">No services found</h3>
-          <p className="text-gray-400 mb-6">Get started by creating your first guest service.</p>
+          <p className="text-gray-200 mb-6">Get started by creating your first guest service.</p>
           <button onClick={() => handleOpenModal()} className="btn-primary inline-flex items-center gap-2">
             <Plus size={18} /> Create Service
           </button>
@@ -235,26 +235,26 @@ const GuestServices = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-white text-lg leading-tight">{service.name}</h3>
-                      <span className="text-xs text-gray-400 bg-dark-900 px-2 py-0.5 rounded-full border border-dark-700">{service.category}</span>
+                      <span className="text-xs text-gray-200 bg-dark-900 px-2 py-0.5 rounded-full border border-dark-700">{service.category}</span>
                     </div>
                   </div>
                   <button 
                     onClick={() => toggleStatus(service)}
-                    className={`text-xs px-2 py-1 rounded-full border font-medium ${service.is_active ? 'bg-green-500/10 text-green-500 border-green-500/20' : 'bg-gray-500/10 text-gray-400 border-gray-500/20'}`}
+                    className={`text-xs px-2 py-1 rounded-full border font-medium ${service.is_active ? 'bg-green-500/10 text-green-500 border-green-500/20' : 'bg-gray-500/10 text-gray-200 border-gray-500/20'}`}
                   >
                     {service.is_active ? 'Active' : 'Inactive'}
                   </button>
                 </div>
                 
-                <p className="text-sm text-gray-400 mb-4 line-clamp-2">{service.description || 'No description provided.'}</p>
+                <p className="text-sm text-gray-200 mb-4 line-clamp-2">{service.description || 'No description provided.'}</p>
                 
                 <div className="bg-dark-900/50 rounded-lg p-3 space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs text-gray-500 flex items-center gap-1"><DollarSign size={14}/> Base Price</span>
+                    <span className="text-xs text-gray-300 flex items-center gap-1"><DollarSign size={14}/> Base Price</span>
                     <span className="text-sm font-bold text-white">₦{Number(service.base_price_ngn).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-xs text-gray-500 flex items-center gap-1"><Settings size={14}/> Pricing Model</span>
+                    <span className="text-xs text-gray-300 flex items-center gap-1"><Settings size={14}/> Pricing Model</span>
                     <span className="text-xs font-medium text-brand-400 capitalize">{formatPriceType(service.pricing_type)}</span>
                   </div>
                   <div className="flex gap-2 mt-2 pt-2 border-t border-dark-700">
@@ -268,10 +268,10 @@ const GuestServices = () => {
               </div>
               
               <div className="border-t border-dark-700 bg-dark-900/50 p-3 flex justify-between">
-                <button onClick={() => handleOpenModal(service)} className="text-sm text-gray-400 hover:text-white flex items-center gap-1 px-2 py-1 transition-colors">
+                <button onClick={() => handleOpenModal(service)} className="text-sm text-gray-200 hover:text-white flex items-center gap-1 px-2 py-1 transition-colors">
                   <Edit2 size={14} /> Edit
                 </button>
-                <button onClick={() => handleDelete(service.id)} className="text-sm text-gray-500 hover:text-red-400 flex items-center gap-1 px-2 py-1 transition-colors">
+                <button onClick={() => handleDelete(service.id)} className="text-sm text-gray-300 hover:text-red-400 flex items-center gap-1 px-2 py-1 transition-colors">
                   <Trash2 size={14} /> Delete
                 </button>
               </div>
@@ -289,7 +289,7 @@ const GuestServices = () => {
                 {isEditing ? <Edit2 size={20} className="text-brand-500"/> : <Plus size={20} className="text-brand-500"/>} 
                 {isEditing ? 'Edit Service' : 'Create New Service'}
               </h2>
-              <button onClick={handleCloseModal} className="text-gray-400 hover:text-white transition-colors"><X size={24} /></button>
+              <button onClick={handleCloseModal} className="text-gray-200 hover:text-white transition-colors"><X size={24} /></button>
             </div>
             
             <div className="p-6 overflow-y-auto flex-1 custom-scrollbar">
@@ -300,7 +300,7 @@ const GuestServices = () => {
                   <h3 className="text-sm font-bold text-brand-500 uppercase tracking-wider mb-2">Basic Information</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Service Name *</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Service Name *</label>
                       <input 
                         type="text" required
                         value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
@@ -309,7 +309,7 @@ const GuestServices = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Category *</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Category *</label>
                       <select 
                         value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}
                         className="w-full bg-dark-900 border border-dark-700 text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-brand-500"
@@ -318,7 +318,7 @@ const GuestServices = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Internal Code (Optional)</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Internal Code (Optional)</label>
                       <input 
                         type="text" 
                         value={formData.code} onChange={e => setFormData({...formData, code: e.target.value})}
@@ -327,7 +327,7 @@ const GuestServices = () => {
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Description</label>
                       <textarea 
                         value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})}
                         className="w-full bg-dark-900 border border-dark-700 text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-brand-500 min-h-[80px]"
@@ -344,7 +344,7 @@ const GuestServices = () => {
                   <h3 className="text-sm font-bold text-brand-500 uppercase tracking-wider mb-2">Pricing & Rules</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Base Price (₦) *</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Base Price (₦) *</label>
                       <input 
                         type="number" required min="0"
                         value={formData.base_price_ngn} onChange={e => setFormData({...formData, base_price_ngn: e.target.value})}
@@ -352,7 +352,7 @@ const GuestServices = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-1">Pricing Model *</label>
+                      <label className="block text-sm font-medium text-gray-200 mb-1">Pricing Model *</label>
                       <select 
                         value={formData.pricing_type} onChange={e => setFormData({...formData, pricing_type: e.target.value})}
                         className="w-full bg-dark-900 border border-dark-700 text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-brand-500"
@@ -378,7 +378,7 @@ const GuestServices = () => {
                       />
                       <div>
                         <span className="block text-white font-medium">Requires Scheduling</span>
-                        <span className="block text-xs text-gray-400">Guest must select Date & Time (e.g. Spa)</span>
+                        <span className="block text-xs text-gray-200">Guest must select Date & Time (e.g. Spa)</span>
                       </div>
                     </label>
                     
@@ -391,7 +391,7 @@ const GuestServices = () => {
                       />
                       <div>
                         <span className="block text-white font-medium">Enable Quantity</span>
-                        <span className="block text-xs text-gray-400">Guest can select amount (e.g. Laundry items)</span>
+                        <span className="block text-xs text-gray-200">Guest can select amount (e.g. Laundry items)</span>
                       </div>
                     </label>
 
@@ -404,7 +404,7 @@ const GuestServices = () => {
                       />
                       <div>
                         <span className="block text-white font-medium">Charge 7.5% VAT / Tax</span>
-                        <span className="block text-xs text-gray-400">Apply standard VAT to transactions of this service</span>
+                        <span className="block text-xs text-gray-200">Apply standard VAT to transactions of this service</span>
                       </div>
                     </label>
                   </div>
@@ -414,7 +414,7 @@ const GuestServices = () => {
             </div>
             
             <div className="p-6 border-t border-dark-700 bg-dark-900/50 flex justify-end gap-3 rounded-b-2xl">
-              <button onClick={handleCloseModal} className="px-5 py-2.5 text-gray-400 hover:text-white transition-colors">Cancel</button>
+              <button onClick={handleCloseModal} className="px-5 py-2.5 text-gray-200 hover:text-white transition-colors">Cancel</button>
               <button type="submit" form="serviceForm" className="btn-primary py-2.5 px-6 flex items-center gap-2">
                 <Save size={18} /> {isEditing ? 'Save Changes' : 'Create Service'}
               </button>

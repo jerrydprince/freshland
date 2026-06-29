@@ -234,7 +234,7 @@ const GuestDashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 bg-dark-900 text-gray-400">
+      <div className="flex flex-col items-center justify-center py-20 bg-dark-900 text-gray-200">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold-500 mb-4"></div>
         <p>Loading your personal dashboard...</p>
       </div>
@@ -247,7 +247,7 @@ const GuestDashboard = () => {
     <div className="space-y-10 text-white">
       <div>
         <h2 className="text-3xl font-bold text-white">Welcome back, {guestFirstName}!</h2>
-        <p className="text-gray-400 mt-1">Manage your luxury stays, loyalty points, and premium service requests.</p>
+        <p className="text-gray-200 mt-1">Manage your luxury stays, loyalty points, and premium service requests.</p>
       </div>
       
       {/* Quick Stats Grid */}
@@ -257,7 +257,7 @@ const GuestDashboard = () => {
             <CalendarDays size={24} />
           </div>
           <div>
-            <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">Upcoming Stays</p>
+            <p className="text-gray-200 text-xs uppercase tracking-wider font-semibold">Upcoming Stays</p>
             <h3 className="text-2xl font-bold mt-1 text-white">{upcomingStays.length}</h3>
           </div>
         </div>
@@ -266,7 +266,7 @@ const GuestDashboard = () => {
             <Key size={24} />
           </div>
           <div>
-            <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">Past Stays</p>
+            <p className="text-gray-200 text-xs uppercase tracking-wider font-semibold">Past Stays</p>
             <h3 className="text-2xl font-bold mt-1 text-white">{pastStays.length}</h3>
           </div>
         </div>
@@ -275,7 +275,7 @@ const GuestDashboard = () => {
             <FileText size={24} />
           </div>
           <div>
-            <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">Loyalty Points</p>
+            <p className="text-gray-200 text-xs uppercase tracking-wider font-semibold">Loyalty Points</p>
             <h3 className="text-2xl font-bold mt-1 text-gold-500">{crmGuest?.loyalty_points || 0} pts</h3>
           </div>
         </div>
@@ -284,7 +284,7 @@ const GuestDashboard = () => {
             <Wallet size={24} />
           </div>
           <div>
-            <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">Wallet Balance</p>
+            <p className="text-gray-200 text-xs uppercase tracking-wider font-semibold">Wallet Balance</p>
             <h3 className="text-2xl font-bold mt-1 text-white">₦{Number(crmGuest?.wallet_balance || 0).toLocaleString()}</h3>
           </div>
         </div>
@@ -322,14 +322,14 @@ const GuestDashboard = () => {
             <div className="flex-1 p-6 md:py-8 md:pr-8 flex flex-col justify-between">
               <div>
                 <h4 className="text-2xl font-extrabold text-white mb-1">{nextStay.rooms?.name || 'Luxury Suite'}</h4>
-                <p className="text-gray-400 flex items-center gap-1.5 text-sm mb-4"><MapPin size={16} className="text-gold-500"/> Room {nextStay.rooms?.room_number || 'N/A'} — Victoria Island, Lagos</p>
+                <p className="text-gray-200 flex items-center gap-1.5 text-sm mb-4"><MapPin size={16} className="text-gold-500"/> Room {nextStay.rooms?.room_number || 'N/A'} — Victoria Island, Lagos</p>
                 
                 {isCheckoutCommenced && (
                   <div className="mb-4 bg-amber-500/10 border border-amber-500/25 text-amber-400 p-3.5 rounded-lg text-xs font-semibold animate-pulse flex items-start gap-2">
                     <span className="text-sm">⚠️</span>
                     <div>
                       <strong>Checkout has Commenced</strong>
-                      <p className="text-[10px] text-gray-400 mt-0.5">Checkout began at 11:00 AM today. Please prepare to checkout by 12:00 PM.</p>
+                      <p className="text-[10px] text-gray-200 mt-0.5">Checkout began at 11:00 AM today. Please prepare to checkout by 12:00 PM.</p>
                     </div>
                   </div>
                 )}
@@ -339,7 +339,7 @@ const GuestDashboard = () => {
                     <span className="text-sm">🛑</span>
                     <div>
                       <strong>Checkout Time Elapsed</strong>
-                      <p className="text-[10px] text-gray-400 mt-0.5">Your checkout deadline has elapsed. Please proceed to the front desk reception.</p>
+                      <p className="text-[10px] text-gray-200 mt-0.5">Your checkout deadline has elapsed. Please proceed to the front desk reception.</p>
                     </div>
                   </div>
                 )}
@@ -349,21 +349,21 @@ const GuestDashboard = () => {
                     <span className="text-sm">⏰</span>
                     <div>
                       <strong>Late Checkout Approved</strong>
-                      <p className="text-[10px] text-gray-400 mt-0.5">Your checkout has been successfully extended until 4:00 PM today.</p>
+                      <p className="text-[10px] text-gray-200 mt-0.5">Your checkout has been successfully extended until 4:00 PM today.</p>
                     </div>
                   </div>
                 )}
 
                 <div className="grid grid-cols-2 gap-6 mb-8 bg-dark-900 border border-dark-700/50 p-4 rounded-lg">
                   <div>
-                    <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-1">Check-in Date</p>
+                    <p className="text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-1">Check-in Date</p>
                     <p className="font-bold text-white text-base">{format(new Date(nextStay.check_in_date), 'MMM dd, yyyy')}</p>
-                    <p className="text-gray-400 text-xs mt-0.5">After 2:00 PM</p>
+                    <p className="text-gray-200 text-xs mt-0.5">After 2:00 PM</p>
                   </div>
                   <div>
-                    <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-1">Check-out Date</p>
+                    <p className="text-gray-300 text-[10px] uppercase font-bold tracking-widest mb-1">Check-out Date</p>
                     <p className="font-bold text-white text-base">{format(new Date(nextStay.check_out_date), 'MMM dd, yyyy')}</p>
-                    <p className="text-gray-400 text-xs mt-0.5">Before 12:00 PM {hasActiveLateCheckout && "(Extended)"}</p>
+                    <p className="text-gray-200 text-xs mt-0.5">Before 12:00 PM {hasActiveLateCheckout && "(Extended)"}</p>
                   </div>
                 </div>
               </div>
@@ -384,7 +384,7 @@ const GuestDashboard = () => {
         ) : (
           <div className="bg-dark-800 border border-dark-700 rounded-xl p-10 text-center space-y-6 max-w-xl mx-auto shadow-md">
             <h4 className="text-xl font-bold text-white">No Upcoming Reservations Found</h4>
-            <p className="text-gray-400 text-sm max-w-sm mx-auto">
+            <p className="text-gray-200 text-sm max-w-sm mx-auto">
               Plan your next luxury escape with us today! Experience premium comforts, spectacular city views, and Victoria Island elegance.
             </p>
             <Link to="/booking" className="btn-primary py-3 px-8 text-sm inline-block rounded font-bold shadow-md uppercase tracking-wider">
@@ -410,7 +410,7 @@ const GuestDashboard = () => {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-dark-700 text-gray-400 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-dark-700 text-gray-200 text-xs uppercase tracking-wider">
                     <th className="py-3 px-4">Service</th>
                     <th className="py-3 px-4">Room / Booking</th>
                     <th className="py-3 px-4">Scheduled For</th>
@@ -467,7 +467,7 @@ const GuestDashboard = () => {
                           )}
                         </td>
                         <td className="py-4 px-4 text-center">
-                          <span className={`px-2.5 py-1 text-xs uppercase font-extrabold tracking-wider border rounded-full ${statusColors[req.status] || 'bg-gray-500/10 text-gray-500'}`}>
+                          <span className={`px-2.5 py-1 text-xs uppercase font-extrabold tracking-wider border rounded-full ${statusColors[req.status] || 'bg-gray-500/10 text-gray-300'}`}>
                             {req.status}
                           </span>
                         </td>
@@ -479,7 +479,7 @@ const GuestDashboard = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-dark-800 border border-dark-700 rounded-xl p-8 text-center text-gray-400">
+          <div className="bg-dark-800 border border-dark-700 rounded-xl p-8 text-center text-gray-200">
             <p className="mb-4">You have not requested any additional room services or stay enhancements yet.</p>
             <Link to="/guest/services" className="border border-gold-500/30 text-gold-500 hover:bg-gold-500/10 font-bold py-2 px-6 rounded text-sm transition-colors">
               Browse Stay Enhancements

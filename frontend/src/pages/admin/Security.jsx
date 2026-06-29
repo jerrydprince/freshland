@@ -402,22 +402,22 @@ const AdminSecurity = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Shield className="text-brand-500"/> Security & Privacy Center
           </h1>
-          <p className="text-gray-400 mt-1">Manage global access controls, enforce password standards, and monitor unified audit trails.</p>
+          <p className="text-gray-200 mt-1">Manage global access controls, enforce password standards, and monitor unified audit trails.</p>
         </div>
       </div>
 
       <div className="flex gap-4 border-b border-dark-700 mb-6 overflow-x-auto select-none">
-        <button onClick={() => setActiveTab('access')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'access' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('access')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'access' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Key size={18} /> Access Policies
         </button>
-        <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Activity size={18} /> Central Central System Logs
         </button>
-        <button onClick={() => setActiveTab('gdpr')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'gdpr' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('gdpr')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'gdpr' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Server size={18} /> GDPR & Backups
         </button>
         {isSuperAdmin && (
-          <button onClick={() => setActiveTab('recovery')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'recovery' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('recovery')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'recovery' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <RefreshCcw size={18} /> Transaction Recovery Ledger
           </button>
         )}
@@ -435,7 +435,7 @@ const AdminSecurity = () => {
                 <input type="checkbox" id="2fa" checked={settings.require_2fa} onChange={e => setSettings({...settings, require_2fa: e.target.checked})} className="w-5 h-5 accent-brand-500 rounded mt-1 cursor-pointer" />
                 <div>
                   <label htmlFor="2fa" className="text-sm font-bold text-white block cursor-pointer">Enforce Two-Factor Authentication (2FA)</label>
-                  <span className="text-xs text-gray-400">Require all administrative and front-desk staff to configure Authenticator App (TOTP) codes on next login.</span>
+                  <span className="text-xs text-gray-200">Require all administrative and front-desk staff to configure Authenticator App (TOTP) codes on next login.</span>
                 </div>
               </div>
 
@@ -443,18 +443,18 @@ const AdminSecurity = () => {
                 <input type="checkbox" id="strongPwd" checked={settings.enforce_strong_passwords} onChange={e => setSettings({...settings, enforce_strong_passwords: e.target.checked})} className="w-5 h-5 accent-brand-500 rounded mt-1 cursor-pointer" />
                 <div>
                   <label htmlFor="strongPwd" className="text-sm font-bold text-white block cursor-pointer">Enforce Strong Passwords</label>
-                  <span className="text-xs text-gray-400">Require a minimum of 6 characters, including uppercase and lowercase letters, numbers, and special symbols.</span>
+                  <span className="text-xs text-gray-200">Require a minimum of 6 characters, including uppercase and lowercase letters, numbers, and special symbols.</span>
                 </div>
               </div>
 
               <div className="bg-dark-900 p-5 border border-dark-700 rounded flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
                   <label className="text-sm font-bold text-white block mb-1">Session Inactivity Timeout</label>
-                  <span className="text-xs text-gray-400">Automatically log users out after a set period of idle time. (Enforced globally)</span>
+                  <span className="text-xs text-gray-200">Automatically log users out after a set period of idle time. (Enforced globally)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input type="number" min="5" max="1440" value={settings.session_timeout_minutes} onChange={e => setSettings({...settings, session_timeout_minutes: parseInt(e.target.value)})} className="w-24 bg-dark-800 text-white border border-dark-600 rounded p-2 focus:border-brand-500 outline-none text-center font-mono" />
-                  <span className="text-sm text-gray-400 font-bold">Minutes</span>
+                  <span className="text-sm text-gray-200 font-bold">Minutes</span>
                 </div>
               </div>
 
@@ -472,7 +472,7 @@ const AdminSecurity = () => {
             <div className="p-4 border-b border-dark-700 bg-dark-900 flex flex-wrap gap-4 items-center justify-between">
               <div className="flex flex-wrap items-center gap-3">
                 <div className="relative w-64">
-                  <Search className="absolute left-3 top-2.5 text-gray-500 w-4 h-4" />
+                  <Search className="absolute left-3 top-2.5 text-gray-300 w-4 h-4" />
                   <input 
                     type="text"
                     placeholder="Search by action, email, staff..."
@@ -494,8 +494,8 @@ const AdminSecurity = () => {
                 </select>
 
                 <div className="flex items-center gap-2 bg-dark-800 border border-dark-700 rounded-xl px-2.5 py-1.5">
-                  <Calendar size={12} className="text-gray-500" />
-                  <span className="text-[10px] text-gray-500 uppercase font-extrabold tracking-wider">From:</span>
+                  <Calendar size={12} className="text-gray-300" />
+                  <span className="text-[10px] text-gray-300 uppercase font-extrabold tracking-wider">From:</span>
                   <input 
                     type="date"
                     value={startDate}
@@ -506,8 +506,8 @@ const AdminSecurity = () => {
                 </div>
 
                 <div className="flex items-center gap-2 bg-dark-800 border border-dark-700 rounded-xl px-2.5 py-1.5">
-                  <Calendar size={12} className="text-gray-500" />
-                  <span className="text-[10px] text-gray-500 uppercase font-extrabold tracking-wider">To:</span>
+                  <Calendar size={12} className="text-gray-300" />
+                  <span className="text-[10px] text-gray-300 uppercase font-extrabold tracking-wider">To:</span>
                   <input 
                     type="date"
                     value={endDate}
@@ -535,7 +535,7 @@ const AdminSecurity = () => {
             {/* Logs Table */}
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+                <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
                   <tr>
                     <th className="p-4 font-semibold">Timestamp</th>
                     <th className="p-4 font-semibold">Log Type</th>
@@ -547,29 +547,29 @@ const AdminSecurity = () => {
                 </thead>
                 <tbody className="divide-y divide-dark-700 bg-dark-800">
                   {loading ? (
-                    <tr><td colSpan="6" className="p-12 text-center text-gray-500"><div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-500 mx-auto"></div></td></tr>
+                    <tr><td colSpan="6" className="p-12 text-center text-gray-300"><div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-500 mx-auto"></div></td></tr>
                   ) : masterLogs.length === 0 ? (
-                    <tr><td colSpan="6" className="p-12 text-center text-gray-500">No consolidated logs recorded matching the search conditions.</td></tr>
+                    <tr><td colSpan="6" className="p-12 text-center text-gray-300">No consolidated logs recorded matching the search conditions.</td></tr>
                   ) : (
                     masterLogs.map(log => (
                       <tr key={log.id} className="hover:bg-dark-700/30 transition-colors">
-                        <td className="p-4 text-gray-400 font-mono text-xs whitespace-nowrap">{new Date(log.created_at).toLocaleString()}</td>
+                        <td className="p-4 text-gray-200 font-mono text-xs whitespace-nowrap">{new Date(log.created_at).toLocaleString()}</td>
                         <td className="p-4 whitespace-nowrap">{getLogTypeBadge(log.log_type)}</td>
                         <td className="p-4 whitespace-nowrap">
                           <span className="font-bold text-white">{log.profiles ? `${log.profiles.first_name} ${log.profiles.last_name}` : 'System Auto'}</span>
                           {log.profiles && getRoleBadge(log.profiles.role)}
-                          {log.email && <div className="text-xs text-gray-500">{log.email}</div>}
+                          {log.email && <div className="text-xs text-gray-300">{log.email}</div>}
                         </td>
                         <td className="p-4">
                           <span className="font-medium text-white">{log.action}</span>
                           {log.metadata && Object.keys(log.metadata).length > 0 && (
-                            <div className="text-[10px] text-gray-400 font-mono mt-1 max-w-xs truncate" title={JSON.stringify(log.metadata)}>
+                            <div className="text-[10px] text-gray-200 font-mono mt-1 max-w-xs truncate" title={JSON.stringify(log.metadata)}>
                               {JSON.stringify(log.metadata)}
                             </div>
                           )}
                         </td>
-                        <td className="p-4 font-mono text-xs text-gray-400 whitespace-nowrap">{log.entity_table || log.module || 'System'}</td>
-                        <td className="p-4 font-mono text-xs text-gray-400 whitespace-nowrap">{log.ip_address || '127.0.0.1'}</td>
+                        <td className="p-4 font-mono text-xs text-gray-200 whitespace-nowrap">{log.entity_table || log.module || 'System'}</td>
+                        <td className="p-4 font-mono text-xs text-gray-200 whitespace-nowrap">{log.ip_address || '127.0.0.1'}</td>
                       </tr>
                     ))
                   )}
@@ -579,7 +579,7 @@ const AdminSecurity = () => {
 
             {/* Pagination Controls */}
             <div className="p-4 border-t border-dark-700 bg-dark-900 flex flex-col sm:flex-row items-center justify-between gap-4 select-none">
-              <div className="text-xs font-semibold text-gray-400">
+              <div className="text-xs font-semibold text-gray-200">
                 Showing <span className="text-white font-bold">{masterLogs.length > 0 ? (currentPage - 1) * pageSize + 1 : 0}</span> to{' '}
                 <span className="text-white font-bold">
                   {Math.min(currentPage * pageSize, totalCount)}
@@ -590,7 +590,7 @@ const AdminSecurity = () => {
               <div className="flex items-center gap-3">
                 {/* Page Size Selector */}
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-gray-500 uppercase font-black tracking-wider">Page Size:</span>
+                  <span className="text-[10px] text-gray-300 uppercase font-black tracking-wider">Page Size:</span>
                   <select
                     value={pageSize}
                     onChange={e => {
@@ -645,7 +645,7 @@ const AdminSecurity = () => {
                 
                 <div className="bg-dark-900 p-5 border border-dark-700 rounded">
                   <label className="text-sm font-bold text-white block mb-2">Data Retention Period (Days)</label>
-                  <p className="text-xs text-gray-400 mb-4">Under GDPR guidelines, personally identifiable guest data should be anonymized or deleted after this threshold (from checkout date).</p>
+                  <p className="text-xs text-gray-200 mb-4">Under GDPR guidelines, personally identifiable guest data should be anonymized or deleted after this threshold (from checkout date).</p>
                   <input type="number" min="30" value={settings.gdpr_data_retention_days} onChange={e => setSettings({...settings, gdpr_data_retention_days: parseInt(e.target.value)})} className="w-full bg-dark-800 text-white border border-dark-600 rounded p-3 focus:border-brand-500 outline-none font-mono" />
                 </div>
 
@@ -653,7 +653,7 @@ const AdminSecurity = () => {
                   <input type="checkbox" id="encrypt" checked={settings.encryption_at_rest_enabled} onChange={e => setSettings({...settings, encryption_at_rest_enabled: e.target.checked})} className="w-5 h-5 accent-brand-500 rounded mt-1 cursor-pointer" />
                   <div>
                     <label htmlFor="encrypt" className="text-sm font-bold text-white block cursor-pointer">Enable Encryption at Rest (AES-256)</label>
-                    <span className="text-xs text-gray-400 block mt-1">When toggled, ensures all database volumes are encrypted on the storage layer. (Managed via Supabase Infrastructure).</span>
+                    <span className="text-xs text-gray-200 block mt-1">When toggled, ensures all database volumes are encrypted on the storage layer. (Managed via Supabase Infrastructure).</span>
                   </div>
                 </div>
 
@@ -671,13 +671,13 @@ const AdminSecurity = () => {
                     <option value="daily">Daily Backup</option>
                     <option value="weekly">Weekly Backup</option>
                   </select>
-                  <p className="text-xs text-gray-400 mt-3">Current Size: ~45.2 MB | Last automated backup: 4 hours ago.</p>
+                  <p className="text-xs text-gray-200 mt-3">Current Size: ~45.2 MB | Last automated backup: 4 hours ago.</p>
                 </div>
 
                 <div className="bg-dark-900 p-5 border border-dark-700 rounded flex flex-col gap-4">
                   <div>
                     <h5 className="font-bold text-white text-sm">Manual Snapshot</h5>
-                    <p className="text-xs text-gray-400 mt-1">Generate an immediate, downloadable JSON dump of the current settings, profiles, and logs.</p>
+                    <p className="text-xs text-gray-200 mt-1">Generate an immediate, downloadable JSON dump of the current settings, profiles, and logs.</p>
                   </div>
                   <button onClick={triggerManualBackup} className="w-full bg-blue-600/20 hover:bg-blue-600/30 text-blue-500 font-bold py-3 rounded border border-blue-500/30 transition-colors flex items-center justify-center gap-2">
                     <Download size={18}/> Generate Snapshot
@@ -687,7 +687,7 @@ const AdminSecurity = () => {
                 <div className="bg-dark-900 p-5 border border-dark-700 rounded flex flex-col gap-4">
                   <div>
                     <h5 className="font-bold text-white text-sm">Restore from Snapshot</h5>
-                    <p className="text-xs text-gray-400 mt-1">Restore system settings and profiles from a previously exported JSON backup.</p>
+                    <p className="text-xs text-gray-200 mt-1">Restore system settings and profiles from a previously exported JSON backup.</p>
                   </div>
                   <label className="w-full bg-green-600/20 hover:bg-green-600/30 text-green-500 font-bold py-3 rounded border border-green-500/30 transition-colors flex items-center justify-center gap-2 cursor-pointer text-center">
                     <RefreshCw size={18}/> Restore Backup
@@ -713,13 +713,13 @@ const AdminSecurity = () => {
                   <RefreshCcw className="text-brand-500" />
                   Deleted Transactions Protection Ledger
                 </h3>
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-gray-200 mt-1">
                   Track, audit, and instantaneously restore payment records deleted intentionally or accidentally.
                 </p>
               </div>
               <button 
                 onClick={fetchDeletedPayments}
-                className="bg-dark-900 hover:bg-dark-750 border border-dark-700 text-gray-400 hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5"
+                className="bg-dark-900 hover:bg-dark-750 border border-dark-700 text-gray-200 hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5"
               >
                 Refresh Ledger
               </button>
@@ -729,16 +729,16 @@ const AdminSecurity = () => {
               {loadingDeleted ? (
                 <div className="py-24 text-center">
                   <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-                  <p className="text-gray-500 text-xs">Querying secure soft-delete vaults...</p>
+                  <p className="text-gray-300 text-xs">Querying secure soft-delete vaults...</p>
                 </div>
               ) : deletedPayments.length === 0 ? (
-                <div className="py-24 text-center text-gray-500">
+                <div className="py-24 text-center text-gray-300">
                   <CheckCircle size={32} className="mx-auto mb-2 opacity-30 text-green-500 animate-pulse" />
                   <p className="text-sm">Splendid! No deleted payment records found in the recovery registry.</p>
                 </div>
               ) : (
                 <table className="w-full text-left text-xs font-sans">
-                  <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-400 uppercase tracking-wider text-[10px]">
+                  <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-200 uppercase tracking-wider text-[10px]">
                     <tr>
                       <th className="p-4 font-bold">Deleted Timestamp</th>
                       <th className="p-4 font-bold">Original Payment ID</th>
@@ -753,15 +753,15 @@ const AdminSecurity = () => {
                   <tbody className="divide-y divide-dark-700">
                     {deletedPayments.map(pay => (
                       <tr key={pay.id} className="hover:bg-dark-700/20 transition-colors">
-                        <td className="p-4 text-gray-400 font-mono text-[10px]">
+                        <td className="p-4 text-gray-200 font-mono text-[10px]">
                           {new Date(pay.deleted_at).toLocaleString()}
                         </td>
-                        <td className="p-4 text-gray-500 font-mono text-[10px] truncate max-w-[120px]" title={pay.payment_id}>
+                        <td className="p-4 text-gray-300 font-mono text-[10px] truncate max-w-[120px]" title={pay.payment_id}>
                           {pay.payment_id}
                         </td>
                         <td className="p-4">
                           <p className="font-extrabold text-white font-mono text-xs">{pay.transaction_ref}</p>
-                          <span className="inline-block bg-dark-800 border border-dark-700 text-gray-400 text-[8px] px-1.5 py-0.5 rounded font-sans mt-1">
+                          <span className="inline-block bg-dark-800 border border-dark-700 text-gray-200 text-[8px] px-1.5 py-0.5 rounded font-sans mt-1">
                             Booking ID: {pay.booking_id || 'N/A'}
                           </span>
                         </td>
@@ -776,7 +776,7 @@ const AdminSecurity = () => {
                             {pay.status || 'Deleted'}
                           </span>
                         </td>
-                        <td className="p-4 text-gray-400 max-w-xs truncate" title={pay.notes}>
+                        <td className="p-4 text-gray-200 max-w-xs truncate" title={pay.notes}>
                           {pay.notes || '-'}
                         </td>
                         <td className="p-4 text-right">

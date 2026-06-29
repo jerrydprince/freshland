@@ -20,7 +20,7 @@ const WhatsAppWidget = () => {
     fetchWhatsAppSetting();
   }, []);
   
-  const defaultMessage = "Hello Jemmyland Hotels! I'm interested in booking a stay.";
+  const defaultMessage = "Hello Freshland! I'm interested in booking a stay.";
   
   const handleWhatsAppClick = () => {
     if (!phoneNumber) return;

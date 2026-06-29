@@ -15,7 +15,7 @@ const GuestLayout = () => {
   const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(guestName)}&background=D97706&color=fff`;
 
   const isActive = (path) => location.pathname === path || (path !== '/guest' && location.pathname.startsWith(path));
-  const linkClass = (path) => `block px-4 py-3 md:py-2 rounded transition-colors ${isActive(path) ? 'bg-gold-500/10 text-gold-500 font-medium' : 'text-gray-400 hover:bg-dark-700 hover:text-white'}`;
+  const linkClass = (path) => `block px-4 py-3 md:py-2 rounded transition-colors ${isActive(path) ? 'bg-gold-500/10 text-gold-500 font-medium' : 'text-gray-200 hover:bg-dark-700 hover:text-white'}`;
 
   return (
     <div className="flex flex-col min-h-screen bg-dark-900">
@@ -38,10 +38,10 @@ const GuestLayout = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-sm text-white">{guestName}</h3>
-                      <p className="text-gray-400 text-xs">Guest Menu</p>
+                      <p className="text-gray-200 text-xs">Guest Menu</p>
                     </div>
                   </div>
-                  {isMobileNavOpen ? <ChevronUp size={20} className="text-gray-400"/> : <ChevronDown size={20} className="text-gray-400"/>}
+                  {isMobileNavOpen ? <ChevronUp size={20} className="text-gray-200"/> : <ChevronDown size={20} className="text-gray-200"/>}
                 </div>
 
                 {/* Desktop Profile Info */}
@@ -50,7 +50,7 @@ const GuestLayout = () => {
                     <img src={avatarUrl} alt="Profile" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="font-medium text-lg text-white">{guestName}</h3>
-                  <p className="text-gray-400 text-sm">{guestEmail}</p>
+                  <p className="text-gray-200 text-sm">{guestEmail}</p>
                 </div>
                 
                 <nav className={`p-4 md:p-6 space-y-1 ${isMobileNavOpen ? 'block' : 'hidden md:block'}`}>

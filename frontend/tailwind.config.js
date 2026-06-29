@@ -21,12 +21,15 @@ export default {
           600: 'var(--brand-600, #C95A46)',
         },
         dark: {
+          950: 'var(--bg-dark-950)',
           900: 'var(--bg-dark-900)',
           800: 'var(--bg-dark-800)',
           700: 'var(--bg-dark-700)',
           600: 'var(--bg-dark-600)',
         },
         gray: {
+          100: 'var(--text-gray-100)',
+          200: 'var(--text-gray-200)',
           300: 'var(--text-gray-300)',
           400: 'var(--text-gray-400)',
           500: 'var(--text-gray-500)',

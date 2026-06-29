@@ -16,7 +16,7 @@ const StatCard = ({ title, value, icon, trend, delayClass, glowColor = "from-bra
     
     <div className="flex justify-between items-start relative z-10">
       <div>
-        <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2 font-sans">{title}</p>
+        <p className="text-gray-200 text-xs font-semibold uppercase tracking-wider mb-2 font-sans">{title}</p>
         <h3 className="text-3xl font-black text-white tracking-tight font-sans bg-clip-text bg-gradient-to-r from-white to-gray-200">{value}</h3>
       </div>
       <div className="w-12 h-12 bg-dark-900/90 backdrop-blur border border-white/10 flex items-center justify-center text-brand-500 rounded-xl shadow-md group-hover:scale-110 group-hover:text-white group-hover:bg-brand-500 transition-all duration-300">
@@ -29,7 +29,7 @@ const StatCard = ({ title, value, icon, trend, delayClass, glowColor = "from-bra
         <ArrowUpRight size={12} className="mr-0.5" />
         {trend}
       </span>
-      <span className="text-gray-500 ml-2 font-medium">vs last month</span>
+      <span className="text-gray-300 ml-2 font-medium">vs last month</span>
     </div>
   </div>
 );
@@ -420,7 +420,7 @@ const AdminDashboard = () => {
           <h1 className="text-3xl font-black text-white tracking-tight flex items-center gap-2 font-sans bg-clip-text bg-gradient-to-r from-white to-gray-400">
             PMS Live Operations Overview
           </h1>
-          <p className="text-gray-400 mt-1 font-medium font-sans">Welcome back. Here is what's happening at your property today.</p>
+          <p className="text-gray-200 mt-1 font-medium font-sans">Welcome back. Here is what's happening at your property today.</p>
         </div>
         <button className="hidden md:flex items-center gap-2 bg-dark-800 border border-dark-700 hover:border-brand-500/50 text-white px-4 py-2 rounded-lg transition-all shadow-sm font-sans font-semibold">
           <CalendarDays size={18} className="text-brand-500"/>
@@ -453,13 +453,13 @@ const AdminDashboard = () => {
               <div className="lg:col-span-2 glass-panel p-6 rounded-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 fill-mode-both">
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="text-xl font-bold text-white">Recent Transactions</h3>
-                  <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-dark-700 transition-colors"><MoreHorizontal size={20}/></button>
+                  <button className="p-2 text-gray-200 hover:text-white rounded-lg hover:bg-dark-700 transition-colors"><MoreHorizontal size={20}/></button>
                 </div>
                 
                 <div className="overflow-x-auto">
                   <table className="w-full text-left">
                     <thead>
-                      <tr className="text-gray-400 text-xs uppercase tracking-wider border-b border-dark-700/50">
+                      <tr className="text-gray-200 text-xs uppercase tracking-wider border-b border-dark-700/50">
                         <th className="pb-3 font-semibold px-2">Guest</th>
                         <th className="pb-3 font-semibold px-2">Room</th>
                         <th className="pb-3 font-semibold px-2">Date</th>
@@ -470,7 +470,7 @@ const AdminDashboard = () => {
                     <tbody className="text-sm">
                       {loading ? (
                         <tr>
-                          <td colSpan="5" className="py-12 text-center text-gray-400">
+                          <td colSpan="5" className="py-12 text-center text-gray-200">
                             <div className="animate-pulse flex flex-col items-center">
                               <div className="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin mb-4"></div>
                               Loading data...
@@ -479,7 +479,7 @@ const AdminDashboard = () => {
                         </tr>
                       ) : (recentBookings || []).length === 0 ? (
                         <tr>
-                          <td colSpan="5" className="py-12 text-center text-gray-500">No bookings yet.</td>
+                          <td colSpan="5" className="py-12 text-center text-gray-300">No bookings yet.</td>
                         </tr>
                       ) : (
                         (recentBookings || []).map((item, i) => {
@@ -496,12 +496,12 @@ const AdminDashboard = () => {
                             >
                               <td className="py-4 px-2">
                                 <p className="font-bold text-white">{guestName}</p>
-                                <p className="text-xs text-gray-500 font-mono mt-0.5">{item.booking_reference || 'N/A'}</p>
+                                <p className="text-xs text-gray-300 font-mono mt-0.5">{item.booking_reference || 'N/A'}</p>
                               </td>
                               <td className="py-4 px-2 text-gray-300">{item.rooms?.name || 'Unknown Room'}</td>
-                              <td className="py-4 px-2 text-gray-400">
+                              <td className="py-4 px-2 text-gray-200">
                                 <span className="flex items-center gap-1.5">
-                                  <CalendarDays size={14} className="text-gray-500"/> 
+                                  <CalendarDays size={14} className="text-gray-300"/> 
                                   {safeFormatDate(item.check_in_date)}
                                 </span>
                               </td>
@@ -509,7 +509,7 @@ const AdminDashboard = () => {
                                 <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
                                   item.status === 'confirmed' ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' :
                                   item.status === 'pending' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
-                                  'bg-gray-500/10 text-gray-400 border border-gray-500/20'
+                                  'bg-gray-500/10 text-gray-200 border border-gray-500/20'
                                 }`}>
                                   {item.status || 'unknown'}
                                 </span>
@@ -537,7 +537,7 @@ const AdminDashboard = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left">
                     <thead>
-                      <tr className="text-gray-400 text-xs uppercase tracking-wider border-b border-dark-700/50">
+                      <tr className="text-gray-200 text-xs uppercase tracking-wider border-b border-dark-700/50">
                         <th className="pb-3 font-semibold px-2">Room</th>
                         <th className="pb-3 font-semibold px-2">Status</th>
                         <th className="pb-3 font-semibold px-2">Priority</th>
@@ -547,7 +547,7 @@ const AdminDashboard = () => {
                     <tbody className="text-sm text-gray-300">
                       {pendingTasks.length === 0 ? (
                         <tr>
-                          <td colSpan="4" className="py-12 text-center text-gray-500 font-medium">No pending cleaning tasks today. All rooms are clean!</td>
+                          <td colSpan="4" className="py-12 text-center text-gray-300 font-medium">No pending cleaning tasks today. All rooms are clean!</td>
                         </tr>
                       ) : (
                         pendingTasks.map((task) => (
@@ -562,12 +562,12 @@ const AdminDashboard = () => {
                             </td>
                             <td className="py-4 px-2">
                               <span className={`px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wider ${
-                                task.priority === 'urgent' ? 'bg-red-500/10 text-red-500 border border-red-500/20 animate-pulse' : 'bg-dark-700 text-gray-400'
+                                task.priority === 'urgent' ? 'bg-red-500/10 text-red-500 border border-red-500/20 animate-pulse' : 'bg-dark-700 text-gray-200'
                               }`}>
                                 {task.priority || 'normal'}
                               </span>
                             </td>
-                            <td className="py-4 px-2 text-gray-400">
+                            <td className="py-4 px-2 text-gray-200">
                               {task.staff_name || 'Unassigned'}
                             </td>
                           </tr>
@@ -591,7 +591,7 @@ const AdminDashboard = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left">
                     <thead>
-                      <tr className="text-gray-400 text-xs uppercase tracking-wider border-b border-dark-700/50">
+                      <tr className="text-gray-200 text-xs uppercase tracking-wider border-b border-dark-700/50">
                         <th className="pb-3 font-semibold px-2">Issue / Room</th>
                         <th className="pb-3 font-semibold px-2">Status</th>
                         <th className="pb-3 font-semibold px-2">Priority</th>
@@ -601,14 +601,14 @@ const AdminDashboard = () => {
                     <tbody className="text-sm text-gray-300">
                       {activeTickets.length === 0 ? (
                         <tr>
-                          <td colSpan="4" className="py-12 text-center text-gray-500 font-medium">No open maintenance tickets. Everything is operational!</td>
+                          <td colSpan="4" className="py-12 text-center text-gray-300 font-medium">No open maintenance tickets. Everything is operational!</td>
                         </tr>
                       ) : (
                         activeTickets.map((ticket) => (
                           <tr key={ticket.id} className="border-b border-dark-700/30 hover:bg-dark-700/20 transition-colors">
                             <td className="py-4 px-2">
                               <p className="font-bold text-white">{ticket.title}</p>
-                              <p className="text-xs text-gray-500 mt-0.5">Room {ticket.rooms?.room_number || 'General Area'}</p>
+                              <p className="text-xs text-gray-300 mt-0.5">Room {ticket.rooms?.room_number || 'General Area'}</p>
                             </td>
                             <td className="py-4 px-2">
                               <span className="bg-orange-500/10 text-orange-500 px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider border border-orange-500/20">
@@ -617,12 +617,12 @@ const AdminDashboard = () => {
                             </td>
                             <td className="py-4 px-2">
                               <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider ${
-                                ticket.priority === 'urgent' || ticket.priority === 'high' ? 'bg-red-500/10 text-red-500 border border-red-500/20' : 'bg-dark-750 text-gray-400'
+                                ticket.priority === 'urgent' || ticket.priority === 'high' ? 'bg-red-500/10 text-red-500 border border-red-500/20' : 'bg-dark-750 text-gray-200'
                               }`}>
                                 {ticket.priority}
                               </span>
                             </td>
-                            <td className="py-4 px-2 text-gray-500 font-mono text-xs">
+                            <td className="py-4 px-2 text-gray-300 font-mono text-xs">
                               {format(new Date(ticket.created_at), 'yyyy-MM-dd')}
                             </td>
                           </tr>
@@ -642,12 +642,12 @@ const AdminDashboard = () => {
                 <ClipboardList size={32} />
               </div>
               <h3 className="text-2xl font-black text-white mb-2">My Duty Clock Terminal</h3>
-              <p className="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
+              <p className="text-gray-200 text-sm max-w-sm mb-6 leading-relaxed">
                 Welcome, {profile?.first_name || 'Staff'}. Review your scheduled duties and manage your daily attendance clock inputs.
               </p>
               
               <div className="bg-dark-900 border border-dark-700/60 p-4 rounded-xl max-w-sm w-full mb-6 font-semibold flex justify-between items-center text-xs">
-                <span className="text-gray-500">SHIFT STATUS:</span>
+                <span className="text-gray-300">SHIFT STATUS:</span>
                 {shiftStatus ? (
                   <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded uppercase font-bold">ON DUTY</span>
                 ) : (
@@ -677,14 +677,14 @@ const AdminDashboard = () => {
           
           <div className="space-y-8 flex-1">
             {pulseItems.length === 0 ? (
-              <div className="text-center py-12 text-gray-500 font-medium">
+              <div className="text-center py-12 text-gray-300 font-medium">
                 <p className="text-xs">No active departmental alerts. Select a module from the sidebar to begin operations.</p>
               </div>
             ) : (
               pulseItems.map((item, idx) => (
                 <div className="group" key={idx}>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-400 font-medium flex items-center gap-2">{item.icon} {item.label}</span>
+                    <span className="text-gray-200 font-medium flex items-center gap-2">{item.icon} {item.label}</span>
                     <span className="font-bold text-white bg-dark-700 px-2 rounded">{item.value}</span>
                   </div>
                   <div className="w-full bg-dark-900/50 h-2.5 rounded-full overflow-hidden border border-dark-700/50">

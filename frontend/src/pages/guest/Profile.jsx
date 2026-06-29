@@ -113,7 +113,7 @@ const Profile = () => {
     <div className="space-y-8 text-white">
       <div>
         <h2 className="text-2xl font-semibold text-white">Profile Settings</h2>
-        <p className="text-gray-400 mt-1">Manage your identity, personal contact cards, and account security credentials.</p>
+        <p className="text-gray-200 mt-1">Manage your identity, personal contact cards, and account security credentials.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -129,14 +129,14 @@ const Profile = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold text-white">{firstName} {lastName}</h3>
-              <p className="text-sm text-gray-400 capitalize">Guest Member</p>
+              <p className="text-sm text-gray-200 capitalize">Guest Member</p>
             </div>
           </div>
 
           <form onSubmit={handleUpdateProfile} className="p-6 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">First Name *</label>
+                <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">First Name *</label>
                 <input 
                   type="text" 
                   required
@@ -146,7 +146,7 @@ const Profile = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Last Name *</label>
+                <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Last Name *</label>
                 <input 
                   type="text" 
                   required
@@ -158,17 +158,17 @@ const Profile = () => {
             </div>
 
             <div>
-              <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Email Address (Read-only)</label>
+              <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Email Address (Read-only)</label>
               <input 
                 type="email" 
                 disabled
                 value={email}
-                className="w-full bg-dark-900/50 border border-dark-700/50 text-gray-500 rounded p-3 text-sm outline-none font-mono cursor-not-allowed font-semibold"
+                className="w-full bg-dark-900/50 border border-dark-700/50 text-gray-300 rounded p-3 text-sm outline-none font-mono cursor-not-allowed font-semibold"
               />
             </div>
 
             <div>
-              <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Phone Number</label>
+              <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Phone Number</label>
               <input 
                 type="tel" 
                 value={phone}
@@ -179,7 +179,7 @@ const Profile = () => {
             </div>
 
             <div>
-              <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Residential Address</label>
+              <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Residential Address</label>
               <textarea 
                 rows="2"
                 value={residentialAddress}
@@ -194,10 +194,10 @@ const Profile = () => {
               <h4 className="text-sm font-bold text-white flex items-center gap-2">
                 <ShieldCheck size={16} className="text-gold-500" /> Terms & Conditions Agreement
               </h4>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-200">
                 Review our primary suite occupancy rules and conditions of stay in the apartments. Your consent is registered below:
               </p>
-              <div className="bg-dark-900 border border-dark-700 rounded p-4 h-36 overflow-y-auto text-xs text-gray-400 space-y-2 scrollbar-thin select-text">
+              <div className="bg-dark-900 border border-dark-700 rounded p-4 h-36 overflow-y-auto text-xs text-gray-200 space-y-2 scrollbar-thin select-text">
                 <p className="font-bold text-white uppercase text-[10px] border-b border-dark-700 pb-1">Primary Apartment Stay Rules</p>
                 <p><strong>1. Strict No-Smoking Suit Policy:</strong> Smoking or vaping is completely prohibited inside the suites or balconies. Violations trigger an immediate ₦50,000 deep cleaning fine.</p>
                 <p><strong>2. Damage Liabilities:</strong> Guests agree to full incidental billing and financial responsibility for room damages caused during occupancy.</p>
@@ -233,12 +233,12 @@ const Profile = () => {
         <div className="lg:col-span-1 bg-dark-800 border border-dark-700 rounded-xl p-6 shadow-md h-fit space-y-6">
           <div>
             <h3 className="text-lg font-bold text-white flex items-center gap-2"><KeyRound size={18} className="text-gold-500" /> Account Password</h3>
-            <p className="text-xs text-gray-400 mt-1">Configure a new secure login code to protect your portal access.</p>
+            <p className="text-xs text-gray-200 mt-1">Configure a new secure login code to protect your portal access.</p>
           </div>
 
           <form onSubmit={handleUpdatePassword} className="space-y-4">
             <div>
-              <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1.5">New Password</label>
+              <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1.5">New Password</label>
               <div className="relative">
                 <input 
                   type={showPassword ? 'text' : 'password'} 
@@ -251,7 +251,7 @@ const Profile = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -259,7 +259,7 @@ const Profile = () => {
             </div>
 
             <div>
-              <label className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1.5">Confirm New Password</label>
+              <label className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1.5">Confirm New Password</label>
               <div className="relative">
                 <input 
                   type={showConfirmPassword ? 'text' : 'password'} 
@@ -272,7 +272,7 @@ const Profile = () => {
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
                 >
                   {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>

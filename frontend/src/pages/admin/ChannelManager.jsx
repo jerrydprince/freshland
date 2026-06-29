@@ -177,7 +177,7 @@ const AdminChannelManager = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Globe className="text-brand-500"/> Real-time Channel Manager (iCal)
           </h1>
-          <p className="text-gray-400 mt-1">Synchronize availability across OTAs to prevent double-bookings.</p>
+          <p className="text-gray-200 mt-1">Synchronize availability across OTAs to prevent double-bookings.</p>
         </div>
       </div>
 
@@ -187,7 +187,7 @@ const AdminChannelManager = () => {
           <button 
             key={ota.id}
             onClick={() => setActiveTab(ota.id)} 
-            className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === ota.id ? `border-white text-white` : 'border-transparent text-gray-500 hover:text-gray-300'}`}
+            className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === ota.id ? `border-white text-white` : 'border-transparent text-gray-300 hover:text-gray-300'}`}
           >
             <div className={`w-3 h-3 rounded-full ${ota.color}`}></div>
             {ota.name}
@@ -203,7 +203,7 @@ const AdminChannelManager = () => {
           <Database className="text-brand-500 mt-1 shrink-0" size={24} />
           <div>
             <h3 className="text-white font-bold mb-1">Two-Way Availability Sync</h3>
-            <p className="text-sm text-gray-400 max-w-3xl leading-relaxed">
+            <p className="text-sm text-gray-200 max-w-3xl leading-relaxed">
               <strong>1. Import:</strong> Paste the iCal link provided by the OTA into the "Import URL" field. Clicking "Sync" will pull those reservations into our system, blocking the calendar to prevent double bookings.<br/>
               <strong>2. Export:</strong> Copy the generated "Export URL" and paste it into the OTA's calendar settings. They will read our availability and block their dates automatically.
             </p>
@@ -212,7 +212,7 @@ const AdminChannelManager = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+            <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
               <tr>
                 <th className="p-4 font-semibold w-1/4">Room</th>
                 <th className="p-4 font-semibold w-1/3">Import from OTA (.ics link)</th>
@@ -222,7 +222,7 @@ const AdminChannelManager = () => {
             </thead>
             <tbody className="divide-y divide-dark-700">
               {loading ? (
-                <tr><td colSpan="4" className="p-8 text-center text-gray-500">Loading channel connections...</td></tr>
+                <tr><td colSpan="4" className="p-8 text-center text-gray-300">Loading channel connections...</td></tr>
               ) : rooms.map(room => {
                 const linkObj = links[activeTab]?.[room.id] || {};
                 const baseUrl = window.location.origin.includes('localhost') ? 'https://luxe-api.com' : window.location.origin;
@@ -233,11 +233,11 @@ const AdminChannelManager = () => {
                   <tr key={room.id} className="hover:bg-dark-700/30 transition-colors">
                     <td className="p-4">
                       <p className="font-bold text-white text-base">{room.room_number}</p>
-                      <p className="text-xs text-gray-400">{room.name}</p>
+                      <p className="text-xs text-gray-200">{room.name}</p>
                     </td>
                     <td className="p-4">
                       <div className="relative">
-                        <Download className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={14} />
+                        <Download className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
                         <input 
                           type="text" 
                           placeholder="https://www.airbnb.com/calendar/ical/..."
@@ -261,7 +261,7 @@ const AdminChannelManager = () => {
                     <td className="p-4">
                       <div className="flex items-center gap-2">
                         <div className="relative flex-1 opacity-70">
-                          <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={14} />
+                          <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
                           <input 
                             readOnly
                             type="text" 
@@ -291,7 +291,7 @@ const AdminChannelManager = () => {
                         </button>
                         
                         {linkObj.last_synced_at && (
-                          <div className="flex items-center gap-1 text-[10px] text-gray-400">
+                          <div className="flex items-center gap-1 text-[10px] text-gray-200">
                             {linkObj.sync_status === 'success' ? <CheckCircle size={10} className="text-green-500"/> : <AlertTriangle size={10} className="text-red-500"/>}
                             Last sync: {new Date(linkObj.last_synced_at).toLocaleTimeString()}
                           </div>

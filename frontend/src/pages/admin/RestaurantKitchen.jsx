@@ -179,7 +179,7 @@ const RestaurantKitchen = () => {
             <AlertCircle size={32} />
           </div>
           <h2 className="text-2xl font-black text-white mb-2">Access Restricted</h2>
-          <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-200 text-sm mb-6 leading-relaxed">
             You do not have permissions to access the Restaurant Desk, Kitchen Desk, or Order History.
           </p>
         </div>
@@ -962,7 +962,7 @@ const RestaurantKitchen = () => {
             <ChefHat className="text-brand-500 w-9 h-9" />
             Restaurant & Kitchen Operations
           </h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <p className="text-gray-200 text-sm mt-1">
             Manage guest room-service orders, coordinate kitchen meal preparations, and handle corporate or guest folio billing.
           </p>
         </div>
@@ -993,7 +993,7 @@ const RestaurantKitchen = () => {
           {canAccessRestaurantDesk && (
             <button 
               onClick={() => setViewMode('restaurant')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'restaurant' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'restaurant' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <Utensils size={14} />
               <span>Restaurant Desk</span>
@@ -1002,7 +1002,7 @@ const RestaurantKitchen = () => {
           {canAccessKitchenDesk && (
             <button 
               onClick={() => setViewMode('kitchen')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'kitchen' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'kitchen' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <ChefHat size={14} />
               <span>Kitchen Desk</span>
@@ -1011,7 +1011,7 @@ const RestaurantKitchen = () => {
           {(canAccessRestaurantDesk || canAccessKitchenDesk || user?.role === 'super_admin') && (
             <button 
               onClick={() => setViewMode('catering')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'catering' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'catering' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <ChefHat size={14} />
               <span>Hall Catering</span>
@@ -1020,7 +1020,7 @@ const RestaurantKitchen = () => {
           {canAccessOrderHistory && (
             <button 
               onClick={() => setViewMode('history')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'history' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'history' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <Clock size={14} />
               <span>Orders History</span>
@@ -1029,7 +1029,7 @@ const RestaurantKitchen = () => {
           {canAccessRestaurantDesk && (
             <button 
               onClick={() => setViewMode('menu')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'menu' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'menu' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <BookOpen size={14} />
               <span>Menu Management</span>
@@ -1038,7 +1038,7 @@ const RestaurantKitchen = () => {
           {canAccessRestaurantDesk && (
             <button 
               onClick={() => setViewMode('catering_meals')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'catering_meals' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${viewMode === 'catering_meals' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-md' : 'text-gray-200 hover:text-white'}`}
             >
               <Coffee size={14} />
               <span>Hall Meal Packages</span>
@@ -1054,7 +1054,7 @@ const RestaurantKitchen = () => {
           <div className="flex justify-between items-center">
             <div>
               <h3 className="text-xl font-bold text-white text-left">Separate Catering Menu for Halls</h3>
-              <p className="text-gray-400 text-xs mt-1 text-left">Define and manage specific meal courses and packages charged per participant for hall events.</p>
+              <p className="text-gray-200 text-xs mt-1 text-left">Define and manage specific meal courses and packages charged per participant for hall events.</p>
             </div>
             <button 
               onClick={() => {
@@ -1074,7 +1074,7 @@ const RestaurantKitchen = () => {
 
           <div className="overflow-x-auto rounded-xl border border-dark-700/50">
             <table className="w-full text-left text-sm">
-              <thead className="bg-dark-900 text-gray-400 uppercase tracking-wider text-xs border-b border-dark-700">
+              <thead className="bg-dark-900 text-gray-200 uppercase tracking-wider text-xs border-b border-dark-700">
                 <tr>
                   <th className="p-4">Package Name</th>
                   <th className="p-4">Course Segment</th>
@@ -1087,7 +1087,7 @@ const RestaurantKitchen = () => {
               <tbody className="divide-y divide-dark-700">
                 {mealOptions.length === 0 && (
                   <tr>
-                    <td colSpan="6" className="p-8 text-center text-gray-500">No catering packages defined yet.</td>
+                    <td colSpan="6" className="p-8 text-center text-gray-300">No catering packages defined yet.</td>
                   </tr>
                 )}
                 {mealOptions.map(meal => (
@@ -1158,7 +1158,7 @@ const RestaurantKitchen = () => {
                   className={`flex items-center gap-2 px-4 py-2 border rounded-xl text-xs font-bold transition-all ${
                     restaurantTab === tab.id 
                       ? 'bg-brand-500/15 border-brand-500/35 text-white' 
-                      : 'border-transparent text-gray-400 hover:text-white hover:bg-dark-800'
+                      : 'border-transparent text-gray-200 hover:text-white hover:bg-dark-800'
                   }`}
                 >
                   <span>{tab.label}</span>
@@ -1171,7 +1171,7 @@ const RestaurantKitchen = () => {
 
             {/* Quick search input */}
             <div className="relative w-72">
-              <Search className="absolute left-3.5 top-2.5 text-gray-500 w-4 h-4" />
+              <Search className="absolute left-3.5 top-2.5 text-gray-300 w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search orders, rooms..."
@@ -1186,7 +1186,7 @@ const RestaurantKitchen = () => {
           {loading ? (
             <div className="py-24 text-center">
               <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-              <p className="text-gray-500 text-sm">Synchronizing operations feeds...</p>
+              <p className="text-gray-300 text-sm">Synchronizing operations feeds...</p>
             </div>
           ) : (
             <>
@@ -1194,9 +1194,9 @@ const RestaurantKitchen = () => {
               {restaurantTab === 'pending' && (
                 pendingOrders.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <ShoppingBag className="mx-auto mb-3 opacity-30 text-gray-500" size={36} />
+                    <ShoppingBag className="mx-auto mb-3 opacity-30 text-gray-300" size={36} />
                     <h3 className="text-lg font-bold text-white mb-1">No pending orders</h3>
-                    <p className="text-gray-500 text-xs">New guest room orders will show up here in real-time.</p>
+                    <p className="text-gray-300 text-xs">New guest room orders will show up here in real-time.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1208,29 +1208,29 @@ const RestaurantKitchen = () => {
                               Order Received
                             </span>
                             <h4 className="text-base font-extrabold text-white mt-2 leading-tight">{order.services?.name}</h4>
-                            <p className="text-xs text-gray-400 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
+                            <p className="text-xs text-gray-200 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
                           </div>
                           <div className="text-right">
-                            <span className="text-xs text-gray-500 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
-                            <span className="text-[10px] text-gray-400 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
+                            <span className="text-xs text-gray-300 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
+                            <span className="text-[10px] text-gray-200 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
                           </div>
                         </div>
 
-                        <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-400 space-y-1.5 mb-4">
+                        <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-200 space-y-1.5 mb-4">
                           <p className="font-medium text-gray-300">Guest Instructions:</p>
-                          <p className="italic leading-normal text-gray-400">"{parseNotes(order.notes, 'guest')}"</p>
+                          <p className="italic leading-normal text-gray-200">"{parseNotes(order.notes, 'guest')}"</p>
                         </div>
 
                         <div className="border-t border-dark-750 pt-4 flex justify-between items-center">
                           <div>
-                            <span className="text-xs text-gray-500 block">Est. Price</span>
+                            <span className="text-xs text-gray-300 block">Est. Price</span>
                             <span className="text-base font-black text-white">₦{Number(order.unit_price_ngn || order.services?.base_price_ngn || 0).toLocaleString()}</span>
                           </div>
 
                           <button
                             onClick={() => handlePostToKitchen(order.id)}
                             disabled={isRestaurantClosed}
-                            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950 active:scale-95'}`}
+                            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950 active:scale-95'}`}
                           >
                             <span>Post to Kitchen</span>
                             <ArrowRight size={14} />
@@ -1246,9 +1246,9 @@ const RestaurantKitchen = () => {
               {restaurantTab === 'prep' && (
                 prepOrders.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <ChefHat className="mx-auto mb-3 opacity-30 text-gray-500 animate-pulse" size={36} />
+                    <ChefHat className="mx-auto mb-3 opacity-30 text-gray-300 animate-pulse" size={36} />
                     <h3 className="text-lg font-bold text-white mb-1">Kitchen queue is empty</h3>
-                    <p className="text-gray-500 text-xs">No orders are currently in active chef preparation.</p>
+                    <p className="text-gray-300 text-xs">No orders are currently in active chef preparation.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1261,20 +1261,20 @@ const RestaurantKitchen = () => {
                               Preparing...
                             </span>
                             <h4 className="text-base font-extrabold text-white mt-2 leading-tight">{order.services?.name}</h4>
-                            <p className="text-xs text-gray-400 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
+                            <p className="text-xs text-gray-200 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
                           </div>
                           <div className="text-right">
-                            <span className="text-xs text-gray-500 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
-                            <span className="text-[10px] text-gray-400 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
+                            <span className="text-xs text-gray-300 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
+                            <span className="text-[10px] text-gray-200 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
                           </div>
                         </div>
 
-                        <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-400 space-y-1.5 mb-4">
+                        <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-200 space-y-1.5 mb-4">
                           <p className="font-medium text-gray-300">Guest Instructions:</p>
-                          <p className="italic leading-normal text-gray-400">"{parseNotes(order.notes, 'guest')}"</p>
+                          <p className="italic leading-normal text-gray-200">"{parseNotes(order.notes, 'guest')}"</p>
                         </div>
 
-                        <div className="border-t border-dark-750 pt-4 flex justify-between items-center text-xs text-gray-500">
+                        <div className="border-t border-dark-750 pt-4 flex justify-between items-center text-xs text-gray-300">
                           <span>Dispatched to chef</span>
                           <span className="font-mono">{format(new Date(order.updated_at || order.created_at), 'HH:mm (MMM dd)')}</span>
                         </div>
@@ -1288,9 +1288,9 @@ const RestaurantKitchen = () => {
               {restaurantTab === 'ready' && (
                 readyOrders.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <CheckCircle className="mx-auto mb-3 opacity-30 text-gray-500" size={36} />
+                    <CheckCircle className="mx-auto mb-3 opacity-30 text-gray-300" size={36} />
                     <h3 className="text-lg font-bold text-white mb-1">No meals ready for delivery</h3>
-                    <p className="text-gray-500 text-xs">Meals marked ready by the chef queue will appear here for checkout.</p>
+                    <p className="text-gray-300 text-xs">Meals marked ready by the chef queue will appear here for checkout.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1304,11 +1304,11 @@ const RestaurantKitchen = () => {
                               Meal Ready / Waiter Notify
                             </span>
                             <h4 className="text-base font-extrabold text-white mt-2 leading-tight">{order.services?.name}</h4>
-                            <p className="text-xs text-gray-400 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
+                            <p className="text-xs text-gray-200 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
                           </div>
                           <div className="text-right z-10">
-                            <span className="text-xs text-gray-500 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
-                            <span className="text-[10px] text-gray-400 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
+                            <span className="text-xs text-gray-300 block font-mono">Room {order.bookings?.rooms?.room_number}</span>
+                            <span className="text-[10px] text-gray-200 font-semibold block truncate max-w-[120px]">{order.bookings?.guest_name}</span>
                           </div>
                         </div>
 
@@ -1319,14 +1319,14 @@ const RestaurantKitchen = () => {
 
                         <div className="border-t border-dark-750 pt-4 flex justify-between items-center">
                           <div>
-                            <span className="text-xs text-gray-500 block">Final Price</span>
+                            <span className="text-xs text-gray-300 block">Final Price</span>
                             <span className="text-base font-black text-brand-400">₦{Number(order.total_price_ngn || 0).toLocaleString()}</span>
                           </div>
 
                           <button
                             onClick={() => openBillingModal(order)}
                             disabled={isRestaurantClosed}
-                            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed opacity-50' : 'bg-green-500 hover:bg-green-600 text-dark-950 active:scale-95'}`}
+                            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed opacity-50' : 'bg-green-500 hover:bg-green-600 text-dark-950 active:scale-95'}`}
                           >
                             <Check size={14} className="stroke-[3]" />
                             <span>Deliver & Charge</span>
@@ -1350,12 +1350,12 @@ const RestaurantKitchen = () => {
                 <ChefHat className="text-brand-500" />
                 Kitchen Preparation Queue
               </h2>
-              <p className="text-gray-400 text-xs mt-0.5">Manage live meal orders and submit prep outcomes back to front desk.</p>
+              <p className="text-gray-200 text-xs mt-0.5">Manage live meal orders and submit prep outcomes back to front desk.</p>
             </div>
             
             {/* Quick search input */}
             <div className="relative w-72">
-              <Search className="absolute left-3.5 top-2.5 text-gray-500 w-4 h-4" />
+              <Search className="absolute left-3.5 top-2.5 text-gray-300 w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search chef tickets..."
@@ -1369,13 +1369,13 @@ const RestaurantKitchen = () => {
           {loading ? (
             <div className="py-24 text-center">
               <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-              <p className="text-gray-500 text-sm">Synchronizing chef queue...</p>
+              <p className="text-gray-300 text-sm">Synchronizing chef queue...</p>
             </div>
           ) : prepOrders.length === 0 ? (
             <div className="glass-panel p-20 text-center rounded-3xl border border-dark-700/50 max-w-xl mx-auto mt-6">
               <ChefHat className="mx-auto mb-4 opacity-20 text-brand-500 animate-bounce" size={48} />
               <h3 className="text-xl font-bold text-white mb-2">Chef queue is cleared!</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed">
                 Excellent. All dispatched orders have been prepared and logged. 
                 Keep this window open to receive real-time chits as restaurant staff submits them.
               </p>
@@ -1384,7 +1384,7 @@ const RestaurantKitchen = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {prepOrders.map(order => (
                 <div key={order.id} className="glass-panel border border-brand-500/10 p-5 rounded-2xl flex flex-col justify-between h-fit relative">
-                  <div className="absolute top-3 right-3 flex items-center gap-1 text-[10px] font-mono text-gray-500 bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
+                  <div className="absolute top-3 right-3 flex items-center gap-1 text-[10px] font-mono text-gray-300 bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
                     <Clock size={10} />
                     <span>Dispatched {format(new Date(order.updated_at || order.created_at), 'HH:mm')}</span>
                   </div>
@@ -1394,7 +1394,7 @@ const RestaurantKitchen = () => {
                       Chef Ticket
                     </span>
                     <h3 className="text-lg font-bold text-white mt-2 leading-tight">{order.services?.name}</h3>
-                    <p className="text-sm text-gray-400 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
+                    <p className="text-sm text-gray-200 mt-1">Quantity: <span className="font-bold text-white">{order.quantity}</span></p>
                   </div>
 
                   <div className="bg-dark-900 border border-dark-750 p-4 rounded-xl text-xs space-y-2 mb-6">
@@ -1406,14 +1406,14 @@ const RestaurantKitchen = () => {
 
                   <div className="border-t border-dark-750 pt-4 flex justify-between items-center">
                     <div>
-                      <span className="text-xs text-gray-500 block">Suite Suite</span>
+                      <span className="text-xs text-gray-300 block">Suite Suite</span>
                       <span className="text-sm font-bold text-white font-mono">Room {order.bookings?.rooms?.room_number}</span>
                     </div>
 
                     <button
                       onClick={() => openPrepModal(order)}
                       disabled={isRestaurantClosed}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950 active:scale-95'}`}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-md ${isRestaurantClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950 active:scale-95'}`}
                     >
                       <ChefHat size={14} />
                       <span>Prepare & Set Price</span>
@@ -1434,7 +1434,7 @@ const RestaurantKitchen = () => {
                 <Clock className="text-brand-500" />
                 Historic Delivered Orders Log
               </h2>
-              <p className="text-gray-500 text-xs mt-1">Review finalized meal checkouts and delivery history log.</p>
+              <p className="text-gray-300 text-xs mt-1">Review finalized meal checkouts and delivery history log.</p>
             </div>
             
             <button 
@@ -1446,7 +1446,7 @@ const RestaurantKitchen = () => {
           </div>
 
           <div className="relative w-full max-w-sm mb-2">
-            <Search className="absolute left-3.5 top-2.5 text-gray-500 w-4 h-4" />
+            <Search className="absolute left-3.5 top-2.5 text-gray-300 w-4 h-4" />
             <input
               type="text"
               placeholder="Search historical records..."
@@ -1459,17 +1459,17 @@ const RestaurantKitchen = () => {
           {loading ? (
             <div className="py-24 text-center">
               <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-              <p className="text-gray-500 text-sm">Retrieving historic log...</p>
+              <p className="text-gray-300 text-sm">Retrieving historic log...</p>
             </div>
           ) : completedOrders.length === 0 ? (
-            <div className="py-24 text-center text-gray-500">
+            <div className="py-24 text-center text-gray-300">
               <ShoppingBag size={32} className="mx-auto mb-2 opacity-30 animate-pulse" />
               <p className="text-sm">No meal services successfully delivered today.</p>
             </div>
           ) : (
             <div className="overflow-x-auto rounded-2xl border border-dark-700 bg-dark-900/20">
               <table className="w-full text-left text-sm">
-                <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-400 text-xs uppercase tracking-wider">
+                <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-200 text-xs uppercase tracking-wider">
                   <tr>
                     <th className="p-4 font-bold">Timestamp</th>
                     <th className="p-4 font-bold">Room / Guest</th>
@@ -1483,12 +1483,12 @@ const RestaurantKitchen = () => {
                 <tbody className="divide-y divide-dark-700 text-xs">
                   {completedOrders.map(item => (
                     <tr key={item.id} className="hover:bg-dark-700/20 transition-colors">
-                      <td className="p-4 text-gray-400 font-mono">
+                      <td className="p-4 text-gray-200 font-mono">
                         {format(new Date(item.updated_at || item.created_at), 'MMM dd, HH:mm')}
                       </td>
                       <td className="p-4">
                         <span className="text-white font-bold block">Room {item.bookings?.rooms?.room_number}</span>
-                        <span className="text-gray-500 block text-[10px] max-w-[150px] truncate">{item.bookings?.guest_name}</span>
+                        <span className="text-gray-300 block text-[10px] max-w-[150px] truncate">{item.bookings?.guest_name}</span>
                       </td>
                       <td className="p-4 text-white font-extrabold">
                         {item.services?.name}
@@ -1498,7 +1498,7 @@ const RestaurantKitchen = () => {
                       </td>
                       <td className="p-4">
                         <span className="text-white font-bold block">₦{Number(item.total_price_ngn || 0).toLocaleString()}</span>
-                        <span className="text-gray-500 block text-[10px]">₦{Number(item.unit_price_ngn || 0).toLocaleString()} /unit</span>
+                        <span className="text-gray-300 block text-[10px]">₦{Number(item.unit_price_ngn || 0).toLocaleString()} /unit</span>
                       </td>
                       <td className="p-4">
                         <span className={`px-2.5 py-1 rounded-lg text-[9px] font-black uppercase ${
@@ -1509,7 +1509,7 @@ const RestaurantKitchen = () => {
                           {item.payment_status === 'paid' ? 'Corp Billed (Paid)' : 'Stay Folio (Unpaid)'}
                         </span>
                       </td>
-                      <td className="p-4 text-gray-400 italic max-w-[200px] truncate" title={parseNotes(item.notes, 'chef')}>
+                      <td className="p-4 text-gray-200 italic max-w-[200px] truncate" title={parseNotes(item.notes, 'chef')}>
                         {parseNotes(item.notes, 'chef') || 'None'}
                       </td>
                     </tr>
@@ -1529,7 +1529,7 @@ const RestaurantKitchen = () => {
                 <Utensils className="text-brand-500" />
                 Food Menu Catalog Management
               </h2>
-              <p className="text-gray-500 text-xs mt-1">Create, update, or deactivate items shown on guest menus and front desk folio panels.</p>
+              <p className="text-gray-300 text-xs mt-1">Create, update, or deactivate items shown on guest menus and front desk folio panels.</p>
             </div>
             
             <button 
@@ -1540,7 +1540,7 @@ const RestaurantKitchen = () => {
                 setIsMenuModalOpen(true);
               }} 
               disabled={isRestaurantClosed}
-              className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 shadow-lg shadow-brand-500/10 ${isRestaurantClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950'}`}
+              className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 shadow-lg shadow-brand-500/10 ${isRestaurantClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed opacity-50' : 'bg-brand-500 hover:bg-brand-600 text-dark-950'}`}
             >
               <Plus size={14} />
               Create Food Item
@@ -1561,11 +1561,11 @@ const RestaurantKitchen = () => {
                   className={`flex items-center gap-2 px-4 py-2 border rounded-xl text-xs font-bold transition-all ${
                     activeMenuSegment === seg 
                       ? 'bg-brand-500/15 border-brand-500/35 text-white' 
-                      : 'border-transparent text-gray-400 hover:text-white hover:bg-dark-800'
+                      : 'border-transparent text-gray-200 hover:text-white hover:bg-dark-800'
                   }`}
                 >
                   <span>{seg}</span>
-                  <span className="px-1.5 py-0.2 text-[9px] rounded-md bg-dark-900 border border-dark-700 text-gray-400 font-mono">
+                  <span className="px-1.5 py-0.2 text-[9px] rounded-md bg-dark-900 border border-dark-700 text-gray-200 font-mono">
                     {count}
                   </span>
                 </button>
@@ -1574,9 +1574,9 @@ const RestaurantKitchen = () => {
           </div>
 
           {menuLoading ? (
-            <div className="text-center py-20 text-gray-500 font-bold">Loading restaurant food menu...</div>
+            <div className="text-center py-20 text-gray-300 font-bold">Loading restaurant food menu...</div>
           ) : menuItems.length === 0 ? (
-            <div className="text-center py-20 text-gray-500 border border-dashed border-dark-700 rounded-2xl bg-dark-900/30">
+            <div className="text-center py-20 text-gray-300 border border-dashed border-dark-700 rounded-2xl bg-dark-900/30">
               <Utensils size={40} className="mx-auto text-gray-600 mb-3 animate-pulse" />
               <p className="text-xs">No food items defined in the restaurant menu.</p>
             </div>
@@ -1605,7 +1605,7 @@ const RestaurantKitchen = () => {
                           </span>
                         </div>
                       </div>
-                      {text && <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{text}</p>}
+                      {text && <p className="text-gray-200 text-xs leading-relaxed line-clamp-2">{text}</p>}
                     </div>
                     <div className="flex justify-between items-center border-t border-dark-750 pt-3">
                       <span className="text-emerald-400 font-mono font-black text-sm">₦{Number(item.base_price_ngn).toLocaleString()}</span>
@@ -1625,7 +1625,7 @@ const RestaurantKitchen = () => {
                             setIsMenuModalOpen(true);
                           }}
                           disabled={isRestaurantClosed}
-                          className={`text-[10px] font-bold py-1.5 px-3 rounded-lg border transition-all ${isRestaurantClosed ? 'bg-dark-800 text-gray-500 border-dark-700 opacity-50 cursor-not-allowed' : 'text-gray-300 hover:text-white bg-dark-800 hover:bg-dark-750 border-dark-700'}`}
+                          className={`text-[10px] font-bold py-1.5 px-3 rounded-lg border transition-all ${isRestaurantClosed ? 'bg-dark-800 text-gray-300 border-dark-700 opacity-50 cursor-not-allowed' : 'text-gray-300 hover:text-white bg-dark-800 hover:bg-dark-750 border-dark-700'}`}
                         >
                           Edit
                         </button>
@@ -1637,7 +1637,7 @@ const RestaurantKitchen = () => {
                         disabled={isRestaurantClosed}
                         className={`text-[10px] font-bold py-1.5 px-3 rounded-lg border transition-all ${
                           isRestaurantClosed 
-                            ? 'bg-dark-800 text-gray-500 border-dark-700 opacity-50 cursor-not-allowed'
+                            ? 'bg-dark-800 text-gray-300 border-dark-700 opacity-50 cursor-not-allowed'
                             : item.is_active 
                               ? 'bg-red-500/10 text-red-400 border-red-500/20 hover:bg-red-500/20' 
                               : 'bg-green-500/10 text-green-400 border-green-500/20 hover:bg-green-500/20'
@@ -1663,7 +1663,7 @@ const RestaurantKitchen = () => {
                 <ChefHat className="text-gold-500" />
                 Hall Rental Catering & Group Feeding Calendar
               </h2>
-              <p className="text-gray-500 text-xs mt-1">Manage serving schedules, preparations, and routing statuses for events and hall rental meals.</p>
+              <p className="text-gray-300 text-xs mt-1">Manage serving schedules, preparations, and routing statuses for events and hall rental meals.</p>
             </div>
           </div>
 
@@ -1678,7 +1678,7 @@ const RestaurantKitchen = () => {
                   className={`flex-1 py-2 text-center text-xs font-bold rounded-lg capitalize transition-all ${
                     cateringTab === status 
                       ? 'bg-gold-500 text-dark-950 shadow-md' 
-                      : 'text-gray-400 hover:text-white'
+                      : 'text-gray-200 hover:text-white'
                   }`}
                 >
                   {status} ({count})
@@ -1689,7 +1689,7 @@ const RestaurantKitchen = () => {
 
           {/* Catering Meals List */}
           {cateringLoading ? (
-            <div className="text-center py-20 text-gray-500 font-bold">Loading catering schedule...</div>
+            <div className="text-center py-20 text-gray-300 font-bold">Loading catering schedule...</div>
           ) : (
             (() => {
               const filtered = cateringMeals.filter(m => m.status === cateringTab);
@@ -1697,7 +1697,7 @@ const RestaurantKitchen = () => {
                 return (
                   <div className="text-center py-20 text-gray-550 border border-dashed border-dark-700 rounded-2xl bg-dark-900/30">
                     <Utensils size={40} className="mx-auto text-gray-600 mb-3 animate-pulse" />
-                    <p className="font-bold text-sm text-gray-400">No {cateringTab} catering orders found.</p>
+                    <p className="font-bold text-sm text-gray-200">No {cateringTab} catering orders found.</p>
                     <p className="text-xs text-gray-600 mt-1">Catering orders will appear here day-by-day based on active hall bookings.</p>
                   </div>
                 );
@@ -1719,12 +1719,12 @@ const RestaurantKitchen = () => {
                               </span>
                               <h4 className="text-white font-bold text-base mt-1.5">{optionObj.name || meal.course_type}</h4>
                             </div>
-                            <span className="text-xs text-gray-400 font-mono font-bold bg-dark-800 px-2 py-1 border border-dark-700 rounded">
+                            <span className="text-xs text-gray-200 font-mono font-bold bg-dark-800 px-2 py-1 border border-dark-700 rounded">
                               {format(new Date(meal.serving_date), 'MMM dd, yyyy')}
                             </span>
                           </div>
 
-                          <div className="border-t border-dark-800 my-3 pt-3 space-y-2 text-xs text-gray-400">
+                          <div className="border-t border-dark-800 my-3 pt-3 space-y-2 text-xs text-gray-200">
                             <div className="flex justify-between">
                               <span>Venue / Hall:</span>
                               <span className="text-white font-semibold">{hallObj.name || 'Event Hall'}</span>
@@ -1753,7 +1753,7 @@ const RestaurantKitchen = () => {
                           </div>
 
                           <div className="bg-dark-950/40 p-3 rounded-xl border border-dark-850 mt-4">
-                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1.5">Combination Items</p>
+                            <p className="text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-1.5">Combination Items</p>
                             <div className="flex flex-wrap gap-1">
                               {optionObj.combination_items?.map((item, idx) => (
                                 <span key={idx} className="text-xs bg-dark-800 text-gray-300 px-2.5 py-0.5 rounded-md border border-dark-700 font-medium">
@@ -1793,7 +1793,7 @@ const RestaurantKitchen = () => {
                             </button>
                           )}
                           {meal.status === 'served' && (
-                            <div className="w-full py-2 bg-dark-800 text-gray-500 text-xs font-bold rounded-xl border border-dark-750 flex items-center justify-center gap-1.5">
+                            <div className="w-full py-2 bg-dark-800 text-gray-300 text-xs font-bold rounded-xl border border-dark-750 flex items-center justify-center gap-1.5">
                               <CheckCircle size={14} className="text-green-500" />
                               <span>Served & Completed</span>
                             </div>
@@ -1815,7 +1815,7 @@ const RestaurantKitchen = () => {
           <div className="glass-panel border border-brand-500/20 max-w-md w-full p-6 rounded-3xl shadow-2xl relative">
             <button 
               onClick={() => setIsPrepModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white p-1 hover:bg-dark-800 rounded-lg transition-colors"
+              className="absolute top-4 right-4 text-gray-300 hover:text-white p-1 hover:bg-dark-800 rounded-lg transition-colors"
             >
               <X size={18} />
             </button>
@@ -1827,16 +1827,16 @@ const RestaurantKitchen = () => {
 
             <form onSubmit={handleMarkReady} className="space-y-4">
               <div>
-                <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Suite Selection</span>
+                <span className="text-[10px] text-gray-200 font-bold block uppercase tracking-wider">Suite Selection</span>
                 <span className="text-sm text-white font-extrabold">Room {selectedOrder.bookings?.rooms?.room_number} — {selectedOrder.bookings?.guest_name}</span>
               </div>
 
               <div>
-                <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Meal Ordered</span>
+                <span className="text-[10px] text-gray-200 font-bold block uppercase tracking-wider">Meal Ordered</span>
                 <span className="text-base text-brand-400 font-black">{selectedOrder.services?.name} (x{selectedOrder.quantity})</span>
               </div>
 
-              <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-400 space-y-1">
+              <div className="bg-dark-900 border border-dark-750 p-3 rounded-xl text-xs text-gray-200 space-y-1">
                 <p className="font-bold text-gray-300">Guest Customization Instructions:</p>
                 <p className="italic">"{parseNotes(selectedOrder.notes, 'guest')}"</p>
               </div>
@@ -1851,7 +1851,7 @@ const RestaurantKitchen = () => {
                   placeholder="e.g. 10000"
                   className="w-full bg-dark-800 border border-dark-700/60 rounded-xl px-4 py-2.5 text-white outline-none focus:border-brand-500 font-mono text-sm font-semibold"
                 />
-                <p className="text-[9px] text-gray-500 mt-1">Allows setting adjustments if chef adds extra toppings or requests special premium ingredients.</p>
+                <p className="text-[9px] text-gray-300 mt-1">Allows setting adjustments if chef adds extra toppings or requests special premium ingredients.</p>
               </div>
 
               <div>
@@ -1891,7 +1891,7 @@ const RestaurantKitchen = () => {
           <div className="glass-panel border border-brand-500/20 max-w-md w-full p-6 rounded-3xl shadow-2xl relative">
             <button 
               onClick={() => setIsBillingModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white p-1 hover:bg-dark-800 rounded-lg transition-colors"
+              className="absolute top-4 right-4 text-gray-300 hover:text-white p-1 hover:bg-dark-800 rounded-lg transition-colors"
             >
               <X size={18} />
             </button>
@@ -1903,7 +1903,7 @@ const RestaurantKitchen = () => {
 
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Guest & Suite details</span>
+                <span className="text-[10px] text-gray-200 font-bold block uppercase tracking-wider">Guest & Suite details</span>
                 <p className="text-sm text-white font-extrabold">Room {selectedOrder.bookings?.rooms?.room_number} — {selectedOrder.bookings?.guest_name}</p>
                 {selectedOrder.bookings?.group_accounts?.name && (
                   <span className="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded font-black uppercase mt-1 inline-block">
@@ -1913,15 +1913,15 @@ const RestaurantKitchen = () => {
               </div>
 
               <div className="border-t border-b border-dark-750/50 py-3 my-2 space-y-1">
-                <div className="flex justify-between text-xs text-gray-400">
+                <div className="flex justify-between text-xs text-gray-200">
                   <span>Meal Name:</span>
                   <span className="text-white font-bold">{selectedOrder.services?.name}</span>
                 </div>
-                <div className="flex justify-between text-xs text-gray-400">
+                <div className="flex justify-between text-xs text-gray-200">
                   <span>Quantity:</span>
                   <span className="text-white font-bold">{selectedOrder.quantity}</span>
                 </div>
-                <div className="flex justify-between text-xs text-gray-400">
+                <div className="flex justify-between text-xs text-gray-200">
                   <span>Chef Notes:</span>
                   <span className="text-white italic">"{parseNotes(selectedOrder.notes, 'chef') || 'None'}"</span>
                 </div>
@@ -1939,7 +1939,7 @@ const RestaurantKitchen = () => {
                   <label className={`flex items-center gap-3 p-3.5 border rounded-2xl cursor-pointer transition-all ${
                     billingOption === 'room' 
                       ? 'border-brand-500 bg-brand-500/5 text-white' 
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white'
                   }`}>
                     <input 
                       type="radio" 
@@ -1951,7 +1951,7 @@ const RestaurantKitchen = () => {
                     />
                     <div>
                       <span className="text-xs font-black block">Charge Guest Room stay folio</span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Adds unpaid fee to suite folio invoice. Guest settles checkout total upon departure.
                       </span>
                     </div>
@@ -1963,7 +1963,7 @@ const RestaurantKitchen = () => {
                       ? 'opacity-40 cursor-not-allowed border-dark-850 bg-dark-950/40 text-gray-600' 
                       : billingOption === 'group'
                       ? 'border-brand-500 bg-brand-500/5 text-white cursor-pointer'
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white cursor-pointer'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white cursor-pointer'
                   }`}>
                     <input 
                       type="radio" 
@@ -1977,9 +1977,9 @@ const RestaurantKitchen = () => {
                     <div>
                       <span className="text-xs font-black block flex items-center gap-1.5">
                         Charge Corporate Group Account
-                        {!selectedOrder.bookings?.group_account_id && <span className="text-[8px] bg-dark-800 text-gray-500 border border-dark-700 px-1 rounded font-normal uppercase">Individual</span>}
+                        {!selectedOrder.bookings?.group_account_id && <span className="text-[8px] bg-dark-800 text-gray-300 border border-dark-700 px-1 rounded font-normal uppercase">Individual</span>}
                       </span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Bypasses stay folio lock checks. Charges the company group's outstanding corporate tab directly.
                       </span>
                     </div>
@@ -1991,7 +1991,7 @@ const RestaurantKitchen = () => {
                       ? 'opacity-40 cursor-not-allowed border-dark-850 bg-dark-950/40 text-gray-600'
                       : billingOption === 'ar'
                       ? 'border-brand-500 bg-brand-500/5 text-white cursor-pointer'
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white cursor-pointer'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white cursor-pointer'
                   }`}>
                     <input 
                       type="radio" 
@@ -2005,14 +2005,14 @@ const RestaurantKitchen = () => {
                     <div>
                       <span className="text-xs font-black block flex items-center gap-1.5">
                         Charge Guest AR Prepayment Wallet
-                        {loadingWallet && <span className="text-[8px] text-gray-500 animate-pulse">Checking balance...</span>}
+                        {loadingWallet && <span className="text-[8px] text-gray-300 animate-pulse">Checking balance...</span>}
                         {guestWalletProfile && (
                           <span className="text-[9px] text-emerald-400 font-extrabold">
                             (Bal: ₦{Number(guestWalletProfile.wallet_balance || 0).toLocaleString()})
                           </span>
                         )}
                       </span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Deducts ₦{Number(selectedOrder.total_price_ngn || 0).toLocaleString()} directly from guest's prepayment ledger balance.
                       </span>
                     </div>
@@ -2022,7 +2022,7 @@ const RestaurantKitchen = () => {
                   <label className={`flex items-center gap-3 p-3.5 border rounded-2xl cursor-pointer transition-all ${
                     billingOption === 'cash' 
                       ? 'border-brand-500 bg-brand-500/5 text-white' 
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white'
                   }`}>
                     <input 
                       type="radio" 
@@ -2034,7 +2034,7 @@ const RestaurantKitchen = () => {
                     />
                     <div>
                       <span className="text-xs font-black block">Direct Cash Payment</span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Receive physical cash at delivery.
                       </span>
                     </div>
@@ -2044,7 +2044,7 @@ const RestaurantKitchen = () => {
                   <label className={`flex items-center gap-3 p-3.5 border rounded-2xl cursor-pointer transition-all ${
                     billingOption === 'pos' 
                       ? 'border-brand-500 bg-brand-500/5 text-white' 
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white'
                   }`}>
                     <input 
                       type="radio" 
@@ -2056,7 +2056,7 @@ const RestaurantKitchen = () => {
                     />
                     <div>
                       <span className="text-xs font-black block">Direct POS Terminal Payment</span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Process payment on a card reader terminal at delivery.
                       </span>
                     </div>
@@ -2066,7 +2066,7 @@ const RestaurantKitchen = () => {
                   <label className={`flex items-center gap-3 p-3.5 border rounded-2xl cursor-pointer transition-all ${
                     billingOption === 'bank_transfer' 
                       ? 'border-brand-500 bg-brand-500/5 text-white' 
-                      : 'border-dark-700 bg-dark-900 text-gray-400 hover:text-white'
+                      : 'border-dark-700 bg-dark-900 text-gray-200 hover:text-white'
                   }`}>
                     <input 
                       type="radio" 
@@ -2078,7 +2078,7 @@ const RestaurantKitchen = () => {
                     />
                     <div>
                       <span className="text-xs font-black block">Direct Bank Transfer Payment</span>
-                      <span className="text-[10px] text-gray-500 mt-0.5 block leading-normal">
+                      <span className="text-[10px] text-gray-300 mt-0.5 block leading-normal">
                         Receive bank transfer directly.
                       </span>
                     </div>
@@ -2118,7 +2118,7 @@ const RestaurantKitchen = () => {
               </h2>
               <button 
                 onClick={() => setIsMenuModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={18} />
               </button>
@@ -2128,7 +2128,7 @@ const RestaurantKitchen = () => {
               <div className="p-5 space-y-4">
                 {/* Item Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Item Name *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Item Name *</label>
                   <input 
                     type="text" 
                     required 
@@ -2141,7 +2141,7 @@ const RestaurantKitchen = () => {
 
                 {/* Base Price */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Base Menu Price (₦) *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Base Menu Price (₦) *</label>
                   <input 
                     type="number" 
                     required 
@@ -2155,7 +2155,7 @@ const RestaurantKitchen = () => {
 
                 {/* Meal Segment */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Meal Segment *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Meal Segment *</label>
                   <select
                     required
                     value={menuForm.segment}
@@ -2170,7 +2170,7 @@ const RestaurantKitchen = () => {
 
                 {/* Description */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Menu Description</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Menu Description</label>
                   <textarea 
                     value={menuForm.description} 
                     onChange={e => setMenuForm({ ...menuForm, description: e.target.value })}
@@ -2183,7 +2183,7 @@ const RestaurantKitchen = () => {
                 <div className="flex items-center justify-between bg-dark-900/50 p-3 rounded-lg border border-dark-750">
                   <div>
                     <span className="text-xs font-bold text-white block">Active Status</span>
-                    <span className="text-[10px] text-gray-500">Deactivated items cannot be ordered.</span>
+                    <span className="text-[10px] text-gray-300">Deactivated items cannot be ordered.</span>
                   </div>
                   <input 
                     type="checkbox"
@@ -2198,7 +2198,7 @@ const RestaurantKitchen = () => {
                 <button 
                   type="button"
                   onClick={() => setIsMenuModalOpen(false)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -2226,7 +2226,7 @@ const RestaurantKitchen = () => {
               </h2>
               <button 
                 onClick={() => setIsCloseOfDayModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -2235,19 +2235,19 @@ const RestaurantKitchen = () => {
             <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Consolidated Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Consolidated Revenue</span>
                   <span className="text-2xl font-black text-white">₦{closeOfDayReport.total_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.total_count} total transactions</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.total_count} total transactions</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Restaurant POS Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Restaurant POS Revenue</span>
                   <span className="text-2xl font-black text-brand-500">₦{closeOfDayReport.total_restaurant_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.restaurant_count} POS/walk-in transactions</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.restaurant_count} POS/walk-in transactions</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Kitchen Orders Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Kitchen Orders Revenue</span>
                   <span className="text-2xl font-black text-blue-400">₦{closeOfDayReport.total_kitchen_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.kitchen_count} room service/guest orders</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.kitchen_count} room service/guest orders</span>
                 </div>
               </div>
 
@@ -2258,12 +2258,12 @@ const RestaurantKitchen = () => {
                   Restaurant POS Transactions (Walk-ins & POS Sales)
                 </h3>
                 {closeOfDayReport.restaurant_pos_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No Restaurant POS transactions recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No Restaurant POS transactions recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Reference / Guest</th>
                           <th className="py-2 px-3">Description</th>
@@ -2274,7 +2274,7 @@ const RestaurantKitchen = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.restaurant_pos_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -2298,12 +2298,12 @@ const RestaurantKitchen = () => {
                   Kitchen Orders & Room Charges (In-house Guests)
                 </h3>
                 {closeOfDayReport.kitchen_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No Kitchen orders recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No Kitchen orders recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Reference / Room</th>
                           <th className="py-2 px-3">Description</th>
@@ -2314,7 +2314,7 @@ const RestaurantKitchen = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.kitchen_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -2336,7 +2336,7 @@ const RestaurantKitchen = () => {
               <button 
                 type="button"
                 onClick={() => setIsCloseOfDayModalOpen(false)}
-                className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
               >
                 Cancel
               </button>
@@ -2358,12 +2358,12 @@ const RestaurantKitchen = () => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-xl rounded-2xl shadow-2xl my-8 overflow-hidden text-left">
             <div className="bg-dark-900 p-5 border-b border-dark-700 flex justify-between items-center">
               <h3 className="text-md font-bold text-white">{editingMeal ? 'Edit Catering Package' : 'Create New Catering Package'}</h3>
-              <button onClick={() => { setIsMealModalOpen(false); setEditingMeal(null); }} className="text-gray-400 hover:text-white"><X size={20}/></button>
+              <button onClick={() => { setIsMealModalOpen(false); setEditingMeal(null); }} className="text-gray-200 hover:text-white"><X size={20}/></button>
             </div>
 
             <form onSubmit={handleSaveMeal} className="p-6 space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Package Name *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Package Name *</label>
                 <input 
                   type="text" 
                   required
@@ -2375,7 +2375,7 @@ const RestaurantKitchen = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Course Segment *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Course Segment *</label>
                 <select 
                   value={mealForm.course_type}
                   onChange={e => setMealForm(prev => ({ ...prev, course_type: e.target.value }))}
@@ -2392,7 +2392,7 @@ const RestaurantKitchen = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Combination Items (Comma separated) *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Combination Items (Comma separated) *</label>
                 <input 
                   type="text" 
                   required
@@ -2404,7 +2404,7 @@ const RestaurantKitchen = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Price Per Participant (₦) *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Price Per Participant (₦) *</label>
                 <input 
                   type="number" 
                   required
@@ -2423,14 +2423,14 @@ const RestaurantKitchen = () => {
                   onChange={e => setMealForm(prev => ({ ...prev, is_active: e.target.checked }))}
                   className="rounded bg-dark-900 border-dark-700 text-brand-500 focus:ring-0 focus:ring-offset-0"
                 />
-                <label htmlFor="mealActive" className="text-xs text-gray-400 font-bold cursor-pointer">Package is Active & Orderable</label>
+                <label htmlFor="mealActive" className="text-xs text-gray-200 font-bold cursor-pointer">Package is Active & Orderable</label>
               </div>
 
               <div className="flex justify-end gap-3 pt-4 border-t border-dark-700 mt-2">
                 <button 
                   type="button" 
                   onClick={() => { setIsMealModalOpen(false); setEditingMeal(null); }}
-                  className="px-4 py-2 border border-dark-700 text-gray-400 hover:text-white rounded-lg text-xs font-bold"
+                  className="px-4 py-2 border border-dark-700 text-gray-200 hover:text-white rounded-lg text-xs font-bold"
                 >
                   Cancel
                 </button>

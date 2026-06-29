@@ -734,7 +734,7 @@ const AdminRooms = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-white">Rooms, Halls & Inventory Management</h1>
-          <p className="text-gray-400 mt-1">Manage physical properties, room types, event halls, inventory, and capacities.</p>
+          <p className="text-gray-200 mt-1">Manage physical properties, room types, event halls, inventory, and capacities.</p>
         </div>
         <div className="flex gap-3">
           <button onClick={() => setIsWalkinModalOpen(true)} className="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-md font-medium flex items-center gap-2 transition-colors">
@@ -745,17 +745,17 @@ const AdminRooms = () => {
 
       {/* TABS */}
       <div className="flex border-b border-dark-700 bg-dark-800 p-1 rounded-t-lg">
-        <button onClick={() => setActiveTab('inventory')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'inventory' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-400 hover:text-white hover:bg-dark-700/50'}`}>Room Units</button>
-        <button onClick={() => setActiveTab('halls')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'halls' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-400 hover:text-white hover:bg-dark-700/50'}`}>Event Halls Inventory</button>
-        <button onClick={() => setActiveTab('categories')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'categories' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-400 hover:text-white hover:bg-dark-700/50'}`}>Categories & Features</button>
+        <button onClick={() => setActiveTab('inventory')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'inventory' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-200 hover:text-white hover:bg-dark-700/50'}`}>Room Units</button>
+        <button onClick={() => setActiveTab('halls')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'halls' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-200 hover:text-white hover:bg-dark-700/50'}`}>Event Halls Inventory</button>
+        <button onClick={() => setActiveTab('categories')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'categories' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-200 hover:text-white hover:bg-dark-700/50'}`}>Categories & Features</button>
         {hasAccess('Guest Services') && (
-          <button onClick={() => setActiveTab('services')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'services' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-400 hover:text-white hover:bg-dark-700/50'}`}>Guest Add-ons</button>
+          <button onClick={() => setActiveTab('services')} className={`flex-1 py-3 font-medium rounded text-center transition-colors ${activeTab === 'services' ? 'bg-dark-700 text-gold-500 shadow-sm' : 'text-gray-200 hover:text-white hover:bg-dark-700/50'}`}>Guest Add-ons</button>
         )}
       </div>
 
       <div className="bg-dark-800 border border-dark-700 p-6 rounded-b-lg shadow-sm min-h-[500px]">
         {loading ? (
-          <div className="py-12 text-center text-gray-500">Loading module data...</div>
+          <div className="py-12 text-center text-gray-300">Loading module data...</div>
         ) : (
           <>
             {/* TAB: INVENTORY */}
@@ -792,7 +792,7 @@ const AdminRooms = () => {
 
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                    <thead className="bg-dark-900 border-b border-dark-700 text-gray-400 uppercase tracking-wider">
+                    <thead className="bg-dark-900 border-b border-dark-700 text-gray-200 uppercase tracking-wider">
                       <tr>
                         <th className="p-4 font-medium">Unit No.</th>
                         <th className="p-4 font-medium">Property</th>
@@ -803,17 +803,17 @@ const AdminRooms = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-dark-700">
-                      {rooms.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-500">No rooms generated yet.</td></tr>}
+                      {rooms.length === 0 && <tr><td colSpan="6" className="p-8 text-center text-gray-300">No rooms generated yet.</td></tr>}
                       {rooms.map(room => (
                         <tr key={room.id} className="hover:bg-dark-700/50 transition-colors">
                           <td className="p-4 font-bold text-lg text-white">
                             <span className="flex items-center gap-2"><Key size={16} className="text-gold-500"/> {room.room_number}</span>
-                            {room.name && <p className="text-xs text-gray-400 font-normal mt-1">{room.name}</p>}
+                            {room.name && <p className="text-xs text-gray-200 font-normal mt-1">{room.name}</p>}
                           </td>
                           <td className="p-4 text-gray-300">{room.properties?.name || 'HQ'}</td>
                           <td className="p-4">
                             <p className="font-semibold text-white">{room.type}</p>
-                            <p className="text-xs text-gray-400 mt-1">Cap: {room.capacity} | {room.size_sqm}sqm</p>
+                            <p className="text-xs text-gray-200 mt-1">Cap: {room.capacity} | {room.size_sqm}sqm</p>
                           </td>
                           <td className="p-4 font-medium text-gold-500">₦{Number(room.base_price_ngn).toLocaleString()}/nt</td>
                           <td className="p-4">
@@ -834,7 +834,7 @@ const AdminRooms = () => {
                             </div>
                           </td>
                           <td className="p-4 text-right">
-                            <div className="flex justify-end gap-3 text-gray-400">
+                            <div className="flex justify-end gap-3 text-gray-200">
                               <button onClick={() => openRoomModal(room)} className="hover:text-gold-500 transition-colors"><Settings size={18}/></button>
                               <button onClick={() => removeRoom(room.id)} className="hover:text-red-500 transition-colors"><Trash2 size={18}/></button>
                             </div>
@@ -879,7 +879,7 @@ const AdminRooms = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                   {halls.length === 0 && (
-                    <div className="col-span-2 py-12 text-center text-gray-500">No event halls registered yet.</div>
+                    <div className="col-span-2 py-12 text-center text-gray-300">No event halls registered yet.</div>
                   )}
                   {halls.map(hall => (
                     <div key={hall.id} className="bg-dark-900/40 border border-dark-750 p-5 rounded-2xl flex flex-col justify-between hover:border-brand-500/30 transition-all duration-300">
@@ -893,7 +893,7 @@ const AdminRooms = () => {
                             {hall.is_active ? 'Active' : 'Maintenance'}
                           </span>
                         </div>
-                        <p className="text-gray-400 text-xs mt-2 line-clamp-2 leading-relaxed">{hall.description || 'No description provided.'}</p>
+                        <p className="text-gray-200 text-xs mt-2 line-clamp-2 leading-relaxed">{hall.description || 'No description provided.'}</p>
                         
                         <div className="grid grid-cols-3 gap-3 my-4">
                           <div className="bg-dark-950/40 p-2.5 rounded-xl border border-dark-850 text-center">
@@ -912,14 +912,14 @@ const AdminRooms = () => {
 
                         <div className="flex flex-wrap gap-1.5 mb-4">
                           {hall.amenities?.map((a, idx) => (
-                            <span key={idx} className="bg-dark-950 text-gray-400 border border-dark-800 px-2 py-1 text-[11px] font-semibold rounded-lg">{a}</span>
+                            <span key={idx} className="bg-dark-950 text-gray-200 border border-dark-800 px-2 py-1 text-[11px] font-semibold rounded-lg">{a}</span>
                           ))}
                         </div>
                       </div>
 
                       <div className="flex justify-between items-center border-t border-dark-800/40 pt-4 mt-2">
                         <div className="text-xs">
-                          <span className="text-gray-500 uppercase tracking-widest text-[9px] font-bold block">Daily Rate</span>
+                          <span className="text-gray-300 uppercase tracking-widest text-[9px] font-bold block">Daily Rate</span>
                           <span className="text-gold-500 font-black text-lg">₦{Number(hall.base_price_ngn).toLocaleString()}/day</span>
                         </div>
                         <div className="flex gap-2">
@@ -980,7 +980,7 @@ const AdminRooms = () => {
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-gray-500 mt-4">Categories dictate the grouping in the Booking Engine dropdowns.</p>
+                      <p className="text-xs text-gray-300 mt-4">Categories dictate the grouping in the Booking Engine dropdowns.</p>
                     </div>
                   </div>
 
@@ -998,7 +998,7 @@ const AdminRooms = () => {
                           </span>
                         ))}
                       </div>
-                      <p className="text-xs text-gray-500 mt-4">These features will be available as checkboxes when configuring new properties or room units.</p>
+                      <p className="text-xs text-gray-300 mt-4">These features will be available as checkboxes when configuring new properties or room units.</p>
                     </div>
                   </div>
                                 </div>
@@ -1007,7 +1007,7 @@ const AdminRooms = () => {
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-white">Purpose of Stay Surcharges & Discounts</h3>
-                      <p className="text-sm text-gray-400 mt-1 font-medium">
+                      <p className="text-sm text-gray-200 mt-1 font-medium">
                         Configure dynamic price modifiers for guest stays. Surcharges are positive values, and discounts are negative values (e.g. -10% or -5000).
                       </p>
                     </div>
@@ -1036,7 +1036,7 @@ const AdminRooms = () => {
                         <button 
                           type="button"
                           onClick={() => handleDeletePurpose(purpose)}
-                          className="absolute top-4 right-4 text-gray-500 hover:text-red-400 transition-colors"
+                          className="absolute top-4 right-4 text-gray-300 hover:text-red-400 transition-colors"
                           title="Delete Stay Purpose"
                         >
                           <Trash2 size={16} />
@@ -1052,14 +1052,14 @@ const AdminRooms = () => {
                             <button 
                               type="button"
                               onClick={() => handleUpdatePurposeProp(purpose, 'type', 'amount')}
-                              className={`px-3 py-1.5 text-xs font-black transition-all ${valObj.type === 'amount' ? 'bg-gold-500 text-dark-900 font-extrabold' : 'bg-dark-900 text-gray-400 hover:text-white'}`}
+                              className={`px-3 py-1.5 text-xs font-black transition-all ${valObj.type === 'amount' ? 'bg-gold-500 text-dark-900 font-extrabold' : 'bg-dark-900 text-gray-200 hover:text-white'}`}
                             >
                               ₦
                             </button>
                             <button 
                               type="button"
                               onClick={() => handleUpdatePurposeProp(purpose, 'type', 'percentage')}
-                              className={`px-3 py-1.5 text-xs font-black transition-all ${valObj.type === 'percentage' ? 'bg-gold-500 text-dark-900 font-extrabold' : 'bg-dark-900 text-gray-400 hover:text-white'}`}
+                              className={`px-3 py-1.5 text-xs font-black transition-all ${valObj.type === 'percentage' ? 'bg-gold-500 text-dark-900 font-extrabold' : 'bg-dark-900 text-gray-200 hover:text-white'}`}
                             >
                               %
                             </button>
@@ -1074,7 +1074,7 @@ const AdminRooms = () => {
                               className="w-full bg-dark-900 border border-dark-700 rounded px-3.5 py-2.5 text-white outline-none focus:border-gold-500 text-sm font-mono font-bold" 
                               placeholder="0"
                             />
-                            <span className="absolute right-3.5 text-xs font-semibold text-gray-500">
+                            <span className="absolute right-3.5 text-xs font-semibold text-gray-300">
                               {valObj.type === 'percentage' ? '%' : 'NGN'}
                             </span>
                           </div>
@@ -1111,7 +1111,7 @@ const AdminRooms = () => {
       {isRoomModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-2xl shadow-2xl relative animate-in zoom-in-95 max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <button onClick={() => setIsRoomModalOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X size={24}/></button>
+            <button onClick={() => setIsRoomModalOpen(false)} className="absolute top-4 right-4 text-gray-200 hover:text-white"><X size={24}/></button>
             <h2 className="text-xl font-bold mb-6 text-white">{isEdit ? 'Edit Room Configuration' : 'Create Room Inventory'}</h2>
             
             <form onSubmit={handleSaveRoom} className="space-y-6">
@@ -1121,7 +1121,7 @@ const AdminRooms = () => {
                   <input type="checkbox" id="bulkAdd" checked={isBulkAdd} onChange={e => setIsBulkAdd(e.target.checked)} className="w-5 h-5 accent-gold-500" />
                   <div>
                     <label htmlFor="bulkAdd" className="font-bold text-white block">Bulk Generate Units</label>
-                    <span className="text-xs text-gray-400">Generate multiple identical rooms at once (e.g., Rooms 101, 102, 103).</span>
+                    <span className="text-xs text-gray-200">Generate multiple identical rooms at once (e.g., Rooms 101, 102, 103).</span>
                   </div>
                 </div>
               )}
@@ -1129,7 +1129,7 @@ const AdminRooms = () => {
               {isBulkAdd && !isEdit ? (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-dark-900 p-4 border border-dark-700 rounded">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-wider">Base Name (e.g. "Julex")</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1 uppercase tracking-wider">Base Name (e.g. "Julex")</label>
                     <input 
                       type="text" 
                       value={bulkName} 
@@ -1139,7 +1139,7 @@ const AdminRooms = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-wider">Number Prefix (e.g. "10")</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1 uppercase tracking-wider">Number Prefix (e.g. "10")</label>
                     <input 
                       type="text" 
                       required 
@@ -1149,7 +1149,7 @@ const AdminRooms = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 mb-1 uppercase tracking-wider">Quantity to Generate</label>
+                    <label className="block text-xs font-bold text-gray-200 mb-1 uppercase tracking-wider">Quantity to Generate</label>
                     <input 
                       type="number" 
                       min="1" 
@@ -1164,11 +1164,11 @@ const AdminRooms = () => {
               ) : (
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-gray-400 mb-1">Room Number / Identifier</label>
+                    <label className="block text-sm text-gray-200 mb-1">Room Number / Identifier</label>
                     <input type="text" required value={newRoom.room_number} onChange={e => setNewRoom({...newRoom, room_number: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" placeholder="e.g. 101 or Penthouse A" />
                   </div>
                   <div>
-                    <label className="block text-sm text-gray-400 mb-1">Marketing Name (Optional)</label>
+                    <label className="block text-sm text-gray-200 mb-1">Marketing Name (Optional)</label>
                     <input type="text" value={newRoom.name} onChange={e => setNewRoom({...newRoom, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" placeholder="Ocean View Suite" />
                   </div>
                 </div>
@@ -1176,14 +1176,14 @@ const AdminRooms = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Property Branch</label>
+                  <label className="block text-sm text-gray-200 mb-1">Property Branch</label>
                   <select required value={newRoom.property_id} onChange={e => setNewRoom({...newRoom, property_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500">
                     <option value="" disabled>Select Property</option>
                     {properties.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Room Category</label>
+                  <label className="block text-sm text-gray-200 mb-1">Room Category</label>
                   <select required value={newRoom.type} onChange={handleCategoryChange} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500">
                     {categories.map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)}
                   </select>
@@ -1192,7 +1192,7 @@ const AdminRooms = () => {
 
               {newRoom.type && newRoom.type.toLowerCase().includes('flat') && (
                 <div className="bg-dark-900/50 border border-dark-700 p-4 rounded-lg space-y-2 animate-in slide-in-from-top-4 duration-300">
-                  <label className="block text-sm text-gray-400 mb-1 font-semibold">Room Sub-Category</label>
+                  <label className="block text-sm text-gray-200 mb-1 font-semibold">Room Sub-Category</label>
                   <select 
                     required 
                     value={newRoom.sub_category || '3 Bedroom Flat'} 
@@ -1204,25 +1204,25 @@ const AdminRooms = () => {
                     <option value="2 Bedroom Flat">2 Bedroom Flat</option>
                     <option value="1 Bedroom Flat">1 Bedroom Flat</option>
                   </select>
-                  <p className="text-xs text-gray-500 mt-1">Selecting a sub-category dynamically adjusts capacity and bed configuration options.</p>
+                  <p className="text-xs text-gray-300 mt-1">Selecting a sub-category dynamically adjusts capacity and bed configuration options.</p>
                 </div>
               )}
 
               <div className="grid grid-cols-4 gap-4">
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block text-sm text-gray-400 mb-1">Max Capacity</label>
+                  <label className="block text-sm text-gray-200 mb-1">Max Capacity</label>
                   <input type="number" required value={newRoom.capacity} onChange={e => setNewRoom({...newRoom, capacity: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block text-sm text-gray-400 mb-1">Size (sqm)</label>
+                  <label className="block text-sm text-gray-200 mb-1">Size (sqm)</label>
                   <input type="number" value={newRoom.size_sqm} onChange={e => setNewRoom({...newRoom, size_sqm: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block text-sm text-gray-400 mb-1">Price/Night (Base)</label>
+                  <label className="block text-sm text-gray-200 mb-1">Price/Night (Base)</label>
                   <input type="number" step="any" required value={newRoom.base_price_ngn} onChange={e => setNewRoom({...newRoom, base_price_ngn: parseFloat(e.target.value) || 0})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block text-sm text-gray-400 mb-1">Bed Configuration</label>
+                  <label className="block text-sm text-gray-200 mb-1">Bed Configuration</label>
                   <select required value={newRoom.bed_configuration} onChange={e => setNewRoom({...newRoom, bed_configuration: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500">
                     {getBedConfigurationOptions().map(opt => (
                       <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -1233,7 +1233,7 @@ const AdminRooms = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Pricing Model</label>
+                  <label className="block text-sm text-gray-200 mb-1">Pricing Model</label>
                   <select required value={newRoom.pricing_model || 'per_night'} onChange={e => setNewRoom({...newRoom, pricing_model: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500">
                     <option value="per_night">Per Night (Flat Rate)</option>
                     <option value="per_guest">Per Guest (Rate x Guests)</option>
@@ -1242,7 +1242,7 @@ const AdminRooms = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Base Guests (for Occupancy Pricing)</label>
+                  <label className="block text-sm text-gray-200 mb-1">Base Guests (for Occupancy Pricing)</label>
                   <input type="number" min="1" value={newRoom.base_guests || 2} onChange={e => setNewRoom({...newRoom, base_guests: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
               </div>
@@ -1252,19 +1252,19 @@ const AdminRooms = () => {
                   <h3 className="text-md font-bold text-white mb-2">Booking Restrictions</h3>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Minimum Stay (Days)</label>
+                  <label className="block text-sm text-gray-200 mb-1">Minimum Stay (Days)</label>
                   <input type="number" min="1" required value={newRoom.min_stay_days} onChange={e => setNewRoom({...newRoom, min_stay_days: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Maximum Stay (Days)</label>
+                  <label className="block text-sm text-gray-200 mb-1">Maximum Stay (Days)</label>
                   <input type="number" min="1" required value={newRoom.max_stay_days} onChange={e => setNewRoom({...newRoom, max_stay_days: parseInt(e.target.value)})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500" />
                 </div>
                 
                 <div className="col-span-2">
-                  <label className="block text-sm text-gray-400 mb-2">Allowed Check-in Days</label>
+                  <label className="block text-sm text-gray-200 mb-2">Allowed Check-in Days</label>
                   <div className="flex flex-wrap gap-2">
                     {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, idx) => (
-                      <label key={`in-${idx}`} className={`flex items-center justify-center w-12 h-8 rounded border cursor-pointer transition-colors ${newRoom.allowed_check_in_days.includes(idx) ? 'bg-gold-500 text-dark-900 font-bold border-gold-500' : 'bg-dark-900 text-gray-400 border-dark-700 hover:border-gray-500'}`}>
+                      <label key={`in-${idx}`} className={`flex items-center justify-center w-12 h-8 rounded border cursor-pointer transition-colors ${newRoom.allowed_check_in_days.includes(idx) ? 'bg-gold-500 text-dark-900 font-bold border-gold-500' : 'bg-dark-900 text-gray-200 border-dark-700 hover:border-gray-500'}`}>
                         <input type="checkbox" className="hidden" checked={newRoom.allowed_check_in_days.includes(idx)} onChange={() => {
                           setNewRoom(prev => ({
                             ...prev,
@@ -1278,10 +1278,10 @@ const AdminRooms = () => {
                 </div>
 
                 <div className="col-span-2">
-                  <label className="block text-sm text-gray-400 mb-2">Allowed Check-out Days</label>
+                  <label className="block text-sm text-gray-200 mb-2">Allowed Check-out Days</label>
                   <div className="flex flex-wrap gap-2">
                     {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, idx) => (
-                      <label key={`out-${idx}`} className={`flex items-center justify-center w-12 h-8 rounded border cursor-pointer transition-colors ${newRoom.allowed_check_out_days.includes(idx) ? 'bg-gold-500 text-dark-900 font-bold border-gold-500' : 'bg-dark-900 text-gray-400 border-dark-700 hover:border-gray-500'}`}>
+                      <label key={`out-${idx}`} className={`flex items-center justify-center w-12 h-8 rounded border cursor-pointer transition-colors ${newRoom.allowed_check_out_days.includes(idx) ? 'bg-gold-500 text-dark-900 font-bold border-gold-500' : 'bg-dark-900 text-gray-200 border-dark-700 hover:border-gray-500'}`}>
                         <input type="checkbox" className="hidden" checked={newRoom.allowed_check_out_days.includes(idx)} onChange={() => {
                           setNewRoom(prev => ({
                             ...prev,
@@ -1296,10 +1296,10 @@ const AdminRooms = () => {
               </div>
 
               <div className="border-t border-dark-700 pt-4">
-                <label className="block text-sm text-gray-400 mb-2">Room Features</label>
+                <label className="block text-sm text-gray-200 mb-2">Room Features</label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {featuresList.map((feat, idx) => (
-                    <label key={idx} className={`flex items-center gap-2 p-2 rounded border cursor-pointer transition-colors ${newRoom.amenities.includes(feat) ? 'bg-gold-500/10 border-gold-500/50 text-gold-500' : 'bg-dark-900 border-dark-700 text-gray-400 hover:border-gray-500'}`}>
+                    <label key={idx} className={`flex items-center gap-2 p-2 rounded border cursor-pointer transition-colors ${newRoom.amenities.includes(feat) ? 'bg-gold-500/10 border-gold-500/50 text-gold-500' : 'bg-dark-900 border-dark-700 text-gray-200 hover:border-gray-500'}`}>
                       <input type="checkbox" checked={newRoom.amenities.includes(feat)} onChange={() => toggleFeature(feat)} className="hidden" />
                       <CheckCircle size={16} className={newRoom.amenities.includes(feat) ? 'opacity-100' : 'opacity-0'} />
                       <span className="text-xs font-semibold uppercase tracking-wider">{feat}</span>
@@ -1309,11 +1309,11 @@ const AdminRooms = () => {
               </div>
 
               <div className="border-t border-dark-700 pt-4">
-                <label className="block text-sm text-gray-400 mb-2">Video Walkthrough URL (YouTube/Vimeo)</label>
+                <label className="block text-sm text-gray-200 mb-2">Video Walkthrough URL (YouTube/Vimeo)</label>
                 <input type="text" value={newRoom.video_url || ''} onChange={e => setNewRoom({...newRoom, video_url: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 text-white outline-none focus:border-gold-500 mb-4" placeholder="https://youtube.com/watch?v=..." />
 
-                <label className="block text-sm text-gray-400 mb-2 border-b border-dark-700 pb-1">Media Gallery (Upload Multiple Images)</label>
-                <input type="file" multiple accept="image/*" onChange={(e) => handleImageUpload(e, setNewRoom)} className="w-full bg-dark-900 border border-dark-700 p-2 text-gray-400 outline-none mb-2" />
+                <label className="block text-sm text-gray-200 mb-2 border-b border-dark-700 pb-1">Media Gallery (Upload Multiple Images)</label>
+                <input type="file" multiple accept="image/*" onChange={(e) => handleImageUpload(e, setNewRoom)} className="w-full bg-dark-900 border border-dark-700 p-2 text-gray-200 outline-none mb-2" />
                 {newRoom.images && newRoom.images.length > 0 && (
                   <div className="flex gap-2 overflow-x-auto py-2">
                     {newRoom.images.map((img, idx) => (
@@ -1340,12 +1340,12 @@ const AdminRooms = () => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-xl rounded-2xl shadow-2xl my-8 overflow-hidden">
             <div className="bg-dark-900 p-5 border-b border-dark-700 flex justify-between items-center">
               <h3 className="text-md font-bold text-white">{editingHall ? 'Edit Event Hall Profile' : 'Register New Event Hall'}</h3>
-              <button onClick={() => { setIsHallModalOpen(false); setEditingHall(null); }} className="text-gray-400 hover:text-white"><X size={20}/></button>
+              <button onClick={() => { setIsHallModalOpen(false); setEditingHall(null); }} className="text-gray-200 hover:text-white"><X size={20}/></button>
             </div>
 
             <form onSubmit={handleSaveHall} className="p-6 space-y-4 text-left">
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Hall Name *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Hall Name *</label>
                 <input 
                   type="text" 
                   required
@@ -1358,7 +1358,7 @@ const AdminRooms = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs text-gray-400 font-bold mb-1">Max Capacity (Pax) *</label>
+                  <label className="block text-xs text-gray-200 font-bold mb-1">Max Capacity (Pax) *</label>
                   <input 
                     type="number" 
                     required
@@ -1369,7 +1369,7 @@ const AdminRooms = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-400 font-bold mb-1">Size (Sqm)</label>
+                  <label className="block text-xs text-gray-200 font-bold mb-1">Size (Sqm)</label>
                   <input 
                     type="number" 
                     min="1"
@@ -1382,7 +1382,7 @@ const AdminRooms = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs text-gray-400 font-bold mb-1">Daily Base Rate (₦) *</label>
+                  <label className="block text-xs text-gray-200 font-bold mb-1">Daily Base Rate (₦) *</label>
                   <input 
                     type="number" 
                     required
@@ -1393,7 +1393,7 @@ const AdminRooms = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-400 font-bold mb-1">Hourly Base Rate (₦) *</label>
+                  <label className="block text-xs text-gray-200 font-bold mb-1">Hourly Base Rate (₦) *</label>
                   <input 
                     type="number" 
                     required
@@ -1406,7 +1406,7 @@ const AdminRooms = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Description</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Description</label>
                 <textarea 
                   value={hallForm.description}
                   onChange={e => setHallForm(prev => ({ ...prev, description: e.target.value }))}
@@ -1416,7 +1416,7 @@ const AdminRooms = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Amenities (Comma separated)</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Amenities (Comma separated)</label>
                 <input 
                   type="text" 
                   value={hallForm.amenities}
@@ -1427,7 +1427,7 @@ const AdminRooms = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Image URL</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Image URL</label>
                 <input 
                   type="text" 
                   value={hallForm.image_url}
@@ -1445,14 +1445,14 @@ const AdminRooms = () => {
                   onChange={e => setHallForm(prev => ({ ...prev, is_active: e.target.checked }))}
                   className="rounded bg-dark-900 border-dark-700 text-brand-500 focus:ring-0 focus:ring-offset-0"
                 />
-                <label htmlFor="hallActive" className="text-xs text-gray-400 font-bold cursor-pointer">Hall is Active & Bookable</label>
+                <label htmlFor="hallActive" className="text-xs text-gray-200 font-bold cursor-pointer">Hall is Active & Bookable</label>
               </div>
 
               <div className="flex justify-end gap-3 pt-4 border-t border-dark-700 mt-2">
                 <button 
                   type="button" 
                   onClick={() => { setIsHallModalOpen(false); setEditingHall(null); }}
-                  className="px-4 py-2 border border-dark-700 text-gray-400 hover:text-white rounded-lg text-xs font-bold"
+                  className="px-4 py-2 border border-dark-700 text-gray-200 hover:text-white rounded-lg text-xs font-bold"
                 >
                   Cancel
                 </button>
@@ -1473,12 +1473,12 @@ const AdminRooms = () => {
       {isWalkinModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-8 w-full max-w-md shadow-2xl relative animate-in zoom-in-95 text-center">
-            <button onClick={() => setIsWalkinModalOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X size={24}/></button>
+            <button onClick={() => setIsWalkinModalOpen(false)} className="absolute top-4 right-4 text-gray-200 hover:text-white"><X size={24}/></button>
             <div className="w-16 h-16 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle size={32} />
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">Walk-in Reservation</h2>
-            <p className="text-gray-400 mb-6">To process a walk-in, redirecting you to the master reservation terminal.</p>
+            <p className="text-gray-200 mb-6">To process a walk-in, redirecting you to the master reservation terminal.</p>
             <button onClick={() => { setIsWalkinModalOpen(false); window.location.href = '/admin/frontdesk'; }} className="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded transition-colors">Go to Front Desk Terminal</button>
           </div>
         </div>

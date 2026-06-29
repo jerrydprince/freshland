@@ -189,10 +189,10 @@ const AdminAutomations = () => {
     toast.loading("Sending via Resend API...", { id: 'send' });
 
     // Fetch dynamic branding from system_settings
-    let contactLogo = 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+    let contactLogo = '/Images/logo.svg';
     let contactAddress = 'No2. Gowon P Haruna Close, Karu, Abuja';
     let contactPhone = '08033214684, 08062332639, 08171278657';
-    let contactEmail = 'info@jemmylandhotels.com';
+    let contactEmail = 'info@Freshlandhotels.com';
 
     try {
       const { data: sysSettings } = await supabase
@@ -216,12 +216,12 @@ const AdminAutomations = () => {
 
     const result = await sendResendEmail({
       to: testEmail,
-      subject: template.subject ? template.subject.replace(/{{booking_ref}}/g, 'WEB-999999').replace(/{{guest_name}}/g, 'Test Guest') : 'Jemmyland Hotels Notification',
+      subject: template.subject ? template.subject.replace(/{{booking_ref}}/g, 'WEB-999999').replace(/{{guest_name}}/g, 'Test Guest') : 'Freshland Notification',
       html: `
         <div style="font-family: 'Outfit', sans-serif; padding: 30px; color: #1f2937; max-width: 600px; margin: auto; border: 1px solid #e5e7eb; border-radius: 16px; background-color: #ffffff;">
           <div style="text-align: center; border-bottom: 1px solid #f3f4f6; padding-bottom: 20px; margin-bottom: 20px;">
-            ${contactLogo ? `<img src="${contactLogo}" alt="Jemmyland Hotels" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
-            <h2 style="color: #000000; margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.05em;">Jemmyland Hotels</h2>
+            ${contactLogo ? `<img src="${contactLogo}" alt="Freshland" style="max-height: 50px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />` : ''}
+            <h2 style="color: #000000; margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.05em;">Freshland</h2>
             <span style="font-size: 11px; color: #9ca3af; text-transform: uppercase; tracking-wider: 0.1em;">Premium Luxury Hotel</span>
           </div>
           <div style="font-size: 15px; line-height: 1.6; color: #4b5563; white-space: pre-wrap;">
@@ -269,18 +269,18 @@ const AdminAutomations = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Zap className="text-brand-500"/> Automations & Alerts
           </h1>
-          <p className="text-gray-400 mt-1">Configure automated workflows and manage communication templates via Resend/SMS.</p>
+          <p className="text-gray-200 mt-1">Configure automated workflows and manage communication templates via Resend/SMS.</p>
         </div>
       </div>
 
       <div className="flex gap-4 border-b border-dark-700 mb-6 overflow-x-auto">
-        <button onClick={() => setActiveTab('rules')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'rules' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('rules')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'rules' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Activity size={18} /> Automation Rules
         </button>
-        <button onClick={() => setActiveTab('templates')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'templates' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('templates')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'templates' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <FileText size={18} /> Message Templates
         </button>
-        <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('logs')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'logs' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Send size={18} /> Delivery Logs
         </button>
       </div>
@@ -293,7 +293,7 @@ const AdminAutomations = () => {
             <button onClick={() => { setRuleForm({ id: null, name: '', trigger_event: 'booking_created', template_id: '', is_active: true }); setShowRuleModal(true); }} className="btn-primary py-2 px-4 text-sm font-bold rounded flex gap-2"><Zap size={16}/> New Rule</button>
           </div>
           <table className="w-full text-left text-sm">
-            <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+            <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
               <tr>
                 <th className="p-4 font-semibold">Rule Name</th>
                 <th className="p-4 font-semibold">Trigger Event</th>
@@ -309,16 +309,16 @@ const AdminAutomations = () => {
                   <td className="p-4 text-brand-500 font-mono text-xs">{rule.trigger_event}</td>
                   <td className="p-4 text-gray-300">
                     {rule.notification_templates?.name}
-                    <span className="ml-2 text-xs text-gray-500 uppercase">({rule.notification_templates?.channel})</span>
+                    <span className="ml-2 text-xs text-gray-300 uppercase">({rule.notification_templates?.channel})</span>
                   </td>
                   <td className="p-4">
-                    <button onClick={() => toggleRuleActive(rule.id, rule.is_active)} className={`px-3 py-1 rounded-full text-xs font-bold transition-colors ${rule.is_active ? 'bg-green-500/20 text-green-500 hover:bg-green-500/30' : 'bg-gray-500/20 text-gray-500 hover:bg-gray-500/30'}`}>
+                    <button onClick={() => toggleRuleActive(rule.id, rule.is_active)} className={`px-3 py-1 rounded-full text-xs font-bold transition-colors ${rule.is_active ? 'bg-green-500/20 text-green-500 hover:bg-green-500/30' : 'bg-gray-500/20 text-gray-300 hover:bg-gray-500/30'}`}>
                       {rule.is_active ? 'Active' : 'Paused'}
                     </button>
                   </td>
                   <td className="p-4 text-right flex justify-end gap-2">
-                    <button onClick={() => { setRuleForm(rule); setShowRuleModal(true); }} className="p-2 text-gray-400 hover:text-white"><Edit size={16}/></button>
-                    <button onClick={() => deleteRule(rule.id)} className="p-2 text-gray-400 hover:text-red-500"><Trash2 size={16}/></button>
+                    <button onClick={() => { setRuleForm(rule); setShowRuleModal(true); }} className="p-2 text-gray-200 hover:text-white"><Edit size={16}/></button>
+                    <button onClick={() => deleteRule(rule.id)} className="p-2 text-gray-200 hover:text-red-500"><Trash2 size={16}/></button>
                   </td>
                 </tr>
               ))}
@@ -345,17 +345,17 @@ const AdminAutomations = () => {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="font-bold text-white text-lg">{template.name}</h3>
-                    <div className="flex items-center gap-1 text-xs text-gray-400 mt-1 uppercase font-bold tracking-wider">
+                    <div className="flex items-center gap-1 text-xs text-gray-200 mt-1 uppercase font-bold tracking-wider">
                       {CHANNELS.find(c => c.id === template.channel)?.icon} {template.channel}
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <button onClick={() => { setTemplateForm(template); setShowTemplateModal(true); }} className="text-gray-400 hover:text-white"><Edit size={16}/></button>
-                    <button onClick={() => deleteTemplate(template.id)} className="text-gray-400 hover:text-red-500"><Trash2 size={16}/></button>
+                    <button onClick={() => { setTemplateForm(template); setShowTemplateModal(true); }} className="text-gray-200 hover:text-white"><Edit size={16}/></button>
+                    <button onClick={() => deleteTemplate(template.id)} className="text-gray-200 hover:text-red-500"><Trash2 size={16}/></button>
                   </div>
                 </div>
                 
-                {template.channel === 'email' && <div className="text-xs text-gray-500 mb-2 truncate"><strong>Subj:</strong> {template.subject}</div>}
+                {template.channel === 'email' && <div className="text-xs text-gray-300 mb-2 truncate"><strong>Subj:</strong> {template.subject}</div>}
                 
                 <div className="bg-dark-900 p-4 rounded text-gray-300 text-sm font-mono flex-1 whitespace-pre-wrap break-words border border-dark-700">
                   {template.body}
@@ -376,7 +376,7 @@ const AdminAutomations = () => {
       {activeTab === 'logs' && (
         <div className="bg-dark-800 border border-dark-700 rounded-lg overflow-hidden">
           <table className="w-full text-left text-sm">
-            <thead className="bg-dark-900 border-b border-dark-700 text-gray-400">
+            <thead className="bg-dark-900 border-b border-dark-700 text-gray-200">
               <tr>
                 <th className="p-4 font-semibold">Sent At</th>
                 <th className="p-4 font-semibold">Recipient</th>
@@ -388,9 +388,9 @@ const AdminAutomations = () => {
             <tbody className="divide-y divide-dark-700">
               {logs.map(log => (
                 <tr key={log.id} className="hover:bg-dark-700/30">
-                  <td className="p-4 text-gray-400 font-mono text-xs">{new Date(log.sent_at).toLocaleString()}</td>
+                  <td className="p-4 text-gray-200 font-mono text-xs">{new Date(log.sent_at).toLocaleString()}</td>
                   <td className="p-4 text-white font-medium">{log.recipient}</td>
-                  <td className="p-4 text-gray-400 uppercase text-xs">{log.channel}</td>
+                  <td className="p-4 text-gray-200 uppercase text-xs">{log.channel}</td>
                   <td className="p-4 text-gray-300">{log.template_name}</td>
                   <td className="p-4">
                     {log.status === 'sent' ? (
@@ -413,17 +413,17 @@ const AdminAutomations = () => {
             <h2 className="text-xl font-bold text-white mb-6">Configure Automation Rule</h2>
             <form onSubmit={handleSaveRule} className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-400 mb-1">Rule Name</label>
+                <label className="block text-sm text-gray-200 mb-1">Rule Name</label>
                 <input required type="text" value={ruleForm.name} onChange={e => setRuleForm({...ruleForm, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500" />
               </div>
               <div>
-                <label className="block text-sm text-gray-400 mb-1">Trigger Event</label>
+                <label className="block text-sm text-gray-200 mb-1">Trigger Event</label>
                 <select value={ruleForm.trigger_event} onChange={e => setRuleForm({...ruleForm, trigger_event: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 font-mono">
                   {TRIGGERS.map(t => <option key={t.id} value={t.id}>{t.name} ({t.id})</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-sm text-gray-400 mb-1">Notification Template</label>
+                <label className="block text-sm text-gray-200 mb-1">Notification Template</label>
                 <select required value={ruleForm.template_id} onChange={e => setRuleForm({...ruleForm, template_id: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500">
                   <option value="">Select a template...</option>
                   {templates.map(t => <option key={t.id} value={t.id}>{t.name} ({t.channel})</option>)}
@@ -446,11 +446,11 @@ const AdminAutomations = () => {
             <form onSubmit={handleSaveTemplate} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Template Name</label>
+                  <label className="block text-sm text-gray-200 mb-1">Template Name</label>
                   <input required type="text" value={templateForm.name} onChange={e => setTemplateForm({...templateForm, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500" placeholder="e.g. Pre-arrival SMS" />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Delivery Channel</label>
+                  <label className="block text-sm text-gray-200 mb-1">Delivery Channel</label>
                   <select value={templateForm.channel} onChange={e => setTemplateForm({...templateForm, channel: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500 uppercase">
                     {CHANNELS.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                   </select>
@@ -459,13 +459,13 @@ const AdminAutomations = () => {
               
               {templateForm.channel === 'email' && (
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Email Subject</label>
+                  <label className="block text-sm text-gray-200 mb-1">Email Subject</label>
                   <input required type="text" value={templateForm.subject} onChange={e => setTemplateForm({...templateForm, subject: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-3 rounded text-white outline-none focus:border-brand-500" placeholder="Your upcoming stay..." />
                 </div>
               )}
               
               <div>
-                <label className="block text-sm text-gray-400 mb-1 flex justify-between">
+                <label className="block text-sm text-gray-200 mb-1 flex justify-between">
                   Message Body 
                   <span className="text-xs text-brand-500 font-mono">Use variables: {'{{guest_name}}, {{booking_ref}}, {{check_in}}'}</span>
                 </label>

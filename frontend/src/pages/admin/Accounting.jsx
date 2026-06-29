@@ -38,8 +38,8 @@ const AdminAccounting = () => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
-    companyName: 'Jemmyland Hotels',
+    email: 'info@Freshlandhotels.com',
+    companyName: 'Freshland',
     logo: ''
   });
 
@@ -224,9 +224,9 @@ const AdminAccounting = () => {
       // Check LocalStorage fallbacks or default hardcoded values
       const contactAddress = settingsMap['contact_address'] || localStorage.getItem('contact_address') || 'No2. Gowon P Haruna Close, Karu, Abuja';
       const contactPhone = settingsMap['contact_phone'] || localStorage.getItem('contact_phone') || '08033214684, 08062332639, 08171278657';
-      const contactEmail = settingsMap['contact_email'] || localStorage.getItem('contact_email') || 'info@jemmylandhotels.com';
+      const contactEmail = settingsMap['contact_email'] || localStorage.getItem('contact_email') || 'info@Freshlandhotels.com';
       const contactLogo = settingsMap['contact_logo'] || localStorage.getItem('contact_logo') || '';
-      const companyName = resolvedProperties[0]?.name || 'Jemmyland Hotels';
+      const companyName = resolvedProperties[0]?.name || 'Freshland';
 
       setContactInfo({
         address: contactAddress,
@@ -1572,8 +1572,8 @@ const AdminAccounting = () => {
           </table>
           
           <div class="footer">
-            Thank you for choosing Jemmyland Hotels.<br />
-            For support or billing inquiries, please contact ${contactInfo.email || 'info@jemmylandhotels.com'}.
+            Thank you for choosing Freshland.<br />
+            For support or billing inquiries, please contact ${contactInfo.email || 'info@Freshlandhotels.com'}.
           </div>
         </body>
       </html>
@@ -2873,7 +2873,7 @@ const AdminAccounting = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <Wallet className="text-brand-500" size={28} /> Financial & Payroll Center
           </h1>
-          <p className="text-gray-400 mt-1">
+          <p className="text-gray-200 mt-1">
             Aggregate customer booking payments, track utility & operations expenses, manage staff payroll profiles and print employee payslips.
           </p>
         </div>
@@ -2901,7 +2901,7 @@ const AdminAccounting = () => {
         <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Gross Booking Income</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Gross Booking Income</p>
               <h3 className="text-2xl font-black mt-2 text-white font-mono">
                 ₦{metrics.grossIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </h3>
@@ -2920,7 +2920,7 @@ const AdminAccounting = () => {
         <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Total Expenses</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Total Expenses</p>
               <h3 className="text-2xl font-black mt-2 text-white font-mono">
                 ₦{metrics.totalExpenses.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </h3>
@@ -2939,7 +2939,7 @@ const AdminAccounting = () => {
         <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Net Profit / Loss</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Net Profit / Loss</p>
               <h3 className={`text-2xl font-black mt-2 font-mono ${metrics.netProfit >= 0 ? 'text-green-400' : 'text-rose-500'}`}>
                 ₦{metrics.netProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </h3>
@@ -2958,7 +2958,7 @@ const AdminAccounting = () => {
         <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Payroll Liabilities</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Payroll Liabilities</p>
               <h3 className="text-2xl font-black mt-2 text-white font-mono">
                 ₦{metrics.outstandingPayrollLiabilities.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </h3>
@@ -2978,49 +2978,49 @@ const AdminAccounting = () => {
       <div className="flex gap-2 border-b border-dark-700 mb-6 overflow-x-auto select-none no-scrollbar">
         <button 
           onClick={() => setActiveTab('overview')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'overview' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'overview' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <TrendingUp size={18} /> Financial Dashboard
         </button>
         <button 
           onClick={() => setActiveTab('expenses')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'expenses' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'expenses' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <ArrowDownRight size={18} /> Expense Tracker
         </button>
         <button 
           onClick={() => setActiveTab('payroll')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'payroll' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'payroll' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <User size={18} /> Staff Payroll & Salaries
         </button>
         <button 
           onClick={() => setActiveTab('ledger')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'ledger' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'ledger' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <FileText size={18} /> General Ledger
         </button>
         <button 
           onClick={() => setActiveTab('debtors')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'debtors' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'debtors' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Building size={18} className="text-brand-400" /> Debtors Ledger
         </button>
         <button 
           onClick={() => setActiveTab('ar')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'ar' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'ar' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Wallet size={18} className="text-green-400" /> AR Accounts
         </button>
         <button 
           onClick={() => setActiveTab('close_of_day')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'close_of_day' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'close_of_day' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <Clock size={18} className="text-amber-400" /> Close of Day & Audit
         </button>
         <button 
           onClick={() => setActiveTab('reports')} 
-          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'reports' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-5 font-bold flex items-center gap-2 border-b-2 transition-all duration-300 ${activeTab === 'reports' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <FileText size={18} /> Accounting Reports
         </button>
@@ -3035,12 +3035,12 @@ const AdminAccounting = () => {
               <div className="flex justify-between items-center mb-6">
                 <div>
                   <h3 className="text-lg font-bold">Monthly Revenue & Cost Timeline</h3>
-                  <p className="text-gray-400 text-xs">Aggregated gross income vs. utility/salaries expenses</p>
+                  <p className="text-gray-200 text-xs">Aggregated gross income vs. utility/salaries expenses</p>
                 </div>
               </div>
               <div className="flex-1 w-full min-h-[300px]">
                 {timelineData.length === 0 ? (
-                  <div className="h-full flex items-center justify-center text-gray-500 text-sm">No transaction periods logged yet.</div>
+                  <div className="h-full flex items-center justify-center text-gray-300 text-sm">No transaction periods logged yet.</div>
                 ) : (
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={timelineData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
@@ -3074,11 +3074,11 @@ const AdminAccounting = () => {
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 flex flex-col min-h-[400px]">
               <div className="mb-6">
                 <h3 className="text-lg font-bold">Operational Expense Allocation</h3>
-                <p className="text-gray-400 text-xs">Breakdown by categorized cost centers</p>
+                <p className="text-gray-200 text-xs">Breakdown by categorized cost centers</p>
               </div>
               <div className="flex-1 w-full min-h-[220px] flex items-center justify-center">
                 {pieData.length === 0 ? (
-                  <div className="text-gray-500 text-sm">No expenses logged yet.</div>
+                  <div className="text-gray-300 text-sm">No expenses logged yet.</div>
                 ) : (
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
@@ -3126,7 +3126,7 @@ const AdminAccounting = () => {
             <div className="flex-1 flex flex-col sm:flex-row gap-3">
               {/* Search input */}
               <div className="relative flex-1">
-                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-200" />
                 <input 
                   type="text" 
                   value={expenseSearch}
@@ -3156,7 +3156,7 @@ const AdminAccounting = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-400">
+              <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-200">
                 <tr>
                   <th className="p-4 font-bold text-xs uppercase tracking-wider">Expense Date</th>
                   <th className="p-4 font-bold text-xs uppercase tracking-wider">Cost Category</th>
@@ -3170,7 +3170,7 @@ const AdminAccounting = () => {
               <tbody className="divide-y divide-dark-700/40">
                 {paginatedExpenses.map(exp => (
                     <tr key={exp.id} className="hover:bg-dark-700/20 transition-colors">
-                      <td className="p-4 text-gray-400 font-mono">{format(new Date(exp.expense_date), 'MMM dd, yyyy')}</td>
+                      <td className="p-4 text-gray-200 font-mono">{format(new Date(exp.expense_date), 'MMM dd, yyyy')}</td>
                       <td className="p-4">
                         <span className="bg-dark-700 text-gray-300 border border-dark-600/50 px-2 py-0.5 rounded text-xs font-semibold">
                           {exp.category}
@@ -3178,7 +3178,7 @@ const AdminAccounting = () => {
                       </td>
                       <td className="p-4 text-white max-w-xs truncate">{exp.description}</td>
                       <td className="p-4 text-gray-300 font-medium">{exp.paid_to || 'N/A'}</td>
-                      <td className="p-4 text-gray-400 uppercase text-xs font-semibold font-mono">{exp.payment_method}</td>
+                      <td className="p-4 text-gray-200 uppercase text-xs font-semibold font-mono">{exp.payment_method}</td>
                       <td className="p-4 text-white font-bold font-mono">₦{Number(exp.amount).toLocaleString()}</td>
                       <td className="p-4">
                         <span className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider ${
@@ -3193,7 +3193,7 @@ const AdminAccounting = () => {
                   ))}
                 {baseExpenses.length === 0 && (
                   <tr>
-                    <td colSpan="7" className="p-12 text-center text-gray-500 text-sm">No expenses found.</td>
+                    <td colSpan="7" className="p-12 text-center text-gray-300 text-sm">No expenses found.</td>
                   </tr>
                 )}
               </tbody>
@@ -3224,7 +3224,7 @@ const AdminAccounting = () => {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm whitespace-nowrap">
-                  <thead className="bg-dark-900 border-b border-dark-700/50 text-gray-400">
+                  <thead className="bg-dark-900 border-b border-dark-700/50 text-gray-200">
                     <tr>
                       <th className="p-4 font-bold text-xs uppercase tracking-wider">Employee</th>
                       <th className="p-4 font-bold text-xs uppercase tracking-wider">Role</th>
@@ -3236,7 +3236,7 @@ const AdminAccounting = () => {
                       <tr key={s.id} className="hover:bg-dark-700/10 transition-colors">
                         <td className="p-4">
                           <div className="font-bold text-white">{s.first_name} {s.last_name}</div>
-                          <div className="text-xs text-gray-500 font-mono mt-0.5">{s.email || 'No email registered'}</div>
+                          <div className="text-xs text-gray-300 font-mono mt-0.5">{s.email || 'No email registered'}</div>
                         </td>
                         <td className="p-4">
                           <span className="bg-brand-500/10 text-brand-400 border border-brand-500/20 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">
@@ -3255,7 +3255,7 @@ const AdminAccounting = () => {
                     ))}
                     {staff.length === 0 && (
                       <tr>
-                        <td colSpan="3" className="p-12 text-center text-gray-500 text-sm">No registered staff found.</td>
+                        <td colSpan="3" className="p-12 text-center text-gray-300 text-sm">No registered staff found.</td>
                       </tr>
                     )}
                   </tbody>
@@ -3274,7 +3274,7 @@ const AdminAccounting = () => {
                     <div key={sal.id} className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl flex items-center justify-between hover:border-dark-600 transition-all">
                       <div>
                         <div className="font-bold text-white">{employee.first_name} {employee.last_name}</div>
-                        <div className="text-[11px] text-gray-500 font-mono mt-1">Period: {format(new Date(sal.pay_period_start), 'MMM dd')} - {format(new Date(sal.pay_period_end), 'MMM dd')}</div>
+                        <div className="text-[11px] text-gray-300 font-mono mt-1">Period: {format(new Date(sal.pay_period_start), 'MMM dd')} - {format(new Date(sal.pay_period_end), 'MMM dd')}</div>
                         <div className="flex items-center gap-2 mt-2">
                           <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${
                             sal.status === 'paid' ? 'bg-green-500/10 text-green-400' : 'bg-amber-500/10 text-amber-400'
@@ -3306,7 +3306,7 @@ const AdminAccounting = () => {
                   );
                 })}
                 {salaries.length === 0 && (
-                  <div className="text-center py-12 text-gray-500 text-sm">No payroll processed yet.</div>
+                  <div className="text-center py-12 text-gray-300 text-sm">No payroll processed yet.</div>
                 )}
               </div>
             </div>
@@ -3321,7 +3321,7 @@ const AdminAccounting = () => {
             <div className="flex-1 flex flex-col sm:flex-row gap-3">
               {/* Search ledger */}
               <div className="relative flex-1">
-                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-200" />
                 <input 
                   type="text" 
                   value={ledgerSearch}
@@ -3343,7 +3343,7 @@ const AdminAccounting = () => {
                     title="Filter Start Date"
                   />
                 </div>
-                <span className="text-gray-500 text-xs font-bold shrink-0">to</span>
+                <span className="text-gray-300 text-xs font-bold shrink-0">to</span>
                 <div className="relative flex items-center flex-1 sm:flex-initial">
                   <Calendar size={14} className="absolute left-3 text-brand-500 pointer-events-none" />
                   <input 
@@ -3404,7 +3404,7 @@ const AdminAccounting = () => {
                 className={`py-1.5 px-4 rounded-xl text-xs font-bold transition-all ${
                   ledgerSubTab === sub.id
                     ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/20'
-                    : 'bg-dark-900/60 text-gray-400 hover:text-white border border-dark-700/60'
+                    : 'bg-dark-900/60 text-gray-200 hover:text-white border border-dark-700/60'
                 }`}
               >
                 {sub.name}
@@ -3414,7 +3414,7 @@ const AdminAccounting = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-400">
+              <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-200">
                 <tr>
                   <th className="p-4 font-bold text-xs uppercase tracking-wider">Posting Date</th>
                   <th className="p-4 font-bold text-xs uppercase tracking-wider">Flow Type</th>
@@ -3432,7 +3432,7 @@ const AdminAccounting = () => {
               <tbody className="divide-y divide-dark-700/40">
                 {paginatedLedger.map((item, idx) => (
                   <tr key={`ledger-${idx}-${item.id}`} className="hover:bg-dark-700/20 transition-colors">
-                    <td className="p-4 text-gray-400 font-mono">{format(new Date(item.date), 'MMM dd, yyyy')}</td>
+                    <td className="p-4 text-gray-200 font-mono">{format(new Date(item.date), 'MMM dd, yyyy')}</td>
                     <td className="p-4">
                       {item.type === 'inflow' ? (
                         <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 w-fit">
@@ -3446,11 +3446,11 @@ const AdminAccounting = () => {
                     </td>
                     <td className="p-4 text-gray-300 font-semibold">{item.category}</td>
                     <td className="p-4 text-white max-w-xs truncate" title={item.description}>{item.description}</td>
-                    <td className="p-4 text-gray-400 uppercase text-xs font-semibold font-mono">{item.method}</td>
+                    <td className="p-4 text-gray-200 uppercase text-xs font-semibold font-mono">{item.method}</td>
                     <td className={`p-4 font-bold font-mono ${item.type === 'inflow' ? 'text-green-400' : 'text-rose-400'}`}>
                       {item.type === 'inflow' ? '+' : '-'}₦{item.amount.toLocaleString()}
                     </td>
-                    <td className="p-4 text-xs text-gray-400 font-medium max-w-xs truncate" title={item.notes || 'None'}>
+                    <td className="p-4 text-xs text-gray-200 font-medium max-w-xs truncate" title={item.notes || 'None'}>
                       {item.notes || '—'}
                     </td>
                     <td className="p-4">
@@ -3476,7 +3476,7 @@ const AdminAccounting = () => {
                 ))}
                 {baseUnifiedLedger.length === 0 && (
                   <tr>
-                    <td colSpan={hasAccess('Finance - Process Refunds & Adjustments') ? "9" : "8"} className="p-12 text-center text-gray-500 text-sm">
+                    <td colSpan={hasAccess('Finance - Process Refunds & Adjustments') ? "9" : "8"} className="p-12 text-center text-gray-300 text-sm">
                       No general ledger records found.
                     </td>
                   </tr>
@@ -3499,7 +3499,7 @@ const AdminAccounting = () => {
           <div className="glass-panel p-5 rounded-2xl border border-dark-700/50 flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4">
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Start Date</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Start Date</label>
                 <input 
                   type="date" 
                   value={reportStartDate}
@@ -3508,7 +3508,7 @@ const AdminAccounting = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">End Date</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">End Date</label>
                 <input 
                   type="date" 
                   value={reportEndDate}
@@ -3517,7 +3517,7 @@ const AdminAccounting = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Property Branch</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Property Branch</label>
                 <select 
                   value={reportProperty}
                   onChange={(e) => setReportProperty(e.target.value)}
@@ -3557,19 +3557,19 @@ const AdminAccounting = () => {
           <div className="flex gap-2 border-b border-dark-700/50 pb-px overflow-x-auto select-none no-scrollbar">
             <button 
               onClick={() => setReportSubTab('pnl')} 
-              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'pnl' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'pnl' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
             >
               <TrendingUp size={16} /> Profit & Loss
             </button>
             <button 
               onClick={() => setReportSubTab('cashflow')} 
-              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'cashflow' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'cashflow' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
             >
               <Wallet size={16} /> Cash Flow Statement
             </button>
             <button 
               onClick={() => setReportSubTab('balancesheet')} 
-              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'balancesheet' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+              className={`pb-2.5 px-4 font-bold text-sm flex items-center gap-2 border-b-2 transition-all duration-300 ${reportSubTab === 'balancesheet' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
             >
               <Building size={16} /> Balance Sheet
             </button>
@@ -3588,7 +3588,7 @@ const AdminAccounting = () => {
                 <div className="flex justify-between items-start border-b border-dark-700/40 pb-4">
                   <div>
                     <h3 className="text-xl font-bold text-white">Profit & Loss Statement</h3>
-                    <p className="text-gray-400 text-xs mt-1">Aggregated income and expenditure breakdown from {reportStartDate} to {reportEndDate}</p>
+                    <p className="text-gray-200 text-xs mt-1">Aggregated income and expenditure breakdown from {reportStartDate} to {reportEndDate}</p>
                   </div>
                   <span className="bg-brand-500/10 text-brand-400 border border-brand-500/20 px-3 py-1 rounded-full text-xs font-bold font-mono">
                     Accrual Mode
@@ -3598,15 +3598,15 @@ const AdminAccounting = () => {
                 {/* KPI metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Gross Operating Revenue</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Gross Operating Revenue</p>
                     <h4 className="text-xl font-black mt-1 text-green-400 font-mono">₦{calculatePnLReport().totalRevenue.toLocaleString()}</h4>
                   </div>
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Operating Costs</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Total Operating Costs</p>
                     <h4 className="text-xl font-black mt-1 text-rose-400 font-mono">₦{calculatePnLReport().totalExpenses.toLocaleString()}</h4>
                   </div>
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Net Operating Income</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Net Operating Income</p>
                     <h4 className={`text-xl font-black mt-1 font-mono ${calculatePnLReport().netProfit >= 0 ? 'text-green-400' : 'text-rose-500'}`}>
                       ₦{calculatePnLReport().netProfit.toLocaleString()}
                     </h4>
@@ -3618,7 +3618,7 @@ const AdminAccounting = () => {
                   <div>
                     <div className="text-sm font-bold text-gray-300 uppercase tracking-wide border-b border-dark-700/30 pb-2 mb-3">Revenues</div>
                     <div className="flex justify-between items-center text-sm p-2 hover:bg-dark-700/10 rounded-lg">
-                      <span className="text-gray-400">Room Booking Income Receipts</span>
+                      <span className="text-gray-200">Room Booking Income Receipts</span>
                       <span className="font-semibold text-white font-mono">₦{calculatePnLReport().bookingRevenue.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm font-bold bg-dark-900/50 p-3 rounded-lg mt-1 border-t border-dark-700/30">
@@ -3636,9 +3636,9 @@ const AdminAccounting = () => {
                         return (
                           <div key={cat} className="space-y-1.5 p-2 hover:bg-dark-700/10 rounded-lg">
                             <div className="flex justify-between items-center text-sm">
-                              <span className="text-gray-400">{cat} Costs</span>
+                              <span className="text-gray-200">{cat} Costs</span>
                               <div className="flex items-center gap-3">
-                                <span className="text-xs text-gray-500 font-mono">({pct.toFixed(0)}%)</span>
+                                <span className="text-xs text-gray-300 font-mono">({pct.toFixed(0)}%)</span>
                                 <span className="font-semibold text-white font-mono">₦{val.toLocaleString()}</span>
                               </div>
                             </div>
@@ -3658,7 +3658,7 @@ const AdminAccounting = () => {
                   <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl flex justify-between items-center">
                     <div>
                       <span className="text-sm font-bold text-gray-300 uppercase">Net Margin Performance</span>
-                      <span className="text-xs text-gray-500 block mt-0.5">Ratio of operating profitability</span>
+                      <span className="text-xs text-gray-300 block mt-0.5">Ratio of operating profitability</span>
                     </div>
                     <div className="text-right">
                       <span className="text-lg font-black text-brand-500 font-mono">{calculatePnLReport().margin.toFixed(2)}%</span>
@@ -3679,7 +3679,7 @@ const AdminAccounting = () => {
                 <div className="flex justify-between items-start border-b border-dark-700/40 pb-4">
                   <div>
                     <h3 className="text-xl font-bold text-white">Statement of Cash Flows</h3>
-                    <p className="text-gray-400 text-xs mt-1">Cash tracking by payment channels from {reportStartDate} to {reportEndDate}</p>
+                    <p className="text-gray-200 text-xs mt-1">Cash tracking by payment channels from {reportStartDate} to {reportEndDate}</p>
                   </div>
                   <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full text-xs font-bold font-mono">
                     Direct Cash Mode
@@ -3689,15 +3689,15 @@ const AdminAccounting = () => {
                 {/* KPI metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Operational Cash Receipts</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Operational Cash Receipts</p>
                     <h4 className="text-xl font-black mt-1 text-green-400 font-mono">₦{calculateCashFlowReport().totalCashInflows.toLocaleString()}</h4>
                   </div>
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Operational Cash Payments</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Operational Cash Payments</p>
                     <h4 className="text-xl font-black mt-1 text-rose-400 font-mono">₦{calculateCashFlowReport().totalCashOutflows.toLocaleString()}</h4>
                   </div>
                   <div className="bg-dark-900 border border-dark-700/50 p-4 rounded-xl">
-                    <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Net Cash Position Increase</p>
+                    <p className="text-gray-200 text-xs font-bold uppercase tracking-wider">Net Cash Position Increase</p>
                     <h4 className={`text-xl font-black mt-1 font-mono ${calculateCashFlowReport().netCashFlow >= 0 ? 'text-green-400' : 'text-rose-500'}`}>
                       ₦{calculateCashFlowReport().netCashFlow.toLocaleString()}
                     </h4>
@@ -3710,7 +3710,7 @@ const AdminAccounting = () => {
                     <div className="text-sm font-bold text-gray-300 uppercase tracking-wide border-b border-dark-700/30 pb-2 mb-3">Operating Inflows (Revenues Received)</div>
                     {Object.entries(calculateCashFlowReport().inflowsByMethod).map(([method, val]) => (
                       <div key={method} className="flex justify-between items-center text-sm p-2 hover:bg-dark-700/10 rounded-lg">
-                        <span className="text-gray-400 capitalize">{method.replace('_', ' ')} customer bookings</span>
+                        <span className="text-gray-200 capitalize">{method.replace('_', ' ')} customer bookings</span>
                         <span className="font-semibold text-white font-mono">₦{val.toLocaleString()}</span>
                       </div>
                     ))}
@@ -3725,7 +3725,7 @@ const AdminAccounting = () => {
                     <div className="text-sm font-bold text-gray-300 uppercase tracking-wide border-b border-dark-700/30 pb-2 mb-3">Operating Outflows (Operational Costs Disbursed)</div>
                     {Object.entries(calculateCashFlowReport().outflowsByMethod).map(([method, val]) => (
                       <div key={method} className="flex justify-between items-center text-sm p-2 hover:bg-dark-700/10 rounded-lg">
-                        <span className="text-gray-400 capitalize">{method.replace('_', ' ')} disbursements</span>
+                        <span className="text-gray-200 capitalize">{method.replace('_', ' ')} disbursements</span>
                         <span className="font-semibold text-white font-mono">₦{val.toLocaleString()}</span>
                       </div>
                     ))}
@@ -3749,7 +3749,7 @@ const AdminAccounting = () => {
                 <div className="flex justify-between items-start border-b border-dark-700/40 pb-4">
                   <div>
                     <h3 className="text-xl font-bold text-white">Balance Sheet Statement</h3>
-                    <p className="text-gray-400 text-xs mt-1">Financial position snapshot as of {reportEndDate}</p>
+                    <p className="text-gray-200 text-xs mt-1">Financial position snapshot as of {reportEndDate}</p>
                   </div>
                   <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-bold font-mono">
                     Financial Position
@@ -3761,15 +3761,15 @@ const AdminAccounting = () => {
                   <div className="bg-dark-900/50 border border-dark-700/40 p-5 rounded-xl space-y-4">
                     <h4 className="text-sm font-bold text-gray-300 uppercase tracking-wider border-b border-dark-700/30 pb-2 flex justify-between items-center">
                       <span>Assets</span>
-                      <span className="text-xs text-gray-500 normal-case font-normal">What company owns</span>
+                      <span className="text-xs text-gray-300 normal-case font-normal">What company owns</span>
                     </h4>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center text-sm p-1.5 hover:bg-dark-700/10 rounded">
-                        <span className="text-gray-400">Cash & Cash Equivalents</span>
+                        <span className="text-gray-200">Cash & Cash Equivalents</span>
                         <span className="font-semibold text-white font-mono">₦{calculateBalanceSheetReport().cash.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between items-center text-sm p-1.5 hover:bg-dark-700/10 rounded">
-                        <span className="text-gray-400">Accounts Receivable (Outstanding Invoices)</span>
+                        <span className="text-gray-200">Accounts Receivable (Outstanding Invoices)</span>
                         <span className="font-semibold text-white font-mono">₦{calculateBalanceSheetReport().receivables.toLocaleString()}</span>
                       </div>
                     </div>
@@ -3784,19 +3784,19 @@ const AdminAccounting = () => {
                     <div>
                       <h4 className="text-sm font-bold text-gray-300 uppercase tracking-wider border-b border-dark-700/30 pb-2 flex justify-between items-center">
                         <span>Liabilities & Equity</span>
-                        <span className="text-xs text-gray-500 normal-case font-normal">What company owes & owns net</span>
+                        <span className="text-xs text-gray-300 normal-case font-normal">What company owes & owns net</span>
                       </h4>
                       <div className="space-y-3 pt-2">
                         <div className="flex justify-between items-center text-sm p-1.5 hover:bg-dark-700/10 rounded">
-                          <span className="text-gray-400">Accounts Payable (Pending Vendor Bills)</span>
+                          <span className="text-gray-200">Accounts Payable (Pending Vendor Bills)</span>
                           <span className="font-semibold text-white font-mono">₦{calculateBalanceSheetReport().payableExpenses.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between items-center text-sm p-1.5 hover:bg-dark-700/10 rounded">
-                          <span className="text-gray-400">Accrued Payroll (Pending Salaries)</span>
+                          <span className="text-gray-200">Accrued Payroll (Pending Salaries)</span>
                           <span className="font-semibold text-white font-mono">₦{calculateBalanceSheetReport().payableSalaries.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between items-center text-sm p-1.5 hover:bg-dark-700/10 rounded border-t border-dark-700/30 mt-2">
-                          <span className="text-gray-400 font-bold">Retained Earnings (Equity)</span>
+                          <span className="text-gray-200 font-bold">Retained Earnings (Equity)</span>
                           <span className="font-bold text-white font-mono">₦{calculateBalanceSheetReport().equity.toLocaleString()}</span>
                         </div>
                       </div>
@@ -3829,7 +3829,7 @@ const AdminAccounting = () => {
           {/* Debtors Telemetry Cards */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Total Active Debtors</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Total Active Debtors</p>
               <h3 className="text-2xl font-black mt-2 text-white font-mono">{debtors.length}</h3>
               <div className="flex items-center gap-1.5 mt-4 text-xs text-brand-400 font-semibold">
                 <Building size={14} />
@@ -3838,7 +3838,7 @@ const AdminAccounting = () => {
             </div>
             
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Total Outstanding Debt</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Total Outstanding Debt</p>
               <h3 className="text-2xl font-black mt-2 text-rose-500 font-mono">
                 ₦{debtors.reduce((sum, d) => sum + d.outstanding_balance, 0).toLocaleString()}
               </h3>
@@ -3849,7 +3849,7 @@ const AdminAccounting = () => {
             </div>
 
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Stay Folio Debts</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Stay Folio Debts</p>
               <h3 className="text-2xl font-black mt-2 text-amber-500 font-mono">
                 ₦{debtors.filter(d => d.type === 'stay_debt').reduce((sum, d) => sum + d.outstanding_balance, 0).toLocaleString()}
               </h3>
@@ -3860,7 +3860,7 @@ const AdminAccounting = () => {
             </div>
 
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Corporate Debts</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Corporate Debts</p>
               <h3 className="text-2xl font-black mt-2 text-blue-500 font-mono">
                 ₦{debtors.filter(d => d.type === 'corporate_debt').reduce((sum, d) => sum + d.outstanding_balance, 0).toLocaleString()}
               </h3>
@@ -3874,7 +3874,7 @@ const AdminAccounting = () => {
           {/* Filter Bar */}
           <div className="glass-panel p-5 rounded-2xl border border-dark-700/50 flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4">
             <div className="flex-1 max-w-md relative">
-              <Search className="absolute left-3 top-3.5 text-gray-400" size={18} />
+              <Search className="absolute left-3 top-3.5 text-gray-200" size={18} />
               <input 
                 type="text"
                 placeholder="Search debtors by name or reference..."
@@ -3893,7 +3893,7 @@ const AdminAccounting = () => {
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
                     debtorFilter === tab 
                       ? 'bg-brand-500 text-dark-900 border-brand-500' 
-                      : 'bg-dark-900 text-gray-400 border-dark-700/60 hover:text-white'
+                      : 'bg-dark-900 text-gray-200 border-dark-700/60 hover:text-white'
                   }`}
                 >
                   {tab === 'all' ? 'All Ledger Debts' : tab === 'stay_debt' ? 'Guest Stays' : 'Corporate Groups'}
@@ -3906,7 +3906,7 @@ const AdminAccounting = () => {
           <div className="glass-panel rounded-2xl border border-dark-700/50 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm whitespace-nowrap">
-                <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-400">
+                <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-200">
                   <tr>
                     <th className="p-4 font-bold text-xs uppercase tracking-wider">Debtor / Account</th>
                     <th className="p-4 font-bold text-xs uppercase tracking-wider">Reference ID</th>
@@ -3937,20 +3937,20 @@ const AdminAccounting = () => {
                             {item.type === 'corporate_debt' ? 'Corporate Group' : 'Guest Folio'}
                           </span>
                         </td>
-                        <td className="p-4 text-gray-400 font-mono font-semibold">{item.reference}</td>
+                        <td className="p-4 text-gray-200 font-mono font-semibold">{item.reference}</td>
                         <td className="p-4">
                           {item.type === 'corporate_debt' ? (
                             <span className="text-gray-300">Permanent Line of Credit</span>
                           ) : (
                             <div className="text-xs text-gray-300">
                               <div className="font-mono">In: {format(new Date(item.check_in), 'MMM dd, yyyy')}</div>
-                              <div className="font-mono text-gray-500">Out: {format(new Date(item.check_out), 'MMM dd, yyyy')}</div>
+                              <div className="font-mono text-gray-300">Out: {format(new Date(item.check_out), 'MMM dd, yyyy')}</div>
                             </div>
                           )}
                         </td>
-                        <td className="p-4 text-gray-400 font-semibold font-mono">{item.phone}</td>
+                        <td className="p-4 text-gray-200 font-semibold font-mono">{item.phone}</td>
                         <td className="p-4">
-                          <div className="text-xs space-y-0.5 text-gray-400">
+                          <div className="text-xs space-y-0.5 text-gray-200">
                             <div>Total Folio: <span className="font-mono text-gray-300">₦{item.total_amount.toLocaleString()}</span></div>
                             <div>Paid Amount: <span className="font-mono text-green-400">₦{item.amount_paid.toLocaleString()}</span></div>
                             <div className="font-bold text-sm text-rose-500">Unpaid Bal: <span className="font-mono">₦{item.outstanding_balance.toLocaleString()}</span></div>
@@ -4011,7 +4011,7 @@ const AdminAccounting = () => {
                     ))}
                   {debtors.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="p-12 text-center text-gray-500 text-sm">No active outstanding ledger debts registered.</td>
+                      <td colSpan="7" className="p-12 text-center text-gray-300 text-sm">No active outstanding ledger debts registered.</td>
                     </tr>
                   )}
                 </tbody>
@@ -4028,7 +4028,7 @@ const AdminAccounting = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <h2 className="text-xl font-bold text-white flex items-center gap-2"><Wallet className="text-green-400" /> Accounts Receivable (AR) Prepayment Wallets</h2>
-              <p className="text-gray-400 text-xs mt-1">Manage guest prepayment profiles, advance cash deposits, and wallet credits.</p>
+              <p className="text-gray-200 text-xs mt-1">Manage guest prepayment profiles, advance cash deposits, and wallet credits.</p>
             </div>
             
             <button
@@ -4046,7 +4046,7 @@ const AdminAccounting = () => {
           {/* AR Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Total Registered Accounts</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Total Registered Accounts</p>
               <h3 className="text-2xl font-black mt-2 text-white font-mono">{baseMergedAR.length}</h3>
               <div className="flex items-center gap-1.5 mt-4 text-xs text-green-400 font-semibold">
                 <Check size={14} />
@@ -4055,7 +4055,7 @@ const AdminAccounting = () => {
             </div>
             
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Total Prepayment Reserve</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Total Prepayment Reserve</p>
               <h3 className="text-2xl font-black mt-2 text-green-400 font-mono">
                 ₦{baseMergedAR.reduce((sum, a) => sum + Number(a.balance), 0).toLocaleString()}
               </h3>
@@ -4066,7 +4066,7 @@ const AdminAccounting = () => {
             </div>
 
             <div className="glass-panel p-6 rounded-2xl border border-dark-700/50 relative overflow-hidden">
-              <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">Active Guest CRM Linked</p>
+              <p className="text-gray-200 text-sm font-semibold uppercase tracking-wider">Active Guest CRM Linked</p>
               <h3 className="text-2xl font-black mt-2 text-blue-400 font-mono">{crmGuests.length}</h3>
               <div className="flex items-center gap-1.5 mt-4 text-xs text-blue-400 font-semibold">
                 <User size={14} />
@@ -4079,7 +4079,7 @@ const AdminAccounting = () => {
           <div className="glass-panel rounded-2xl border border-dark-700/50 overflow-hidden">
             <div className="p-5 border-b border-dark-700/50 bg-dark-800/80">
               <div className="relative w-full max-w-md">
-                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-200" />
                 <input 
                   type="text" 
                   value={arSearchTerm}
@@ -4091,7 +4091,7 @@ const AdminAccounting = () => {
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm whitespace-nowrap">
-                <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-400">
+                <thead className="bg-dark-900/60 border-b border-dark-700/50 text-gray-200">
                   <tr>
                     <th className="p-4 font-bold text-xs uppercase tracking-wider">Wallet reference</th>
                     <th className="p-4 font-bold text-xs uppercase tracking-wider">Guest profile</th>
@@ -4105,12 +4105,12 @@ const AdminAccounting = () => {
                 <tbody className="divide-y divide-dark-700/40">
                   {paginatedARAccounts.map((item, idx) => (
                     <tr key={`ar-${idx}-${item.id}`} className="hover:bg-dark-700/20 transition-colors">
-                      <td className="p-4 text-gray-400 font-mono font-bold">{item.id}</td>
+                      <td className="p-4 text-gray-200 font-mono font-bold">{item.id}</td>
                       <td className="p-4">
                         <div className="font-bold text-white text-base">{item.guest_name}</div>
-                        <span className="text-[10px] text-gray-500 block mt-0.5 font-semibold">CRM Active Guest</span>
+                        <span className="text-[10px] text-gray-300 block mt-0.5 font-semibold">CRM Active Guest</span>
                       </td>
-                      <td className="p-4 text-gray-400 font-mono">{item.guest_email || 'N/A'}</td>
+                      <td className="p-4 text-gray-200 font-mono">{item.guest_email || 'N/A'}</td>
                       <td className="p-4">
                         <div className="text-lg font-black text-green-400 font-mono">
                           ₦{Number(item.balance).toLocaleString(undefined, { minimumFractionDigits: 2 })}
@@ -4131,7 +4131,7 @@ const AdminAccounting = () => {
                           </span>
                         )}
                       </td>
-                      <td className="p-4 text-gray-500 font-mono text-xs">{item.created_at ? format(new Date(item.created_at), 'MMM dd, yyyy HH:mm') : 'N/A'}</td>
+                      <td className="p-4 text-gray-300 font-mono text-xs">{item.created_at ? format(new Date(item.created_at), 'MMM dd, yyyy HH:mm') : 'N/A'}</td>
                       <td className="p-4 text-right">
                         <button
                           type="button"
@@ -4205,7 +4205,7 @@ const AdminAccounting = () => {
                             setArDepositNotes('');
                             setShowARDepositModal(true);
                           }}
-                          className={`${(item.status || 'active') === 'active' ? 'bg-green-500/10 text-green-400 border-green-500/20 hover:bg-green-500 hover:text-dark-900 cursor-pointer' : 'bg-gray-500/5 text-gray-500 border-gray-700/30 cursor-not-allowed opacity-50'} border py-2 px-3 rounded-xl text-xs font-bold transition-all shadow-md inline-flex items-center gap-1.5`}
+                          className={`${(item.status || 'active') === 'active' ? 'bg-green-500/10 text-green-400 border-green-500/20 hover:bg-green-500 hover:text-dark-900 cursor-pointer' : 'bg-gray-500/5 text-gray-300 border-gray-700/30 cursor-not-allowed opacity-50'} border py-2 px-3 rounded-xl text-xs font-bold transition-all shadow-md inline-flex items-center gap-1.5`}
                         >
                           <PlusCircle size={14} /> Deposit
                         </button>
@@ -4214,7 +4214,7 @@ const AdminAccounting = () => {
                   ))}
                   {filteredMergedAR.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="p-12 text-center text-gray-500 text-sm">No active prepayment wallets found.</td>
+                      <td colSpan="7" className="p-12 text-center text-gray-300 text-sm">No active prepayment wallets found.</td>
                     </tr>
                   )}
                 </tbody>
@@ -4236,14 +4236,14 @@ const AdminAccounting = () => {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-dark-700/30 pb-4">
             <div>
               <h2 className="text-xl font-bold text-white flex items-center gap-2"><Clock className="text-amber-400" /> Close of Day & Daily Night Audit</h2>
-              <p className="text-gray-400 text-xs mt-1">Review live reception occupancy, compiles daily departmental revenues, and seals logs before close of business.</p>
+              <p className="text-gray-200 text-xs mt-1">Review live reception occupancy, compiles daily departmental revenues, and seals logs before close of business.</p>
             </div>
             
             {/* Target Audit Date Selector */}
             <div className="flex flex-wrap items-center gap-3 bg-dark-900/60 border border-dark-700/60 rounded-2xl px-4 py-2.5 shadow-inner">
               <div className="flex items-center gap-2">
                 <Calendar size={14} className="text-amber-400" />
-                <span className="text-xs text-gray-400 font-bold tracking-wider uppercase font-sans">Target Audit Date:</span>
+                <span className="text-xs text-gray-200 font-bold tracking-wider uppercase font-sans">Target Audit Date:</span>
               </div>
               <input
                 type="date"
@@ -4279,7 +4279,7 @@ const AdminAccounting = () => {
             <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
               <Building size={16} className="text-brand-500" /> Departmental End-of-Day Closures Status ({selectedAuditDate})
             </h3>
-            <p className="text-xs text-gray-400">Each operations department ledger must be independently verified and closed before the overall system-wide Night Audit.</p>
+            <p className="text-xs text-gray-200">Each operations department ledger must be independently verified and closed before the overall system-wide Night Audit.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
               {[
@@ -4300,7 +4300,7 @@ const AdminAccounting = () => {
                   }`}>
                     <div>
                       <div className="flex justify-between items-start mb-1">
-                        <span className="text-xs font-black uppercase text-gray-400">{dept.label}</span>
+                        <span className="text-xs font-black uppercase text-gray-200">{dept.label}</span>
                         {closure ? (
                           <span className="text-green-500 bg-green-500/10 p-0.5 rounded-full"><Check size={14} /></span>
                         ) : (
@@ -4309,9 +4309,9 @@ const AdminAccounting = () => {
                       </div>
                       
                       <div className="space-y-1 mt-3">
-                        <div className="text-[10px] text-gray-500">Live Revenue:</div>
+                        <div className="text-[10px] text-gray-300">Live Revenue:</div>
                         <div className="text-sm font-bold text-white font-mono">₦{stats.revenue.toLocaleString()}</div>
-                        <div className="text-[10px] text-gray-400 font-mono">{stats.count} Transactions</div>
+                        <div className="text-[10px] text-gray-200 font-mono">{stats.count} Transactions</div>
                       </div>
                     </div>
                     
@@ -4320,7 +4320,7 @@ const AdminAccounting = () => {
                         <div className="flex flex-col gap-2">
                           <div className="text-[9px] text-gray-450 leading-relaxed">
                             <div className="font-semibold truncate">By: {closure.staff_name}</div>
-                            <div className="font-mono text-gray-500 mt-0.5">{format(new Date(closure.closed_at), 'yyyy-MM-dd HH:mm')}</div>
+                            <div className="font-mono text-gray-300 mt-0.5">{format(new Date(closure.closed_at), 'yyyy-MM-dd HH:mm')}</div>
                           </div>
                           <button
                             type="button"
@@ -4351,15 +4351,15 @@ const AdminAccounting = () => {
             <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
               <FileText size={16} className="text-brand-500" /> Compiled Departmental Closure Reports
             </h3>
-            <p className="text-xs text-gray-400">View detailed itemized transaction lists, payment methods, and staff sign-offs for finalized operating periods.</p>
+            <p className="text-xs text-gray-200">View detailed itemized transaction lists, payment methods, and staff sign-offs for finalized operating periods.</p>
 
             {departmentalCloseReports.length === 0 ? (
-              <p className="text-xs text-gray-500 italic py-4">No departmental closure reports registered in database yet.</p>
+              <p className="text-xs text-gray-300 italic py-4">No departmental closure reports registered in database yet.</p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-dark-750 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+                    <tr className="border-b border-dark-750 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                       <th className="py-3 px-4">Business Date</th>
                       <th className="py-3 px-4">Department</th>
                       <th className="py-3 px-4">Closed By</th>
@@ -4377,7 +4377,7 @@ const AdminAccounting = () => {
                           {rpt.department?.replace('_', ' ')}
                         </td>
                         <td className="py-3.5 px-4">{rpt.staff_name || 'System Admin'}</td>
-                        <td className="py-3.5 px-4 font-mono text-gray-500">{format(new Date(rpt.closed_at), 'yyyy-MM-dd HH:mm')}</td>
+                        <td className="py-3.5 px-4 font-mono text-gray-300">{format(new Date(rpt.closed_at), 'yyyy-MM-dd HH:mm')}</td>
                         <td className="py-3.5 px-4 text-right font-mono font-bold text-white">{rpt.transactions_count}</td>
                         <td className="py-3.5 px-4 text-right font-mono font-bold text-white">₦{rpt.total_revenue?.toLocaleString()}</td>
                         <td className="py-3.5 px-4 text-right">
@@ -4412,7 +4412,7 @@ const AdminAccounting = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white">Daily Closure Engine</h4>
-                  <span className="text-[10px] text-gray-400 uppercase tracking-widest font-mono">Business Date: {selectedAuditDate}</span>
+                  <span className="text-[10px] text-gray-200 uppercase tracking-widest font-mono">Business Date: {selectedAuditDate}</span>
                 </div>
               </div>
 
@@ -4420,7 +4420,7 @@ const AdminAccounting = () => {
                 <p className="leading-relaxed">
                   Executing a Close of Day closure pulls dynamic real-time metrics across all modules. It seals all Room Revenues, POS Outlet Inflows, and Laundry Invoices registered today.
                 </p>
-                <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-3 font-mono text-xs text-gray-400">
+                <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-3 font-mono text-xs text-gray-200">
                   <div className="flex justify-between">
                     <span>Business Date:</span>
                     <span className="text-white">{format(new Date(selectedAuditDate + 'T00:00:00'), 'MMM dd, yyyy')}</span>
@@ -4462,7 +4462,7 @@ const AdminAccounting = () => {
                   <span>Closure Audit Timeline Log</span>
                 </h4>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400 font-bold font-sans">Filter Date:</span>
+                  <span className="text-xs text-gray-200 font-bold font-sans">Filter Date:</span>
                   <input
                     type="date"
                     value={timelineFilterDate}
@@ -4482,7 +4482,7 @@ const AdminAccounting = () => {
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm whitespace-nowrap">
-                  <thead className="text-gray-400 border-b border-dark-700/40 text-[11px] uppercase tracking-wider">
+                  <thead className="text-gray-200 border-b border-dark-700/40 text-[11px] uppercase tracking-wider">
                     <tr>
                       <th className="pb-3">Audit Date</th>
                       <th className="pb-3 text-right">Total Revenue</th>
@@ -4501,9 +4501,9 @@ const AdminAccounting = () => {
                       <tr key={`closure-item-${idx}-${item.id}`} className="hover:bg-dark-700/10 transition-colors">
                         <td className="py-3.5 font-bold text-white font-sans">{format(new Date(item.date + 'T00:00:00'), 'MMM dd, yyyy')}</td>
                         <td className="py-3.5 text-right font-black text-green-400">₦{Number(item.total_revenue).toLocaleString()}</td>
-                        <td className="py-3.5 text-right text-gray-400">₦{Number(item.room_revenue).toLocaleString()}</td>
-                        <td className="py-3.5 text-right text-gray-400">₦{Number(item.pos_revenue).toLocaleString()}</td>
-                        <td className="py-3.5 text-right text-gray-400">₦{Number(item.laundry_revenue).toLocaleString()}</td>
+                        <td className="py-3.5 text-right text-gray-200">₦{Number(item.room_revenue).toLocaleString()}</td>
+                        <td className="py-3.5 text-right text-gray-200">₦{Number(item.pos_revenue).toLocaleString()}</td>
+                        <td className="py-3.5 text-right text-gray-200">₦{Number(item.laundry_revenue).toLocaleString()}</td>
                         <td className="py-3.5 text-center">
                           <span className={`px-2 py-0.5 rounded text-[10px] font-bold font-sans ${
                             item.occupancy_rate >= 70 ? 'bg-green-500/10 text-green-400' : 
@@ -4532,7 +4532,7 @@ const AdminAccounting = () => {
                       : dailyClosures
                     ).length === 0 && (
                       <tr>
-                        <td colSpan="7" className="py-12 text-center text-gray-500 font-sans">No daily closure reports found. Execute your first audit using the engine controls.</td>
+                        <td colSpan="7" className="py-12 text-center text-gray-300 font-sans">No daily closure reports found. Execute your first audit using the engine controls.</td>
                       </tr>
                     )}
                   </tbody>
@@ -4551,14 +4551,14 @@ const AdminAccounting = () => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             <div className="p-6 border-b border-dark-700/60 flex justify-between items-center bg-dark-900/50">
               <h2 className="text-xl font-bold text-white flex items-center gap-2"><ArrowDownRight className="text-brand-500"/> Log Operational Outflow</h2>
-              <button onClick={() => setShowLogExpense(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowLogExpense(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
             
             <form onSubmit={handleLogExpense} className="p-6 overflow-y-auto space-y-4">
               <div>
-                <label className="block text-sm text-gray-400 mb-2 font-medium">Associated Property Branch</label>
+                <label className="block text-sm text-gray-200 mb-2 font-medium">Associated Property Branch</label>
                 <select 
                   value={newExpenseForm.property_id}
                   onChange={e => setNewExpenseForm({...newExpenseForm, property_id: e.target.value})}
@@ -4570,7 +4570,7 @@ const AdminAccounting = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Expense Category</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Expense Category</label>
                   <select 
                     value={newExpenseForm.category}
                     onChange={e => setNewExpenseForm({...newExpenseForm, category: e.target.value})}
@@ -4580,7 +4580,7 @@ const AdminAccounting = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Transaction Amount (NGN)</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Transaction Amount (NGN)</label>
                   <input 
                     type="number" 
                     required 
@@ -4593,7 +4593,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2 font-medium">Vendor / Paid To</label>
+                <label className="block text-sm text-gray-200 mb-2 font-medium">Vendor / Paid To</label>
                 <input 
                   type="text" 
                   required
@@ -4606,7 +4606,7 @@ const AdminAccounting = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Outflow Date</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Outflow Date</label>
                   <input 
                     type="date" 
                     required
@@ -4616,7 +4616,7 @@ const AdminAccounting = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Payment Method</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Payment Method</label>
                   <select 
                     value={newExpenseForm.payment_method}
                     onChange={e => setNewExpenseForm({...newExpenseForm, payment_method: e.target.value})}
@@ -4628,7 +4628,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2 font-medium">Expense Description</label>
+                <label className="block text-sm text-gray-200 mb-2 font-medium">Expense Description</label>
                 <textarea 
                   rows={2}
                   required
@@ -4640,7 +4640,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2 font-medium">Payment Status</label>
+                <label className="block text-sm text-gray-200 mb-2 font-medium">Payment Status</label>
                 <div className="flex gap-4">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input 
@@ -4691,7 +4691,7 @@ const AdminAccounting = () => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             <div className="p-6 border-b border-dark-700/60 flex justify-between items-center bg-dark-900/50">
               <h2 className="text-xl font-bold text-white flex items-center gap-2"><User className="text-brand-500"/> Process Salary Payroll</h2>
-              <button onClick={() => setShowProcessPayroll(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowProcessPayroll(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -4703,13 +4703,13 @@ const AdminAccounting = () => {
                 </div>
                 <div>
                   <div className="font-bold text-white text-sm">{selectedStaffMember.first_name} {selectedStaffMember.last_name}</div>
-                  <div className="text-xs text-gray-400 capitalize">{selectedStaffMember.role.replace('_', ' ')} Access Account</div>
+                  <div className="text-xs text-gray-200 capitalize">{selectedStaffMember.role.replace('_', ' ')} Access Account</div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Base Salary</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Base Salary</label>
                   <input 
                     type="number" 
                     required 
@@ -4719,7 +4719,7 @@ const AdminAccounting = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Deductions</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Deductions</label>
                   <input 
                     type="number" 
                     value={payrollForm.deductions}
@@ -4728,7 +4728,7 @@ const AdminAccounting = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium font-sans">Standard Allowances (Entitled)</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium font-sans">Standard Allowances (Entitled)</label>
                   <input 
                     disabled={true}
                     type="number" 
@@ -4744,11 +4744,11 @@ const AdminAccounting = () => {
                       ))}
                     </div>
                   ) : (
-                    <span className="text-[10px] text-gray-500 italic mt-1 block">No entitled standard allowances</span>
+                    <span className="text-[10px] text-gray-300 italic mt-1 block">No entitled standard allowances</span>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Extra Bonuses</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Extra Bonuses</label>
                   <input 
                     type="number" 
                     value={payrollForm.extra_bonuses}
@@ -4767,7 +4767,7 @@ const AdminAccounting = () => {
               </div>
 
               <div className="bg-dark-900/60 p-3 rounded-xl border border-dark-700/60 flex justify-between items-center">
-                <span className="text-sm font-semibold text-gray-400">Total Calculated Net Pay</span>
+                <span className="text-sm font-semibold text-gray-200">Total Calculated Net Pay</span>
                 <span className="text-lg font-black text-brand-500 font-mono">
                   ₦{(Number(payrollForm.base_salary) + Number(payrollForm.bonuses) - Number(payrollForm.deductions)).toLocaleString()}
                 </span>
@@ -4775,7 +4775,7 @@ const AdminAccounting = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Period Start</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Period Start</label>
                   <input 
                     type="date" 
                     required
@@ -4785,7 +4785,7 @@ const AdminAccounting = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Period End</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Period End</label>
                   <input 
                     type="date" 
                     required
@@ -4806,7 +4806,7 @@ const AdminAccounting = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Payout Method</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Payout Method</label>
                   <select 
                     value={payrollForm.payment_method}
                     onChange={e => setPayrollForm({...payrollForm, payment_method: e.target.value})}
@@ -4816,7 +4816,7 @@ const AdminAccounting = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2 font-medium">Processing Status</label>
+                  <label className="block text-sm text-gray-200 mb-2 font-medium">Processing Status</label>
                   <select 
                     value={payrollForm.status}
                     onChange={e => setPayrollForm({...payrollForm, status: e.target.value})}
@@ -4830,7 +4830,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2 font-medium font-mono">Ledger Remarks / Notes</label>
+                <label className="block text-sm text-gray-200 mb-2 font-medium font-mono">Ledger Remarks / Notes</label>
                 <textarea 
                   rows={2}
                   value={payrollForm.notes}
@@ -5396,7 +5396,7 @@ const AdminAccounting = () => {
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <Building className="text-brand-500"/> Settle Outstanding Debt
                 </h2>
-                <button onClick={() => setShowSettlementModal(false)} className="text-gray-400 hover:text-white transition-colors">
+                <button onClick={() => setShowSettlementModal(false)} className="text-gray-200 hover:text-white transition-colors">
                   <X size={20} />
                 </button>
               </div>
@@ -5405,19 +5405,19 @@ const AdminAccounting = () => {
                 {/* Debtor Details Summary Card */}
                 <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs text-gray-500 font-bold uppercase">Account Debtor</span>
+                    <span className="text-xs text-gray-300 font-bold uppercase">Account Debtor</span>
                     <span className="text-xs text-brand-400 font-mono font-bold">{selectedDebtor.reference}</span>
                   </div>
                   <div className="font-bold text-lg text-white">{selectedDebtor.guest_name}</div>
                   <div className="flex justify-between items-center text-xs border-t border-dark-700/30 pt-2 mt-2">
-                    <span className="text-gray-400">Total Outstanding Balance:</span>
+                    <span className="text-gray-200">Total Outstanding Balance:</span>
                     <span className="text-rose-500 font-mono font-black text-sm">₦{selectedDebtor.outstanding_balance.toLocaleString()}</span>
                   </div>
                 </div>
 
                 {/* Amount input */}
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1.5 font-medium">Settlement Payment Amount (NGN)</label>
+                  <label className="block text-xs text-gray-200 mb-1.5 font-medium">Settlement Payment Amount (NGN)</label>
                   <input 
                     type="number" 
                     required 
@@ -5432,7 +5432,7 @@ const AdminAccounting = () => {
 
                 {/* Method selector */}
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1.5 font-medium">Settlement Method</label>
+                  <label className="block text-xs text-gray-200 mb-1.5 font-medium">Settlement Method</label>
                   <select 
                     value={settlementMethod}
                     onChange={e => setSettlementMethod(e.target.value)}
@@ -5454,13 +5454,13 @@ const AdminAccounting = () => {
                     </div>
                   )}
                   {!hasWallet && (
-                    <span className="text-[10px] text-gray-500 mt-1 block">To activate an AR prepayment wallet for this guest, navigate to the AR tab.</span>
+                    <span className="text-[10px] text-gray-300 mt-1 block">To activate an AR prepayment wallet for this guest, navigate to the AR tab.</span>
                   )}
                 </div>
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1.5 font-medium">Journal Remarks / Comments</label>
+                  <label className="block text-xs text-gray-200 mb-1.5 font-medium">Journal Remarks / Comments</label>
                   <textarea 
                     rows={2}
                     value={settlementNotes}
@@ -5501,14 +5501,14 @@ const AdminAccounting = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <Wallet className="text-green-400"/> Activate Prepayment Wallet
               </h2>
-              <button onClick={() => setShowARAddModal(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowARAddModal(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
             
             <form onSubmit={handleCreateARWallet} className="p-6 space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Select CRM Registered Guest</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Select CRM Registered Guest</label>
                 <select 
                   required
                   value={arNewWalletForm.guest_id}
@@ -5531,7 +5531,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Initial Prepayment Balance (NGN)</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Initial Prepayment Balance (NGN)</label>
                 <input 
                   type="number" 
                   min="0"
@@ -5540,7 +5540,7 @@ const AdminAccounting = () => {
                   placeholder="e.g. 50000 (Optional)"
                   className="w-full bg-dark-900 border border-dark-700 p-3 rounded-xl text-white outline-none focus:border-brand-500 text-sm font-mono"
                 />
-                <span className="text-[10px] text-gray-500 mt-1 block">If initial balance &gt; 0, an initial Cash prepayment deposit inflow will be automatically registered.</span>
+                <span className="text-[10px] text-gray-300 mt-1 block">If initial balance &gt; 0, an initial Cash prepayment deposit inflow will be automatically registered.</span>
               </div>
 
               <div className="flex gap-3 justify-end pt-2 border-t border-dark-700/50">
@@ -5571,22 +5571,22 @@ const AdminAccounting = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <Wallet className="text-green-400"/> Deposit Prepayment Funds
               </h2>
-              <button onClick={() => setShowARDepositModal(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowARDepositModal(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
             
             <form onSubmit={handleARWalletDeposit} className="p-6 space-y-4">
               <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-1">
-                <div className="text-[10px] text-gray-500 font-bold uppercase">Prepayment Account holder</div>
+                <div className="text-[10px] text-gray-300 font-bold uppercase">Prepayment Account holder</div>
                 <div className="font-bold text-base text-white">{activeARWallet.guest_name}</div>
-                <div className="text-xs text-gray-400 mt-1 font-semibold">
+                <div className="text-xs text-gray-200 mt-1 font-semibold">
                   Current Wallet Balance: <span className="font-mono text-green-400 font-bold">₦{Number(activeARWallet.balance).toLocaleString()}</span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Cash Deposit Amount (NGN)</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Cash Deposit Amount (NGN)</label>
                 <input 
                   type="number" 
                   required
@@ -5599,7 +5599,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Deposit Method Mode</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Deposit Method Mode</label>
                 <select 
                   value={arDepositMethod}
                   onChange={e => setArDepositMethod(e.target.value)}
@@ -5612,7 +5612,7 @@ const AdminAccounting = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Deposit Remarks / Remarks</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Deposit Remarks / Remarks</label>
                 <textarea 
                   rows={2}
                   value={arDepositNotes}
@@ -5657,7 +5657,7 @@ const AdminAccounting = () => {
                 >
                   <Printer size={13} /> Print Statement
                 </button>
-                <button onClick={() => { setShowStatementModal(false); setSelectedStatementGuest(null); }} className="text-gray-400 hover:text-white transition-colors">
+                <button onClick={() => { setShowStatementModal(false); setSelectedStatementGuest(null); }} className="text-gray-200 hover:text-white transition-colors">
                   <X size={20} />
                 </button>
               </div>
@@ -5666,13 +5666,13 @@ const AdminAccounting = () => {
             <div className="p-6 overflow-y-auto space-y-6 flex-1">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-1">
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Account holder profile</div>
+                  <div className="text-[10px] text-gray-300 font-bold uppercase tracking-wider">Account holder profile</div>
                   <div className="font-bold text-lg text-white">{selectedStatementGuest.guest_name}</div>
-                  <div className="text-xs text-gray-400 font-mono">{selectedStatementGuest.guest_email || 'No email registered'}</div>
+                  <div className="text-xs text-gray-200 font-mono">{selectedStatementGuest.guest_email || 'No email registered'}</div>
                 </div>
                 
                 <div className="bg-dark-950/80 border border-dark-700/40 p-4 rounded-xl space-y-1 flex flex-col justify-center">
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Unified Wallet Balance</div>
+                  <div className="text-[10px] text-gray-300 font-bold uppercase tracking-wider">Unified Wallet Balance</div>
                   <div className="text-2xl font-black text-green-400 font-mono">
                     ₦{Number(selectedStatementGuest.balance).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                   </div>
@@ -5687,7 +5687,7 @@ const AdminAccounting = () => {
                 <div className="border border-dark-700 rounded-xl overflow-hidden bg-dark-900/20">
                   <div className="overflow-x-auto max-h-[350px]">
                     <table className="w-full text-left text-sm whitespace-nowrap">
-                      <thead className="bg-dark-900/80 border-b border-dark-700/50 text-gray-400 sticky top-0">
+                      <thead className="bg-dark-900/80 border-b border-dark-700/50 text-gray-200 sticky top-0">
                         <tr>
                           <th className="p-3 font-bold text-xs uppercase tracking-wider">Date / Time</th>
                           <th className="p-3 font-bold text-xs uppercase tracking-wider">Description</th>
@@ -5703,7 +5703,7 @@ const AdminAccounting = () => {
                           if (records.length === 0) {
                             return (
                               <tr>
-                                <td colSpan="6" className="p-12 text-center text-gray-500 text-xs">
+                                <td colSpan="6" className="p-12 text-center text-gray-300 text-xs">
                                   No transaction records found for this AR Prepayment wallet.
                                 </td>
                               </tr>
@@ -5711,12 +5711,12 @@ const AdminAccounting = () => {
                           }
                           return records.map((rec, idx) => (
                             <tr key={`statement-row-${idx}`} className="hover:bg-dark-700/20 transition-colors text-xs">
-                              <td className="p-3 text-gray-400 font-mono">{rec.date ? format(new Date(rec.date), 'yyyy-MM-dd HH:mm') : 'N/A'}</td>
+                              <td className="p-3 text-gray-200 font-mono">{rec.date ? format(new Date(rec.date), 'yyyy-MM-dd HH:mm') : 'N/A'}</td>
                               <td className="p-3 text-white max-w-[250px] truncate" title={rec.description}>
                                 <div className="font-bold text-gray-100">{rec.description}</div>
-                                {rec.notes && <span className="text-[10px] text-gray-500 block truncate font-semibold">{rec.notes}</span>}
+                                {rec.notes && <span className="text-[10px] text-gray-300 block truncate font-semibold">{rec.notes}</span>}
                               </td>
-                              <td className="p-3 text-gray-400 uppercase font-mono">{rec.method?.replace('_', ' ')}</td>
+                              <td className="p-3 text-gray-200 uppercase font-mono">{rec.method?.replace('_', ' ')}</td>
                               <td className="p-3">
                                 <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                                   rec.type === 'credit' 
@@ -5781,7 +5781,7 @@ const AdminAccounting = () => {
               {/* Report Header */}
               <div className="flex justify-between items-start border-b-2 border-gray-800 pb-4 text-left">
                 <div>
-                  <h1 className="text-2xl font-black uppercase tracking-wider text-pure-black">{contactInfo.companyName || 'Jemmyland Hotels'}</h1>
+                  <h1 className="text-2xl font-black uppercase tracking-wider text-pure-black">{contactInfo.companyName || 'Freshland'}</h1>
                   <p className="text-[10px] text-pure-gray-500 mt-1 uppercase font-semibold">Night Audit & Daily Operations Closure Report</p>
                   <p className="text-[9px] text-pure-gray-400 mt-0.5">{contactInfo.address}</p>
                 </div>
@@ -6064,7 +6064,7 @@ const AdminAccounting = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <Sparkles className="text-brand-500"/> Void / Correct Ledger Entry
               </h2>
-              <button onClick={() => setShowVoidCorrectModal(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowVoidCorrectModal(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -6073,11 +6073,11 @@ const AdminAccounting = () => {
               {/* Transaction Summary Card */}
               <div className="bg-dark-950/80 border border-dark-700/40 p-5 rounded-xl grid grid-cols-2 gap-4 text-xs font-semibold text-gray-300">
                 <div>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold block">Posting Date</span>
+                  <span className="text-gray-300 text-[10px] uppercase font-bold block">Posting Date</span>
                   <span className="text-white font-mono text-sm">{format(new Date(voidCorrectTransaction.date), 'MMM dd, yyyy HH:mm')}</span>
                 </div>
                 <div>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold block">Transaction Flow</span>
+                  <span className="text-gray-300 text-[10px] uppercase font-bold block">Transaction Flow</span>
                   <span className={`px-2 py-0.5 rounded font-bold uppercase tracking-wider inline-block mt-0.5 ${
                     voidCorrectTransaction.type === 'inflow' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
                   }`}>
@@ -6085,19 +6085,19 @@ const AdminAccounting = () => {
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold block">Ledger Category</span>
+                  <span className="text-gray-300 text-[10px] uppercase font-bold block">Ledger Category</span>
                   <span className="text-white font-mono text-sm">{voidCorrectTransaction.category}</span>
                 </div>
                 <div>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold block">Payment Method</span>
+                  <span className="text-gray-300 text-[10px] uppercase font-bold block">Payment Method</span>
                   <span className="text-white font-mono text-sm uppercase">{voidCorrectTransaction.method}</span>
                 </div>
                 <div className="col-span-2 border-t border-dark-700/30 pt-3">
-                  <span className="text-gray-500 text-[10px] uppercase font-bold block">Posting Details / Description</span>
+                  <span className="text-gray-300 text-[10px] uppercase font-bold block">Posting Details / Description</span>
                   <span className="text-white font-medium text-sm leading-relaxed">{voidCorrectTransaction.description}</span>
                 </div>
                 <div className="col-span-2 border-t border-dark-700/30 pt-3 flex justify-between items-center bg-dark-900/35 p-3 rounded-lg border border-dark-700/20">
-                  <span className="text-gray-400 font-bold uppercase">Original Ledger Value</span>
+                  <span className="text-gray-200 font-bold uppercase">Original Ledger Value</span>
                   <span className="text-lg font-black text-white font-mono">₦{voidCorrectTransaction.amount.toLocaleString()}</span>
                 </div>
               </div>
@@ -6112,7 +6112,7 @@ const AdminAccounting = () => {
                   
                   <div className="space-y-3 flex-1">
                     <div>
-                      <label className="block text-[11px] text-gray-400 mb-1 font-medium">New Corrected Amount (NGN)</label>
+                      <label className="block text-[11px] text-gray-200 mb-1 font-medium">New Corrected Amount (NGN)</label>
                       <input 
                         type="number" 
                         required
@@ -6124,7 +6124,7 @@ const AdminAccounting = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-[11px] text-gray-400 mb-1 font-medium">Adjusted Payment Method</label>
+                      <label className="block text-[11px] text-gray-200 mb-1 font-medium">Adjusted Payment Method</label>
                       <select 
                         value={voidCorrectMethod}
                         onChange={e => setVoidCorrectMethod(e.target.value)}
@@ -6136,7 +6136,7 @@ const AdminAccounting = () => {
 
                     {voidCorrectTransaction.source === 'expense' && (
                       <div>
-                        <label className="block text-[11px] text-gray-400 mb-1 font-medium">Adjusted Expense Category</label>
+                        <label className="block text-[11px] text-gray-200 mb-1 font-medium">Adjusted Expense Category</label>
                         <select 
                           value={voidCorrectCategory}
                           onChange={e => setVoidCorrectCategory(e.target.value)}
@@ -6148,7 +6148,7 @@ const AdminAccounting = () => {
                     )}
 
                     <div>
-                      <label className="block text-[11px] text-gray-400 mb-1 font-medium">Correction Reason Remarks</label>
+                      <label className="block text-[11px] text-gray-200 mb-1 font-medium">Correction Reason Remarks</label>
                       <input 
                         type="text"
                         required
@@ -6205,9 +6205,9 @@ const AdminAccounting = () => {
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <Building className="text-blue-400"/> Consolidated Statement: {selectedStatementGroup.name}
                 </h2>
-                <p className="text-xs text-gray-400 mt-1">Corporate credit line management, billing statuses, and stay history.</p>
+                <p className="text-xs text-gray-200 mt-1">Corporate credit line management, billing statuses, and stay history.</p>
               </div>
-              <button onClick={() => setShowGroupStatementModal(false)} className="text-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setShowGroupStatementModal(false)} className="text-gray-200 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -6215,15 +6215,15 @@ const AdminAccounting = () => {
             <div className="p-6 overflow-y-auto space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-dark-900/40 p-4 rounded-xl border border-dark-750">
                 <div>
-                  <span className="text-[11px] font-black text-gray-500 uppercase tracking-wider block">Outstanding balance</span>
+                  <span className="text-[11px] font-black text-gray-300 uppercase tracking-wider block">Outstanding balance</span>
                   <span className="text-xl font-black text-rose-500 font-mono">₦{Number(selectedStatementGroup.outstanding_balance).toLocaleString()}</span>
                 </div>
                 <div>
-                  <span className="text-[11px] font-black text-gray-500 uppercase tracking-wider block">Credit Limit</span>
+                  <span className="text-[11px] font-black text-gray-300 uppercase tracking-wider block">Credit Limit</span>
                   <span className="text-xl font-black text-blue-400 font-mono">₦{Number(selectedStatementGroup.credit_limit || 0).toLocaleString()}</span>
                 </div>
                 <div>
-                  <span className="text-[11px] font-black text-gray-500 uppercase tracking-wider block">Account Status</span>
+                  <span className="text-[11px] font-black text-gray-300 uppercase tracking-wider block">Account Status</span>
                   <span className={`text-sm font-extrabold uppercase tracking-wider mt-1 px-2.5 py-1.5 rounded-full border inline-block ${
                     closedGroupAccounts.includes(selectedStatementGroup.id)
                       ? 'bg-red-500/10 text-red-500 border-red-500/20'
@@ -6235,15 +6235,15 @@ const AdminAccounting = () => {
               </div>
 
               <div className="space-y-3">
-                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Stay & Extras Folios Billed to Group</h3>
+                <h3 className="text-xs font-bold text-gray-200 uppercase tracking-wider">Stay & Extras Folios Billed to Group</h3>
                 {loadingGroupBookings ? (
-                  <div className="text-center py-8 text-gray-400">Loading stayed bookings...</div>
+                  <div className="text-center py-8 text-gray-200">Loading stayed bookings...</div>
                 ) : groupBookings.length === 0 ? (
-                  <div className="text-center py-8 text-gray-500 bg-dark-900/20 border border-dark-750 rounded-xl">No stays found billed to this group.</div>
+                  <div className="text-center py-8 text-gray-300 bg-dark-900/20 border border-dark-750 rounded-xl">No stays found billed to this group.</div>
                 ) : (
                   <div className="border border-dark-750 rounded-xl overflow-hidden">
                     <table className="w-full text-left text-xs whitespace-nowrap">
-                      <thead className="bg-dark-900 text-gray-400 border-b border-dark-750">
+                      <thead className="bg-dark-900 text-gray-200 border-b border-dark-750">
                         <tr>
                           <th className="p-3">Reference</th>
                           <th className="p-3">Guest Name</th>
@@ -6261,7 +6261,7 @@ const AdminAccounting = () => {
                             <tr key={`g-book-${bIdx}`} className="hover:bg-dark-700/10">
                               <td className="p-3 font-mono font-bold text-white">{b.booking_reference}</td>
                               <td className="p-3 font-semibold text-gray-300">{b.guest_name}</td>
-                              <td className="p-3 font-mono text-gray-400">{b.check_in_date} to {b.check_out_date}</td>
+                              <td className="p-3 font-mono text-gray-200">{b.check_in_date} to {b.check_out_date}</td>
                               <td className="p-3 font-mono font-bold text-gray-300">₦{total.toLocaleString()}</td>
                               <td className="p-3 font-mono font-bold text-green-400">₦{Number(b.amount_paid_ngn || 0).toLocaleString()}</td>
                               <td className={`p-3 font-mono font-bold ${outstanding > 0 ? 'text-rose-500' : 'text-gray-300'}`}>₦{outstanding.toLocaleString()}</td>
@@ -6320,7 +6320,7 @@ const AdminAccounting = () => {
               </h2>
               <button 
                 onClick={() => setIsCloseReportModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -6329,19 +6329,19 @@ const AdminAccounting = () => {
             <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Total Closed Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Total Closed Revenue</span>
                   <span className="text-2xl font-black text-white">₦{selectedCloseReport.total_revenue?.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{selectedCloseReport.transactions_count} total transactions</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{selectedCloseReport.transactions_count} total transactions</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Operating Date</span>
+                  <span className="text-xs text-gray-200 block mb-1">Operating Date</span>
                   <span className="text-2xl font-black text-brand-500">{selectedCloseReport.business_date}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">Closed at: {format(new Date(selectedCloseReport.closed_at), 'yyyy-MM-dd HH:mm')}</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">Closed at: {format(new Date(selectedCloseReport.closed_at), 'yyyy-MM-dd HH:mm')}</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Closed Sign-off Staff</span>
+                  <span className="text-xs text-gray-200 block mb-1">Closed Sign-off Staff</span>
                   <span className="text-2xl font-black text-blue-400 truncate block">{selectedCloseReport.staff_name || 'System Admin'}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">Verifying Accountant Ledger</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">Verifying Accountant Ledger</span>
                 </div>
               </div>
 
@@ -6354,12 +6354,12 @@ const AdminAccounting = () => {
                       Restaurant POS Transactions (Walk-ins & POS Sales)
                     </h3>
                     {(!selectedCloseReport.transactions || selectedCloseReport.transactions.filter(t => t.type === 'Restaurant POS').length === 0) ? (
-                      <p className="text-xs text-gray-500 italic">No Restaurant POS transactions recorded on this day.</p>
+                      <p className="text-xs text-gray-300 italic">No Restaurant POS transactions recorded on this day.</p>
                     ) : (
                       <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                           <thead>
-                            <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                            <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                               <th className="py-2 px-3">Time</th>
                               <th className="py-2 px-3">Reference / Guest</th>
                               <th className="py-2 px-3">Description</th>
@@ -6370,7 +6370,7 @@ const AdminAccounting = () => {
                           <tbody className="divide-y divide-dark-750">
                             {selectedCloseReport.transactions.filter(t => t.type === 'Restaurant POS').map((t, idx) => (
                               <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                                <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                                <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                                 <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                                 <td className="py-2.5 px-3">{t.description}</td>
                                 <td className="py-2.5 px-3">
@@ -6394,12 +6394,12 @@ const AdminAccounting = () => {
                       Kitchen Orders & Room Charges (In-house Guests)
                     </h3>
                     {(!selectedCloseReport.transactions || selectedCloseReport.transactions.filter(t => t.type === 'Kitchen Order').length === 0) ? (
-                      <p className="text-xs text-gray-500 italic">No Kitchen orders recorded on this day.</p>
+                      <p className="text-xs text-gray-300 italic">No Kitchen orders recorded on this day.</p>
                     ) : (
                       <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                           <thead>
-                            <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                            <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                               <th className="py-2 px-3">Time</th>
                               <th className="py-2 px-3">Reference / Room</th>
                               <th className="py-2 px-3">Description</th>
@@ -6410,7 +6410,7 @@ const AdminAccounting = () => {
                           <tbody className="divide-y divide-dark-750">
                             {selectedCloseReport.transactions.filter(t => t.type === 'Kitchen Order').map((t, idx) => (
                               <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                                <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                                <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                                 <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                                 <td className="py-2.5 px-3">{t.description}</td>
                                 <td className="py-2.5 px-3">
@@ -6434,12 +6434,12 @@ const AdminAccounting = () => {
                     Transactions Ledger Details
                   </h3>
                   {!selectedCloseReport.transactions || selectedCloseReport.transactions.length === 0 ? (
-                    <p className="text-xs text-gray-500 italic">No transactions recorded under this closure report.</p>
+                    <p className="text-xs text-gray-300 italic">No transactions recorded under this closure report.</p>
                   ) : (
                     <div className="overflow-x-auto">
                       <table className="w-full text-left border-collapse">
                         <thead>
-                          <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                          <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                             <th className="py-2 px-3">Time</th>
                             <th className="py-2 px-3">Reference / Guest</th>
                             <th className="py-2 px-3">Description</th>
@@ -6450,7 +6450,7 @@ const AdminAccounting = () => {
                         <tbody className="divide-y divide-dark-750">
                           {selectedCloseReport.transactions.map((t, idx) => (
                             <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                              <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                              <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                               <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                               <td className="py-2.5 px-3">{t.description}</td>
                               <td className="py-2.5 px-3">

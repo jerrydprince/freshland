@@ -7,11 +7,11 @@ const PrivacyPolicy = () => {
         <h1 className="text-4xl md:text-5xl font-serif text-white mb-8 text-center">Privacy Policy</h1>
         
         <div className="bg-dark-800 border border-dark-700 p-8 md:p-12 text-gray-300 space-y-8 leading-relaxed">
-          <p className="text-lg text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-lg text-gray-200">Last updated: {new Date().toLocaleDateString()}</p>
           
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
-            <p>At Jemmyland Hotels, we respect your privacy and are committed to protecting your personal data. This Privacy Policy informs you about how we look after your personal data when you visit our website or book our services.</p>
+            <p>At Freshland, we respect your privacy and are committed to protecting your personal data. This Privacy Policy informs you about how we look after your personal data when you visit our website or book our services.</p>
           </section>
 
           <section>

@@ -346,8 +346,8 @@ const LostFound = () => {
     
     const phone = systemSettings.contact_phone || '08103694837, 08174971881';
     const email = systemSettings.contact_email || 'info@sparklesapartments.com';
-    const subject = `Jemmyland Hotels - Found Property Notification (Room ${roomNum})`;
-    const message = `Dear ${guestName},\n\nWe hope you had a wonderful stay with us at Jemmyland Hotels.\n\nOur housekeeping team found a "${item.item_name}" (${item.description || 'no extra description details'}) left in Room ${roomNum} shortly after your departure.\n\nPlease contact our Front Office desk at ${phone} or email us at ${email} to arrange collection or delivery of your item.\n\nWarm regards,\nFront Office Operations\nJemmyland Hotels`;
+    const subject = `Freshland - Found Property Notification (Room ${roomNum})`;
+    const message = `Dear ${guestName},\n\nWe hope you had a wonderful stay with us at Freshland.\n\nOur housekeeping team found a "${item.item_name}" (${item.description || 'no extra description details'}) left in Room ${roomNum} shortly after your departure.\n\nPlease contact our Front Office desk at ${phone} or email us at ${email} to arrange collection or delivery of your item.\n\nWarm regards,\nFront Office Operations\nFreshland`;
 
     setNotificationData({
       channel: 'email',
@@ -403,7 +403,7 @@ const LostFound = () => {
               subject: notificationData.subject,
               html: `<div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
                 <div style="background-color: #0f172a; padding: 24px; text-align: center; border-bottom: 2px solid #0d9488;">
-                  <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: bold; letter-spacing: 0.05em;">Jemmyland Hotels</h1>
+                  <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: bold; letter-spacing: 0.05em;">Freshland</h1>
                 </div>
                 <div style="padding: 32px; background-color: #ffffff;">
                   <h2 style="color: #0d9488; margin-top: 0; font-size: 18px;">Found Property Alert</h2>
@@ -524,7 +524,7 @@ const LostFound = () => {
   }, [items, searchTerm, filterStatus]);
 
   if (!hasAccess('Lost & Found')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to view Lost and Found items.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to view Lost and Found items.</div>;
   }
 
   return (
@@ -539,7 +539,7 @@ const LostFound = () => {
             </div>
             <div>
               <h4 className="font-bold text-sm">Advanced Guest Linkage Offline</h4>
-              <p className="text-xs text-gray-400 mt-0.5">Please execute the database migration file <span className="font-mono text-amber-400">backend/add_lost_found_guest_link.sql</span> in your Supabase SQL editor to link items to guest stays and enable front-office notifications.</p>
+              <p className="text-xs text-gray-200 mt-0.5">Please execute the database migration file <span className="font-mono text-amber-400">backend/add_lost_found_guest_link.sql</span> in your Supabase SQL editor to link items to guest stays and enable front-office notifications.</p>
             </div>
           </div>
         </div>
@@ -553,7 +553,7 @@ const LostFound = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Lost & Found Registry</h1>
-            <p className="text-gray-400 mt-1">Register items left behind in hotel suites, track claim statuses, and coordinate settlements.</p>
+            <p className="text-gray-200 mt-1">Register items left behind in hotel suites, track claim statuses, and coordinate settlements.</p>
           </div>
         </div>
         <div className="mt-4 md:mt-0 flex gap-3">
@@ -577,7 +577,7 @@ const LostFound = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-yellow-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Unclaimed Items</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Unclaimed Items</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {items.filter(i => i.status === 'unclaimed').length} Item(s)
               </h3>
@@ -589,7 +589,7 @@ const LostFound = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-green-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Returned / Claimed</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Returned / Claimed</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {items.filter(i => i.status === 'claimed').length} Item(s)
               </h3>
@@ -601,12 +601,12 @@ const LostFound = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 rounded-xl border-l-4 border-l-gray-500 shadow-md">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Disposed / Donated</p>
+              <p className="text-xs text-gray-200 font-semibold uppercase tracking-wider">Disposed / Donated</p>
               <h3 className="text-2xl font-bold text-white mt-1">
                 {items.filter(i => i.status === 'disposed').length} Item(s)
               </h3>
             </div>
-            <div className="p-2 bg-gray-500/10 text-gray-400 rounded"><Trash2 size={20} /></div>
+            <div className="p-2 bg-gray-500/10 text-gray-200 rounded"><Trash2 size={20} /></div>
           </div>
         </div>
       </div>
@@ -615,7 +615,7 @@ const LostFound = () => {
       {!isHousekeeper && (
         <div className="bg-dark-800 border border-dark-700 p-4 rounded-xl flex flex-col md:flex-row gap-4 items-center shadow-lg">
           <div className="relative flex-1 w-full">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
             <input 
               type="text"
               placeholder="Search items by Name, Description, Found By, Guest, or Location..."
@@ -632,7 +632,7 @@ const LostFound = () => {
                 className={`flex-1 md:flex-initial text-xs font-bold px-4 py-2.5 rounded-lg border transition-all uppercase tracking-wider select-none ${
                   filterStatus === status 
                     ? 'bg-teal-600/15 border-teal-500/30 text-teal-400' 
-                    : 'bg-dark-900 border-dark-700 text-gray-400 hover:text-white'
+                    : 'bg-dark-900 border-dark-700 text-gray-200 hover:text-white'
                 }`}
               >
                 {status}
@@ -647,7 +647,7 @@ const LostFound = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-collapse">
             <thead>
-              <tr className="bg-dark-900 border-b border-dark-700 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+              <tr className="bg-dark-900 border-b border-dark-700 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                 <th className="p-4">Item Name / Linked Guest</th>
                 <th className="p-4">Found location</th>
                 <th className="p-4">Found Date</th>
@@ -659,7 +659,7 @@ const LostFound = () => {
             <tbody className="divide-y divide-dark-700/60">
               {filteredItems.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="p-12 text-center text-gray-500 italic">No lost and found items found matching query filters.</td>
+                  <td colSpan="6" className="p-12 text-center text-gray-300 italic">No lost and found items found matching query filters.</td>
                 </tr>
               ) : (
                 filteredItems.map(item => (
@@ -683,7 +683,7 @@ const LostFound = () => {
                         )}
                         <div>
                           <p className="font-bold text-white text-sm">{item.item_name}</p>
-                          {item.description && <span className="text-xs text-gray-400 block max-w-[240px] truncate mt-0.5">{parseCleanNotes(item.description)}</span>}
+                          {item.description && <span className="text-xs text-gray-200 block max-w-[240px] truncate mt-0.5">{parseCleanNotes(item.description)}</span>}
                           
                           {/* Linked Guest Stay details */}
                           {dbLinkedEnabled && item.bookings && (
@@ -694,7 +694,7 @@ const LostFound = () => {
                               <span className="font-bold text-white text-xs truncate">
                                 {item.bookings.guest_name || (item.bookings.profiles ? `${item.bookings.profiles.first_name} ${item.bookings.profiles.last_name}` : 'Valued Guest')}
                               </span>
-                              {item.bookings.guest_phone && <span className="text-[10px] text-gray-400 font-mono font-bold">{item.bookings.guest_phone}</span>}
+                              {item.bookings.guest_phone && <span className="text-[10px] text-gray-200 font-mono font-bold">{item.bookings.guest_phone}</span>}
                             </div>
                           )}
                         </div>
@@ -706,7 +706,7 @@ const LostFound = () => {
                         {item.found_location} {item.rooms ? `[Room ${item.rooms.room_number}]` : ''}
                       </span>
                     </td>
-                    <td className="p-4 font-mono text-xs text-gray-400">{item.found_date}</td>
+                    <td className="p-4 font-mono text-xs text-gray-200">{item.found_date}</td>
                     <td className="p-4 text-gray-300 font-semibold">{item.found_by}</td>
                     <td className="p-4">
                       <div className="flex flex-col gap-1.5 items-start">
@@ -721,7 +721,7 @@ const LostFound = () => {
                           </span>
                         )}
                         {item.status === 'disposed' && (
-                          <span className="bg-gray-500/10 text-gray-400 border border-gray-500/20 text-[10px] font-extrabold uppercase px-2 py-1 rounded inline-block">
+                          <span className="bg-gray-500/10 text-gray-200 border border-gray-500/20 text-[10px] font-extrabold uppercase px-2 py-1 rounded inline-block">
                             🗑️ Disposed
                           </span>
                         )}
@@ -733,7 +733,7 @@ const LostFound = () => {
                               <Bell size={10} /> Notified
                             </span>
                           ) : (
-                            <span className="bg-gray-500/10 text-gray-400 border border-gray-500/20 text-[9px] font-black uppercase px-1.5 py-0.5 rounded flex items-center gap-1">
+                            <span className="bg-gray-500/10 text-gray-200 border border-gray-500/20 text-[9px] font-black uppercase px-1.5 py-0.5 rounded flex items-center gap-1">
                               <Bell size={10} /> Pending Alert
                             </span>
                           )
@@ -774,7 +774,7 @@ const LostFound = () => {
                             {canDispose && (
                               <button 
                                 onClick={() => handleDisposeItem(item.id)}
-                                className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-400 font-semibold"
+                                className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-200 font-semibold"
                               >
                                 Dispose
                               </button>
@@ -783,11 +783,11 @@ const LostFound = () => {
                         ) : (
                           item.status === 'claimed' ? (
                             <div className="text-xs text-left max-w-[200px] ml-auto">
-                              <p className="font-bold text-gray-400 truncate">Recipient: {item.claimant_name}</p>
-                              <span className="text-[10px] text-gray-500 block mt-0.5">Settle: {item.claimed_date}</span>
+                              <p className="font-bold text-gray-200 truncate">Recipient: {item.claimant_name}</p>
+                              <span className="text-[10px] text-gray-300 block mt-0.5">Settle: {item.claimed_date}</span>
                             </div>
                           ) : (
-                            <span className="text-xs text-gray-500 italic">Disposed / Donated</span>
+                            <span className="text-xs text-gray-300 italic">Disposed / Donated</span>
                           )
                         )}
                       </div>
@@ -810,7 +810,7 @@ const LostFound = () => {
               </h2>
               <button 
                 onClick={() => setShowAddForm(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -821,7 +821,7 @@ const LostFound = () => {
                 
                 {/* Item Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Found Item Name *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Found Item Name *</label>
                   <input 
                     type="text"
                     required
@@ -834,7 +834,7 @@ const LostFound = () => {
 
                 {/* Description */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Item Description / Serial Details</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Item Description / Serial Details</label>
                   <textarea 
                     value={formData.description}
                     onChange={e => setFormData({ ...formData, description: e.target.value })}
@@ -846,7 +846,7 @@ const LostFound = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {/* Found Location */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Found Location *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Found Location *</label>
                     <input 
                       type="text"
                       required
@@ -859,7 +859,7 @@ const LostFound = () => {
 
                   {/* Room Linkage */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Link to Suite Stay</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Link to Suite Stay</label>
                     <select
                       value={formData.room_id}
                       onChange={e => handleRoomChange(e.target.value)}
@@ -891,25 +891,25 @@ const LostFound = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-300">
                           <div>
-                            <p className="text-[9px] text-gray-500 font-bold uppercase">Name</p>
+                            <p className="text-[9px] text-gray-300 font-bold uppercase">Name</p>
                             <p className="font-bold text-white">{recentOccupant.guest_name || (recentOccupant.profiles ? `${recentOccupant.profiles.first_name} ${recentOccupant.profiles.last_name}` : 'Guest')}</p>
                           </div>
                           <div>
-                            <p className="text-[9px] text-gray-500 font-bold uppercase">Stay Dates</p>
+                            <p className="text-[9px] text-gray-300 font-bold uppercase">Stay Dates</p>
                             <p className="font-bold text-white font-mono">{recentOccupant.check_in_date} to {recentOccupant.check_out_date}</p>
                           </div>
                           <div>
-                            <p className="text-[9px] text-gray-500 font-bold uppercase">Email</p>
+                            <p className="text-[9px] text-gray-300 font-bold uppercase">Email</p>
                             <p className="font-bold text-white truncate">{recentOccupant.guest_email || recentOccupant.profiles?.email || 'No email registered'}</p>
                           </div>
                           <div>
-                            <p className="text-[9px] text-gray-500 font-bold uppercase">Phone</p>
+                            <p className="text-[9px] text-gray-300 font-bold uppercase">Phone</p>
                             <p className="font-bold text-white font-mono">{recentOccupant.guest_phone || recentOccupant.profiles?.phone || 'No phone registered'}</p>
                           </div>
                         </div>
                       </div>
                     ) : resolvingOccupant ? (
-                      <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 flex items-center justify-center gap-2 text-xs text-gray-400">
+                      <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 flex items-center justify-center gap-2 text-xs text-gray-200">
                         <RefreshCw size={14} className="animate-spin text-teal-500" /> Resolving latest room occupant stay...
                       </div>
                     ) : null}
@@ -918,9 +918,9 @@ const LostFound = () => {
 
                 {/* Finder Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Finder's Name (Staff or Guest) *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Finder's Name (Staff or Guest) *</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
                     <input 
                       type="text"
                       required
@@ -930,7 +930,7 @@ const LostFound = () => {
                       value={formData.found_by}
                       onChange={e => setFormData({ ...formData, found_by: e.target.value })}
                       className={`w-full bg-dark-900 border border-dark-700 text-white pl-9 pr-4 py-2.5 rounded-lg text-xs font-semibold outline-none focus:border-teal-500 ${
-                        isHousekeeper ? 'bg-dark-950/40 text-gray-400 cursor-not-allowed' : ''
+                        isHousekeeper ? 'bg-dark-950/40 text-gray-200 cursor-not-allowed' : ''
                       }`}
                     />
                   </div>
@@ -938,7 +938,7 @@ const LostFound = () => {
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Administrative Notes</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Administrative Notes</label>
                   <input 
                     type="text"
                     placeholder="e.g. Kept in Reception Locker B"
@@ -950,12 +950,12 @@ const LostFound = () => {
 
                 {/* Found Item Photo Uploader */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-semibold text-gray-400">Attach Item Image (Optional)</label>
+                  <label className="block text-xs font-semibold text-gray-200">Attach Item Image (Optional)</label>
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
                       <label className="w-full h-24 border border-dashed border-dark-600 hover:border-teal-500 bg-dark-900 rounded-lg flex flex-col items-center justify-center cursor-pointer transition-colors p-2">
-                        <Plus className="text-gray-500 hover:text-teal-400" size={20} />
-                        <span className="text-[10px] text-gray-400 font-bold mt-1">Upload Photo</span>
+                        <Plus className="text-gray-300 hover:text-teal-400" size={20} />
+                        <span className="text-[10px] text-gray-200 font-bold mt-1">Upload Photo</span>
                         <input 
                           type="file" 
                           accept="image/*"
@@ -988,7 +988,7 @@ const LostFound = () => {
                 <button 
                   type="button"
                   onClick={() => { setShowAddForm(false); setRecentOccupant(null); }}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -1015,7 +1015,7 @@ const LostFound = () => {
               </h2>
               <button 
                 onClick={() => setNotifyingItem(null)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -1026,7 +1026,7 @@ const LostFound = () => {
                 
                 {/* Channel Selector */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1.5">Dispatch Channel</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1.5">Dispatch Channel</label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
@@ -1034,7 +1034,7 @@ const LostFound = () => {
                       className={`flex items-center justify-center gap-2 py-3 rounded-lg border text-xs font-black transition-all ${
                         notificationData.channel === 'email'
                           ? 'bg-amber-500/15 border-amber-500/40 text-amber-400 shadow-md'
-                          : 'bg-dark-900 border-dark-700 text-gray-400 hover:text-white'
+                          : 'bg-dark-900 border-dark-700 text-gray-200 hover:text-white'
                       }`}
                     >
                       <Mail size={16} /> Send Email Alert
@@ -1045,7 +1045,7 @@ const LostFound = () => {
                       className={`flex items-center justify-center gap-2 py-3 rounded-lg border text-xs font-black transition-all ${
                         notificationData.channel === 'sms'
                           ? 'bg-amber-500/15 border-amber-500/40 text-amber-400 shadow-md'
-                          : 'bg-dark-900 border-dark-700 text-gray-400 hover:text-white'
+                          : 'bg-dark-900 border-dark-700 text-gray-200 hover:text-white'
                       }`}
                     >
                       <MessageSquare size={16} /> Send SMS Dispatch
@@ -1056,11 +1056,11 @@ const LostFound = () => {
                 {/* Recipient Details */}
                 <div className="grid grid-cols-2 gap-4 bg-dark-900/50 p-3 rounded-lg border border-dark-700 text-xs">
                   <div>
-                    <span className="text-gray-500 font-bold uppercase block text-[9px]">Guest Contact</span>
+                    <span className="text-gray-300 font-bold uppercase block text-[9px]">Guest Contact</span>
                     <span className="text-white font-bold">{notificationData.recipient_name}</span>
                   </div>
                   <div>
-                    <span className="text-gray-500 font-bold uppercase block text-[9px]">
+                    <span className="text-gray-300 font-bold uppercase block text-[9px]">
                       {notificationData.channel === 'email' ? 'Email Address' : 'Phone Number'}
                     </span>
                     <span className="text-teal-400 font-bold truncate block">
@@ -1075,7 +1075,7 @@ const LostFound = () => {
                 {/* Email Subject (Only visible for Email) */}
                 {notificationData.channel === 'email' && (
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Subject Header</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Subject Header</label>
                     <input 
                       type="text"
                       required
@@ -1089,7 +1089,7 @@ const LostFound = () => {
                 {/* Template Message Box */}
                 <div>
                   <div className="flex justify-between items-center mb-1">
-                    <label className="block text-xs font-semibold text-gray-400">Customized Template Dispatch Body</label>
+                    <label className="block text-xs font-semibold text-gray-200">Customized Template Dispatch Body</label>
                     <span className="text-[9px] bg-dark-700 text-gray-300 font-black px-1.5 py-0.5 rounded">EXECUTIVE STYLED</span>
                   </div>
                   <textarea 
@@ -1104,7 +1104,7 @@ const LostFound = () => {
                 {/* Attached Image Preview */}
                 {parseItemImage(notifyingItem) && (
                   <div className="bg-dark-900/50 p-3 rounded-lg border border-dark-700 space-y-2">
-                    <span className="text-gray-500 font-bold uppercase block text-[9px]">Attached Item Photo</span>
+                    <span className="text-gray-300 font-bold uppercase block text-[9px]">Attached Item Photo</span>
                     <img 
                       src={parseItemImage(notifyingItem)} 
                       alt="Attached Lost Item" 
@@ -1119,7 +1119,7 @@ const LostFound = () => {
                 <button 
                   type="button"
                   onClick={() => setNotifyingItem(null)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -1146,7 +1146,7 @@ const LostFound = () => {
               </h2>
               <button 
                 onClick={() => setClaimingItem(null)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -1158,16 +1158,16 @@ const LostFound = () => {
                 {/* Item Details Summary */}
                 <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 space-y-1.5 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-bold uppercase">Item Claiming:</span>
+                    <span className="text-gray-300 font-bold uppercase">Item Claiming:</span>
                     <span className="text-white font-black text-sm">{claimingItem.item_name}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-bold uppercase">Found Location:</span>
+                    <span className="text-gray-300 font-bold uppercase">Found Location:</span>
                     <span className="text-gray-300 font-semibold">{claimingItem.found_location}</span>
                   </div>
                   {claimingItem.rooms && (
                     <div className="flex justify-between">
-                      <span className="text-gray-500 font-bold uppercase">Linked Room:</span>
+                      <span className="text-gray-300 font-bold uppercase">Linked Room:</span>
                       <span className="text-teal-400 font-bold">Suite {claimingItem.rooms.room_number}</span>
                     </div>
                   )}
@@ -1175,9 +1175,9 @@ const LostFound = () => {
 
                 {/* Claimant Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Claimant Full Name *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Claimant Full Name *</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
                     <input 
                       type="text"
                       required
@@ -1191,9 +1191,9 @@ const LostFound = () => {
 
                 {/* Claimant Phone */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Claimant Contact Phone *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Claimant Contact Phone *</label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
                     <input 
                       type="text"
                       required
@@ -1211,7 +1211,7 @@ const LostFound = () => {
                 <button 
                   type="button"
                   onClick={() => setClaimingItem(null)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>

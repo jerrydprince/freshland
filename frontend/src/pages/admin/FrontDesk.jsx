@@ -2506,7 +2506,7 @@ const AdminFrontDesk = () => {
       <div className="bg-dark-800 border border-dark-700 p-6 shadow-sm flex flex-col md:flex-row justify-between items-center rounded-lg">
         <div>
           <h1 className="text-2xl font-bold text-white">Front Desk & Reception</h1>
-          <p className="text-gray-400 flex items-center gap-2 mt-1">
+          <p className="text-gray-200 flex items-center gap-2 mt-1">
             <CalendarIcon size={16} />
             {currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
@@ -2589,47 +2589,47 @@ const AdminFrontDesk = () => {
           </button>
           <div className="text-right">
             <p className="text-3xl font-bold text-white">{currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-            <p className="text-sm text-gray-500 uppercase tracking-widest">Local Time</p>
+            <p className="text-sm text-gray-300 uppercase tracking-widest">Local Time</p>
           </div>
           <div className="h-12 w-px bg-dark-700 hidden md:block"></div>
           <div className="text-right">
             <p className="text-3xl font-bold text-brand-500">{occupancyRate}%</p>
-            <p className="text-sm text-gray-500 uppercase tracking-widest">Occupancy</p>
+            <p className="text-sm text-gray-300 uppercase tracking-widest">Occupancy</p>
           </div>
         </div>
       </div>
 
       {/* Tabs */}
       <div className="flex gap-4 border-b border-dark-700 overflow-x-auto">
-        <button onClick={() => setActiveTab('overview')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'overview' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('overview')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'overview' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Search size={18} /> Front Desk Overview
         </button>
-        <button onClick={() => setActiveTab('matrix')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'matrix' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('matrix')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'matrix' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <LayoutGrid size={18} /> Room Status Grid
         </button>
-        <button onClick={() => setActiveTab('calendar')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'calendar' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('calendar')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'calendar' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <CalendarIcon size={18} /> Booking Calendar
         </button>
-        <button onClick={() => setActiveTab('visitors')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'visitors' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('visitors')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'visitors' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
           <Users size={18} /> Visitor Registry Logs
         </button>
         {hasAccess('Reservations') && (
-          <button onClick={() => setActiveTab('reservations')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'reservations' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('reservations')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'reservations' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <CalendarDays size={18} /> Suite Bookings (Reservations)
           </button>
         )}
         {hasAccess('Lost & Found') && (
-          <button onClick={() => setActiveTab('lostfound')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'lostfound' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('lostfound')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'lostfound' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <SearchCheck size={18} /> Lost & Found Items
           </button>
         )}
         {hasAccess('Finance & Billing') && (
-          <button onClick={() => setActiveTab('billing')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'billing' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('billing')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'billing' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <FileText size={18} /> Folios & Billing
           </button>
         )}
         {hasAccess('Halls & Catering') && (
-          <button onClick={() => setActiveTab('halls')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'halls' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+          <button onClick={() => setActiveTab('halls')} className={`pb-3 px-4 font-bold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${activeTab === 'halls' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
             <Sparkles size={18} /> Halls & Catering
           </button>
         )}
@@ -2642,7 +2642,7 @@ const AdminFrontDesk = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 shadow-sm border-l-4 border-l-brand-500 rounded-lg">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm text-gray-400 font-medium">Arrivals Today</p>
+              <p className="text-sm text-gray-200 font-medium">Arrivals Today</p>
               <h3 className="text-3xl font-bold text-white mt-1">{arrivals.length}</h3>
             </div>
             <div className="p-2 bg-brand-500/10 text-brand-500 rounded"><LogIn size={20} /></div>
@@ -2651,7 +2651,7 @@ const AdminFrontDesk = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 shadow-sm border-l-4 border-l-gray-400 rounded-lg">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm text-gray-400 font-medium">Departures Today</p>
+              <p className="text-sm text-gray-200 font-medium">Departures Today</p>
               <h3 className="text-3xl font-bold text-white mt-1">{departures.length}</h3>
             </div>
             <div className="p-2 bg-dark-700 text-gray-300 rounded"><LogOut size={20} /></div>
@@ -2660,7 +2660,7 @@ const AdminFrontDesk = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 shadow-sm border-l-4 border-l-blue-500 rounded-lg">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm text-gray-400 font-medium">In-House Guests</p>
+              <p className="text-sm text-gray-200 font-medium">In-House Guests</p>
               <h3 className="text-3xl font-bold text-white mt-1">{inHouse.length}</h3>
             </div>
             <div className="p-2 bg-blue-500/10 text-blue-500 rounded"><UserCheck size={20} /></div>
@@ -2669,7 +2669,7 @@ const AdminFrontDesk = () => {
         <div className="bg-dark-800 border border-dark-700 p-5 shadow-sm border-l-4 border-l-green-500 rounded-lg">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm text-gray-400 font-medium">Available Rooms</p>
+              <p className="text-sm text-gray-200 font-medium">Available Rooms</p>
               <h3 className="text-3xl font-bold text-white mt-1">{stats.totalRooms - stats.occupiedRooms}</h3>
             </div>
             <div className="p-2 bg-green-500/10 text-green-500 rounded"><Key size={20} /></div>
@@ -2678,7 +2678,7 @@ const AdminFrontDesk = () => {
       </div>
 
       {loading ? (
-        <div className="py-12 text-center text-gray-500">Syncing with reservation engine...</div>
+        <div className="py-12 text-center text-gray-300">Syncing with reservation engine...</div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* LEFT COLUMN: Activity */}
@@ -2694,7 +2694,7 @@ const AdminFrontDesk = () => {
               </div>
               <div className="divide-y divide-dark-700 max-h-[400px] overflow-y-auto">
                 {arrivals.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">No more arrivals expected today.</div>
+                  <div className="p-8 text-center text-gray-300">No more arrivals expected today.</div>
                 ) : (
                   arrivals.map(booking => (
                     <div key={booking.id} className="p-4 hover:bg-dark-700 transition-colors flex justify-between items-center group">
@@ -2703,8 +2703,8 @@ const AdminFrontDesk = () => {
                           <p className="font-medium text-white">{booking.profiles ? `${booking.profiles.first_name} ${booking.profiles.last_name}` : booking.guest_name}</p>
                           {booking.profiles?.vip_status && <span className="bg-yellow-500/20 text-yellow-400 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">VIP</span>}
                         </div>
-                        <p className="text-sm text-gray-400">Room {booking.rooms?.room_number} • {booking.rooms?.name}</p>
-                        <p className="text-xs text-gray-500 mt-1">Ref: {booking.booking_reference}</p>
+                        <p className="text-sm text-gray-200">Room {booking.rooms?.room_number} • {booking.rooms?.name}</p>
+                        <p className="text-xs text-gray-300 mt-1">Ref: {booking.booking_reference}</p>
                       </div>
                       <div className="flex gap-2">
                         <button 
@@ -2724,8 +2724,8 @@ const AdminFrontDesk = () => {
                           }}
                           disabled={booking.status !== 'confirmed' || isFrontOfficeClosed}
                           className={`py-1.5 px-4 text-sm rounded font-bold transition-all ${
-                            isFrontOfficeClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed border border-dark-600' :
-                            booking.status === 'confirmed' ? 'btn-primary' : 'bg-dark-700 text-gray-500 cursor-not-allowed border border-dark-600'
+                            isFrontOfficeClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed border border-dark-600' :
+                            booking.status === 'confirmed' ? 'btn-primary' : 'bg-dark-700 text-gray-300 cursor-not-allowed border border-dark-600'
                           }`}
                           title={isFrontOfficeClosed ? 'Front Office is closed' : booking.status !== 'confirmed' ? 'Booking must be confirmed before check-in' : ''}
                         >
@@ -2742,13 +2742,13 @@ const AdminFrontDesk = () => {
             <div className="bg-dark-800 border border-dark-700 shadow-sm rounded-lg overflow-hidden">
               <div className="p-4 border-b border-dark-700 bg-dark-900 flex justify-between items-center">
                 <h3 className="font-semibold text-white flex items-center gap-2">
-                  <LogOut size={18} className="text-gray-400"/> Expected Departures
+                  <LogOut size={18} className="text-gray-200"/> Expected Departures
                 </h3>
                 <span className="bg-dark-700 text-gray-300 text-xs px-2 py-1 rounded-full font-medium">{departures.length} Pending</span>
               </div>
               <div className="divide-y divide-dark-700 max-h-[400px] overflow-y-auto">
                 {departures.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">No departures scheduled for today.</div>
+                  <div className="p-8 text-center text-gray-300">No departures scheduled for today.</div>
                 ) : (
                   departures.map(booking => (
                     <div key={booking.id} className="p-4 hover:bg-dark-700 transition-colors flex justify-between items-center group">
@@ -2757,7 +2757,7 @@ const AdminFrontDesk = () => {
                           <p className="font-medium text-white">{booking.profiles ? `${booking.profiles.first_name} ${booking.profiles.last_name}` : booking.guest_name}</p>
                           {renderCheckoutBadge(booking)}
                         </div>
-                        <p className="text-sm text-gray-400">Room {booking.rooms?.room_number}</p>
+                        <p className="text-sm text-gray-200">Room {booking.rooms?.room_number}</p>
                         <p className={`text-xs mt-1 ${booking.payment_status === 'paid' ? 'text-green-500' : 'text-red-400'}`}>
                           Balance: {booking.payment_status === 'paid' ? 'Settled' : 'Pending'}
                         </p>
@@ -2794,7 +2794,7 @@ const AdminFrontDesk = () => {
               
               {/* Search Bar */}
               <div className="p-3 bg-dark-900/40 border-b border-dark-700 flex items-center gap-2">
-                <Search size={14} className="text-gray-500 ml-2" />
+                <Search size={14} className="text-gray-300 ml-2" />
                 <input 
                   type="text" 
                   placeholder="Search in-house guests by name, room # or ref..." 
@@ -2803,13 +2803,13 @@ const AdminFrontDesk = () => {
                   className="w-full bg-transparent text-xs text-white placeholder-gray-500 outline-none border-none py-1"
                 />
                 {inHouseSearchQuery && (
-                  <button onClick={() => setInHouseSearchQuery('')} className="text-gray-500 hover:text-white mr-2 text-xs">Clear</button>
+                  <button onClick={() => setInHouseSearchQuery('')} className="text-gray-300 hover:text-white mr-2 text-xs">Clear</button>
                 )}
               </div>
 
               <div className="divide-y divide-dark-700 overflow-y-auto max-h-[400px]">
                 {filteredInHouse.length === 0 ? (
-                  <div className="p-12 text-center text-gray-500 flex flex-col items-center">
+                  <div className="p-12 text-center text-gray-300 flex flex-col items-center">
                     <Key size={48} className="mb-4 text-dark-700" />
                     <p>{inHouseSearchQuery ? "No matching guests found." : "No guests currently in-house."}</p>
                   </div>
@@ -2826,7 +2826,7 @@ const AdminFrontDesk = () => {
                               <p className="font-medium text-white">{booking.profiles ? `${booking.profiles.first_name} ${booking.profiles.last_name}` : booking.guest_name}</p>
                               {renderCheckoutBadge(booking)}
                             </div>
-                            <p className="text-xs text-gray-400 mt-0.5">Check-out: {new Date(booking.check_out_date).toLocaleDateString()}</p>
+                            <p className="text-xs text-gray-200 mt-0.5">Check-out: {new Date(booking.check_out_date).toLocaleDateString()}</p>
                           </div>
                         </div>
                         <div className="flex gap-2 flex-wrap">
@@ -2866,7 +2866,7 @@ const AdminFrontDesk = () => {
                               setActiveCheckOut(booking);
                             }} 
                             disabled={isFrontOfficeClosed}
-                            className="text-gray-400 hover:text-white text-sm font-medium transition-colors border border-dark-600 hover:border-gray-500 px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
+                            className="text-gray-200 hover:text-white text-sm font-medium transition-colors border border-dark-600 hover:border-gray-500 px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
                           >
                             {booking.payment_status === 'paid' ? 'Mark as Checked Out' : 'Check Out'}
                           </button>
@@ -2875,7 +2875,7 @@ const AdminFrontDesk = () => {
                       {/* Display Visitors if any */}
                       {booking.registered_visitors && booking.registered_visitors.filter(v => v.status === 'active').length > 0 && (
                         <div className="mt-3 bg-dark-900 border border-dark-700/80 rounded-lg p-3.5 space-y-3">
-                          <p className="text-xs text-gray-400 font-extrabold uppercase tracking-wider flex items-center gap-1.5 border-b border-dark-700/60 pb-1.5">
+                          <p className="text-xs text-gray-200 font-extrabold uppercase tracking-wider flex items-center gap-1.5 border-b border-dark-700/60 pb-1.5">
                             <Users size={14} className="text-brand-500" />
                             <span>Active Stay Visitors ({booking.registered_visitors.filter(v => v.status === 'active').length})</span>
                           </p>
@@ -2884,13 +2884,13 @@ const AdminFrontDesk = () => {
                               <div key={i} className="flex justify-between items-center text-xs bg-dark-950/60 p-2.5 rounded-lg border border-dark-800 flex-wrap gap-2 hover:border-dark-700 transition-colors">
                                 <div className="space-y-1">
                                   <span className="text-white font-bold text-sm block">{v.name}</span>
-                                  <span className="text-gray-400 block text-[11px]">
+                                  <span className="text-gray-200 block text-[11px]">
                                     📞 {v.phone || 'No phone'} • ID: {v.id_number || 'N/A'}
                                   </span>
                                   {v.purpose && (
                                     <span className="text-[10px] text-brand-500/80 font-medium block italic">Purpose: {v.purpose}</span>
                                   )}
-                                  <span className="text-[10px] text-gray-500 block">
+                                  <span className="text-[10px] text-gray-300 block">
                                     Entered: {v.check_in_time ? format(new Date(v.check_in_time), 'hh:mm a') : 'N/A'}
                                   </span>
                                 </div>
@@ -2921,7 +2921,7 @@ const AdminFrontDesk = () => {
               </div>
               <div className="divide-y divide-dark-700 overflow-y-auto max-h-[400px]">
                 {serviceRequests.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">No pending guest service requests.</div>
+                  <div className="p-8 text-center text-gray-300">No pending guest service requests.</div>
                 ) : (
                   serviceRequests.map(req => {
                     const guestName = req.bookings?.profiles 
@@ -2933,12 +2933,12 @@ const AdminFrontDesk = () => {
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="font-bold text-white text-sm">{req.services?.name || 'Extra Service'}</span>
-                            <span className="bg-dark-900 border border-dark-700 text-gray-400 text-[10px] px-2 py-0.5 rounded-full capitalize">{req.services?.category}</span>
+                            <span className="bg-dark-900 border border-dark-700 text-gray-200 text-[10px] px-2 py-0.5 rounded-full capitalize">{req.services?.category}</span>
                           </div>
-                          <p className="text-xs text-gray-400 mt-1">
+                          <p className="text-xs text-gray-200 mt-1">
                             Guest: <span className="font-medium text-white">{guestName}</span> (Room {roomNo})
                           </p>
-                          <p className="text-[10px] text-gray-500 mt-1">
+                          <p className="text-[10px] text-gray-300 mt-1">
                             Qty: <span className="text-gray-300 font-bold">{req.quantity}</span> • Total Price: <span className="text-brand-500 font-bold">₦{Number(req.total_price_ngn).toLocaleString()}</span>
                           </p>
               {req.scheduled_date && (
@@ -2985,7 +2985,7 @@ const AdminFrontDesk = () => {
                               disabled={req.payment_status === 'awaiting_confirmation'}
                               className={`text-xs py-1.5 px-3 rounded shadow transition-all font-bold ${
                                 req.payment_status === 'awaiting_confirmation'
-                                  ? 'bg-dark-900 text-gray-500 cursor-not-allowed border border-dark-700'
+                                  ? 'bg-dark-900 text-gray-300 cursor-not-allowed border border-dark-700'
                                   : 'bg-amber-500 hover:bg-amber-600 text-dark-950'
                               }`}
                             >
@@ -3005,7 +3005,7 @@ const AdminFrontDesk = () => {
                           {/* Decline is always allowed */}
                           <button 
                             onClick={() => handleUpdateServiceStatus(req.id, 'cancelled')}
-                            className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-400 font-medium"
+                            className="bg-dark-700 hover:bg-red-500/20 hover:text-red-400 text-xs py-1.5 px-3 rounded border border-dark-600 transition-all text-gray-200 font-medium"
                           >
                             Decline
                           </button>
@@ -3074,7 +3074,7 @@ const AdminFrontDesk = () => {
                 <button
                   key={filter.id}
                   onClick={() => setMatrixFilter(filter.id)}
-                  className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg border transition-all duration-200 flex items-center gap-2 ${matrixFilter === filter.id ? filter.activeBg : 'bg-dark-900/50 border-dark-700 text-gray-400 hover:text-white hover:bg-dark-850'}`}
+                  className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg border transition-all duration-200 flex items-center gap-2 ${matrixFilter === filter.id ? filter.activeBg : 'bg-dark-900/50 border-dark-700 text-gray-200 hover:text-white hover:bg-dark-850'}`}
                 >
                   <span className={`w-2 h-2 rounded-full ${filter.color} ${filter.id === 'maintenance' && maintenanceTickets.length > 0 ? 'animate-pulse' : ''}`}></span>
                   {filter.label}
@@ -3082,7 +3082,7 @@ const AdminFrontDesk = () => {
                 </button>
               ))}
             </div>
-            <div className="text-[11px] text-gray-500 font-mono flex items-center gap-1.5">
+            <div className="text-[11px] text-gray-300 font-mono flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span>
               Live Grid System
             </div>
@@ -3141,7 +3141,7 @@ const AdminFrontDesk = () => {
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <span className="text-2xl font-black text-white tracking-tight">{room.room_number}</span>
-                        <p className="text-xs text-gray-400 font-medium mt-0.5">{room.name} • {room.type}</p>
+                        <p className="text-xs text-gray-200 font-medium mt-0.5">{room.name} • {room.type}</p>
                       </div>
                       
                       {maintTicket ? (
@@ -3205,12 +3205,12 @@ const AdminFrontDesk = () => {
                                 </span>
                               )}
                             </div>
-                            <div className="flex items-center justify-between text-xs text-gray-400">
+                            <div className="flex items-center justify-between text-xs text-gray-200">
                               <span className="font-mono text-[10px]">Ref: {activeBooking.booking_reference}</span>
                               <span>Out: {format(new Date(activeBooking.check_out_date), 'MMM dd')}</span>
                             </div>
 
-                            <div className="flex items-center gap-1.5 text-xs text-gray-400 bg-dark-900/50 px-2 py-1 rounded border border-dark-700/30">
+                            <div className="flex items-center gap-1.5 text-xs text-gray-200 bg-dark-900/50 px-2 py-1 rounded border border-dark-700/30">
                               <Phone size={11} className="text-brand-500/80" />
                               <span className="font-medium text-gray-300 select-all">{activeBooking.profiles?.phone || activeBooking.guest_phone || 'No Phone Details'}</span>
                             </div>
@@ -3230,12 +3230,12 @@ const AdminFrontDesk = () => {
                             )}
                           </div>
                         ) : (
-                          <p className="text-xs text-gray-400 italic">Occupied (Syncing...)</p>
+                          <p className="text-xs text-gray-200 italic">Occupied (Syncing...)</p>
                         )
                       ) : (
                         <div className="space-y-1.5 text-xs">
                           {taskStatus === 'inspected' ? (
-                            <div className="text-gray-400 flex flex-col gap-1 py-1">
+                            <div className="text-gray-200 flex flex-col gap-1 py-1">
                               <p className="text-xs text-green-400/90 font-semibold flex items-center gap-1">
                                 <Check size={14} className="text-green-500" />
                                 <span>Certified Clean & Ready</span>
@@ -3245,15 +3245,15 @@ const AdminFrontDesk = () => {
                             <div className="bg-dark-900/40 rounded p-2 space-y-1 text-[11px] border border-dark-700/30">
                               {latestTask ? (
                                 <>
-                                  <div className="flex justify-between text-gray-400">
+                                  <div className="flex justify-between text-gray-200">
                                     <span>Task: <strong className="text-gray-300">{latestTask.task_type?.replace('_', ' ').toUpperCase()}</strong></span>
                                   </div>
                                   {latestTask.profiles && (
-                                    <p className="text-gray-400">Staff: <span className="text-gray-300">{latestTask.profiles.first_name} {latestTask.profiles.last_name}</span></p>
+                                    <p className="text-gray-200">Staff: <span className="text-gray-300">{latestTask.profiles.first_name} {latestTask.profiles.last_name}</span></p>
                                   )}
                                 </>
                               ) : (
-                                <p className="text-gray-500 italic">No task active.</p>
+                                <p className="text-gray-300 italic">No task active.</p>
                               )}
                             </div>
                           )}
@@ -3435,7 +3435,7 @@ const AdminFrontDesk = () => {
                       <option key={type} value={type}>{type}</option>
                     ))}
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-200">
                     <ChevronRight size={14} className="rotate-90" />
                   </div>
                 </div>
@@ -3453,7 +3453,7 @@ const AdminFrontDesk = () => {
                     <option value="checked_in">Checked In</option>
                     <option value="checked_out">Checked Out</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-200">
                     <ChevronRight size={14} className="rotate-90" />
                   </div>
                 </div>
@@ -3461,7 +3461,7 @@ const AdminFrontDesk = () => {
 
               {/* Middle: Custom Date Bounds */}
               <div className="flex flex-wrap gap-3 items-center bg-dark-900/60 p-2.5 rounded-xl border border-dark-700/50">
-                <span className="text-xs uppercase font-extrabold tracking-wider text-gray-400 px-2 flex items-center gap-1.5">
+                <span className="text-xs uppercase font-extrabold tracking-wider text-gray-200 px-2 flex items-center gap-1.5">
                   <CalendarIcon size={13} className="text-brand-500" />
                   Period:
                 </span>
@@ -3522,7 +3522,7 @@ const AdminFrontDesk = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_6px_#a855f7] animate-pulse"></span>
                   Checked In
                 </div>
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-gray-500/5 border border-gray-500/10 text-gray-400 text-[10px] font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-gray-500/5 border border-gray-500/10 text-gray-200 text-[10px] font-bold uppercase tracking-wider">
                   <span className="w-1.5 h-1.5 rounded-full bg-gray-400 shadow-[0_0_6px_#9ca3af] animate-pulse"></span>
                   Checked Out
                 </div>
@@ -3538,7 +3538,7 @@ const AdminFrontDesk = () => {
           {/* Timeline Grid Container */}
           <div className="bg-dark-800 border border-dark-700 rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[500px]">
             {calendarLoading ? (
-              <div className="flex-1 flex flex-col items-center justify-center text-gray-500 py-32 space-y-4">
+              <div className="flex-1 flex flex-col items-center justify-center text-gray-300 py-32 space-y-4">
                 <div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-sm">Syncing calendar engine...</p>
               </div>
@@ -3564,7 +3564,7 @@ const AdminFrontDesk = () => {
                     <div className="w-[280px] min-w-[280px] bg-dark-900 border-r border-dark-700 flex-shrink-0 z-20 sticky left-0 shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
                       {/* Left Header */}
                       <div className="h-[76px] bg-dark-950 border-b border-dark-700 p-4 flex items-center justify-start">
-                        <span className="text-xs uppercase font-bold tracking-wider text-gray-400">Accommodation</span>
+                        <span className="text-xs uppercase font-bold tracking-wider text-gray-200">Accommodation</span>
                       </div>
                       
                       {/* Left Groups & Rooms */}
@@ -3582,7 +3582,7 @@ const AdminFrontDesk = () => {
                                   <Key size={13} className="text-brand-500" />
                                   {room.room_number}
                                 </span>
-                                <span className="text-xs text-gray-400 truncate max-w-full mt-0.5">{room.name || room.type}</span>
+                                <span className="text-xs text-gray-200 truncate max-w-full mt-0.5">{room.name || room.type}</span>
                               </div>
                             ))}
                           </div>
@@ -3615,13 +3615,13 @@ const AdminFrontDesk = () => {
                               {isTodayStr && (
                                 <div className="absolute inset-x-1.5 top-1.5 bottom-1.5 border border-brand-500/40 rounded-lg pointer-events-none shadow-[inset_0_0_8px_rgba(234,179,8,0.1),0_0_10px_rgba(234,179,8,0.15)] bg-brand-500/[0.02]"></div>
                               )}
-                              <span className={`text-[9px] uppercase font-black tracking-widest leading-none ${isTodayStr ? 'text-brand-500' : 'text-gray-500'}`}>
+                              <span className={`text-[9px] uppercase font-black tracking-widest leading-none ${isTodayStr ? 'text-brand-500' : 'text-gray-300'}`}>
                                 {format(dateObj, 'eee')}
                               </span>
                               <span className={`text-xl font-extrabold tracking-tighter leading-none mt-1 ${isTodayStr ? 'text-brand-400 font-black' : 'text-white'}`}>
                                 {format(dateObj, 'd')}
                               </span>
-                              <span className={`text-[9px] uppercase font-bold mt-1 leading-none ${isTodayStr ? 'text-brand-500/80' : 'text-gray-400'}`}>
+                              <span className={`text-[9px] uppercase font-bold mt-1 leading-none ${isTodayStr ? 'text-brand-500/80' : 'text-gray-200'}`}>
                                 {format(dateObj, 'MMM')}
                               </span>
                               {isTodayStr && (
@@ -3745,7 +3745,7 @@ const AdminFrontDesk = () => {
           {/* Search, filters, stats panel */}
           <div className="bg-dark-800 border border-dark-700/80 p-5 shadow-sm rounded-lg flex flex-col md:flex-row gap-4 justify-between items-center">
             <div className="flex items-center gap-3 w-full md:w-auto flex-grow max-w-md bg-dark-900 border border-dark-700 rounded-lg px-3 py-2">
-              <Search size={16} className="text-gray-500" />
+              <Search size={16} className="text-gray-300" />
               <input 
                 type="text" 
                 placeholder="Search visitors by name, ID number, room number, or guest..."
@@ -3754,7 +3754,7 @@ const AdminFrontDesk = () => {
                 className="w-full bg-transparent border-none text-xs text-white placeholder-gray-500 outline-none"
               />
               {visitorSearchQuery && (
-                <button onClick={() => setVisitorSearchQuery('')} className="text-xs text-gray-500 hover:text-white">Clear</button>
+                <button onClick={() => setVisitorSearchQuery('')} className="text-xs text-gray-300 hover:text-white">Clear</button>
               )}
             </div>
             
@@ -3770,7 +3770,7 @@ const AdminFrontDesk = () => {
                   className={`px-4 py-2 rounded text-xs font-bold transition-all border ${
                     visitorFilterStatus === opt.id 
                       ? 'bg-brand-500/10 text-brand-400 border-brand-500/30' 
-                      : 'bg-dark-900 border-dark-750 text-gray-400 hover:text-white hover:bg-dark-850'
+                      : 'bg-dark-900 border-dark-750 text-gray-200 hover:text-white hover:bg-dark-850'
                   }`}
                 >
                   {opt.label}
@@ -3782,7 +3782,7 @@ const AdminFrontDesk = () => {
           {/* Visitor logs listing */}
           <div className="bg-dark-800 border border-dark-700 rounded-lg shadow-sm overflow-hidden">
             {loadingVisitors ? (
-              <div className="p-16 text-center text-gray-500 flex flex-col items-center justify-center gap-3">
+              <div className="p-16 text-center text-gray-300 flex flex-col items-center justify-center gap-3">
                 <div className="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-xs">Accessing visitor ledger database...</p>
               </div>
@@ -3817,10 +3817,10 @@ const AdminFrontDesk = () => {
 
               if (filteredVisitors.length === 0) {
                 return (
-                  <div className="p-16 text-center text-gray-500 flex flex-col items-center justify-center gap-3">
+                  <div className="p-16 text-center text-gray-300 flex flex-col items-center justify-center gap-3">
                     <Users size={48} className="text-dark-600 mb-2" />
                     <p className="font-bold text-white text-sm">No visitor logs found</p>
-                    <p className="text-xs text-gray-400">Try modifying your search or registry filters.</p>
+                    <p className="text-xs text-gray-200">Try modifying your search or registry filters.</p>
                   </div>
                 );
               }
@@ -3829,7 +3829,7 @@ const AdminFrontDesk = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
                     <thead>
-                      <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                      <tr className="bg-dark-900 border-b border-dark-700 text-xs font-bold text-gray-200 uppercase tracking-wider">
                         <th className="p-4">Visitor Profile</th>
                         <th className="p-4">Target Room & Guest</th>
                         <th className="p-4">Entry / check-in</th>
@@ -3851,7 +3851,7 @@ const AdminFrontDesk = () => {
                                 </div>
                                 <div className="space-y-0.5">
                                   <span className="font-bold text-white text-sm block font-semibold">{v.name}</span>
-                                  <span className="text-gray-400 block text-[11px]">📞 {v.phone || 'No phone'} • ID: {v.id_number || 'N/A'}</span>
+                                  <span className="text-gray-200 block text-[11px]">📞 {v.phone || 'No phone'} • ID: {v.id_number || 'N/A'}</span>
                                   {v.purpose && (
                                     <span className="text-[10px] text-brand-500/80 font-medium italic block">Purpose: {v.purpose}</span>
                                   )}
@@ -3861,24 +3861,24 @@ const AdminFrontDesk = () => {
                             <td className="p-4">
                               <div className="space-y-0.5">
                                 <span className="font-bold text-white block">Room {v.booking?.rooms?.room_number || 'N/A'}</span>
-                                <span className="text-[11px] text-gray-400 block">Guest: {guest}</span>
-                                <span className="text-[10px] text-gray-500 block">Ref: {v.booking?.booking_reference}</span>
+                                <span className="text-[11px] text-gray-200 block">Guest: {guest}</span>
+                                <span className="text-[10px] text-gray-300 block">Ref: {v.booking?.booking_reference}</span>
                               </div>
                             </td>
                             <td className="p-4 text-gray-300">
                               <div className="space-y-0.5">
                                 <span>{v.check_in_time ? format(new Date(v.check_in_time), 'MMM dd, yyyy') : 'N/A'}</span>
-                                <span className="text-[10px] text-gray-500 block font-mono">{v.check_in_time ? format(new Date(v.check_in_time), 'hh:mm a') : ''}</span>
+                                <span className="text-[10px] text-gray-300 block font-mono">{v.check_in_time ? format(new Date(v.check_in_time), 'hh:mm a') : ''}</span>
                               </div>
                             </td>
                             <td className="p-4">
                               {v.check_out_time ? (
                                 <div className="space-y-0.5 text-gray-300">
                                   <span>{format(new Date(v.check_out_time), 'MMM dd, yyyy')}</span>
-                                  <span className="text-[10px] text-gray-500 block font-mono">{format(new Date(v.check_out_time), 'hh:mm a')}</span>
+                                  <span className="text-[10px] text-gray-300 block font-mono">{format(new Date(v.check_out_time), 'hh:mm a')}</span>
                                 </div>
                               ) : (
-                                <span className="text-gray-500 italic">Still checked in</span>
+                                <span className="text-gray-300 italic">Still checked in</span>
                               )}
                             </td>
                             <td className="p-4 text-center font-mono font-semibold text-gray-300">
@@ -3891,7 +3891,7 @@ const AdminFrontDesk = () => {
                                   Inside Stay
                                 </span>
                               ) : (
-                                <span className="bg-gray-500/10 text-gray-400 border border-gray-500/20 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                                <span className="bg-gray-500/10 text-gray-200 border border-gray-500/20 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full inline-flex items-center gap-1">
                                   Signed Out
                                 </span>
                               )}
@@ -3950,15 +3950,15 @@ const AdminFrontDesk = () => {
             <div className="bg-dark-900 p-5 border-b border-dark-700 flex justify-between items-center">
               <h2 className="text-lg font-bold text-white flex flex-col">
                 <span>Reservation Details</span>
-                <span className="text-xs text-gray-400 font-normal mt-0.5">Ref: {selectedCalendarBooking.booking_reference || 'Manual Booking'}</span>
+                <span className="text-xs text-gray-200 font-normal mt-0.5">Ref: {selectedCalendarBooking.booking_reference || 'Manual Booking'}</span>
               </h2>
-              <button onClick={() => setSelectedCalendarBooking(null)} className="text-gray-400 hover:text-white"><X size={20}/></button>
+              <button onClick={() => setSelectedCalendarBooking(null)} className="text-gray-200 hover:text-white"><X size={20}/></button>
             </div>
             
             <div className="p-6 space-y-5 text-sm">
               {/* Guest Profile Section */}
               <div className="space-y-2">
-                <p className="text-xs uppercase font-bold tracking-wider text-gray-500">Guest Information</p>
+                <p className="text-xs uppercase font-bold tracking-wider text-gray-300">Guest Information</p>
                 <div className="bg-dark-900/60 border border-dark-700/60 p-3.5 rounded-lg">
                   <p className="font-bold text-white text-base flex items-center gap-1.5">
                     {selectedCalendarBooking.profiles ? `${selectedCalendarBooking.profiles.first_name} ${selectedCalendarBooking.profiles.last_name}` : selectedCalendarBooking.guest_name}
@@ -3966,21 +3966,21 @@ const AdminFrontDesk = () => {
                       <span className="bg-yellow-500/20 text-yellow-400 text-[9px] font-black tracking-widest px-1.5 py-0.5 rounded-sm uppercase">VIP</span>
                     )}
                   </p>
-                  {selectedCalendarBooking.guest_email && <p className="text-xs text-gray-400 mt-1.5">{selectedCalendarBooking.guest_email}</p>}
-                  {selectedCalendarBooking.guest_phone && <p className="text-xs text-gray-400 mt-0.5">{selectedCalendarBooking.guest_phone}</p>}
+                  {selectedCalendarBooking.guest_email && <p className="text-xs text-gray-200 mt-1.5">{selectedCalendarBooking.guest_email}</p>}
+                  {selectedCalendarBooking.guest_phone && <p className="text-xs text-gray-200 mt-0.5">{selectedCalendarBooking.guest_phone}</p>}
                 </div>
               </div>
 
               {/* Stay Section */}
               <div className="space-y-2">
-                <p className="text-xs uppercase font-bold tracking-wider text-gray-500">Stay Information</p>
+                <p className="text-xs uppercase font-bold tracking-wider text-gray-300">Stay Information</p>
                 <div className="bg-dark-900/60 border border-dark-700/60 p-3.5 rounded-lg grid grid-cols-2 gap-4">
                   <div>
-                    <span className="text-xs text-gray-400">Assigned Unit</span>
+                    <span className="text-xs text-gray-200">Assigned Unit</span>
                     <p className="font-bold text-brand-500 text-lg mt-0.5">Room {selectedCalendarBooking.rooms?.room_number}</p>
                   </div>
                   <div>
-                    <span className="text-xs text-gray-400">Nights</span>
+                    <span className="text-xs text-gray-200">Nights</span>
                     <p className="font-bold text-white text-lg mt-0.5">
                       {Math.max(1, differenceInDays(new Date(selectedCalendarBooking.check_out_date), new Date(selectedCalendarBooking.check_in_date)))}
                     </p>
@@ -4000,10 +4000,10 @@ const AdminFrontDesk = () => {
 
               {/* Billing / Source Status Section */}
               <div className="space-y-2">
-                <p className="text-xs uppercase font-bold tracking-wider text-gray-500">Reservation Status</p>
+                <p className="text-xs uppercase font-bold tracking-wider text-gray-300">Reservation Status</p>
                 <div className="bg-dark-900/60 border border-dark-700/60 p-3.5 rounded-lg flex justify-between items-center">
                   <div>
-                    <span className="text-xs text-gray-400 block">Status:</span>
+                    <span className="text-xs text-gray-200 block">Status:</span>
                     <span className={`inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded mt-1 ${
                       selectedCalendarBooking.status === 'confirmed' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
                       selectedCalendarBooking.status === 'pending' ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' :
@@ -4015,7 +4015,7 @@ const AdminFrontDesk = () => {
                     </span>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs text-gray-400 block">Payment:</span>
+                    <span className="text-xs text-gray-200 block">Payment:</span>
                     <span className={`inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded mt-1 ${
                       selectedCalendarBooking.payment_status === 'paid' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
                       'bg-red-500/10 text-red-400 border border-red-500/20'
@@ -4125,7 +4125,7 @@ const AdminFrontDesk = () => {
                 </button>
                 <button 
                   onClick={() => setSelectedCalendarBooking(null)}
-                  className="w-full bg-dark-950 text-gray-400 hover:text-white font-medium py-2.5 rounded hover:bg-dark-900 transition-colors text-xs"
+                  className="w-full bg-dark-950 text-gray-200 hover:text-white font-medium py-2.5 rounded hover:bg-dark-900 transition-colors text-xs"
                 >
                   Close Details
                 </button>
@@ -4144,7 +4144,7 @@ const AdminFrontDesk = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <LogIn className="text-brand-500"/> Formal Check-In
               </h2>
-              <button onClick={() => setActiveCheckIn(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveCheckIn(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             
             <div className="p-6">
@@ -4153,10 +4153,10 @@ const AdminFrontDesk = () => {
                 <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-dark-700 -z-10 -translate-y-1/2"></div>
                 {['Reservation', 'Verification', 'Signature'].map((step, i) => (
                   <div key={step} className="flex flex-col items-center gap-2 bg-dark-800 px-2">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${checkInStep >= i+1 ? 'bg-brand-500 text-dark-900' : 'bg-dark-700 text-gray-500'}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${checkInStep >= i+1 ? 'bg-brand-500 text-dark-900' : 'bg-dark-700 text-gray-300'}`}>
                       {i + 1}
                     </div>
-                    <span className={`text-xs ${checkInStep >= i+1 ? 'text-white' : 'text-gray-500'}`}>{step}</span>
+                    <span className={`text-xs ${checkInStep >= i+1 ? 'text-white' : 'text-gray-300'}`}>{step}</span>
                   </div>
                 ))}
               </div>
@@ -4165,16 +4165,16 @@ const AdminFrontDesk = () => {
               {checkInStep === 1 && (
                 <div className="space-y-4">
                   <div className="bg-dark-900 border border-dark-700 rounded p-4">
-                    <p className="text-sm text-gray-400 mb-1">Guest Name</p>
+                    <p className="text-sm text-gray-200 mb-1">Guest Name</p>
                     <p className="text-lg font-bold text-white mb-4">{activeCheckIn.profiles ? `${activeCheckIn.profiles.first_name} ${activeCheckIn.profiles.last_name}` : activeCheckIn.guest_name}</p>
                     
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm text-gray-400">Assigned Room</p>
+                        <p className="text-sm text-gray-200">Assigned Room</p>
                         <p className="text-brand-500 font-bold text-lg">{activeCheckIn.rooms?.room_number}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-400">Payment Status</p>
+                        <p className="text-sm text-gray-200">Payment Status</p>
                         <p className={`font-semibold ${
                           activeCheckIn.payment_status === 'paid' ? 'text-green-400' : 
                           activeCheckIn.payment_status === 'partial' ? 'text-amber-400' : 'text-red-400'
@@ -4206,7 +4206,7 @@ const AdminFrontDesk = () => {
                       <input type="checkbox" checked={idVerified} onChange={e => setIdVerified(e.target.checked)} className="w-6 h-6 accent-brand-500" />
                       <div>
                         <p className="font-bold text-white flex items-center gap-2"><ShieldCheck size={18} className="text-brand-500"/> Physical ID Verified</p>
-                        <p className="text-xs text-gray-400">I have reviewed a valid government-issued ID matching the reservation.</p>
+                        <p className="text-xs text-gray-200">I have reviewed a valid government-issued ID matching the reservation.</p>
                       </div>
                     </label>
 
@@ -4214,13 +4214,13 @@ const AdminFrontDesk = () => {
                       <input type="checkbox" checked={keyIssued} onChange={e => setKeyIssued(e.target.checked)} className="w-6 h-6 accent-brand-500" />
                       <div>
                         <p className="font-bold text-white flex items-center gap-2"><Key size={18} className="text-brand-500"/> Room Keys Issued</p>
-                        <p className="text-xs text-gray-400">Physical or digital keys have been successfully provisioned for Room {activeCheckIn.rooms?.room_number}.</p>
+                        <p className="text-xs text-gray-200">Physical or digital keys have been successfully provisioned for Room {activeCheckIn.rooms?.room_number}.</p>
                       </div>
                     </label>
                   </div>
                   <div className="flex gap-4 mt-4">
                     <button onClick={() => setCheckInStep(1)} className="bg-dark-700 text-white px-6 py-3 rounded">Back</button>
-                    <button onClick={() => setCheckInStep(3)} disabled={!idVerified || !keyIssued} className={`flex-1 py-3 rounded font-bold transition-all ${idVerified && keyIssued ? 'bg-brand-500 text-dark-900 hover:bg-brand-400' : 'bg-dark-700 text-gray-500 cursor-not-allowed'}`}>
+                    <button onClick={() => setCheckInStep(3)} disabled={!idVerified || !keyIssued} className={`flex-1 py-3 rounded font-bold transition-all ${idVerified && keyIssued ? 'bg-brand-500 text-dark-900 hover:bg-brand-400' : 'bg-dark-700 text-gray-300 cursor-not-allowed'}`}>
                       Capture Signature
                     </button>
                   </div>
@@ -4232,9 +4232,9 @@ const AdminFrontDesk = () => {
                 <div className="space-y-4">
                   <div className="bg-dark-900 border border-dark-700 rounded p-5">
                     <p className="text-white font-medium mb-2 flex items-center gap-2"><ShieldCheck size={18} className="text-brand-500"/> Terms & Conditions of Stay</p>
-                    <p className="text-xs text-gray-400 mb-3">Please review the house rules and stay policy below with the guest:</p>
+                    <p className="text-xs text-gray-200 mb-3">Please review the house rules and stay policy below with the guest:</p>
                     
-                    <div className="h-40 overflow-y-auto bg-dark-950 border border-dark-800 rounded p-3 text-xs text-gray-400 space-y-2 mb-4 scrollbar-thin">
+                    <div className="h-40 overflow-y-auto bg-dark-950 border border-dark-800 rounded p-3 text-xs text-gray-200 space-y-2 mb-4 scrollbar-thin">
                       <p className="font-bold text-white uppercase tracking-wider">1. Check-In & Check-Out</p>
                       <p>Standard check-in is 2:00 PM and check-out is 11:00 AM. Late check-out is subject to availability and additional fees.</p>
                       
@@ -4257,7 +4257,7 @@ const AdminFrontDesk = () => {
                       />
                       <div>
                         <p className="text-sm font-semibold text-white">Agree to Terms & Conditions</p>
-                        <p className="text-xs text-gray-400 mt-0.5">The guest accepts all terms of stay and financial responsibility for Room {activeCheckIn.rooms?.room_number}.</p>
+                        <p className="text-xs text-gray-200 mt-0.5">The guest accepts all terms of stay and financial responsibility for Room {activeCheckIn.rooms?.room_number}.</p>
                       </div>
                     </label>
                   </div>
@@ -4266,7 +4266,7 @@ const AdminFrontDesk = () => {
                     <button 
                       onClick={handleFinalizeCheckIn} 
                       disabled={signatureData !== 'SIGNED_AGREED_TERMS'} 
-                      className={`flex-1 py-3 rounded font-bold transition-all ${signatureData === 'SIGNED_AGREED_TERMS' ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]' : 'bg-dark-700 text-gray-500 cursor-not-allowed'}`}
+                      className={`flex-1 py-3 rounded font-bold transition-all ${signatureData === 'SIGNED_AGREED_TERMS' ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]' : 'bg-dark-700 text-gray-300 cursor-not-allowed'}`}
                     >
                       Complete Check-In
                     </button>
@@ -4284,9 +4284,9 @@ const AdminFrontDesk = () => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-md rounded-xl shadow-2xl animate-in zoom-in-95 overflow-hidden flex flex-col">
              <div className="bg-dark-900 p-5 border-b border-dark-700 flex justify-between items-center">
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                <LogOut className="text-gray-400"/> Confirm Check-Out
+                <LogOut className="text-gray-200"/> Confirm Check-Out
               </h2>
-              <button onClick={() => setActiveCheckOut(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveCheckOut(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             <div className="p-6">
               {(() => {
@@ -4329,10 +4329,10 @@ const AdminFrontDesk = () => {
                         <p className="font-extrabold text-yellow-500 flex items-center gap-1.5 uppercase tracking-wider">
                           ⏳ Early Check-Out Detected
                         </p>
-                        <p className="text-gray-400">
+                        <p className="text-gray-200">
                           Stay shortened from {scheduledNights} to {actualNights} nights ({unusedNights} night(s) unused).
                         </p>
-                        <p className="text-gray-400">
+                        <p className="text-gray-200">
                           Unused stay credit: <strong className="text-white font-mono">₦{unusedNightsValue.toLocaleString()}</strong>
                         </p>
                       </div>
@@ -4343,7 +4343,7 @@ const AdminFrontDesk = () => {
                         <p className="font-extrabold text-red-400 flex items-center gap-1.5 uppercase tracking-wider">
                           ⚠️ Unpaid Guest Services Folio
                         </p>
-                        <p className="text-gray-400 leading-normal">
+                        <p className="text-gray-200 leading-normal">
                           This stay has unpaid room folio services that must be paid at Finance & Billing before check-out:
                         </p>
                         <div className="divide-y divide-dark-750 bg-dark-900/50 p-2 rounded-lg border border-dark-700/50 max-h-[160px] overflow-y-auto space-y-1">
@@ -4360,7 +4360,7 @@ const AdminFrontDesk = () => {
                                   <span className="text-gray-300 font-medium truncate max-w-[220px]">{srv.services?.name || 'Guest Charge'}</span>
                                   <span className="font-bold text-white font-mono">₦{total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                                 </div>
-                                <div className="flex justify-between items-center text-[9px] text-gray-500 mt-0.5">
+                                <div className="flex justify-between items-center text-[9px] text-gray-300 mt-0.5">
                                   <span>Qty: {qty} | Unit: ₦{unitPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                                   <span>Base: ₦{basePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isTaxable ? `| VAT (7.5%): ₦${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '(VAT Exempt)'}</span>
                                 </div>
@@ -4377,16 +4377,16 @@ const AdminFrontDesk = () => {
 
                     <div className="bg-dark-900 border border-dark-700 p-4 rounded mb-6 space-y-3">
                       <div className="flex justify-between items-center text-sm">
-                        <span className="text-gray-400">Accommodation Charges (Rent + Tax):</span>
+                        <span className="text-gray-200">Accommodation Charges (Rent + Tax):</span>
                         <span className="font-bold text-white font-mono">₦{accommodationCharges.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between items-center text-sm">
-                        <span className="text-gray-400">Stay Amount Paid:</span>
+                        <span className="text-gray-200">Stay Amount Paid:</span>
                         <span className="font-bold text-green-500 font-mono">₦{amountPaid.toLocaleString()}</span>
                       </div>
                       {unpaidServicesTotal > 0 && (
                         <div className="flex justify-between items-center text-sm">
-                          <span className="text-gray-400">Unpaid Extras Folio:</span>
+                          <span className="text-gray-200">Unpaid Extras Folio:</span>
                           <span className="font-bold text-red-400 font-mono">₦{unpaidServicesTotal.toLocaleString()}</span>
                         </div>
                       )}
@@ -4400,7 +4400,7 @@ const AdminFrontDesk = () => {
                         </div>
                       ) : (
                         <div className="border-t border-dark-700 pt-2 flex justify-between items-center">
-                          <span className="text-gray-400 text-sm font-semibold">Total Outstanding Balance:</span>
+                          <span className="text-gray-200 text-sm font-semibold">Total Outstanding Balance:</span>
                           <span className={`font-bold font-mono text-lg ${isPaidActual ? 'text-green-500' : 'text-red-400'}`}>
                             ₦{totalOwed.toLocaleString()}
                           </span>
@@ -4410,7 +4410,7 @@ const AdminFrontDesk = () => {
 
                     {overpaidAmount > 0 && (
                       <div className="bg-dark-900 border border-dark-750 p-4 rounded-xl mb-6 space-y-3 animate-in fade-in duration-300">
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                            Settle Refund Balance
                         </label>
                         <div className="space-y-2">
@@ -4456,12 +4456,12 @@ const AdminFrontDesk = () => {
                           </div>
                         ) : (
                           <div className="bg-dark-900 border border-dark-750 p-4 rounded-xl space-y-3 animate-in fade-in duration-300">
-                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                            <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                               Settle Folio Balance (₦{totalOwed.toLocaleString()})
                             </label>
                             
                             <div className="grid grid-cols-2 gap-2">
-                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'ar' ? 'border-purple-500 bg-purple-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-400 hover:border-dark-600'}`}>
+                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'ar' ? 'border-purple-500 bg-purple-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-200 hover:border-dark-600'}`}>
                                 <input 
                                   type="radio" 
                                   name="checkout_payment" 
@@ -4474,7 +4474,7 @@ const AdminFrontDesk = () => {
                                 <span className="text-[10px]">AR Wallet</span>
                               </label>
 
-                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'cash' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-400 hover:border-dark-600'}`}>
+                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'cash' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-200 hover:border-dark-600'}`}>
                                 <input 
                                   type="radio" 
                                   name="checkout_payment" 
@@ -4487,7 +4487,7 @@ const AdminFrontDesk = () => {
                                 <span className="text-[10px]">Cash</span>
                               </label>
 
-                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'pos' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-400 hover:border-dark-600'}`}>
+                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'pos' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-200 hover:border-dark-600'}`}>
                                 <input 
                                   type="radio" 
                                   name="checkout_payment" 
@@ -4500,7 +4500,7 @@ const AdminFrontDesk = () => {
                                 <span className="text-[10px]">POS</span>
                               </label>
 
-                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'bank_transfer' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-400 hover:border-dark-600'}`}>
+                              <label className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center cursor-pointer transition-all ${checkoutPaymentMethod === 'bank_transfer' ? 'border-brand-500 bg-brand-500/10 text-white font-semibold shadow-sm' : 'border-dark-700 bg-dark-800/50 text-gray-200 hover:border-dark-600'}`}>
                                 <input 
                                   type="radio" 
                                   name="checkout_payment" 
@@ -4519,7 +4519,7 @@ const AdminFrontDesk = () => {
                                 {checkoutARProfile ? (
                                   <>
                                     <div className="flex justify-between items-center text-xs">
-                                      <span className="text-gray-400">Available AR Balance:</span>
+                                      <span className="text-gray-200">Available AR Balance:</span>
                                       <span className={`font-bold font-mono ${Number(checkoutARProfile.wallet_balance || 0) >= totalOwed ? 'text-green-500' : 'text-red-400'}`}>
                                         ₦{Number(checkoutARProfile.wallet_balance || 0).toLocaleString()}
                                       </span>
@@ -4569,7 +4569,7 @@ const AdminFrontDesk = () => {
                     <button 
                       onClick={() => handleFinalizeCheckOutEarly(unusedNightsValue, overpaidAmount)} 
                       disabled={!isPaidActual || pendingCheckoutPayments.length > 0}
-                      className={`w-full py-3 rounded font-bold transition-colors ${isPaidActual && pendingCheckoutPayments.length === 0 ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-md' : 'bg-dark-700 text-gray-500 cursor-not-allowed'}`}
+                      className={`w-full py-3 rounded font-bold transition-colors ${isPaidActual && pendingCheckoutPayments.length === 0 ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-md' : 'bg-dark-700 text-gray-300 cursor-not-allowed'}`}
                     >
                       {overpaidAmount > 0 ? 'Settle Balance & Check Out' : 'Mark as Checked Out'}
                     </button>
@@ -4589,28 +4589,28 @@ const AdminFrontDesk = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <AlertTriangle className="text-orange-500"/> No-Show / Guest Rebooking
               </h2>
-              <button onClick={() => setActiveNoShowModal(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveNoShowModal(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             
             <div className="p-6 space-y-6 max-h-[550px] overflow-y-auto custom-scrollbar">
               {/* Guest Details */}
               <div className="bg-dark-900/40 border border-dark-700/60 p-4 rounded-xl space-y-2">
-                <p className="text-xs uppercase font-extrabold tracking-wider text-gray-500">Current Reservation Details</p>
+                <p className="text-xs uppercase font-extrabold tracking-wider text-gray-300">Current Reservation Details</p>
                 <div className="grid grid-cols-2 gap-4 text-xs">
                   <div>
-                    <span className="text-gray-400 block">Guest Name:</span>
+                    <span className="text-gray-200 block">Guest Name:</span>
                     <strong className="text-white text-sm">{activeNoShowModal.profiles ? `${activeNoShowModal.profiles.first_name} ${activeNoShowModal.profiles.last_name}` : activeNoShowModal.guest_name}</strong>
                   </div>
                   <div>
-                    <span className="text-gray-400 block">Original Room:</span>
+                    <span className="text-gray-200 block">Original Room:</span>
                     <strong className="text-white text-sm">Room {activeNoShowModal.rooms?.room_number}</strong>
                   </div>
                   <div>
-                    <span className="text-gray-400 block">Original Dates:</span>
+                    <span className="text-gray-200 block">Original Dates:</span>
                     <strong className="text-white">{activeNoShowModal.check_in_date} to {activeNoShowModal.check_out_date}</strong>
                   </div>
                   <div>
-                    <span className="text-gray-400 block">Amount Paid originally:</span>
+                    <span className="text-gray-200 block">Amount Paid originally:</span>
                     <strong className="text-green-400 font-mono">₦{Number(activeNoShowModal.amount_paid_ngn || 0).toLocaleString()}</strong>
                   </div>
                 </div>
@@ -4619,7 +4619,7 @@ const AdminFrontDesk = () => {
               {/* Action 1: Mark No-Show Only (if not already no-show) */}
               {activeNoShowModal.status !== 'no_show' && (
                 <div className="bg-dark-900/20 border border-dark-850 p-4 rounded-xl space-y-3">
-                  <p className="text-xs text-gray-400">If the guest will not arrive and you only want to release the room to available inventory without rebooking:</p>
+                  <p className="text-xs text-gray-200">If the guest will not arrive and you only want to release the room to available inventory without rebooking:</p>
                   <button 
                     type="button"
                     disabled={rebookProcessing}
@@ -4633,11 +4633,11 @@ const AdminFrontDesk = () => {
 
               {/* Action 2: Rebook Form */}
               <form onSubmit={handleConfirmRebooking} className="space-y-4 pt-2 border-t border-dark-700/60">
-                <p className="text-xs uppercase font-extrabold tracking-wider text-gray-500 mb-2">Rebook Guest for New Dates</p>
+                <p className="text-xs uppercase font-extrabold tracking-wider text-gray-300 mb-2">Rebook Guest for New Dates</p>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs text-gray-400 mb-1 font-semibold">New Check-In Date *</label>
+                    <label className="block text-xs text-gray-200 mb-1 font-semibold">New Check-In Date *</label>
                     <input 
                       required 
                       type="date" 
@@ -4647,7 +4647,7 @@ const AdminFrontDesk = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-gray-400 mb-1 font-semibold">New Check-Out Date *</label>
+                    <label className="block text-xs text-gray-200 mb-1 font-semibold">New Check-Out Date *</label>
                     <input 
                       required 
                       type="date" 
@@ -4659,9 +4659,9 @@ const AdminFrontDesk = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Select Room *</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Select Room *</label>
                   {loadingRebookRooms ? (
-                    <div className="text-xs text-gray-500 italic py-2">Loading available rooms...</div>
+                    <div className="text-xs text-gray-300 italic py-2">Loading available rooms...</div>
                   ) : (
                     <select 
                       required
@@ -4691,15 +4691,15 @@ const AdminFrontDesk = () => {
 
                     return (
                       <div className="bg-dark-900 border border-dark-750 p-4 rounded-xl space-y-2 text-xs">
-                        <div className="flex justify-between items-center text-gray-400">
+                        <div className="flex justify-between items-center text-gray-200">
                           <span>New Stay Period:</span>
                           <span className="text-white font-semibold">{nights} Night(s)</span>
                         </div>
-                        <div className="flex justify-between items-center text-gray-400">
+                        <div className="flex justify-between items-center text-gray-200">
                           <span>New Stay Total:</span>
                           <span className="text-white font-mono font-bold">₦{newPrice.toLocaleString()}</span>
                         </div>
-                        <div className="flex justify-between items-center text-gray-400">
+                        <div className="flex justify-between items-center text-gray-200">
                           <span>Original Prepayment:</span>
                           <span className="text-green-400 font-mono font-bold">₦{originalPaid.toLocaleString()}</span>
                         </div>
@@ -4735,26 +4735,26 @@ const AdminFrontDesk = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <FileText className="text-brand-500"/> Register Visitor
               </h2>
-              <button onClick={() => setActiveVisitorRegistration(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveVisitorRegistration(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             <div className="p-6">
-              <p className="text-gray-400 text-sm mb-6">Registering an external visitor for Room <strong className="text-white">{activeVisitorRegistration.rooms?.room_number}</strong>.</p>
+              <p className="text-gray-200 text-sm mb-6">Registering an external visitor for Room <strong className="text-white">{activeVisitorRegistration.rooms?.room_number}</strong>.</p>
               
               <form onSubmit={handleRegisterVisitor} className="space-y-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1 font-semibold">Visitor Full Name *</label>
+                  <label className="block text-sm text-gray-200 mb-1 font-semibold">Visitor Full Name *</label>
                   <input required type="text" value={visitorName} onChange={e=>setVisitorName(e.target.value)} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="e.g. John Doe" />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1 font-semibold">Phone Number *</label>
+                  <label className="block text-sm text-gray-200 mb-1 font-semibold">Phone Number *</label>
                   <input required type="tel" value={visitorPhone} onChange={e=>setVisitorPhone(e.target.value)} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="e.g. 080XXXXXXXX" />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1 font-semibold">ID Number / Card Type *</label>
+                  <label className="block text-sm text-gray-200 mb-1 font-semibold">ID Number / Card Type *</label>
                   <input required type="text" value={visitorId} onChange={e=>setVisitorId(e.target.value)} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="Driver's License #, NIN, etc." />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1 font-semibold">Purpose of Visit</label>
+                  <label className="block text-sm text-gray-200 mb-1 font-semibold">Purpose of Visit</label>
                   <select value={visitorPurpose} onChange={e=>setVisitorPurpose(e.target.value)} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm">
                     <option value="Social Visit">Social Visit</option>
                     <option value="Business Meeting">Business Meeting</option>
@@ -4795,11 +4795,11 @@ const AdminFrontDesk = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <CheckCircle className="text-yellow-500"/> Manager Inspection
               </h2>
-              <button onClick={() => setActiveInspection(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveInspection(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             
             <div className="p-6 space-y-6">
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-200">
                 Please verify the standard housekeeping quality checklist before certifying the room as <strong>Vacant - Ready</strong>.
               </p>
               
@@ -4850,11 +4850,11 @@ const AdminFrontDesk = () => {
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <Package className="text-purple-400"/> Add Stay Enhancement to Folio
               </h2>
-              <button onClick={() => setActiveAddServiceBooking(null)} className="text-gray-400 hover:text-white"><X size={24}/></button>
+              <button onClick={() => setActiveAddServiceBooking(null)} className="text-gray-200 hover:text-white"><X size={24}/></button>
             </div>
             
             <form onSubmit={handleAddServiceSubmit} className="p-6 space-y-4 overflow-y-auto custom-scrollbar flex-1">
-              <div className="bg-dark-900/60 p-3 rounded-lg border border-dark-700/50 text-xs text-gray-400">
+              <div className="bg-dark-900/60 p-3 rounded-lg border border-dark-700/50 text-xs text-gray-200">
                 <span className="block text-gray-300 font-semibold mb-1">Target Account:</span>
                 Room {activeAddServiceBooking.rooms?.room_number} — {activeAddServiceBooking.profiles ? `${activeAddServiceBooking.profiles.first_name} ${activeAddServiceBooking.profiles.last_name}` : activeAddServiceBooking.guest_name}
               </div>
@@ -4863,7 +4863,7 @@ const AdminFrontDesk = () => {
               <div className="space-y-3 text-left">
                 <h5 className="text-xs font-extrabold text-purple-400 uppercase tracking-wider">Standard Services</h5>
                 {availableServices.length === 0 ? (
-                  <p className="text-xs text-gray-500">No active standard services registered.</p>
+                  <p className="text-xs text-gray-300">No active standard services registered.</p>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {availableServices.map(service => {
@@ -4890,7 +4890,7 @@ const AdminFrontDesk = () => {
                             />
                             <div className="text-left">
                               <span className="text-xs font-bold text-white block leading-tight">{service.name}</span>
-                              <span className="text-[10px] text-gray-400 font-mono">
+                              <span className="text-[10px] text-gray-200 font-mono">
                                 {isVirtualMeals ? 'Order Food / Drinks' : `₦${Number(service.base_price_ngn).toLocaleString()}`}
                               </span>
                             </div>
@@ -4921,7 +4921,7 @@ const AdminFrontDesk = () => {
                           className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
                             kitchenMenuTab === tab 
                               ? 'bg-amber-500 text-dark-900 font-extrabold shadow-sm' 
-                              : 'text-gray-400 hover:text-white'
+                              : 'text-gray-200 hover:text-white'
                           }`}
                         >
                           {tab} ({count})
@@ -4982,14 +4982,14 @@ const AdminFrontDesk = () => {
                           <button
                             type="button"
                             onClick={() => handleToggleBulkCheck(service, false)}
-                            className="absolute top-2.5 right-2.5 text-gray-500 hover:text-red-400 text-xs font-bold"
+                            className="absolute top-2.5 right-2.5 text-gray-300 hover:text-red-400 text-xs font-bold"
                           >
                             Remove
                           </button>
                           
                           <div>
                             <span className="text-xs font-black text-white">{service.name}</span>
-                            <span className="text-[10px] text-gray-500 block">Unit Price: ₦{Number(service.base_price_ngn).toLocaleString()}</span>
+                            <span className="text-[10px] text-gray-300 block">Unit Price: ₦{Number(service.base_price_ngn).toLocaleString()}</span>
                           </div>
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -4999,7 +4999,7 @@ const AdminFrontDesk = () => {
                               service.pricing_type === 'per_person' ||
                               isMeal) && (
                               <div>
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Quantity</label>
+                                <label className="block text-[10px] text-gray-200 font-bold uppercase tracking-wider mb-1">Quantity</label>
                                 <input
                                   type="number"
                                   required
@@ -5013,7 +5013,7 @@ const AdminFrontDesk = () => {
 
                             {/* Special Notes */}
                             <div className={(service.pricing_type === 'quantity_based' || service.pricing_type === 'time_based' || service.pricing_type === 'per_person' || isMeal) ? "" : "col-span-2"}>
-                              <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Special Notes / Instructions</label>
+                              <label className="block text-[10px] text-gray-200 font-bold uppercase tracking-wider mb-1">Special Notes / Instructions</label>
                               <input
                                 type="text"
                                 value={notes}
@@ -5028,7 +5028,7 @@ const AdminFrontDesk = () => {
                           {needsScheduling && (
                             <div className="grid grid-cols-2 gap-3 pt-1">
                               <div>
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Scheduled Date</label>
+                                <label className="block text-[10px] text-gray-200 font-bold uppercase tracking-wider mb-1">Scheduled Date</label>
                                 <input
                                   type="date"
                                   required
@@ -5038,7 +5038,7 @@ const AdminFrontDesk = () => {
                                 />
                               </div>
                               <div>
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Scheduled Time</label>
+                                <label className="block text-[10px] text-gray-200 font-bold uppercase tracking-wider mb-1">Scheduled Time</label>
                                 <input
                                   type="time"
                                   required
@@ -5071,7 +5071,7 @@ const AdminFrontDesk = () => {
               {/* Cart List */}
               {selectedServicesList.length > 0 && (
                 <div className="border border-dark-700 rounded-lg p-4 bg-dark-900/40 space-y-3 mt-3">
-                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2 border-b border-dark-700 pb-2">
+                  <h4 className="text-xs font-bold text-gray-200 uppercase tracking-wider flex items-center gap-2 border-b border-dark-700 pb-2">
                     <ShoppingBag size={14} className="text-brand-500" /> Pending stay enhancements ({selectedServicesList.length})
                   </h4>
                   <div className="max-h-[140px] overflow-y-auto space-y-2 pr-1 custom-scrollbar text-xs">
@@ -5079,9 +5079,9 @@ const AdminFrontDesk = () => {
                       <div key={item.id} className="flex justify-between items-center bg-dark-900 p-2.5 rounded border border-dark-750 gap-4">
                         <div className="min-w-0 flex-1">
                           <p className="font-bold text-white truncate">{item.name}</p>
-                          <p className="text-[10px] text-gray-500 mt-0.5">
+                          <p className="text-[10px] text-gray-300 mt-0.5">
                             Qty: {item.quantity} | ₦{Number(item.total_price_ngn).toLocaleString()}
-                            {item.notes && <span className="block truncate italic text-[9px] text-gray-400">"{item.notes}"</span>}
+                            {item.notes && <span className="block truncate italic text-[9px] text-gray-200">"{item.notes}"</span>}
                           </p>
                         </div>
                         <button 
@@ -5095,7 +5095,7 @@ const AdminFrontDesk = () => {
                     ))}
                   </div>
                   <div className="border-t border-dark-700 pt-2 flex justify-between items-center text-xs font-bold">
-                    <span className="text-gray-400">Total list cost:</span>
+                    <span className="text-gray-200">Total list cost:</span>
                     <span className="text-brand-400 font-black text-sm">₦{selectedServicesList.reduce((acc, curr) => acc + curr.total_price_ngn, 0).toLocaleString()}</span>
                   </div>
                 </div>
@@ -5104,7 +5104,7 @@ const AdminFrontDesk = () => {
               <button 
                 type="submit" 
                 disabled={isAddingService || selectedServicesList.length === 0}
-                className="w-full bg-purple-500 hover:bg-purple-600 disabled:bg-dark-700 disabled:text-gray-500 text-dark-950 font-black py-3 mt-2 rounded shadow transition-all flex justify-center items-center gap-2"
+                className="w-full bg-purple-500 hover:bg-purple-600 disabled:bg-dark-700 disabled:text-gray-300 text-dark-950 font-black py-3 mt-2 rounded shadow transition-all flex justify-center items-center gap-2"
               >
                 {isAddingService ? 'Adding Services...' : `Charge ${selectedServicesList.length} enhancements to folio (₦${selectedServicesList.reduce((acc, curr) => acc + curr.total_price_ngn, 0).toLocaleString()})`}
               </button>
@@ -5127,14 +5127,14 @@ const AdminFrontDesk = () => {
               <button 
                 onClick={() => setIsNoShowSweepOpen(false)} 
                 disabled={isSweepingNoShows}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20}/>
               </button>
             </div>
             
             <div className="p-6 space-y-4 max-h-[450px] overflow-y-auto custom-scrollbar relative z-10">
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-gray-200 leading-relaxed">
                 The background audit engine has detected the following confirmed or pending bookings whose check-in dates have expired. Sweeping these will automatically mark them as <strong className="text-brand-400">No Show</strong> and release their assigned rooms back to active available inventory.
               </p>
 
@@ -5142,7 +5142,7 @@ const AdminFrontDesk = () => {
                 <div className="bg-dark-950/40 p-8 rounded-lg border border-dark-800 text-center space-y-2">
                   <CheckCircle size={32} className="text-green-500 mx-auto" />
                   <h4 className="font-bold text-white text-sm">Perfect Audit Integration</h4>
-                  <p className="text-xs text-gray-500">There are no pending expired arrivals to sweep today.</p>
+                  <p className="text-xs text-gray-300">There are no pending expired arrivals to sweep today.</p>
                 </div>
               ) : (
                 <div className="space-y-2.5">
@@ -5157,8 +5157,8 @@ const AdminFrontDesk = () => {
                               <span className="bg-yellow-500/20 text-yellow-400 text-[8px] font-black uppercase tracking-widest px-1 rounded-sm">VIP</span>
                             )}
                           </div>
-                          <p className="text-gray-400 font-medium">Room {b.rooms?.room_number} • Ref: <span className="font-mono text-gray-300 font-bold">{b.booking_reference || 'MANUAL'}</span></p>
-                          <p className="text-gray-500 text-[10px]">Expected Check-In: <span className="font-semibold">{format(new Date(b.check_in_date + 'T00:00:00'), 'MMM dd, yyyy')}</span></p>
+                          <p className="text-gray-200 font-medium">Room {b.rooms?.room_number} • Ref: <span className="font-mono text-gray-300 font-bold">{b.booking_reference || 'MANUAL'}</span></p>
+                          <p className="text-gray-300 text-[10px]">Expected Check-In: <span className="font-semibold">{format(new Date(b.check_in_date + 'T00:00:00'), 'MMM dd, yyyy')}</span></p>
                         </div>
                         <div className="text-right flex flex-col items-end gap-1">
                           <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
@@ -5168,7 +5168,7 @@ const AdminFrontDesk = () => {
                           }`}>
                             {b.payment_status}
                           </span>
-                          <span className="text-[10px] text-gray-500 font-mono">₦{Number(b.total_amount_ngn || 0).toLocaleString()}</span>
+                          <span className="text-[10px] text-gray-300 font-mono">₦{Number(b.total_amount_ngn || 0).toLocaleString()}</span>
                         </div>
                       </div>
                     );
@@ -5188,14 +5188,14 @@ const AdminFrontDesk = () => {
               <button 
                 onClick={() => setIsNoShowSweepOpen(false)} 
                 disabled={isSweepingNoShows}
-                className="bg-dark-950 text-gray-400 hover:text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-dark-800 transition-colors border border-dark-800"
+                className="bg-dark-950 text-gray-200 hover:text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-dark-800 transition-colors border border-dark-800"
               >
                 Close Audit
               </button>
               <button 
                 onClick={handleExecuteNoShowSweep} 
                 disabled={isSweepingNoShows || noShowBookings.length === 0}
-                className="bg-brand-500 hover:bg-brand-400 disabled:bg-dark-700 disabled:text-gray-500 text-dark-950 font-bold px-5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(234,179,8,0.25)]"
+                className="bg-brand-500 hover:bg-brand-400 disabled:bg-dark-700 disabled:text-gray-300 text-dark-950 font-bold px-5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(234,179,8,0.25)]"
               >
                 {isSweepingNoShows ? "Sweeping Inventory..." : `Process No-Show Sweep (${noShowBookings.length})`}
               </button>
@@ -5221,9 +5221,9 @@ const AdminFrontDesk = () => {
                 <form onSubmit={handleActivateGuestWallet} className="space-y-4">
                   <div className="space-y-3">
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1.5 font-medium">Search Guest Profile</label>
+                      <label className="block text-xs text-gray-200 mb-1.5 font-medium">Search Guest Profile</label>
                       <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
                         <input 
                           type="text"
                           placeholder="Type guest name, email, or phone number..."
@@ -5244,7 +5244,7 @@ const AdminFrontDesk = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1.5 font-medium">Select CRM Registered Guest *</label>
+                      <label className="block text-xs text-gray-200 mb-1.5 font-medium">Select CRM Registered Guest *</label>
                       <select 
                         required
                         value={walletForm.guest_id}
@@ -5270,7 +5270,7 @@ const AdminFrontDesk = () => {
                         <div className="flex items-center justify-between border-b border-dark-750 pb-3">
                           <div className="flex items-center gap-3">
                             <Wallet className="text-brand-500" size={24} />
-                            <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">AR Prepayment Wallet</span>
+                            <span className="text-xs text-gray-200 font-bold uppercase tracking-wider">AR Prepayment Wallet</span>
                           </div>
                           <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-0.5 rounded-sm uppercase tracking-wide">
                             Prepayment Wallet Active
@@ -5278,7 +5278,7 @@ const AdminFrontDesk = () => {
                         </div>
                         
                         <div className="text-center py-2 bg-dark-950/50 rounded-xl border border-dark-800">
-                          <p className="text-xs text-gray-500">Current Wallet Balance</p>
+                          <p className="text-xs text-gray-300">Current Wallet Balance</p>
                           <h3 className="text-3xl font-extrabold text-white mt-1">₦{Number(matchedGuest.wallet_balance || 0).toLocaleString()}</h3>
                         </div>
 
@@ -5309,7 +5309,7 @@ const AdminFrontDesk = () => {
                     ) : (
                       <>
                         <div>
-                          <label className="block text-xs text-gray-400 mb-1.5 font-medium">Initial Prepayment Balance (NGN)</label>
+                          <label className="block text-xs text-gray-200 mb-1.5 font-medium">Initial Prepayment Balance (NGN)</label>
                           <input 
                             type="number" 
                             min="0"
@@ -5318,7 +5318,7 @@ const AdminFrontDesk = () => {
                             placeholder="e.g. 50000 (Optional)"
                             className="w-full bg-dark-900 border border-dark-700 p-3 rounded-xl text-white outline-none focus:border-brand-500 text-sm font-mono"
                           />
-                          <span className="text-[10px] text-gray-500 mt-1 block">If initial balance &gt; 0, an initial Cash prepayment deposit inflow will be automatically registered.</span>
+                          <span className="text-[10px] text-gray-300 mt-1 block">If initial balance &gt; 0, an initial Cash prepayment deposit inflow will be automatically registered.</span>
                         </div>
 
                         <div className="flex gap-3 justify-end pt-2 border-t border-dark-700/50">
@@ -5356,7 +5356,7 @@ const AdminFrontDesk = () => {
               <Wallet className="text-brand-500" />
               <span>Add Prepayment Funds</span>
             </h2>
-            <p className="text-xs text-gray-400 mb-6 uppercase tracking-wider font-bold">
+            <p className="text-xs text-gray-200 mb-6 uppercase tracking-wider font-bold">
               Guest: {(() => {
                 const matched = walletGuests.find(g => g.id === walletForm.guest_id);
                 return matched ? `${matched.first_name || ''} ${matched.last_name || ''}`.trim() : 'N/A';
@@ -5365,7 +5365,7 @@ const AdminFrontDesk = () => {
             
             <form onSubmit={handleAddFunds} className="space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Payment Amount (₦) *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Payment Amount (₦) *</label>
                 <input 
                   required
                   type="number" 
@@ -5378,7 +5378,7 @@ const AdminFrontDesk = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Payment Method *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Payment Method *</label>
                 <select 
                   required
                   value={addFundsMethod}
@@ -5392,7 +5392,7 @@ const AdminFrontDesk = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Reference Number (Optional)</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Reference Number (Optional)</label>
                 <input 
                   type="text" 
                   value={addFundsRef}
@@ -5427,16 +5427,16 @@ const AdminFrontDesk = () => {
       {isAddGroupOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-lg relative rounded-xl animate-in zoom-in-95">
-            <button onClick={() => setIsAddGroupOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white"><X size={24}/></button>
+            <button onClick={() => setIsAddGroupOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white"><X size={24}/></button>
             <h2 className="text-xl font-bold text-white mb-6">Create Corporate / Group Account</h2>
             <form onSubmit={handleAddGroupAccount} className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-400 mb-1">Company / Group Name *</label>
+                <label className="block text-sm text-gray-200 mb-1">Company / Group Name *</label>
                 <input required type="text" value={newGroupForm.name} onChange={e => setNewGroupForm({...newGroupForm, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" placeholder="e.g. Chevron Nigeria Ltd" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Group Type</label>
+                  <label className="block text-sm text-gray-200 mb-1">Group Type</label>
                   <select value={newGroupForm.group_type} onChange={e => setNewGroupForm({...newGroupForm, group_type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500">
                     <option value="Company">Company</option>
                     <option value="Government Agency">Government Agency</option>
@@ -5446,7 +5446,7 @@ const AdminFrontDesk = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">Credit Limit (₦) *</label>
+                  <label className="block text-sm text-gray-200 mb-1">Credit Limit (₦) *</label>
                   <input required type="number" value={newGroupForm.credit_limit} onChange={e => setNewGroupForm({...newGroupForm, credit_limit: parseFloat(e.target.value) || 0})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                 </div>
               </div>
@@ -5454,16 +5454,16 @@ const AdminFrontDesk = () => {
                 <p className="text-xs font-bold text-white uppercase tracking-wider mb-3">Primary Contact Representative</p>
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1">Full Name</label>
+                    <label className="block text-xs text-gray-300 mb-1">Full Name</label>
                     <input type="text" value={newGroupForm.contact_name} onChange={e => setNewGroupForm({...newGroupForm, contact_name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="e.g. Grace Udemba" />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs text-gray-500 mb-1">Email Address</label>
+                      <label className="block text-xs text-gray-300 mb-1">Email Address</label>
                       <input type="email" value={newGroupForm.contact_email} onChange={e => setNewGroupForm({...newGroupForm, contact_email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="grace@company.com" />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-500 mb-1">Phone Number</label>
+                      <label className="block text-xs text-gray-300 mb-1">Phone Number</label>
                       <input type="text" value={newGroupForm.contact_phone} onChange={e => setNewGroupForm({...newGroupForm, contact_phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="+234..." />
                     </div>
                   </div>
@@ -5493,7 +5493,7 @@ const AdminFrontDesk = () => {
               </h2>
               <button 
                 onClick={() => setIsCloseOfDayModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -5502,14 +5502,14 @@ const AdminFrontDesk = () => {
             <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-dark-900/50 p-5 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Consolidated Booking Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Consolidated Booking Revenue</span>
                   <span className="text-3xl font-black text-white">₦{closeOfDayReport.total_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.total_count} reservation payments today</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.total_count} reservation payments today</span>
                 </div>
                 <div className="bg-dark-900/50 p-5 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Business Date</span>
+                  <span className="text-xs text-gray-200 block mb-1">Business Date</span>
                   <span className="text-3xl font-black text-brand-500">{closeOfDayReport.business_date}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">Front Desk ledger status: pending closure</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">Front Desk ledger status: pending closure</span>
                 </div>
               </div>
 
@@ -5520,12 +5520,12 @@ const AdminFrontDesk = () => {
                   Booking & Stay Payment Receipts
                 </h3>
                 {closeOfDayReport.txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No Front Desk booking payments recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No Front Desk booking payments recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Reference</th>
                           <th className="py-2 px-3">Description</th>
@@ -5536,7 +5536,7 @@ const AdminFrontDesk = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -5558,7 +5558,7 @@ const AdminFrontDesk = () => {
               <button 
                 type="button"
                 onClick={() => setIsCloseOfDayModalOpen(false)}
-                className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
               >
                 Cancel
               </button>

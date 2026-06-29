@@ -165,7 +165,7 @@ const PaymentSuccess = () => {
     return (
       <div className="min-h-screen bg-dark-900 flex flex-col items-center justify-center p-4">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold-500 mb-4"></div>
-        <p className="text-gray-400 text-sm">Verifying transaction and generating receipt...</p>
+        <p className="text-gray-200 text-sm">Verifying transaction and generating receipt...</p>
       </div>
     );
   }
@@ -187,7 +187,7 @@ const PaymentSuccess = () => {
             <CheckCircle className="text-emerald-400 w-9 h-9" />
           </div>
           <h1 className="text-3xl font-black tracking-tight text-white">Payment Successful!</h1>
-          <p className="text-gray-400 text-sm">Your transaction has been processed securely via Paystack.</p>
+          <p className="text-gray-200 text-sm">Your transaction has been processed securely via Paystack.</p>
         </div>
 
         {/* Credentials / Auto-password Box (Hidden on print) */}
@@ -196,20 +196,20 @@ const PaymentSuccess = () => {
             <h4 className="font-bold text-gold-500 mb-2 flex items-center gap-2">
               🔑 Guest Account Auto-Created!
             </h4>
-            <p className="text-xs text-gray-400 mb-4 leading-relaxed">
+            <p className="text-xs text-gray-200 mb-4 leading-relaxed">
               A guest profile has been automatically generated using your booking email. You can log in to manage your reservation, request room services, and view financials:
             </p>
             <div className="space-y-2 font-mono text-xs bg-dark-950/50 p-4 rounded-xl border border-dark-700/35">
               <div className="flex justify-between">
-                <span className="text-gray-500">Username/Email:</span>
+                <span className="text-gray-300">Username/Email:</span>
                 <span className="text-white font-bold">{booking?.guest_email || user?.email}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Temporary Password:</span>
+                <span className="text-gray-300">Temporary Password:</span>
                 <span className="text-white font-bold select-all">{password}</span>
               </div>
             </div>
-            <p className="text-[10px] text-gray-500 mt-3 italic flex items-center gap-1">
+            <p className="text-[10px] text-gray-300 mt-3 italic flex items-center gap-1">
               💡 Tip: We recommend changing your password inside the guest portal profile page.
             </p>
           </div>
@@ -223,24 +223,24 @@ const PaymentSuccess = () => {
             <div>
               <div className="flex items-center gap-3">
                 {contactInfo.logo ? (
-                  <img src={contactInfo.logo} alt="Jemmyland Hotels Logo" className="max-h-12 object-contain print:max-h-16" />
+                  <img src={contactInfo.logo} alt="Freshland Logo" className="max-h-12 object-contain print:max-h-16" />
                 ) : (
                   <div className="text-gold-500 font-black tracking-widest text-lg uppercase flex items-center gap-2">
                     <ShieldCheck size={20} />
-                    <span>Jemmyland Hotels</span>
+                    <span>Freshland</span>
                   </div>
                 )}
               </div>
               {contactInfo.logo && (
                 <div className="text-gold-500 font-black tracking-widest text-sm uppercase mt-1 print:text-black">
-                  Jemmyland Hotels
+                  Freshland
                 </div>
               )}
-              <p className="text-xs text-gray-500 mt-0.5 print:text-black">{contactInfo.address}</p>
+              <p className="text-xs text-gray-300 mt-0.5 print:text-black">{contactInfo.address}</p>
             </div>
             <div className="text-right">
-              <span className="text-xs text-gray-400 uppercase tracking-wider block font-bold">Receipt Log</span>
-              <span className="font-mono text-[10px] text-gray-500">Ref: {payment?.transaction_ref || 'N/A'}</span>
+              <span className="text-xs text-gray-200 uppercase tracking-wider block font-bold">Receipt Log</span>
+              <span className="font-mono text-[10px] text-gray-300">Ref: {payment?.transaction_ref || 'N/A'}</span>
             </div>
           </div>
 
@@ -249,7 +249,7 @@ const PaymentSuccess = () => {
             
             {/* Amount Box */}
             <div className="bg-dark-900/40 border border-dark-700/50 p-6 rounded-2xl text-center space-y-1">
-              <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">Amount Paid</span>
+              <span className="text-xs text-gray-200 uppercase font-bold tracking-wider">Amount Paid</span>
               <div className="text-3xl font-black text-brand-400 font-mono">
                 ₦{amountPaid.toLocaleString()}
               </div>
@@ -260,24 +260,24 @@ const PaymentSuccess = () => {
 
             {/* General Transaction Details */}
             <div className="space-y-3">
-              <h3 className="text-xs font-black uppercase text-gray-500 tracking-wider">Transaction Summary</h3>
+              <h3 className="text-xs font-black uppercase text-gray-300 tracking-wider">Transaction Summary</h3>
               <div className="grid grid-cols-2 gap-y-2.5 text-xs font-medium border-t border-dark-700/40 pt-3">
-                <span className="text-gray-400">Payment Gateway</span>
+                <span className="text-gray-200">Payment Gateway</span>
                 <span className="text-white text-right font-semibold">Paystack (Online)</span>
 
-                <span className="text-gray-400">Payment Date / Time</span>
+                <span className="text-gray-200">Payment Date / Time</span>
                 <span className="text-white text-right font-mono">
                   {safeFormatDate(receiptDate, 'MMM dd, yyyy HH:mm:ss')}
                 </span>
 
-                <span className="text-gray-400">Payment ID</span>
+                <span className="text-gray-200">Payment ID</span>
                 <span className="text-white text-right font-mono truncate max-w-[180px] self-end justify-self-end" title={payment?.id}>
                   {payment?.id || 'N/A'}
                 </span>
 
                 {type === 'wallet' && walletBalance !== null && (
                   <>
-                    <span className="text-gray-400">New Prepayment Balance</span>
+                    <span className="text-gray-200">New Prepayment Balance</span>
                     <span className="text-emerald-400 text-right font-bold font-mono">₦{Number(walletBalance).toLocaleString()}</span>
                   </>
                 )}
@@ -287,34 +287,34 @@ const PaymentSuccess = () => {
             {/* Booking Details Section (Render if type booking) */}
             {type === 'booking' && booking && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-black uppercase text-gray-500 tracking-wider">Reservation Details</h3>
+                <h3 className="text-xs font-black uppercase text-gray-300 tracking-wider">Reservation Details</h3>
                 <div className="bg-dark-900/30 p-4 border border-dark-700/40 rounded-2xl text-xs space-y-3">
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 font-semibold">Booking Reference</span>
+                    <span className="text-gray-200 font-semibold">Booking Reference</span>
                     <span className="font-bold text-white font-mono tracking-wider">{booking.booking_reference}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Guest Name</span>
+                    <span className="text-gray-200">Guest Name</span>
                     <span className="font-bold text-white">{booking.guest_name}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Room</span>
+                    <span className="text-gray-200">Room</span>
                     <span className="font-bold text-white">Room {booking.rooms?.room_number || 'N/A'} — {booking.rooms?.name || 'Luxe Room'}</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 pt-2.5 border-t border-dark-700/40 text-[11px]">
                     <div>
-                      <span className="text-gray-500 block">Check-in</span>
+                      <span className="text-gray-300 block">Check-in</span>
                       <span className="font-bold text-white flex items-center gap-1.5 mt-0.5">
                         <Calendar size={12} className="text-gold-500" />
                         {safeFormatDate(booking.check_in_date, 'MMM dd, yyyy')}
                       </span>
                     </div>
                     <div>
-                      <span className="text-gray-500 block">Check-out</span>
+                      <span className="text-gray-300 block">Check-out</span>
                       <span className="font-bold text-white flex items-center gap-1.5 mt-0.5">
                         <Calendar size={12} className="text-gold-500" />
                         {safeFormatDate(booking.check_out_date, 'MMM dd, yyyy')}
@@ -328,44 +328,44 @@ const PaymentSuccess = () => {
 
             {type === 'hall_booking' && booking && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-black uppercase text-gray-500 tracking-wider">Hall Reservation Details</h3>
+                <h3 className="text-xs font-black uppercase text-gray-300 tracking-wider">Hall Reservation Details</h3>
                 <div className="bg-dark-900/30 p-4 border border-dark-700/40 rounded-2xl text-xs space-y-3">
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 font-semibold">Booking Reference</span>
+                    <span className="text-gray-200 font-semibold">Booking Reference</span>
                     <span className="font-bold text-white font-mono tracking-wider">{booking.booking_reference}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Guest Name</span>
+                    <span className="text-gray-200">Guest Name</span>
                     <span className="font-bold text-white">{booking.guest_name}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Hall Name</span>
+                    <span className="text-gray-200">Hall Name</span>
                     <span className="font-bold text-white">{booking.halls?.name || 'Event Hall'}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Booking Type / Duration</span>
+                    <span className="text-gray-200">Booking Type / Duration</span>
                     <span className="font-bold text-white capitalize">{booking.booking_type} ({booking.booking_type === 'daily' ? `${booking.num_days} Days` : `${booking.num_hours} Hours`})</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Participants (Pax)</span>
+                    <span className="text-gray-200">Participants (Pax)</span>
                     <span className="font-bold text-white">{booking.number_of_participants} persons</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 pt-2.5 border-t border-dark-700/40 text-[11px]">
                     <div>
-                      <span className="text-gray-500 block">Start Date / Time</span>
+                      <span className="text-gray-300 block">Start Date / Time</span>
                       <span className="font-bold text-white flex items-center gap-1.5 mt-0.5">
                         <Calendar size={12} className="text-gold-500" />
                         {safeFormatDate(booking.start_time, 'MMM dd, yyyy HH:mm')}
                       </span>
                     </div>
                     <div>
-                      <span className="text-gray-500 block">End Date / Time</span>
+                      <span className="text-gray-300 block">End Date / Time</span>
                       <span className="font-bold text-white flex items-center gap-1.5 mt-0.5">
                         <Calendar size={12} className="text-gold-500" />
                         {safeFormatDate(booking.end_time, 'MMM dd, yyyy HH:mm')}
@@ -380,7 +380,7 @@ const PaymentSuccess = () => {
             {/* Wallet Details Section (Render if type wallet) */}
             {type === 'wallet' && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-black uppercase text-gray-500 tracking-wider">Wallet Profile</h3>
+                <h3 className="text-xs font-black uppercase text-gray-300 tracking-wider">Wallet Profile</h3>
                 <div className="bg-dark-900/30 p-4 border border-dark-700/40 rounded-2xl text-xs space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 border border-brand-500/20">
@@ -388,7 +388,7 @@ const PaymentSuccess = () => {
                     </div>
                     <div>
                       <p className="font-bold text-white">{user?.email || 'N/A'}</p>
-                      <span className="text-[10px] text-gray-500">Accounts Receivable Prepayment Account</span>
+                      <span className="text-[10px] text-gray-300">Accounts Receivable Prepayment Account</span>
                     </div>
                   </div>
                 </div>
@@ -398,15 +398,15 @@ const PaymentSuccess = () => {
             {/* Service Details Section (Render if type service) */}
             {type === 'service' && payment && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-black uppercase text-gray-500 tracking-wider">Service Request Details</h3>
+                <h3 className="text-xs font-black uppercase text-gray-300 tracking-wider">Service Request Details</h3>
                 <div className="bg-dark-900/30 p-4 border border-dark-700/40 rounded-2xl text-xs space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Description</span>
+                    <span className="text-gray-200">Description</span>
                     <span className="font-bold text-white text-right">{payment.notes || 'Additional Service Payment'}</span>
                   </div>
                   {booking && (
                     <div className="flex justify-between items-center border-t border-dark-700/30 pt-2.5">
-                      <span className="text-gray-400">Linked Booking Reference</span>
+                      <span className="text-gray-200">Linked Booking Reference</span>
                       <span className="font-bold text-white font-mono tracking-wider">{booking.booking_reference}</span>
                     </div>
                   )}
@@ -417,8 +417,8 @@ const PaymentSuccess = () => {
           </div>
 
           {/* Receipt Footer for Print */}
-          <div className="hidden print:block text-center text-[10px] text-gray-500 border-t border-dashed border-gray-700 pt-6 pb-2">
-            Thank you for choosing Jemmyland Hotels.<br />
+          <div className="hidden print:block text-center text-[10px] text-gray-300 border-t border-dashed border-gray-700 pt-6 pb-2">
+            Thank you for choosing Freshland.<br />
             This is a computer-generated digital receipt. Secure payment verified via Paystack.
           </div>
 
@@ -445,7 +445,7 @@ const PaymentSuccess = () => {
               </button>
               <button 
                 onClick={() => navigate('/booking')} 
-                className="w-full sm:w-auto text-gray-400 hover:text-white text-xs font-semibold py-2 px-4 transition-colors"
+                className="w-full sm:w-auto text-gray-200 hover:text-white text-xs font-semibold py-2 px-4 transition-colors"
               >
                 Book Another Room
               </button>

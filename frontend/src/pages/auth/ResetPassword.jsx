@@ -117,7 +117,7 @@ const ResetPassword = () => {
     return (
       <div className="text-center py-6">
         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gold-500 mx-auto mb-4"></div>
-        <p className="text-gray-400 text-sm">Verifying secure session...</p>
+        <p className="text-gray-200 text-sm">Verifying secure session...</p>
       </div>
     );
   }
@@ -127,7 +127,7 @@ const ResetPassword = () => {
       <div className="text-center space-y-6 py-4">
         <AlertCircle size={48} className="text-red-500 mx-auto" />
         <h3 className="text-xl font-medium text-white">Reset Link Expired or Invalid</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-gray-200 text-sm leading-relaxed">
           The password reset session is invalid or has expired. Password reset links are secure and only valid for a single use within a short period.
         </p>
         <div className="pt-4 border-t border-dark-700">
@@ -142,13 +142,13 @@ const ResetPassword = () => {
   return (
     <div>
       <h2 className="text-2xl font-medium mb-4 text-center">Create New Password</h2>
-      <p className="text-gray-400 text-sm mb-6 text-center leading-relaxed">
+      <p className="text-gray-200 text-sm mb-6 text-center leading-relaxed">
         Choose a secure, memorable password that contains at least 6 characters.
       </p>
       
       <form onSubmit={handlePasswordUpdate} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">New Password</label>
+          <label className="block text-sm font-medium text-gray-200 mb-2">New Password</label>
           <div className="relative">
             <input 
               type={showPassword ? 'text' : 'password'} 
@@ -161,7 +161,7 @@ const ResetPassword = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
@@ -169,7 +169,7 @@ const ResetPassword = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">Confirm New Password</label>
+          <label className="block text-sm font-medium text-gray-200 mb-2">Confirm New Password</label>
           <input 
             type="password" 
             value={confirmPassword}

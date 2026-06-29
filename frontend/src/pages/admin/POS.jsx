@@ -24,7 +24,7 @@ const POS = () => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
   
@@ -794,12 +794,12 @@ const POS = () => {
             <Lock size={32} />
           </div>
           <h2 className="text-2xl font-black text-white mb-2">POS Access Restricted</h2>
-          <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-200 text-sm mb-6 leading-relaxed">
             Your staff account is currently not assigned to any Point of Sale (POS) outlet. 
             You must be assigned to the Bar or Restaurant in order to process hospitality orders.
           </p>
-          <div className="w-full bg-dark-800 rounded-xl p-4 text-xs text-left text-gray-500 border border-dark-700/50">
-            <p className="font-semibold text-gray-400 mb-1">To Resolve This:</p>
+          <div className="w-full bg-dark-800 rounded-xl p-4 text-xs text-left text-gray-300 border border-dark-700/50">
+            <p className="font-semibold text-gray-200 mb-1">To Resolve This:</p>
             <ol className="list-decimal pl-4 space-y-1">
               <li>Navigate to <strong>Staff & Roles</strong> under the Admin menu.</li>
               <li>Edit your profile under the directory list.</li>
@@ -832,7 +832,7 @@ const POS = () => {
             <ShoppingCart className="text-brand-500" />
             Hospitality Point of Sale (POS)
           </h1>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-200 text-sm">
             Process direct walk-in payments or charge stay enhancements to in-house suites.
           </p>
         </div>
@@ -870,7 +870,7 @@ const POS = () => {
           <div className="flex bg-dark-800 p-1.5 rounded-2xl border border-dark-700/60 shadow-lg">
             <button 
               onClick={() => setPosView('order')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${posView === 'order' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${posView === 'order' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-200 hover:text-white'}`}
             >
               <ShoppingCart size={14} />
               <span>New Order</span>
@@ -880,7 +880,7 @@ const POS = () => {
                 setPosView('history');
                 fetchOrderHistory();
               }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${posView === 'history' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${posView === 'history' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-200 hover:text-white'}`}
             >
               <Clock size={14} />
               <span>Order History</span>
@@ -895,7 +895,7 @@ const POS = () => {
                   setOutlet('bar');
                   if (posView === 'history') setTimeout(fetchOrderHistory, 50);
                 }} 
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${outlet === 'bar' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${outlet === 'bar' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-200 hover:text-white'}`}
               >
                 <Wine size={14} />
                 <span>Bar</span>
@@ -907,7 +907,7 @@ const POS = () => {
                   setOutlet('restaurant');
                   if (posView === 'history') setTimeout(fetchOrderHistory, 50);
                 }} 
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${outlet === 'restaurant' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${outlet === 'restaurant' ? 'bg-gradient-to-tr from-brand-600 to-brand-400 text-white shadow-lg' : 'text-gray-200 hover:text-white'}`}
               >
                 <Utensils size={14} />
                 <span>Restaurant</span>
@@ -928,7 +928,7 @@ const POS = () => {
                 <Clock className="text-brand-500" />
                 Historic Sales & Receipts Log ({outlet.toUpperCase()})
               </h2>
-              <p className="text-gray-500 text-xs mt-1">Review operational log and re-print receipts for walk-in or charged bookings.</p>
+              <p className="text-gray-300 text-xs mt-1">Review operational log and re-print receipts for walk-in or charged bookings.</p>
             </div>
             <button 
               onClick={fetchOrderHistory} 
@@ -941,17 +941,17 @@ const POS = () => {
           {historyLoading ? (
             <div className="py-24 text-center">
               <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-              <p className="text-gray-500 text-sm">Retrieving historic receipts log...</p>
+              <p className="text-gray-300 text-sm">Retrieving historic receipts log...</p>
             </div>
           ) : historyList.length === 0 ? (
-            <div className="py-24 text-center text-gray-500">
+            <div className="py-24 text-center text-gray-300">
               <ShoppingCart size={32} className="mx-auto mb-2 opacity-30 animate-pulse" />
               <p className="text-sm">No sales transactions processed today under the {outlet} POS.</p>
             </div>
           ) : (
             <div className="overflow-x-auto rounded-2xl border border-dark-700 bg-dark-900/20">
               <table className="w-full text-left text-sm">
-                <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-400 text-xs uppercase tracking-wider">
+                <thead className="bg-dark-900/60 border-b border-dark-700 text-gray-200 text-xs uppercase tracking-wider">
                   <tr>
                     <th className="p-4 font-bold">Timestamp</th>
                     <th className="p-4 font-bold">Transaction Ref</th>
@@ -965,7 +965,7 @@ const POS = () => {
                 <tbody className="divide-y divide-dark-700">
                   {historyList.map(item => (
                     <tr key={item.id} className="hover:bg-dark-700/20 transition-colors">
-                      <td className="p-4 text-gray-400 text-xs font-mono">
+                      <td className="p-4 text-gray-200 text-xs font-mono">
                         {format(new Date(item.date), 'MMM dd, HH:mm')}
                       </td>
                       <td className="p-4 text-white font-bold font-mono text-xs">
@@ -979,7 +979,7 @@ const POS = () => {
                       <td className="p-4 text-gray-300 font-medium text-xs">
                         {item.customer}
                       </td>
-                      <td className="p-4 text-gray-400 font-extrabold uppercase text-[10px] tracking-wider">
+                      <td className="p-4 text-gray-200 font-extrabold uppercase text-[10px] tracking-wider">
                         {item.method}
                       </td>
                       <td className="p-4 text-white font-black text-xs">
@@ -1010,7 +1010,7 @@ const POS = () => {
         <div className="lg:col-span-2 space-y-4">
           <div className="flex gap-3">
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-3.5 text-gray-500 w-5 h-5" />
+              <Search className="absolute left-4 top-3.5 text-gray-300 w-5 h-5" />
               <input
                 type="text"
                 placeholder={`Search food, drinks, or beers in the ${outlet}...`}
@@ -1029,7 +1029,7 @@ const POS = () => {
                   setIsAddModalOpen(true);
                 }}
                 disabled={isOutletClosed}
-                className={`border text-brand-400 hover:text-white px-5 py-3 rounded-2xl font-bold transition-all flex items-center gap-2 shadow-md ${isOutletClosed ? 'bg-dark-700/50 border-dark-600/30 text-gray-500 cursor-not-allowed opacity-50 hover:bg-dark-700/50' : 'bg-brand-500/10 hover:bg-brand-500 border-brand-500/20'}`}
+                className={`border text-brand-400 hover:text-white px-5 py-3 rounded-2xl font-bold transition-all flex items-center gap-2 shadow-md ${isOutletClosed ? 'bg-dark-700/50 border-dark-600/30 text-gray-300 cursor-not-allowed opacity-50 hover:bg-dark-700/50' : 'bg-brand-500/10 hover:bg-brand-500 border-brand-500/20'}`}
                 title={isOutletClosed ? `${outlet === 'bar' ? 'Bar' : 'Restaurant'} is closed` : "Add a new F&B menu item to the catalog"}
               >
                 <PlusCircle size={20} />
@@ -1041,15 +1041,15 @@ const POS = () => {
           {loading ? (
             <div className="flex flex-col items-center justify-center p-24">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-500 mb-3"></div>
-              <p className="text-gray-500 text-sm">Fetching catalog menu...</p>
+              <p className="text-gray-300 text-sm">Fetching catalog menu...</p>
             </div>
           ) : filteredProducts.length === 0 ? (
             <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-              <div className="w-16 h-16 bg-dark-700 rounded-full flex items-center justify-center text-gray-500 mx-auto mb-4">
+              <div className="w-16 h-16 bg-dark-700 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4">
                 <Coffee size={28} />
               </div>
               <h3 className="text-xl font-bold text-white mb-1">No products found</h3>
-              <p className="text-gray-500 text-sm mb-4">There are no food or beverage items registered under this outlet filter.</p>
+              <p className="text-gray-300 text-sm mb-4">There are no food or beverage items registered under this outlet filter.</p>
               {isManagerOrAdmin && (
                 <button 
                   onClick={() => {
@@ -1058,7 +1058,7 @@ const POS = () => {
                     setIsAddModalOpen(true);
                   }}
                   disabled={isOutletClosed}
-                  className={`px-6 py-2.5 rounded-xl font-bold ${isOutletClosed ? 'bg-dark-700 text-gray-500 cursor-not-allowed opacity-50' : 'btn-primary'}`}
+                  className={`px-6 py-2.5 rounded-xl font-bold ${isOutletClosed ? 'bg-dark-700 text-gray-300 cursor-not-allowed opacity-50' : 'btn-primary'}`}
                 >
                   Create First Item
                 </button>
@@ -1095,7 +1095,7 @@ const POS = () => {
                               handleOpenEditModal(e, product);
                             }}
                             disabled={isOutletClosed}
-                            className={`p-1.5 rounded-lg text-gray-400 transition-all shadow-sm z-10 ${isOutletClosed ? 'bg-dark-800 opacity-50 cursor-not-allowed' : 'bg-dark-800 hover:bg-brand-500 hover:text-white'}`}
+                            className={`p-1.5 rounded-lg text-gray-200 transition-all shadow-sm z-10 ${isOutletClosed ? 'bg-dark-800 opacity-50 cursor-not-allowed' : 'bg-dark-800 hover:bg-brand-500 hover:text-white'}`}
                             title="Manage menu item"
                           >
                             <Settings size={14} />
@@ -1107,7 +1107,7 @@ const POS = () => {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+                    <p className="text-gray-300 text-xs mt-2 line-clamp-3 leading-relaxed">
                       {product.description || "Premium service selection."}
                     </p>
                   </div>
@@ -1140,7 +1140,7 @@ const POS = () => {
           {/* Cart Item Feed */}
           <div className="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar min-h-[150px] max-h-[280px]">
             {cart.length === 0 ? (
-              <div className="h-40 flex flex-col items-center justify-center text-center text-gray-500">
+              <div className="h-40 flex flex-col items-center justify-center text-center text-gray-300">
                 <ShoppingCart size={24} className="mb-2 opacity-30" />
                 <p className="text-sm">Click items on the left to build order</p>
               </div>
@@ -1149,26 +1149,26 @@ const POS = () => {
                 <div key={item.id} className="bg-dark-800/80 border border-dark-700/50 rounded-xl p-3 flex justify-between items-center gap-2">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-extrabold text-white truncate">{item.name}</p>
-                    <p className="text-xs text-gray-400">₦{item.base_price_ngn.toLocaleString()}</p>
+                    <p className="text-xs text-gray-200">₦{item.base_price_ngn.toLocaleString()}</p>
                   </div>
                   <div className="flex items-center gap-1.5 bg-dark-900 rounded-lg p-1 border border-dark-700/30">
                     <button 
                       onClick={() => updateQuantity(item.id, -1)}
-                      className="p-1 hover:bg-dark-700 text-gray-400 hover:text-white rounded"
+                      className="p-1 hover:bg-dark-700 text-gray-200 hover:text-white rounded"
                     >
                       <Minus size={12} />
                     </button>
                     <span className="text-xs font-bold text-white px-1.5">{item.quantity}</span>
                     <button 
                       onClick={() => updateQuantity(item.id, 1)}
-                      className="p-1 hover:bg-dark-700 text-gray-400 hover:text-white rounded"
+                      className="p-1 hover:bg-dark-700 text-gray-200 hover:text-white rounded"
                     >
                       <Plus size={12} />
                     </button>
                   </div>
                   <button 
                     onClick={() => removeFromCart(item.id)}
-                    className="p-2 hover:bg-red-500/10 text-gray-500 hover:text-red-500 rounded-lg transition-colors"
+                    className="p-2 hover:bg-red-500/10 text-gray-300 hover:text-red-500 rounded-lg transition-colors"
                   >
                     <Trash2 size={14} />
                   </button>
@@ -1180,14 +1180,14 @@ const POS = () => {
           {/* Billing Options Selector */}
           <div className="border-t border-dark-700/60 pt-4 mt-4 space-y-4">
             <div>
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">
                 Order Billing Mode
               </label>
               <div className="grid grid-cols-2 gap-2 bg-dark-800 p-1 rounded-xl border border-dark-700/50">
                 <button 
                   onClick={() => setBillingMode('walk-in')}
                   disabled={isOutletClosed}
-                  className={`flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-bold transition-all ${isOutletClosed ? 'cursor-not-allowed text-gray-500' : ''} ${billingMode === 'walk-in' ? 'bg-dark-900 text-white border border-dark-700' : 'text-gray-400 hover:text-white'}`}
+                  className={`flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-bold transition-all ${isOutletClosed ? 'cursor-not-allowed text-gray-300' : ''} ${billingMode === 'walk-in' ? 'bg-dark-900 text-white border border-dark-700' : 'text-gray-200 hover:text-white'}`}
                 >
                   <DollarSign size={14} />
                   Walk-In
@@ -1195,7 +1195,7 @@ const POS = () => {
                 <button 
                   onClick={() => setBillingMode('room')}
                   disabled={isOutletClosed}
-                  className={`flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-bold transition-all ${isOutletClosed ? 'cursor-not-allowed text-gray-500' : ''} ${billingMode === 'room' ? 'bg-dark-900 text-white border border-dark-700' : 'text-gray-400 hover:text-white'}`}
+                  className={`flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-bold transition-all ${isOutletClosed ? 'cursor-not-allowed text-gray-300' : ''} ${billingMode === 'room' ? 'bg-dark-900 text-white border border-dark-700' : 'text-gray-200 hover:text-white'}`}
                 >
                   <Users size={14} />
                   Charge to Room
@@ -1206,7 +1206,7 @@ const POS = () => {
             {/* Dynamic Billing Sub-Forms */}
             {billingMode === 'walk-in' ? (
               <div className="space-y-2">
-                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                   Payment Method
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -1214,7 +1214,7 @@ const POS = () => {
                     <button
                       key={method}
                       onClick={() => setPaymentMethod(method)}
-                      className={`py-2 rounded-xl text-[10px] font-extrabold uppercase border transition-all ${paymentMethod === method ? 'bg-brand-500/10 text-brand-400 border-brand-500/30' : 'bg-dark-800 border-dark-700 text-gray-400 hover:text-white'}`}
+                      className={`py-2 rounded-xl text-[10px] font-extrabold uppercase border transition-all ${paymentMethod === method ? 'bg-brand-500/10 text-brand-400 border-brand-500/30' : 'bg-dark-800 border-dark-700 text-gray-200 hover:text-white'}`}
                     >
                       {method}
                     </button>
@@ -1223,11 +1223,11 @@ const POS = () => {
               </div>
             ) : (
               <div className="space-y-2 relative">
-                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                   Search Checked-in Guest
                 </label>
                 <div className="relative">
-                  <Search className="absolute left-3 top-2.5 text-gray-500 w-4 h-4" />
+                  <Search className="absolute left-3 top-2.5 text-gray-300 w-4 h-4" />
                   <input
                     type="text"
                     placeholder="Search room number or name..."
@@ -1244,7 +1244,7 @@ const POS = () => {
                   {guestDropdownOpen && (
                     <div className="absolute z-50 w-full left-0 bottom-full mb-1 bg-dark-900 border border-dark-700 rounded-xl shadow-2xl max-h-48 overflow-y-auto custom-scrollbar p-1">
                       {filteredGuests.length === 0 ? (
-                        <div className="p-3 text-center text-xs text-gray-500">No checked-in guests found</div>
+                        <div className="p-3 text-center text-xs text-gray-300">No checked-in guests found</div>
                       ) : (
                         filteredGuests.map(g => (
                           <div 
@@ -1259,7 +1259,7 @@ const POS = () => {
                           >
                             <div>
                               <p className="font-bold">Room {g.rooms?.room_number}</p>
-                              <p className="text-[10px] text-gray-400">{g.guest_name}</p>
+                              <p className="text-[10px] text-gray-200">{g.guest_name}</p>
                             </div>
                             <span className="text-[9px] bg-green-500/10 text-green-400 px-2 py-0.5 rounded font-bold uppercase">
                               In-house
@@ -1275,10 +1275,10 @@ const POS = () => {
             
             {billingMode === 'room' && selectedGuest && selectedGuest.group_account_id && (
               <div className="bg-dark-900/60 p-4 border border-dark-750 rounded-xl space-y-2 mt-3 animate-in fade-in duration-350">
-                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider">
                   💼 Group Corporate Billing
                 </label>
-                <p className="text-[10px] text-gray-400 leading-normal">
+                <p className="text-[10px] text-gray-200 leading-normal">
                   This guest is part of the corporate group <strong>{selectedGuest.group_accounts?.name || 'Company'}</strong>. Choose checkout target:
                 </p>
                 <div className="grid grid-cols-2 gap-2 bg-dark-800 p-1 rounded-lg border border-dark-700/50">
@@ -1302,7 +1302,7 @@ const POS = () => {
           </div>
 
           {/* Pricing Ledger */}
-          <div className="border-t border-dark-700/60 pt-4 mt-4 space-y-2 text-xs text-gray-400">
+          <div className="border-t border-dark-700/60 pt-4 mt-4 space-y-2 text-xs text-gray-200">
             <div className="flex justify-between">
               <span>Subtotal</span>
               <span className="font-bold text-white">₦{subtotal.toLocaleString()}</span>
@@ -1323,7 +1323,7 @@ const POS = () => {
           <button
             onClick={handleCheckout}
             disabled={cart.length === 0 || isProcessing || isOutletClosed}
-            className="w-full bg-gradient-to-tr from-brand-600 to-brand-400 hover:from-brand-500 hover:to-brand-300 disabled:from-dark-800 disabled:to-dark-800 disabled:text-gray-500 text-white font-bold py-3 px-4 rounded-xl mt-6 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-tr from-brand-600 to-brand-400 hover:from-brand-500 hover:to-brand-300 disabled:from-dark-800 disabled:to-dark-800 disabled:text-gray-300 text-white font-bold py-3 px-4 rounded-xl mt-6 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 disabled:cursor-not-allowed"
           >
             {isProcessing ? (
               <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white" />
@@ -1346,7 +1346,7 @@ const POS = () => {
           <div className="glass-panel max-w-md w-full border border-dark-700/80 p-6 rounded-3xl shadow-2xl relative">
             <button 
               onClick={() => setIsAddModalOpen(false)}
-              className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-400 hover:text-white rounded-full transition-colors"
+              className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-200 hover:text-white rounded-full transition-colors"
             >
               <X size={18} />
             </button>
@@ -1355,13 +1355,13 @@ const POS = () => {
               <PlusCircle size={22} className="text-brand-500" />
               Register New F&B Item
             </h2>
-            <p className="text-gray-400 text-xs mb-6">
+            <p className="text-gray-200 text-xs mb-6">
               This will add a food or beverage service to the standard PMS catalog database.
             </p>
 
             <form onSubmit={handleAddCustomItem} className="space-y-4 text-xs">
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Product/Drink Name</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Product/Drink Name</label>
                 <input
                   type="text"
                   required
@@ -1374,7 +1374,7 @@ const POS = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-gray-400 font-bold mb-1.5 uppercase">Price (NGN)</label>
+                  <label className="block text-gray-200 font-bold mb-1.5 uppercase">Price (NGN)</label>
                   <input
                     type="number"
                     required
@@ -1386,11 +1386,11 @@ const POS = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 font-bold mb-1.5 uppercase">Target POS Outlet</label>
+                  <label className="block text-gray-200 font-bold mb-1.5 uppercase">Target POS Outlet</label>
                   <select
                     disabled
                     value={outlet}
-                    className="w-full bg-dark-800 border border-dark-700 rounded-xl p-3 text-gray-400 focus:border-brand-500 outline-none cursor-not-allowed font-semibold uppercase"
+                    className="w-full bg-dark-800 border border-dark-700 rounded-xl p-3 text-gray-200 focus:border-brand-500 outline-none cursor-not-allowed font-semibold uppercase"
                   >
                     <option value={outlet}>Locked to {outlet.toUpperCase()}</option>
                   </select>
@@ -1398,7 +1398,7 @@ const POS = () => {
               </div>
 
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Description (Optional)</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Description (Optional)</label>
                 <textarea
                   rows="3"
                   placeholder="Describe ingredients, glass size, cooking method..."
@@ -1436,7 +1436,7 @@ const POS = () => {
                 setIsEditModalOpen(false);
                 setEditingService(null);
               }}
-              className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-400 hover:text-white rounded-full transition-colors"
+              className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-200 hover:text-white rounded-full transition-colors"
             >
               <X size={18} />
             </button>
@@ -1445,13 +1445,13 @@ const POS = () => {
               <Settings size={22} className="text-brand-500" />
               Manage "{editingService.name}"
             </h2>
-            <p className="text-gray-400 text-xs mb-6">
+            <p className="text-gray-200 text-xs mb-6">
               Update details or permanently remove this item from the {outlet.toUpperCase()} catalog.
             </p>
 
             <form onSubmit={handleUpdateItem} className="space-y-4 text-xs">
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Product/Drink Name</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Product/Drink Name</label>
                 <input
                   type="text"
                   required
@@ -1463,7 +1463,7 @@ const POS = () => {
               </div>
 
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Price (NGN)</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Price (NGN)</label>
                 <input
                   type="number"
                   required
@@ -1476,7 +1476,7 @@ const POS = () => {
               </div>
 
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Description (Optional)</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Description (Optional)</label>
                 <textarea
                   rows="3"
                   placeholder="Describe ingredients, glass size, cooking method..."
@@ -1534,7 +1534,7 @@ const POS = () => {
                 </button>
                 <button 
                   onClick={() => setActiveReceipt(null)}
-                  className="p-2 bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-800 rounded-lg transition-colors border border-gray-200"
+                  className="p-2 bg-gray-100 hover:bg-gray-200 text-gray-300 hover:text-gray-800 rounded-lg transition-colors border border-gray-200"
                 >
                   <X size={14} />
                 </button>
@@ -1547,12 +1547,12 @@ const POS = () => {
               {/* Receipt Header */}
               <div className="text-center border-b border-dashed border-gray-400 pb-3 mb-3 flex flex-col items-center">
                 {contactInfo.logo && (
-                  <img src={contactInfo.logo} alt="Jemmyland Hotels Logo" className="max-h-8 object-contain mb-1.5" style={{ filter: 'grayscale(100%) contrast(150%)' }} />
+                  <img src={contactInfo.logo} alt="Freshland Logo" className="max-h-8 object-contain mb-1.5" style={{ filter: 'grayscale(100%) contrast(150%)' }} />
                 )}
-                <h2 className="text-lg font-black tracking-wider uppercase m-0" style={{ color: '#000000' }}>Jemmyland Hotels</h2>
-                <p className="text-[9px] text-gray-500 m-0.5">Luxury Suites & Premium Lounge</p>
-                <p className="text-[9px] text-gray-500 m-0">{contactInfo.address}</p>
-                <p className="text-[9px] text-gray-500 m-0">{contactInfo.phone}</p>
+                <h2 className="text-lg font-black tracking-wider uppercase m-0" style={{ color: '#000000' }}>Freshland</h2>
+                <p className="text-[9px] text-gray-300 m-0.5">Luxury Suites & Premium Lounge</p>
+                <p className="text-[9px] text-gray-300 m-0">{contactInfo.address}</p>
+                <p className="text-[9px] text-gray-300 m-0">{contactInfo.phone}</p>
                 <div className="mt-2 text-[10px] font-bold bg-black text-white px-2 py-1 inline-block uppercase rounded">
                   {activeReceipt.outlet.toUpperCase()} OUTLET
                 </div>
@@ -1629,10 +1629,10 @@ const POS = () => {
               </div>
 
               {/* Footer */}
-              <div className="text-center pt-2 text-[9px] text-gray-500">
+              <div className="text-center pt-2 text-[9px] text-gray-300">
                 <p className="m-0 font-bold">THANK YOU FOR YOUR PATRONAGE!</p>
                 <p className="m-0 mt-0.5">Please present this receipt upon request.</p>
-                <p className="m-0 mt-1 font-serif text-[7px] tracking-widest text-gray-400">LUXE PMS SOFTWARE</p>
+                <p className="m-0 mt-1 font-serif text-[7px] tracking-widest text-gray-200">LUXE PMS SOFTWARE</p>
               </div>
 
             </div>
@@ -1706,7 +1706,7 @@ const POS = () => {
               </h2>
               <button 
                 onClick={() => setIsCloseOfDayModalOpen(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -1715,19 +1715,19 @@ const POS = () => {
             <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">Consolidated Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">Consolidated Revenue</span>
                   <span className="text-2xl font-black text-white">₦{closeOfDayReport.total_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.total_count} total transactions</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.total_count} total transactions</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">POS Walk-in Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">POS Walk-in Revenue</span>
                   <span className="text-2xl font-black text-brand-500">₦{closeOfDayReport.total_walkin_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.walkin_txns.length} walk-in cash/card receipts</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.walkin_txns.length} walk-in cash/card receipts</span>
                 </div>
                 <div className="bg-dark-900/50 p-4 rounded-2xl border border-dark-755">
-                  <span className="text-xs text-gray-400 block mb-1">In-house Room Revenue</span>
+                  <span className="text-xs text-gray-200 block mb-1">In-house Room Revenue</span>
                   <span className="text-2xl font-black text-blue-400">₦{closeOfDayReport.total_inhouse_revenue.toLocaleString()}</span>
-                  <span className="text-[10px] text-gray-500 block mt-1">{closeOfDayReport.inhouse_txns.length} stay folio charges</span>
+                  <span className="text-[10px] text-gray-300 block mt-1">{closeOfDayReport.inhouse_txns.length} stay folio charges</span>
                 </div>
               </div>
 
@@ -1738,12 +1738,12 @@ const POS = () => {
                   POS Walk-In Sales Receipts
                 </h3>
                 {closeOfDayReport.walkin_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No walk-in sales recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No walk-in sales recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Reference</th>
                           <th className="py-2 px-3">Description</th>
@@ -1754,7 +1754,7 @@ const POS = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.walkin_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -1778,12 +1778,12 @@ const POS = () => {
                   In-House Suite Stay Folio Charges (Bar)
                 </h3>
                 {closeOfDayReport.inhouse_txns.length === 0 ? (
-                  <p className="text-xs text-gray-500 italic">No in-house guest bar charges recorded today.</p>
+                  <p className="text-xs text-gray-300 italic">No in-house guest bar charges recorded today.</p>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-dark-750 text-gray-400 text-[10px] uppercase font-bold">
+                        <tr className="border-b border-dark-750 text-gray-200 text-[10px] uppercase font-bold">
                           <th className="py-2 px-3">Time</th>
                           <th className="py-2 px-3">Booking Ref</th>
                           <th className="py-2 px-3">Description</th>
@@ -1794,7 +1794,7 @@ const POS = () => {
                       <tbody className="divide-y divide-dark-750">
                         {closeOfDayReport.inhouse_txns.map((t, idx) => (
                           <tr key={idx} className="text-xs text-gray-300 hover:bg-dark-900/35">
-                            <td className="py-2.5 px-3 font-mono text-gray-500">{t.time}</td>
+                            <td className="py-2.5 px-3 font-mono text-gray-300">{t.time}</td>
                             <td className="py-2.5 px-3 font-semibold text-white">{t.ref}</td>
                             <td className="py-2.5 px-3">{t.description}</td>
                             <td className="py-2.5 px-3">
@@ -1816,7 +1816,7 @@ const POS = () => {
               <button 
                 type="button"
                 onClick={() => setIsCloseOfDayModalOpen(false)}
-                className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
               >
                 Cancel
               </button>

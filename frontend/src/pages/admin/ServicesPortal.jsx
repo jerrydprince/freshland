@@ -558,15 +558,15 @@ const ServicesPortal = () => {
             <Compass className="text-gold-500 w-8 h-8" />
             Unified Services Portals
           </h1>
-          <p className="text-gray-400 text-sm mt-1">Operational dispatch queues, walk-in registers, and close of day modules for hotel amenities.</p>
+          <p className="text-gray-200 text-sm mt-1">Operational dispatch queues, walk-in registers, and close of day modules for hotel amenities.</p>
         </div>
         
         {/* Quick actions info */}
-        <div className="bg-dark-800 border border-dark-700/80 rounded-2xl px-5 py-3 text-xs text-gray-400 flex items-center gap-3 w-fit shadow-md">
+        <div className="bg-dark-800 border border-dark-700/80 rounded-2xl px-5 py-3 text-xs text-gray-200 flex items-center gap-3 w-fit shadow-md">
           <ShieldCheck className="text-gold-500 w-5 h-5" />
           <div>
             <span className="block font-bold text-gray-200">Terminal Authorization</span>
-            <span className="block text-[10px] text-gray-500 font-medium uppercase">Role: {profile?.role?.replace(/_/g, ' ') || 'Staff'}</span>
+            <span className="block text-[10px] text-gray-300 font-medium uppercase">Role: {profile?.role?.replace(/_/g, ' ') || 'Staff'}</span>
           </div>
         </div>
       </div>
@@ -620,7 +620,7 @@ const ServicesPortal = () => {
         {/* Navigation Sidebar Pane (3 cols) */}
         <div className="lg:col-span-3 space-y-6">
           <div className="bg-dark-800 border border-dark-700 p-4 rounded-3xl space-y-2.5 shadow-xl select-none">
-            <span className="block text-[10px] text-gray-500 font-black uppercase tracking-wider px-3 mb-2">Department Portals</span>
+            <span className="block text-[10px] text-gray-300 font-black uppercase tracking-wider px-3 mb-2">Department Portals</span>
             
             <button
               onClick={() => { setActiveTab('transport'); setSearchQuery(''); }}
@@ -631,7 +631,7 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Car size={16} className={activeTab === 'transport' ? 'text-brand-400' : 'text-gray-500'} />
+                <Car size={16} className={activeTab === 'transport' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Airport Shuttle</span>
               </div>
               {isDeptClosed('transportation') && <span className="text-[9px] bg-red-500/15 border border-red-500/20 text-red-400 px-1.5 py-0.2 rounded font-black">CLOSED</span>}
@@ -646,7 +646,7 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Flower2 size={16} className={activeTab === 'spa' ? 'text-brand-400' : 'text-gray-500'} />
+                <Flower2 size={16} className={activeTab === 'spa' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Spa & Massage</span>
               </div>
               {isDeptClosed('spa') && <span className="text-[9px] bg-red-500/15 border border-red-500/20 text-red-400 px-1.5 py-0.2 rounded font-black">CLOSED</span>}
@@ -661,7 +661,7 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Droplets size={16} className={activeTab === 'pool' ? 'text-brand-400' : 'text-gray-500'} />
+                <Droplets size={16} className={activeTab === 'pool' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Swimming Pool</span>
               </div>
               {isDeptClosed('pool') && <span className="text-[9px] bg-red-500/15 border border-red-500/20 text-red-400 px-1.5 py-0.2 rounded font-black">CLOSED</span>}
@@ -676,13 +676,13 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Utensils size={16} className={activeTab === 'restaurant' ? 'text-brand-400' : 'text-gray-500'} />
+                <Utensils size={16} className={activeTab === 'restaurant' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Restaurant Orders</span>
               </div>
               {isDeptClosed('restaurant') && <span className="text-[9px] bg-red-500/15 border border-red-500/20 text-red-400 px-1.5 py-0.2 rounded font-black">CLOSED</span>}
             </button>
 
-            <span className="block text-[10px] text-gray-500 font-black uppercase tracking-wider px-3 mt-4 mb-2">Register & Closeout</span>
+            <span className="block text-[10px] text-gray-300 font-black uppercase tracking-wider px-3 mt-4 mb-2">Register & Closeout</span>
 
             <button
               onClick={() => { setActiveTab('register'); setSearchQuery(''); }}
@@ -693,7 +693,7 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Plus size={16} className={activeTab === 'register' ? 'text-brand-400' : 'text-gray-500'} />
+                <Plus size={16} className={activeTab === 'register' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Walk-in POS Register</span>
               </div>
             </button>
@@ -707,13 +707,13 @@ const ServicesPortal = () => {
               }`}
             >
               <div className="flex items-center gap-3">
-                <Clock size={16} className={activeTab === 'close_day' ? 'text-brand-400' : 'text-gray-500'} />
+                <Clock size={16} className={activeTab === 'close_day' ? 'text-brand-400' : 'text-gray-300'} />
                 <span>Ledger Close of Day</span>
               </div>
             </button>
           </div>
 
-          <div className="bg-dark-900 border border-dark-750 p-4 rounded-3xl text-[11px] text-gray-400 space-y-2 leading-relaxed shadow-lg">
+          <div className="bg-dark-900 border border-dark-750 p-4 rounded-3xl text-[11px] text-gray-200 space-y-2 leading-relaxed shadow-lg">
             <h4 className="font-extrabold text-gray-300 uppercase text-[9px] tracking-wider flex items-center gap-1.5"><ShieldCheck size={12} className="text-gold-500" /> Operational Guide</h4>
             <p>1. Confirm requested services post guest check-in.</p>
             <p>2. Assign drivers or therapists to set schedule.</p>
@@ -731,12 +731,12 @@ const ServicesPortal = () => {
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   {activeTab === 'transport' ? 'Airport Pickup & Logistics' : activeTab === 'spa' ? 'Spa & Relaxation Services' : activeTab === 'pool' ? 'Poolside Access Logs' : 'Restaurant Orders'}
                 </h2>
-                <p className="text-gray-400 text-xs mt-0.5">Manage live booking request items and confirm, schedule, or close logs.</p>
+                <p className="text-gray-200 text-xs mt-0.5">Manage live booking request items and confirm, schedule, or close logs.</p>
               </div>
 
               {/* Quick Search */}
               <div className="relative w-full sm:w-72">
-                <Search className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                <Search className="absolute left-3 top-2 text-gray-300 w-4 h-4" />
                 <input
                   type="text"
                   placeholder="Search guests, rooms, etc..."
@@ -752,22 +752,22 @@ const ServicesPortal = () => {
           {loading && ['transport', 'spa', 'pool'].includes(activeTab) ? (
             <div className="py-24 text-center">
               <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-500 mx-auto mb-3"></div>
-              <p className="text-gray-500 text-sm">Loading registry logs...</p>
+              <p className="text-gray-300 text-sm">Loading registry logs...</p>
             </div>
           ) : (
             <>
               {activeTab === 'transport' && (
                 filteredRequests.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <Car className="mx-auto mb-3 opacity-25 text-gray-400 animate-pulse" size={44} />
+                    <Car className="mx-auto mb-3 opacity-25 text-gray-200 animate-pulse" size={44} />
                     <h3 className="text-lg font-bold text-white mb-1">No Shuttle Requests</h3>
-                    <p className="text-gray-500 text-xs">Airport pickup reservations from checked-in stay logs will appear here.</p>
+                    <p className="text-gray-300 text-xs">Airport pickup reservations from checked-in stay logs will appear here.</p>
                   </div>
                 ) : (
                   <div className="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden shadow-md">
                     <table className="w-full text-left border-collapse text-sm">
                       <thead>
-                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-400 font-bold uppercase">
+                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-200 font-bold uppercase">
                           <th className="p-4">Guest</th>
                           <th className="p-4">Room #</th>
                           <th className="p-4">Service</th>
@@ -786,11 +786,11 @@ const ServicesPortal = () => {
                             <tr key={req.id} className="hover:bg-dark-750/30 transition-colors">
                               <td className="p-4">
                                 <p className="font-bold text-white">{req.bookings?.guest_name}</p>
-                                {noteText && <p className="text-[10px] text-gray-500 mt-0.5 italic max-w-[160px] truncate" title={noteText}>{noteText}</p>}
+                                {noteText && <p className="text-[10px] text-gray-300 mt-0.5 italic max-w-[160px] truncate" title={noteText}>{noteText}</p>}
                               </td>
                               <td className="p-4 font-mono text-gray-300">{req.bookings?.rooms?.room_number || 'N/A'}</td>
                               <td className="p-4 font-medium text-white">{req.services?.name}</td>
-                              <td className="p-4 text-xs text-gray-400">
+                              <td className="p-4 text-xs text-gray-200">
                                 <span className="block">{req.scheduled_date || 'TBD'}</span>
                                 <span className="font-semibold text-white">{req.scheduled_time || 'TBD'}</span>
                               </td>
@@ -857,15 +857,15 @@ const ServicesPortal = () => {
               {activeTab === 'spa' && (
                 filteredRequests.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <Flower2 className="mx-auto mb-3 opacity-25 text-gray-400 animate-pulse" size={44} />
+                    <Flower2 className="mx-auto mb-3 opacity-25 text-gray-200 animate-pulse" size={44} />
                     <h3 className="text-lg font-bold text-white mb-1">No Spa Sessions</h3>
-                    <p className="text-gray-500 text-xs">Wellness and therapist requests from checked-in guests will appear here.</p>
+                    <p className="text-gray-300 text-xs">Wellness and therapist requests from checked-in guests will appear here.</p>
                   </div>
                 ) : (
                   <div className="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden shadow-md">
                     <table className="w-full text-left border-collapse text-sm">
                       <thead>
-                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-400 font-bold uppercase">
+                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-200 font-bold uppercase">
                           <th className="p-4">Guest</th>
                           <th className="p-4">Room #</th>
                           <th className="p-4">Service</th>
@@ -884,11 +884,11 @@ const ServicesPortal = () => {
                             <tr key={req.id} className="hover:bg-dark-750/30 transition-colors">
                               <td className="p-4">
                                 <p className="font-bold text-white">{req.bookings?.guest_name}</p>
-                                {noteText && <p className="text-[10px] text-gray-500 mt-0.5 italic max-w-[160px] truncate" title={noteText}>{noteText}</p>}
+                                {noteText && <p className="text-[10px] text-gray-300 mt-0.5 italic max-w-[160px] truncate" title={noteText}>{noteText}</p>}
                               </td>
                               <td className="p-4 font-mono text-gray-300">{req.bookings?.rooms?.room_number || 'N/A'}</td>
                               <td className="p-4 font-medium text-white">{req.services?.name}</td>
-                              <td className="p-4 text-xs text-gray-400">
+                              <td className="p-4 text-xs text-gray-200">
                                 <span className="block">{req.scheduled_date || 'TBD'}</span>
                                 <span className="font-semibold text-white">{req.scheduled_time || 'TBD'}</span>
                               </td>
@@ -955,15 +955,15 @@ const ServicesPortal = () => {
               {activeTab === 'pool' && (
                 filteredRequests.length === 0 ? (
                   <div className="glass-panel p-16 text-center rounded-3xl border border-dark-700/50">
-                    <Droplets className="mx-auto mb-3 opacity-25 text-gray-400 animate-pulse" size={44} />
+                    <Droplets className="mx-auto mb-3 opacity-25 text-gray-200 animate-pulse" size={44} />
                     <h3 className="text-lg font-bold text-white mb-1">No Pool Cards</h3>
-                    <p className="text-gray-500 text-xs">Pool entry logs and guest pool passes will appear here.</p>
+                    <p className="text-gray-300 text-xs">Pool entry logs and guest pool passes will appear here.</p>
                   </div>
                 ) : (
                   <div className="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden shadow-md">
                     <table className="w-full text-left border-collapse text-sm">
                       <thead>
-                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-400 font-bold uppercase">
+                        <tr className="bg-dark-900 border-b border-dark-700 text-xs text-gray-200 font-bold uppercase">
                           <th className="p-4">Guest</th>
                           <th className="p-4">Room #</th>
                           <th className="p-4">Service</th>
@@ -1000,7 +1000,7 @@ const ServicesPortal = () => {
                                     Check-in/Fulfilled
                                   </button>
                                 ) : (
-                                  <span className="text-xs text-gray-500">Fulfilled</span>
+                                  <span className="text-xs text-gray-300">Fulfilled</span>
                                 )}
                               </td>
                             </tr>
@@ -1020,13 +1020,13 @@ const ServicesPortal = () => {
                       <Plus size={18} className="text-gold-500" />
                       Walk-in / Direct POS register
                     </h3>
-                    <p className="text-gray-400 text-xs mt-1">Post immediate direct sales or charge checked-in guest folios directly.</p>
+                    <p className="text-gray-200 text-xs mt-1">Post immediate direct sales or charge checked-in guest folios directly.</p>
                   </div>
 
                   <form onSubmit={handleRegisterSubmit} className="space-y-5">
                     {/* Service Selector */}
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Select Service *</label>
+                      <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Select Service *</label>
                       <select
                         required
                         value={registerForm.serviceId}
@@ -1055,7 +1055,7 @@ const ServicesPortal = () => {
                         type="button"
                         onClick={() => setRegisterForm({ ...registerForm, guestType: 'folio' })}
                         className={`py-2 rounded-lg transition-all ${
-                          registerForm.guestType === 'folio' ? 'bg-gold-500 text-dark-900' : 'text-gray-400 hover:text-white'
+                          registerForm.guestType === 'folio' ? 'bg-gold-500 text-dark-900' : 'text-gray-200 hover:text-white'
                         }`}
                       >
                         Room Folio Charge (In-House)
@@ -1064,7 +1064,7 @@ const ServicesPortal = () => {
                         type="button"
                         onClick={() => setRegisterForm({ ...registerForm, guestType: 'walkin' })}
                         className={`py-2 rounded-lg transition-all ${
-                          registerForm.guestType === 'walkin' ? 'bg-gold-500 text-dark-900' : 'text-gray-400 hover:text-white'
+                          registerForm.guestType === 'walkin' ? 'bg-gold-500 text-dark-900' : 'text-gray-200 hover:text-white'
                         }`}
                       >
                         Direct Walk-in (Settled POS)
@@ -1074,7 +1074,7 @@ const ServicesPortal = () => {
                     {/* Guest Selector OR Walk-in Customer Name */}
                     {registerForm.guestType === 'folio' ? (
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Select In-House Guest Booking *</label>
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Select In-House Guest Booking *</label>
                         <select
                           required
                           value={registerForm.bookingId}
@@ -1091,7 +1091,7 @@ const ServicesPortal = () => {
                       </div>
                     ) : (
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Customer Name *</label>
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Customer Name *</label>
                         <input
                           required
                           type="text"
@@ -1106,7 +1106,7 @@ const ServicesPortal = () => {
                     {/* Qty and Custom Price */}
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Quantity</label>
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Quantity</label>
                         <input
                           type="number"
                           min="1"
@@ -1117,7 +1117,7 @@ const ServicesPortal = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Rate/Price (₦)</label>
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Rate/Price (₦)</label>
                         <input
                           type="number"
                           placeholder="Default price"
@@ -1131,7 +1131,7 @@ const ServicesPortal = () => {
                     {/* Payment Method Selector for Walk-in */}
                     {registerForm.guestType === 'walkin' && (
                       <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Payment Settlement Method</label>
+                        <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Payment Settlement Method</label>
                         <select
                           value={registerForm.paymentMethod}
                           onChange={e => setRegisterForm({ ...registerForm, paymentMethod: e.target.value })}
@@ -1146,7 +1146,7 @@ const ServicesPortal = () => {
 
                     {/* Notes */}
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Internal Notes / Instructions</label>
+                      <label className="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">Internal Notes / Instructions</label>
                       <textarea
                         rows="3"
                         placeholder="Dietary details, pickup location notes,card log numbers, etc."
@@ -1186,14 +1186,14 @@ const ServicesPortal = () => {
                       <Clock size={18} className="text-gold-500" />
                       Ledger Close of Day Compiler
                     </h3>
-                    <p className="text-gray-400 text-xs mt-1">Generate final compiled reports and lock department registers for the day.</p>
+                    <p className="text-gray-200 text-xs mt-1">Generate final compiled reports and lock department registers for the day.</p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="border border-dark-700 bg-dark-900/40 p-4 rounded-2xl flex flex-col justify-between">
                       <div>
                         <h4 className="text-xs font-bold text-gray-300 uppercase">Shuttle Service</h4>
-                        <p className="text-[10px] text-gray-500 mt-1">Transportation & Airport pickup closure reports.</p>
+                        <p className="text-[10px] text-gray-300 mt-1">Transportation & Airport pickup closure reports.</p>
                       </div>
                       <button
                         onClick={() => handleCompileCloseOfDay('transportation')}
@@ -1207,7 +1207,7 @@ const ServicesPortal = () => {
                     <div className="border border-dark-700 bg-dark-900/40 p-4 rounded-2xl flex flex-col justify-between">
                       <div>
                         <h4 className="text-xs font-bold text-gray-300 uppercase">Spa & Massage</h4>
-                        <p className="text-[10px] text-gray-500 mt-1">Therapist and massage session registries.</p>
+                        <p className="text-[10px] text-gray-300 mt-1">Therapist and massage session registries.</p>
                       </div>
                       <button
                         onClick={() => handleCompileCloseOfDay('spa')}
@@ -1221,7 +1221,7 @@ const ServicesPortal = () => {
                     <div className="border border-dark-700 bg-dark-900/40 p-4 rounded-2xl flex flex-col justify-between">
                       <div>
                         <h4 className="text-xs font-bold text-gray-300 uppercase">Swimming Pool</h4>
-                        <p className="text-[10px] text-gray-500 mt-1">Poolside lounge cards and entry access logs.</p>
+                        <p className="text-[10px] text-gray-300 mt-1">Poolside lounge cards and entry access logs.</p>
                       </div>
                       <button
                         onClick={() => handleCompileCloseOfDay('pool')}
@@ -1234,7 +1234,7 @@ const ServicesPortal = () => {
                   </div>
 
                   <div className="border-t border-dark-700 pt-6">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Completed Closures Today</h4>
+                    <h4 className="text-xs font-bold text-gray-200 uppercase tracking-widest mb-4">Completed Closures Today</h4>
                     {departmentalClosures.filter(c => c.business_date === todayStr).length === 0 ? (
                       <p className="text-xs text-gray-650 italic">No departmental closures recorded today.</p>
                     ) : (
@@ -1243,7 +1243,7 @@ const ServicesPortal = () => {
                           <div key={i} className="flex justify-between items-center bg-dark-900/60 p-3 rounded-xl border border-dark-700/50">
                             <div>
                               <span className="text-xs font-bold text-white capitalize">{c.department.replace('_', ' ')}</span>
-                              <span className="block text-[9px] text-gray-500 mt-0.5">Closed at: {format(new Date(c.closed_at), 'HH:mm')} | Compiled by: {c.staff_name}</span>
+                              <span className="block text-[9px] text-gray-300 mt-0.5">Closed at: {format(new Date(c.closed_at), 'HH:mm')} | Compiled by: {c.staff_name}</span>
                             </div>
                             <span className="text-sm font-black text-brand-400">₦{Number(c.revenue).toLocaleString()}</span>
                           </div>
@@ -1264,7 +1264,7 @@ const ServicesPortal = () => {
           <div className="bg-dark-800 border border-dark-700 p-6 rounded-3xl w-full max-w-md shadow-2xl relative">
             <button
               onClick={() => setIsAssignModalOpen(false)}
-              className="absolute right-4 top-4 text-gray-500 hover:text-white"
+              className="absolute right-4 top-4 text-gray-300 hover:text-white"
             >
               <X size={20} />
             </button>
@@ -1273,7 +1273,7 @@ const ServicesPortal = () => {
               <UserCheck size={18} className="text-brand-500" />
               Assign Operations Staff
             </h3>
-            <p className="text-gray-400 text-xs mb-5">Select or input staff name to schedule this request.</p>
+            <p className="text-gray-200 text-xs mb-5">Select or input staff name to schedule this request.</p>
 
             <form onSubmit={handleSaveAssignment} className="space-y-4">
               <div>
@@ -1336,7 +1336,7 @@ const ServicesPortal = () => {
           <div className="bg-dark-800 border border-dark-700 p-6 rounded-3xl w-full max-w-xl shadow-2xl relative max-h-[85vh] flex flex-col justify-between overflow-hidden">
             <button
               onClick={() => setIsCloseOfDayModalOpen(false)}
-              className="absolute right-4 top-4 text-gray-500 hover:text-white"
+              className="absolute right-4 top-4 text-gray-300 hover:text-white"
             >
               <X size={20} />
             </button>
@@ -1346,17 +1346,17 @@ const ServicesPortal = () => {
                 <h3 className="text-lg font-bold text-white capitalize">
                   Close of Day: {closeOfDayReport.department.replace('_', ' ')}
                 </h3>
-                <span className="text-[10px] text-gray-500 block font-mono mt-0.5">Business Date: {closeOfDayReport.business_date}</span>
+                <span className="text-[10px] text-gray-300 block font-mono mt-0.5">Business Date: {closeOfDayReport.business_date}</span>
               </div>
 
               {/* Summary Cards */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-dark-900/60 p-3 rounded-xl border border-dark-700/50 text-center">
-                  <span className="block text-[9px] text-gray-500 uppercase font-bold">POS/Walk-in</span>
+                  <span className="block text-[9px] text-gray-300 uppercase font-bold">POS/Walk-in</span>
                   <span className="block text-sm font-black text-white mt-1">₦{closeOfDayReport.total_walkin_revenue.toLocaleString()}</span>
                 </div>
                 <div className="bg-dark-900/60 p-3 rounded-xl border border-dark-700/50 text-center">
-                  <span className="block text-[9px] text-gray-500 uppercase font-bold">Folio Charges</span>
+                  <span className="block text-[9px] text-gray-300 uppercase font-bold">Folio Charges</span>
                   <span className="block text-sm font-black text-white mt-1">₦{closeOfDayReport.total_inhouse_revenue.toLocaleString()}</span>
                 </div>
                 <div className="bg-dark-900/60 p-3 rounded-xl border border-dark-700/50 text-center bg-brand-500/5 border-brand-500/20">
@@ -1370,13 +1370,13 @@ const ServicesPortal = () => {
                 <h4 className="text-xs font-bold text-gray-450 uppercase mb-3">Transaction Entries ({closeOfDayReport.total_count})</h4>
                 
                 {closeOfDayReport.total_count === 0 ? (
-                  <p className="text-xs text-gray-500 italic py-4 text-center">No transactions recorded today for this department.</p>
+                  <p className="text-xs text-gray-300 italic py-4 text-center">No transactions recorded today for this department.</p>
                 ) : (
                   <div className="max-h-[30vh] overflow-y-auto pr-1 custom-scrollbar space-y-2">
                     {[...closeOfDayReport.walkin_txns, ...closeOfDayReport.inhouse_txns].map((txn, index) => (
                       <div key={index} className="flex justify-between items-center bg-dark-900/40 p-2.5 rounded-lg border border-dark-750 text-xs">
                         <div className="min-w-0 pr-2">
-                          <span className="text-gray-500 font-mono block text-[9px]">{txn.time} | Ref: {txn.ref}</span>
+                          <span className="text-gray-300 font-mono block text-[9px]">{txn.time} | Ref: {txn.ref}</span>
                           <span className="text-white block font-medium truncate max-w-[320px] mt-0.5">{txn.description}</span>
                         </div>
                         <div className="text-right">
@@ -1389,7 +1389,7 @@ const ServicesPortal = () => {
                 )}
               </div>
 
-              <div className="bg-dark-900 p-4 rounded-xl text-xs text-gray-400 flex items-start gap-2.5">
+              <div className="bg-dark-900 p-4 rounded-xl text-xs text-gray-200 flex items-start gap-2.5">
                 <AlertCircle className="text-gold-500 w-5 h-5 flex-shrink-0" />
                 <p>⚠️ Confirming this Close of Day will lock all current day transactions for this department and post final revenues directly to the billing and accounting modules.</p>
               </div>

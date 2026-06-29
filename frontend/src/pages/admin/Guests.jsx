@@ -28,7 +28,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-200">
             Showing <span className="font-semibold text-white">{((currentPage - 1) * pageSize) + 1}</span> to{' '}
             <span className="font-semibold text-white">
               {Math.min(currentPage * pageSize, totalItems)}
@@ -42,7 +42,7 @@ const PaginationControl = ({ currentPage, totalItems, pageSize, onPageChange }) 
               type="button"
               disabled={currentPage === 1}
               onClick={() => onPageChange(currentPage - 1)}
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-200 ring-1 ring-inset ring-dark-750 bg-dark-800 hover:bg-dark-700 focus:z-20 focus:outline-offset-0 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="sr-only">Previous</span>
               &larr;
@@ -204,7 +204,7 @@ const AdminGuests = () => {
   const [contactInfo, setContactInfo] = useState({
     address: 'No2. Gowon P Haruna Close, Karu, Abuja',
     phone: '08033214684, 08062332639, 08171278657',
-    email: 'info@jemmylandhotels.com',
+    email: 'info@Freshlandhotels.com',
     logo: ''
   });
 
@@ -1069,7 +1069,7 @@ const AdminGuests = () => {
           </table>
           
           <div class="footer">
-            Thank you for choosing Jemmyland Hotels.<br />
+            Thank you for choosing Freshland.<br />
             For support or billing inquiries, please contact ${contactInfo.email}.
           </div>
         </body>
@@ -1302,13 +1302,13 @@ const AdminGuests = () => {
           
           const emailHtml = `
             <div style="font-family: sans-serif; padding: 20px; color: #1f2937; max-width: 600px; margin: auto; border: 1px solid #e5e7eb; border-top: 6px solid #DF6853; border-radius: 12px;">
-              <h2 style="color: #000000; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; font-size: 20px;">Jemmyland Hotels</h2>
+              <h2 style="color: #000000; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; font-size: 20px;">Freshland</h2>
               <p style="font-size: 15px; line-height: 1.6;">Hello ${guestName},</p>
               <div style="font-size: 15px; line-height: 1.6; color: #4b5563;">
                 ${broadcastBody.replace(/\{\{guest_name\}\}/g, guestName).replace(/\n/g, '<br/>')}
               </div>
               <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #e5e7eb; font-size: 11px; color: #9ca3af; text-align: center;">
-                <p>This is a broadcast message from Jemmyland Hotels.</p>
+                <p>This is a broadcast message from Freshland.</p>
                 <p>${contactInfo.address} | Phone: ${contactInfo.phone}</p>
               </div>
             </div>
@@ -1317,7 +1317,7 @@ const AdminGuests = () => {
           res = await sendResendEmail({
             to: guest.email,
             subject: broadcastSubject,
-            from: 'info@jemmylandhotels.com',
+            from: 'info@Freshlandhotels.com',
             html: emailHtml
           });
         } else {
@@ -1518,7 +1518,7 @@ const AdminGuests = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
           <h1 className="text-2xl font-semibold">CRM & Guest Directory</h1>
-          <p className="text-gray-400 mt-1">Manage standard guests, loyalty rewards, and corporate group ledgers.</p>
+          <p className="text-gray-200 mt-1">Manage standard guests, loyalty rewards, and corporate group ledgers.</p>
         </div>
         {parentTab === 'standard' ? (
           <button onClick={() => setIsAddModalOpen(true)} className="btn-primary py-2 px-4 flex items-center gap-2"><Plus size={18}/> New Guest</button>
@@ -1531,25 +1531,25 @@ const AdminGuests = () => {
       <div className="flex flex-wrap border border-dark-700 bg-dark-900/50 p-1 rounded-lg w-full md:w-fit mb-8 gap-1">
         <button 
           onClick={() => setParentTab('standard')} 
-          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'standard' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-400 hover:text-white'}`}
+          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'standard' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-200 hover:text-white'}`}
         >
           👤 Standard Guests
         </button>
         <button 
           onClick={() => setParentTab('corporate')} 
-          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'corporate' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-400 hover:text-white'}`}
+          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'corporate' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-200 hover:text-white'}`}
         >
           🏢 Group & Corporate Accounts
         </button>
         <button 
           onClick={() => setParentTab('loyalty')} 
-          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'loyalty' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-400 hover:text-white'}`}
+          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'loyalty' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-200 hover:text-white'}`}
         >
           ⭐ Loyalty Rewards Program
         </button>
         <button 
           onClick={() => setParentTab('broadcast')} 
-          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'broadcast' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-400 hover:text-white'}`}
+          className={`flex-1 md:flex-none px-6 py-2 rounded-md font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${parentTab === 'broadcast' ? 'bg-brand-500 text-dark-900 shadow-md font-black' : 'text-gray-200 hover:text-white'}`}
         >
           💬 Customer Broadcast
         </button>
@@ -1560,7 +1560,7 @@ const AdminGuests = () => {
           <div className="bg-dark-800 border border-dark-700 p-6 mb-6 rounded-lg">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="relative w-full md:w-96">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-200" size={18} />
                 <input 
                   type="text" 
                   placeholder="Search guests by name or email..." 
@@ -1572,14 +1572,14 @@ const AdminGuests = () => {
               <div className="flex items-center gap-2 bg-dark-900 p-1 border border-dark-700 rounded self-end md:self-auto">
                 <button 
                   onClick={() => setViewMode('card')} 
-                  className={`p-2 rounded transition-colors ${viewMode === 'card' ? 'bg-brand-500 text-dark-900' : 'text-gray-400 hover:text-white'}`}
+                  className={`p-2 rounded transition-colors ${viewMode === 'card' ? 'bg-brand-500 text-dark-900' : 'text-gray-200 hover:text-white'}`}
                   title="Card View"
                 >
                   <LayoutGrid size={18} />
                 </button>
                 <button 
                   onClick={() => setViewMode('list')} 
-                  className={`p-2 rounded transition-colors ${viewMode === 'list' ? 'bg-brand-500 text-dark-900' : 'text-gray-400 hover:text-white'}`}
+                  className={`p-2 rounded transition-colors ${viewMode === 'list' ? 'bg-brand-500 text-dark-900' : 'text-gray-200 hover:text-white'}`}
                   title="List View"
                 >
                   <List size={18} />
@@ -1589,9 +1589,9 @@ const AdminGuests = () => {
           </div>
 
           {loading ? (
-            <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading CRM data...</div>
+            <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading CRM data...</div>
           ) : filteredGuests.length === 0 ? (
-            <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">No guests found.</div>
+            <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">No guests found.</div>
           ) : viewMode === 'card' ? (
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1618,24 +1618,24 @@ const AdminGuests = () => {
                     </div>
 
                     <div className="space-y-3 mb-6">
-                      <div className="flex items-center gap-3 text-sm text-gray-400">
-                        <Mail size={16} className="text-gray-500"/> {guest.email || 'No email'}
+                      <div className="flex items-center gap-3 text-sm text-gray-200">
+                        <Mail size={16} className="text-gray-300"/> {guest.email || 'No email'}
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-400">
-                        <Phone size={16} className="text-gray-500"/> {guest.phone || 'No phone'}
+                      <div className="flex items-center gap-3 text-sm text-gray-200">
+                        <Phone size={16} className="text-gray-300"/> {guest.phone || 'No phone'}
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-400">
-                        <MapPin size={16} className="text-gray-500"/> {guest.nationality || 'Unspecified'}
+                      <div className="flex items-center gap-3 text-sm text-gray-200">
+                        <MapPin size={16} className="text-gray-300"/> {guest.nationality || 'Unspecified'}
                       </div>
                     </div>
 
                     <div className="pt-4 border-t border-dark-700/50 flex justify-between items-center">
-                      <div className="flex items-center gap-2 text-sm text-gray-400">
-                        <Wallet size={16} className="text-gray-500"/> 
+                      <div className="flex items-center gap-2 text-sm text-gray-200">
+                        <Wallet size={16} className="text-gray-300"/> 
                         {guest.wallet_balance !== null && guest.wallet_balance !== undefined ? (
                           <span>₦{Number(guest.wallet_balance || 0).toLocaleString()}</span>
                         ) : (
-                          <span className="text-gray-500 text-xs italic">Inactive</span>
+                          <span className="text-gray-300 text-xs italic">Inactive</span>
                         )}
                       </div>
                       <span className="text-brand-500 text-sm font-medium group-hover:underline">View 360° Profile →</span>
@@ -1655,7 +1655,7 @@ const AdminGuests = () => {
               <div className="bg-dark-800 border border-dark-700 rounded-lg overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm border-collapse">
-                    <thead className="bg-dark-900/80 text-gray-400 border-b border-dark-700">
+                    <thead className="bg-dark-900/80 text-gray-200 border-b border-dark-700">
                       <tr>
                         <th className="p-4 font-semibold text-xs uppercase tracking-wider">Guest Profile</th>
                         <th className="p-4 font-semibold text-xs uppercase tracking-wider">Segment & Loyalty</th>
@@ -1699,19 +1699,19 @@ const AdminGuests = () => {
                               {guest.loyalty_points > 0 ? (
                                 <span className="text-xs text-brand-500 font-medium">{guest.loyalty_points} pts</span>
                               ) : (
-                                <span className="text-xs text-gray-500">-</span>
+                                <span className="text-xs text-gray-300">-</span>
                               )}
                             </div>
                           </td>
                           <td className="p-4">
-                            <div className="flex flex-col gap-1 text-gray-400 text-xs">
-                              <span className="flex items-center gap-1.5"><Mail size={12} className="text-gray-500"/> {guest.email || 'No email'}</span>
-                              <span className="flex items-center gap-1.5"><Phone size={12} className="text-gray-500"/> {guest.phone || 'No phone'}</span>
+                            <div className="flex flex-col gap-1 text-gray-200 text-xs">
+                              <span className="flex items-center gap-1.5"><Mail size={12} className="text-gray-300"/> {guest.email || 'No email'}</span>
+                              <span className="flex items-center gap-1.5"><Phone size={12} className="text-gray-300"/> {guest.phone || 'No phone'}</span>
                             </div>
                           </td>
                           <td className="p-4">
-                            <span className="flex items-center gap-1.5 text-gray-400 text-xs">
-                              <MapPin size={12} className="text-gray-500"/> {guest.nationality || 'Unspecified'}
+                            <span className="flex items-center gap-1.5 text-gray-200 text-xs">
+                              <MapPin size={12} className="text-gray-300"/> {guest.nationality || 'Unspecified'}
                             </span>
                           </td>
                           <td className="p-4">
@@ -1720,7 +1720,7 @@ const AdminGuests = () => {
                                 <Wallet size={12} className="text-brand-500"/> ₦{Number(guest.wallet_balance || 0).toLocaleString()}
                               </span>
                             ) : (
-                              <span className="text-gray-500 text-xs italic">Inactive</span>
+                              <span className="text-gray-300 text-xs italic">Inactive</span>
                             )}
                           </td>
                           <td className="p-4 text-right">
@@ -1747,36 +1747,36 @@ const AdminGuests = () => {
           {isAddModalOpen && (
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
               <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-lg relative rounded-xl animate-in zoom-in-95">
-                <button onClick={() => setIsAddModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white"><X size={24}/></button>
+                <button onClick={() => setIsAddModalOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white"><X size={24}/></button>
                 <h2 className="text-xl font-bold text-white mb-6">Add New CRM Record</h2>
                 <form onSubmit={handleAddGuest} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">First Name</label>
+                      <label className="block text-sm text-gray-200 mb-1">First Name</label>
                       <input required type="text" value={newGuest.firstName} onChange={e => setNewGuest({...newGuest, firstName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Last Name</label>
+                      <label className="block text-sm text-gray-200 mb-1">Last Name</label>
                       <input required type="text" value={newGuest.lastName} onChange={e => setNewGuest({...newGuest, lastName: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Email</label>
+                      <label className="block text-sm text-gray-200 mb-1">Email</label>
                       <input type="email" value={newGuest.email} onChange={e => setNewGuest({...newGuest, email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Phone</label>
+                      <label className="block text-sm text-gray-200 mb-1">Phone</label>
                       <input type="text" value={newGuest.phone} onChange={e => setNewGuest({...newGuest, phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Nationality</label>
+                      <label className="block text-sm text-gray-200 mb-1">Nationality</label>
                       <input type="text" value={newGuest.nationality} onChange={e => setNewGuest({...newGuest, nationality: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Segment</label>
+                      <label className="block text-sm text-gray-200 mb-1">Segment</label>
                       <select value={newGuest.segment} onChange={e => setNewGuest({...newGuest, segment: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500">
                         <option value="standard">Standard</option>
                         <option value="corporate">Corporate</option>
@@ -1800,15 +1800,15 @@ const AdminGuests = () => {
           {/* Telemetry Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 animate-in fade-in duration-300">
             <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-brand-500 shadow-lg">
-              <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Active Corporate Groups</p>
+              <p className="text-xs text-gray-200 font-bold uppercase tracking-wider">Active Corporate Groups</p>
               <h3 className="text-3xl font-bold text-white mt-1">{groupAccounts.length}</h3>
             </div>
             <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-red-500 shadow-lg">
-              <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Total Outstanding Group Debt</p>
+              <p className="text-xs text-gray-200 font-bold uppercase tracking-wider">Total Outstanding Group Debt</p>
               <h3 className="text-3xl font-bold text-red-400 mt-1">₦{groupAccounts.reduce((sum, g) => sum + Number(g.outstanding_balance || 0), 0).toLocaleString()}</h3>
             </div>
             <div className="bg-dark-800 border border-dark-700 p-5 rounded-lg border-l-4 border-l-green-500 shadow-lg">
-              <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Total Approved Credit Pool</p>
+              <p className="text-xs text-gray-200 font-bold uppercase tracking-wider">Total Approved Credit Pool</p>
               <h3 className="text-3xl font-bold text-green-400 mt-1">₦{groupAccounts.reduce((sum, g) => sum + Number(g.credit_limit || 0), 0).toLocaleString()}</h3>
             </div>
           </div>
@@ -1816,7 +1816,7 @@ const AdminGuests = () => {
           {/* Search Box */}
           <div className="bg-dark-800 border border-dark-700 p-6 mb-6 rounded-lg animate-in fade-in duration-300">
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-200" size={18} />
               <input 
                 type="text" 
                 placeholder="Search companies, agencies, churches..." 
@@ -1829,14 +1829,14 @@ const AdminGuests = () => {
 
           {/* Table */}
           {groupLoading ? (
-            <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading corporate directory...</div>
+            <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">Loading corporate directory...</div>
           ) : filteredGroups.length === 0 ? (
-            <div className="text-gray-400 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">No group accounts found.</div>
+            <div className="text-gray-200 p-8 text-center bg-dark-800 border border-dark-700 rounded-lg">No group accounts found.</div>
           ) : (
             <div className="bg-dark-800 border border-dark-700 rounded-lg overflow-hidden animate-in fade-in duration-300">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm border-collapse">
-                  <thead className="bg-dark-900/80 text-gray-400 border-b border-dark-700">
+                  <thead className="bg-dark-900/80 text-gray-200 border-b border-dark-700">
                     <tr>
                       <th className="p-4 font-semibold text-xs uppercase tracking-wider">Group Name & Type</th>
                       <th className="p-4 font-semibold text-xs uppercase tracking-wider">Contact Person</th>
@@ -1863,13 +1863,13 @@ const AdminGuests = () => {
                           </td>
                           <td className="p-4">
                             {group.contact_name ? (
-                              <div className="flex flex-col text-xs text-gray-400">
+                              <div className="flex flex-col text-xs text-gray-200">
                                 <span className="font-semibold text-white">{group.contact_name}</span>
                                 <span>{group.contact_email}</span>
                                 <span>{group.contact_phone}</span>
                               </div>
                             ) : (
-                              <span className="text-gray-500 text-xs">No contact assigned</span>
+                              <span className="text-gray-300 text-xs">No contact assigned</span>
                             )}
                           </td>
                           <td className="p-4 font-mono font-bold text-red-400">
@@ -1990,16 +1990,16 @@ const AdminGuests = () => {
           {isAddGroupOpen && (
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
               <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-lg relative rounded-xl animate-in zoom-in-95">
-                <button onClick={() => setIsAddGroupOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white"><X size={24}/></button>
+                <button onClick={() => setIsAddGroupOpen(false)} className="absolute top-4 right-4 text-gray-300 hover:text-white"><X size={24}/></button>
                 <h2 className="text-xl font-bold text-white mb-6">Create Corporate / Group Account</h2>
                 <form onSubmit={handleAddGroupAccount} className="space-y-4">
                   <div>
-                    <label className="block text-sm text-gray-400 mb-1">Company / Group Name *</label>
+                    <label className="block text-sm text-gray-200 mb-1">Company / Group Name *</label>
                     <input required type="text" value={newGroupForm.name} onChange={e => setNewGroupForm({...newGroupForm, name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" placeholder="e.g. Chevron Nigeria Ltd" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Group Type</label>
+                      <label className="block text-sm text-gray-200 mb-1">Group Type</label>
                       <select value={newGroupForm.group_type} onChange={e => setNewGroupForm({...newGroupForm, group_type: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500">
                         <option value="Company">Company</option>
                         <option value="Government Agency">Government Agency</option>
@@ -2009,7 +2009,7 @@ const AdminGuests = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-400 mb-1">Credit Limit (₦) *</label>
+                      <label className="block text-sm text-gray-200 mb-1">Credit Limit (₦) *</label>
                       <input required type="number" value={newGroupForm.credit_limit} onChange={e => setNewGroupForm({...newGroupForm, credit_limit: parseFloat(e.target.value) || 0})} className="w-full bg-dark-900 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500" />
                     </div>
                   </div>
@@ -2017,16 +2017,16 @@ const AdminGuests = () => {
                     <p className="text-xs font-bold text-white uppercase tracking-wider mb-3">Primary Contact Representative</p>
                     <div className="space-y-3">
                       <div>
-                        <label className="block text-xs text-gray-500 mb-1">Full Name</label>
+                        <label className="block text-xs text-gray-300 mb-1">Full Name</label>
                         <input type="text" value={newGroupForm.contact_name} onChange={e => setNewGroupForm({...newGroupForm, contact_name: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="e.g. Grace Udemba" />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs text-gray-500 mb-1">Email Address</label>
+                          <label className="block text-xs text-gray-300 mb-1">Email Address</label>
                           <input type="email" value={newGroupForm.contact_email} onChange={e => setNewGroupForm({...newGroupForm, contact_email: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="grace@company.com" />
                         </div>
                         <div>
-                          <label className="block text-xs text-gray-500 mb-1">Phone Number</label>
+                          <label className="block text-xs text-gray-300 mb-1">Phone Number</label>
                           <input type="text" value={newGroupForm.contact_phone} onChange={e => setNewGroupForm({...newGroupForm, contact_phone: e.target.value})} className="w-full bg-dark-900 border border-dark-700 p-2 rounded text-white outline-none focus:border-brand-500 text-sm" placeholder="+234..." />
                         </div>
                       </div>
@@ -2042,13 +2042,13 @@ const AdminGuests = () => {
           {activePaymentGroup && (
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
               <div className="bg-dark-800 border border-dark-700 p-6 w-full max-w-md shadow-2xl relative rounded-xl animate-in zoom-in-95">
-                <button onClick={() => !isProcessingGroupPayment && setActivePaymentGroup(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
+                <button onClick={() => !isProcessingGroupPayment && setActivePaymentGroup(null)} className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"><X size={24} /></button>
                 <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2"><Wallet className="text-brand-500"/> Record Corporate Payment</h2>
-                <p className="text-sm text-gray-400 mb-6">{activePaymentGroup.name}</p>
+                <p className="text-sm text-gray-200 mb-6">{activePaymentGroup.name}</p>
                 
                 <form onSubmit={handleRecordGroupPayment} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Payment Method</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Payment Method</label>
                     <select disabled={isProcessingGroupPayment} value={groupPaymentMethod} onChange={e => setGroupPaymentMethod(e.target.value)} className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-brand-500 transition-colors">
                       <option value="bank_transfer">Bank Transfer (Manual)</option>
                       <option value="pos">POS Terminal (Manual)</option>
@@ -2057,7 +2057,7 @@ const AdminGuests = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Payment Amount (₦)</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Payment Amount (₦)</label>
                     <input 
                       disabled={isProcessingGroupPayment}
                       required 
@@ -2068,14 +2068,14 @@ const AdminGuests = () => {
                       onChange={e => setGroupPaymentAmount(e.target.value)} 
                       className="w-full bg-dark-900 border border-dark-700 rounded p-3 text-white outline-none focus:border-brand-500 transition-colors" 
                     />
-                    <p className="text-xs text-gray-500 mt-1 flex justify-between">
+                    <p className="text-xs text-gray-300 mt-1 flex justify-between">
                       <span>Outstanding Debt: ₦{Number(activePaymentGroup.outstanding_balance || 0).toLocaleString()}</span>
                       <span className="text-brand-500 cursor-pointer hover:underline" onClick={() => setGroupPaymentAmount(activePaymentGroup.outstanding_balance.toString())}>Pay Full Debt</span>
                     </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Reference Number / Check #</label>
+                    <label className="block text-sm font-medium text-gray-200 mb-1">Reference Number / Check #</label>
                     <input 
                       disabled={isProcessingGroupPayment}
                       type="text" 
@@ -2086,7 +2086,7 @@ const AdminGuests = () => {
                     />
                   </div>
 
-                  <button type="submit" disabled={isProcessingGroupPayment || !groupPaymentAmount} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessingGroupPayment || !groupPaymentAmount ? 'bg-dark-700 text-gray-500 cursor-not-allowed' : 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]'}`}>
+                  <button type="submit" disabled={isProcessingGroupPayment || !groupPaymentAmount} className={`w-full py-3 mt-4 rounded font-bold transition-all flex items-center justify-center gap-2 ${isProcessingGroupPayment || !groupPaymentAmount ? 'bg-dark-700 text-gray-300 cursor-not-allowed' : 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-[0_0_15px_rgba(234,179,8,0.3)]'}`}>
                     {isProcessingGroupPayment ? <><RefreshCcw size={18} className="animate-spin" /> Processing Payment...</> : `Record Direct Credit ₦${Number(groupPaymentAmount).toLocaleString()}`}
                   </button>
                 </form>
@@ -2101,7 +2101,7 @@ const AdminGuests = () => {
               <MessageSquare className="text-brand-500" size={22} />
               <span>Customer Broadcast Dispatch Console</span>
             </h2>
-            <p className="text-xs text-gray-400 mt-1">Send bulk personalized Email (via Resend API) or SMS announcements to your targeted guest segments.</p>
+            <p className="text-xs text-gray-200 mt-1">Send bulk personalized Email (via Resend API) or SMS announcements to your targeted guest segments.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -2137,7 +2137,7 @@ const AdminGuests = () => {
                     className={`flex-1 py-3 px-4 rounded-xl border text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                       broadcastChannel === 'email'
                         ? 'bg-blue-600/20 text-blue-400 border-blue-500/50 shadow-md'
-                        : 'bg-dark-800 text-gray-400 border-dark-700 hover:text-white'
+                        : 'bg-dark-800 text-gray-200 border-dark-700 hover:text-white'
                     }`}
                   >
                     <Mail size={16} /> Email via Resend
@@ -2149,7 +2149,7 @@ const AdminGuests = () => {
                     className={`flex-1 py-3 px-4 rounded-xl border text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                       broadcastChannel === 'sms'
                         ? 'bg-brand-500/10 text-brand-500 border-brand-500/30 shadow-md'
-                        : 'bg-dark-800 text-gray-400 border-dark-700 hover:text-white'
+                        : 'bg-dark-800 text-gray-200 border-dark-700 hover:text-white'
                     }`}
                   >
                     <Phone size={16} /> SMS via Gateway
@@ -2169,7 +2169,7 @@ const AdminGuests = () => {
                       disabled={broadcastSending}
                       value={broadcastSubject}
                       onChange={e => setBroadcastSubject(e.target.value)}
-                      placeholder="e.g. Exclusive Weekend Treat at Jemmyland Hotels"
+                      placeholder="e.g. Exclusive Weekend Treat at Freshland"
                       className="w-full bg-dark-800 border border-dark-700 p-3 rounded-lg text-white text-sm outline-none focus:border-brand-500"
                     />
                   </div>
@@ -2248,7 +2248,7 @@ const AdminGuests = () => {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-gray-400">Sent Rate:</span>
+                    <span className="text-gray-200">Sent Rate:</span>
                     <span className="font-mono font-bold text-white">
                       {broadcastProgress.current} / {broadcastProgress.total} processed
                     </span>
@@ -2264,7 +2264,7 @@ const AdminGuests = () => {
                     />
                   </div>
 
-                  <div className="flex justify-between text-[10px] text-gray-500 font-bold">
+                  <div className="flex justify-between text-[10px] text-gray-300 font-bold">
                     <span>0%</span>
                     <span className="text-brand-450 font-black">
                       {broadcastProgress.total > 0 ? Math.round((broadcastProgress.current / broadcastProgress.total) * 100) : 0}% Complete
@@ -2278,7 +2278,7 @@ const AdminGuests = () => {
               <div className="bg-dark-900 p-5 border border-dark-750 rounded-xl space-y-3 flex flex-col h-[325px]">
                 <h3 className="font-bold text-white text-xs uppercase tracking-wider text-brand-400">Live Delivery Console</h3>
                 
-                <div className="flex-1 bg-dark-950 font-mono text-[10px] p-4 rounded-lg border border-dark-750 overflow-y-auto space-y-1 text-gray-400 leading-relaxed scrollbar-thin scrollbar-thumb-dark-700">
+                <div className="flex-1 bg-dark-950 font-mono text-[10px] p-4 rounded-lg border border-dark-750 overflow-y-auto space-y-1 text-gray-200 leading-relaxed scrollbar-thin scrollbar-thumb-dark-700">
                   {broadcastConsoleLogs.length === 0 ? (
                     <div className="text-center text-gray-600 py-16">
                       Waiting for broadcast trigger...
@@ -2294,7 +2294,7 @@ const AdminGuests = () => {
                               ? 'text-green-400' 
                               : log.includes('completed') || log.includes('finished')
                                 ? 'text-brand-500 font-bold'
-                                : 'text-gray-400'
+                                : 'text-gray-200'
                         }
                       >
                         {log}
@@ -2315,7 +2315,7 @@ const AdminGuests = () => {
                 <Star className="text-yellow-500 fill-yellow-500" size={22} />
                 <span>Loyalty Points Settings & Program Rules</span>
               </h2>
-              <p className="text-xs text-gray-400 mt-1">Configure points accrual multipliers, redemption exchange rates, and guest segment thresholds.</p>
+              <p className="text-xs text-gray-200 mt-1">Configure points accrual multipliers, redemption exchange rates, and guest segment thresholds.</p>
             </div>
           </div>
 
@@ -2329,7 +2329,7 @@ const AdminGuests = () => {
                 </h3>
                 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Points Per Booking</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Points Per Booking</label>
                   <input 
                     type="number"
                     min="0"
@@ -2337,11 +2337,11 @@ const AdminGuests = () => {
                     onChange={e => setLoyaltySettings({ ...loyaltySettings, points_per_booking: Number(e.target.value) || 0 })}
                     className="w-full bg-dark-800 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm font-mono"
                   />
-                  <p className="text-[10px] text-gray-500 mt-1">Flat points awarded for making any confirmed booking.</p>
+                  <p className="text-[10px] text-gray-300 mt-1">Flat points awarded for making any confirmed booking.</p>
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Points Per Night Stayed</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Points Per Night Stayed</label>
                   <input 
                     type="number"
                     min="0"
@@ -2349,13 +2349,13 @@ const AdminGuests = () => {
                     onChange={e => setLoyaltySettings({ ...loyaltySettings, points_per_night: Number(e.target.value) || 0 })}
                     className="w-full bg-dark-800 border border-dark-700 p-2.5 rounded text-white outline-none focus:border-brand-500 text-sm font-mono"
                   />
-                  <p className="text-[10px] text-gray-500 mt-1">Points awarded for each actual night of accommodation stayed.</p>
+                  <p className="text-[10px] text-gray-300 mt-1">Points awarded for each actual night of accommodation stayed.</p>
                 </div>
 
                 <div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1 font-semibold">Points Per Spend</label>
+                      <label className="block text-xs text-gray-200 mb-1 font-semibold">Points Per Spend</label>
                       <input 
                         type="number"
                         min="0"
@@ -2365,7 +2365,7 @@ const AdminGuests = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-400 mb-1 font-semibold">Per Spend Unit (₦)</label>
+                      <label className="block text-xs text-gray-200 mb-1 font-semibold">Per Spend Unit (₦)</label>
                       <input 
                         type="number"
                         min="1"
@@ -2375,7 +2375,7 @@ const AdminGuests = () => {
                       />
                     </div>
                   </div>
-                  <p className="text-[10px] text-gray-500 mt-1">Earn X points for every Y Naira spent on booking and folio services combined.</p>
+                  <p className="text-[10px] text-gray-300 mt-1">Earn X points for every Y Naira spent on booking and folio services combined.</p>
                 </div>
               </div>
 
@@ -2386,9 +2386,9 @@ const AdminGuests = () => {
                 </h3>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Exchange Rate (₦ Credit Per Point)</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Exchange Rate (₦ Credit Per Point)</label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-bold font-mono">1 Pt = ₦</span>
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-200 text-xs font-bold font-mono">1 Pt = ₦</span>
                     <input 
                       type="number"
                       min="1"
@@ -2397,11 +2397,11 @@ const AdminGuests = () => {
                       className="w-full bg-dark-800 border border-dark-700 py-2.5 pl-14 pr-3 rounded text-white outline-none focus:border-brand-500 text-sm font-mono"
                     />
                   </div>
-                  <p className="text-[10px] text-gray-500 mt-1">Naira conversion value credited to guest's prepayment wallet per 1 point redeemed.</p>
+                  <p className="text-[10px] text-gray-300 mt-1">Naira conversion value credited to guest's prepayment wallet per 1 point redeemed.</p>
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Minimum Points to Redeem</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Minimum Points to Redeem</label>
                   <input 
                     type="number"
                     min="1"
@@ -2420,7 +2420,7 @@ const AdminGuests = () => {
                 </h3>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">Frequent Stayer Threshold (Points)</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">Frequent Stayer Threshold (Points)</label>
                   <input 
                     type="number"
                     min="1"
@@ -2432,7 +2432,7 @@ const AdminGuests = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1 font-semibold">VIP Tier Threshold (Points)</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-semibold">VIP Tier Threshold (Points)</label>
                   <input 
                     type="number"
                     min="1"
@@ -2463,7 +2463,7 @@ const AdminGuests = () => {
       {selectedGuest && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-dark-800 border border-dark-700 w-full max-w-4xl h-[85vh] flex flex-col relative rounded-xl animate-in zoom-in-95 overflow-hidden">
-            <button onClick={() => setSelectedGuest(null)} className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"><X size={24}/></button>
+            <button onClick={() => setSelectedGuest(null)} className="absolute top-4 right-4 text-gray-200 hover:text-white z-10"><X size={24}/></button>
             
             {/* Modal Header */}
             <div className="bg-dark-900 border-b border-dark-700 p-6 flex items-center gap-6">
@@ -2475,7 +2475,7 @@ const AdminGuests = () => {
                   {selectedGuest.first_name} {selectedGuest.last_name}
                   {selectedGuest.vip_status && <Crown size={20} className="text-brand-500"/>}
                 </h2>
-                <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
+                <div className="flex items-center gap-4 mt-2 text-sm text-gray-200">
                   <span className="flex items-center gap-1"><Mail size={14}/> {selectedGuest.email || 'N/A'}</span>
                   <span className="flex items-center gap-1"><Phone size={14}/> {selectedGuest.phone || 'N/A'}</span>
                   <span className="flex items-center gap-1"><MapPin size={14}/> {selectedGuest.nationality || 'N/A'}</span>
@@ -2486,7 +2486,7 @@ const AdminGuests = () => {
             {/* Tabs */}
             <div className="flex border-b border-dark-700 px-6 pt-4 bg-dark-900">
               {['overview', 'bookings', 'financials', 'communications', 'account'].map(tab => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-3 font-medium capitalize border-b-2 transition-colors ${activeTab === tab ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}>
+                <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-3 font-medium capitalize border-b-2 transition-colors ${activeTab === tab ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}>
                   {tab}
                 </button>
               ))}
@@ -2502,11 +2502,11 @@ const AdminGuests = () => {
                       <h3 className="font-bold text-white mb-4 flex items-center gap-2"><Star size={18} className="text-brand-500"/> CRM Metrics</h3>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <p className="text-xs text-gray-500">Segment</p>
+                          <p className="text-xs text-gray-300">Segment</p>
                           <p className="font-medium text-white capitalize">{selectedGuest.segment}</p>
                         </div>
                         <div>
-                          <p className="text-xs text-gray-500">Record Created</p>
+                          <p className="text-xs text-gray-300">Record Created</p>
                           <p className="font-medium text-white">{new Date(selectedGuest.created_at).toLocaleDateString()}</p>
                         </div>
                       </div>
@@ -2514,9 +2514,9 @@ const AdminGuests = () => {
 
                     {selectedGuest.wallet_balance === null || selectedGuest.wallet_balance === undefined ? (
                       <div className="bg-dark-900 p-5 rounded-lg border border-dark-700 flex flex-col items-center justify-center text-center">
-                        <Wallet size={36} className="text-gray-500 mb-2" />
+                        <Wallet size={36} className="text-gray-300 mb-2" />
                         <h4 className="font-bold text-white text-sm mb-1">Prepayment Wallet Inactive</h4>
-                        <p className="text-xs text-gray-500 mb-4 leading-normal">Activate to allow prepayments, log deposits, and pay using digital wallet.</p>
+                        <p className="text-xs text-gray-300 mb-4 leading-normal">Activate to allow prepayments, log deposits, and pay using digital wallet.</p>
                         <button 
                           onClick={async () => {
                             const initBal = 0;
@@ -2571,7 +2571,7 @@ const AdminGuests = () => {
                           <div className="flex items-center gap-3">
                             <Wallet className="text-brand-500" size={24} />
                             <div>
-                              <p className="text-xs text-gray-500">Wallet Balance</p>
+                              <p className="text-xs text-gray-300">Wallet Balance</p>
                               <p className="font-bold text-white">₦{Number(selectedGuest.wallet_balance || 0).toLocaleString()}</p>
                               {(() => {
                                 const wallet = arAccounts.find(acc => acc.guest_id === selectedGuest.id);
@@ -2741,7 +2741,7 @@ const AdminGuests = () => {
                           <span className="text-gray-600">|</span>
                           <label 
                             htmlFor="id-doc-uploader" 
-                            className="text-gray-400 text-xs hover:text-white cursor-pointer hover:underline"
+                            className="text-gray-200 text-xs hover:text-white cursor-pointer hover:underline"
                           >
                             Replace
                           </label>
@@ -2749,7 +2749,7 @@ const AdminGuests = () => {
                       </div>
                     ) : (
                       <div className="text-center p-8 bg-dark-800 rounded border border-dashed border-dark-600">
-                        <p className="text-sm text-gray-500 mb-3">No ID Document on file</p>
+                        <p className="text-sm text-gray-300 mb-3">No ID Document on file</p>
                         <label 
                           htmlFor="id-doc-uploader" 
                           className="inline-block bg-dark-700 text-white px-4 py-2 rounded text-sm hover:bg-dark-600 cursor-pointer transition-colors font-bold"
@@ -2767,10 +2767,10 @@ const AdminGuests = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {selectedGuest.wallet_balance === null || selectedGuest.wallet_balance === undefined ? (
                       <div className="bg-dark-900/60 p-6 rounded-lg border border-dashed border-dark-600 flex flex-col items-center justify-center text-center">
-                        <Wallet size={48} className="text-gray-500 mb-4" />
-                        <p className="text-gray-400 mb-1 text-xs uppercase tracking-wider font-semibold">AR Prepayment Wallet</p>
+                        <Wallet size={48} className="text-gray-300 mb-4" />
+                        <p className="text-gray-200 mb-1 text-xs uppercase tracking-wider font-semibold">AR Prepayment Wallet</p>
                         <h3 className="text-lg font-bold text-white mb-2">Account Inactive</h3>
-                        <p className="text-xs text-gray-500 mb-6 max-w-xs">Activate this guest's AR account to let them make prepayments, log cash deposits, and pay using their digital wallet.</p>
+                        <p className="text-xs text-gray-300 mb-6 max-w-xs">Activate this guest's AR account to let them make prepayments, log cash deposits, and pay using their digital wallet.</p>
                         <button 
                           onClick={async () => {
                             const initBal = 0;
@@ -2824,7 +2824,7 @@ const AdminGuests = () => {
                         <div className="flex items-center justify-between border-b border-dark-750 pb-3">
                           <div className="flex items-center gap-3">
                             <Wallet className="text-brand-500" size={24} />
-                            <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">AR Prepayment Wallet</span>
+                            <span className="text-xs text-gray-200 font-bold uppercase tracking-wider">AR Prepayment Wallet</span>
                           </div>
                           {(() => {
                             const wallet = arAccounts.find(acc => acc.guest_id === selectedGuest.id);
@@ -2852,7 +2852,7 @@ const AdminGuests = () => {
                         </div>
                         
                         <div className="text-center py-2">
-                          <p className="text-xs text-gray-500">Current Wallet Balance</p>
+                          <p className="text-xs text-gray-300">Current Wallet Balance</p>
                           <h3 className="text-4xl font-extrabold text-white mt-1">₦{Number(selectedGuest.wallet_balance || 0).toLocaleString()}</h3>
                         </div>
                         
@@ -2875,7 +2875,7 @@ const AdminGuests = () => {
                               const status = wallet?.status || 'active';
                               return status === 'active' 
                                 ? 'bg-brand-500 hover:bg-brand-400 text-dark-900 cursor-pointer' 
-                                : 'bg-gray-500/5 text-gray-500 border-gray-700/30 cursor-not-allowed opacity-50 border';
+                                : 'bg-gray-500/5 text-gray-300 border-gray-700/30 cursor-not-allowed opacity-50 border';
                             })()} font-extrabold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 text-center flex items-center justify-center gap-1.5`}
                           >
                             Add Funds
@@ -2896,7 +2896,7 @@ const AdminGuests = () => {
                               const status = wallet?.status || 'active';
                               return status === 'active' 
                                 ? 'bg-dark-700 hover:bg-dark-600 text-white cursor-pointer border border-dark-600' 
-                                : 'bg-gray-500/5 text-gray-500 border-gray-700/30 cursor-not-allowed opacity-50 border';
+                                : 'bg-gray-500/5 text-gray-300 border-gray-700/30 cursor-not-allowed opacity-50 border';
                             })()} py-2.5 px-4 rounded-xl text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5`}
                           >
                             Deduct Funds
@@ -3006,7 +3006,7 @@ const AdminGuests = () => {
                     
                     <div className="bg-dark-900 p-6 rounded-lg border border-dark-700 flex flex-col items-center justify-center text-center">
                       <Star size={48} className="text-yellow-500 mb-4" />
-                      <p className="text-gray-400 mb-1">Loyalty Points</p>
+                      <p className="text-gray-200 mb-1">Loyalty Points</p>
                       <h3 className="text-4xl font-bold text-white mb-6">{selectedGuest.loyalty_points || 0} pts</h3>
                       <button 
                         onClick={() => {
@@ -3032,7 +3032,7 @@ const AdminGuests = () => {
                           <h4 className="text-md font-bold text-white flex items-center gap-2">
                             💼 Prepayment Account Statement
                           </h4>
-                          <p className="text-xs text-gray-500 mt-1">Chronological ledger of cash deposits and checkout room charge deductions.</p>
+                          <p className="text-xs text-gray-300 mt-1">Chronological ledger of cash deposits and checkout room charge deductions.</p>
                         </div>
                         <button 
                           onClick={() => handlePrintStatement(selectedGuest, arStatement)}
@@ -3043,16 +3043,16 @@ const AdminGuests = () => {
                       </div>
 
                       {loadingARStatement ? (
-                        <div className="text-center p-8 text-gray-500 text-xs">Loading ledger transactions...</div>
+                        <div className="text-center p-8 text-gray-300 text-xs">Loading ledger transactions...</div>
                       ) : arStatement.length === 0 ? (
-                        <div className="text-center p-8 text-gray-500 text-xs bg-dark-800 rounded border border-dark-700/50">
+                        <div className="text-center p-8 text-gray-300 text-xs bg-dark-800 rounded border border-dark-700/50">
                           No prepayment transactions logged for this guest yet.
                         </div>
                       ) : (
                         <>
                           <div className="overflow-x-auto rounded border border-dark-700/60">
                             <table className="w-full text-left text-xs border-collapse">
-                              <thead className="bg-dark-950 text-gray-400 border-b border-dark-700">
+                              <thead className="bg-dark-950 text-gray-200 border-b border-dark-700">
                                 <tr>
                                   <th className="p-3 font-semibold uppercase tracking-wider">Date / Time</th>
                                   <th className="p-3 font-semibold uppercase tracking-wider">Description</th>
@@ -3065,14 +3065,14 @@ const AdminGuests = () => {
                               <tbody className="divide-y divide-dark-750">
                                 {paginatedARStatement.map(rec => (
                                   <tr key={rec.id} className="hover:bg-dark-800/40">
-                                    <td className="p-3 text-gray-400 font-mono text-[10px]">
+                                    <td className="p-3 text-gray-200 font-mono text-[10px]">
                                       {new Date(rec.date).toLocaleString()}
                                     </td>
                                     <td className="p-3">
                                       <span className="font-semibold text-white block">{rec.description}</span>
-                                      {rec.notes && <span className="text-[10px] text-gray-500 font-mono block mt-0.5">{rec.notes}</span>}
+                                      {rec.notes && <span className="text-[10px] text-gray-300 font-mono block mt-0.5">{rec.notes}</span>}
                                     </td>
-                                    <td className="p-3 text-gray-400 uppercase font-mono text-[10px]">
+                                    <td className="p-3 text-gray-200 uppercase font-mono text-[10px]">
                                       {rec.method?.replace('_', ' ')}
                                     </td>
                                     <td className="p-3">
@@ -3107,10 +3107,10 @@ const AdminGuests = () => {
               {activeTab === 'bookings' && (
                 <div>
                   {guestBookings.length === 0 ? (
-                    <div className="text-center p-8 text-gray-500 bg-dark-900 rounded border border-dark-700">No booking history for this guest.</div>
+                    <div className="text-center p-8 text-gray-300 bg-dark-900 rounded border border-dark-700">No booking history for this guest.</div>
                   ) : (
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-dark-900 text-gray-400 border-b border-dark-700">
+                      <thead className="bg-dark-900 text-gray-200 border-b border-dark-700">
                         <tr>
                           <th className="p-3 font-medium">Ref</th>
                           <th className="p-3 font-medium">Room</th>
@@ -3124,7 +3124,7 @@ const AdminGuests = () => {
                           <tr key={b.id} className="hover:bg-dark-700/30">
                             <td className="p-3 font-medium text-white">{b.booking_reference}</td>
                             <td className="p-3">{b.rooms?.name}</td>
-                            <td className="p-3 text-gray-400">{b.check_in_date} to {b.check_out_date}</td>
+                            <td className="p-3 text-gray-200">{b.check_in_date} to {b.check_out_date}</td>
                             <td className="p-3 capitalize">{b.status.replace('_', ' ')}</td>
                             <td className="p-3 text-brand-500">₦{Number(b.total_amount_ngn).toLocaleString()}</td>
                           </tr>
@@ -3141,7 +3141,7 @@ const AdminGuests = () => {
                     <h3 className="font-bold text-white mb-4">Send Message</h3>
                     <form onSubmit={sendCommunication} className="space-y-4">
                       <div>
-                        <label className="block text-xs text-gray-500 mb-1">Channel</label>
+                        <label className="block text-xs text-gray-300 mb-1">Channel</label>
                         <select value={commType} onChange={e => setCommType(e.target.value)} className="w-full bg-dark-800 border border-dark-700 p-2 text-white outline-none focus:border-brand-500 rounded">
                           <option value="email">Email</option>
                           <option value="sms">SMS</option>
@@ -3149,14 +3149,14 @@ const AdminGuests = () => {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs text-gray-500 mb-1">Message Content</label>
+                        <label className="block text-xs text-gray-300 mb-1">Message Content</label>
                         <textarea required value={commMessage} onChange={e => setCommMessage(e.target.value)} rows="5" className="w-full bg-dark-800 border border-dark-700 p-2 text-white outline-none focus:border-brand-500 rounded resize-none" placeholder="Type message..."></textarea>
                       </div>
                       <button type="submit" className="w-full btn-primary py-2 flex justify-center items-center gap-2"><Send size={16}/> Send via {commType}</button>
                     </form>
                     
                     <div className="mt-6 border-t border-dark-700 pt-4">
-                      <p className="text-xs text-gray-500 mb-2">Automated Triggers (Mock)</p>
+                      <p className="text-xs text-gray-300 mb-2">Automated Triggers (Mock)</p>
                       <div className="flex flex-wrap gap-2">
                         <button onClick={() => {setCommType('email'); setCommMessage('Friendly reminder: Your upcoming stay is confirmed.');}} className="bg-dark-700 text-xs px-2 py-1 rounded text-gray-300 hover:text-white hover:bg-brand-500">Booking Reminder</button>
                         <button onClick={() => {setCommType('whatsapp'); setCommMessage('Please complete your pending payment of...');}} className="bg-dark-700 text-xs px-2 py-1 rounded text-gray-300 hover:text-white hover:bg-brand-500">Payment Reminder</button>
@@ -3169,7 +3169,7 @@ const AdminGuests = () => {
                     <h3 className="font-bold text-white mb-4">Communication Log</h3>
                     <div className="space-y-4">
                       {commsLogs.length === 0 ? (
-                        <p className="text-gray-500 text-sm">No communications logged yet.</p>
+                        <p className="text-gray-300 text-sm">No communications logged yet.</p>
                       ) : (
                         commsLogs.map(log => (
                           <div key={log.id} className="bg-dark-800 p-4 rounded border border-dark-700 flex gap-4">
@@ -3181,7 +3181,7 @@ const AdminGuests = () => {
                             <div className="flex-1">
                               <div className="flex justify-between items-start mb-1">
                                 <span className="text-sm font-bold text-white uppercase">{log.type} - {log.category}</span>
-                                <span className="text-xs text-gray-500">{new Date(log.sent_at).toLocaleString()}</span>
+                                <span className="text-xs text-gray-300">{new Date(log.sent_at).toLocaleString()}</span>
                               </div>
                               <p className="text-sm text-gray-300">{log.content}</p>
                               <span className="text-[10px] uppercase font-bold text-green-500 mt-2 block tracking-wider flex items-center gap-1"><CheckCircle size={10}/> {log.status}</span>
@@ -3197,13 +3197,13 @@ const AdminGuests = () => {
               {activeTab === 'account' && (
                 <div className="bg-dark-900 border border-dark-700 p-6 rounded-lg space-y-6">
                   {profileLoading ? (
-                    <div className="text-gray-400 py-10 text-center">Loading account details...</div>
+                    <div className="text-gray-200 py-10 text-center">Loading account details...</div>
                   ) : guestProfile ? (
                     <form onSubmit={handleUpdateGuestCredentials} className="space-y-6">
                       <div className="flex justify-between items-center border-b border-dark-700 pb-4">
                         <div>
                           <h3 className="font-bold text-white text-lg">🔑 Portal Access Account</h3>
-                          <p className="text-xs text-gray-400 mt-1">This guest has an active login account in the system.</p>
+                          <p className="text-xs text-gray-200 mt-1">This guest has an active login account in the system.</p>
                         </div>
                         <span className="bg-brand-500/10 text-brand-500 border border-brand-500/20 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
                           Guest Role
@@ -3212,7 +3212,7 @@ const AdminGuests = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Username / Login Email *</label>
+                          <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Username / Login Email *</label>
                           <input 
                             type="email" 
                             required
@@ -3222,7 +3222,7 @@ const AdminGuests = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Reset Password (Leave blank to keep current)</label>
+                          <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Reset Password (Leave blank to keep current)</label>
                           <div className="relative">
                             <input 
                               type={showResetPassword ? 'text' : 'password'} 
@@ -3235,7 +3235,7 @@ const AdminGuests = () => {
                             <button
                               type="button"
                               onClick={() => setShowResetPassword(!showResetPassword)}
-                              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
                             >
                               {showResetPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                             </button>
@@ -3246,10 +3246,10 @@ const AdminGuests = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-dark-950 p-4 rounded border border-dark-700">
                         <div>
                           <p className="text-sm font-semibold text-white">Guest Account ID</p>
-                          <p className="text-xs text-gray-500 font-mono mt-1">{guestProfile.id}</p>
+                          <p className="text-xs text-gray-300 font-mono mt-1">{guestProfile.id}</p>
                         </div>
                         <div>
-                          <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Portal Access Status</label>
+                          <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2">Portal Access Status</label>
                           <div className="flex items-center gap-3">
                             <input 
                               type="checkbox" 
@@ -3282,17 +3282,17 @@ const AdminGuests = () => {
 
                       <div className="bg-dark-900 border border-dark-700 rounded-lg p-6 space-y-4">
                         <h4 className="font-bold text-white text-base">Provision New Guest Login</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-gray-200 leading-relaxed">
                           Enter a temporary password to create a portal account for this guest. Sharing these credentials with the guest directly allows them to log in instantly:
                         </p>
                         
                         <div className="space-y-3 font-mono text-sm">
                           <div className="flex justify-between border-b border-dark-700/50 pb-2">
-                            <span className="text-gray-500">Email (Username):</span>
+                            <span className="text-gray-300">Email (Username):</span>
                             <span className="text-white font-bold">{selectedGuest.email || 'N/A'}</span>
                           </div>
                           <div>
-                            <label className="block text-xs text-gray-400 font-bold uppercase tracking-wider mb-2 font-sans">Temporary Password *</label>
+                            <label className="block text-xs text-gray-200 font-bold uppercase tracking-wider mb-2 font-sans">Temporary Password *</label>
                             <div className="relative">
                               <input 
                                 type={showProvisionPassword ? 'text' : 'password'} 
@@ -3306,7 +3306,7 @@ const AdminGuests = () => {
                               <button
                                 type="button"
                                 onClick={() => setShowProvisionPassword(!showProvisionPassword)}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
                               >
                                 {showProvisionPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                               </button>
@@ -3330,7 +3330,7 @@ const AdminGuests = () => {
                   <div className="mt-8 bg-red-500/5 border border-red-500/20 p-5 rounded-lg space-y-4">
                     <div>
                       <h4 className="font-bold text-red-400 text-sm flex items-center gap-2">⚠️ Danger Zone</h4>
-                      <p className="text-xs text-gray-400 mt-1">Permanently delete this guest's CRM profile, all their booking histories, prepayment wallets, and their online portal account. This action is irreversible.</p>
+                      <p className="text-xs text-gray-200 mt-1">Permanently delete this guest's CRM profile, all their booking histories, prepayment wallets, and their online portal account. This action is irreversible.</p>
                     </div>
                     
                     <button
@@ -3401,13 +3401,13 @@ const AdminGuests = () => {
               <Wallet className="text-brand-500" />
               <span>Add Prepayment Funds</span>
             </h2>
-            <p className="text-xs text-gray-400 mb-6 uppercase tracking-wider font-bold">
+            <p className="text-xs text-gray-200 mb-6 uppercase tracking-wider font-bold">
               Guest: {`${selectedGuest.first_name || ''} ${selectedGuest.last_name || ''}`.trim()}
             </p>
             
             <form onSubmit={handleAddFunds} className="space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Payment Amount (₦) *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Payment Amount (₦) *</label>
                 <input 
                   required
                   type="number" 
@@ -3420,7 +3420,7 @@ const AdminGuests = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Payment Method *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Payment Method *</label>
                 <select 
                   required
                   value={addFundsMethod}
@@ -3434,7 +3434,7 @@ const AdminGuests = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Reference Number (Optional)</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Reference Number (Optional)</label>
                 <input 
                   type="text" 
                   value={addFundsRef}
@@ -3480,18 +3480,18 @@ const AdminGuests = () => {
             
             <div className="bg-dark-900 p-4 rounded-lg border border-dark-700 mb-4 flex justify-between items-center">
               <div>
-                <p className="text-xs text-gray-500">Available Points</p>
+                <p className="text-xs text-gray-300">Available Points</p>
                 <p className="text-lg font-bold text-white">{selectedGuest.loyalty_points || 0} pts</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-gray-500">Conversion Rate</p>
+                <p className="text-xs text-gray-300">Conversion Rate</p>
                 <p className="text-sm font-semibold text-brand-500 font-mono">1 Pt = ₦{loyaltySettings.redemption_rate.toLocaleString()}</p>
               </div>
             </div>
 
             <form onSubmit={handleRedeemPoints} className="space-y-4">
               <div>
-                <label className="block text-xs text-gray-400 mb-1.5 font-medium">Points to Redeem *</label>
+                <label className="block text-xs text-gray-200 mb-1.5 font-medium">Points to Redeem *</label>
                 <input 
                   required
                   type="number" 
@@ -3506,7 +3506,7 @@ const AdminGuests = () => {
 
               {Number(redeemPointsAmount) > 0 && (
                 <div className="bg-dark-900/50 p-4 rounded-lg border border-dark-700/50 flex justify-between items-center">
-                  <span className="text-xs text-gray-400">Resulting Prepayment Credit:</span>
+                  <span className="text-xs text-gray-200">Resulting Prepayment Credit:</span>
                   <span className="text-base font-extrabold text-green-400 font-mono">₦{(Number(redeemPointsAmount) * loyaltySettings.redemption_rate).toLocaleString()}</span>
                 </div>
               )}

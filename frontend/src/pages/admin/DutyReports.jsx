@@ -127,7 +127,7 @@ const DutyReports = () => {
   };
 
   if (!hasAccess('Duty Logs')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to view Duty Manager Logs.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to view Duty Manager Logs.</div>;
   }
 
   return (
@@ -141,7 +141,7 @@ const DutyReports = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Duty Manager Reports</h1>
-            <p className="text-gray-400 mt-1">Record shift handovers, daily attendance summaries, incident tracking, and NIGHT audits.</p>
+            <p className="text-gray-200 mt-1">Record shift handovers, daily attendance summaries, incident tracking, and NIGHT audits.</p>
           </div>
         </div>
         <div className="mt-4 md:mt-0 flex gap-3">
@@ -162,14 +162,14 @@ const DutyReports = () => {
 
       {/* Main Body */}
       {loading ? (
-        <div className="text-center py-20 text-gray-500 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl">
+        <div className="text-center py-20 text-gray-300 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl">
           <div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
           <p>Syncing manager shift logs...</p>
         </div>
       ) : (
         <div className="bg-dark-800 border border-dark-700 rounded-xl overflow-hidden shadow-lg">
           <div className="p-5 border-b border-dark-700 bg-dark-900/50 flex justify-between items-center">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest">Chronological Shift logs</h2>
+            <h2 className="text-sm font-bold text-gray-200 uppercase tracking-widest">Chronological Shift logs</h2>
             <span className="bg-dark-900 border border-dark-700 px-3 py-1 rounded text-xs font-mono font-bold text-brand-400">
               Total logs: {reports.length}
             </span>
@@ -178,7 +178,7 @@ const DutyReports = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm border-collapse">
               <thead>
-                <tr className="bg-dark-900 border-b border-dark-700 text-gray-400 font-bold uppercase text-[10px] tracking-wider">
+                <tr className="bg-dark-900 border-b border-dark-700 text-gray-200 font-bold uppercase text-[10px] tracking-wider">
                   <th className="p-4">Log Date</th>
                   <th className="p-4">Shift Type</th>
                   <th className="p-4">Logged By</th>
@@ -190,7 +190,7 @@ const DutyReports = () => {
               <tbody className="divide-y divide-dark-700/60">
                 {reports.length === 0 ? (
                   <tr>
-                    <td colSpan="6" className="p-12 text-center text-gray-500 italic">No shift duty reports logged yet. Click "New Shift Log" to register today's handover.</td>
+                    <td colSpan="6" className="p-12 text-center text-gray-300 italic">No shift duty reports logged yet. Click "New Shift Log" to register today's handover.</td>
                   </tr>
                 ) : (
                   reports.map(report => {
@@ -216,7 +216,7 @@ const DutyReports = () => {
                         </td>
                         <td className="p-4 font-semibold text-white flex-col">
                           <p>{managerName}</p>
-                          <span className="text-[10px] text-gray-500 block font-mono mt-0.5">{report.profiles?.email || ''}</span>
+                          <span className="text-[10px] text-gray-300 block font-mono mt-0.5">{report.profiles?.email || ''}</span>
                         </td>
                         <td className="p-4">
                           <div className="flex items-center gap-2">
@@ -226,7 +226,7 @@ const DutyReports = () => {
                                 style={{ width: `${listTotal > 0 ? (listChecked / listTotal) * 100 : 0}%` }}
                               />
                             </div>
-                            <span className="text-xs font-mono text-gray-400 font-bold">{listChecked}/{listTotal} items</span>
+                            <span className="text-xs font-mono text-gray-200 font-bold">{listChecked}/{listTotal} items</span>
                           </div>
                         </td>
                         <td className="p-4">
@@ -268,7 +268,7 @@ const DutyReports = () => {
               </h2>
               <button 
                 onClick={() => setShowAddForm(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -279,7 +279,7 @@ const DutyReports = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Shift Type */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Active Duty Shift *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Active Duty Shift *</label>
                   <select 
                     value={formData.shift_type}
                     onChange={e => setFormData({ ...formData, shift_type: e.target.value })}
@@ -291,8 +291,8 @@ const DutyReports = () => {
                 </div>
                 {/* Date */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Logging Date</label>
-                  <div className="bg-dark-900/60 border border-dark-700 text-gray-400 px-4 py-2.5 rounded-lg text-sm font-semibold select-none flex items-center gap-2">
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Logging Date</label>
+                  <div className="bg-dark-900/60 border border-dark-700 text-gray-200 px-4 py-2.5 rounded-lg text-sm font-semibold select-none flex items-center gap-2">
                     <Calendar size={16} /> {format(new Date(), 'yyyy-MM-dd')}
                   </div>
                 </div>
@@ -361,7 +361,7 @@ const DutyReports = () => {
 
               {/* Attendance Notes */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-1">Staff Shift Attendance Updates</label>
+                <label className="block text-xs font-semibold text-gray-200 mb-1">Staff Shift Attendance Updates</label>
                 <textarea 
                   value={formData.attendance_notes}
                   onChange={e => setFormData({ ...formData, attendance_notes: e.target.value })}
@@ -372,7 +372,7 @@ const DutyReports = () => {
 
               {/* Incident Notes */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-1 text-red-400 flex items-center gap-1">
+                <label className="block text-xs font-semibold text-gray-200 mb-1 text-red-400 flex items-center gap-1">
                   <AlertTriangle size={14} /> Incidents & Utility Discrepancies Log (Leave blank if calm)
                 </label>
                 <textarea 
@@ -385,7 +385,7 @@ const DutyReports = () => {
 
               {/* General Handover Notes */}
               <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-1">General Shift Handover Notes</label>
+                <label className="block text-xs font-semibold text-gray-200 mb-1">General Shift Handover Notes</label>
                 <textarea 
                   value={formData.handover_notes}
                   onChange={e => setFormData({ ...formData, handover_notes: e.target.value })}
@@ -398,7 +398,7 @@ const DutyReports = () => {
                 <button 
                   type="button"
                   onClick={() => setShowAddForm(false)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
@@ -425,7 +425,7 @@ const DutyReports = () => {
               </h2>
               <button 
                 onClick={() => setSelectedReport(null)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -434,11 +434,11 @@ const DutyReports = () => {
             <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto custom-scrollbar text-sm">
               <div className="grid grid-cols-2 gap-4 bg-dark-900/60 p-4 rounded-xl border border-dark-700 text-xs">
                 <div>
-                  <span className="text-gray-500 font-bold uppercase block">SHIFT TYPE:</span>
+                  <span className="text-gray-300 font-bold uppercase block">SHIFT TYPE:</span>
                   <span className="text-white font-black text-sm uppercase">{selectedReport.shift_type}</span>
                 </div>
                 <div>
-                  <span className="text-gray-500 font-bold uppercase block">LOGGED BY:</span>
+                  <span className="text-gray-300 font-bold uppercase block">LOGGED BY:</span>
                   <span className="text-white font-bold">{selectedReport.profiles ? `${selectedReport.profiles.first_name} ${selectedReport.profiles.last_name}` : 'Unknown Manager'}</span>
                 </div>
               </div>
@@ -458,7 +458,7 @@ const DutyReports = () => {
 
               {/* Attendance text */}
               <div className="space-y-1">
-                <h3 className="text-xs font-bold text-gray-500 uppercase">Staff Shifts Attendance</h3>
+                <h3 className="text-xs font-bold text-gray-300 uppercase">Staff Shifts Attendance</h3>
                 <div className="bg-dark-900 p-3 rounded text-gray-300 text-xs min-h-[50px] leading-relaxed whitespace-pre-wrap">
                   {selectedReport.attendance_notes || 'No attendance remarks recorded.'}
                 </div>
@@ -472,7 +472,7 @@ const DutyReports = () => {
                 <div className={`p-3 rounded text-xs min-h-[50px] leading-relaxed whitespace-pre-wrap ${
                   selectedReport.incidents_summary?.trim() 
                     ? 'bg-red-500/5 border border-red-500/20 text-red-300' 
-                    : 'bg-dark-900 text-gray-400 italic'
+                    : 'bg-dark-900 text-gray-200 italic'
                 }`}>
                   {selectedReport.incidents_summary || '✓ All operations calm. Zero utility issues logged.'}
                 </div>
@@ -480,7 +480,7 @@ const DutyReports = () => {
 
               {/* General handovers */}
               <div className="space-y-1">
-                <h3 className="text-xs font-bold text-gray-500 uppercase">General Handover Notes</h3>
+                <h3 className="text-xs font-bold text-gray-300 uppercase">General Handover Notes</h3>
                 <div className="bg-dark-900 p-3 rounded text-gray-300 text-xs min-h-[60px] leading-relaxed whitespace-pre-wrap">
                   {selectedReport.handover_notes || 'No handover details logged.'}
                 </div>

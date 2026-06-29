@@ -219,11 +219,11 @@ const Reminders = () => {
     if (status === 'pending') return 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20';
     if (status === 'approved') return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
     if (status === 'paid') return 'bg-green-500/10 text-green-400 border-green-500/20';
-    return 'bg-gray-500/10 text-gray-400 border-gray-500/20';
+    return 'bg-gray-500/10 text-gray-200 border-gray-500/20';
   };
 
   if (!hasAccess('Reminders')) {
-    return <div className="p-8 text-center text-gray-500">You do not have permission to view Reminders & Schedules.</div>;
+    return <div className="p-8 text-center text-gray-300">You do not have permission to view Reminders & Schedules.</div>;
   }
 
   return (
@@ -237,7 +237,7 @@ const Reminders = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Schedules & Reminders</h1>
-            <p className="text-gray-400 mt-1">Manage recurrences for Fibre Internet subscriptions, DSTV cable, property lease covenants, and tax audits.</p>
+            <p className="text-gray-200 mt-1">Manage recurrences for Fibre Internet subscriptions, DSTV cable, property lease covenants, and tax audits.</p>
           </div>
         </div>
         <div className="mt-4 md:mt-0 flex gap-3">
@@ -293,7 +293,7 @@ const Reminders = () => {
               className={`text-xs font-bold px-4 py-2 rounded-lg border transition-all uppercase tracking-wider whitespace-nowrap ${
                 filterCategory === cat 
                   ? 'bg-orange-500/15 border-orange-500/30 text-orange-400 font-extrabold' 
-                  : 'bg-dark-900 border-dark-700 text-gray-400 hover:text-white'
+                  : 'bg-dark-900 border-dark-700 text-gray-200 hover:text-white'
               }`}
             >
               {cat}
@@ -309,7 +309,7 @@ const Reminders = () => {
             className={`py-1.5 px-3 rounded-md transition-all flex items-center justify-center gap-1.5 text-[10px] font-black uppercase tracking-wider ${
               viewMode === 'grid'
                 ? 'bg-orange-500 text-dark-950 shadow-md font-black'
-                : 'text-gray-400 hover:text-white'
+                : 'text-gray-200 hover:text-white'
             }`}
             title="Grid Layout"
           >
@@ -321,7 +321,7 @@ const Reminders = () => {
             className={`py-1.5 px-3 rounded-md transition-all flex items-center justify-center gap-1.5 text-[10px] font-black uppercase tracking-wider ${
               viewMode === 'list'
                 ? 'bg-orange-500 text-dark-950 shadow-md font-black'
-                : 'text-gray-400 hover:text-white'
+                : 'text-gray-200 hover:text-white'
             }`}
             title="List Layout"
           >
@@ -346,14 +346,14 @@ const Reminders = () => {
               className={`text-xs font-bold px-4 py-2 rounded-lg transition-all flex items-center gap-2 ${
                 filterStatus === tab.id
                   ? 'bg-orange-500 text-dark-950 shadow-md font-black'
-                  : 'text-gray-400 hover:text-white hover:bg-dark-800/50'
+                  : 'text-gray-200 hover:text-white hover:bg-dark-800/50'
               }`}
             >
               <span>{tab.label}</span>
               <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-black ${
                 filterStatus === tab.id
                   ? 'bg-dark-950/20 text-dark-950'
-                  : 'bg-dark-900 text-gray-400'
+                  : 'bg-dark-900 text-gray-200'
               }`}>
                 {tab.count}
               </span>
@@ -364,14 +364,14 @@ const Reminders = () => {
 
       {/* Main Reminders list */}
       {loading ? (
-        <div className="text-center py-20 text-gray-500 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl shadow-lg">
+        <div className="text-center py-20 text-gray-300 flex flex-col items-center justify-center gap-3 bg-dark-800 border border-dark-700 rounded-xl shadow-lg">
           <div className="w-10 h-10 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
           <p>Syncing utility calendars...</p>
         </div>
       ) : (
         <>
           {filteredReminders.length === 0 ? (
-            <div className="text-center py-16 text-gray-500 italic bg-dark-800 border border-dark-700 rounded-xl shadow-lg">
+            <div className="text-center py-16 text-gray-300 italic bg-dark-800 border border-dark-700 rounded-xl shadow-lg">
               No reminders registered in this category. Click "Add Schedule" to configure.
             </div>
           ) : viewMode === 'grid' ? (
@@ -389,7 +389,7 @@ const Reminders = () => {
                 >
                   <div className="space-y-2">
                     <div className="flex justify-between items-start">
-                      <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-black text-gray-200 uppercase tracking-widest bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
                         {rem.category}
                       </span>
                       <span className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded border ${getStatusBadge(rem.status)}`}>
@@ -398,19 +398,19 @@ const Reminders = () => {
                     </div>
 
                     <h3 className="font-bold text-white text-base select-text">{rem.title}</h3>
-                    {rem.description && <p className="text-xs text-gray-400 leading-relaxed select-text min-h-[40px]">{rem.description}</p>}
+                    {rem.description && <p className="text-xs text-gray-200 leading-relaxed select-text min-h-[40px]">{rem.description}</p>}
                   </div>
 
                   <div className="bg-dark-900/60 p-3 rounded-lg border border-dark-700/80 space-y-2 text-xs">
-                    <div className="flex justify-between text-gray-500 font-bold uppercase text-[10px] tracking-wide">
+                    <div className="flex justify-between text-gray-300 font-bold uppercase text-[10px] tracking-wide">
                       <span>Due Date:</span>
                       <span className="text-white font-mono flex items-center gap-1"><Clock size={12} /> {rem.due_date}</span>
                     </div>
-                    <div className="flex justify-between text-gray-500 font-bold uppercase text-[10px] tracking-wide">
+                    <div className="flex justify-between text-gray-300 font-bold uppercase text-[10px] tracking-wide">
                       <span>Amount:</span>
                       <span className="text-emerald-400 font-bold">₦{Number(rem.amount_ngn || 0).toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between text-gray-500 font-bold uppercase text-[10px] tracking-wide">
+                    <div className="flex justify-between text-gray-300 font-bold uppercase text-[10px] tracking-wide">
                       <span>Recurrence:</span>
                       <span className="text-white font-bold capitalize">{rem.recurrence}</span>
                     </div>
@@ -424,7 +424,7 @@ const Reminders = () => {
                         className={`flex-1 font-black text-xs py-2 px-4 rounded-lg flex items-center justify-center gap-1.5 shadow-md transition-all ${
                           isSettleAllowed(rem.due_date)
                             ? 'bg-orange-500 hover:bg-orange-600 text-dark-950'
-                            : 'bg-dark-900 border border-dark-750 text-gray-500 cursor-not-allowed opacity-50'
+                            : 'bg-dark-900 border border-dark-750 text-gray-300 cursor-not-allowed opacity-50'
                         }`}
                         title={isSettleAllowed(rem.due_date) ? 'Settle Pay — Submit to Accounts' : 'Settle locked (Active from 7 days to renewal)'}
                       >
@@ -441,7 +441,7 @@ const Reminders = () => {
                     )}
                     <button 
                       onClick={() => handleDeleteReminder(rem.id)}
-                      className="p-2 bg-dark-900 hover:bg-red-500/25 text-gray-500 hover:text-red-400 rounded-lg border border-dark-750 hover:border-red-500/20 transition-all"
+                      className="p-2 bg-dark-900 hover:bg-red-500/25 text-gray-300 hover:text-red-400 rounded-lg border border-dark-750 hover:border-red-500/20 transition-all"
                       title="Delete reminder"
                     >
                       <Trash2 size={15} />
@@ -466,7 +466,7 @@ const Reminders = () => {
                   {/* Left: Details */}
                   <div className="flex-1 min-w-[200px] space-y-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
+                      <span className="text-[9px] font-black text-gray-200 uppercase tracking-widest bg-dark-900 border border-dark-750 px-2 py-0.5 rounded">
                         {rem.category}
                       </span>
                       <span className={`text-[9px] font-extrabold uppercase px-2 py-0.5 rounded border ${getStatusBadge(rem.status)}`}>
@@ -475,22 +475,22 @@ const Reminders = () => {
                     </div>
                     <h3 className="font-bold text-white text-base select-text">{rem.title}</h3>
                     {rem.description && (
-                      <p className="text-xs text-gray-400 leading-relaxed select-text line-clamp-1">{rem.description}</p>
+                      <p className="text-xs text-gray-200 leading-relaxed select-text line-clamp-1">{rem.description}</p>
                     )}
                   </div>
 
                   {/* Middle: Metadata */}
                   <div className="grid grid-cols-3 gap-6 text-xs min-w-[320px] w-full lg:w-auto">
                     <div>
-                      <span className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Due Date</span>
+                      <span className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-0.5">Due Date</span>
                       <span className="text-white font-mono flex items-center gap-1"><Clock size={12} /> {rem.due_date}</span>
                     </div>
                     <div>
-                      <span className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Amount</span>
+                      <span className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-0.5">Amount</span>
                       <span className="text-emerald-400 font-bold">₦{Number(rem.amount_ngn || 0).toLocaleString()}</span>
                     </div>
                     <div>
-                      <span className="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Recurrence</span>
+                      <span className="block text-[10px] text-gray-300 font-bold uppercase tracking-wider mb-0.5">Recurrence</span>
                       <span className="text-white font-bold capitalize">{rem.recurrence}</span>
                     </div>
                   </div>
@@ -504,7 +504,7 @@ const Reminders = () => {
                         className={`flex-grow lg:flex-grow-0 font-black text-xs py-2 px-4 rounded-lg flex items-center justify-center gap-1.5 shadow-md transition-all whitespace-nowrap ${
                           isSettleAllowed(rem.due_date)
                             ? 'bg-orange-500 hover:bg-orange-600 text-dark-950'
-                            : 'bg-dark-900 border border-dark-750 text-gray-500 cursor-not-allowed opacity-50'
+                            : 'bg-dark-900 border border-dark-750 text-gray-300 cursor-not-allowed opacity-50'
                         }`}
                         title={isSettleAllowed(rem.due_date) ? 'Settle Pay — Submit to Accounts' : 'Settle locked (Active from 7 days to renewal)'}
                       >
@@ -521,7 +521,7 @@ const Reminders = () => {
                     )}
                     <button
                       onClick={() => handleDeleteReminder(rem.id)}
-                      className="p-2 bg-dark-900 hover:bg-red-500/25 text-gray-500 hover:text-red-400 rounded-lg border border-dark-750 hover:border-red-500/20 transition-all"
+                      className="p-2 bg-dark-900 hover:bg-red-500/25 text-gray-300 hover:text-red-400 rounded-lg border border-dark-750 hover:border-red-500/20 transition-all"
                       title="Delete reminder"
                     >
                       <Trash2 size={15} />
@@ -544,7 +544,7 @@ const Reminders = () => {
               </h2>
               <button 
                 onClick={() => setShowAddForm(false)} 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
               >
                 <X size={22} />
               </button>
@@ -555,7 +555,7 @@ const Reminders = () => {
                 
                 {/* Title */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Schedule Title *</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Schedule Title *</label>
                   <input 
                     type="text"
                     required
@@ -568,7 +568,7 @@ const Reminders = () => {
 
                 {/* Description */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Service Description / Account details</label>
+                  <label className="block text-xs font-semibold text-gray-200 mb-1">Service Description / Account details</label>
                   <textarea 
                     value={formData.description}
                     onChange={e => setFormData({ ...formData, description: e.target.value })}
@@ -580,7 +580,7 @@ const Reminders = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {/* Category */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Classification Category</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Classification Category</label>
                     <select
                       value={formData.category}
                       onChange={e => setFormData({ ...formData, category: e.target.value })}
@@ -596,7 +596,7 @@ const Reminders = () => {
 
                   {/* Recurrence */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Recurrence Roll-over</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Recurrence Roll-over</label>
                     <select
                       value={formData.recurrence}
                       onChange={e => setFormData({ ...formData, recurrence: e.target.value })}
@@ -612,9 +612,9 @@ const Reminders = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {/* Due Date */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Payment Due Date *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Payment Due Date *</label>
                     <div className="relative">
-                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={16} />
                       <input 
                         type="date"
                         required
@@ -627,9 +627,9 @@ const Reminders = () => {
 
                   {/* Amount NGN */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">Subscription Price (₦) *</label>
+                    <label className="block text-xs font-semibold text-gray-200 mb-1">Subscription Price (₦) *</label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 font-bold">₦</span>
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 font-bold">₦</span>
                       <input 
                         type="number"
                         placeholder="e.g. 24500"
@@ -641,7 +641,7 @@ const Reminders = () => {
                   </div>
                 </div>
 
-                <div className="bg-orange-500/5 border border-orange-500/10 p-4 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-400 leading-relaxed">
+                <div className="bg-orange-500/5 border border-orange-500/10 p-4 rounded-lg flex items-start gap-2.5 text-[11px] text-gray-200 leading-relaxed">
                   <ShieldCheck className="text-orange-400 w-5 h-5 flex-shrink-0" />
                   <p>💡 When you click <strong>Settle Pay</strong>, the payment is routed to Folios & Billings for accounts confirmation. Upon confirmation, the general ledger is updated and a receipt is generated. Recurring reminders auto-rollover after accounts confirms payment.</p>
                 </div>
@@ -651,7 +651,7 @@ const Reminders = () => {
                 <button 
                   type="button"
                   onClick={() => setShowAddForm(false)}
-                  className="px-4 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs font-bold text-gray-200 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>

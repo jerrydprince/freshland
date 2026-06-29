@@ -86,7 +86,7 @@ const SystemWipeTab = ({ user }) => {
 
       <div className="bg-dark-900 border border-dark-700 p-6 rounded-2xl mb-8">
         <label className="block text-sm font-bold text-gray-300 mb-2">Verification Required</label>
-        <p className="text-xs text-gray-500 mb-4">To execute any wipe command below, you must type <strong className="text-white bg-dark-700 px-1 py-0.5 rounded select-all">CONFIRM WIPE</strong> in the box below.</p>
+        <p className="text-xs text-gray-300 mb-4">To execute any wipe command below, you must type <strong className="text-white bg-dark-700 px-1 py-0.5 rounded select-all">CONFIRM WIPE</strong> in the box below.</p>
         <input 
           type="text" 
           value={confirmText}
@@ -101,10 +101,10 @@ const SystemWipeTab = ({ user }) => {
           <div key={module.id} className={`bg-dark-900 border ${module.color} p-5 rounded-2xl flex flex-col h-full`}>
             <div className="flex-1">
               <h4 className="text-lg font-bold text-white flex items-center gap-2 mb-2">
-                <Database size={18} className="text-gray-400" />
+                <Database size={18} className="text-gray-200" />
                 {module.name}
               </h4>
-              <p className="text-xs text-gray-400 mb-6">{module.desc}</p>
+              <p className="text-xs text-gray-200 mb-6">{module.desc}</p>
             </div>
             <button 
               onClick={() => handleWipe(module)}
@@ -112,7 +112,7 @@ const SystemWipeTab = ({ user }) => {
               className={`w-full py-2.5 rounded-lg flex items-center justify-center gap-2 font-bold text-sm transition-colors ${
                 confirmText === 'CONFIRM WIPE' && wipingModule !== module.id
                   ? 'bg-rose-500/20 text-rose-500 hover:bg-rose-500 hover:text-white border border-rose-500/50' 
-                  : 'bg-dark-800 text-gray-500 border border-dark-700 cursor-not-allowed'
+                  : 'bg-dark-800 text-gray-300 border border-dark-700 cursor-not-allowed'
               }`}
             >
               {wipingModule === module.id ? (

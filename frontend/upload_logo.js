@@ -5,11 +5,11 @@ const s = createClient('https://vdzrazmmkszrpanupgog.supabase.co', 'sb_publishab
 
 async function run() {
     try {
-        const fileBuffer = fs.readFileSync('public/Images/logo.png.png');
+        const fileBuffer = fs.readFileSync('public/Images/logo.svg');
         
         console.log("Uploading...");
-        const { data, error } = await s.storage.from('gallery_images').upload('public/jemmyland_logo.png', fileBuffer, {
-            contentType: 'image/png',
+        const { data, error } = await s.storage.from('gallery_images').upload('public/Freshland_logo.svg', fileBuffer, {
+            contentType: 'image/svg+xml',
             upsert: true
         });
         
@@ -18,21 +18,21 @@ async function run() {
             
             // Try another bucket if gallery_images doesn't exist or is restricted
             console.log("Trying 'avatars' bucket...");
-            const res2 = await s.storage.from('avatars').upload('jemmyland_logo.png', fileBuffer, { contentType: 'image/png', upsert: true });
+            const res2 = await s.storage.from('avatars').upload('Freshland_logo.svg', fileBuffer, { contentType: 'image/svg+xml', upsert: true });
             if (res2.error) {
                 console.log("Trying 'images' bucket...");
-                const res3 = await s.storage.from('images').upload('jemmyland_logo.png', fileBuffer, { contentType: 'image/png', upsert: true });
+                const res3 = await s.storage.from('images').upload('Freshland_logo.svg', fileBuffer, { contentType: 'image/svg+xml', upsert: true });
                 if (res3.error) {
                     console.error("All uploads failed.");
                     return;
                 } else {
-                    updateSettings(s.storage.from('images').getPublicUrl('jemmyland_logo.png').data.publicUrl);
+                    updateSettings(s.storage.from('images').getPublicUrl('Freshland_logo.svg').data.publicUrl);
                 }
             } else {
-                updateSettings(s.storage.from('avatars').getPublicUrl('jemmyland_logo.png').data.publicUrl);
+                updateSettings(s.storage.from('avatars').getPublicUrl('Freshland_logo.svg').data.publicUrl);
             }
         } else {
-            updateSettings(s.storage.from('gallery_images').getPublicUrl('public/jemmyland_logo.png').data.publicUrl);
+            updateSettings(s.storage.from('gallery_images').getPublicUrl('public/Freshland_logo.svg').data.publicUrl);
         }
     } catch(e) {
         console.error("Exception:", e);

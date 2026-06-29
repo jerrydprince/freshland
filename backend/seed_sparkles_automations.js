@@ -8,10 +8,10 @@ const templates = [
   {
     name: 'Welcome Email',
     channel: 'email',
-    subject: 'Your Booking Details - Jemmyland Hotels',
+    subject: 'Your Booking Details - Freshland',
     body: `Dear {{guest_name}},
 
-Thank you for choosing Jemmyland Hotels! We are delighted to confirm your booking.
+Thank you for choosing Freshland! We are delighted to confirm your booking.
 
 Booking Details:
 - Booking Reference: {{booking_ref}}
@@ -26,12 +26,12 @@ If you have any questions or need to make changes to your booking, please don't 
 We look forward to welcoming you!
 
 Warm regards,
-The Jemmyland Hotels Team`
+The Freshland Team`
   },
   {
     name: 'Booking Confirmed Email',
     channel: 'email',
-    subject: 'Booking Confirmed - {{booking_ref}} - Jemmyland Hotels',
+    subject: 'Booking Confirmed - {{booking_ref}} - Freshland',
     body: `Dear {{guest_name}},
 
 Your booking {{booking_ref}} has been successfully confirmed.
@@ -44,12 +44,12 @@ Stay Details:
 We are preparing everything for your arrival. Please let us know if you have any special requests.
 
 Best regards,
-Jemmyland Hotels Desk`
+Freshland Desk`
   },
   {
     name: 'Booking Cancelled Email',
     channel: 'email',
-    subject: 'Booking Cancelled - {{booking_ref}} - Jemmyland Hotels',
+    subject: 'Booking Cancelled - {{booking_ref}} - Freshland',
     body: `Dear {{guest_name}},
 
 This email confirms that your booking {{booking_ref}} has been cancelled.
@@ -62,15 +62,15 @@ Cancellation Details:
 If this cancellation was made in error or you would like to reschedule, please reach out to our team immediately.
 
 Sincerely,
-Jemmyland Hotels Team`
+Freshland Team`
   },
   {
     name: 'Check-in Confirmation Email',
     channel: 'email',
-    subject: 'Welcome to Jemmyland Hotels! Checked-in successfully - {{booking_ref}}',
+    subject: 'Welcome to Freshland! Checked-in successfully - {{booking_ref}}',
     body: `Dear {{guest_name}},
 
-Welcome to Jemmyland Hotels! You have been checked in successfully.
+Welcome to Freshland! You have been checked in successfully.
 
 Your Room: Room {{room_number}} ({{room_details}})
 Check-out Date: {{check_out}} (by 11:00 AM)
@@ -88,10 +88,10 @@ Front Desk Operations`
   {
     name: 'Checkout Summary Email',
     channel: 'email',
-    subject: 'Thank you for staying at Jemmyland Hotels - {{booking_ref}}',
+    subject: 'Thank you for staying at Freshland - {{booking_ref}}',
     body: `Dear {{guest_name}},
 
-Thank you for choosing Jemmyland Hotels. We hope you enjoyed your stay!
+Thank you for choosing Freshland. We hope you enjoyed your stay!
 
 Your booking has been checked out, and your stay ledger is now settled.
 
@@ -105,12 +105,12 @@ Checkout Details:
 A copy of your final receipt is attached or available in your guest account. Safe travels and we hope to host you again soon!
 
 Sincerely,
-The Jemmyland Hotels Team`
+The Freshland Team`
   },
   {
     name: 'Payment Receipt Email',
     channel: 'email',
-    subject: 'Payment Receipt - {{payment_ref}} - Jemmyland Hotels',
+    subject: 'Payment Receipt - {{payment_ref}} - Freshland',
     body: `Dear {{guest_name}},
 
 Thank you for your payment. We have successfully processed the following transaction:
@@ -127,15 +127,15 @@ Current Balance: NGN {{balance_due}}
 Thank you for your business.
 
 Best regards,
-Finance Department, Jemmyland Hotels`
+Finance Department, Freshland`
   },
   {
     name: 'Booking Invoice Email',
     channel: 'email',
-    subject: 'Invoice Issued - {{invoice_number}} - Jemmyland Hotels',
+    subject: 'Invoice Issued - {{invoice_number}} - Freshland',
     body: `Dear {{guest_name}},
 
-Please find below the invoice details for your stay at Jemmyland Hotels:
+Please find below the invoice details for your stay at Freshland:
 
 Invoice Summary:
 - Invoice Number: {{invoice_number}}
@@ -149,16 +149,16 @@ Invoice Summary:
 
 If you have any billing queries, please reply directly to this email.
 
-Thank you for choosing Jemmyland Hotels.
+Thank you for choosing Freshland.
 
 Sincerely,
-Accounts Department, Jemmyland Hotels`
+Accounts Department, Freshland`
   },
   {
     name: 'Check-in Reminder (SMS)',
     channel: 'sms',
     subject: null,
-    body: 'Hi {{guest_name}}, your stay at Jemmyland Hotels begins tomorrow! Check-in is at 2:00 PM. See you soon!'
+    body: 'Hi {{guest_name}}, your stay at Freshland begins tomorrow! Check-in is at 2:00 PM. See you soon!'
   },
   {
     name: 'Checkout Reminder (SMS)',
@@ -170,7 +170,7 @@ Accounts Department, Jemmyland Hotels`
     name: 'Appreciation (SMS)',
     channel: 'sms',
     subject: null,
-    body: 'Dear {{guest_name}}, thank you for staying at Jemmyland Hotels. We appreciate your patronage and hope to host you again soon!'
+    body: 'Dear {{guest_name}}, thank you for staying at Freshland. We appreciate your patronage and hope to host you again soon!'
   }
 ];
 

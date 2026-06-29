@@ -283,15 +283,15 @@ const AdminReports = () => {
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
             <PieChartIcon className="text-brand-500"/> Reporting & Analytics
           </h1>
-          <p className="text-gray-400 mt-1">Track performance, analyze revenue, and generate exports.</p>
+          <p className="text-gray-200 mt-1">Track performance, analyze revenue, and generate exports.</p>
         </div>
         <div className="mt-4 md:mt-0 flex flex-col md:flex-row gap-3">
           <div className="flex items-center gap-2 bg-dark-900 border border-dark-700 p-2 rounded">
-            <span className="text-gray-500 text-sm">From:</span>
+            <span className="text-gray-300 text-sm">From:</span>
             <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="bg-transparent text-white text-sm outline-none" />
           </div>
           <div className="flex items-center gap-2 bg-dark-900 border border-dark-700 p-2 rounded">
-            <span className="text-gray-500 text-sm">To:</span>
+            <span className="text-gray-300 text-sm">To:</span>
             <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="bg-transparent text-white text-sm outline-none" />
           </div>
         </div>
@@ -301,20 +301,20 @@ const AdminReports = () => {
       <div className="flex gap-4 border-b border-dark-700 mb-6 print:hidden">
         <button 
           onClick={() => setActiveTab('dashboard')} 
-          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'dashboard' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'dashboard' ? 'border-brand-500 text-brand-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <TrendingUp size={18} /> Analytics Dashboard
         </button>
         <button 
           onClick={() => setActiveTab('reports')} 
-          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'reports' ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+          className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'reports' ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-200 hover:text-white'}`}
         >
           <FileText size={18} /> Generated Reports
         </button>
         {hasAccess('Monthly Reports') && (
           <button 
             onClick={() => setActiveTab('monthly')} 
-            className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'monthly' ? 'border-amber-500 text-amber-500' : 'border-transparent text-gray-400 hover:text-white'}`}
+            className={`pb-3 px-4 font-medium flex items-center gap-2 border-b-2 transition-colors ${activeTab === 'monthly' ? 'border-amber-500 text-amber-500' : 'border-transparent text-gray-200 hover:text-white'}`}
           >
             <Award size={18} /> Monthly Performance Review
           </button>
@@ -322,7 +322,7 @@ const AdminReports = () => {
       </div>
 
       {loading ? (
-        <div className="py-20 text-center text-gray-500 flex flex-col items-center">
+        <div className="py-20 text-center text-gray-300 flex flex-col items-center">
           <div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin mb-4"></div>
           Aggregating analytical data...
         </div>
@@ -331,22 +331,22 @@ const AdminReports = () => {
           {/* KPI Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-dark-800 p-5 border border-dark-700 rounded-lg shadow-sm border-t-4 border-t-brand-500">
-              <p className="text-gray-400 text-sm mb-1 flex items-center gap-2"><DollarSign size={16}/> Gross Revenue</p>
+              <p className="text-gray-200 text-sm mb-1 flex items-center gap-2"><DollarSign size={16}/> Gross Revenue</p>
               <h3 className="text-3xl font-bold text-white">₦{metrics.totalRevenue.toLocaleString()}</h3>
             </div>
             <div className="bg-dark-800 p-5 border border-dark-700 rounded-lg shadow-sm border-t-4 border-t-blue-500">
-              <p className="text-gray-400 text-sm mb-1 flex items-center gap-2"><Users size={16}/> Occupancy Rate</p>
+              <p className="text-gray-200 text-sm mb-1 flex items-center gap-2"><Users size={16}/> Occupancy Rate</p>
               <h3 className="text-3xl font-bold text-white">{metrics.occupancyRate}%</h3>
               <p className="text-xs text-green-500 mt-1">Avg over 30 days</p>
             </div>
             <div className="bg-dark-800 p-5 border border-dark-700 rounded-lg shadow-sm border-t-4 border-t-green-500">
-              <p className="text-gray-400 text-sm mb-1 flex items-center gap-2"><CalendarIcon size={16}/> Avg Stay Duration</p>
-              <h3 className="text-3xl font-bold text-white">{metrics.avgStayDuration} <span className="text-lg text-gray-400">nights</span></h3>
+              <p className="text-gray-200 text-sm mb-1 flex items-center gap-2"><CalendarIcon size={16}/> Avg Stay Duration</p>
+              <h3 className="text-3xl font-bold text-white">{metrics.avgStayDuration} <span className="text-lg text-gray-200">nights</span></h3>
             </div>
             <div className="bg-dark-800 p-5 border border-dark-700 rounded-lg shadow-sm border-t-4 border-t-purple-500">
-              <p className="text-gray-400 text-sm mb-1 flex items-center gap-2"><TrendingUp size={16}/> RevPAR</p>
+              <p className="text-gray-200 text-sm mb-1 flex items-center gap-2"><TrendingUp size={16}/> RevPAR</p>
               <h3 className="text-3xl font-bold text-white">₦{Number(metrics.revPAR).toLocaleString()}</h3>
-              <p className="text-xs text-gray-500 mt-1">Per available room</p>
+              <p className="text-xs text-gray-300 mt-1">Per available room</p>
             </div>
           </div>
 
@@ -419,7 +419,7 @@ const AdminReports = () => {
                 {sourceData.map((entry, index) => (
                   <div key={entry.name} className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[index % COLORS.length] }}></div>
-                    <span className="text-sm text-gray-400 font-medium">{entry.name} ({entry.value})</span>
+                    <span className="text-sm text-gray-200 font-medium">{entry.name} ({entry.value})</span>
                   </div>
                 ))}
               </div>
@@ -430,7 +430,7 @@ const AdminReports = () => {
                  <TrendingUp size={40} />
                </div>
                <h3 className="text-2xl font-bold text-white mb-2">Performance is Healthy</h3>
-               <p className="text-gray-400 max-w-sm">Revenue metrics indicate a strong upward trend compared to the previous period. Occupancy rates are stabilizing.</p>
+               <p className="text-gray-200 max-w-sm">Revenue metrics indicate a strong upward trend compared to the previous period. Occupancy rates are stabilizing.</p>
                <button onClick={() => setActiveTab('reports')} className="mt-6 text-brand-500 hover:text-brand-400 font-bold flex items-center gap-2">
                  View Detailed Reports <ArrowDownToLine size={16}/>
                </button>
@@ -443,7 +443,7 @@ const AdminReports = () => {
           {/* Controls */}
           <div className="p-5 border-b border-dark-700 bg-dark-900 flex flex-col md:flex-row justify-between items-center gap-4 print:hidden">
             <div className="flex items-center gap-4 w-full md:w-auto">
-              <label className="text-sm font-medium text-gray-400">Report Type:</label>
+              <label className="text-sm font-medium text-gray-200">Report Type:</label>
               <select 
                 value={reportType} 
                 onChange={(e) => setReportType(e.target.value)}
@@ -476,7 +476,7 @@ const AdminReports = () => {
             <div className="p-6 bg-dark-900 border-b border-dark-700 print:bg-white print:border-b-2 print:border-black flex gap-8">
               {Object.entries(reportSummary).map(([key, value]) => (
                 <div key={key}>
-                  <p className="text-gray-500 text-sm font-bold uppercase print:text-gray-600">{key}</p>
+                  <p className="text-gray-300 text-sm font-bold uppercase print:text-gray-600">{key}</p>
                   <p className="text-2xl font-bold text-white print:text-black">{value}</p>
                 </div>
               ))}
@@ -486,10 +486,10 @@ const AdminReports = () => {
           {/* Dynamic Table */}
           <div className="overflow-x-auto p-4">
             {reportData.length === 0 ? (
-              <div className="p-12 text-center text-gray-500">No data available for this report type.</div>
+              <div className="p-12 text-center text-gray-300">No data available for this report type.</div>
             ) : (
               <table className="w-full text-left text-sm">
-                <thead className="bg-dark-900 print:bg-gray-100 border-b border-dark-700 print:border-black text-gray-400 print:text-black">
+                <thead className="bg-dark-900 print:bg-gray-100 border-b border-dark-700 print:border-black text-gray-200 print:text-black">
                   <tr>
                     {Object.keys(reportData[0]).map(header => (
                       <th key={header} className="p-4 font-semibold uppercase">{header}</th>

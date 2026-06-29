@@ -210,7 +210,7 @@ const AdminLayout = () => {
   const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
 
   const isActive = (path) => location.pathname === path;
-  const linkClass = (path) => `flex items-center justify-between space-x-2.5 px-3 py-2.5 rounded-xl transition-all duration-300 ${isActive(path) ? 'bg-gradient-to-r from-brand-900/35 to-brand-850/10 border-l-4 border-brand-500 text-brand-400 font-bold shadow-md' : 'text-gray-400 border-l-4 border-transparent hover:text-white hover:bg-dark-700/35 hover:translate-x-1.5'}`;
+  const linkClass = (path) => `flex items-center justify-between space-x-2.5 px-3 py-2.5 rounded-xl transition-all duration-300 ${isActive(path) ? 'bg-gradient-to-r from-brand-900/35 to-brand-850/10 border-l-4 border-brand-500 text-brand-400 font-bold shadow-md' : 'text-gray-200 border-l-4 border-transparent hover:text-white hover:bg-dark-700/35 hover:translate-x-1.5'}`;
   const Badge = ({ count }) => count > 0 ? <span className="bg-red-500 text-[10px] text-white px-1.5 rounded-full font-black">{count}</span> : null;
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -222,7 +222,7 @@ const AdminLayout = () => {
     return (
       <div className="h-screen bg-dark-900 flex flex-col items-center justify-center text-white">
         <h2 className="text-3xl font-bold mb-4">Access Denied</h2>
-        <p className="text-gray-400 mb-8">You do not have permission to view the admin dashboard.</p>
+        <p className="text-gray-200 mb-8">You do not have permission to view the admin dashboard.</p>
         <Link to="/" className="bg-brand-500 text-white px-6 py-2 rounded">Return Home</Link>
       </div>
     );
@@ -248,7 +248,7 @@ const AdminLayout = () => {
   }
 
   return (
-    <div className="flex h-screen bg-dark-900 overflow-hidden">
+    <div className="flex h-screen bg-dark-900 overflow-hidden admin-pms-layout">
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity" onClick={closeMobileMenu} />
       )}
@@ -257,14 +257,14 @@ const AdminLayout = () => {
         <div className="p-6 flex justify-between items-center border-b border-dark-700/50">
           <Link to="/" className="flex items-center gap-2">
             <>
-              <img src="/Images/logo.png.png" alt="Jemmyland Hotels Logo" className="h-8 object-contain mr-2" />
+              <img src="/Images/logo.svg" alt="Freshland Logo" className="h-8 object-contain mr-2" />
               <div className="flex flex-col justify-center">
-                <span className={`text-lg font-sans font-extrabold leading-none tracking-wide text-white`}>JEMMYLAND</span>
+                <span className={`text-lg font-sans font-extrabold leading-none tracking-wide text-white`}>Freshland</span>
                 <span className={`text-[9px] font-sans leading-tight tracking-[0.25em] mt-0.5 text-brand-400`}>HOTELS</span>
               </div>
             </>
           </Link>
-          <button className="md:hidden text-gray-400 hover:text-white" onClick={closeMobileMenu}>
+          <button className="md:hidden text-gray-200 hover:text-white" onClick={closeMobileMenu}>
             <X size={24} />
           </button>
         </div>
@@ -278,7 +278,7 @@ const AdminLayout = () => {
                 <Activity size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>Overview & Comms</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.overview ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -344,7 +344,7 @@ const AdminLayout = () => {
                 <ConciergeBell size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>Front Office</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.frontOffice ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -394,7 +394,7 @@ const AdminLayout = () => {
                 <Building2 size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>Hotel Operations</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.hotelOperations ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -465,7 +465,7 @@ const AdminLayout = () => {
                 <Store size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>Point of Sale</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.pos ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -489,7 +489,7 @@ const AdminLayout = () => {
                 <Landmark size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span className="truncate">Finance & Audit</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.finance ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -523,7 +523,7 @@ const AdminLayout = () => {
                 <Shield size={16} className="text-brand-500/80 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>System Control</span>
               </div>
-              <div className="text-gray-400 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
+              <div className="text-gray-200 group-hover:text-brand-400 group-hover:translate-x-1 transition-all duration-300 relative z-10">
                 {openMenus.systemControl ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
               </div>
             </button>
@@ -576,7 +576,7 @@ const AdminLayout = () => {
         </nav>
 
         <div className="p-4 border-t border-dark-700/50">
-          <button onClick={logout} className="flex items-center space-x-3 px-4 py-3 w-full text-gray-400 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all duration-300">
+          <button onClick={logout} className="flex items-center space-x-3 px-4 py-3 w-full text-gray-200 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all duration-300">
             <LogOut size={20} />
             <span className="font-medium">Log Out</span>
           </button>
@@ -586,7 +586,7 @@ const AdminLayout = () => {
       <main className="flex-1 overflow-y-auto bg-dark-900 flex flex-col min-w-0">
         <header className="glass-panel sticky top-0 z-30 p-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <button onClick={toggleMobileMenu} className="p-1 -ml-1 md:hidden text-gray-400 hover:text-white rounded-md hover:bg-dark-700 transition-colors">
+            <button onClick={toggleMobileMenu} className="p-1 -ml-1 md:hidden text-gray-200 hover:text-white rounded-md hover:bg-dark-700 transition-colors">
               <Menu size={24} />
             </button>
             <h2 className="text-xl font-medium hidden sm:block">Property Management System</h2>
@@ -598,7 +598,7 @@ const AdminLayout = () => {
           <div className="flex items-center space-x-4">
             <TopbarAttendanceClock />
             {hasAnyAccess('Internal Messaging') && (
-              <Link to="/admin/messages" className="relative p-2 rounded-full text-gray-400 hover:text-white hover:bg-dark-700 transition-all duration-300 active:scale-95 group" title="Operations Chat Terminal">
+              <Link to="/admin/messages" className="relative p-2 rounded-full text-gray-200 hover:text-white hover:bg-dark-700 transition-all duration-300 active:scale-95 group" title="Operations Chat Terminal">
                 <MessageSquare size={20} className="group-hover:rotate-[10deg] transition-transform duration-300" />
                 {counters.internalMessaging > 0 && (
                   <span className="absolute top-1 right-1 flex h-3 w-3">
@@ -608,7 +608,7 @@ const AdminLayout = () => {
                 )}
               </Link>
             )}
-            <button className="relative p-2 rounded-full text-gray-400 hover:text-white hover:bg-dark-700 transition-colors">
+            <button className="relative p-2 rounded-full text-gray-200 hover:text-white hover:bg-dark-700 transition-colors">
               <Bell size={20} />
               {(counters.restaurant + counters.laundry + counters.housekeeping + counters.maintenance + counters.servicePortals) > 0 && (
                 <span className="absolute top-1 right-1 flex h-3 w-3">
@@ -617,12 +617,12 @@ const AdminLayout = () => {
                 </span>
               )}
             </button>
-            <button onClick={toggleTheme} className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-dark-700 transition-colors">
+            <button onClick={toggleTheme} className="p-2 rounded-full text-gray-200 hover:text-white hover:bg-dark-700 transition-colors">
               {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <div className="text-right mr-2 hidden md:block">
               <p className="text-sm font-medium text-white">{user?.name}</p>
-              <p className="text-xs text-gray-400">{user?.email}</p>
+              <p className="text-xs text-gray-200">{user?.email}</p>
             </div>
             <div className="w-10 h-10 bg-gradient-to-tr from-brand-600 to-brand-400 rounded-full flex items-center justify-center text-white shadow-lg font-bold">
               {user?.name.charAt(0)}
@@ -637,7 +637,7 @@ const AdminLayout = () => {
                 <ShieldAlert size={32} />
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Access Denied</h2>
-              <p className="text-gray-400 mb-6 font-medium">
+              <p className="text-gray-200 mb-6 font-medium">
                 Your role does not have permission to view the <strong>{Array.isArray(requiredPermission) ? requiredPermission.join(' / ') : requiredPermission}</strong> module.
               </p>
               <button type="button" onClick={() => { window.location.href = getDefaultAdminRoute(user.role, hasAccess); }} className="bg-brand-500 hover:bg-brand-600 text-dark-950 font-bold px-6 py-3 rounded-xl transition-all">

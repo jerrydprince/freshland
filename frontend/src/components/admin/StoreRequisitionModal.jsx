@@ -186,7 +186,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-400 hover:text-white rounded-full transition-colors z-10"
+          className="absolute right-4 top-4 p-1.5 bg-dark-800 hover:bg-dark-700 text-gray-200 hover:text-white rounded-full transition-colors z-10"
         >
           <X size={18} />
         </button>
@@ -197,7 +197,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
             <Archive className="text-brand-500 animate-pulse" size={24} />
             Consolidated Store Requisition
           </h2>
-          <p className="text-gray-400 text-xs mt-1">
+          <p className="text-gray-200 text-xs mt-1">
             Select one or more warehouse items, quantities, and submit a single consolidated ticket for Manager authorization.
           </p>
         </div>
@@ -205,7 +205,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
         {loading ? (
           <div className="py-24 text-center">
             <Loader2 className="animate-spin text-brand-500 mx-auto mb-3" size={36} />
-            <p className="text-gray-500 text-xs">Syncing available warehouse inventory items...</p>
+            <p className="text-gray-300 text-xs">Syncing available warehouse inventory items...</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden space-y-4 text-xs">
@@ -213,11 +213,11 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
             {/* Requester & Department Settings block */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-dark-900/50 border border-dark-700/50 rounded-2xl p-4 shrink-0">
               <div className="flex flex-col justify-center">
-                <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Requester Account</span>
+                <span className="text-[10px] text-gray-300 uppercase font-bold tracking-wider">Requester Account</span>
                 <span className="text-white font-extrabold text-sm mt-0.5">{currentStaffName}</span>
               </div>
               <div>
-                <label className="block text-[10px] text-gray-500 font-bold mb-1 uppercase tracking-wider">Billing Department</label>
+                <label className="block text-[10px] text-gray-300 font-bold mb-1 uppercase tracking-wider">Billing Department</label>
                 {isAdminOrManager ? (
                   <select
                     value={form.department}
@@ -271,7 +271,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
                         ))}
                       </select>
                       {stock && (
-                        <p className="mt-1 text-[9px] text-gray-500 flex justify-between px-1">
+                        <p className="mt-1 text-[9px] text-gray-300 flex justify-between px-1">
                           <span>Stock: <strong className="text-white">{stock.quantity} Units</strong> | Value: <strong className="text-brand-400">₦{Number(stock.unit_price_ngn).toLocaleString()}</strong></span>
                           {stock.quantity < 10 && <span className="text-red-400 font-bold uppercase animate-pulse">Low Stock</span>}
                         </p>
@@ -296,7 +296,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
                       <button
                         type="button"
                         onClick={() => handleRemoveItemRow(index)}
-                        className="p-3 bg-dark-850 hover:bg-red-500/10 text-gray-500 hover:text-red-400 rounded-xl border border-dark-700 hover:border-red-500/20 transition-all self-end md:self-center"
+                        className="p-3 bg-dark-850 hover:bg-red-500/10 text-gray-300 hover:text-red-400 rounded-xl border border-dark-700 hover:border-red-500/20 transition-all self-end md:self-center"
                         title="Remove row"
                       >
                         <Trash2 size={15} />
@@ -310,7 +310,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
             {/* Date/Time and General Purpose block */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 shrink-0 pt-2 border-t border-dark-700/60">
               <div>
-                <label className="block text-gray-400 font-bold mb-1.5 uppercase">Requisition Purpose / Notes</label>
+                <label className="block text-gray-200 font-bold mb-1.5 uppercase">Requisition Purpose / Notes</label>
                 <textarea
                   rows="2"
                   placeholder="Describe material usage details..."
@@ -322,7 +322,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-gray-400 font-bold mb-1.5 uppercase">Request Date</label>
+                  <label className="block text-gray-200 font-bold mb-1.5 uppercase">Request Date</label>
                   <input
                     type="date"
                     required
@@ -332,7 +332,7 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 font-bold mb-1.5 uppercase">Request Time</label>
+                  <label className="block text-gray-200 font-bold mb-1.5 uppercase">Request Time</label>
                   <input
                     type="time"
                     required
@@ -349,14 +349,14 @@ const StoreRequisitionModal = ({ isOpen, onClose, department = 'housekeeping', o
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 bg-dark-800 hover:bg-dark-700 text-gray-400 hover:text-white font-bold py-3 rounded-xl transition-all"
+                className="flex-1 bg-dark-800 hover:bg-dark-700 text-gray-200 hover:text-white font-bold py-3 rounded-xl transition-all"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 bg-gradient-to-tr from-brand-600 to-brand-400 hover:from-brand-500 hover:to-brand-300 disabled:from-dark-800 disabled:to-dark-800 disabled:text-gray-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5"
+                className="flex-1 bg-gradient-to-tr from-brand-600 to-brand-400 hover:from-brand-500 hover:to-brand-300 disabled:from-dark-800 disabled:to-dark-800 disabled:text-gray-300 text-white font-bold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5"
               >
                 {submitting ? (
                   <Loader2 className="animate-spin" size={16} />

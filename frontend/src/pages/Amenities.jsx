@@ -79,7 +79,7 @@ const Amenities = () => {
     <div className="pt-24 min-h-screen">
       <div className="container mx-auto px-6 py-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Premium Amenities</h1>
-        <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">Experience a new standard of living with our carefully curated facilities designed to cater to your every need.</p>
+        <p className="text-gray-200 text-center mb-16 max-w-2xl mx-auto">Experience a new standard of living with our carefully curated facilities designed to cater to your every need.</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {amenities.map((amenity, idx) => (
@@ -88,7 +88,7 @@ const Amenities = () => {
                 {getIconForTitle(amenity.title)}
               </div>
               <h3 className="text-xl font-semibold mb-4">{amenity.title}</h3>
-              <p className="text-gray-400">{amenity.desc}</p>
+              <p className="text-gray-200">{amenity.desc}</p>
             </div>
           ))}
         </div>

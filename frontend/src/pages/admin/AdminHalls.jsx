@@ -439,7 +439,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
               </head>
               <body>
                 <div class="header">
-                  <h1>Jemmyland Hotels</h1>
+                  <h1>Freshland</h1>
                   <p>Premium Luxury Hotel</p>
                 </div>
                 <p class="title">Installment Payment Receipt</p>
@@ -455,7 +455,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                 </table>
                 <div class="amount">₦${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</div>
                 <div class="footer">
-                  <p>Authorized and confirmed by Jemmyland Hotels Front Office.</p>
+                  <p>Authorized and confirmed by Freshland Front Office.</p>
                 </div>
               </body>
             </html>
@@ -497,7 +497,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
         {loading ? (
           <div className="py-20 text-center flex flex-col items-center justify-center gap-3">
             <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-brand-500"></div>
-            <p className="text-gray-500 text-sm">Fetching records...</p>
+            <p className="text-gray-300 text-sm">Fetching records...</p>
           </div>
         ) : (
           <div className="space-y-6">
@@ -507,11 +507,11 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   <Landmark size={20} className="text-gold-500" />
                   Event Hall Reservations
                 </h3>
-                <p className="text-xs text-gray-400 mt-1">Manage and track bookings and physical rentals of event spaces.</p>
+                <p className="text-xs text-gray-200 mt-1">Manage and track bookings and physical rentals of event spaces.</p>
               </div>
               <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto items-center">
                 <div className="relative w-full md:max-w-xs">
-                  <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
+                  <Search className="absolute left-3 top-2.5 text-gray-300" size={18} />
                   <input 
                     type="text" 
                     placeholder="Search bookings..." 
@@ -535,7 +535,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
 
             <div className="overflow-x-auto rounded-xl border border-dark-700/50">
               <table className="w-full text-left text-sm">
-                <thead className="bg-dark-900 text-gray-400 uppercase tracking-wider text-xs border-b border-dark-700">
+                <thead className="bg-dark-900 text-gray-200 uppercase tracking-wider text-xs border-b border-dark-700">
                   <tr>
                     <th className="p-4">Ref / Guest</th>
                     <th className="p-4">Hall</th>
@@ -549,7 +549,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                 <tbody className="divide-y divide-dark-700">
                   {filteredBookings.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="p-8 text-center text-gray-500">No hall bookings found.</td>
+                      <td colSpan="7" className="p-8 text-center text-gray-300">No hall bookings found.</td>
                     </tr>
                   )}
                   {filteredBookings.map(b => (
@@ -559,24 +559,24 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                           <Receipt size={16} className="text-gold-500" /> {b.booking_reference}
                         </div>
                         <div className="text-sm font-semibold text-gray-300 mt-1">{b.guest_name}</div>
-                        {b.organization_name && <div className="text-xs text-gray-400">{b.organization_name}</div>}
+                        {b.organization_name && <div className="text-xs text-gray-200">{b.organization_name}</div>}
                       </td>
                       <td className="p-4 font-bold text-brand-400">{b.halls?.name || 'N/A'}</td>
                       <td className="p-4">
                         <div className="font-semibold text-white">{format(new Date(b.booking_date), 'MMM dd, yyyy')}</div>
-                        <div className="text-xs text-gray-400 mt-1 capitalize font-medium flex items-center gap-1">
+                        <div className="text-xs text-gray-200 mt-1 capitalize font-medium flex items-center gap-1">
                           <Clock size={12} /> {b.booking_type} {b.booking_type === 'hourly' && `(${format(new Date(b.start_time), 'HH:mm')} - ${format(new Date(b.end_time), 'HH:mm')})`}
                         </div>
                       </td>
                       <td className="p-4">
                         <div className="font-semibold text-white flex items-center gap-1"><Users size={14} /> {b.number_of_participants} pax</div>
-                        <div className="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                        <div className="text-xs text-gray-200 mt-1 flex items-center gap-1">
                           <Coffee size={12} className="text-amber-500" /> ₦{Number(b.total_meals_price_ngn).toLocaleString()} meals
                         </div>
                       </td>
                       <td className="p-4 font-bold">
                         <div className="text-gold-500">₦{Number(b.total_amount_ngn).toLocaleString()}</div>
-                        <div className="text-xs mt-1 text-gray-400">Paid: <span className="text-green-400">₦{Number(b.amount_paid_ngn).toLocaleString()}</span></div>
+                        <div className="text-xs mt-1 text-gray-200">Paid: <span className="text-green-400">₦{Number(b.amount_paid_ngn).toLocaleString()}</span></div>
                         {/* Payment progress bar */}
                         {(() => {
                           const pct = Math.min(100, Math.round((Number(b.amount_paid_ngn) / Number(b.total_amount_ngn)) * 100));
@@ -589,7 +589,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                             </div>
                           );
                         })()}
-                        <div className="text-[10px] text-gray-500 mt-0.5">
+                        <div className="text-[10px] text-gray-300 mt-0.5">
                           {Math.round((Number(b.amount_paid_ngn) / Number(b.total_amount_ngn)) * 100)}% paid
                         </div>
                       </td>
@@ -597,7 +597,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                         <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${
                           b.status === 'confirmed' ? 'bg-blue-500/10 text-blue-500 border-blue-500/20' :
                           b.status === 'checked_in' ? 'bg-green-500/10 text-green-500 border-green-500/20' :
-                          b.status === 'checked_out' ? 'bg-gray-500/10 text-gray-500 border-gray-500/20' :
+                          b.status === 'checked_out' ? 'bg-gray-500/10 text-gray-300 border-gray-500/20' :
                           b.status === 'cancelled' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
                           b.status === 'no_show' ? 'bg-orange-500/10 text-orange-400 border-orange-500/20' :
                           'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
@@ -680,7 +680,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
           <div className="bg-dark-800 border border-dark-700 w-full max-w-4xl rounded-2xl shadow-2xl my-8 overflow-hidden flex flex-col max-h-[90vh]">
             <div className="bg-dark-900 p-5 border-b border-dark-700 flex justify-between items-center">
               <h3 className="text-lg font-bold text-white flex items-center gap-2"><Sparkles className="text-gold-500"/> Manual Hall Booking Desk</h3>
-              <button onClick={() => setIsBookingModalOpen(false)} className="text-gray-400 hover:text-white bg-transparent border-0 cursor-pointer"><X size={20} /></button>
+              <button onClick={() => setIsBookingModalOpen(false)} className="text-gray-200 hover:text-white bg-transparent border-0 cursor-pointer"><X size={20} /></button>
             </div>
 
             <form onSubmit={handleSaveBooking} className="flex-1 overflow-y-auto p-6 space-y-6 text-sm">
@@ -692,7 +692,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   
                   <div className="space-y-3 bg-dark-900/40 p-4 rounded-xl border border-dark-700/60">
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Contact/Guest Name *</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Contact/Guest Name *</label>
                       <input 
                         type="text" 
                         required
@@ -703,7 +703,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Guest Email *</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Guest Email *</label>
                       <input 
                         type="email" 
                         required
@@ -714,7 +714,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Guest Phone *</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Guest Phone *</label>
                       <input 
                         type="text" 
                         required
@@ -725,7 +725,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Organization Name (Optional)</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Organization Name (Optional)</label>
                       <input 
                         type="text" 
                         value={bookingForm.organization_name}
@@ -743,7 +743,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   
                   <div className="space-y-3 bg-dark-900/40 p-4 rounded-xl border border-dark-700/60">
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Select Event Hall *</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Select Event Hall *</label>
                       <select
                         value={bookingForm.hall_id}
                         onChange={e => setBookingForm(prev => ({ ...prev, hall_id: e.target.value }))}
@@ -757,7 +757,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs text-gray-400 font-bold mb-1">Pricing Scheme *</label>
+                        <label className="block text-xs text-gray-200 font-bold mb-1">Pricing Scheme *</label>
                         <select
                           value={bookingForm.booking_type}
                           onChange={e => setBookingForm(prev => ({ ...prev, booking_type: e.target.value }))}
@@ -768,7 +768,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs text-gray-400 font-bold mb-1">Expected Participants *</label>
+                        <label className="block text-xs text-gray-200 font-bold mb-1">Expected Participants *</label>
                         <input 
                           type="number" 
                           required
@@ -781,7 +781,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                     </div>
 
                     <div>
-                      <label className="block text-xs text-gray-400 font-bold mb-1">Start Date *</label>
+                      <label className="block text-xs text-gray-200 font-bold mb-1">Start Date *</label>
                       <input 
                         type="date" 
                         required
@@ -793,7 +793,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
 
                     {bookingForm.booking_type === 'daily' ? (
                       <div>
-                        <label className="block text-xs text-gray-400 font-bold mb-1">End Date *</label>
+                        <label className="block text-xs text-gray-200 font-bold mb-1">End Date *</label>
                         <input 
                           type="date" 
                           required
@@ -806,7 +806,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                     ) : (
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs text-gray-400 font-bold mb-1">Start Time *</label>
+                          <label className="block text-xs text-gray-200 font-bold mb-1">Start Time *</label>
                           <input 
                             type="time" 
                             required
@@ -816,7 +816,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs text-gray-400 font-bold mb-1">End Time *</label>
+                          <label className="block text-xs text-gray-200 font-bold mb-1">End Time *</label>
                           <input 
                             type="time" 
                             required
@@ -860,23 +860,23 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                           </div>
                           <div className="text-left">
                             <p className="font-bold text-white">{option.name}</p>
-                            <p className="text-[11px] text-gray-400 mt-0.5">{option.combination_items?.join(' + ')}</p>
+                            <p className="text-[11px] text-gray-200 mt-0.5">{option.combination_items?.join(' + ')}</p>
                           </div>
                         </div>
                         <div className="text-right">
                           <p className="font-extrabold text-gold-500">₦{Number(option.price_per_participant_ngn).toLocaleString()}</p>
-                          <p className="text-[9px] text-gray-500 mt-0.5">per pax/day</p>
+                          <p className="text-[9px] text-gray-300 mt-0.5">per pax/day</p>
                         </div>
                       </div>
                     );
                   })}
-                  {mealOptions.length === 0 && <p className="text-gray-500 text-xs">No active meals defined.</p>}
+                  {mealOptions.length === 0 && <p className="text-gray-300 text-xs">No active meals defined.</p>}
                 </div>
               </div>
 
               {/* Special instructions */}
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Special instructions / requests</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Special instructions / requests</label>
                 <textarea 
                   value={bookingForm.special_requests}
                   onChange={e => setBookingForm(prev => ({ ...prev, special_requests: e.target.value }))}
@@ -892,15 +892,15 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   {/* Costs summary */}
                   <div className="space-y-2.5">
                     <h5 className="font-bold text-white text-xs uppercase tracking-wider mb-2 text-left">Cost Breakdown</h5>
-                    <div className="flex justify-between text-xs text-gray-400">
+                    <div className="flex justify-between text-xs text-gray-200">
                       <span>Hall Rental ({bookingForm.booking_type === 'daily' ? `${bookingSummary.days} days` : `${bookingSummary.hours} hrs`}):</span>
                       <span className="font-semibold text-white">₦{bookingSummary.hallPrice.toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between text-xs text-gray-400">
+                    <div className="flex justify-between text-xs text-gray-200">
                       <span>Catering meals ({bookingForm.number_of_participants} pax x {bookingSummary.days} days):</span>
                       <span className="font-semibold text-white">₦{bookingSummary.mealsPrice.toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between text-xs text-gray-400">
+                    <div className="flex justify-between text-xs text-gray-200">
                       <span>VAT (7.5%):</span>
                       <span className="font-semibold text-white">₦{bookingSummary.tax.toLocaleString()}</span>
                     </div>
@@ -914,14 +914,14 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   <div className="space-y-4">
                     <div>
                       <h5 className="font-bold text-white text-xs uppercase tracking-wider text-left">Initial Payment (Optional)</h5>
-                      <p className="text-[10px] text-gray-500 mt-1">
+                      <p className="text-[10px] text-gray-300 mt-1">
                         Booking is reserved immediately. Remaining balance can be paid in installments up to <strong className="text-yellow-400">24 hours before event start</strong>. Hall is only blocked for other bookings once fully confirmed.
                       </p>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs text-gray-400 font-bold mb-1">Amount Paid (₦)</label>
+                        <label className="block text-xs text-gray-200 font-bold mb-1">Amount Paid (₦)</label>
                         <input 
                           type="number" 
                           min="0"
@@ -932,7 +932,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                         />
                       </div>
                       <div>
-                        <label className="block text-xs text-gray-400 font-bold mb-1">Payment Method</label>
+                        <label className="block text-xs text-gray-200 font-bold mb-1">Payment Method</label>
                         <select
                           value={bookingForm.payment_method}
                           onChange={e => setBookingForm(prev => ({ ...prev, payment_method: e.target.value }))}
@@ -945,7 +945,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                       </div>
                     </div>
                     
-                    <div className="text-right text-xs font-semibold text-gray-400">
+                    <div className="text-right text-xs font-semibold text-gray-200">
                       Balance Due: <span className="text-red-400 font-bold">₦{(bookingSummary.total - bookingForm.amount_paid).toLocaleString()}</span>
                     </div>
                   </div>
@@ -982,26 +982,26 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <Banknote className="text-brand-500" size={18} /> Record Installment Payment
               </h3>
-              <button onClick={() => setActivePaymentModal(null)} className="text-gray-400 hover:text-white bg-transparent border-0 cursor-pointer"><X size={18} /></button>
+              <button onClick={() => setActivePaymentModal(null)} className="text-gray-200 hover:text-white bg-transparent border-0 cursor-pointer"><X size={18} /></button>
             </div>
 
             <form onSubmit={handleRecordInstallmentPayment} className="p-6 space-y-5 text-sm">
               {/* Booking Summary */}
               <div className="bg-dark-900/60 border border-dark-700 rounded-xl p-4 space-y-2">
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Booking Ref</span>
+                  <span className="text-gray-200">Booking Ref</span>
                   <span className="text-white font-bold font-mono">{activePaymentModal.booking_reference}</span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Guest</span>
+                  <span className="text-gray-200">Guest</span>
                   <span className="text-white font-semibold">{activePaymentModal.guest_name}</span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Hall</span>
+                  <span className="text-gray-200">Hall</span>
                   <span className="text-brand-400 font-bold">{activePaymentModal.halls?.name || 'N/A'}</span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Event Date</span>
+                  <span className="text-gray-200">Event Date</span>
                   <span className="text-white">{format(new Date(activePaymentModal.start_time), 'MMM dd, yyyy HH:mm')}</span>
                 </div>
                 <div className="border-t border-dark-700 mt-2 pt-2 flex justify-between font-bold">
@@ -1009,11 +1009,11 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   <span className="text-gold-500">₦{Number(activePaymentModal.total_amount_ngn).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400 text-xs">Already Paid</span>
+                  <span className="text-gray-200 text-xs">Already Paid</span>
                   <span className="text-green-400 font-bold text-xs">₦{Number(activePaymentModal.amount_paid_ngn).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400 text-xs">Outstanding</span>
+                  <span className="text-gray-200 text-xs">Outstanding</span>
                   <span className="text-red-400 font-bold text-xs">
                     ₦{(Number(activePaymentModal.total_amount_ngn) - Number(activePaymentModal.amount_paid_ngn)).toLocaleString()}
                   </span>
@@ -1045,7 +1045,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
 
               {/* Payment Fields */}
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Amount to Record (₦) *</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Amount to Record (₦) *</label>
                 <input
                   type="number"
                   required
@@ -1057,7 +1057,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
                   placeholder="0"
                 />
                 <div className="flex justify-between mt-1">
-                  <span className="text-[10px] text-gray-500">Max: ₦{(Number(activePaymentModal.total_amount_ngn) - Number(activePaymentModal.amount_paid_ngn)).toLocaleString()}</span>
+                  <span className="text-[10px] text-gray-300">Max: ₦{(Number(activePaymentModal.total_amount_ngn) - Number(activePaymentModal.amount_paid_ngn)).toLocaleString()}</span>
                   <button
                     type="button"
                     onClick={() => setInstallmentForm(prev => ({
@@ -1070,7 +1070,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Payment Method</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Payment Method</label>
                 <select
                   value={installmentForm.method}
                   onChange={e => setInstallmentForm(prev => ({ ...prev, method: e.target.value }))}
@@ -1083,7 +1083,7 @@ const AdminHalls = ({ isFrontOfficeClosed }) => {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-400 font-bold mb-1">Notes (Optional)</label>
+                <label className="block text-xs text-gray-200 font-bold mb-1">Notes (Optional)</label>
                 <input
                   type="text"
                   value={installmentForm.notes}

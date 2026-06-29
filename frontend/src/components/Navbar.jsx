@@ -50,13 +50,13 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${showSolid ? 'bg-[#4c5c54]/50 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${showSolid ? 'bg-white/90 dark:bg-dark-900/90 backdrop-blur-lg py-4 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-gray-200/50 dark:border-dark-700/50' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 mr-auto hover:opacity-80 transition-opacity">
-          <img src="/Images/logo.png.png" alt="Jemmyland Hotels Logo" className="h-10 object-contain" />
+          <img src="/Images/logo.svg" alt="Freshland Logo" className="h-10 object-contain drop-shadow-md" />
           <div className="flex flex-col justify-center ml-2">
-            <span className={`text-[22px] font-sans font-extrabold leading-none tracking-wide transition-colors duration-300 ${showSolid ? 'text-brand-600 dark:text-brand-400' : 'text-[#ffffff]'}`}>JEMMYLAND</span>
-            <span className={`text-[11px] font-sans leading-tight tracking-[0.25em] mt-1 transition-colors duration-300 ${showSolid ? 'text-gray-500 dark:text-gray-400' : 'text-[#ffffff]/85'}`}>HOTELS</span>
+            <span className={`text-[22px] font-sans font-extrabold leading-none tracking-wide transition-colors duration-300 ${showSolid ? 'text-gray-900 dark:text-white' : 'text-[#ffffff] drop-shadow-md'}`}>Freshland</span>
+            <span className={`text-[11px] font-sans leading-tight tracking-[0.25em] mt-1 transition-colors duration-300 ${showSolid ? 'text-brand-500 font-semibold' : 'text-[#ffffff]/90 font-medium drop-shadow-md'}`}>HOTELS</span>
           </div>
         </Link>
 
@@ -66,43 +66,43 @@ const Navbar = () => {
             <Link 
               key={link.name} 
               to={link.path}
-              className={`text-sm tracking-wide uppercase transition-all duration-300 ${
+              className={`text-sm tracking-widest uppercase transition-all duration-300 ${
                 showSolid 
-                  ? (location.pathname === link.path ? 'text-brand-500 font-bold border-b border-brand-500/30' : 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-500') 
-                  : (location.pathname === link.path ? 'text-[#ffffff] font-bold border-b border-[#ffffff]/70' : 'text-[#ffffff]/80 hover:text-[#ffffff]')
+                  ? (location.pathname === link.path ? 'text-brand-500 font-bold' : 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400') 
+                  : (location.pathname === link.path ? 'text-white font-bold drop-shadow-md' : 'text-white/90 hover:text-white drop-shadow-sm')
               }`}
             >
               {link.name}
             </Link>
           ))}
           {user ? (
-            <div className="flex items-center space-x-4 ml-4">
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-300/30">
               <Link 
                 to={user.role === 'guest' ? '/guest' : getDefaultAdminRoute(user.role, hasAccess)} 
-                className={`text-sm tracking-wide uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-500' : 'text-[#ffffff]/80 hover:text-[#ffffff]'}`}
+                className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400' : 'text-white/90 hover:text-white'}`}
               >
                 Portal
               </Link>
-              <button onClick={logout} className="text-sm tracking-wide uppercase text-red-500 hover:text-red-600 font-medium transition-colors duration-300">
+              <button onClick={logout} className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ${showSolid ? 'text-red-500 hover:text-red-600' : 'text-red-400 hover:text-red-300'}`}>
                 Logout
               </button>
             </div>
           ) : (
             <Link 
               to="/login" 
-              className={`text-sm tracking-wide uppercase font-medium transition-colors duration-300 ml-4 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-500' : 'text-[#ffffff]/80 hover:text-[#ffffff]'}`}
+              className={`text-sm tracking-widest uppercase font-medium transition-colors duration-300 ml-4 pl-4 border-l border-gray-300/30 ${showSolid ? 'text-gray-600 hover:text-brand-500 dark:text-gray-300 dark:hover:text-brand-400' : 'text-white/90 hover:text-white'}`}
             >
               Login
             </Link>
           )}
-          <Link to="/booking" className="btn-primary ml-4">
+          <Link to="/booking" className="btn-primary ml-6 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50">
             Book Now
           </Link>
         </nav>
 
         {/* Mobile Toggle */}
         <button 
-          className={`md:hidden focus:outline-none transition-colors duration-300 ${showSolid ? 'text-[#4A4A4A] dark:text-white' : 'text-[#ffffff]'}`}
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${showSolid ? 'text-gray-900 dark:text-white' : 'text-white drop-shadow-md'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -113,23 +113,23 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-dark-800 shadow-xl md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 w-full bg-white dark:bg-dark-900 shadow-2xl md:hidden overflow-hidden border-t border-gray-100 dark:border-dark-800"
           >
-            <div className="flex flex-col py-4 px-6 space-y-4">
+            <div className="flex flex-col py-6 px-8 space-y-5">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-base tracking-wide uppercase py-2 border-b border-dark-700 ${location.pathname === link.path ? 'text-gold-500 font-medium' : 'text-gray-300'}`}
+                  className={`text-sm tracking-widest uppercase pb-2 border-b border-gray-100 dark:border-dark-800 ${location.pathname === link.path ? 'text-brand-500 font-bold' : 'text-gray-600 dark:text-gray-300'}`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link to="/booking" onClick={() => setIsOpen(false)} className="btn-primary mt-4 text-center">
+              <Link to="/booking" onClick={() => setIsOpen(false)} className="btn-primary mt-6 text-center w-full">
                 Book Now
               </Link>
             </div>

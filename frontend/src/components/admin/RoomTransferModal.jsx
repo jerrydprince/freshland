@@ -255,7 +255,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
             <ArrowRightLeft className="text-amber-500" size={20} />
             Transfer Guest Room / Apartment
           </h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
+          <button onClick={onClose} className="text-gray-200 hover:text-white transition-colors">
             <X size={24} />
           </button>
         </div>
@@ -266,14 +266,14 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
           {/* Guest Stay Profile Summaries */}
           <div className="grid grid-cols-2 gap-4 bg-dark-900 border border-dark-700/60 p-4 rounded-lg">
             <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Guest Name</p>
+              <p className="text-xs text-gray-300 uppercase tracking-wider font-semibold">Guest Name</p>
               <p className="text-white font-bold text-base mt-0.5">{booking.profiles ? `${booking.profiles.first_name} ${booking.profiles.last_name}` : booking.guest_name}</p>
-              <p className="text-xs text-gray-400 mt-1">Ref: {booking.booking_reference}</p>
+              <p className="text-xs text-gray-200 mt-1">Ref: {booking.booking_reference}</p>
             </div>
             <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Stay Duration</p>
+              <p className="text-xs text-gray-300 uppercase tracking-wider font-semibold">Stay Duration</p>
               <p className="text-white font-medium mt-0.5">{totalNights} Nights</p>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-xs text-gray-200 mt-1">
                 {format(start, 'MMM dd, yyyy')} - {format(end, 'MMM dd, yyyy')}
               </p>
             </div>
@@ -286,7 +286,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
             <div className="md:col-span-3 bg-dark-900 border border-dark-700 p-4 rounded-lg text-center">
               <span className="text-[10px] bg-dark-700 text-gray-300 font-bold px-2 py-0.5 rounded-full">CURRENT ROOM</span>
               <h4 className="text-xl font-bold text-white mt-2">{booking.rooms?.room_number || 'N/A'}</h4>
-              <p className="text-sm text-gray-400 mt-1">{booking.rooms?.name || 'Unknown Room'}</p>
+              <p className="text-sm text-gray-200 mt-1">{booking.rooms?.name || 'Unknown Room'}</p>
               <p className="text-xs text-amber-500 font-semibold mt-2">₦{Number(oldPricePerNight).toLocaleString()}/night</p>
             </div>
 
@@ -303,7 +303,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                 <span className="text-[10px] bg-brand-500/20 text-brand-400 font-bold px-2 py-0.5 rounded-full">NEW ASSIGNMENT</span>
                 
                 {loadingRooms ? (
-                  <div className="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500 py-3">
+                  <div className="flex items-center justify-center gap-2 mt-4 text-xs text-gray-300 py-3">
                     <RefreshCw className="animate-spin" size={14} /> Loading available rooms...
                   </div>
                 ) : availableRooms.length === 0 ? (
@@ -329,7 +329,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
               
               {selectedRoom && (
                 <div className="mt-3 border-t border-dark-700/50 pt-2 text-left">
-                  <p className="text-xs text-gray-400 capitalize">Type: <strong className="text-white">{selectedRoom.type}</strong></p>
+                  <p className="text-xs text-gray-200 capitalize">Type: <strong className="text-white">{selectedRoom.type}</strong></p>
                   <p className="text-xs text-brand-400 font-semibold mt-1">Price: ₦{Number(selectedRoom.base_price_ngn).toLocaleString()}/night</p>
                 </div>
               )}
@@ -340,29 +340,29 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
           {/* Stay Timeline Proration Details */}
           {selectedRoomId && (
             <div className="bg-dark-900 border border-dark-700/60 p-4 rounded-lg space-y-3">
-              <h4 className="text-xs text-gray-400 uppercase tracking-wider font-bold">Stay Timeline & Proration Calculation</h4>
+              <h4 className="text-xs text-gray-200 uppercase tracking-wider font-bold">Stay Timeline & Proration Calculation</h4>
               <div className="grid grid-cols-3 gap-2 text-center text-xs border-b border-dark-700 pb-2">
                 <div>
-                  <p className="text-gray-500">Total Stay</p>
+                  <p className="text-gray-300">Total Stay</p>
                   <p className="text-white font-bold mt-0.5">{totalNights} Nights</p>
                 </div>
                 <div>
-                  <p className="text-gray-500">Elapsed Nights (Locked)</p>
+                  <p className="text-gray-300">Elapsed Nights (Locked)</p>
                   <p className="text-white font-bold mt-0.5">{elapsedNights} Nights</p>
                 </div>
                 <div>
-                  <p className="text-gray-500">Remaining (At New Rate)</p>
+                  <p className="text-gray-300">Remaining (At New Rate)</p>
                   <p className="text-brand-400 font-bold mt-0.5">{remainingNights} Nights</p>
                 </div>
               </div>
               
               {/* Detailed Breakdown */}
               <div className="space-y-1.5 text-sm font-medium">
-                <div className="flex justify-between text-xs text-gray-400">
+                <div className="flex justify-between text-xs text-gray-200">
                   <span>Elapsed cost ({elapsedNights} x ₦{Number(oldPricePerNight).toLocaleString()}):</span>
                   <span>₦{Number(oldPricePerNight * elapsedNights).toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-xs text-gray-400">
+                <div className="flex justify-between text-xs text-gray-200">
                   <span>Remaining cost ({remainingNights} x ₦{Number(newPricePerNight).toLocaleString()}):</span>
                   <span>₦{Number(newPricePerNight * remainingNights).toLocaleString()}</span>
                 </div>
@@ -395,7 +395,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                   }`}
                 >
                   <p className="text-xs font-bold text-white">Adjust Billing</p>
-                  <p className="text-[10px] text-gray-400 mt-1 leading-normal">
+                  <p className="text-[10px] text-gray-200 mt-1 leading-normal">
                     Apply stay calculations. Invoice & Booking balances will adjust.
                   </p>
                 </button>
@@ -411,7 +411,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                   }`}
                 >
                   <p className="text-xs font-bold text-white">Waive / Comp Difference</p>
-                  <p className="text-[10px] text-gray-400 mt-1 leading-normal">
+                  <p className="text-[10px] text-gray-200 mt-1 leading-normal">
                     Transfer guest, but freeze overall billing at the original rate.
                   </p>
                 </button>
@@ -427,7 +427,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                   }`}
                 >
                   <p className="text-xs font-bold text-white">Custom Room Price</p>
-                  <p className="text-[10px] text-gray-400 mt-1 leading-normal">
+                  <p className="text-[10px] text-gray-200 mt-1 leading-normal">
                     Input a specific custom room total cost override.
                   </p>
                 </button>
@@ -437,7 +437,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
               {/* Custom Price Override Selector */}
               {pricingMode === 'custom' && (
                 <div className="pt-2 animate-in fade-in slide-in-from-top-1">
-                  <label className="block text-xs text-gray-400 mb-1 font-bold">Custom Room Price Total (₦)</label>
+                  <label className="block text-xs text-gray-200 mb-1 font-bold">Custom Room Price Total (₦)</label>
                   <input
                     required
                     type="number"
@@ -446,21 +446,21 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                     onChange={(e) => setCustomRoomPrice(Number(e.target.value) || 0)}
                     className="w-full bg-dark-800 border border-brand-500 rounded p-2 text-white font-bold text-base outline-none focus:border-brand-400"
                   />
-                  <p className="text-[10px] text-gray-500 mt-1">Updates booking room cost to exactly this figure.</p>
+                  <p className="text-[10px] text-gray-300 mt-1">Updates booking room cost to exactly this figure.</p>
                 </div>
               )}
 
               {/* Financial Balances Ledger comparison */}
               <div className="bg-dark-950 p-4 border border-dark-800 rounded-lg space-y-2 text-xs">
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-gray-200">
                   <span>Current Booking Grand Total:</span>
                   <span>₦{Number(booking.total_amount_ngn).toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-gray-200">
                   <span>Proposed Booking Grand Total:</span>
                   <span className="text-white font-semibold">₦{Number(finalTotalAmount).toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-gray-200">
                   <span>Guest Payments Recorded:</span>
                   <span>₦{Number(booking.amount_paid_ngn || 0).toLocaleString()}</span>
                 </div>
@@ -475,7 +475,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
                       Refund/Credit Due: ₦{Number(Math.abs(financialDelta)).toLocaleString()}
                     </span>
                   ) : (
-                    <span className="font-bold text-gray-400 bg-dark-800 px-2 py-0.5 rounded border border-dark-700">
+                    <span className="font-bold text-gray-200 bg-dark-800 px-2 py-0.5 rounded border border-dark-700">
                       No Change in Bill
                     </span>
                   )}
@@ -505,7 +505,7 @@ const RoomTransferModal = ({ isOpen, onClose, booking, onSuccess }) => {
             className={`px-6 py-2.5 rounded font-bold text-dark-900 transition-all flex items-center gap-2 ${
               selectedRoomId
                 ? 'bg-amber-500 hover:bg-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
-                : 'bg-dark-700 text-gray-500 cursor-not-allowed border border-dark-600'
+                : 'bg-dark-700 text-gray-300 cursor-not-allowed border border-dark-600'
             }`}
           >
             {isSubmitting ? (

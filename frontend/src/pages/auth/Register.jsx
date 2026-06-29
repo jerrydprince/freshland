@@ -59,7 +59,7 @@ const Register = () => {
       <form onSubmit={handleRegister} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">First Name</label>
+            <label className="block text-sm font-medium text-gray-200 mb-2">First Name</label>
             <input 
               type="text" 
               value={firstName}
@@ -68,7 +68,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
+            <label className="block text-sm font-medium text-gray-200 mb-2">Last Name</label>
             <input 
               type="text" 
               value={lastName}
@@ -78,7 +78,7 @@ const Register = () => {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+          <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
           <input 
             type="email" 
             value={email}
@@ -87,7 +87,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2">Password</label>
+          <label className="block text-sm font-medium text-gray-200 mb-2">Password</label>
           <div className="relative">
             <input 
               type={showPassword ? 'text' : 'password'} 
@@ -98,7 +98,7 @@ const Register = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white transition-colors"
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
@@ -110,7 +110,7 @@ const Register = () => {
       </form>
       
       <div className="mt-8 pt-6 border-t border-dark-700 text-center">
-        <p className="text-gray-400 text-sm">
+        <p className="text-gray-200 text-sm">
           Already have an account? <Link to="/login" className="text-gold-500 hover:underline">Sign in</Link>
         </p>
       </div>
