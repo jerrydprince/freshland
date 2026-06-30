@@ -1637,6 +1637,33 @@ const AdminStaffManagement = () => {
             user_id: profile.id, log_type: 'activity', action: `Promoted guest account to staff: ${newStaffForm.first_name} ${newStaffForm.last_name}`, module: 'System'
           });
 
+          // Send onboarding email
+          try {
+            const emailHtml = `
+              <h2>Welcome to Freshland Hotels, ${newStaffForm.first_name}!</h2>
+              <p>Your staff account has been activated. Here are your login credentials:</p>
+              <ul>
+                <li><strong>Username:</strong> ${newStaffForm.username}</li>
+                <li><strong>Email:</strong> ${newStaffForm.email}</li>
+                <li><strong>Temporary Password:</strong> ${newStaffForm.password}</li>
+                <li><strong>Role:</strong> ${newStaffForm.role}</li>
+              </ul>
+              <p>Please log in to the portal and change your password immediately.</p>
+            `;
+            await fetch('/api/email/send', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                to: newStaffForm.email,
+                subject: 'Freshland Hotels - Staff Account Activation',
+                html: emailHtml,
+                from: 'contact@freshlandhotels.com'
+              })
+            });
+          } catch (emailErr) {
+            console.warn("Failed to send onboarding email:", emailErr);
+          }
+
           toast.success('Staff account successfully promoted and activated!', { id: loadingToast });
           setShowAddStaff(false);
           setNewStaffForm({ 
@@ -1724,6 +1751,33 @@ const AdminStaffManagement = () => {
       await supabase.from('system_logs').insert({
         user_id: profile.id, log_type: 'activity', action: `Registered new staff member: ${newStaffForm.first_name}`, module: 'System'
       });
+
+      // Send onboarding email
+      try {
+        const emailHtml = `
+          <h2>Welcome to Freshland Hotels, ${newStaffForm.first_name}!</h2>
+          <p>Your staff account has been created. Here are your login credentials:</p>
+          <ul>
+            <li><strong>Username:</strong> ${newStaffForm.username}</li>
+            <li><strong>Email:</strong> ${newStaffForm.email}</li>
+            <li><strong>Temporary Password:</strong> ${newStaffForm.password}</li>
+            <li><strong>Role:</strong> ${newStaffForm.role}</li>
+          </ul>
+          <p>Please log in to the portal and change your password immediately.</p>
+        `;
+        await fetch('/api/email/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            to: newStaffForm.email,
+            subject: 'Freshland Hotels - Staff Account Details',
+            html: emailHtml,
+            from: 'contact@freshlandhotels.com'
+          })
+        });
+      } catch (emailErr) {
+        console.warn("Failed to send onboarding email:", emailErr);
+      }
 
       toast.success('Staff added successfully!', { id: loadingToast });
       setShowAddStaff(false);
@@ -5159,8 +5213,8 @@ const AdminStaffManagement = () => {
                     <div className="text-center py-10 text-gray-300 text-sm">Loading baseline parameters...</div>
                   ) : (
                     <>
-                      <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner">
-                      <table className="w-full text-left text-xs">
+                      <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner overflow-x-auto w-full">
+                      <table className="w-full text-left text-xs min-w-[600px]">
                         <thead className="bg-dark-900 border-b border-dark-750 text-gray-200 uppercase tracking-widest font-black text-[10px]">
                           <tr>
                             <th className="p-4">Role Title</th>
@@ -5524,8 +5578,8 @@ const AdminStaffManagement = () => {
                   </p>
 
                   {/* Table of active allowances */}
-                  <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner">
-                    <table className="w-full text-left text-xs">
+                  <div className="bg-dark-950/40 border border-dark-750/70 rounded-2xl overflow-hidden shadow-inner overflow-x-auto w-full">
+                    <table className="w-full text-left text-xs min-w-[500px]">
                       <thead className="bg-dark-900 border-b border-dark-750 text-gray-200 uppercase tracking-widest font-black text-[10px]">
                         <tr>
                           <th className="p-4">Allowance Name / Title</th>

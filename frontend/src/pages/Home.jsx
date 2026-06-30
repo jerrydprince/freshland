@@ -251,7 +251,7 @@ const Home = () => {
                   transition={{ duration: 0.8 }}
                   className="relative md:mt-24 rounded-[3rem] overflow-hidden shadow-2xl"
                 >
-                  <img src={"/Images/Reception.jfif"} alt="Lounge Area" className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-1000" />
+                  <img loading="lazy" decoding="async" src={"/Images/Reception.jfif"} alt="Lounge Area" className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-1000" />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent" />
                 </motion.div>
                 
@@ -262,7 +262,7 @@ const Home = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="relative rounded-[3rem] overflow-hidden shadow-2xl"
                 >
-                  <img src={"/Images/Restaurant.jfif"} alt="Restaurant" className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" />
+                  <img loading="lazy" decoding="async" src={"/Images/Restaurant.jfif"} alt="Restaurant" className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" />
                 </motion.div>
               </div>
               
@@ -302,6 +302,8 @@ const Home = () => {
               <div className="w-full lg:w-7/12 relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-[16/10]">
                 {room.image_url ? (
                   <img 
+                    loading="lazy" 
+                    decoding="async"
                     src={`/Images/Room ${(index % 5) + 1}.jfif`} 
                     alt={room.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
@@ -434,7 +436,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0 bg-dark-950">
           <div className="absolute inset-0 bg-dark-900/90 z-10" />
           {true ? (
-            <img src={"/Images/front view 2.jfif"} alt="CTA Background" className="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src={"/Images/front view 2.jfif"} alt="CTA Background" className="w-full h-full object-cover" />
           ) : (
             <div 
               className="w-full h-full"

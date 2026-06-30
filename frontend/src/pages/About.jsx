@@ -30,36 +30,76 @@ const About = () => {
     <div className="min-h-screen bg-dark-900 overflow-hidden">
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-fixed bg-center bg-cover" style={{ backgroundImage: `url(${"/Images/aireal view.jfif"})` }}>
-          <div className="absolute inset-0 bg-black/60 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10" />
-        </div>
-        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-32">
-          <motion.h4 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-brand-500 font-sans tracking-[0.3em] uppercase text-xs font-bold mb-8 drop-shadow-md"
-          >
-            The Freshland Story
-          </motion.h4>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-white mb-10 leading-none drop-shadow-2xl"
-          >
-            {cmsContent.cms_about_title || "Redefining Luxury"}
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-3xl text-gray-100 font-light max-w-4xl mx-auto leading-relaxed drop-shadow-xl"
-          >
-            {cmsContent.cms_about_subtitle || "A sanctuary of elegance designed for those who appreciate the finer things in life."}
-          </motion.p>
+      <section className="relative pt-32 pb-24 bg-dark-950 overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-600/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col items-center text-center mb-16">
+            {/* Text Content */}
+            <div className="max-w-4xl">
+              <motion.h4 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-brand-500 font-sans tracking-[0.3em] uppercase text-xs font-bold mb-6 drop-shadow-md"
+              >
+                The Freshland Story
+              </motion.h4>
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-xl"
+              >
+                {cmsContent.cms_about_title || "Redefining Luxury"}
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+              >
+                {cmsContent.cms_about_subtitle || "A sanctuary of elegance designed for those who appreciate the finer things in life."}
+              </motion.p>
+            </div>
+          </div>
+          
+          {/* Hero Image */}
+          <div className="relative w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/30 to-transparent rounded-[3rem] blur-xl opacity-60"></div>
+              <img 
+                src="/Images/aireal view.jfif" 
+                alt="Freshland Hotel" 
+                className="relative w-full h-[400px] md:h-[600px] lg:h-[750px] object-cover rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border border-white/10"
+              />
+              
+              {/* Floating badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="absolute -bottom-8 -left-4 md:-left-8 bg-dark-800/90 backdrop-blur-md p-6 rounded-3xl border border-white/10 shadow-2xl hidden sm:block"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-500">
+                    <Award size={28} />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-xl font-serif">5-Star</p>
+                    <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Luxury Stay</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

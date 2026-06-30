@@ -37,7 +37,7 @@
     --text-gray-400: #D1D5DB;
     --text-gray-500: #9CA3AF;
     --glass-bg: rgba(17, 24, 39, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border: #e2e8f0; /* Solid very light gray */
     --brand-400: #34D399;
     --brand-500: #10B981;
     --brand-600: #059669;
@@ -279,9 +279,9 @@ nav h2, nav h3, nav h4 {
   color: var(--brand-500) !important;
 }
 
-/* Replace dark borders from PMS Admin Layout with a light translucent gray */
+/* Replace dark borders from PMS Admin Layout with a visible light gray */
 .admin-pms-layout [class*="border-dark-"],
 .admin-pms-layout [class*="border-gray-"] {
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: #e2e8f0 !important;
 }
 

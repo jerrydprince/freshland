@@ -21,7 +21,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHeroPage = location.pathname === '/' || location.pathname === '/about';
+  const isHeroPage = location.pathname === '/';
   const showSolid = scrolled || !isHeroPage;
 
   useEffect(() => {

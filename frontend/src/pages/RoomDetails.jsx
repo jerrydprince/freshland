@@ -149,7 +149,7 @@ const RoomDetails = () => {
                   onClick={() => setMainImage(img)}
                   className={`w-32 h-24 flex-shrink-0 relative ${mainImage === img ? 'ring-2 ring-brand-500 ring-offset-2' : 'opacity-70 hover:opacity-100'}`}
                 >
-                  <img src={img} alt={`${room.name} angle ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img loading="lazy" decoding="async" src={img} alt={`${room.name} angle ${idx + 1}`} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar/lib/index.js';
+import { Calendar, dateFnsLocalizer } from 'react-big-calendar/lib/index.js';
 import withDragAndDropModule from 'react-big-calendar/lib/addons/dragAndDrop/index.js';
-import moment from 'moment';
+import { format, parse, startOfWeek, getDay } from 'date-fns';
+import { enUS } from 'date-fns/locale/en-US';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
 import { supabase } from '../../lib/supabase';
 import toast from 'react-hot-toast';
 
-const localizer = momentLocalizer(moment);
+const locales = {
+  'en-US': enUS,
+};
+
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales,
+});
 const withDragAndDrop = withDragAndDropModule.default || withDragAndDropModule;
 const DragAndDropCalendar = withDragAndDrop(Calendar);
 

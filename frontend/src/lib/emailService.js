@@ -120,13 +120,17 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
     };
     const accentColor = themeColors[systemTheme] || '#DF6853';
 
-    let contactLogo = settingsMap.contact_logo || 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+    let contactLogo = settingsMap.contact_logo || '/Images/logo.png';
     if (contactLogo && contactLogo.startsWith('/')) {
+      // Force PNG extension if it is SVG, since SVG fails in email inline rendering
+      if (contactLogo.includes('logo.svg') || contactLogo.includes('logo.png.png')) {
+        contactLogo = '/Images/logo.png';
+      }
       contactLogo = window.location.origin + contactLogo;
     }
-    const contactAddress = settingsMap.contact_address || 'Plot 572 Iduwa Ogenyi Street Mabushi, Off Ahmadu Bello Way, Abuja';
-    const contactPhone = settingsMap.contact_phone || '08033214684, 08062332639, 08171278657';
-    const contactEmail = settingsMap.contact_email || 'info@Freshlandhotels.com';
+    const contactAddress = settingsMap.contact_address || 'No2. Gowon P Haruna Close, Karu, Abuja';
+    const contactPhone = settingsMap.contact_phone || '08103694837, 08174971881';
+    const contactEmail = settingsMap.contact_email || 'info@freshlandhotels.com';
 
     // 2. Query automation rules for trigger event
     const { data: rules, error: rulesErr } = await supabase
@@ -138,6 +142,48 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
     if (rulesErr) {
       console.error(`[Automation Engine] Failed to fetch active rules:`, rulesErr);
       return { success: false, error: rulesErr.message };
+    }
+
+    // Always dispatch Admin Notification for booking events, regardless of guest rules
+    if (triggerEvent === 'booking_created' || triggerEvent === 'booking_confirmed') {
+      try {
+        const profile = bookingData.profiles || {};
+        const gName = bookingData.guest_name || `${profile.first_name || ''} ${profile.last_name || ''}`.trim() || 'Valued Guest';
+        const gEmail = bookingData.guest_email || bookingData.email || profile.email || 'N/A';
+        const gPhone = bookingData.guest_phone || bookingData.phone || profile.phone || 'N/A';
+        const bRef = bookingData.booking_reference || bookingData.id || 'N/A';
+        const rNum = bookingData.room_number || (bookingData.rooms && bookingData.rooms.room_number) || 'N/A';
+        const rDetails = bookingData.room_details || (bookingData.rooms && bookingData.rooms.name) || 'Premium Suite';
+        const tAmount = bookingData.total_amount || bookingData.total_amount_ngn || bookingData.total_price || '0.00';
+        const inDate = bookingData.check_in_date || bookingData.check_in || 'N/A';
+        const outDate = bookingData.check_out_date || bookingData.check_out || 'N/A';
+
+        const adminHtml = `
+          <div style="font-family: 'Outfit', sans-serif; padding: 20px; color: #1f2937; background-color: #f3f4f6; border-radius: 8px;">
+            <h2 style="color: #DF6853; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">🚨 New Booking Alert: ${triggerEvent}</h2>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 20px;">
+              <tr><td style="padding: 8px 0; font-weight: bold; width: 30%;">Guest Name:</td><td>${gName}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Email:</td><td>${gEmail}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Phone:</td><td>${gPhone}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Booking Ref:</td><td><strong style="color: #000;">${bRef}</strong></td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Room:</td><td>${rNum} - ${rDetails}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Check In:</td><td>${inDate}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Check Out:</td><td>${outDate}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Total Amount:</td><td><strong style="color: #10B981;">₦${Number(tAmount).toLocaleString()}</strong></td></tr>
+            </table>
+          </div>
+        `;
+        
+        console.log(`[Automation Engine] Firing dedicated admin alert to booking@freshlandhotels.com...`);
+        sendResendEmail({
+          to: 'booking@freshlandhotels.com',
+          subject: `[ADMIN ALERT] New Booking: ${bRef}`,
+          from: 'booking@freshlandhotels.com',
+          html: adminHtml
+        }).catch(e => console.error(e));
+      } catch (adminErr) {
+        console.warn(`[Automation Engine] Failed to dispatch dedicated admin alert:`, adminErr);
+      }
     }
 
     if (!rules || rules.length === 0) {
@@ -235,33 +281,12 @@ export const triggerAutomationRules = async (triggerEvent, bookingData) => {
           </div>
         `;
 
-        // Fire admin copy in background FIRST so it doesn't get cancelled by slow guest email delivery
-        if (recipient !== 'booking@Freshlandhotels.com') {
-          try {
-            console.log(`[Automation Engine] Forwarding admin copy of booking update to booking@Freshlandhotels.com...`);
-            const adminHtml = `
-              <div style="background-color: #f3f4f6; padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 20px; font-family: sans-serif; font-size: 13px; color: #4b5563; line-height: 1.5;">
-                <strong>[PMS Admin Notification]</strong><br/>
-                Recipient: <strong>${guestName}</strong> (${recipient})<br/>
-                Trigger Event: <strong>${triggerEvent}</strong>
-              </div>
-              ${emailHtml}
-            `;
-            sendResendEmail({
-              to: 'booking@Freshlandhotels.com',
-              subject: `[ADMIN] ${parsedSubject}`,
-              from: 'booking@Freshlandhotels.com',
-              html: adminHtml
-            }).catch(e => console.error(e));
-          } catch (adminCopyErr) {
-            console.warn(`[Automation Engine] Failed to dispatch admin copy:`, adminCopyErr);
-          }
-        }
+        // Removed duplicate admin copy logic since we now send a dedicated admin alert above for bookings.
 
         const result = await sendResendEmail({
           to: recipient,
           subject: parsedSubject,
-          from: 'booking@Freshlandhotels.com',
+          from: 'booking@freshlandhotels.com',
           html: emailHtml
         });
 
@@ -408,7 +433,7 @@ export const sendWelcomeEmail = async ({ email, firstName, lastName, password = 
 
       <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 12px; color: #9ca3af;">
         <p style="margin: 0 0 5px 0;">This is an official automated onboarding notification from Freshland.</p>
-        <p style="margin: 0;">Plot 572 Iduwa Ogenyi Street Mabushi, Off Ahmadu Bello Way, Abuja</p>
+        <p style="margin: 0;">No2. Gowon P Haruna Close, Karu, Abuja</p>
       </div>
     </div>
   `;
@@ -417,6 +442,6 @@ export const sendWelcomeEmail = async ({ email, firstName, lastName, password = 
     to: email,
     subject: subject,
     html: htmlContent,
-    from: 'welcome@sparklesapartments.ng'
+    from: 'booking@freshlandhotels.com'
   });
 };

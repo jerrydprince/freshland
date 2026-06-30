@@ -154,14 +154,14 @@ app.post('/api/email/send', async (req, res) => {
     }
 
     const envSmtpEnabled = process.env.SMTP_ENABLED === 'true';
-    const smtpEnabled = envSmtpEnabled || settingsMap.smtp_enabled === 'true' || settingsMap.smtp_enabled === true;
+    const smtpEnabled = true;
 
     // 2. If SMTP (cPanel Webmail) is enabled, route via Nodemailer SMTP
     if (smtpEnabled) {
-      const host = process.env.SMTP_HOST || settingsMap.smtp_host || 'mail.Freshlandhotels.com';
-      const port = parseInt(process.env.SMTP_PORT || settingsMap.smtp_port || '465', 10);
-      const username = process.env.SMTP_USERNAME || settingsMap.smtp_username || 'info@Freshlandhotels.com';
-      const password = process.env.SMTP_PASSWORD || settingsMap.smtp_password || '';
+      const host = process.env.SMTP_HOST || settingsMap.smtp_host || 'mail.freshlandhotels.com';
+      const port = parseInt(process.env.SMTP_PORT || settingsMap.smtp_port || '587', 10);
+      const username = process.env.SMTP_USERNAME || settingsMap.smtp_username || 'booking@freshlandhotels.com';
+      const password = process.env.SMTP_PASSWORD || settingsMap.smtp_password || 'Freshland2026.';
       const secure = (process.env.SMTP_SECURE === 'ssl') || settingsMap.smtp_secure === 'ssl' || port === 465;
 
       const transporter = nodemailer.createTransport({
@@ -183,19 +183,26 @@ app.post('/api/email/send', async (req, res) => {
       const smtpFrom = `${fromName} <${fromAddress}>`;
 
       // Replace frontend logo URL with CID for inline email rendering
-      let processedHtml = html.replace(/https?:\/\/[^\/]+\/Images\/logo\.png\.png/g, 'cid:logo');
-      processedHtml = processedHtml.replace(/\/Images\/logo\.png\.png/g, 'cid:logo');
+      let processedHtml = html.replace(/https?:\/\/[^\/]+\/Images\/logo\.(png\.png|svg|png)/g, 'cid:logo');
+      processedHtml = processedHtml.replace(/\/Images\/logo\.(png\.png|svg|png)/g, 'cid:logo');
+
+      const fs = await import('fs');
+      const attachmentPath = '../frontend/public/Images/logo.png';
+      const attachments = [];
+      if (fs.existsSync(attachmentPath)) {
+        attachments.push({
+          filename: 'logo.png',
+          path: attachmentPath,
+          cid: 'logo'
+        });
+      }
 
       const mailOptions = {
         from: smtpFrom,
         to,
         subject,
         html: processedHtml,
-        attachments: [{
-          filename: 'logo.png',
-          path: '../frontend/public/Images/logo.png.png',
-          cid: 'logo'
-        }]
+        attachments
       };
 
       console.log(`[SMTP Backend] Dispatching email to: ${to} via cPanel SMTP (${host}:${port}) from ${smtpFrom}...`);
@@ -253,13 +260,13 @@ async function sendAuthEmailInternal({ to, subject, html }) {
     }
 
     const envSmtpEnabled = process.env.SMTP_ENABLED === 'true';
-    const smtpEnabled = envSmtpEnabled || settingsMap.smtp_enabled === 'true' || settingsMap.smtp_enabled === true;
+    const smtpEnabled = true;
 
     if (smtpEnabled) {
-      const host = process.env.SMTP_HOST || settingsMap.smtp_host || 'mail.Freshlandhotels.com';
-      const port = parseInt(process.env.SMTP_PORT || settingsMap.smtp_port || '465', 10);
-      const username = process.env.SMTP_USERNAME || settingsMap.smtp_username || 'info@Freshlandhotels.com';
-      const password = process.env.SMTP_PASSWORD || settingsMap.smtp_password || '';
+      const host = process.env.SMTP_HOST || settingsMap.smtp_host || 'mail.freshlandhotels.com';
+      const port = parseInt(process.env.SMTP_PORT || settingsMap.smtp_port || '587', 10);
+      const username = process.env.SMTP_USERNAME || settingsMap.smtp_username || 'booking@freshlandhotels.com';
+      const password = process.env.SMTP_PASSWORD || settingsMap.smtp_password || 'Freshland2026.';
       const secure = (process.env.SMTP_SECURE === 'ssl') || settingsMap.smtp_secure === 'ssl' || port === 465;
 
       const transporter = nodemailer.createTransport({
@@ -391,7 +398,7 @@ app.post('/api/auth/forgot-password', async (req, res) => {
 
         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 12px; color: #9ca3af;">
           <p style="margin: 0 0 5px 0;">If you did not request a password reset, please ignore this email.</p>
-          <p style="margin: 0;">Plot 572 Iduwa Ogenyi Street Mabushi, Off Ahmadu Bello Way, Abuja</p>
+          <p style="margin: 0;">No2. Gowon P Haruna Close, Karu, Abuja</p>
         </div>
       </div>
     `;
@@ -449,6 +456,38 @@ app.post('/api/contact/submit', async (req, res) => {
   console.log(`- Subject: ${subject}`);
   console.log(`- Message: ${message}`);
   
+  try {
+    const htmlBody = `
+      <div style="font-family: sans-serif; padding: 20px;">
+        <h2>New Website Contact Form Submission</h2>
+        <p><strong>From:</strong> ${name} (${email})</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <hr/>
+        <p style="white-space: pre-wrap;">${message}</p>
+      </div>
+    `;
+
+    // Internal fetch call to our own email endpoint
+    const response = await fetch('http://localhost:5001/api/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        to: 'contact@freshlandhotels.com',
+        subject: `[Website Contact] ${subject}`,
+        html: htmlBody,
+        from: 'contact@freshlandhotels.com'
+      })
+    });
+
+    if (!response.ok) {
+      console.warn('[Local Contact API] Warning: Failed to deliver contact form email internally.');
+    } else {
+      console.log('[Local Contact API] Contact form email successfully forwarded to contact@freshlandhotels.com');
+    }
+  } catch (err) {
+    console.error('[Local Contact API] Error routing contact email:', err);
+  }
+
   res.json({ success: true });
 });
 

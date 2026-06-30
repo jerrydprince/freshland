@@ -255,7 +255,7 @@ const AdminLayout = () => {
 
       <aside className={`fixed inset-y-0 left-0 z-50 w-64 glass-panel flex flex-col transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-6 flex justify-between items-center border-b border-dark-700/50">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
             <>
               <img src="/Images/logo.svg" alt="Freshland Logo" className="h-8 object-contain mr-2" />
               <div className="flex flex-col justify-center">
@@ -285,7 +285,7 @@ const AdminLayout = () => {
             {openMenus.overview && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
               {hasAnyAccess('Dashboard') && (
-                <Link to="/admin" className={linkClass('/admin')}>
+                <Link to="/admin" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <LayoutDashboard size={16} />
                     <span className="text-xs font-semibold">Live Dashboard</span>
@@ -293,7 +293,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Internal Messaging') && (
-                <Link to="/admin/messages" className={linkClass('/admin/messages')}>
+                <Link to="/admin/messages" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/messages')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <MessageSquare size={16} />
                     <span className="text-xs font-semibold">Internal Messaging</span>
@@ -301,7 +301,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Reminders') && (
-                <Link to="/admin/reminders" className={linkClass('/admin/reminders')}>
+                <Link to="/admin/reminders" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/reminders')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <CalendarClock size={16} />
                     <span className="text-xs font-semibold">Schedules & Reminders</span>
@@ -309,7 +309,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Reports & Analytics') && (
-                <Link to="/admin/reports" className={linkClass('/admin/reports')}>
+                <Link to="/admin/reports" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/reports')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <TrendingUp size={16} />
                     <span className="text-xs font-semibold">Reports & Analytics</span>
@@ -317,7 +317,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Duty Logs') && (
-                <Link to="/admin/duty-reports" className={linkClass('/admin/duty-reports')}>
+                <Link to="/admin/duty-reports" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/duty-reports')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <ClipboardList size={16} />
                     <span className="text-xs font-semibold">Duty Manager Logs</span>
@@ -325,7 +325,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Monthly Reports') && (
-                <Link to="/admin/monthly-reports" className={linkClass('/admin/monthly-reports')}>
+                <Link to="/admin/monthly-reports" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/monthly-reports')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <MailOpen size={16} />
                     <span className="text-xs font-semibold">Monthly Reports Dispatch</span>
@@ -351,7 +351,7 @@ const AdminLayout = () => {
             {openMenus.frontOffice && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
               {hasAnyAccess('Front Desk') && (
-                <Link to="/admin/frontdesk" className={linkClass('/admin/frontdesk')}>
+                <Link to="/admin/frontdesk" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/frontdesk')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Bell size={16} />
                     <span className="text-xs font-semibold">Front Desk Reception</span>
@@ -359,7 +359,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Reservations') && (
-                <Link to="/admin/reservations" className={linkClass('/admin/reservations')}>
+                <Link to="/admin/reservations" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/reservations')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <CalendarDays size={16} />
                     <span className="text-xs font-semibold">Suite Bookings (Reservations)</span>
@@ -367,7 +367,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('CRM & Guests') && (
-                <Link to="/admin/crm" className={linkClass('/admin/crm')}>
+                <Link to="/admin/crm" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/crm')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Users size={16} />
                     <span className="text-xs font-semibold">CRM Guest Directory</span>
@@ -375,7 +375,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Lost & Found') && (
-                <Link to="/admin/lost-found" className={linkClass('/admin/lost-found')}>
+                <Link to="/admin/lost-found" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/lost-found')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <SearchCheck size={16} />
                     <span className="text-xs font-semibold">Lost & Found Registry</span>
@@ -401,7 +401,7 @@ const AdminLayout = () => {
             {openMenus.hotelOperations && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
               {hasAnyAccess('Housekeeping') && (
-                <Link to="/admin/housekeeping" className={linkClass('/admin/housekeeping')}>
+                <Link to="/admin/housekeeping" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/housekeeping')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Sparkles size={16} />
                     <span className="text-xs font-semibold">Housekeeping Cleaning</span>
@@ -410,7 +410,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Laundry') && (
-                <Link to="/admin/laundry" className={linkClass('/admin/laundry')}>
+                <Link to="/admin/laundry" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/laundry')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Shirt size={16} />
                     <span className="text-xs font-semibold">Laundry Department</span>
@@ -419,7 +419,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Maintenance') && (
-                <Link to="/admin/maintenance" className={linkClass('/admin/maintenance')}>
+                <Link to="/admin/maintenance" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/maintenance')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Wrench size={16} />
                     <span className="text-xs font-semibold">Maintenance Department</span>
@@ -428,7 +428,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {(hasAnyAccess('Store Keeping') || user?.role === 'super_admin') && (
-                <Link to="/admin/store" className={linkClass('/admin/store')}>
+                <Link to="/admin/store" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/store')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Archive size={16} />
                     <span className="text-xs font-semibold">Stores & Warehouses</span>
@@ -436,7 +436,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {(hasAnyAccess('Restaurant Desk') || hasAnyAccess('Kitchen Desk') || hasAnyAccess('Order History') || user?.role === 'super_admin') && (
-                <Link to="/admin/restaurant" className={linkClass('/admin/restaurant')}>
+                <Link to="/admin/restaurant" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/restaurant')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <ChefHat size={16} />
                     <span className="text-xs font-semibold">Restaurant & Kitchen</span>
@@ -445,7 +445,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {(hasAnyAccess('Service Portals') || user?.role === 'super_admin') && (
-                <Link to="/admin/services-portal" className={linkClass('/admin/services-portal')}>
+                <Link to="/admin/services-portal" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/services-portal')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Compass size={16} />
                     <span className="text-xs font-semibold">🛎️ Service Portals</span>
@@ -471,7 +471,7 @@ const AdminLayout = () => {
             </button>
             {openMenus.pos && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
-              <Link to="/admin/pos" className={linkClass('/admin/pos')}>
+              <Link to="/admin/pos" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/pos')}>
                 <div className="flex items-center gap-2.5 relative z-10">
                   <ShoppingCart size={16} />
                   <span className="text-xs font-semibold">POS Checkouts Terminal</span>
@@ -496,7 +496,7 @@ const AdminLayout = () => {
             {openMenus.finance && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
               {hasAnyAccess('Finance & Billing') && (
-                <Link to="/admin/billing" className={linkClass('/admin/billing')}>
+                <Link to="/admin/billing" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/billing')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <FileText size={16} />
                     <span className="text-xs font-semibold">Folios & Billings</span>
@@ -504,7 +504,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Accounting') && (
-                <Link to="/admin/accounting" className={linkClass('/admin/accounting')}>
+                <Link to="/admin/accounting" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/accounting')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Wallet size={16} />
                     <span className="text-xs font-semibold">General Ledger & Accounts</span>
@@ -530,7 +530,7 @@ const AdminLayout = () => {
             {openMenus.systemControl && (
             <div className="space-y-0.5 animate-in slide-in-from-top-1 fade-in duration-200 mt-1">
               {(hasAnyAccess('Rooms') || user?.role === 'super_admin') && (
-                <Link to="/admin/rooms" className={linkClass('/admin/rooms')}>
+                <Link to="/admin/rooms" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/rooms')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <BedDouble size={16} />
                     <span className="text-xs font-semibold">Rooms, Halls & Inventory</span>
@@ -538,7 +538,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Channel Manager') && (
-                <Link to="/admin/channel-manager" className={linkClass('/admin/channel-manager')}>
+                <Link to="/admin/channel-manager" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/channel-manager')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Network size={16} />
                     <span className="text-xs font-semibold">Channel Manager Sync</span>
@@ -546,7 +546,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {(hasAnyAccess('Staff & Roles') || hasAccess('Leave & Absences - Request Leave of Absence') || hasAccess('Leave & Absences - Review Leave Applications')) && (
-                <Link to="/admin/staff" className={linkClass('/admin/staff')}>
+                <Link to="/admin/staff" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/staff')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <ShieldCheck size={16} />
                     <span className="text-xs font-semibold">Staff & Security Matrix</span>
@@ -554,7 +554,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Website CMS') && (
-                <Link to="/admin/cms" className={linkClass('/admin/cms')}>
+                <Link to="/admin/cms" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/cms')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Globe size={16} />
                     <span className="text-xs font-semibold">Website CMS Manager</span>
@@ -562,7 +562,7 @@ const AdminLayout = () => {
                 </Link>
               )}
               {hasAnyAccess('Settings') && (
-                <Link to="/admin/settings" className={linkClass('/admin/settings')}>
+                <Link to="/admin/settings" onClick={() => setIsMobileMenuOpen(false)} className={linkClass('/admin/settings')}>
                   <div className="flex items-center gap-2.5 relative z-10">
                     <Settings size={16} />
                     <span className="text-xs font-semibold">System Settings</span>
@@ -655,3 +655,4 @@ const AdminLayout = () => {
 };
 
 export default AdminLayout;
+

@@ -193,6 +193,7 @@ const AdminFrontDesk = () => {
   const [housekeepingTasks, setHousekeepingTasks] = useState([]);
   const [maintenanceTickets, setMaintenanceTickets] = useState([]);
   const [matrixFilter, setMatrixFilter] = useState('all'); // all, occupied, clean, dirty, maintenance
+  const [matrixSearchQuery, setMatrixSearchQuery] = useState('');
   const [activeInspection, setActiveInspection] = useState(null);
   const [checklist, setChecklist] = useState({ bed: false, bathroom: false, trash: false, floors: false, restock: false });
   const [preselectedRoomId, setPreselectedRoomId] = useState(null);
@@ -2511,9 +2512,9 @@ const AdminFrontDesk = () => {
             {currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>
-        <div className="mt-4 md:mt-0 flex items-center gap-4">
+        <div className="mt-4 md:mt-0 flex flex-wrap items-center gap-4 justify-center md:justify-end">
           {hasAccess('Store Keeping - Log Requisitions') && (
-            <button onClick={() => setIsRequisitionOpen(true)} className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mr-2 rounded text-sm font-bold transition-all shadow">
+            <button onClick={() => setIsRequisitionOpen(true)} className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mb-2 rounded text-sm font-bold transition-all shadow">
               <Archive size={16}/> Store Requisition
             </button>
           )}
@@ -2523,7 +2524,7 @@ const AdminFrontDesk = () => {
               setIsActivateWalletOpen(true);
             }} 
             disabled={isFrontOfficeClosed}
-            className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mr-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed"
+            className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mb-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Wallet size={16}/>
             <span>Activate Guest Wallet</span>
@@ -2534,7 +2535,7 @@ const AdminFrontDesk = () => {
               setIsAddGroupOpen(true);
             }} 
             disabled={isFrontOfficeClosed}
-            className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mr-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed"
+            className="bg-brand-500/10 hover:bg-brand-500 border border-brand-500/20 text-brand-400 hover:text-white py-2 px-4 flex items-center gap-2 mb-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Users size={16}/>
             <span>New Group Account</span>
@@ -2545,7 +2546,7 @@ const AdminFrontDesk = () => {
               setIsNoShowSweepOpen(true);
             }}
             disabled={isFrontOfficeClosed}
-            className={`relative py-2 px-4 flex items-center gap-2 mr-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed ${
+            className={`relative py-2 px-4 flex items-center gap-2 mb-2 rounded text-sm font-bold transition-all shadow disabled:opacity-40 disabled:cursor-not-allowed ${
               noShowBookings.length > 0
                 ? 'bg-amber-500/10 hover:bg-amber-500 border border-amber-500/30 text-amber-400 hover:text-dark-900'
                 : 'bg-dark-700 hover:bg-dark-600 border border-dark-600 text-gray-300'
@@ -2562,7 +2563,7 @@ const AdminFrontDesk = () => {
             const todayStr = format(new Date(), 'yyyy-MM-dd');
             const closure = departmentalClosures.find(c => c.department === 'front_office' && c.business_date === todayStr);
             return closure ? (
-              <div className="bg-green-500/10 text-green-400 border border-green-500/25 px-4 py-2 rounded text-xs font-bold flex items-center gap-2 mr-2">
+              <div className="bg-green-500/10 text-green-400 border border-green-500/25 px-4 py-2 rounded text-xs font-bold flex items-center gap-2 mb-2">
                 <CheckCircle size={14} className="text-green-500" />
                 <span>Closed today by {closure.staff_name}</span>
               </div>
@@ -2570,7 +2571,7 @@ const AdminFrontDesk = () => {
               <button 
                 onClick={handleCompileCloseOfDayFrontDesk}
                 disabled={isCompilingCloseOfDay}
-                className="bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-dark-950 px-4 py-2 rounded text-xs font-bold flex items-center gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer mr-2"
+                className="bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-dark-950 px-4 py-2 rounded text-xs font-bold flex items-center gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer mb-2"
               >
                 <Clock size={14} />
                 <span>Close of Day</span>
@@ -2583,7 +2584,7 @@ const AdminFrontDesk = () => {
               setIsNewBookingModalOpen(true);
             }} 
             disabled={isFrontOfficeClosed}
-            className="btn-primary py-2 px-4 flex items-center gap-2 mr-4 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="btn-primary py-2 px-4 flex items-center gap-2 mb-2 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Plus size={18}/> New Booking
           </button>
@@ -3082,7 +3083,7 @@ const AdminFrontDesk = () => {
                 </button>
               ))}
             </div>
-            <div className="text-[11px] text-gray-300 font-mono flex items-center gap-1.5">
+            <div className="flex items-center w-full md:w-auto"><div className="relative w-full md:w-64"><Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} /><input type="text" placeholder="Search Room or Guest..." value={matrixSearchQuery} onChange={(e) => setMatrixSearchQuery(e.target.value)} className="w-full bg-dark-900 border border-dark-700 pl-9 pr-4 py-2 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500 transition-colors" /></div></div><div className="text-[11px] text-gray-300 font-mono flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span>
               Live Grid System
             </div>
@@ -3091,22 +3092,38 @@ const AdminFrontDesk = () => {
           {/* Matrix Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {allRooms.filter(room => {
-              const activeBooking = inHouse.find(b => b.room_id === room.id);
-              const latestTask = housekeepingTasks.find(t => t.room_id === room.id);
-              const maintTicket = maintenanceTickets.find(t => t.room_id === room.id);
-              const isOccupied = room.status === 'occupied' || activeBooking;
-              
-              const taskStatus = latestTask ? latestTask.status : 'inspected';
-              const isClean = taskStatus === 'inspected';
-              const isDirty = ['pending', 'failed', 'cleaning', 'cleaned'].includes(taskStatus);
+                const activeBooking = inHouse.find(b => b.room_id === room.id);
+                const latestTask = housekeepingTasks.find(t => t.room_id === room.id);
+                const maintTicket = maintenanceTickets.find(t => t.room_id === room.id);
+                const isOccupied = room.status === 'occupied' || activeBooking;
+                
+                const taskStatus = latestTask ? latestTask.status : 'inspected';
+                const isClean = taskStatus === 'inspected';
+                const isDirty = ['pending', 'failed', 'cleaning', 'cleaned'].includes(taskStatus);
+  
+                let passesFilter = true;
+                if (matrixFilter === 'occupied') passesFilter = isOccupied;
+                else if (matrixFilter === 'clean') passesFilter = !isOccupied && isClean && !maintTicket;
+                else if (matrixFilter === 'dirty') passesFilter = !isOccupied && isDirty && !maintTicket;
+                else if (matrixFilter === 'maintenance') passesFilter = !!maintTicket;
 
-              if (matrixFilter === 'all') return true;
-              if (matrixFilter === 'occupied') return isOccupied;
-              if (matrixFilter === 'clean') return !isOccupied && isClean && !maintTicket;
-              if (matrixFilter === 'dirty') return !isOccupied && isDirty && !maintTicket;
-              if (matrixFilter === 'maintenance') return !!maintTicket;
-              return true;
-            }).map(room => {
+                if (!passesFilter) return false;
+
+                if (matrixSearchQuery) {
+                  const q = matrixSearchQuery.toLowerCase();
+                  const matchRoom = room.room_number?.toLowerCase().includes(q) || room.name?.toLowerCase().includes(q) || room.type?.toLowerCase().includes(q);
+                  
+                  let matchGuest = false;
+                  if (activeBooking) {
+                    const profileName = activeBooking.profiles ? `${activeBooking.profiles.first_name} ${activeBooking.profiles.last_name}` : '';
+                    matchGuest = profileName.toLowerCase().includes(q) || activeBooking.guest_name?.toLowerCase().includes(q);
+                  }
+                  
+                  return matchRoom || matchGuest;
+                }
+
+                return true;
+              }).map(room => {
               const activeBooking = inHouse.find(b => b.room_id === room.id);
               const latestTask = housekeepingTasks.find(t => t.room_id === room.id);
               const maintTicket = maintenanceTickets.find(t => t.room_id === room.id);
@@ -3558,12 +3575,12 @@ const AdminFrontDesk = () => {
                   }, {});
 
                 return (
-                  <div className="flex overflow-x-auto custom-scrollbar select-none relative w-full flex-1">
+                  <div className="flex items-start overflow-auto max-h-[65vh] custom-scrollbar select-none relative w-full flex-1">
                     
                     {/* Fixed Left Sidebar: Accommodation List */}
                     <div className="w-[280px] min-w-[280px] bg-dark-900 border-r border-dark-700 flex-shrink-0 z-20 sticky left-0 shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
                       {/* Left Header */}
-                      <div className="h-[76px] bg-dark-950 border-b border-dark-700 p-4 flex items-center justify-start">
+                      <div className="h-[76px] bg-dark-950 border-b border-dark-700 p-4 flex items-center justify-start sticky top-0 z-30">
                         <span className="text-xs uppercase font-bold tracking-wider text-gray-200">Accommodation</span>
                       </div>
                       
@@ -5578,3 +5595,6 @@ const AdminFrontDesk = () => {
 };
 
 export default AdminFrontDesk;
+
+
+

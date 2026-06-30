@@ -55,10 +55,12 @@ const Gallery = () => {
               className="relative group overflow-hidden bg-dark-800 cursor-pointer rounded-[2rem] shadow-xl break-inside-avoid border border-dark-800 hover:border-brand-500/30 transition-all duration-500 hover:shadow-brand-500/10"
             >
               <img 
+                loading="lazy" 
+                decoding="async"
                 src={img.image_url} 
                 alt={img.caption || 'Freshland Gallery'} 
                 className="w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
+                style={{ height: `${(idx % 3) * 100 + 250}px` }}
               />
               
               {/* Visual overlay on hover */}

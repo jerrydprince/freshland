@@ -73,7 +73,7 @@ const Contact = () => {
                 <MapPin size={24} />
               </div>
               <h3 className="text-xl font-medium mb-2">Location</h3>
-              <p className="text-gray-200 whitespace-pre-wrap">{contactInfo.contact_address || '123 Luxury Avenue,\nVictoria Island, Lagos, Nigeria'}</p>
+              <p className="text-gray-200 whitespace-pre-wrap">{contactInfo.contact_address || 'No2. Gowon P Haruna Close, Karu, Abuja'}</p>
             </div>
             
             <div className="bg-dark-800 p-8 border border-dark-700 hover:border-brand-500 transition-colors">
@@ -91,7 +91,7 @@ const Contact = () => {
                 <Mail size={24} />
               </div>
               <h3 className="text-xl font-medium mb-2">Email</h3>
-              <p className="text-gray-200">{contactInfo.contact_email || 'info@Freshlandhotels.com'}</p>
+              <p className="text-gray-200">{contactInfo.contact_email || 'info@freshlandhotels.com'}</p>
             </div>
           </div>
 

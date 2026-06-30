@@ -195,23 +195,27 @@ const TopbarAttendanceClock = () => {
       {/* Pulse Status Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl border transition-all duration-300 backdrop-blur-md ${
+        className={`flex items-center gap-2 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl border transition-all duration-300 backdrop-blur-md ${
           activeShift 
             ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50' 
             : 'bg-amber-500/10 border-amber-500/30 text-amber-400 hover:bg-amber-500/20 hover:border-amber-500/50'
         }`}
       >
-        <span className="relative flex h-2.5 w-2.5">
+        <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0">
           <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
             activeShift ? 'bg-emerald-400' : 'bg-amber-400'
           }`}></span>
-          <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${
+          <span className={`relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 ${
             activeShift ? 'bg-emerald-500' : 'bg-amber-500'
           }`}></span>
         </span>
         
-        <span className="text-sm font-bold tracking-wide select-none font-mono">
-          {activeShift ? `On Shift: ${elapsed || '00:00:00'}` : 'Off Shift / Clock In'}
+        <span className="text-[10px] sm:text-sm font-bold tracking-wide select-none font-mono whitespace-nowrap">
+          {activeShift ? (
+            <><span className="hidden sm:inline">On Shift: </span>{elapsed || '00:00:00'}</>
+          ) : (
+            <><span className="hidden sm:inline">Off Shift / </span>Clock In</>
+          )}
         </span>
       </button>
 
@@ -223,7 +227,7 @@ const TopbarAttendanceClock = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-12 z-50 w-80 glass-panel bg-dark-800/95 border border-dark-700/80 backdrop-blur-lg shadow-2xl rounded-2xl p-5 overflow-hidden text-white"
+            className="fixed left-4 right-4 top-20 sm:absolute sm:left-auto sm:right-0 sm:top-12 z-50 sm:w-80 glass-panel bg-dark-800/95 border border-dark-700/80 backdrop-blur-lg shadow-2xl rounded-2xl p-5 overflow-hidden text-white"
           >
             {/* Ambient gold/green accent circle inside popover */}
             <div className={`absolute -top-12 -right-12 w-28 h-28 rounded-full blur-3xl opacity-20 transition-colors duration-500 ${
@@ -304,22 +308,22 @@ const TopbarAttendanceClock = () => {
               </div>
 
               {/* Buttons */}
-              <div className="pt-2">
+              <div className="pt-3">
                 {activeShift ? (
                   <button
                     onClick={handleClockOut}
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-rose-950/20 active:scale-[0.98] transition-all disabled:opacity-50"
+                    className="w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white py-2 sm:py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-rose-950/20 active:scale-[0.98] transition-all disabled:opacity-50 text-xs sm:text-sm"
                   >
-                    <LogOut size={16} /> Clock Out Shift
+                    <LogOut size={14} className="sm:w-4 sm:h-4" /> Clock Out
                   </button>
                 ) : (
                   <button
                     onClick={handleClockIn}
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-brand-950/20 active:scale-[0.98] transition-all disabled:opacity-50"
+                    className="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white py-2 sm:py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-brand-950/20 active:scale-[0.98] transition-all disabled:opacity-50 text-xs sm:text-sm"
                   >
-                    <LogIn size={16} /> Start Shift & Clock In
+                    <LogIn size={14} className="sm:w-4 sm:h-4" /> Clock In
                   </button>
                 )}
               </div>
